@@ -1,4 +1,4 @@
-smithy_rs_revision = 'd54c005ade80e11c371da3274be9fc174be07e05'
+smithy_rs_revision = 'ba3b9375863adbd61def592a676e8a2ab2a03779'
 aws_doc_sdk_examples_revision = '97a177aab8c3d2fef97416cb66e4b4d0da840138'
 
 [manual_interventions]
@@ -1663,13 +1663,13 @@ model_hash = 'eef5f303a18b42fd4f9da73f5655c53016ae5bebcea841482f0c7bf0afcdcdcb'
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
 version = '0.48.0'
-source_hash = 'ad6d26ebf9c92bfba3ead911bf84b691ea11f1afc0a10c73020b27a09a4a6f4f'
+source_hash = 'af11e7e4818965a8d5617fefef43bc5c2b94dfdc68af84605cca1dbc209a0d3e'
 model_hash = 'fb47cfd49cf2d9250063914599f703ed365b51be373988dc3f2cd64321c9583b'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
 version = '0.48.0'
-source_hash = '74ab042e5ef67f13715307a39ddb8a091961a2cff398e780cb7aeb2897418ec6'
+source_hash = '949e03e2fa703c397e2c449a721fc2a097ea13c1c2485c95a13c5d4320c9a094'
 model_hash = '930bd33c05c393293591ae01cbdb6637fb5062ed3a3ad5e2dadddd8108cc8478'
 
 [crates.aws-sdk-s3outposts]
