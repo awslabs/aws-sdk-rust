@@ -65,7 +65,7 @@ path = "../aws-smithy-protocol-test"
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.tokio]
-version = "1.8.4"
+version = "1.23.1"
 features = ["macros", "rt", "rt-multi-thread", "test-util", "time"]
 
 [dev-dependencies.tracing-subscriber]

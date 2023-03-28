@@ -104,7 +104,7 @@ version = "0.3.16"
 default-features = false
 
 [dev-dependencies.tokio]
-version = "1.8.4"
+version = "1.23.1"
 features = ["full", "test-util"]
 
 [dev-dependencies.serde]
