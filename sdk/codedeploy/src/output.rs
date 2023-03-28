@@ -18,6 +18,7 @@ impl UpdateDeploymentGroupOutput {
 pub mod update_deployment_group_output {
 
     /// A builder for [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hooks_not_cleaned_up:
@@ -66,6 +67,7 @@ pub struct UpdateApplicationOutput {}
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -90,6 +92,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -114,6 +117,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -163,6 +167,7 @@ impl StopDeploymentOutput {
 pub mod stop_deployment_output {
 
     /// A builder for [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StopStatus>,
@@ -224,6 +229,7 @@ pub struct SkipWaitTimeForInstanceTerminationOutput {}
 pub mod skip_wait_time_for_instance_termination_output {
 
     /// A builder for [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -248,6 +254,7 @@ pub struct RemoveTagsFromOnPremisesInstancesOutput {}
 pub mod remove_tags_from_on_premises_instances_output {
 
     /// A builder for [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -272,6 +279,7 @@ pub struct RegisterOnPremisesInstanceOutput {}
 pub mod register_on_premises_instance_output {
 
     /// A builder for [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -296,6 +304,7 @@ pub struct RegisterApplicationRevisionOutput {}
 pub mod register_application_revision_output {
 
     /// A builder for [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -330,6 +339,7 @@ impl PutLifecycleEventHookExecutionStatusOutput {
 pub mod put_lifecycle_event_hook_execution_status_output {
 
     /// A builder for [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
@@ -391,6 +401,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -467,6 +478,7 @@ impl ListOnPremisesInstancesOutput {
 pub mod list_on_premises_instances_output {
 
     /// A builder for [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -543,6 +555,7 @@ impl ListGitHubAccountTokenNamesOutput {
 pub mod list_git_hub_account_token_names_output {
 
     /// A builder for [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -619,6 +632,7 @@ impl ListDeploymentTargetsOutput {
 pub mod list_deployment_targets_output {
 
     /// A builder for [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -695,6 +709,7 @@ impl ListDeploymentsOutput {
 pub mod list_deployments_output {
 
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -771,6 +786,7 @@ impl ListDeploymentInstancesOutput {
 pub mod list_deployment_instances_output {
 
     /// A builder for [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -854,6 +870,7 @@ impl ListDeploymentGroupsOutput {
 pub mod list_deployment_groups_output {
 
     /// A builder for [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -945,6 +962,7 @@ impl ListDeploymentConfigsOutput {
 pub mod list_deployment_configs_output {
 
     /// A builder for [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_configs_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1021,6 +1039,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1097,6 +1116,7 @@ impl ListApplicationRevisionsOutput {
 pub mod list_application_revisions_output {
 
     /// A builder for [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
@@ -1166,6 +1186,7 @@ impl GetOnPremisesInstanceOutput {
 pub mod get_on_premises_instance_output {
 
     /// A builder for [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_info: std::option::Option<crate::model::InstanceInfo>,
@@ -1217,6 +1238,7 @@ impl GetDeploymentTargetOutput {
 pub mod get_deployment_target_output {
 
     /// A builder for [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_target: std::option::Option<crate::model::DeploymentTarget>,
@@ -1268,6 +1290,7 @@ impl GetDeploymentInstanceOutput {
 pub mod get_deployment_instance_output {
 
     /// A builder for [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_summary: std::option::Option<crate::model::InstanceSummary>,
@@ -1319,6 +1342,7 @@ impl GetDeploymentGroupOutput {
 pub mod get_deployment_group_output {
 
     /// A builder for [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_group_info: std::option::Option<crate::model::DeploymentGroupInfo>,
@@ -1372,6 +1396,7 @@ impl GetDeploymentConfigOutput {
 pub mod get_deployment_config_output {
 
     /// A builder for [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_info: std::option::Option<crate::model::DeploymentConfigInfo>,
@@ -1423,6 +1448,7 @@ impl GetDeploymentOutput {
 pub mod get_deployment_output {
 
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_info: std::option::Option<crate::model::DeploymentInfo>,
@@ -1488,6 +1514,7 @@ impl GetApplicationRevisionOutput {
 pub mod get_application_revision_output {
 
     /// A builder for [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -1569,6 +1596,7 @@ impl GetApplicationOutput {
 pub mod get_application_output {
 
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::ApplicationInfo>,
@@ -1610,6 +1638,7 @@ pub struct DeregisterOnPremisesInstanceOutput {}
 pub mod deregister_on_premises_instance_output {
 
     /// A builder for [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1634,6 +1663,7 @@ pub struct DeleteResourcesByExternalIdOutput {}
 pub mod delete_resources_by_external_id_output {
 
     /// A builder for [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1668,6 +1698,7 @@ impl DeleteGitHubAccountTokenOutput {
 pub mod delete_git_hub_account_token_output {
 
     /// A builder for [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_name: std::option::Option<std::string::String>,
@@ -1716,6 +1747,7 @@ impl DeleteDeploymentGroupOutput {
 pub mod delete_deployment_group_output {
 
     /// A builder for [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hooks_not_cleaned_up:
@@ -1764,6 +1796,7 @@ pub struct DeleteDeploymentConfigOutput {}
 pub mod delete_deployment_config_output {
 
     /// A builder for [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1788,6 +1821,7 @@ pub struct DeleteApplicationOutput {}
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1822,6 +1856,7 @@ impl CreateDeploymentGroupOutput {
 pub mod create_deployment_group_output {
 
     /// A builder for [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_group_id: std::option::Option<std::string::String>,
@@ -1873,6 +1908,7 @@ impl CreateDeploymentConfigOutput {
 pub mod create_deployment_config_output {
 
     /// A builder for [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_id: std::option::Option<std::string::String>,
@@ -1924,6 +1960,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -1975,6 +2012,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2016,6 +2054,7 @@ pub struct ContinueDeploymentOutput {}
 pub mod continue_deployment_output {
 
     /// A builder for [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2050,6 +2089,7 @@ impl BatchGetOnPremisesInstancesOutput {
 pub mod batch_get_on_premises_instances_output {
 
     /// A builder for [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_infos: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
@@ -2119,6 +2159,7 @@ impl BatchGetDeploymentTargetsOutput {
 pub mod batch_get_deployment_targets_output {
 
     /// A builder for [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_targets:
@@ -2189,6 +2230,7 @@ impl BatchGetDeploymentsOutput {
 pub mod batch_get_deployments_output {
 
     /// A builder for [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments_info:
@@ -2254,6 +2296,7 @@ impl BatchGetDeploymentInstancesOutput {
 pub mod batch_get_deployment_instances_output {
 
     /// A builder for [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances_summary:
@@ -2337,6 +2380,7 @@ impl BatchGetDeploymentGroupsOutput {
 pub mod batch_get_deployment_groups_output {
 
     /// A builder for [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_groups_info:
@@ -2410,6 +2454,7 @@ impl BatchGetApplicationsOutput {
 pub mod batch_get_applications_output {
 
     /// A builder for [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications_info:
@@ -2482,6 +2527,7 @@ impl BatchGetApplicationRevisionsOutput {
 pub mod batch_get_application_revisions_output {
 
     /// A builder for [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -2559,6 +2605,7 @@ pub struct AddTagsToOnPremisesInstancesOutput {}
 pub mod add_tags_to_on_premises_instances_output {
 
     /// A builder for [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

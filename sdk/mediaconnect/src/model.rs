@@ -112,6 +112,7 @@ impl Source {
 pub mod source {
 
     /// A builder for [`Source`](crate::model::Source).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -436,6 +437,7 @@ impl Transport {
 pub mod transport {
 
     /// A builder for [`Transport`](crate::model::Transport).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -798,6 +800,7 @@ impl MediaStreamSourceConfiguration {
 pub mod media_stream_source_configuration {
 
     /// A builder for [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -900,6 +903,7 @@ impl InputConfiguration {
 pub mod input_configuration {
 
     /// A builder for [`InputConfiguration`](crate::model::InputConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_ip: std::option::Option<std::string::String>,
@@ -975,6 +979,7 @@ impl Interface {
 pub mod interface {
 
     /// A builder for [`Interface`](crate::model::Interface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1177,6 +1182,7 @@ impl Encryption {
 pub mod encryption {
 
     /// A builder for [`Encryption`](crate::model::Encryption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::Algorithm>,
@@ -1537,6 +1543,7 @@ impl MediaStreamSourceConfigurationRequest {
 pub mod media_stream_source_configuration_request {
 
     /// A builder for [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -1635,6 +1642,7 @@ impl InputConfigurationRequest {
 pub mod input_configuration_request {
 
     /// A builder for [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_port: std::option::Option<i32>,
@@ -1698,6 +1706,7 @@ impl InterfaceRequest {
 pub mod interface_request {
 
     /// A builder for [`InterfaceRequest`](crate::model::InterfaceRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1800,6 +1809,7 @@ impl UpdateEncryption {
 pub mod update_encryption {
 
     /// A builder for [`UpdateEncryption`](crate::model::UpdateEncryption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::Algorithm>,
@@ -2042,6 +2052,7 @@ impl Output {
 pub mod output {
 
     /// A builder for [`Output`](crate::model::Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -2274,6 +2285,7 @@ impl VpcInterfaceAttachment {
 pub mod vpc_interface_attachment {
 
     /// A builder for [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
@@ -2349,6 +2361,7 @@ impl MediaStreamOutputConfiguration {
 pub mod media_stream_output_configuration {
 
     /// A builder for [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_configurations:
@@ -2462,6 +2475,7 @@ impl EncodingParameters {
 pub mod encoding_parameters {
 
     /// A builder for [`EncodingParameters`](crate::model::EncodingParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compression_factor: std::option::Option<f64>,
@@ -2636,6 +2650,7 @@ impl DestinationConfiguration {
 pub mod destination_configuration {
 
     /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ip: std::option::Option<std::string::String>,
@@ -2752,6 +2767,7 @@ impl MediaStreamOutputConfigurationRequest {
 pub mod media_stream_output_configuration_request {
 
     /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_configurations:
@@ -2871,6 +2887,7 @@ impl EncodingParametersRequest {
 pub mod encoding_parameters_request {
 
     /// A builder for [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compression_factor: std::option::Option<f64>,
@@ -2948,6 +2965,7 @@ impl DestinationConfigurationRequest {
 pub mod destination_configuration_request {
 
     /// A builder for [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ip: std::option::Option<std::string::String>,
@@ -3075,6 +3093,7 @@ impl MediaStream {
 pub mod media_stream {
 
     /// A builder for [`MediaStream`](crate::model::MediaStream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributes>,
@@ -3318,6 +3337,7 @@ impl MediaStreamAttributes {
 pub mod media_stream_attributes {
 
     /// A builder for [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fmtp: std::option::Option<crate::model::Fmtp>,
@@ -3420,6 +3440,7 @@ impl Fmtp {
 pub mod fmtp {
 
     /// A builder for [`Fmtp`](crate::model::Fmtp).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_order: std::option::Option<std::string::String>,
@@ -3998,6 +4019,7 @@ impl MediaStreamAttributesRequest {
 pub mod media_stream_attributes_request {
 
     /// A builder for [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fmtp: std::option::Option<crate::model::FmtpRequest>,
@@ -4100,6 +4122,7 @@ impl FmtpRequest {
 pub mod fmtp_request {
 
     /// A builder for [`FmtpRequest`](crate::model::FmtpRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_order: std::option::Option<std::string::String>,
@@ -4271,6 +4294,7 @@ impl Entitlement {
 pub mod entitlement {
 
     /// A builder for [`Entitlement`](crate::model::Entitlement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -4597,6 +4621,7 @@ impl Flow {
 pub mod flow {
 
     /// A builder for [`Flow`](crate::model::Flow).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -4875,6 +4900,7 @@ impl Maintenance {
 pub mod maintenance {
 
     /// A builder for [`Maintenance`](crate::model::Maintenance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -5131,6 +5157,7 @@ impl VpcInterface {
 pub mod vpc_interface {
 
     /// A builder for [`VpcInterface`](crate::model::VpcInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5490,6 +5517,7 @@ impl FailoverConfig {
 pub mod failover_config {
 
     /// A builder for [`FailoverConfig`](crate::model::FailoverConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_mode: std::option::Option<crate::model::FailoverMode>,
@@ -5670,6 +5698,7 @@ impl SourcePriority {
 pub mod source_priority {
 
     /// A builder for [`SourcePriority`](crate::model::SourcePriority).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_source: std::option::Option<std::string::String>,
@@ -5825,6 +5854,7 @@ impl UpdateMaintenance {
 pub mod update_maintenance {
 
     /// A builder for [`UpdateMaintenance`](crate::model::UpdateMaintenance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -5927,6 +5957,7 @@ impl UpdateFailoverConfig {
 pub mod update_failover_config {
 
     /// A builder for [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_mode: std::option::Option<crate::model::FailoverMode>,
@@ -6103,6 +6134,7 @@ impl Reservation {
 pub mod reservation {
 
     /// A builder for [`Reservation`](crate::model::Reservation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) currency_code: std::option::Option<std::string::String>,
@@ -6332,6 +6364,7 @@ impl ResourceSpecification {
 pub mod resource_specification {
 
     /// A builder for [`ResourceSpecification`](crate::model::ResourceSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_bitrate: std::option::Option<i32>,
@@ -6801,6 +6834,7 @@ impl Offering {
 pub mod offering {
 
     /// A builder for [`Offering`](crate::model::Offering).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) currency_code: std::option::Option<std::string::String>,
@@ -6996,6 +7030,7 @@ impl ListedFlow {
 pub mod listed_flow {
 
     /// A builder for [`ListedFlow`](crate::model::ListedFlow).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -7229,6 +7264,7 @@ impl ListedEntitlement {
 pub mod listed_entitlement {
 
     /// A builder for [`ListedEntitlement`](crate::model::ListedEntitlement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -7347,6 +7383,7 @@ impl GrantEntitlementRequest {
 pub mod grant_entitlement_request {
 
     /// A builder for [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -7475,6 +7512,7 @@ impl Messages {
 pub mod messages {
 
     /// A builder for [`Messages`](crate::model::Messages).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7539,6 +7577,7 @@ impl AddMaintenance {
 pub mod add_maintenance {
 
     /// A builder for [`AddMaintenance`](crate::model::AddMaintenance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -7635,6 +7674,7 @@ impl VpcInterfaceRequest {
 pub mod vpc_interface_request {
 
     /// A builder for [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7865,6 +7905,7 @@ impl SetSourceRequest {
 pub mod set_source_request {
 
     /// A builder for [`SetSourceRequest`](crate::model::SetSourceRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decryption: std::option::Option<crate::model::Encryption>,
@@ -8253,6 +8294,7 @@ impl AddOutputRequest {
 pub mod add_output_request {
 
     /// A builder for [`AddOutputRequest`](crate::model::AddOutputRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8545,6 +8587,7 @@ impl AddMediaStreamRequest {
 pub mod add_media_stream_request {
 
     /// A builder for [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,

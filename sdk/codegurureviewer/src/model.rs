@@ -185,6 +185,7 @@ impl RepositoryAssociationSummary {
 pub mod repository_association_summary {
 
     /// A builder for [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
@@ -638,6 +639,7 @@ impl RecommendationSummary {
 pub mod recommendation_summary {
 
     /// A builder for [`RecommendationSummary`](crate::model::RecommendationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -916,6 +918,7 @@ impl RuleMetadata {
 pub mod rule_metadata {
 
     /// A builder for [`RuleMetadata`](crate::model::RuleMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
@@ -1192,6 +1195,7 @@ impl RecommendationFeedbackSummary {
 pub mod recommendation_feedback_summary {
 
     /// A builder for [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -1369,6 +1373,7 @@ impl CodeReviewSummary {
 pub mod code_review_summary {
 
     /// A builder for [`CodeReviewSummary`](crate::model::CodeReviewSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1617,6 +1622,7 @@ impl SourceCodeType {
 pub mod source_code_type {
 
     /// A builder for [`SourceCodeType`](crate::model::SourceCodeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_diff: std::option::Option<crate::model::CommitDiffSourceCodeType>,
@@ -1752,6 +1758,7 @@ impl RequestMetadata {
 pub mod request_metadata {
 
     /// A builder for [`RequestMetadata`](crate::model::RequestMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1944,6 +1951,7 @@ impl EventInfo {
 pub mod event_info {
 
     /// A builder for [`EventInfo`](crate::model::EventInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2011,6 +2019,7 @@ impl S3BucketRepository {
 pub mod s3_bucket_repository {
 
     /// A builder for [`S3BucketRepository`](crate::model::S3BucketRepository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2081,6 +2090,7 @@ impl S3RepositoryDetails {
 pub mod s3_repository_details {
 
     /// A builder for [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -2155,6 +2165,7 @@ impl CodeArtifacts {
 pub mod code_artifacts {
 
     /// A builder for [`CodeArtifacts`](crate::model::CodeArtifacts).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_code_artifacts_object_key: std::option::Option<std::string::String>,
@@ -2231,6 +2242,7 @@ impl BranchDiffSourceCodeType {
 pub mod branch_diff_source_code_type {
 
     /// A builder for [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_branch_name: std::option::Option<std::string::String>,
@@ -2297,6 +2309,7 @@ impl RepositoryHeadSourceCodeType {
 pub mod repository_head_source_code_type {
 
     /// A builder for [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -2359,6 +2372,7 @@ impl CommitDiffSourceCodeType {
 pub mod commit_diff_source_code_type {
 
     /// A builder for [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_commit: std::option::Option<std::string::String>,
@@ -2454,6 +2468,7 @@ impl MetricsSummary {
 pub mod metrics_summary {
 
     /// A builder for [`MetricsSummary`](crate::model::MetricsSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metered_lines_of_code_count: std::option::Option<i64>,
@@ -2832,6 +2847,7 @@ impl RepositoryAssociation {
 pub mod repository_association {
 
     /// A builder for [`RepositoryAssociation`](crate::model::RepositoryAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -3086,6 +3102,7 @@ impl KmsKeyDetails {
 pub mod kms_key_details {
 
     /// A builder for [`KmsKeyDetails`](crate::model::KmsKeyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -3276,6 +3293,7 @@ impl RecommendationFeedback {
 pub mod recommendation_feedback {
 
     /// A builder for [`RecommendationFeedback`](crate::model::RecommendationFeedback).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
@@ -3524,6 +3542,7 @@ impl CodeReview {
 pub mod code_review {
 
     /// A builder for [`CodeReview`](crate::model::CodeReview).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3999,6 +4018,7 @@ impl Metrics {
 pub mod metrics {
 
     /// A builder for [`Metrics`](crate::model::Metrics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metered_lines_of_code_count: std::option::Option<i64>,
@@ -4085,6 +4105,7 @@ impl CodeReviewType {
 pub mod code_review_type {
 
     /// A builder for [`CodeReviewType`](crate::model::CodeReviewType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_analysis: std::option::Option<crate::model::RepositoryAnalysis>,
@@ -4166,6 +4187,7 @@ impl RepositoryAnalysis {
 pub mod repository_analysis {
 
     /// A builder for [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_head: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
@@ -4258,6 +4280,7 @@ impl Repository {
 pub mod repository {
 
     /// A builder for [`Repository`](crate::model::Repository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_commit: std::option::Option<crate::model::CodeCommitRepository>,
@@ -4365,6 +4388,7 @@ impl S3Repository {
 pub mod s3_repository {
 
     /// A builder for [`S3Repository`](crate::model::S3Repository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4439,6 +4463,7 @@ impl ThirdPartySourceRepository {
 pub mod third_party_source_repository {
 
     /// A builder for [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4514,6 +4539,7 @@ impl CodeCommitRepository {
 pub mod code_commit_repository {
 
     /// A builder for [`CodeCommitRepository`](crate::model::CodeCommitRepository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

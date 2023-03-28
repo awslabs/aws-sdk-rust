@@ -115,6 +115,7 @@ impl FeatureValue {
 pub mod feature_value {
 
     /// A builder for [`FeatureValue`](crate::model::FeatureValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_name: std::option::Option<std::string::String>,
@@ -194,6 +195,7 @@ impl BatchGetRecordIdentifier {
 pub mod batch_get_record_identifier {
 
     /// A builder for [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -312,6 +314,7 @@ impl BatchGetRecordError {
 pub mod batch_get_record_error {
 
     /// A builder for [`BatchGetRecordError`](crate::model::BatchGetRecordError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -422,6 +425,7 @@ impl BatchGetRecordResultDetail {
 pub mod batch_get_record_result_detail {
 
     /// A builder for [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,

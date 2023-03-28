@@ -60,6 +60,7 @@ impl User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -205,6 +206,7 @@ impl Authentication {
 pub mod authentication {
 
     /// A builder for [`Authentication`](crate::model::Authentication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AuthenticationType>,
@@ -367,6 +369,7 @@ impl AuthenticationMode {
 pub mod authentication_mode {
 
     /// A builder for [`AuthenticationMode`](crate::model::AuthenticationMode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InputAuthenticationType>,
@@ -559,6 +562,7 @@ impl SubnetGroup {
 pub mod subnet_group {
 
     /// A builder for [`SubnetGroup`](crate::model::SubnetGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -671,6 +675,7 @@ impl Subnet {
 pub mod subnet {
 
     /// A builder for [`Subnet`](crate::model::Subnet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -734,6 +739,7 @@ impl AvailabilityZone {
 pub mod availability_zone {
 
     /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -801,6 +807,7 @@ impl ParameterGroup {
 pub mod parameter_group {
 
     /// A builder for [`ParameterGroup`](crate::model::ParameterGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -892,6 +899,7 @@ impl ParameterNameValue {
 pub mod parameter_name_value {
 
     /// A builder for [`ParameterNameValue`](crate::model::ParameterNameValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<std::string::String>,
@@ -1133,6 +1141,7 @@ impl Cluster {
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1638,6 +1647,7 @@ impl SecurityGroupMembership {
 pub mod security_group_membership {
 
     /// A builder for [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_id: std::option::Option<std::string::String>,
@@ -1708,6 +1718,7 @@ impl Endpoint {
 pub mod endpoint {
 
     /// A builder for [`Endpoint`](crate::model::Endpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -1886,6 +1897,7 @@ impl Shard {
 pub mod shard {
 
     /// A builder for [`Shard`](crate::model::Shard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2019,6 +2031,7 @@ impl Node {
 pub mod node {
 
     /// A builder for [`Node`](crate::model::Node).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2138,6 +2151,7 @@ impl ClusterPendingUpdates {
 pub mod cluster_pending_updates {
 
     /// A builder for [`ClusterPendingUpdates`](crate::model::ClusterPendingUpdates).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resharding: std::option::Option<crate::model::ReshardingStatus>,
@@ -2236,6 +2250,7 @@ impl PendingModifiedServiceUpdate {
 pub mod pending_modified_service_update {
 
     /// A builder for [`PendingModifiedServiceUpdate`](crate::model::PendingModifiedServiceUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
@@ -2404,6 +2419,7 @@ impl AcLsUpdateStatus {
 pub mod ac_ls_update_status {
 
     /// A builder for [`AcLsUpdateStatus`](crate::model::AcLsUpdateStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl_to_apply: std::option::Option<std::string::String>,
@@ -2452,6 +2468,7 @@ impl ReshardingStatus {
 pub mod resharding_status {
 
     /// A builder for [`ReshardingStatus`](crate::model::ReshardingStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_migration: std::option::Option<crate::model::SlotMigration>,
@@ -2503,6 +2520,7 @@ impl SlotMigration {
 pub mod slot_migration {
 
     /// A builder for [`SlotMigration`](crate::model::SlotMigration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_percentage: std::option::Option<f64>,
@@ -2551,6 +2569,7 @@ impl ShardConfigurationRequest {
 pub mod shard_configuration_request {
 
     /// A builder for [`ShardConfigurationRequest`](crate::model::ShardConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_count: std::option::Option<i32>,
@@ -2599,6 +2618,7 @@ impl ReplicaConfigurationRequest {
 pub mod replica_configuration_request {
 
     /// A builder for [`ReplicaConfigurationRequest`](crate::model::ReplicaConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replica_count: std::option::Option<i32>,
@@ -2689,6 +2709,7 @@ impl Acl {
 pub mod acl {
 
     /// A builder for [`Acl`](crate::model::Acl).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2840,6 +2861,7 @@ impl AclPendingChanges {
 pub mod acl_pending_changes {
 
     /// A builder for [`AclPendingChanges`](crate::model::AclPendingChanges).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_names_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2925,6 +2947,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3055,6 +3078,7 @@ impl ReservedNode {
 pub mod reserved_node {
 
     /// A builder for [`ReservedNode`](crate::model::ReservedNode).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation_id: std::option::Option<std::string::String>,
@@ -3252,6 +3276,7 @@ impl RecurringCharge {
 pub mod recurring_charge {
 
     /// A builder for [`RecurringCharge`](crate::model::RecurringCharge).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recurring_charge_amount: std::option::Option<f64>,
@@ -3322,6 +3347,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3435,6 +3461,7 @@ impl Snapshot {
 pub mod snapshot {
 
     /// A builder for [`Snapshot`](crate::model::Snapshot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3652,6 +3679,7 @@ impl ClusterConfiguration {
 pub mod cluster_configuration {
 
     /// A builder for [`ClusterConfiguration`](crate::model::ClusterConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3901,6 +3929,7 @@ impl ShardDetail {
 pub mod shard_detail {
 
     /// A builder for [`ShardDetail`](crate::model::ShardDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3998,6 +4027,7 @@ impl ShardConfiguration {
 pub mod shard_configuration {
 
     /// A builder for [`ShardConfiguration`](crate::model::ShardConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slots: std::option::Option<std::string::String>,
@@ -4107,6 +4137,7 @@ impl ServiceUpdate {
 pub mod service_update {
 
     /// A builder for [`ServiceUpdate`](crate::model::ServiceUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -4379,6 +4410,7 @@ impl ReservedNodesOffering {
 pub mod reserved_nodes_offering {
 
     /// A builder for [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_nodes_offering_id: std::option::Option<std::string::String>,
@@ -4538,6 +4570,7 @@ impl Parameter {
 pub mod parameter {
 
     /// A builder for [`Parameter`](crate::model::Parameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4673,6 +4706,7 @@ impl Event {
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_name: std::option::Option<std::string::String>,
@@ -4891,6 +4925,7 @@ impl EngineVersionInfo {
 pub mod engine_version_info {
 
     /// A builder for [`EngineVersionInfo`](crate::model::EngineVersionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -4986,6 +5021,7 @@ impl UnprocessedCluster {
 pub mod unprocessed_cluster {
 
     /// A builder for [`UnprocessedCluster`](crate::model::UnprocessedCluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -5061,6 +5097,7 @@ impl ServiceUpdateRequest {
 pub mod service_update_request {
 
     /// A builder for [`ServiceUpdateRequest`](crate::model::ServiceUpdateRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name_to_apply: std::option::Option<std::string::String>,

@@ -35,6 +35,7 @@ impl PlacementTemplate {
 pub mod placement_template {
 
     /// A builder for [`PlacementTemplate`](crate::model::PlacementTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_attributes: std::option::Option<
@@ -140,6 +141,7 @@ impl DeviceTemplate {
 pub mod device_template {
 
     /// A builder for [`DeviceTemplate`](crate::model::DeviceTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,
@@ -249,6 +251,7 @@ impl ProjectSummary {
 pub mod project_summary {
 
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -389,6 +392,7 @@ impl PlacementSummary {
 pub mod placement_summary {
 
     /// A builder for [`PlacementSummary`](crate::model::PlacementSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -528,6 +532,7 @@ impl ProjectDescription {
 pub mod project_description {
 
     /// A builder for [`ProjectDescription`](crate::model::ProjectDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -706,6 +711,7 @@ impl PlacementDescription {
 pub mod placement_description {
 
     /// A builder for [`PlacementDescription`](crate::model::PlacementDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,

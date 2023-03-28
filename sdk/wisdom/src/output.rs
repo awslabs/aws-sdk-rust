@@ -17,6 +17,7 @@ impl UpdateKnowledgeBaseTemplateUriOutput {
 pub mod update_knowledge_base_template_uri_output {
 
     /// A builder for [`UpdateKnowledgeBaseTemplateUriOutput`](crate::output::UpdateKnowledgeBaseTemplateUriOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
@@ -103,6 +104,7 @@ impl std::fmt::Debug for StartContentUploadOutput {
 pub mod start_content_upload_output {
 
     /// A builder for [`StartContentUploadOutput`](crate::output::StartContentUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -224,6 +226,7 @@ impl SearchContentOutput {
 pub mod search_content_output {
 
     /// A builder for [`SearchContentOutput`](crate::output::SearchContentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_summaries:
@@ -284,6 +287,7 @@ pub struct RemoveKnowledgeBaseTemplateUriOutput {}
 pub mod remove_knowledge_base_template_uri_output {
 
     /// A builder for [`RemoveKnowledgeBaseTemplateUriOutput`](crate::output::RemoveKnowledgeBaseTemplateUriOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -328,6 +332,7 @@ impl ListKnowledgeBasesOutput {
 pub mod list_knowledge_bases_output {
 
     /// A builder for [`ListKnowledgeBasesOutput`](crate::output::ListKnowledgeBasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_summaries:
@@ -401,6 +406,7 @@ impl CreateKnowledgeBaseOutput {
 pub mod create_knowledge_base_output {
 
     /// A builder for [`CreateKnowledgeBaseOutput`](crate::output::CreateKnowledgeBaseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
@@ -442,6 +448,7 @@ pub struct DeleteKnowledgeBaseOutput {}
 pub mod delete_knowledge_base_output {
 
     /// A builder for [`DeleteKnowledgeBaseOutput`](crate::output::DeleteKnowledgeBaseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -476,6 +483,7 @@ impl GetKnowledgeBaseOutput {
 pub mod get_knowledge_base_output {
 
     /// A builder for [`GetKnowledgeBaseOutput`](crate::output::GetKnowledgeBaseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base: std::option::Option<crate::model::KnowledgeBaseData>,
@@ -527,6 +535,7 @@ impl GetContentSummaryOutput {
 pub mod get_content_summary_output {
 
     /// A builder for [`GetContentSummaryOutput`](crate::output::GetContentSummaryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_summary: std::option::Option<crate::model::ContentSummary>,
@@ -585,6 +594,7 @@ impl ListContentsOutput {
 pub mod list_contents_output {
 
     /// A builder for [`ListContentsOutput`](crate::output::ListContentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_summaries:
@@ -655,6 +665,7 @@ impl CreateContentOutput {
 pub mod create_content_output {
 
     /// A builder for [`CreateContentOutput`](crate::output::CreateContentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<crate::model::ContentData>,
@@ -696,6 +707,7 @@ pub struct DeleteContentOutput {}
 pub mod delete_content_output {
 
     /// A builder for [`DeleteContentOutput`](crate::output::DeleteContentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -730,6 +742,7 @@ impl UpdateContentOutput {
 pub mod update_content_output {
 
     /// A builder for [`UpdateContentOutput`](crate::output::UpdateContentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<crate::model::ContentData>,
@@ -781,6 +794,7 @@ impl GetContentOutput {
 pub mod get_content_output {
 
     /// A builder for [`GetContentOutput`](crate::output::GetContentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<crate::model::ContentData>,
@@ -839,6 +853,7 @@ impl SearchSessionsOutput {
 pub mod search_sessions_output {
 
     /// A builder for [`SearchSessionsOutput`](crate::output::SearchSessionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_summaries:
@@ -916,6 +931,7 @@ impl QueryAssistantOutput {
 pub mod query_assistant_output {
 
     /// A builder for [`QueryAssistantOutput`](crate::output::QueryAssistantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::ResultData>>,
@@ -995,6 +1011,7 @@ impl NotifyRecommendationsReceivedOutput {
 pub mod notify_recommendations_received_output {
 
     /// A builder for [`NotifyRecommendationsReceivedOutput`](crate::output::NotifyRecommendationsReceivedOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1083,6 +1100,7 @@ impl GetRecommendationsOutput {
 pub mod get_recommendations_output {
 
     /// A builder for [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendations:
@@ -1170,6 +1188,7 @@ impl ListAssistantsOutput {
 pub mod list_assistants_output {
 
     /// A builder for [`ListAssistantsOutput`](crate::output::ListAssistantsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_summaries:
@@ -1240,6 +1259,7 @@ impl CreateAssistantOutput {
 pub mod create_assistant_output {
 
     /// A builder for [`CreateAssistantOutput`](crate::output::CreateAssistantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant: std::option::Option<crate::model::AssistantData>,
@@ -1281,6 +1301,7 @@ pub struct DeleteAssistantOutput {}
 pub mod delete_assistant_output {
 
     /// A builder for [`DeleteAssistantOutput`](crate::output::DeleteAssistantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1315,6 +1336,7 @@ impl GetAssistantOutput {
 pub mod get_assistant_output {
 
     /// A builder for [`GetAssistantOutput`](crate::output::GetAssistantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant: std::option::Option<crate::model::AssistantData>,
@@ -1366,6 +1388,7 @@ impl CreateSessionOutput {
 pub mod create_session_output {
 
     /// A builder for [`CreateSessionOutput`](crate::output::CreateSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session: std::option::Option<crate::model::SessionData>,
@@ -1417,6 +1440,7 @@ impl GetSessionOutput {
 pub mod get_session_output {
 
     /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session: std::option::Option<crate::model::SessionData>,
@@ -1478,6 +1502,7 @@ impl ListAssistantAssociationsOutput {
 pub mod list_assistant_associations_output {
 
     /// A builder for [`ListAssistantAssociationsOutput`](crate::output::ListAssistantAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association_summaries:
@@ -1553,6 +1578,7 @@ impl CreateAssistantAssociationOutput {
 pub mod create_assistant_association_output {
 
     /// A builder for [`CreateAssistantAssociationOutput`](crate::output::CreateAssistantAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association:
@@ -1598,6 +1624,7 @@ pub struct DeleteAssistantAssociationOutput {}
 pub mod delete_assistant_association_output {
 
     /// A builder for [`DeleteAssistantAssociationOutput`](crate::output::DeleteAssistantAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1634,6 +1661,7 @@ impl GetAssistantAssociationOutput {
 pub mod get_assistant_association_output {
 
     /// A builder for [`GetAssistantAssociationOutput`](crate::output::GetAssistantAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association:
@@ -1679,6 +1707,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1703,6 +1732,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1741,6 +1771,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<

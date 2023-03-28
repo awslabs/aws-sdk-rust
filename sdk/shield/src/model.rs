@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -594,6 +595,7 @@ impl EmergencyContact {
 pub mod emergency_contact {
 
     /// A builder for [`EmergencyContact`](crate::model::EmergencyContact).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -683,6 +685,7 @@ impl ResponseAction {
 pub mod response_action {
 
     /// A builder for [`ResponseAction`](crate::model::ResponseAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block: std::option::Option<crate::model::BlockAction>,
@@ -739,6 +742,7 @@ pub struct CountAction {}
 pub mod count_action {
 
     /// A builder for [`CountAction`](crate::model::CountAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -765,6 +769,7 @@ pub struct BlockAction {}
 pub mod block_action {
 
     /// A builder for [`BlockAction`](crate::model::BlockAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -806,6 +811,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -905,6 +911,7 @@ impl Protection {
 pub mod protection {
 
     /// A builder for [`Protection`](crate::model::Protection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1044,6 +1051,7 @@ impl ApplicationLayerAutomaticResponseConfiguration {
 pub mod application_layer_automatic_response_configuration {
 
     /// A builder for [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status:
@@ -1220,6 +1228,7 @@ impl InclusionProtectionFilters {
 pub mod inclusion_protection_filters {
 
     /// A builder for [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1365,6 +1374,7 @@ impl ProtectionGroup {
 pub mod protection_group {
 
     /// A builder for [`ProtectionGroup`](crate::model::ProtectionGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
@@ -1528,6 +1538,7 @@ impl InclusionProtectionGroupFilters {
 pub mod inclusion_protection_group_filters {
 
     /// A builder for [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1679,6 +1690,7 @@ impl AttackSummary {
 pub mod attack_summary {
 
     /// A builder for [`AttackSummary`](crate::model::AttackSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
@@ -1831,6 +1843,7 @@ impl AttackVectorDescription {
 pub mod attack_vector_description {
 
     /// A builder for [`AttackVectorDescription`](crate::model::AttackVectorDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vector_type: std::option::Option<std::string::String>,
@@ -1926,6 +1939,7 @@ impl TimeRange {
 pub mod time_range {
 
     /// A builder for [`TimeRange`](crate::model::TimeRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_inclusive: std::option::Option<aws_smithy_types::DateTime>,
@@ -2141,6 +2155,7 @@ impl Subscription {
 pub mod subscription {
 
     /// A builder for [`Subscription`](crate::model::Subscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2319,6 +2334,7 @@ impl SubscriptionLimits {
 pub mod subscription_limits {
 
     /// A builder for [`SubscriptionLimits`](crate::model::SubscriptionLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_limits: std::option::Option<crate::model::ProtectionLimits>,
@@ -2398,6 +2414,7 @@ impl ProtectionGroupLimits {
 pub mod protection_group_limits {
 
     /// A builder for [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_protection_groups: std::option::Option<i64>,
@@ -2468,6 +2485,7 @@ impl ProtectionGroupPatternTypeLimits {
 pub mod protection_group_pattern_type_limits {
 
     /// A builder for [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arbitrary_pattern_limits:
@@ -2523,6 +2541,7 @@ impl ProtectionGroupArbitraryPatternLimits {
 pub mod protection_group_arbitrary_pattern_limits {
 
     /// A builder for [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_members: std::option::Option<i64>,
@@ -2571,6 +2590,7 @@ impl ProtectionLimits {
 pub mod protection_limits {
 
     /// A builder for [`ProtectionLimits`](crate::model::ProtectionLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protected_resource_type_limits:
@@ -2636,6 +2656,7 @@ impl Limit {
 pub mod limit {
 
     /// A builder for [`Limit`](crate::model::Limit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2800,6 +2821,7 @@ impl AttackStatisticsDataItem {
 pub mod attack_statistics_data_item {
 
     /// A builder for [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_volume: std::option::Option<crate::model::AttackVolume>,
@@ -2879,6 +2901,7 @@ impl AttackVolume {
 pub mod attack_volume {
 
     /// A builder for [`AttackVolume`](crate::model::AttackVolume).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bits_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
@@ -2960,6 +2983,7 @@ impl AttackVolumeStatistics {
 pub mod attack_volume_statistics {
 
     /// A builder for [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<f64>,
@@ -3059,6 +3083,7 @@ impl AttackDetail {
 pub mod attack_detail {
 
     /// A builder for [`AttackDetail`](crate::model::AttackDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
@@ -3238,6 +3263,7 @@ impl Mitigation {
 pub mod mitigation {
 
     /// A builder for [`Mitigation`](crate::model::Mitigation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mitigation_name: std::option::Option<std::string::String>,
@@ -3321,6 +3347,7 @@ impl AttackProperty {
 pub mod attack_property {
 
     /// A builder for [`AttackProperty`](crate::model::AttackProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_layer: std::option::Option<crate::model::AttackLayer>,
@@ -3545,6 +3572,7 @@ impl Contributor {
 pub mod contributor {
 
     /// A builder for [`Contributor`](crate::model::Contributor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3861,6 +3889,7 @@ impl SummarizedCounter {
 pub mod summarized_counter {
 
     /// A builder for [`SummarizedCounter`](crate::model::SummarizedCounter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3990,6 +4019,7 @@ impl SubResourceSummary {
 pub mod sub_resource_summary {
 
     /// A builder for [`SubResourceSummary`](crate::model::SubResourceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SubResourceType>,
@@ -4103,6 +4133,7 @@ impl SummarizedAttackVector {
 pub mod summarized_attack_vector {
 
     /// A builder for [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vector_type: std::option::Option<std::string::String>,

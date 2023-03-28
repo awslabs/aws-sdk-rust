@@ -148,6 +148,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -215,6 +216,7 @@ impl MediaPipelineSummary {
 pub mod media_pipeline_summary {
 
     /// A builder for [`MediaPipelineSummary`](crate::model::MediaPipelineSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -288,6 +290,7 @@ impl MediaCapturePipelineSummary {
 pub mod media_capture_pipeline_summary {
 
     /// A builder for [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -375,6 +378,7 @@ impl MediaPipeline {
 pub mod media_pipeline {
 
     /// A builder for [`MediaPipeline`](crate::model::MediaPipeline).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
@@ -506,6 +510,7 @@ impl MediaConcatenationPipeline {
 pub mod media_concatenation_pipeline {
 
     /// A builder for [`MediaConcatenationPipeline`](crate::model::MediaConcatenationPipeline).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -781,6 +786,7 @@ impl ConcatenationSink {
 pub mod concatenation_sink {
 
     /// A builder for [`ConcatenationSink`](crate::model::ConcatenationSink).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ConcatenationSinkType>,
@@ -858,6 +864,7 @@ impl std::fmt::Debug for S3BucketSinkConfiguration {
 pub mod s3_bucket_sink_configuration {
 
     /// A builder for [`S3BucketSinkConfiguration`](crate::model::S3BucketSinkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -1010,6 +1017,7 @@ impl ConcatenationSource {
 pub mod concatenation_source {
 
     /// A builder for [`ConcatenationSource`](crate::model::ConcatenationSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ConcatenationSourceType>,
@@ -1102,6 +1110,7 @@ impl std::fmt::Debug for MediaCapturePipelineSourceConfiguration {
 pub mod media_capture_pipeline_source_configuration {
 
     /// A builder for [`MediaCapturePipelineSourceConfiguration`](crate::model::MediaCapturePipelineSourceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) media_pipeline_arn: std::option::Option<std::string::String>,
@@ -1186,6 +1195,7 @@ impl ChimeSdkMeetingConcatenationConfiguration {
 pub mod chime_sdk_meeting_concatenation_configuration {
 
     /// A builder for [`ChimeSdkMeetingConcatenationConfiguration`](crate::model::ChimeSdkMeetingConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifacts_configuration:
@@ -1293,6 +1303,7 @@ impl ArtifactsConcatenationConfiguration {
 pub mod artifacts_concatenation_configuration {
 
     /// A builder for [`ArtifactsConcatenationConfiguration`](crate::model::ArtifactsConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio: std::option::Option<crate::model::AudioConcatenationConfiguration>,
@@ -1452,6 +1463,7 @@ impl CompositedVideoConcatenationConfiguration {
 pub mod composited_video_concatenation_configuration {
 
     /// A builder for [`CompositedVideoConcatenationConfiguration`](crate::model::CompositedVideoConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsConcatenationState>,
@@ -1593,6 +1605,7 @@ impl MeetingEventsConcatenationConfiguration {
 pub mod meeting_events_concatenation_configuration {
 
     /// A builder for [`MeetingEventsConcatenationConfiguration`](crate::model::MeetingEventsConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsConcatenationState>,
@@ -1642,6 +1655,7 @@ impl TranscriptionMessagesConcatenationConfiguration {
 pub mod transcription_messages_concatenation_configuration {
 
     /// A builder for [`TranscriptionMessagesConcatenationConfiguration`](crate::model::TranscriptionMessagesConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsConcatenationState>,
@@ -1691,6 +1705,7 @@ impl DataChannelConcatenationConfiguration {
 pub mod data_channel_concatenation_configuration {
 
     /// A builder for [`DataChannelConcatenationConfiguration`](crate::model::DataChannelConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsConcatenationState>,
@@ -1740,6 +1755,7 @@ impl ContentConcatenationConfiguration {
 pub mod content_concatenation_configuration {
 
     /// A builder for [`ContentConcatenationConfiguration`](crate::model::ContentConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsConcatenationState>,
@@ -1789,6 +1805,7 @@ impl VideoConcatenationConfiguration {
 pub mod video_concatenation_configuration {
 
     /// A builder for [`VideoConcatenationConfiguration`](crate::model::VideoConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsConcatenationState>,
@@ -1838,6 +1855,7 @@ impl AudioConcatenationConfiguration {
 pub mod audio_concatenation_configuration {
 
     /// A builder for [`AudioConcatenationConfiguration`](crate::model::AudioConcatenationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::AudioArtifactsConcatenationState>,
@@ -2105,6 +2123,7 @@ impl MediaLiveConnectorPipeline {
 pub mod media_live_connector_pipeline {
 
     /// A builder for [`MediaLiveConnectorPipeline`](crate::model::MediaLiveConnectorPipeline).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sources:
@@ -2271,6 +2290,7 @@ impl LiveConnectorSinkConfiguration {
 pub mod live_connector_sink_configuration {
 
     /// A builder for [`LiveConnectorSinkConfiguration`](crate::model::LiveConnectorSinkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sink_type: std::option::Option<crate::model::LiveConnectorSinkType>,
@@ -2364,6 +2384,7 @@ impl std::fmt::Debug for LiveConnectorRtmpConfiguration {
 pub mod live_connector_rtmp_configuration {
 
     /// A builder for [`LiveConnectorRtmpConfiguration`](crate::model::LiveConnectorRtmpConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -2640,6 +2661,7 @@ impl LiveConnectorSourceConfiguration {
 pub mod live_connector_source_configuration {
 
     /// A builder for [`LiveConnectorSourceConfiguration`](crate::model::LiveConnectorSourceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::LiveConnectorSourceType>,
@@ -2744,6 +2766,7 @@ impl std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfiguration {
 pub mod chime_sdk_meeting_live_connector_configuration {
 
     /// A builder for [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::model::ChimeSdkMeetingLiveConnectorConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2853,6 +2876,7 @@ impl SourceConfiguration {
 pub mod source_configuration {
 
     /// A builder for [`SourceConfiguration`](crate::model::SourceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_video_streams: std::option::Option<crate::model::SelectedVideoStreams>,
@@ -2911,6 +2935,7 @@ impl SelectedVideoStreams {
 pub mod selected_video_streams {
 
     /// A builder for [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3005,6 +3030,7 @@ impl CompositedVideoArtifactsConfiguration {
 pub mod composited_video_artifacts_configuration {
 
     /// A builder for [`CompositedVideoArtifactsConfiguration`](crate::model::CompositedVideoArtifactsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layout: std::option::Option<crate::model::LayoutOption>,
@@ -3101,6 +3127,7 @@ impl GridViewConfiguration {
 pub mod grid_view_configuration {
 
     /// A builder for [`GridViewConfiguration`](crate::model::GridViewConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_share_layout:
@@ -3175,6 +3202,7 @@ impl PresenterOnlyConfiguration {
 pub mod presenter_only_configuration {
 
     /// A builder for [`PresenterOnlyConfiguration`](crate::model::PresenterOnlyConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) presenter_position: std::option::Option<crate::model::PresenterPosition>,
@@ -3864,6 +3892,7 @@ impl std::fmt::Debug for MediaCapturePipeline {
 pub mod media_capture_pipeline {
 
     /// A builder for [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
@@ -4076,6 +4105,7 @@ impl ChimeSdkMeetingConfiguration {
 pub mod chime_sdk_meeting_configuration {
 
     /// A builder for [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
@@ -4169,6 +4199,7 @@ impl ArtifactsConfiguration {
 pub mod artifacts_configuration {
 
     /// A builder for [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio: std::option::Option<crate::model::AudioArtifactsConfiguration>,
@@ -4276,6 +4307,7 @@ impl ContentArtifactsConfiguration {
 pub mod content_artifacts_configuration {
 
     /// A builder for [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsState>,
@@ -4524,6 +4556,7 @@ impl VideoArtifactsConfiguration {
 pub mod video_artifacts_configuration {
 
     /// A builder for [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ArtifactsState>,
@@ -4675,6 +4708,7 @@ impl AudioArtifactsConfiguration {
 pub mod audio_artifacts_configuration {
 
     /// A builder for [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mux_type: std::option::Option<crate::model::AudioMuxType>,

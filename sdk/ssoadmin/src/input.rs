@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod attach_customer_managed_policy_reference_to_permission_set_input {
 
     /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::input::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -207,6 +208,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
 pub mod attach_managed_policy_to_permission_set_input {
 
     /// A builder for [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -401,6 +403,7 @@ impl AttachManagedPolicyToPermissionSetInput {
 pub mod create_account_assignment_input {
 
     /// A builder for [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -636,6 +639,7 @@ impl CreateAccountAssignmentInput {
 pub mod create_instance_access_control_attribute_configuration_input {
 
     /// A builder for [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -824,6 +828,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
 pub mod create_permission_set_input {
 
     /// A builder for [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1060,6 +1065,7 @@ impl CreatePermissionSetInput {
 pub mod delete_account_assignment_input {
 
     /// A builder for [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -1295,6 +1301,7 @@ impl DeleteAccountAssignmentInput {
 pub mod delete_inline_policy_from_permission_set_input {
 
     /// A builder for [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -1474,6 +1481,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
 pub mod delete_instance_access_control_attribute_configuration_input {
 
     /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -1642,6 +1650,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
 pub mod delete_permissions_boundary_from_permission_set_input {
 
     /// A builder for [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::input::DeletePermissionsBoundaryFromPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -1824,6 +1833,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
 pub mod delete_permission_set_input {
 
     /// A builder for [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -2003,6 +2013,7 @@ impl DeletePermissionSetInput {
 pub mod describe_account_assignment_creation_status_input {
 
     /// A builder for [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -2185,6 +2196,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
 pub mod describe_account_assignment_deletion_status_input {
 
     /// A builder for [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -2367,6 +2379,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
 pub mod describe_instance_access_control_attribute_configuration_input {
 
     /// A builder for [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -2534,6 +2547,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
 pub mod describe_permission_set_input {
 
     /// A builder for [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -2715,6 +2729,7 @@ impl DescribePermissionSetInput {
 pub mod describe_permission_set_provisioning_status_input {
 
     /// A builder for [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -2897,6 +2912,7 @@ impl DescribePermissionSetProvisioningStatusInput {
 pub mod detach_customer_managed_policy_reference_from_permission_set_input {
 
     /// A builder for [`DetachCustomerManagedPolicyReferenceFromPermissionSetInput`](crate::input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -3099,6 +3115,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
 pub mod detach_managed_policy_from_permission_set_input {
 
     /// A builder for [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -3293,6 +3310,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
 pub mod get_inline_policy_for_permission_set_input {
 
     /// A builder for [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -3472,6 +3490,7 @@ impl GetInlinePolicyForPermissionSetInput {
 pub mod get_permissions_boundary_for_permission_set_input {
 
     /// A builder for [`GetPermissionsBoundaryForPermissionSetInput`](crate::input::GetPermissionsBoundaryForPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -3651,6 +3670,7 @@ impl GetPermissionsBoundaryForPermissionSetInput {
 pub mod list_account_assignment_creation_status_input {
 
     /// A builder for [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -3854,6 +3874,7 @@ impl ListAccountAssignmentCreationStatusInput {
 pub mod list_account_assignment_deletion_status_input {
 
     /// A builder for [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -4057,6 +4078,7 @@ impl ListAccountAssignmentDeletionStatusInput {
 pub mod list_account_assignments_input {
 
     /// A builder for [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -4274,6 +4296,7 @@ impl ListAccountAssignmentsInput {
 pub mod list_accounts_for_provisioned_permission_set_input {
 
     /// A builder for [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -4492,6 +4515,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
 pub mod list_customer_managed_policy_references_in_permission_set_input {
 
     /// A builder for [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::input::ListCustomerManagedPolicyReferencesInPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -4699,6 +4723,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
 pub mod list_instances_input {
 
     /// A builder for [`ListInstancesInput`](crate::input::ListInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4873,6 +4898,7 @@ impl ListInstancesInput {
 pub mod list_managed_policies_in_permission_set_input {
 
     /// A builder for [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -5076,6 +5102,7 @@ impl ListManagedPoliciesInPermissionSetInput {
 pub mod list_permission_set_provisioning_status_input {
 
     /// A builder for [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -5279,6 +5306,7 @@ impl ListPermissionSetProvisioningStatusInput {
 pub mod list_permission_sets_input {
 
     /// A builder for [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -5467,6 +5495,7 @@ impl ListPermissionSetsInput {
 pub mod list_permission_sets_provisioned_to_account_input {
 
     /// A builder for [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -5682,6 +5711,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -5872,6 +5902,7 @@ impl ListTagsForResourceInput {
 pub mod provision_permission_set_input {
 
     /// A builder for [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -6080,6 +6111,7 @@ impl ProvisionPermissionSetInput {
 pub mod put_inline_policy_to_permission_set_input {
 
     /// A builder for [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -6274,6 +6306,7 @@ impl PutInlinePolicyToPermissionSetInput {
 pub mod put_permissions_boundary_to_permission_set_input {
 
     /// A builder for [`PutPermissionsBoundaryToPermissionSetInput`](crate::input::PutPermissionsBoundaryToPermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -6468,6 +6501,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -6663,6 +6697,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -6858,6 +6893,7 @@ impl UntagResourceInput {
 pub mod update_instance_access_control_attribute_configuration_input {
 
     /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -7046,6 +7082,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
 pub mod update_permission_set_input {
 
     /// A builder for [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,

@@ -25,6 +25,7 @@ impl RealtimeContactAnalysisSegment {
 pub mod realtime_contact_analysis_segment {
 
     /// A builder for [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
@@ -104,6 +105,7 @@ impl Categories {
 pub mod categories {
 
     /// A builder for [`Categories`](crate::model::Categories).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -190,6 +192,7 @@ impl CategoryDetails {
 pub mod category_details {
 
     /// A builder for [`CategoryDetails`](crate::model::CategoryDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) points_of_interest:
@@ -255,6 +258,7 @@ impl PointOfInterest {
 pub mod point_of_interest {
 
     /// A builder for [`PointOfInterest`](crate::model::PointOfInterest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i32>,
@@ -364,6 +368,7 @@ impl Transcript {
 pub mod transcript {
 
     /// A builder for [`Transcript`](crate::model::Transcript).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -514,6 +519,7 @@ impl IssueDetected {
 pub mod issue_detected {
 
     /// A builder for [`IssueDetected`](crate::model::IssueDetected).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) character_offsets: std::option::Option<crate::model::CharacterOffsets>,
@@ -572,6 +578,7 @@ impl CharacterOffsets {
 pub mod character_offsets {
 
     /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_char: std::option::Option<i32>,

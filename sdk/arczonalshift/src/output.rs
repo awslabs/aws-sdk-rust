@@ -75,6 +75,7 @@ impl StartZonalShiftOutput {
 pub mod start_zonal_shift_output {
 
     /// A builder for [`StartZonalShiftOutput`](crate::output::StartZonalShiftOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zonal_shift_id: std::option::Option<std::string::String>,
@@ -233,6 +234,7 @@ impl ListZonalShiftsOutput {
 pub mod list_zonal_shifts_output {
 
     /// A builder for [`ListZonalShiftsOutput`](crate::output::ListZonalShiftsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ZonalShiftSummary>>,
@@ -360,6 +362,7 @@ impl UpdateZonalShiftOutput {
 pub mod update_zonal_shift_output {
 
     /// A builder for [`UpdateZonalShiftOutput`](crate::output::UpdateZonalShiftOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zonal_shift_id: std::option::Option<std::string::String>,
@@ -569,6 +572,7 @@ impl CancelZonalShiftOutput {
 pub mod cancel_zonal_shift_output {
 
     /// A builder for [`CancelZonalShiftOutput`](crate::output::CancelZonalShiftOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zonal_shift_id: std::option::Option<std::string::String>,
@@ -727,6 +731,7 @@ impl ListManagedResourcesOutput {
 pub mod list_managed_resources_output {
 
     /// A builder for [`ListManagedResourcesOutput`](crate::output::ListManagedResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
@@ -819,6 +824,7 @@ impl GetManagedResourceOutput {
 pub mod get_managed_resource_output {
 
     /// A builder for [`GetManagedResourceOutput`](crate::output::GetManagedResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

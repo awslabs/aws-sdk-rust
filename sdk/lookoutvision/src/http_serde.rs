@@ -7,16 +7,15 @@ pub fn add_headers_create_dataset(
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -31,16 +30,15 @@ pub fn add_headers_create_model(
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -55,16 +53,15 @@ pub fn add_headers_create_project(
         let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -79,16 +76,15 @@ pub fn add_headers_delete_dataset(
         let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -103,16 +99,15 @@ pub fn add_headers_delete_model(
         let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -127,16 +122,15 @@ pub fn add_headers_delete_project(
         let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -151,16 +145,15 @@ pub fn add_headers_detect_anomalies(
         let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_type",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_type",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Type", header_value);
         }
     }
@@ -175,16 +168,15 @@ pub fn add_headers_start_model(
         let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -199,16 +191,15 @@ pub fn add_headers_start_model_packaging_job(
         let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -223,16 +214,15 @@ pub fn add_headers_stop_model(
         let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }
@@ -247,16 +237,15 @@ pub fn add_headers_update_dataset_entries(
         let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "client_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "client_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
     }

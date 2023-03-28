@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_create_table_rows_input {
 
     /// A builder for [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -266,6 +267,7 @@ impl BatchCreateTableRowsInput {
 pub mod batch_delete_table_rows_input {
 
     /// A builder for [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -527,6 +529,7 @@ impl BatchDeleteTableRowsInput {
 pub mod batch_update_table_rows_input {
 
     /// A builder for [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -788,6 +791,7 @@ impl BatchUpdateTableRowsInput {
 pub mod batch_upsert_table_rows_input {
 
     /// A builder for [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -1049,6 +1053,7 @@ impl BatchUpsertTableRowsInput {
 pub mod describe_table_data_import_job_input {
 
     /// A builder for [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -1288,6 +1293,7 @@ impl DescribeTableDataImportJobInput {
 pub mod get_screen_data_input {
 
     /// A builder for [`GetScreenDataInput`](crate::input::GetScreenDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -1538,6 +1544,7 @@ impl GetScreenDataInput {
 pub mod invoke_screen_automation_input {
 
     /// A builder for [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -1885,6 +1892,7 @@ impl InvokeScreenAutomationInput {
 pub mod list_table_columns_input {
 
     /// A builder for [`ListTableColumnsInput`](crate::input::ListTableColumnsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -2117,6 +2125,7 @@ impl ListTableColumnsInput {
 pub mod list_table_rows_input {
 
     /// A builder for [`ListTableRowsInput`](crate::input::ListTableRowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -2381,6 +2390,7 @@ impl ListTableRowsInput {
 pub mod list_tables_input {
 
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -2597,6 +2607,7 @@ impl ListTablesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2762,6 +2773,7 @@ impl ListTagsForResourceInput {
 pub mod query_table_rows_input {
 
     /// A builder for [`QueryTableRowsInput`](crate::input::QueryTableRowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -3020,6 +3032,7 @@ impl QueryTableRowsInput {
 pub mod start_table_data_import_job_input {
 
     /// A builder for [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
@@ -3306,6 +3319,7 @@ impl StartTableDataImportJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3512,6 +3526,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

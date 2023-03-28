@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_token_input {
 
     /// A builder for [`CreateTokenInput`](crate::input::CreateTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -268,6 +269,7 @@ impl CreateTokenInput {
 pub mod register_client_input {
 
     /// A builder for [`RegisterClientInput`](crate::input::RegisterClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_name: std::option::Option<std::string::String>,
@@ -459,6 +461,7 @@ impl RegisterClientInput {
 pub mod start_device_authorization_input {
 
     /// A builder for [`StartDeviceAuthorizationInput`](crate::input::StartDeviceAuthorizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,

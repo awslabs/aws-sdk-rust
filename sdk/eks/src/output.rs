@@ -17,6 +17,7 @@ impl UpdateNodegroupVersionOutput {
 pub mod update_nodegroup_version_output {
 
     /// A builder for [`UpdateNodegroupVersionOutput`](crate::output::UpdateNodegroupVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -65,6 +66,7 @@ impl UpdateNodegroupConfigOutput {
 pub mod update_nodegroup_config_output {
 
     /// A builder for [`UpdateNodegroupConfigOutput`](crate::output::UpdateNodegroupConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -113,6 +115,7 @@ impl UpdateClusterVersionOutput {
 pub mod update_cluster_version_output {
 
     /// A builder for [`UpdateClusterVersionOutput`](crate::output::UpdateClusterVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -161,6 +164,7 @@ impl UpdateClusterConfigOutput {
 pub mod update_cluster_config_output {
 
     /// A builder for [`UpdateClusterConfigOutput`](crate::output::UpdateClusterConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -209,6 +213,7 @@ impl UpdateAddonOutput {
 pub mod update_addon_output {
 
     /// A builder for [`UpdateAddonOutput`](crate::output::UpdateAddonOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -247,6 +252,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -271,6 +277,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -305,6 +312,7 @@ impl RegisterClusterOutput {
 pub mod register_cluster_output {
 
     /// A builder for [`RegisterClusterOutput`](crate::output::RegisterClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -360,6 +368,7 @@ impl ListUpdatesOutput {
 pub mod list_updates_output {
 
     /// A builder for [`ListUpdatesOutput`](crate::output::ListUpdatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -433,6 +442,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -503,6 +513,7 @@ impl ListNodegroupsOutput {
 pub mod list_nodegroups_output {
 
     /// A builder for [`ListNodegroupsOutput`](crate::output::ListNodegroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodegroups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -582,6 +593,7 @@ impl ListIdentityProviderConfigsOutput {
 pub mod list_identity_provider_configs_output {
 
     /// A builder for [`ListIdentityProviderConfigsOutput`](crate::output::ListIdentityProviderConfigsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_configs:
@@ -662,6 +674,7 @@ impl ListFargateProfilesOutput {
 pub mod list_fargate_profiles_output {
 
     /// A builder for [`ListFargateProfilesOutput`](crate::output::ListFargateProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fargate_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -738,6 +751,7 @@ impl ListClustersOutput {
 pub mod list_clusters_output {
 
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clusters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -818,6 +832,7 @@ impl ListAddonsOutput {
 pub mod list_addons_output {
 
     /// A builder for [`ListAddonsOutput`](crate::output::ListAddonsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addons: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -891,6 +906,7 @@ impl DisassociateIdentityProviderConfigOutput {
 pub mod disassociate_identity_provider_config_output {
 
     /// A builder for [`DisassociateIdentityProviderConfigOutput`](crate::output::DisassociateIdentityProviderConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -939,6 +955,7 @@ impl DescribeUpdateOutput {
 pub mod describe_update_output {
 
     /// A builder for [`DescribeUpdateOutput`](crate::output::DescribeUpdateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -987,6 +1004,7 @@ impl DescribeNodegroupOutput {
 pub mod describe_nodegroup_output {
 
     /// A builder for [`DescribeNodegroupOutput`](crate::output::DescribeNodegroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodegroup: std::option::Option<crate::model::Nodegroup>,
@@ -1040,6 +1058,7 @@ impl DescribeIdentityProviderConfigOutput {
 pub mod describe_identity_provider_config_output {
 
     /// A builder for [`DescribeIdentityProviderConfigOutput`](crate::output::DescribeIdentityProviderConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_config:
@@ -1095,6 +1114,7 @@ impl DescribeFargateProfileOutput {
 pub mod describe_fargate_profile_output {
 
     /// A builder for [`DescribeFargateProfileOutput`](crate::output::DescribeFargateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fargate_profile: std::option::Option<crate::model::FargateProfile>,
@@ -1146,6 +1166,7 @@ impl DescribeClusterOutput {
 pub mod describe_cluster_output {
 
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -1205,6 +1226,7 @@ impl DescribeAddonVersionsOutput {
 pub mod describe_addon_versions_output {
 
     /// A builder for [`DescribeAddonVersionsOutput`](crate::output::DescribeAddonVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addons: std::option::Option<std::vec::Vec<crate::model::AddonInfo>>,
@@ -1292,6 +1314,7 @@ impl DescribeAddonConfigurationOutput {
 pub mod describe_addon_configuration_output {
 
     /// A builder for [`DescribeAddonConfigurationOutput`](crate::output::DescribeAddonConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon_name: std::option::Option<std::string::String>,
@@ -1370,6 +1393,7 @@ impl DescribeAddonOutput {
 pub mod describe_addon_output {
 
     /// A builder for [`DescribeAddonOutput`](crate::output::DescribeAddonOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
@@ -1416,6 +1440,7 @@ impl DeregisterClusterOutput {
 pub mod deregister_cluster_output {
 
     /// A builder for [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -1464,6 +1489,7 @@ impl DeleteNodegroupOutput {
 pub mod delete_nodegroup_output {
 
     /// A builder for [`DeleteNodegroupOutput`](crate::output::DeleteNodegroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodegroup: std::option::Option<crate::model::Nodegroup>,
@@ -1515,6 +1541,7 @@ impl DeleteFargateProfileOutput {
 pub mod delete_fargate_profile_output {
 
     /// A builder for [`DeleteFargateProfileOutput`](crate::output::DeleteFargateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fargate_profile: std::option::Option<crate::model::FargateProfile>,
@@ -1566,6 +1593,7 @@ impl DeleteClusterOutput {
 pub mod delete_cluster_output {
 
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -1614,6 +1642,7 @@ impl DeleteAddonOutput {
 pub mod delete_addon_output {
 
     /// A builder for [`DeleteAddonOutput`](crate::output::DeleteAddonOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
@@ -1660,6 +1689,7 @@ impl CreateNodegroupOutput {
 pub mod create_nodegroup_output {
 
     /// A builder for [`CreateNodegroupOutput`](crate::output::CreateNodegroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodegroup: std::option::Option<crate::model::Nodegroup>,
@@ -1711,6 +1741,7 @@ impl CreateFargateProfileOutput {
 pub mod create_fargate_profile_output {
 
     /// A builder for [`CreateFargateProfileOutput`](crate::output::CreateFargateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fargate_profile: std::option::Option<crate::model::FargateProfile>,
@@ -1762,6 +1793,7 @@ impl CreateClusterOutput {
 pub mod create_cluster_output {
 
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
@@ -1810,6 +1842,7 @@ impl CreateAddonOutput {
 pub mod create_addon_output {
 
     /// A builder for [`CreateAddonOutput`](crate::output::CreateAddonOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon: std::option::Option<crate::model::Addon>,
@@ -1867,6 +1900,7 @@ impl AssociateIdentityProviderConfigOutput {
 pub mod associate_identity_provider_config_output {
 
     /// A builder for [`AssociateIdentityProviderConfigOutput`](crate::output::AssociateIdentityProviderConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,
@@ -1944,6 +1978,7 @@ impl AssociateEncryptionConfigOutput {
 pub mod associate_encryption_config_output {
 
     /// A builder for [`AssociateEncryptionConfigOutput`](crate::output::AssociateEncryptionConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update: std::option::Option<crate::model::Update>,

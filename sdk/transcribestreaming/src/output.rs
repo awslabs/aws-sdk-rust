@@ -186,6 +186,7 @@ impl StartStreamTranscriptionOutput {
 pub mod start_stream_transcription_output {
 
     /// A builder for [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -708,6 +709,7 @@ impl StartMedicalStreamTranscriptionOutput {
 pub mod start_medical_stream_transcription_output {
 
     /// A builder for [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1079,6 +1081,7 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
 pub mod start_call_analytics_stream_transcription_output {
 
     /// A builder for [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,

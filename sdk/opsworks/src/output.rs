@@ -7,6 +7,7 @@ pub struct UpdateVolumeOutput {}
 pub mod update_volume_output {
 
     /// A builder for [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateUserProfileOutput {}
 pub mod update_user_profile_output {
 
     /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateStackOutput {}
 pub mod update_stack_output {
 
     /// A builder for [`UpdateStackOutput`](crate::output::UpdateStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UpdateRdsDbInstanceOutput {}
 pub mod update_rds_db_instance_output {
 
     /// A builder for [`UpdateRdsDbInstanceOutput`](crate::output::UpdateRdsDbInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct UpdateMyUserProfileOutput {}
 pub mod update_my_user_profile_output {
 
     /// A builder for [`UpdateMyUserProfileOutput`](crate::output::UpdateMyUserProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -127,6 +132,7 @@ pub struct UpdateLayerOutput {}
 pub mod update_layer_output {
 
     /// A builder for [`UpdateLayerOutput`](crate::output::UpdateLayerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -151,6 +157,7 @@ pub struct UpdateInstanceOutput {}
 pub mod update_instance_output {
 
     /// A builder for [`UpdateInstanceOutput`](crate::output::UpdateInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -175,6 +182,7 @@ pub struct UpdateElasticIpOutput {}
 pub mod update_elastic_ip_output {
 
     /// A builder for [`UpdateElasticIpOutput`](crate::output::UpdateElasticIpOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -199,6 +207,7 @@ pub struct UpdateAppOutput {}
 pub mod update_app_output {
 
     /// A builder for [`UpdateAppOutput`](crate::output::UpdateAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -223,6 +232,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -247,6 +257,7 @@ pub struct UnassignVolumeOutput {}
 pub mod unassign_volume_output {
 
     /// A builder for [`UnassignVolumeOutput`](crate::output::UnassignVolumeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -271,6 +282,7 @@ pub struct UnassignInstanceOutput {}
 pub mod unassign_instance_output {
 
     /// A builder for [`UnassignInstanceOutput`](crate::output::UnassignInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -295,6 +307,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -319,6 +332,7 @@ pub struct StopStackOutput {}
 pub mod stop_stack_output {
 
     /// A builder for [`StopStackOutput`](crate::output::StopStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -343,6 +357,7 @@ pub struct StopInstanceOutput {}
 pub mod stop_instance_output {
 
     /// A builder for [`StopInstanceOutput`](crate::output::StopInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -367,6 +382,7 @@ pub struct StartStackOutput {}
 pub mod start_stack_output {
 
     /// A builder for [`StartStackOutput`](crate::output::StartStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -391,6 +407,7 @@ pub struct StartInstanceOutput {}
 pub mod start_instance_output {
 
     /// A builder for [`StartInstanceOutput`](crate::output::StartInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -415,6 +432,7 @@ pub struct SetTimeBasedAutoScalingOutput {}
 pub mod set_time_based_auto_scaling_output {
 
     /// A builder for [`SetTimeBasedAutoScalingOutput`](crate::output::SetTimeBasedAutoScalingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -439,6 +457,7 @@ pub struct SetPermissionOutput {}
 pub mod set_permission_output {
 
     /// A builder for [`SetPermissionOutput`](crate::output::SetPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -463,6 +482,7 @@ pub struct SetLoadBasedAutoScalingOutput {}
 pub mod set_load_based_auto_scaling_output {
 
     /// A builder for [`SetLoadBasedAutoScalingOutput`](crate::output::SetLoadBasedAutoScalingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -497,6 +517,7 @@ impl RegisterVolumeOutput {
 pub mod register_volume_output {
 
     /// A builder for [`RegisterVolumeOutput`](crate::output::RegisterVolumeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
@@ -535,6 +556,7 @@ pub struct RegisterRdsDbInstanceOutput {}
 pub mod register_rds_db_instance_output {
 
     /// A builder for [`RegisterRdsDbInstanceOutput`](crate::output::RegisterRdsDbInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -569,6 +591,7 @@ impl RegisterInstanceOutput {
 pub mod register_instance_output {
 
     /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -617,6 +640,7 @@ impl RegisterElasticIpOutput {
 pub mod register_elastic_ip_output {
 
     /// A builder for [`RegisterElasticIpOutput`](crate::output::RegisterElasticIpOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -665,6 +689,7 @@ impl RegisterEcsClusterOutput {
 pub mod register_ecs_cluster_output {
 
     /// A builder for [`RegisterEcsClusterOutput`](crate::output::RegisterEcsClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_cluster_arn: std::option::Option<std::string::String>,
@@ -706,6 +731,7 @@ pub struct RebootInstanceOutput {}
 pub mod reboot_instance_output {
 
     /// A builder for [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -751,6 +777,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
 
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -828,6 +855,7 @@ impl GrantAccessOutput {
 pub mod grant_access_output {
 
     /// A builder for [`GrantAccessOutput`](crate::output::GrantAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) temporary_credential: std::option::Option<crate::model::TemporaryCredential>,
@@ -886,6 +914,7 @@ impl GetHostnameSuggestionOutput {
 pub mod get_hostname_suggestion_output {
 
     /// A builder for [`GetHostnameSuggestionOutput`](crate::output::GetHostnameSuggestionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
@@ -936,6 +965,7 @@ pub struct DisassociateElasticIpOutput {}
 pub mod disassociate_elastic_ip_output {
 
     /// A builder for [`DisassociateElasticIpOutput`](crate::output::DisassociateElasticIpOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -960,6 +990,7 @@ pub struct DetachElasticLoadBalancerOutput {}
 pub mod detach_elastic_load_balancer_output {
 
     /// A builder for [`DetachElasticLoadBalancerOutput`](crate::output::DetachElasticLoadBalancerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -994,6 +1025,7 @@ impl DescribeVolumesOutput {
 pub mod describe_volumes_output {
 
     /// A builder for [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
@@ -1051,6 +1083,7 @@ impl DescribeUserProfilesOutput {
 pub mod describe_user_profiles_output {
 
     /// A builder for [`DescribeUserProfilesOutput`](crate::output::DescribeUserProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profiles: std::option::Option<std::vec::Vec<crate::model::UserProfile>>,
@@ -1111,6 +1144,7 @@ impl DescribeTimeBasedAutoScalingOutput {
 pub mod describe_time_based_auto_scaling_output {
 
     /// A builder for [`DescribeTimeBasedAutoScalingOutput`](crate::output::DescribeTimeBasedAutoScalingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_based_auto_scaling_configurations:
@@ -1176,6 +1210,7 @@ impl DescribeStackSummaryOutput {
 pub mod describe_stack_summary_output {
 
     /// A builder for [`DescribeStackSummaryOutput`](crate::output::DescribeStackSummaryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_summary: std::option::Option<crate::model::StackSummary>,
@@ -1227,6 +1262,7 @@ impl DescribeStacksOutput {
 pub mod describe_stacks_output {
 
     /// A builder for [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
@@ -1295,6 +1331,7 @@ impl DescribeStackProvisioningParametersOutput {
 pub mod describe_stack_provisioning_parameters_output {
 
     /// A builder for [`DescribeStackProvisioningParametersOutput`](crate::output::DescribeStackProvisioningParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_installer_url: std::option::Option<std::string::String>,
@@ -1375,6 +1412,7 @@ impl DescribeServiceErrorsOutput {
 pub mod describe_service_errors_output {
 
     /// A builder for [`DescribeServiceErrorsOutput`](crate::output::DescribeServiceErrorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_errors: std::option::Option<std::vec::Vec<crate::model::ServiceError>>,
@@ -1432,6 +1470,7 @@ impl DescribeRdsDbInstancesOutput {
 pub mod describe_rds_db_instances_output {
 
     /// A builder for [`DescribeRdsDbInstancesOutput`](crate::output::DescribeRdsDbInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rds_db_instances:
@@ -1490,6 +1529,7 @@ impl DescribeRaidArraysOutput {
 pub mod describe_raid_arrays_output {
 
     /// A builder for [`DescribeRaidArraysOutput`](crate::output::DescribeRaidArraysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) raid_arrays: std::option::Option<std::vec::Vec<crate::model::RaidArray>>,
@@ -1557,6 +1597,7 @@ impl DescribePermissionsOutput {
 pub mod describe_permissions_output {
 
     /// A builder for [`DescribePermissionsOutput`](crate::output::DescribePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1624,6 +1665,7 @@ impl DescribeOperatingSystemsOutput {
 pub mod describe_operating_systems_output {
 
     /// A builder for [`DescribeOperatingSystemsOutput`](crate::output::DescribeOperatingSystemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operating_systems:
@@ -1682,6 +1724,7 @@ impl DescribeMyUserProfileOutput {
 pub mod describe_my_user_profile_output {
 
     /// A builder for [`DescribeMyUserProfileOutput`](crate::output::DescribeMyUserProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profile: std::option::Option<crate::model::SelfUserProfile>,
@@ -1736,6 +1779,7 @@ impl DescribeLoadBasedAutoScalingOutput {
 pub mod describe_load_based_auto_scaling_output {
 
     /// A builder for [`DescribeLoadBasedAutoScalingOutput`](crate::output::DescribeLoadBasedAutoScalingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_based_auto_scaling_configurations:
@@ -1801,6 +1845,7 @@ impl DescribeLayersOutput {
 pub mod describe_layers_output {
 
     /// A builder for [`DescribeLayersOutput`](crate::output::DescribeLayersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -1858,6 +1903,7 @@ impl DescribeInstancesOutput {
 pub mod describe_instances_output {
 
     /// A builder for [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -1918,6 +1964,7 @@ impl DescribeElasticLoadBalancersOutput {
 pub mod describe_elastic_load_balancers_output {
 
     /// A builder for [`DescribeElasticLoadBalancersOutput`](crate::output::DescribeElasticLoadBalancersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_load_balancers:
@@ -1976,6 +2023,7 @@ impl DescribeElasticIpsOutput {
 pub mod describe_elastic_ips_output {
 
     /// A builder for [`DescribeElasticIpsOutput`](crate::output::DescribeElasticIpsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ips: std::option::Option<std::vec::Vec<crate::model::ElasticIp>>,
@@ -2040,6 +2088,7 @@ impl DescribeEcsClustersOutput {
 pub mod describe_ecs_clusters_output {
 
     /// A builder for [`DescribeEcsClustersOutput`](crate::output::DescribeEcsClustersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_clusters: std::option::Option<std::vec::Vec<crate::model::EcsCluster>>,
@@ -2109,6 +2158,7 @@ impl DescribeDeploymentsOutput {
 pub mod describe_deployments_output {
 
     /// A builder for [`DescribeDeploymentsOutput`](crate::output::DescribeDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -2166,6 +2216,7 @@ impl DescribeCommandsOutput {
 pub mod describe_commands_output {
 
     /// A builder for [`DescribeCommandsOutput`](crate::output::DescribeCommandsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
@@ -2223,6 +2274,7 @@ impl DescribeAppsOutput {
 pub mod describe_apps_output {
 
     /// A builder for [`DescribeAppsOutput`](crate::output::DescribeAppsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apps: std::option::Option<std::vec::Vec<crate::model::App>>,
@@ -2278,6 +2330,7 @@ impl DescribeAgentVersionsOutput {
 pub mod describe_agent_versions_output {
 
     /// A builder for [`DescribeAgentVersionsOutput`](crate::output::DescribeAgentVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_versions: std::option::Option<std::vec::Vec<crate::model::AgentVersion>>,
@@ -2325,6 +2378,7 @@ pub struct DeregisterVolumeOutput {}
 pub mod deregister_volume_output {
 
     /// A builder for [`DeregisterVolumeOutput`](crate::output::DeregisterVolumeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2349,6 +2403,7 @@ pub struct DeregisterRdsDbInstanceOutput {}
 pub mod deregister_rds_db_instance_output {
 
     /// A builder for [`DeregisterRdsDbInstanceOutput`](crate::output::DeregisterRdsDbInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2373,6 +2428,7 @@ pub struct DeregisterInstanceOutput {}
 pub mod deregister_instance_output {
 
     /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2397,6 +2453,7 @@ pub struct DeregisterElasticIpOutput {}
 pub mod deregister_elastic_ip_output {
 
     /// A builder for [`DeregisterElasticIpOutput`](crate::output::DeregisterElasticIpOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2421,6 +2478,7 @@ pub struct DeregisterEcsClusterOutput {}
 pub mod deregister_ecs_cluster_output {
 
     /// A builder for [`DeregisterEcsClusterOutput`](crate::output::DeregisterEcsClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2445,6 +2503,7 @@ pub struct DeleteUserProfileOutput {}
 pub mod delete_user_profile_output {
 
     /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2469,6 +2528,7 @@ pub struct DeleteStackOutput {}
 pub mod delete_stack_output {
 
     /// A builder for [`DeleteStackOutput`](crate::output::DeleteStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2493,6 +2553,7 @@ pub struct DeleteLayerOutput {}
 pub mod delete_layer_output {
 
     /// A builder for [`DeleteLayerOutput`](crate::output::DeleteLayerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2517,6 +2578,7 @@ pub struct DeleteInstanceOutput {}
 pub mod delete_instance_output {
 
     /// A builder for [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2541,6 +2603,7 @@ pub struct DeleteAppOutput {}
 pub mod delete_app_output {
 
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2575,6 +2638,7 @@ impl CreateUserProfileOutput {
 pub mod create_user_profile_output {
 
     /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
@@ -2623,6 +2687,7 @@ impl CreateStackOutput {
 pub mod create_stack_output {
 
     /// A builder for [`CreateStackOutput`](crate::output::CreateStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -2671,6 +2736,7 @@ impl CreateLayerOutput {
 pub mod create_layer_output {
 
     /// A builder for [`CreateLayerOutput`](crate::output::CreateLayerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
@@ -2719,6 +2785,7 @@ impl CreateInstanceOutput {
 pub mod create_instance_output {
 
     /// A builder for [`CreateInstanceOutput`](crate::output::CreateInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -2767,6 +2834,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -2818,6 +2886,7 @@ impl CreateAppOutput {
 pub mod create_app_output {
 
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2866,6 +2935,7 @@ impl CloneStackOutput {
 pub mod clone_stack_output {
 
     /// A builder for [`CloneStackOutput`](crate::output::CloneStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -2904,6 +2974,7 @@ pub struct AttachElasticLoadBalancerOutput {}
 pub mod attach_elastic_load_balancer_output {
 
     /// A builder for [`AttachElasticLoadBalancerOutput`](crate::output::AttachElasticLoadBalancerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2928,6 +2999,7 @@ pub struct AssociateElasticIpOutput {}
 pub mod associate_elastic_ip_output {
 
     /// A builder for [`AssociateElasticIpOutput`](crate::output::AssociateElasticIpOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2952,6 +3024,7 @@ pub struct AssignVolumeOutput {}
 pub mod assign_volume_output {
 
     /// A builder for [`AssignVolumeOutput`](crate::output::AssignVolumeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2976,6 +3049,7 @@ pub struct AssignInstanceOutput {}
 pub mod assign_instance_output {
 
     /// A builder for [`AssignInstanceOutput`](crate::output::AssignInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

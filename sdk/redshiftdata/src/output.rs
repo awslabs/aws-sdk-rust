@@ -24,6 +24,7 @@ impl ListTablesOutput {
 pub mod list_tables_output {
 
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::TableMember>>,
@@ -100,6 +101,7 @@ impl ListStatementsOutput {
 pub mod list_statements_output {
 
     /// A builder for [`ListStatementsOutput`](crate::output::ListStatementsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::StatementData>>,
@@ -176,6 +178,7 @@ impl ListSchemasOutput {
 pub mod list_schemas_output {
 
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schemas: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -252,6 +255,7 @@ impl ListDatabasesOutput {
 pub mod list_databases_output {
 
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) databases: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -342,6 +346,7 @@ impl GetStatementResultOutput {
 pub mod get_statement_result_output {
 
     /// A builder for [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
@@ -487,6 +492,7 @@ impl ExecuteStatementOutput {
 pub mod execute_statement_output {
 
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -630,6 +636,7 @@ impl DescribeTableOutput {
 pub mod describe_table_output {
 
     /// A builder for [`DescribeTableOutput`](crate::output::DescribeTableOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -855,6 +862,7 @@ impl DescribeStatementOutput {
 pub mod describe_statement_output {
 
     /// A builder for [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1171,6 +1179,7 @@ impl CancelStatementOutput {
 pub mod cancel_statement_output {
 
     /// A builder for [`CancelStatementOutput`](crate::output::CancelStatementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<bool>,
@@ -1261,6 +1270,7 @@ impl BatchExecuteStatementOutput {
 pub mod batch_execute_statement_output {
 
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

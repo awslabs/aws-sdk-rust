@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_entities_to_experience_input {
 
     /// A builder for [`AssociateEntitiesToExperienceInput`](crate::input::AssociateEntitiesToExperienceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -203,6 +204,7 @@ impl AssociateEntitiesToExperienceInput {
 pub mod associate_personas_to_entities_input {
 
     /// A builder for [`AssociatePersonasToEntitiesInput`](crate::input::AssociatePersonasToEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -401,6 +403,7 @@ impl AssociatePersonasToEntitiesInput {
 pub mod batch_delete_document_input {
 
     /// A builder for [`BatchDeleteDocumentInput`](crate::input::BatchDeleteDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -605,6 +608,7 @@ impl BatchDeleteDocumentInput {
 pub mod batch_get_document_status_input {
 
     /// A builder for [`BatchGetDocumentStatusInput`](crate::input::BatchGetDocumentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -793,6 +797,7 @@ impl BatchGetDocumentStatusInput {
 pub mod batch_put_document_input {
 
     /// A builder for [`BatchPutDocumentInput`](crate::input::BatchPutDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -1026,6 +1031,7 @@ impl BatchPutDocumentInput {
 pub mod clear_query_suggestions_input {
 
     /// A builder for [`ClearQuerySuggestionsInput`](crate::input::ClearQuerySuggestionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -1192,6 +1198,7 @@ impl ClearQuerySuggestionsInput {
 pub mod create_access_control_configuration_input {
 
     /// A builder for [`CreateAccessControlConfigurationInput`](crate::input::CreateAccessControlConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -1441,6 +1448,7 @@ impl CreateAccessControlConfigurationInput {
 pub mod create_data_source_input {
 
     /// A builder for [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1784,6 +1792,7 @@ impl CreateDataSourceInput {
 pub mod create_experience_input {
 
     /// A builder for [`CreateExperienceInput`](crate::input::CreateExperienceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2014,6 +2023,7 @@ impl CreateExperienceInput {
 pub mod create_faq_input {
 
     /// A builder for [`CreateFaqInput`](crate::input::CreateFaqInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -2292,6 +2302,7 @@ impl CreateFaqInput {
 pub mod create_index_input {
 
     /// A builder for [`CreateIndexInput`](crate::input::CreateIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2639,6 +2650,7 @@ impl CreateIndexInput {
 pub mod create_query_suggestions_block_list_input {
 
     /// A builder for [`CreateQuerySuggestionsBlockListInput`](crate::input::CreateQuerySuggestionsBlockListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -2900,6 +2912,7 @@ impl CreateQuerySuggestionsBlockListInput {
 pub mod create_thesaurus_input {
 
     /// A builder for [`CreateThesaurusInput`](crate::input::CreateThesaurusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -3149,6 +3162,7 @@ impl CreateThesaurusInput {
 pub mod delete_access_control_configuration_input {
 
     /// A builder for [`DeleteAccessControlConfigurationInput`](crate::input::DeleteAccessControlConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -3325,6 +3339,7 @@ impl DeleteAccessControlConfigurationInput {
 pub mod delete_data_source_input {
 
     /// A builder for [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3501,6 +3516,7 @@ impl DeleteDataSourceInput {
 pub mod delete_experience_input {
 
     /// A builder for [`DeleteExperienceInput`](crate::input::DeleteExperienceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3677,6 +3693,7 @@ impl DeleteExperienceInput {
 pub mod delete_faq_input {
 
     /// A builder for [`DeleteFaqInput`](crate::input::DeleteFaqInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3849,6 +3866,7 @@ impl DeleteFaqInput {
 pub mod delete_index_input {
 
     /// A builder for [`DeleteIndexInput`](crate::input::DeleteIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4009,6 +4027,7 @@ impl DeleteIndexInput {
 pub mod delete_principal_mapping_input {
 
     /// A builder for [`DeletePrincipalMappingInput`](crate::input::DeletePrincipalMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -4220,6 +4239,7 @@ impl DeletePrincipalMappingInput {
 pub mod delete_query_suggestions_block_list_input {
 
     /// A builder for [`DeleteQuerySuggestionsBlockListInput`](crate::input::DeleteQuerySuggestionsBlockListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -4396,6 +4416,7 @@ impl DeleteQuerySuggestionsBlockListInput {
 pub mod delete_thesaurus_input {
 
     /// A builder for [`DeleteThesaurusInput`](crate::input::DeleteThesaurusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4570,6 +4591,7 @@ impl DeleteThesaurusInput {
 pub mod describe_access_control_configuration_input {
 
     /// A builder for [`DescribeAccessControlConfigurationInput`](crate::input::DescribeAccessControlConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -4746,6 +4768,7 @@ impl DescribeAccessControlConfigurationInput {
 pub mod describe_data_source_input {
 
     /// A builder for [`DescribeDataSourceInput`](crate::input::DescribeDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4922,6 +4945,7 @@ impl DescribeDataSourceInput {
 pub mod describe_experience_input {
 
     /// A builder for [`DescribeExperienceInput`](crate::input::DescribeExperienceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5098,6 +5122,7 @@ impl DescribeExperienceInput {
 pub mod describe_faq_input {
 
     /// A builder for [`DescribeFaqInput`](crate::input::DescribeFaqInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5272,6 +5297,7 @@ impl DescribeFaqInput {
 pub mod describe_index_input {
 
     /// A builder for [`DescribeIndexInput`](crate::input::DescribeIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5432,6 +5458,7 @@ impl DescribeIndexInput {
 pub mod describe_principal_mapping_input {
 
     /// A builder for [`DescribePrincipalMappingInput`](crate::input::DescribePrincipalMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -5625,6 +5652,7 @@ impl DescribePrincipalMappingInput {
 pub mod describe_query_suggestions_block_list_input {
 
     /// A builder for [`DescribeQuerySuggestionsBlockListInput`](crate::input::DescribeQuerySuggestionsBlockListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -5801,6 +5829,7 @@ impl DescribeQuerySuggestionsBlockListInput {
 pub mod describe_query_suggestions_config_input {
 
     /// A builder for [`DescribeQuerySuggestionsConfigInput`](crate::input::DescribeQuerySuggestionsConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -5965,6 +5994,7 @@ impl DescribeQuerySuggestionsConfigInput {
 pub mod describe_thesaurus_input {
 
     /// A builder for [`DescribeThesaurusInput`](crate::input::DescribeThesaurusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6141,6 +6171,7 @@ impl DescribeThesaurusInput {
 pub mod disassociate_entities_from_experience_input {
 
     /// A builder for [`DisassociateEntitiesFromExperienceInput`](crate::input::DisassociateEntitiesFromExperienceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6339,6 +6370,7 @@ impl DisassociateEntitiesFromExperienceInput {
 pub mod disassociate_personas_from_entities_input {
 
     /// A builder for [`DisassociatePersonasFromEntitiesInput`](crate::input::DisassociatePersonasFromEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6536,6 +6568,7 @@ impl DisassociatePersonasFromEntitiesInput {
 pub mod get_query_suggestions_input {
 
     /// A builder for [`GetQuerySuggestionsInput`](crate::input::GetQuerySuggestionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -6728,6 +6761,7 @@ impl GetQuerySuggestionsInput {
 pub mod get_snapshots_input {
 
     /// A builder for [`GetSnapshotsInput`](crate::input::GetSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -6959,6 +6993,7 @@ impl GetSnapshotsInput {
 pub mod list_access_control_configurations_input {
 
     /// A builder for [`ListAccessControlConfigurationsInput`](crate::input::ListAccessControlConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -7147,6 +7182,7 @@ impl ListAccessControlConfigurationsInput {
 pub mod list_data_sources_input {
 
     /// A builder for [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -7333,6 +7369,7 @@ impl ListDataSourcesInput {
 pub mod list_data_source_sync_jobs_input {
 
     /// A builder for [`ListDataSourceSyncJobsInput`](crate::input::ListDataSourceSyncJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7565,6 +7602,7 @@ impl ListDataSourceSyncJobsInput {
 pub mod list_entity_personas_input {
 
     /// A builder for [`ListEntityPersonasInput`](crate::input::ListEntityPersonasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7765,6 +7803,7 @@ impl ListEntityPersonasInput {
 pub mod list_experience_entities_input {
 
     /// A builder for [`ListExperienceEntitiesInput`](crate::input::ListExperienceEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7955,6 +7994,7 @@ impl ListExperienceEntitiesInput {
 pub mod list_experiences_input {
 
     /// A builder for [`ListExperiencesInput`](crate::input::ListExperiencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -8141,6 +8181,7 @@ impl ListExperiencesInput {
 pub mod list_faqs_input {
 
     /// A builder for [`ListFaqsInput`](crate::input::ListFaqsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -8324,6 +8365,7 @@ impl ListFaqsInput {
 pub mod list_groups_older_than_ordering_id_input {
 
     /// A builder for [`ListGroupsOlderThanOrderingIdInput`](crate::input::ListGroupsOlderThanOrderingIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -8539,6 +8581,7 @@ impl ListGroupsOlderThanOrderingIdInput {
 pub mod list_indices_input {
 
     /// A builder for [`ListIndicesInput`](crate::input::ListIndicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8713,6 +8756,7 @@ impl ListIndicesInput {
 pub mod list_query_suggestions_block_lists_input {
 
     /// A builder for [`ListQuerySuggestionsBlockListsInput`](crate::input::ListQuerySuggestionsBlockListsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -8903,6 +8947,7 @@ impl ListQuerySuggestionsBlockListsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9069,6 +9114,7 @@ impl ListTagsForResourceInput {
 pub mod list_thesauri_input {
 
     /// A builder for [`ListThesauriInput`](crate::input::ListThesauriInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -9255,6 +9301,7 @@ impl ListThesauriInput {
 pub mod put_principal_mapping_input {
 
     /// A builder for [`PutPrincipalMappingInput`](crate::input::PutPrincipalMappingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -9497,6 +9544,7 @@ impl PutPrincipalMappingInput {
 pub mod query_input {
 
     /// A builder for [`QueryInput`](crate::input::QueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -9865,6 +9913,7 @@ impl QueryInput {
 pub mod start_data_source_sync_job_input {
 
     /// A builder for [`StartDataSourceSyncJobInput`](crate::input::StartDataSourceSyncJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10043,6 +10092,7 @@ impl StartDataSourceSyncJobInput {
 pub mod stop_data_source_sync_job_input {
 
     /// A builder for [`StopDataSourceSyncJobInput`](crate::input::StopDataSourceSyncJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10221,6 +10271,7 @@ impl StopDataSourceSyncJobInput {
 pub mod submit_feedback_input {
 
     /// A builder for [`SubmitFeedbackInput`](crate::input::SubmitFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -10439,6 +10490,7 @@ impl SubmitFeedbackInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10622,6 +10674,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10805,6 +10858,7 @@ impl UntagResourceInput {
 pub mod update_access_control_configuration_input {
 
     /// A builder for [`UpdateAccessControlConfigurationInput`](crate::input::UpdateAccessControlConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -11051,6 +11105,7 @@ impl UpdateAccessControlConfigurationInput {
 pub mod update_data_source_input {
 
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11345,6 +11400,7 @@ impl UpdateDataSourceInput {
 pub mod update_experience_input {
 
     /// A builder for [`UpdateExperienceInput`](crate::input::UpdateExperienceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11572,6 +11628,7 @@ impl UpdateExperienceInput {
 pub mod update_index_input {
 
     /// A builder for [`UpdateIndexInput`](crate::input::UpdateIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11874,6 +11931,7 @@ impl UpdateIndexInput {
 pub mod update_query_suggestions_block_list_input {
 
     /// A builder for [`UpdateQuerySuggestionsBlockListInput`](crate::input::UpdateQuerySuggestionsBlockListInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -12105,6 +12163,7 @@ impl UpdateQuerySuggestionsBlockListInput {
 pub mod update_query_suggestions_config_input {
 
     /// A builder for [`UpdateQuerySuggestionsConfigInput`](crate::input::UpdateQuerySuggestionsConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -12361,6 +12420,7 @@ impl UpdateQuerySuggestionsConfigInput {
 pub mod update_thesaurus_input {
 
     /// A builder for [`UpdateThesaurusInput`](crate::input::UpdateThesaurusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

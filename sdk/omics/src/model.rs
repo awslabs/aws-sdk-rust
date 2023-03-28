@@ -60,6 +60,7 @@ impl WorkflowListItem {
 pub mod workflow_list_item {
 
     /// A builder for [`WorkflowListItem`](crate::model::WorkflowListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -383,6 +384,7 @@ impl WorkflowParameter {
 pub mod workflow_parameter {
 
     /// A builder for [`WorkflowParameter`](crate::model::WorkflowParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -688,6 +690,7 @@ impl VariantStoreItem {
 pub mod variant_store_item {
 
     /// A builder for [`VariantStoreItem`](crate::model::VariantStoreItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -878,6 +881,7 @@ impl SseConfig {
 pub mod sse_config {
 
     /// A builder for [`SseConfig`](crate::model::SseConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EncryptionType>,
@@ -1168,6 +1172,7 @@ impl ListVariantStoresFilter {
 pub mod list_variant_stores_filter {
 
     /// A builder for [`ListVariantStoresFilter`](crate::model::ListVariantStoresFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StoreStatus>,
@@ -1265,6 +1270,7 @@ impl VariantImportJobItem {
 pub mod variant_import_job_item {
 
     /// A builder for [`VariantImportJobItem`](crate::model::VariantImportJobItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1527,6 +1533,7 @@ impl ListVariantImportJobsFilter {
 pub mod list_variant_import_jobs_filter {
 
     /// A builder for [`ListVariantImportJobsFilter`](crate::model::ListVariantImportJobsFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
@@ -1587,6 +1594,7 @@ impl VariantImportItemSource {
 pub mod variant_import_item_source {
 
     /// A builder for [`VariantImportItemSource`](crate::model::VariantImportItemSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -1642,6 +1650,7 @@ impl VariantImportItemDetail {
 pub mod variant_import_item_detail {
 
     /// A builder for [`VariantImportItemDetail`](crate::model::VariantImportItemDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -1890,6 +1899,7 @@ impl StartReadSetImportJobSourceItem {
 pub mod start_read_set_import_job_source_item {
 
     /// A builder for [`StartReadSetImportJobSourceItem`](crate::model::StartReadSetImportJobSourceItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_files: std::option::Option<crate::model::SourceFiles>,
@@ -2165,6 +2175,7 @@ impl SourceFiles {
 pub mod source_files {
 
     /// A builder for [`SourceFiles`](crate::model::SourceFiles).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source1: std::option::Option<std::string::String>,
@@ -2350,6 +2361,7 @@ impl ExportReadSet {
 pub mod export_read_set {
 
     /// A builder for [`ExportReadSet`](crate::model::ExportReadSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_set_id: std::option::Option<std::string::String>,
@@ -2523,6 +2535,7 @@ impl StartReadSetActivationJobSourceItem {
 pub mod start_read_set_activation_job_source_item {
 
     /// A builder for [`StartReadSetActivationJobSourceItem`](crate::model::StartReadSetActivationJobSourceItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_set_id: std::option::Option<std::string::String>,
@@ -2606,6 +2619,7 @@ impl ImportReadSetJobItem {
 pub mod import_read_set_job_item {
 
     /// A builder for [`ImportReadSetJobItem`](crate::model::ImportReadSetJobItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2740,6 +2754,7 @@ impl ImportReadSetFilter {
 pub mod import_read_set_filter {
 
     /// A builder for [`ImportReadSetFilter`](crate::model::ImportReadSetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ReadSetImportJobStatus>,
@@ -2856,6 +2871,7 @@ impl ExportReadSetJobDetail {
 pub mod export_read_set_job_detail {
 
     /// A builder for [`ExportReadSetJobDetail`](crate::model::ExportReadSetJobDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2990,6 +3006,7 @@ impl ExportReadSetFilter {
 pub mod export_read_set_filter {
 
     /// A builder for [`ExportReadSetFilter`](crate::model::ExportReadSetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ReadSetExportJobStatus>,
@@ -3099,6 +3116,7 @@ impl ActivateReadSetJobItem {
 pub mod activate_read_set_job_item {
 
     /// A builder for [`ActivateReadSetJobItem`](crate::model::ActivateReadSetJobItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3221,6 +3239,7 @@ impl ActivateReadSetFilter {
 pub mod activate_read_set_filter {
 
     /// A builder for [`ActivateReadSetFilter`](crate::model::ActivateReadSetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ReadSetActivationJobStatus>,
@@ -3376,6 +3395,7 @@ impl ImportReadSetSourceItem {
 pub mod import_read_set_source_item {
 
     /// A builder for [`ImportReadSetSourceItem`](crate::model::ImportReadSetSourceItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_files: std::option::Option<crate::model::SourceFiles>,
@@ -3695,6 +3715,7 @@ impl ExportReadSetDetail {
 pub mod export_read_set_detail {
 
     /// A builder for [`ExportReadSetDetail`](crate::model::ExportReadSetDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3889,6 +3910,7 @@ impl ActivateReadSetSourceItem {
 pub mod activate_read_set_source_item {
 
     /// A builder for [`ActivateReadSetSourceItem`](crate::model::ActivateReadSetSourceItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_set_id: std::option::Option<std::string::String>,
@@ -4104,6 +4126,7 @@ impl SequenceStoreDetail {
 pub mod sequence_store_detail {
 
     /// A builder for [`SequenceStoreDetail`](crate::model::SequenceStoreDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4232,6 +4255,7 @@ impl SequenceStoreFilter {
 pub mod sequence_store_filter {
 
     /// A builder for [`SequenceStoreFilter`](crate::model::SequenceStoreFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4419,6 +4443,7 @@ impl ReadSetBatchError {
 pub mod read_set_batch_error {
 
     /// A builder for [`ReadSetBatchError`](crate::model::ReadSetBatchError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4568,6 +4593,7 @@ impl ReadSetListItem {
 pub mod read_set_list_item {
 
     /// A builder for [`ReadSetListItem`](crate::model::ReadSetListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4784,6 +4810,7 @@ impl SequenceInformation {
 pub mod sequence_information {
 
     /// A builder for [`SequenceInformation`](crate::model::SequenceInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_read_count: std::option::Option<i64>,
@@ -5004,6 +5031,7 @@ impl ReadSetFilter {
 pub mod read_set_filter {
 
     /// A builder for [`ReadSetFilter`](crate::model::ReadSetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5126,6 +5154,7 @@ impl ReadSetFiles {
 pub mod read_set_files {
 
     /// A builder for [`ReadSetFiles`](crate::model::ReadSetFiles).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source1: std::option::Option<crate::model::FileInformation>,
@@ -5221,6 +5250,7 @@ impl FileInformation {
 pub mod file_information {
 
     /// A builder for [`FileInformation`](crate::model::FileInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_parts: std::option::Option<i32>,
@@ -5356,6 +5386,7 @@ impl RunListItem {
 pub mod run_list_item {
 
     /// A builder for [`RunListItem`](crate::model::RunListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5884,6 +5915,7 @@ impl TaskListItem {
 pub mod task_list_item {
 
     /// A builder for [`TaskListItem`](crate::model::TaskListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -6190,6 +6222,7 @@ impl RunGroupListItem {
 pub mod run_group_list_item {
 
     /// A builder for [`RunGroupListItem`](crate::model::RunGroupListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6463,6 +6496,7 @@ impl StartReferenceImportJobSourceItem {
 pub mod start_reference_import_job_source_item {
 
     /// A builder for [`StartReferenceImportJobSourceItem`](crate::model::StartReferenceImportJobSourceItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_file: std::option::Option<std::string::String>,
@@ -6599,6 +6633,7 @@ impl ImportReferenceJobItem {
 pub mod import_reference_job_item {
 
     /// A builder for [`ImportReferenceJobItem`](crate::model::ImportReferenceJobItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6733,6 +6768,7 @@ impl ImportReferenceFilter {
 pub mod import_reference_filter {
 
     /// A builder for [`ImportReferenceFilter`](crate::model::ImportReferenceFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ReferenceImportJobStatus>,
@@ -6853,6 +6889,7 @@ impl ImportReferenceSourceItem {
 pub mod import_reference_source_item {
 
     /// A builder for [`ImportReferenceSourceItem`](crate::model::ImportReferenceSourceItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_file: std::option::Option<std::string::String>,
@@ -7121,6 +7158,7 @@ impl ReferenceStoreDetail {
 pub mod reference_store_detail {
 
     /// A builder for [`ReferenceStoreDetail`](crate::model::ReferenceStoreDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7249,6 +7287,7 @@ impl ReferenceStoreFilter {
 pub mod reference_store_filter {
 
     /// A builder for [`ReferenceStoreFilter`](crate::model::ReferenceStoreFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7473,6 +7512,7 @@ impl ReferenceListItem {
 pub mod reference_list_item {
 
     /// A builder for [`ReferenceListItem`](crate::model::ReferenceListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7745,6 +7785,7 @@ impl ReferenceFilter {
 pub mod reference_filter {
 
     /// A builder for [`ReferenceFilter`](crate::model::ReferenceFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7842,6 +7883,7 @@ impl ReferenceFiles {
 pub mod reference_files {
 
     /// A builder for [`ReferenceFiles`](crate::model::ReferenceFiles).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::FileInformation>,
@@ -7985,6 +8027,7 @@ impl AnnotationStoreItem {
 pub mod annotation_store_item {
 
     /// A builder for [`AnnotationStoreItem`](crate::model::AnnotationStoreItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8278,6 +8321,7 @@ impl ListAnnotationStoresFilter {
 pub mod list_annotation_stores_filter {
 
     /// A builder for [`ListAnnotationStoresFilter`](crate::model::ListAnnotationStoresFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StoreStatus>,
@@ -8393,6 +8437,7 @@ impl TsvStoreOptions {
 pub mod tsv_store_options {
 
     /// A builder for [`TsvStoreOptions`](crate::model::TsvStoreOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) annotation_type: std::option::Option<crate::model::AnnotationType>,
@@ -8899,6 +8944,7 @@ impl AnnotationImportJobItem {
 pub mod annotation_import_job_item {
 
     /// A builder for [`AnnotationImportJobItem`](crate::model::AnnotationImportJobItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9050,6 +9096,7 @@ impl ListAnnotationImportJobsFilter {
 pub mod list_annotation_import_jobs_filter {
 
     /// A builder for [`ListAnnotationImportJobsFilter`](crate::model::ListAnnotationImportJobsFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
@@ -9168,6 +9215,7 @@ impl VcfOptions {
 pub mod vcf_options {
 
     /// A builder for [`VcfOptions`](crate::model::VcfOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ignore_qual_field: std::option::Option<bool>,
@@ -9228,6 +9276,7 @@ impl TsvOptions {
 pub mod tsv_options {
 
     /// A builder for [`TsvOptions`](crate::model::TsvOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_options: std::option::Option<crate::model::ReadOptions>,
@@ -9335,6 +9384,7 @@ impl ReadOptions {
 pub mod read_options {
 
     /// A builder for [`ReadOptions`](crate::model::ReadOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sep: std::option::Option<std::string::String>,
@@ -9479,6 +9529,7 @@ impl AnnotationImportItemSource {
 pub mod annotation_import_item_source {
 
     /// A builder for [`AnnotationImportItemSource`](crate::model::AnnotationImportItemSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -9534,6 +9585,7 @@ impl AnnotationImportItemDetail {
 pub mod annotation_import_item_detail {
 
     /// A builder for [`AnnotationImportItemDetail`](crate::model::AnnotationImportItemDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,

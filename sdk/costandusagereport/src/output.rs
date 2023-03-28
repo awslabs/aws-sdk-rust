@@ -8,6 +8,7 @@ pub struct PutReportDefinitionOutput {}
 pub mod put_report_definition_output {
 
     /// A builder for [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -32,6 +33,7 @@ pub struct ModifyReportDefinitionOutput {}
 pub mod modify_report_definition_output {
 
     /// A builder for [`ModifyReportDefinitionOutput`](crate::output::ModifyReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -73,6 +75,7 @@ impl DescribeReportDefinitionsOutput {
 pub mod describe_report_definitions_output {
 
     /// A builder for [`DescribeReportDefinitionsOutput`](crate::output::DescribeReportDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definitions:
@@ -143,6 +146,7 @@ impl DeleteReportDefinitionOutput {
 pub mod delete_report_definition_output {
 
     /// A builder for [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_message: std::option::Option<std::string::String>,

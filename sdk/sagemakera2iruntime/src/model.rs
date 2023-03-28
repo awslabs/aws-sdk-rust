@@ -20,6 +20,7 @@ impl HumanLoopDataAttributes {
 pub mod human_loop_data_attributes {
 
     /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_classifiers:
@@ -179,6 +180,7 @@ impl HumanLoopInput {
 pub mod human_loop_input {
 
     /// A builder for [`HumanLoopInput`](crate::model::HumanLoopInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_content: std::option::Option<std::string::String>,
@@ -258,6 +260,7 @@ impl HumanLoopSummary {
 pub mod human_loop_summary {
 
     /// A builder for [`HumanLoopSummary`](crate::model::HumanLoopSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -564,6 +567,7 @@ impl HumanLoopOutput {
 pub mod human_loop_output {
 
     /// A builder for [`HumanLoopOutput`](crate::model::HumanLoopOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_s3_uri: std::option::Option<std::string::String>,

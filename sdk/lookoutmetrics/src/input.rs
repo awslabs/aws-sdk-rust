@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod activate_anomaly_detector_input {
 
     /// A builder for [`ActivateAnomalyDetectorInput`](crate::input::ActivateAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -169,6 +170,7 @@ impl ActivateAnomalyDetectorInput {
 pub mod back_test_anomaly_detector_input {
 
     /// A builder for [`BackTestAnomalyDetectorInput`](crate::input::BackTestAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -333,6 +335,7 @@ impl BackTestAnomalyDetectorInput {
 pub mod create_alert_input {
 
     /// A builder for [`CreateAlertInput`](crate::input::CreateAlertInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_name: std::option::Option<std::string::String>,
@@ -588,6 +591,7 @@ impl CreateAlertInput {
 pub mod create_anomaly_detector_input {
 
     /// A builder for [`CreateAnomalyDetectorInput`](crate::input::CreateAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_name: std::option::Option<std::string::String>,
@@ -830,6 +834,7 @@ impl CreateAnomalyDetectorInput {
 pub mod create_metric_set_input {
 
     /// A builder for [`CreateMetricSetInput`](crate::input::CreateMetricSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -1185,6 +1190,7 @@ impl CreateMetricSetInput {
 pub mod deactivate_anomaly_detector_input {
 
     /// A builder for [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -1349,6 +1355,7 @@ impl DeactivateAnomalyDetectorInput {
 pub mod delete_alert_input {
 
     /// A builder for [`DeleteAlertInput`](crate::input::DeleteAlertInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
@@ -1506,6 +1513,7 @@ impl DeleteAlertInput {
 pub mod delete_anomaly_detector_input {
 
     /// A builder for [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -1670,6 +1678,7 @@ impl DeleteAnomalyDetectorInput {
 pub mod describe_alert_input {
 
     /// A builder for [`DescribeAlertInput`](crate::input::DescribeAlertInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
@@ -1827,6 +1836,7 @@ impl DescribeAlertInput {
 pub mod describe_anomaly_detection_executions_input {
 
     /// A builder for [`DescribeAnomalyDetectionExecutionsInput`](crate::input::DescribeAnomalyDetectionExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -2026,6 +2036,7 @@ impl DescribeAnomalyDetectionExecutionsInput {
 pub mod describe_anomaly_detector_input {
 
     /// A builder for [`DescribeAnomalyDetectorInput`](crate::input::DescribeAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -2190,6 +2201,7 @@ impl DescribeAnomalyDetectorInput {
 pub mod describe_metric_set_input {
 
     /// A builder for [`DescribeMetricSetInput`](crate::input::DescribeMetricSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
@@ -2352,6 +2364,7 @@ impl DescribeMetricSetInput {
 pub mod detect_metric_set_config_input {
 
     /// A builder for [`DetectMetricSetConfigInput`](crate::input::DetectMetricSetConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -2535,6 +2548,7 @@ impl DetectMetricSetConfigInput {
 pub mod get_anomaly_group_input {
 
     /// A builder for [`GetAnomalyGroupInput`](crate::input::GetAnomalyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
@@ -2710,6 +2724,7 @@ impl GetAnomalyGroupInput {
 pub mod get_data_quality_metrics_input {
 
     /// A builder for [`GetDataQualityMetricsInput`](crate::input::GetDataQualityMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -2889,6 +2904,7 @@ impl GetDataQualityMetricsInput {
 pub mod get_feedback_input {
 
     /// A builder for [`GetFeedbackInput`](crate::input::GetFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -3092,6 +3108,7 @@ impl GetFeedbackInput {
 pub mod get_sample_data_input {
 
     /// A builder for [`GetSampleDataInput`](crate::input::GetSampleDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_source_config: std::option::Option<crate::model::SampleDataS3SourceConfig>,
@@ -3252,6 +3269,7 @@ impl GetSampleDataInput {
 pub mod list_alerts_input {
 
     /// A builder for [`ListAlertsInput`](crate::input::ListAlertsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -3436,6 +3454,7 @@ impl ListAlertsInput {
 pub mod list_anomaly_detectors_input {
 
     /// A builder for [`ListAnomalyDetectorsInput`](crate::input::ListAnomalyDetectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3609,6 +3628,7 @@ impl ListAnomalyDetectorsInput {
 pub mod list_anomaly_group_related_metrics_input {
 
     /// A builder for [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -3826,6 +3846,7 @@ impl ListAnomalyGroupRelatedMetricsInput {
 pub mod list_anomaly_group_summaries_input {
 
     /// A builder for [`ListAnomalyGroupSummariesInput`](crate::input::ListAnomalyGroupSummariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -4026,6 +4047,7 @@ impl ListAnomalyGroupSummariesInput {
 pub mod list_anomaly_group_time_series_input {
 
     /// A builder for [`ListAnomalyGroupTimeSeriesInput`](crate::input::ListAnomalyGroupTimeSeriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -4239,6 +4261,7 @@ impl ListAnomalyGroupTimeSeriesInput {
 pub mod list_metric_sets_input {
 
     /// A builder for [`ListMetricSetsInput`](crate::input::ListMetricSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -4423,6 +4446,7 @@ impl ListMetricSetsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4588,6 +4612,7 @@ impl ListTagsForResourceInput {
 pub mod put_feedback_input {
 
     /// A builder for [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -4767,6 +4792,7 @@ impl PutFeedbackInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4973,6 +4999,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5175,6 +5202,7 @@ impl UntagResourceInput {
 pub mod update_alert_input {
 
     /// A builder for [`UpdateAlertInput`](crate::input::UpdateAlertInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
@@ -5386,6 +5414,7 @@ impl UpdateAlertInput {
 pub mod update_anomaly_detector_input {
 
     /// A builder for [`UpdateAnomalyDetectorInput`](crate::input::UpdateAnomalyDetectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -5599,6 +5628,7 @@ impl UpdateAnomalyDetectorInput {
 pub mod update_metric_set_input {
 
     /// A builder for [`UpdateMetricSetInput`](crate::input::UpdateMetricSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,

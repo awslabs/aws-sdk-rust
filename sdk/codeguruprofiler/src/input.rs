@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_notification_channels_input {
 
     /// A builder for [`AddNotificationChannelsInput`](crate::input::AddNotificationChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -214,6 +215,7 @@ impl AddNotificationChannelsInput {
 pub mod batch_get_frame_metric_data_input {
 
     /// A builder for [`BatchGetFrameMetricDataInput`](crate::input::BatchGetFrameMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -533,6 +535,7 @@ impl BatchGetFrameMetricDataInput {
 pub mod configure_agent_input {
 
     /// A builder for [`ConfigureAgentInput`](crate::input::ConfigureAgentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -783,6 +786,7 @@ impl ConfigureAgentInput {
 pub mod create_profiling_group_input {
 
     /// A builder for [`CreateProfilingGroupInput`](crate::input::CreateProfilingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -1049,6 +1053,7 @@ impl CreateProfilingGroupInput {
 pub mod delete_profiling_group_input {
 
     /// A builder for [`DeleteProfilingGroupInput`](crate::input::DeleteProfilingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -1221,6 +1226,7 @@ impl DeleteProfilingGroupInput {
 pub mod describe_profiling_group_input {
 
     /// A builder for [`DescribeProfilingGroupInput`](crate::input::DescribeProfilingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -1393,6 +1399,7 @@ impl DescribeProfilingGroupInput {
 pub mod get_findings_report_account_summary_input {
 
     /// A builder for [`GetFindingsReportAccountSummaryInput`](crate::input::GetFindingsReportAccountSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1595,6 +1602,7 @@ impl GetFindingsReportAccountSummaryInput {
 pub mod get_notification_configuration_input {
 
     /// A builder for [`GetNotificationConfigurationInput`](crate::input::GetNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -1767,6 +1775,7 @@ impl GetNotificationConfigurationInput {
 pub mod get_policy_input {
 
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -1935,6 +1944,7 @@ impl GetPolicyInput {
 pub mod get_profile_input {
 
     /// A builder for [`GetProfileInput`](crate::input::GetProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -2229,6 +2239,7 @@ impl GetProfileInput {
 pub mod get_recommendations_input {
 
     /// A builder for [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -2510,6 +2521,7 @@ impl GetRecommendationsInput {
 pub mod list_findings_reports_input {
 
     /// A builder for [`ListFindingsReportsInput`](crate::input::ListFindingsReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -2809,6 +2821,7 @@ impl ListFindingsReportsInput {
 pub mod list_profile_times_input {
 
     /// A builder for [`ListProfileTimesInput`](crate::input::ListProfileTimesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -3138,6 +3151,7 @@ impl ListProfileTimesInput {
 pub mod list_profiling_groups_input {
 
     /// A builder for [`ListProfilingGroupsInput`](crate::input::ListProfilingGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3340,6 +3354,7 @@ impl ListProfilingGroupsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3505,6 +3520,7 @@ impl ListTagsForResourceInput {
 pub mod post_agent_profile_input {
 
     /// A builder for [`PostAgentProfileInput`](crate::input::PostAgentProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -3761,6 +3777,7 @@ impl PostAgentProfileInput {
 pub mod put_permission_input {
 
     /// A builder for [`PutPermissionInput`](crate::input::PutPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -4013,6 +4030,7 @@ impl PutPermissionInput {
 pub mod remove_notification_channel_input {
 
     /// A builder for [`RemoveNotificationChannelInput`](crate::input::RemoveNotificationChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -4217,6 +4235,7 @@ impl RemoveNotificationChannelInput {
 pub mod remove_permission_input {
 
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -4460,6 +4479,7 @@ impl RemovePermissionInput {
 pub mod submit_feedback_input {
 
     /// A builder for [`SubmitFeedbackInput`](crate::input::SubmitFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
@@ -4697,6 +4717,7 @@ impl SubmitFeedbackInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4903,6 +4924,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5105,6 +5127,7 @@ impl UntagResourceInput {
 pub mod update_profiling_group_input {
 
     /// A builder for [`UpdateProfilingGroupInput`](crate::input::UpdateProfilingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,

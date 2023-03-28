@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_member_account_input {
 
     /// A builder for [`AssociateMemberAccountInput`](crate::input::AssociateMemberAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -174,6 +175,7 @@ impl AssociateMemberAccountInput {
 pub mod associate_s3_resources_input {
 
     /// A builder for [`AssociateS3ResourcesInput`](crate::input::AssociateS3ResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -365,6 +367,7 @@ impl AssociateS3ResourcesInput {
 pub mod disassociate_member_account_input {
 
     /// A builder for [`DisassociateMemberAccountInput`](crate::input::DisassociateMemberAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -534,6 +537,7 @@ impl DisassociateMemberAccountInput {
 pub mod disassociate_s3_resources_input {
 
     /// A builder for [`DisassociateS3ResourcesInput`](crate::input::DisassociateS3ResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -725,6 +729,7 @@ impl DisassociateS3ResourcesInput {
 pub mod list_member_accounts_input {
 
     /// A builder for [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -901,6 +906,7 @@ impl ListMemberAccountsInput {
 pub mod list_s3_resources_input {
 
     /// A builder for [`ListS3ResourcesInput`](crate::input::ListS3ResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -1090,6 +1096,7 @@ impl ListS3ResourcesInput {
 pub mod update_s3_resources_input {
 
     /// A builder for [`UpdateS3ResourcesInput`](crate::input::UpdateS3ResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,

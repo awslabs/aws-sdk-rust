@@ -153,6 +153,7 @@ impl std::error::Error for ValidationError {}
 pub mod validation_error {
 
     /// A builder for [`ValidationError`](crate::error::ValidationError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -213,6 +214,7 @@ impl std::error::Error for ServiceUnavailable {}
 pub mod service_unavailable {
 
     /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -273,6 +275,7 @@ impl std::error::Error for InternalFailure {}
 pub mod internal_failure {
 
     /// A builder for [`InternalFailure`](crate::error::InternalFailure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -484,6 +487,7 @@ impl std::error::Error for ModelNotReadyException {}
 pub mod model_not_ready_exception {
 
     /// A builder for [`ModelNotReadyException`](crate::error::ModelNotReadyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -567,6 +571,7 @@ impl std::error::Error for ModelError {}
 pub mod model_error {
 
     /// A builder for [`ModelError`](crate::error::ModelError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -669,6 +674,7 @@ impl std::error::Error for InternalDependencyException {}
 pub mod internal_dependency_exception {
 
     /// A builder for [`InternalDependencyException`](crate::error::InternalDependencyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

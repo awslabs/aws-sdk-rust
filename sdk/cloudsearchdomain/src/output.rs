@@ -39,6 +39,7 @@ impl UploadDocumentsOutput {
 pub mod upload_documents_output {
 
     /// A builder for [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -140,6 +141,7 @@ impl SuggestOutput {
 pub mod suggest_output {
 
     /// A builder for [`SuggestOutput`](crate::output::SuggestOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SuggestStatus>,
@@ -239,6 +241,7 @@ impl SearchOutput {
 pub mod search_output {
 
     /// A builder for [`SearchOutput`](crate::output::SearchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SearchStatus>,

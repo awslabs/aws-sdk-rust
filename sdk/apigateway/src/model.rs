@@ -139,6 +139,7 @@ impl PatchOperation {
 pub mod patch_operation {
 
     /// A builder for [`PatchOperation`](crate::model::PatchOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) op: std::option::Option<crate::model::Op>,
@@ -347,6 +348,7 @@ impl QuotaSettings {
 pub mod quota_settings {
 
     /// A builder for [`QuotaSettings`](crate::model::QuotaSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -524,6 +526,7 @@ impl ThrottleSettings {
 pub mod throttle_settings {
 
     /// A builder for [`ThrottleSettings`](crate::model::ThrottleSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) burst_limit: std::option::Option<i32>,
@@ -604,6 +607,7 @@ impl ApiStage {
 pub mod api_stage {
 
     /// A builder for [`ApiStage`](crate::model::ApiStage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
@@ -718,6 +722,7 @@ impl CanarySettings {
 pub mod canary_settings {
 
     /// A builder for [`CanarySettings`](crate::model::CanarySettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_traffic: std::option::Option<f64>,
@@ -829,6 +834,7 @@ impl AccessLogSettings {
 pub mod access_log_settings {
 
     /// A builder for [`AccessLogSettings`](crate::model::AccessLogSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -958,6 +964,7 @@ impl MethodSetting {
 pub mod method_setting {
 
     /// A builder for [`MethodSetting`](crate::model::MethodSetting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics_enabled: std::option::Option<bool>,
@@ -1479,6 +1486,7 @@ impl EndpointConfiguration {
 pub mod endpoint_configuration {
 
     /// A builder for [`EndpointConfiguration`](crate::model::EndpointConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) types: std::option::Option<std::vec::Vec<crate::model::EndpointType>>,
@@ -1825,6 +1833,7 @@ impl Method {
 pub mod method {
 
     /// A builder for [`Method`](crate::model::Method).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_method: std::option::Option<std::string::String>,
@@ -2179,6 +2188,7 @@ impl Integration {
 pub mod integration {
 
     /// A builder for [`Integration`](crate::model::Integration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IntegrationType>,
@@ -2486,6 +2496,7 @@ impl TlsConfig {
 pub mod tls_config {
 
     /// A builder for [`TlsConfig`](crate::model::TlsConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insecure_skip_verification: std::option::Option<bool>,
@@ -2576,6 +2587,7 @@ impl IntegrationResponse {
 pub mod integration_response {
 
     /// A builder for [`IntegrationResponse`](crate::model::IntegrationResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
@@ -3022,6 +3034,7 @@ impl MethodResponse {
 pub mod method_response {
 
     /// A builder for [`MethodResponse`](crate::model::MethodResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
@@ -3344,6 +3357,7 @@ impl MutualTlsAuthentication {
 pub mod mutual_tls_authentication {
 
     /// A builder for [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truststore_uri: std::option::Option<std::string::String>,
@@ -3660,6 +3674,7 @@ impl DocumentationPartLocation {
 pub mod documentation_part_location {
 
     /// A builder for [`DocumentationPartLocation`](crate::model::DocumentationPartLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DocumentationPartType>,
@@ -3921,6 +3936,7 @@ impl MethodSnapshot {
 pub mod method_snapshot {
 
     /// A builder for [`MethodSnapshot`](crate::model::MethodSnapshot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_type: std::option::Option<std::string::String>,
@@ -4300,6 +4316,7 @@ impl VpcLink {
 pub mod vpc_link {
 
     /// A builder for [`VpcLink`](crate::model::VpcLink).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4505,6 +4522,7 @@ impl UsagePlan {
 pub mod usage_plan {
 
     /// A builder for [`UsagePlan`](crate::model::UsagePlan).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4690,6 +4708,7 @@ impl UsagePlanKey {
 pub mod usage_plan_key {
 
     /// A builder for [`UsagePlanKey`](crate::model::UsagePlanKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4900,6 +4919,7 @@ impl Stage {
 pub mod stage {
 
     /// A builder for [`Stage`](crate::model::Stage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -5242,6 +5262,7 @@ impl SdkType {
 pub mod sdk_type {
 
     /// A builder for [`SdkType`](crate::model::SdkType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5370,6 +5391,7 @@ impl SdkConfigurationProperty {
 pub mod sdk_configuration_property {
 
     /// A builder for [`SdkConfigurationProperty`](crate::model::SdkConfigurationProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5562,6 +5584,7 @@ impl RestApi {
 pub mod rest_api {
 
     /// A builder for [`RestApi`](crate::model::RestApi).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5836,6 +5859,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5970,6 +5994,7 @@ impl RequestValidator {
 pub mod request_validator {
 
     /// A builder for [`RequestValidator`](crate::model::RequestValidator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6082,6 +6107,7 @@ impl Model {
 pub mod model {
 
     /// A builder for [`Model`](crate::model::Model).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6214,6 +6240,7 @@ impl GatewayResponse {
 pub mod gateway_response {
 
     /// A builder for [`GatewayResponse`](crate::model::GatewayResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_type: std::option::Option<crate::model::GatewayResponseType>,
@@ -6467,6 +6494,7 @@ impl DomainName {
 pub mod domain_name {
 
     /// A builder for [`DomainName`](crate::model::DomainName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -6796,6 +6824,7 @@ impl DocumentationVersion {
 pub mod documentation_version {
 
     /// A builder for [`DocumentationVersion`](crate::model::DocumentationVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -6885,6 +6914,7 @@ impl DocumentationPart {
 pub mod documentation_part {
 
     /// A builder for [`DocumentationPart`](crate::model::DocumentationPart).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7085,6 +7115,7 @@ impl Deployment {
 pub mod deployment {
 
     /// A builder for [`Deployment`](crate::model::Deployment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7234,6 +7265,7 @@ impl ClientCertificate {
 pub mod client_certificate {
 
     /// A builder for [`ClientCertificate`](crate::model::ClientCertificate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
@@ -7385,6 +7417,7 @@ impl BasePathMapping {
 pub mod base_path_mapping {
 
     /// A builder for [`BasePathMapping`](crate::model::BasePathMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_path: std::option::Option<std::string::String>,
@@ -7520,6 +7553,7 @@ impl Authorizer {
 pub mod authorizer {
 
     /// A builder for [`Authorizer`](crate::model::Authorizer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7773,6 +7807,7 @@ impl ApiKey {
 pub mod api_key {
 
     /// A builder for [`ApiKey`](crate::model::ApiKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7968,6 +8003,7 @@ impl MutualTlsAuthenticationInput {
 pub mod mutual_tls_authentication_input {
 
     /// A builder for [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truststore_uri: std::option::Option<std::string::String>,
@@ -8052,6 +8088,7 @@ impl DeploymentCanarySettings {
 pub mod deployment_canary_settings {
 
     /// A builder for [`DeploymentCanarySettings`](crate::model::DeploymentCanarySettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_traffic: std::option::Option<f64>,
@@ -8148,6 +8185,7 @@ impl StageKey {
 pub mod stage_key {
 
     /// A builder for [`StageKey`](crate::model::StageKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rest_api_id: std::option::Option<std::string::String>,

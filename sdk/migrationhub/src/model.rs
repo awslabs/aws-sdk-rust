@@ -54,6 +54,7 @@ impl ResourceAttribute {
 pub mod resource_attribute {
 
     /// A builder for [`ResourceAttribute`](crate::model::ResourceAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResourceAttributeType>,
@@ -274,6 +275,7 @@ impl Task {
 pub mod task {
 
     /// A builder for [`Task`](crate::model::Task).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -546,6 +548,7 @@ impl ProgressUpdateStreamSummary {
 pub mod progress_update_stream_summary {
 
     /// A builder for [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
@@ -635,6 +638,7 @@ impl MigrationTaskSummary {
 pub mod migration_task_summary {
 
     /// A builder for [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -762,6 +766,7 @@ impl DiscoveredResource {
 pub mod discovered_resource {
 
     /// A builder for [`DiscoveredResource`](crate::model::DiscoveredResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
@@ -832,6 +837,7 @@ impl CreatedArtifact {
 pub mod created_artifact {
 
     /// A builder for [`CreatedArtifact`](crate::model::CreatedArtifact).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -906,6 +912,7 @@ impl ApplicationState {
 pub mod application_state {
 
     /// A builder for [`ApplicationState`](crate::model::ApplicationState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1018,6 +1025,7 @@ impl MigrationTask {
 pub mod migration_task {
 
     /// A builder for [`MigrationTask`](crate::model::MigrationTask).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,

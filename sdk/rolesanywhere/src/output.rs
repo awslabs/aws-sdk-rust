@@ -17,6 +17,7 @@ impl EnableTrustAnchorOutput {
 pub mod enable_trust_anchor_output {
 
     /// A builder for [`EnableTrustAnchorOutput`](crate::output::EnableTrustAnchorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
@@ -68,6 +69,7 @@ impl DisableTrustAnchorOutput {
 pub mod disable_trust_anchor_output {
 
     /// A builder for [`DisableTrustAnchorOutput`](crate::output::DisableTrustAnchorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
@@ -126,6 +128,7 @@ impl ListTrustAnchorsOutput {
 pub mod list_trust_anchors_output {
 
     /// A builder for [`ListTrustAnchorsOutput`](crate::output::ListTrustAnchorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -196,6 +199,7 @@ impl CreateTrustAnchorOutput {
 pub mod create_trust_anchor_output {
 
     /// A builder for [`CreateTrustAnchorOutput`](crate::output::CreateTrustAnchorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
@@ -247,6 +251,7 @@ impl DeleteTrustAnchorOutput {
 pub mod delete_trust_anchor_output {
 
     /// A builder for [`DeleteTrustAnchorOutput`](crate::output::DeleteTrustAnchorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
@@ -298,6 +303,7 @@ impl UpdateTrustAnchorOutput {
 pub mod update_trust_anchor_output {
 
     /// A builder for [`UpdateTrustAnchorOutput`](crate::output::UpdateTrustAnchorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
@@ -349,6 +355,7 @@ impl GetTrustAnchorOutput {
 pub mod get_trust_anchor_output {
 
     /// A builder for [`GetTrustAnchorOutput`](crate::output::GetTrustAnchorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor: std::option::Option<crate::model::TrustAnchorDetail>,
@@ -407,6 +414,7 @@ impl ListSubjectsOutput {
 pub mod list_subjects_output {
 
     /// A builder for [`ListSubjectsOutput`](crate::output::ListSubjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subjects: std::option::Option<std::vec::Vec<crate::model::SubjectSummary>>,
@@ -476,6 +484,7 @@ impl GetSubjectOutput {
 pub mod get_subject_output {
 
     /// A builder for [`GetSubjectOutput`](crate::output::GetSubjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject: std::option::Option<crate::model::SubjectDetail>,
@@ -527,6 +536,7 @@ impl EnableProfileOutput {
 pub mod enable_profile_output {
 
     /// A builder for [`EnableProfileOutput`](crate::output::EnableProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::ProfileDetail>,
@@ -578,6 +588,7 @@ impl DisableProfileOutput {
 pub mod disable_profile_output {
 
     /// A builder for [`DisableProfileOutput`](crate::output::DisableProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::ProfileDetail>,
@@ -636,6 +647,7 @@ impl ListProfilesOutput {
 pub mod list_profiles_output {
 
     /// A builder for [`ListProfilesOutput`](crate::output::ListProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -705,6 +717,7 @@ impl CreateProfileOutput {
 pub mod create_profile_output {
 
     /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::ProfileDetail>,
@@ -756,6 +769,7 @@ impl DeleteProfileOutput {
 pub mod delete_profile_output {
 
     /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::ProfileDetail>,
@@ -807,6 +821,7 @@ impl UpdateProfileOutput {
 pub mod update_profile_output {
 
     /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::ProfileDetail>,
@@ -858,6 +873,7 @@ impl GetProfileOutput {
 pub mod get_profile_output {
 
     /// A builder for [`GetProfileOutput`](crate::output::GetProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile: std::option::Option<crate::model::ProfileDetail>,
@@ -909,6 +925,7 @@ impl EnableCrlOutput {
 pub mod enable_crl_output {
 
     /// A builder for [`EnableCrlOutput`](crate::output::EnableCrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl: std::option::Option<crate::model::CrlDetail>,
@@ -955,6 +972,7 @@ impl DisableCrlOutput {
 pub mod disable_crl_output {
 
     /// A builder for [`DisableCrlOutput`](crate::output::DisableCrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl: std::option::Option<crate::model::CrlDetail>,
@@ -1008,6 +1026,7 @@ impl ListCrlsOutput {
 pub mod list_crls_output {
 
     /// A builder for [`ListCrlsOutput`](crate::output::ListCrlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1077,6 +1096,7 @@ impl ImportCrlOutput {
 pub mod import_crl_output {
 
     /// A builder for [`ImportCrlOutput`](crate::output::ImportCrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl: std::option::Option<crate::model::CrlDetail>,
@@ -1123,6 +1143,7 @@ impl DeleteCrlOutput {
 pub mod delete_crl_output {
 
     /// A builder for [`DeleteCrlOutput`](crate::output::DeleteCrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl: std::option::Option<crate::model::CrlDetail>,
@@ -1169,6 +1190,7 @@ impl UpdateCrlOutput {
 pub mod update_crl_output {
 
     /// A builder for [`UpdateCrlOutput`](crate::output::UpdateCrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl: std::option::Option<crate::model::CrlDetail>,
@@ -1215,6 +1237,7 @@ impl GetCrlOutput {
 pub mod get_crl_output {
 
     /// A builder for [`GetCrlOutput`](crate::output::GetCrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl: std::option::Option<crate::model::CrlDetail>,
@@ -1251,6 +1274,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1275,6 +1299,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1309,6 +1334,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,

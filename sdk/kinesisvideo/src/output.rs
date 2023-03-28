@@ -7,6 +7,7 @@ pub struct UpdateStreamOutput {}
 pub mod update_stream_output {
 
     /// A builder for [`UpdateStreamOutput`](crate::output::UpdateStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateSignalingChannelOutput {}
 pub mod update_signaling_channel_output {
 
     /// A builder for [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateNotificationConfigurationOutput {}
 pub mod update_notification_configuration_output {
 
     /// A builder for [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UpdateMediaStorageConfigurationOutput {}
 pub mod update_media_storage_configuration_output {
 
     /// A builder for [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct UpdateImageGenerationConfigurationOutput {}
 pub mod update_image_generation_configuration_output {
 
     /// A builder for [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -127,6 +132,7 @@ pub struct UpdateDataRetentionOutput {}
 pub mod update_data_retention_output {
 
     /// A builder for [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -151,6 +157,7 @@ pub struct UntagStreamOutput {}
 pub mod untag_stream_output {
 
     /// A builder for [`UntagStreamOutput`](crate::output::UntagStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -175,6 +182,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -199,6 +207,7 @@ pub struct TagStreamOutput {}
 pub mod tag_stream_output {
 
     /// A builder for [`TagStreamOutput`](crate::output::TagStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -223,6 +232,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -299,6 +309,7 @@ impl StartEdgeConfigurationUpdateOutput {
 pub mod start_edge_configuration_update_output {
 
     /// A builder for [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -445,6 +456,7 @@ impl ListTagsForStreamOutput {
 pub mod list_tags_for_stream_output {
 
     /// A builder for [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -533,6 +545,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -617,6 +630,7 @@ impl ListStreamsOutput {
 pub mod list_streams_output {
 
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_info_list: std::option::Option<std::vec::Vec<crate::model::StreamInfo>>,
@@ -693,6 +707,7 @@ impl ListSignalingChannelsOutput {
 pub mod list_signaling_channels_output {
 
     /// A builder for [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_info_list: std::option::Option<std::vec::Vec<crate::model::ChannelInfo>>,
@@ -765,6 +780,7 @@ impl GetSignalingChannelEndpointOutput {
 pub mod get_signaling_channel_endpoint_output {
 
     /// A builder for [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_endpoint_list:
@@ -826,6 +842,7 @@ impl GetDataEndpointOutput {
 pub mod get_data_endpoint_output {
 
     /// A builder for [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_endpoint: std::option::Option<std::string::String>,
@@ -877,6 +894,7 @@ impl DescribeStreamOutput {
 pub mod describe_stream_output {
 
     /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_info: std::option::Option<crate::model::StreamInfo>,
@@ -928,6 +946,7 @@ impl DescribeSignalingChannelOutput {
 pub mod describe_signaling_channel_output {
 
     /// A builder for [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_info: std::option::Option<crate::model::ChannelInfo>,
@@ -981,6 +1000,7 @@ impl DescribeNotificationConfigurationOutput {
 pub mod describe_notification_configuration_output {
 
     /// A builder for [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_configuration:
@@ -1038,6 +1058,7 @@ impl DescribeMediaStorageConfigurationOutput {
 pub mod describe_media_storage_configuration_output {
 
     /// A builder for [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_storage_configuration:
@@ -1103,6 +1124,7 @@ impl DescribeMappedResourceConfigurationOutput {
 pub mod describe_mapped_resource_configuration_output {
 
     /// A builder for [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mapped_resource_configuration_list:
@@ -1181,6 +1203,7 @@ impl DescribeImageGenerationConfigurationOutput {
 pub mod describe_image_generation_configuration_output {
 
     /// A builder for [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_generation_configuration:
@@ -1278,6 +1301,7 @@ impl DescribeEdgeConfigurationOutput {
 pub mod describe_edge_configuration_output {
 
     /// A builder for [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -1403,6 +1427,7 @@ pub struct DeleteStreamOutput {}
 pub mod delete_stream_output {
 
     /// A builder for [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1427,6 +1452,7 @@ pub struct DeleteSignalingChannelOutput {}
 pub mod delete_signaling_channel_output {
 
     /// A builder for [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1461,6 +1487,7 @@ impl CreateStreamOutput {
 pub mod create_stream_output {
 
     /// A builder for [`CreateStreamOutput`](crate::output::CreateStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -1509,6 +1536,7 @@ impl CreateSignalingChannelOutput {
 pub mod create_signaling_channel_output {
 
     /// A builder for [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,

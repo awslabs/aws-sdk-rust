@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_bot_version_input {
 
     /// A builder for [`CreateBotVersionInput`](crate::input::CreateBotVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -196,6 +197,7 @@ impl CreateBotVersionInput {
 pub mod create_intent_version_input {
 
     /// A builder for [`CreateIntentVersionInput`](crate::input::CreateIntentVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -387,6 +389,7 @@ impl CreateIntentVersionInput {
 pub mod create_slot_type_version_input {
 
     /// A builder for [`CreateSlotTypeVersionInput`](crate::input::CreateSlotTypeVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -580,6 +583,7 @@ impl CreateSlotTypeVersionInput {
 pub mod delete_bot_input {
 
     /// A builder for [`DeleteBotInput`](crate::input::DeleteBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -738,6 +742,7 @@ impl DeleteBotInput {
 pub mod delete_bot_alias_input {
 
     /// A builder for [`DeleteBotAliasInput`](crate::input::DeleteBotAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -937,6 +942,7 @@ impl DeleteBotAliasInput {
 pub mod delete_bot_channel_association_input {
 
     /// A builder for [`DeleteBotChannelAssociationInput`](crate::input::DeleteBotChannelAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1170,6 +1176,7 @@ impl DeleteBotChannelAssociationInput {
 pub mod delete_bot_version_input {
 
     /// A builder for [`DeleteBotVersionInput`](crate::input::DeleteBotVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1371,6 +1378,7 @@ impl DeleteBotVersionInput {
 pub mod delete_intent_input {
 
     /// A builder for [`DeleteIntentInput`](crate::input::DeleteIntentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1531,6 +1539,7 @@ impl DeleteIntentInput {
 pub mod delete_intent_version_input {
 
     /// A builder for [`DeleteIntentVersionInput`](crate::input::DeleteIntentVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1732,6 +1741,7 @@ impl DeleteIntentVersionInput {
 pub mod delete_slot_type_input {
 
     /// A builder for [`DeleteSlotTypeInput`](crate::input::DeleteSlotTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1893,6 +1903,7 @@ impl DeleteSlotTypeInput {
 pub mod delete_slot_type_version_input {
 
     /// A builder for [`DeleteSlotTypeVersionInput`](crate::input::DeleteSlotTypeVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2094,6 +2105,7 @@ impl DeleteSlotTypeVersionInput {
 pub mod delete_utterances_input {
 
     /// A builder for [`DeleteUtterancesInput`](crate::input::DeleteUtterancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
@@ -2295,6 +2307,7 @@ impl DeleteUtterancesInput {
 pub mod get_bot_input {
 
     /// A builder for [`GetBotInput`](crate::input::GetBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2495,6 +2508,7 @@ impl GetBotInput {
 pub mod get_bot_alias_input {
 
     /// A builder for [`GetBotAliasInput`](crate::input::GetBotAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2694,6 +2708,7 @@ impl GetBotAliasInput {
 pub mod get_bot_aliases_input {
 
     /// A builder for [`GetBotAliasesInput`](crate::input::GetBotAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
@@ -2925,6 +2940,7 @@ impl GetBotAliasesInput {
 pub mod get_bot_channel_association_input {
 
     /// A builder for [`GetBotChannelAssociationInput`](crate::input::GetBotChannelAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3158,6 +3174,7 @@ impl GetBotChannelAssociationInput {
 pub mod get_bot_channel_associations_input {
 
     /// A builder for [`GetBotChannelAssociationsInput`](crate::input::GetBotChannelAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
@@ -3427,6 +3444,7 @@ impl GetBotChannelAssociationsInput {
 pub mod get_bots_input {
 
     /// A builder for [`GetBotsInput`](crate::input::GetBotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3624,6 +3642,7 @@ impl GetBotsInput {
 pub mod get_bot_versions_input {
 
     /// A builder for [`GetBotVersionsInput`](crate::input::GetBotVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3832,6 +3851,7 @@ impl GetBotVersionsInput {
 pub mod get_builtin_intent_input {
 
     /// A builder for [`GetBuiltinIntentInput`](crate::input::GetBuiltinIntentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -4001,6 +4021,7 @@ impl GetBuiltinIntentInput {
 pub mod get_builtin_intents_input {
 
     /// A builder for [`GetBuiltinIntentsInput`](crate::input::GetBuiltinIntentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -4219,6 +4240,7 @@ impl GetBuiltinIntentsInput {
 pub mod get_builtin_slot_types_input {
 
     /// A builder for [`GetBuiltinSlotTypesInput`](crate::input::GetBuiltinSlotTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -4437,6 +4459,7 @@ impl GetBuiltinSlotTypesInput {
 pub mod get_export_input {
 
     /// A builder for [`GetExportInput`](crate::input::GetExportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4679,6 +4702,7 @@ impl GetExportInput {
 pub mod get_import_input {
 
     /// A builder for [`GetImportInput`](crate::input::GetImportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
@@ -4840,6 +4864,7 @@ impl GetImportInput {
 pub mod get_intent_input {
 
     /// A builder for [`GetIntentInput`](crate::input::GetIntentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5037,6 +5062,7 @@ impl GetIntentInput {
 pub mod get_intents_input {
 
     /// A builder for [`GetIntentsInput`](crate::input::GetIntentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5236,6 +5262,7 @@ impl GetIntentsInput {
 pub mod get_intent_versions_input {
 
     /// A builder for [`GetIntentVersionsInput`](crate::input::GetIntentVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5446,6 +5473,7 @@ impl GetIntentVersionsInput {
 pub mod get_migration_input {
 
     /// A builder for [`GetMigrationInput`](crate::input::GetMigrationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) migration_id: std::option::Option<std::string::String>,
@@ -5613,6 +5641,7 @@ impl GetMigrationInput {
 pub mod get_migrations_input {
 
     /// A builder for [`GetMigrationsInput`](crate::input::GetMigrationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_by_attribute: std::option::Option<crate::model::MigrationSortAttribute>,
@@ -5881,6 +5910,7 @@ impl GetMigrationsInput {
 pub mod get_slot_type_input {
 
     /// A builder for [`GetSlotTypeInput`](crate::input::GetSlotTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6080,6 +6110,7 @@ impl GetSlotTypeInput {
 pub mod get_slot_types_input {
 
     /// A builder for [`GetSlotTypesInput`](crate::input::GetSlotTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6279,6 +6310,7 @@ impl GetSlotTypesInput {
 pub mod get_slot_type_versions_input {
 
     /// A builder for [`GetSlotTypeVersionsInput`](crate::input::GetSlotTypeVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6489,6 +6521,7 @@ impl GetSlotTypeVersionsInput {
 pub mod get_utterances_view_input {
 
     /// A builder for [`GetUtterancesViewInput`](crate::input::GetUtterancesViewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
@@ -6723,6 +6756,7 @@ impl GetUtterancesViewInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6888,6 +6922,7 @@ impl ListTagsForResourceInput {
 pub mod put_bot_input {
 
     /// A builder for [`PutBotInput`](crate::input::PutBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7363,6 +7398,7 @@ impl PutBotInput {
 pub mod put_bot_alias_input {
 
     /// A builder for [`PutBotAliasInput`](crate::input::PutBotAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7652,6 +7688,7 @@ impl PutBotAliasInput {
 pub mod put_intent_input {
 
     /// A builder for [`PutIntentInput`](crate::input::PutIntentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8113,6 +8150,7 @@ impl PutIntentInput {
 pub mod put_slot_type_input {
 
     /// A builder for [`PutSlotTypeInput`](crate::input::PutSlotTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8431,6 +8469,7 @@ impl PutSlotTypeInput {
 pub mod start_import_input {
 
     /// A builder for [`StartImportInput`](crate::input::StartImportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
@@ -8653,6 +8692,7 @@ impl StartImportInput {
 pub mod start_migration_input {
 
     /// A builder for [`StartMigrationInput`](crate::input::StartMigrationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) v1_bot_name: std::option::Option<std::string::String>,
@@ -8880,6 +8920,7 @@ impl StartMigrationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9078,6 +9119,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

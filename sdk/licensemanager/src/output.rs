@@ -7,6 +7,7 @@ pub struct UpdateServiceSettingsOutput {}
 pub mod update_service_settings_output {
 
     /// A builder for [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateLicenseSpecificationsForResourceOutput {}
 pub mod update_license_specifications_for_resource_output {
 
     /// A builder for [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateLicenseManagerReportGeneratorOutput {}
 pub mod update_license_manager_report_generator_output {
 
     /// A builder for [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UpdateLicenseConfigurationOutput {}
 pub mod update_license_configuration_output {
 
     /// A builder for [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -127,6 +132,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -175,6 +181,7 @@ impl RejectGrantOutput {
 pub mod reject_grant_output {
 
     /// A builder for [`RejectGrantOutput`](crate::output::RejectGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
@@ -257,6 +264,7 @@ impl ListUsageForLicenseConfigurationOutput {
 pub mod list_usage_for_license_configuration_output {
 
     /// A builder for [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_usage_list:
@@ -337,6 +345,7 @@ impl ListTokensOutput {
 pub mod list_tokens_output {
 
     /// A builder for [`ListTokensOutput`](crate::output::ListTokensOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tokens: std::option::Option<std::vec::Vec<crate::model::TokenData>>,
@@ -406,6 +415,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -471,6 +481,7 @@ impl ListResourceInventoryOutput {
 pub mod list_resource_inventory_output {
 
     /// A builder for [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_inventory_list:
@@ -548,6 +559,7 @@ impl ListReceivedLicensesForOrganizationOutput {
 pub mod list_received_licenses_for_organization_output {
 
     /// A builder for [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
@@ -624,6 +636,7 @@ impl ListReceivedLicensesOutput {
 pub mod list_received_licenses_output {
 
     /// A builder for [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
@@ -700,6 +713,7 @@ impl ListReceivedGrantsForOrganizationOutput {
 pub mod list_received_grants_for_organization_output {
 
     /// A builder for [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
@@ -776,6 +790,7 @@ impl ListReceivedGrantsOutput {
 pub mod list_received_grants_output {
 
     /// A builder for [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
@@ -852,6 +867,7 @@ impl ListLicenseVersionsOutput {
 pub mod list_license_versions_output {
 
     /// A builder for [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
@@ -931,6 +947,7 @@ impl ListLicenseSpecificationsForResourceOutput {
 pub mod list_license_specifications_for_resource_output {
 
     /// A builder for [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_specifications:
@@ -1008,6 +1025,7 @@ impl ListLicensesOutput {
 pub mod list_licenses_output {
 
     /// A builder for [`ListLicensesOutput`](crate::output::ListLicensesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
@@ -1084,6 +1102,7 @@ impl ListLicenseManagerReportGeneratorsOutput {
 pub mod list_license_manager_report_generators_output {
 
     /// A builder for [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_generators:
@@ -1164,6 +1183,7 @@ impl ListLicenseConversionTasksOutput {
 pub mod list_license_conversion_tasks_output {
 
     /// A builder for [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_tasks:
@@ -1247,6 +1267,7 @@ impl ListLicenseConfigurationsOutput {
 pub mod list_license_configurations_output {
 
     /// A builder for [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configurations:
@@ -1327,6 +1348,7 @@ impl ListFailuresForLicenseConfigurationOperationsOutput {
 pub mod list_failures_for_license_configuration_operations_output {
 
     /// A builder for [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_operation_failure_list:
@@ -1408,6 +1430,7 @@ impl ListDistributedGrantsOutput {
 pub mod list_distributed_grants_output {
 
     /// A builder for [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
@@ -1487,6 +1510,7 @@ impl ListAssociationsForLicenseConfigurationOutput {
 pub mod list_associations_for_license_configuration_output {
 
     /// A builder for [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_associations:
@@ -1592,6 +1616,7 @@ impl GetServiceSettingsOutput {
 pub mod get_service_settings_output {
 
     /// A builder for [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
@@ -1710,6 +1735,7 @@ impl GetLicenseUsageOutput {
 pub mod get_license_usage_output {
 
     /// A builder for [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_usage: std::option::Option<crate::model::LicenseUsage>,
@@ -1761,6 +1787,7 @@ impl GetLicenseManagerReportGeneratorOutput {
 pub mod get_license_manager_report_generator_output {
 
     /// A builder for [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_generator: std::option::Option<crate::model::ReportGenerator>,
@@ -1872,6 +1899,7 @@ impl GetLicenseConversionTaskOutput {
 pub mod get_license_conversion_task_output {
 
     /// A builder for [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
@@ -2172,6 +2200,7 @@ impl GetLicenseConfigurationOutput {
 pub mod get_license_configuration_output {
 
     /// A builder for [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_id: std::option::Option<std::string::String>,
@@ -2485,6 +2514,7 @@ impl GetLicenseOutput {
 pub mod get_license_output {
 
     /// A builder for [`GetLicenseOutput`](crate::output::GetLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license: std::option::Option<crate::model::License>,
@@ -2533,6 +2563,7 @@ impl GetGrantOutput {
 pub mod get_grant_output {
 
     /// A builder for [`GetGrantOutput`](crate::output::GetGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant: std::option::Option<crate::model::Grant>,
@@ -2579,6 +2610,7 @@ impl GetAccessTokenOutput {
 pub mod get_access_token_output {
 
     /// A builder for [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -2634,6 +2666,7 @@ impl ExtendLicenseConsumptionOutput {
 pub mod extend_license_consumption_output {
 
     /// A builder for [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_consumption_token: std::option::Option<std::string::String>,
@@ -2687,6 +2720,7 @@ pub struct DeleteTokenOutput {}
 pub mod delete_token_output {
 
     /// A builder for [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2711,6 +2745,7 @@ pub struct DeleteLicenseManagerReportGeneratorOutput {}
 pub mod delete_license_manager_report_generator_output {
 
     /// A builder for [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2735,6 +2770,7 @@ pub struct DeleteLicenseConfigurationOutput {}
 pub mod delete_license_configuration_output {
 
     /// A builder for [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2776,6 +2812,7 @@ impl DeleteLicenseOutput {
 pub mod delete_license_output {
 
     /// A builder for [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LicenseDeletionStatus>,
@@ -2856,6 +2893,7 @@ impl DeleteGrantOutput {
 pub mod delete_grant_output {
 
     /// A builder for [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
@@ -2942,6 +2980,7 @@ impl CreateTokenOutput {
 pub mod create_token_output {
 
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_id: std::option::Option<std::string::String>,
@@ -3031,6 +3070,7 @@ impl CreateLicenseVersionOutput {
 pub mod create_license_version_output {
 
     /// A builder for [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
@@ -3106,6 +3146,7 @@ impl CreateLicenseManagerReportGeneratorOutput {
 pub mod create_license_manager_report_generator_output {
 
     /// A builder for [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_manager_report_generator_arn: std::option::Option<std::string::String>,
@@ -3160,6 +3201,7 @@ impl CreateLicenseConversionTaskForResourceOutput {
 pub mod create_license_conversion_task_for_resource_output {
 
     /// A builder for [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
@@ -3211,6 +3253,7 @@ impl CreateLicenseConfigurationOutput {
 pub mod create_license_configuration_output {
 
     /// A builder for [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
@@ -3276,6 +3319,7 @@ impl CreateLicenseOutput {
 pub mod create_license_output {
 
     /// A builder for [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
@@ -3365,6 +3409,7 @@ impl CreateGrantVersionOutput {
 pub mod create_grant_version_output {
 
     /// A builder for [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
@@ -3451,6 +3496,7 @@ impl CreateGrantOutput {
 pub mod create_grant_output {
 
     /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
@@ -3572,6 +3618,7 @@ impl CheckoutLicenseOutput {
 pub mod checkout_license_output {
 
     /// A builder for [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checkout_type: std::option::Option<crate::model::CheckoutType>,
@@ -3769,6 +3816,7 @@ impl CheckoutBorrowLicenseOutput {
 pub mod checkout_borrow_license_output {
 
     /// A builder for [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
@@ -3913,6 +3961,7 @@ pub struct CheckInLicenseOutput {}
 pub mod check_in_license_output {
 
     /// A builder for [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3961,6 +4010,7 @@ impl AcceptGrantOutput {
 pub mod accept_grant_output {
 
     /// A builder for [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,

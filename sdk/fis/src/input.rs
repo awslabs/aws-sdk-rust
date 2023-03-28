@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_experiment_template_input {
 
     /// A builder for [`CreateExperimentTemplateInput`](crate::input::CreateExperimentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -339,6 +340,7 @@ impl CreateExperimentTemplateInput {
 pub mod delete_experiment_template_input {
 
     /// A builder for [`DeleteExperimentTemplateInput`](crate::input::DeleteExperimentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -502,6 +504,7 @@ impl DeleteExperimentTemplateInput {
 pub mod get_action_input {
 
     /// A builder for [`GetActionInput`](crate::input::GetActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -660,6 +663,7 @@ impl GetActionInput {
 pub mod get_experiment_input {
 
     /// A builder for [`GetExperimentInput`](crate::input::GetExperimentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -820,6 +824,7 @@ impl GetExperimentInput {
 pub mod get_experiment_template_input {
 
     /// A builder for [`GetExperimentTemplateInput`](crate::input::GetExperimentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -983,6 +988,7 @@ impl GetExperimentTemplateInput {
 pub mod get_target_resource_type_input {
 
     /// A builder for [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -1155,6 +1161,7 @@ impl GetTargetResourceTypeInput {
 pub mod list_actions_input {
 
     /// A builder for [`ListActionsInput`](crate::input::ListActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1331,6 +1338,7 @@ impl ListActionsInput {
 pub mod list_experiments_input {
 
     /// A builder for [`ListExperimentsInput`](crate::input::ListExperimentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1507,6 +1515,7 @@ impl ListExperimentsInput {
 pub mod list_experiment_templates_input {
 
     /// A builder for [`ListExperimentTemplatesInput`](crate::input::ListExperimentTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1685,6 +1694,7 @@ impl ListExperimentTemplatesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1850,6 +1860,7 @@ impl ListTagsForResourceInput {
 pub mod list_target_resource_types_input {
 
     /// A builder for [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2028,6 +2039,7 @@ impl ListTargetResourceTypesInput {
 pub mod start_experiment_input {
 
     /// A builder for [`StartExperimentInput`](crate::input::StartExperimentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2232,6 +2244,7 @@ impl StartExperimentInput {
 pub mod stop_experiment_input {
 
     /// A builder for [`StopExperimentInput`](crate::input::StopExperimentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2392,6 +2405,7 @@ impl StopExperimentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2598,6 +2612,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2798,6 +2813,7 @@ impl UntagResourceInput {
 pub mod update_experiment_template_input {
 
     /// A builder for [`UpdateExperimentTemplateInput`](crate::input::UpdateExperimentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

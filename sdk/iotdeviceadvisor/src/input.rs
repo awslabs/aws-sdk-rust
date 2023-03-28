@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_suite_definition_input {
 
     /// A builder for [`CreateSuiteDefinitionInput`](crate::input::CreateSuiteDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_configuration:
@@ -202,6 +203,7 @@ impl CreateSuiteDefinitionInput {
 pub mod delete_suite_definition_input {
 
     /// A builder for [`DeleteSuiteDefinitionInput`](crate::input::DeleteSuiteDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -374,6 +376,7 @@ impl DeleteSuiteDefinitionInput {
 pub mod get_endpoint_input {
 
     /// A builder for [`GetEndpointInput`](crate::input::GetEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -553,6 +556,7 @@ impl GetEndpointInput {
 pub mod get_suite_definition_input {
 
     /// A builder for [`GetSuiteDefinitionInput`](crate::input::GetSuiteDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -756,6 +760,7 @@ impl GetSuiteDefinitionInput {
 pub mod get_suite_run_input {
 
     /// A builder for [`GetSuiteRunInput`](crate::input::GetSuiteRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -958,6 +963,7 @@ impl GetSuiteRunInput {
 pub mod get_suite_run_report_input {
 
     /// A builder for [`GetSuiteRunReportInput`](crate::input::GetSuiteRunReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -1162,6 +1168,7 @@ impl GetSuiteRunReportInput {
 pub mod list_suite_definitions_input {
 
     /// A builder for [`ListSuiteDefinitionsInput`](crate::input::ListSuiteDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1338,6 +1345,7 @@ impl ListSuiteDefinitionsInput {
 pub mod list_suite_runs_input {
 
     /// A builder for [`ListSuiteRunsInput`](crate::input::ListSuiteRunsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -1558,6 +1566,7 @@ impl ListSuiteRunsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1723,6 +1732,7 @@ impl ListTagsForResourceInput {
 pub mod start_suite_run_input {
 
     /// A builder for [`StartSuiteRunInput`](crate::input::StartSuiteRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -1970,6 +1980,7 @@ impl StartSuiteRunInput {
 pub mod stop_suite_run_input {
 
     /// A builder for [`StopSuiteRunInput`](crate::input::StopSuiteRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -2172,6 +2183,7 @@ impl StopSuiteRunInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2378,6 +2390,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2580,6 +2593,7 @@ impl UntagResourceInput {
 pub mod update_suite_definition_input {
 
     /// A builder for [`UpdateSuiteDefinitionInput`](crate::input::UpdateSuiteDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,

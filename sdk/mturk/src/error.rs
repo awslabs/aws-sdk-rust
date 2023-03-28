@@ -161,6 +161,7 @@ impl std::error::Error for ServiceFault {}
 pub mod service_fault {
 
     /// A builder for [`ServiceFault`](crate::error::ServiceFault).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -245,6 +246,7 @@ impl std::error::Error for RequestError {}
 pub mod request_error {
 
     /// A builder for [`RequestError`](crate::error::RequestError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

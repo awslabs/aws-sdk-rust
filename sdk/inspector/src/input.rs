@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_attributes_to_findings_input {
 
     /// A builder for [`AddAttributesToFindingsInput`](crate::input::AddAttributesToFindingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -201,6 +202,7 @@ impl AddAttributesToFindingsInput {
 pub mod create_assessment_target_input {
 
     /// A builder for [`CreateAssessmentTargetInput`](crate::input::CreateAssessmentTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_name: std::option::Option<std::string::String>,
@@ -385,6 +387,7 @@ impl CreateAssessmentTargetInput {
 pub mod create_assessment_template_input {
 
     /// A builder for [`CreateAssessmentTemplateInput`](crate::input::CreateAssessmentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
@@ -624,6 +627,7 @@ impl CreateAssessmentTemplateInput {
 pub mod create_exclusions_preview_input {
 
     /// A builder for [`CreateExclusionsPreviewInput`](crate::input::CreateExclusionsPreviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
@@ -793,6 +797,7 @@ impl CreateExclusionsPreviewInput {
 pub mod create_resource_group_input {
 
     /// A builder for [`CreateResourceGroupInput`](crate::input::CreateResourceGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_tags:
@@ -969,6 +974,7 @@ impl CreateResourceGroupInput {
 pub mod delete_assessment_run_input {
 
     /// A builder for [`DeleteAssessmentRunInput`](crate::input::DeleteAssessmentRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
@@ -1136,6 +1142,7 @@ impl DeleteAssessmentRunInput {
 pub mod delete_assessment_target_input {
 
     /// A builder for [`DeleteAssessmentTargetInput`](crate::input::DeleteAssessmentTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
@@ -1305,6 +1312,7 @@ impl DeleteAssessmentTargetInput {
 pub mod delete_assessment_template_input {
 
     /// A builder for [`DeleteAssessmentTemplateInput`](crate::input::DeleteAssessmentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
@@ -1474,6 +1482,7 @@ impl DeleteAssessmentTemplateInput {
 pub mod describe_assessment_runs_input {
 
     /// A builder for [`DescribeAssessmentRunsInput`](crate::input::DescribeAssessmentRunsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1649,6 +1658,7 @@ impl DescribeAssessmentRunsInput {
 pub mod describe_assessment_targets_input {
 
     /// A builder for [`DescribeAssessmentTargetsInput`](crate::input::DescribeAssessmentTargetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1824,6 +1834,7 @@ impl DescribeAssessmentTargetsInput {
 pub mod describe_assessment_templates_input {
 
     /// A builder for [`DescribeAssessmentTemplatesInput`](crate::input::DescribeAssessmentTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arns:
@@ -1997,6 +2008,7 @@ impl DescribeAssessmentTemplatesInput {
 pub mod describe_cross_account_access_role_input {
 
     /// A builder for [`DescribeCrossAccountAccessRoleInput`](crate::input::DescribeCrossAccountAccessRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2140,6 +2152,7 @@ impl DescribeCrossAccountAccessRoleInput {
 pub mod describe_exclusions_input {
 
     /// A builder for [`DescribeExclusionsInput`](crate::input::DescribeExclusionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2325,6 +2338,7 @@ impl DescribeExclusionsInput {
 pub mod describe_findings_input {
 
     /// A builder for [`DescribeFindingsInput`](crate::input::DescribeFindingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2510,6 +2524,7 @@ impl DescribeFindingsInput {
 pub mod describe_resource_groups_input {
 
     /// A builder for [`DescribeResourceGroupsInput`](crate::input::DescribeResourceGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2685,6 +2700,7 @@ impl DescribeResourceGroupsInput {
 pub mod describe_rules_packages_input {
 
     /// A builder for [`DescribeRulesPackagesInput`](crate::input::DescribeRulesPackagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2872,6 +2888,7 @@ impl DescribeRulesPackagesInput {
 pub mod get_assessment_report_input {
 
     /// A builder for [`GetAssessmentReportInput`](crate::input::GetAssessmentReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
@@ -3069,6 +3086,7 @@ impl GetAssessmentReportInput {
 pub mod get_exclusions_preview_input {
 
     /// A builder for [`GetExclusionsPreviewInput`](crate::input::GetExclusionsPreviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
@@ -3289,6 +3307,7 @@ impl GetExclusionsPreviewInput {
 pub mod get_telemetry_metadata_input {
 
     /// A builder for [`GetTelemetryMetadataInput`](crate::input::GetTelemetryMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
@@ -3458,6 +3477,7 @@ impl GetTelemetryMetadataInput {
 pub mod list_assessment_run_agents_input {
 
     /// A builder for [`ListAssessmentRunAgentsInput`](crate::input::ListAssessmentRunAgentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
@@ -3665,6 +3685,7 @@ impl ListAssessmentRunAgentsInput {
 pub mod list_assessment_runs_input {
 
     /// A builder for [`ListAssessmentRunsInput`](crate::input::ListAssessmentRunsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arns:
@@ -3880,6 +3901,7 @@ impl ListAssessmentRunsInput {
 pub mod list_assessment_targets_input {
 
     /// A builder for [`ListAssessmentTargetsInput`](crate::input::ListAssessmentTargetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::AssessmentTargetFilter>,
@@ -4075,6 +4097,7 @@ impl ListAssessmentTargetsInput {
 pub mod list_assessment_templates_input {
 
     /// A builder for [`ListAssessmentTemplatesInput`](crate::input::ListAssessmentTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4291,6 +4314,7 @@ impl ListAssessmentTemplatesInput {
 pub mod list_event_subscriptions_input {
 
     /// A builder for [`ListEventSubscriptionsInput`](crate::input::ListEventSubscriptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4481,6 +4505,7 @@ impl ListEventSubscriptionsInput {
 pub mod list_exclusions_input {
 
     /// A builder for [`ListExclusionsInput`](crate::input::ListExclusionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
@@ -4670,6 +4695,7 @@ impl ListExclusionsInput {
 pub mod list_findings_input {
 
     /// A builder for [`ListFindingsInput`](crate::input::ListFindingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4882,6 +4908,7 @@ impl ListFindingsInput {
 pub mod list_rules_packages_input {
 
     /// A builder for [`ListRulesPackagesInput`](crate::input::ListRulesPackagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5058,6 +5085,7 @@ impl ListRulesPackagesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5224,6 +5252,7 @@ impl ListTagsForResourceInput {
 pub mod preview_agents_input {
 
     /// A builder for [`PreviewAgentsInput`](crate::input::PreviewAgentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preview_agents_arn: std::option::Option<std::string::String>,
@@ -5413,6 +5442,7 @@ impl PreviewAgentsInput {
 pub mod register_cross_account_access_role_input {
 
     /// A builder for [`RegisterCrossAccountAccessRoleInput`](crate::input::RegisterCrossAccountAccessRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5577,6 +5607,7 @@ impl RegisterCrossAccountAccessRoleInput {
 pub mod remove_attributes_from_findings_input {
 
     /// A builder for [`RemoveAttributesFromFindingsInput`](crate::input::RemoveAttributesFromFindingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5771,6 +5802,7 @@ impl RemoveAttributesFromFindingsInput {
 pub mod set_tags_for_resource_input {
 
     /// A builder for [`SetTagsForResourceInput`](crate::input::SetTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5956,6 +5988,7 @@ impl SetTagsForResourceInput {
 pub mod start_assessment_run_input {
 
     /// A builder for [`StartAssessmentRunInput`](crate::input::StartAssessmentRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
@@ -6138,6 +6171,7 @@ impl StartAssessmentRunInput {
 pub mod stop_assessment_run_input {
 
     /// A builder for [`StopAssessmentRunInput`](crate::input::StopAssessmentRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
@@ -6320,6 +6354,7 @@ impl StopAssessmentRunInput {
 pub mod subscribe_to_event_input {
 
     /// A builder for [`SubscribeToEventInput`](crate::input::SubscribeToEventInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6511,6 +6546,7 @@ impl SubscribeToEventInput {
 pub mod unsubscribe_from_event_input {
 
     /// A builder for [`UnsubscribeFromEventInput`](crate::input::UnsubscribeFromEventInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6704,6 +6740,7 @@ impl UnsubscribeFromEventInput {
 pub mod update_assessment_target_input {
 
     /// A builder for [`UpdateAssessmentTargetInput`](crate::input::UpdateAssessmentTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,

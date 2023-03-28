@@ -17,6 +17,7 @@ impl UpdatePolicyOutput {
 pub mod update_policy_output {
 
     /// A builder for [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
@@ -65,6 +66,7 @@ impl UpdateOrganizationalUnitOutput {
 pub mod update_organizational_unit_output {
 
     /// A builder for [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
@@ -106,6 +108,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -130,6 +133,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -154,6 +158,7 @@ pub struct RemoveAccountFromOrganizationOutput {}
 pub mod remove_account_from_organization_output {
 
     /// A builder for [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -178,6 +183,7 @@ pub struct RegisterDelegatedAdministratorOutput {}
 pub mod register_delegated_administrator_output {
 
     /// A builder for [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -212,6 +218,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -253,6 +260,7 @@ pub struct MoveAccountOutput {}
 pub mod move_account_output {
 
     /// A builder for [`MoveAccountOutput`](crate::output::MoveAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -294,6 +302,7 @@ impl ListTargetsForPolicyOutput {
 pub mod list_targets_for_policy_output {
 
     /// A builder for [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>,
@@ -370,6 +379,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -446,6 +456,7 @@ impl ListRootsOutput {
 pub mod list_roots_output {
 
     /// A builder for [`ListRootsOutput`](crate::output::ListRootsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) roots: std::option::Option<std::vec::Vec<crate::model::Root>>,
@@ -522,6 +533,7 @@ impl ListPoliciesForTargetOutput {
 pub mod list_policies_for_target_output {
 
     /// A builder for [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
@@ -598,6 +610,7 @@ impl ListPoliciesOutput {
 pub mod list_policies_output {
 
     /// A builder for [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
@@ -674,6 +687,7 @@ impl ListParentsOutput {
 pub mod list_parents_output {
 
     /// A builder for [`ListParentsOutput`](crate::output::ListParentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
@@ -750,6 +764,7 @@ impl ListOrganizationalUnitsForParentOutput {
 pub mod list_organizational_units_for_parent_output {
 
     /// A builder for [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organizational_units:
@@ -827,6 +842,7 @@ impl ListHandshakesForOrganizationOutput {
 pub mod list_handshakes_for_organization_output {
 
     /// A builder for [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
@@ -903,6 +919,7 @@ impl ListHandshakesForAccountOutput {
 pub mod list_handshakes_for_account_output {
 
     /// A builder for [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
@@ -979,6 +996,7 @@ impl ListDelegatedServicesForAccountOutput {
 pub mod list_delegated_services_for_account_output {
 
     /// A builder for [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_services:
@@ -1059,6 +1077,7 @@ impl ListDelegatedAdministratorsOutput {
 pub mod list_delegated_administrators_output {
 
     /// A builder for [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_administrators:
@@ -1142,6 +1161,7 @@ impl ListCreateAccountStatusOutput {
 pub mod list_create_account_status_output {
 
     /// A builder for [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_account_statuses:
@@ -1219,6 +1239,7 @@ impl ListChildrenOutput {
 pub mod list_children_output {
 
     /// A builder for [`ListChildrenOutput`](crate::output::ListChildrenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) children: std::option::Option<std::vec::Vec<crate::model::Child>>,
@@ -1298,6 +1319,7 @@ impl ListAwsServiceAccessForOrganizationOutput {
 pub mod list_aws_service_access_for_organization_output {
 
     /// A builder for [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled_service_principals:
@@ -1378,6 +1400,7 @@ impl ListAccountsForParentOutput {
 pub mod list_accounts_for_parent_output {
 
     /// A builder for [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1454,6 +1477,7 @@ impl ListAccountsOutput {
 pub mod list_accounts_output {
 
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1513,6 +1537,7 @@ pub struct LeaveOrganizationOutput {}
 pub mod leave_organization_output {
 
     /// A builder for [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1547,6 +1572,7 @@ impl InviteAccountToOrganizationOutput {
 pub mod invite_account_to_organization_output {
 
     /// A builder for [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
@@ -1598,6 +1624,7 @@ impl EnablePolicyTypeOutput {
 pub mod enable_policy_type_output {
 
     /// A builder for [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) root: std::option::Option<crate::model::Root>,
@@ -1634,6 +1661,7 @@ pub struct EnableAwsServiceAccessOutput {}
 pub mod enable_aws_service_access_output {
 
     /// A builder for [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1668,6 +1696,7 @@ impl EnableAllFeaturesOutput {
 pub mod enable_all_features_output {
 
     /// A builder for [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
@@ -1719,6 +1748,7 @@ impl DisablePolicyTypeOutput {
 pub mod disable_policy_type_output {
 
     /// A builder for [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) root: std::option::Option<crate::model::Root>,
@@ -1755,6 +1785,7 @@ pub struct DisableAwsServiceAccessOutput {}
 pub mod disable_aws_service_access_output {
 
     /// A builder for [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1779,6 +1810,7 @@ pub struct DetachPolicyOutput {}
 pub mod detach_policy_output {
 
     /// A builder for [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1813,6 +1845,7 @@ impl DescribeResourcePolicyOutput {
 pub mod describe_resource_policy_output {
 
     /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -1864,6 +1897,7 @@ impl DescribePolicyOutput {
 pub mod describe_policy_output {
 
     /// A builder for [`DescribePolicyOutput`](crate::output::DescribePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
@@ -1912,6 +1946,7 @@ impl DescribeOrganizationalUnitOutput {
 pub mod describe_organizational_unit_output {
 
     /// A builder for [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
@@ -1967,6 +2002,7 @@ impl DescribeOrganizationOutput {
 pub mod describe_organization_output {
 
     /// A builder for [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization: std::option::Option<crate::model::Organization>,
@@ -2022,6 +2058,7 @@ impl DescribeHandshakeOutput {
 pub mod describe_handshake_output {
 
     /// A builder for [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
@@ -2073,6 +2110,7 @@ impl DescribeEffectivePolicyOutput {
 pub mod describe_effective_policy_output {
 
     /// A builder for [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) effective_policy: std::option::Option<crate::model::EffectivePolicy>,
@@ -2124,6 +2162,7 @@ impl DescribeCreateAccountStatusOutput {
 pub mod describe_create_account_status_output {
 
     /// A builder for [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
@@ -2175,6 +2214,7 @@ impl DescribeAccountOutput {
 pub mod describe_account_output {
 
     /// A builder for [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<crate::model::Account>,
@@ -2213,6 +2253,7 @@ pub struct DeregisterDelegatedAdministratorOutput {}
 pub mod deregister_delegated_administrator_output {
 
     /// A builder for [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2237,6 +2278,7 @@ pub struct DeleteResourcePolicyOutput {}
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2261,6 +2303,7 @@ pub struct DeletePolicyOutput {}
 pub mod delete_policy_output {
 
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2285,6 +2328,7 @@ pub struct DeleteOrganizationalUnitOutput {}
 pub mod delete_organizational_unit_output {
 
     /// A builder for [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2309,6 +2353,7 @@ pub struct DeleteOrganizationOutput {}
 pub mod delete_organization_output {
 
     /// A builder for [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2343,6 +2388,7 @@ impl DeclineHandshakeOutput {
 pub mod decline_handshake_output {
 
     /// A builder for [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
@@ -2394,6 +2440,7 @@ impl CreatePolicyOutput {
 pub mod create_policy_output {
 
     /// A builder for [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
@@ -2442,6 +2489,7 @@ impl CreateOrganizationalUnitOutput {
 pub mod create_organizational_unit_output {
 
     /// A builder for [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
@@ -2493,6 +2541,7 @@ impl CreateOrganizationOutput {
 pub mod create_organization_output {
 
     /// A builder for [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization: std::option::Option<crate::model::Organization>,
@@ -2544,6 +2593,7 @@ impl CreateGovCloudAccountOutput {
 pub mod create_gov_cloud_account_output {
 
     /// A builder for [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
@@ -2595,6 +2645,7 @@ impl CreateAccountOutput {
 pub mod create_account_output {
 
     /// A builder for [`CreateAccountOutput`](crate::output::CreateAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
@@ -2636,6 +2687,7 @@ pub struct CloseAccountOutput {}
 pub mod close_account_output {
 
     /// A builder for [`CloseAccountOutput`](crate::output::CloseAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2670,6 +2722,7 @@ impl CancelHandshakeOutput {
 pub mod cancel_handshake_output {
 
     /// A builder for [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
@@ -2711,6 +2764,7 @@ pub struct AttachPolicyOutput {}
 pub mod attach_policy_output {
 
     /// A builder for [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2745,6 +2799,7 @@ impl AcceptHandshakeOutput {
 pub mod accept_handshake_output {
 
     /// A builder for [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,

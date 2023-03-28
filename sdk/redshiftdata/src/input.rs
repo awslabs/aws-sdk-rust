@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_execute_statement_input {
 
     /// A builder for [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sqls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -288,6 +289,7 @@ impl BatchExecuteStatementInput {
 pub mod cancel_statement_input {
 
     /// A builder for [`CancelStatementInput`](crate::input::CancelStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -448,6 +450,7 @@ impl CancelStatementInput {
 pub mod describe_statement_input {
 
     /// A builder for [`DescribeStatementInput`](crate::input::DescribeStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -610,6 +613,7 @@ impl DescribeStatementInput {
 pub mod describe_table_input {
 
     /// A builder for [`DescribeTableInput`](crate::input::DescribeTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
@@ -889,6 +893,7 @@ impl DescribeTableInput {
 pub mod execute_statement_input {
 
     /// A builder for [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql: std::option::Option<std::string::String>,
@@ -1182,6 +1187,7 @@ impl ExecuteStatementInput {
 pub mod get_statement_result_input {
 
     /// A builder for [`GetStatementResultInput`](crate::input::GetStatementResultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1358,6 +1364,7 @@ impl GetStatementResultInput {
 pub mod list_databases_input {
 
     /// A builder for [`ListDatabasesInput`](crate::input::ListDatabasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
@@ -1598,6 +1605,7 @@ impl ListDatabasesInput {
 pub mod list_schemas_input {
 
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,
@@ -1868,6 +1876,7 @@ impl ListSchemasInput {
 pub mod list_statements_input {
 
     /// A builder for [`ListStatementsInput`](crate::input::ListStatementsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2102,6 +2111,7 @@ impl ListStatementsInput {
 pub mod list_tables_input {
 
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_identifier: std::option::Option<std::string::String>,

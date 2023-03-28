@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod start_call_analytics_stream_transcription_input {
 
     /// A builder for [`StartCallAnalyticsStreamTranscriptionInput`](crate::input::StartCallAnalyticsStreamTranscriptionInput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::CallAnalyticsLanguageCode>,
@@ -475,6 +476,7 @@ impl StartCallAnalyticsStreamTranscriptionInput {
 pub mod start_medical_stream_transcription_input {
 
     /// A builder for [`StartMedicalStreamTranscriptionInput`](crate::input::StartMedicalStreamTranscriptionInput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -869,6 +871,7 @@ impl StartMedicalStreamTranscriptionInput {
 pub mod start_stream_transcription_input {
 
     /// A builder for [`StartStreamTranscriptionInput`](crate::input::StartStreamTranscriptionInput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,

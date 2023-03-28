@@ -7,6 +7,7 @@ pub struct VoteOnProposalOutput {}
 pub mod vote_on_proposal_output {
 
     /// A builder for [`VoteOnProposalOutput`](crate::output::VoteOnProposalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateNodeOutput {}
 pub mod update_node_output {
 
     /// A builder for [`UpdateNodeOutput`](crate::output::UpdateNodeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateMemberOutput {}
 pub mod update_member_output {
 
     /// A builder for [`UpdateMemberOutput`](crate::output::UpdateMemberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -127,6 +132,7 @@ pub struct RejectInvitationOutput {}
 pub mod reject_invitation_output {
 
     /// A builder for [`RejectInvitationOutput`](crate::output::RejectInvitationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -165,6 +171,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -235,6 +242,7 @@ impl ListProposalVotesOutput {
 pub mod list_proposal_votes_output {
 
     /// A builder for [`ListProposalVotesOutput`](crate::output::ListProposalVotesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_votes: std::option::Option<std::vec::Vec<crate::model::VoteSummary>>,
@@ -311,6 +319,7 @@ impl ListProposalsOutput {
 pub mod list_proposals_output {
 
     /// A builder for [`ListProposalsOutput`](crate::output::ListProposalsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposals: std::option::Option<std::vec::Vec<crate::model::ProposalSummary>>,
@@ -387,6 +396,7 @@ impl ListNodesOutput {
 pub mod list_nodes_output {
 
     /// A builder for [`ListNodesOutput`](crate::output::ListNodesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodes: std::option::Option<std::vec::Vec<crate::model::NodeSummary>>,
@@ -463,6 +473,7 @@ impl ListNetworksOutput {
 pub mod list_networks_output {
 
     /// A builder for [`ListNetworksOutput`](crate::output::ListNetworksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) networks: std::option::Option<std::vec::Vec<crate::model::NetworkSummary>>,
@@ -539,6 +550,7 @@ impl ListMembersOutput {
 pub mod list_members_output {
 
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::MemberSummary>>,
@@ -615,6 +627,7 @@ impl ListInvitationsOutput {
 pub mod list_invitations_output {
 
     /// A builder for [`ListInvitationsOutput`](crate::output::ListInvitationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
@@ -691,6 +704,7 @@ impl ListAccessorsOutput {
 pub mod list_accessors_output {
 
     /// A builder for [`ListAccessorsOutput`](crate::output::ListAccessorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accessors: std::option::Option<std::vec::Vec<crate::model::AccessorSummary>>,
@@ -760,6 +774,7 @@ impl GetProposalOutput {
 pub mod get_proposal_output {
 
     /// A builder for [`GetProposalOutput`](crate::output::GetProposalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal: std::option::Option<crate::model::Proposal>,
@@ -808,6 +823,7 @@ impl GetNodeOutput {
 pub mod get_node_output {
 
     /// A builder for [`GetNodeOutput`](crate::output::GetNodeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node: std::option::Option<crate::model::Node>,
@@ -854,6 +870,7 @@ impl GetNetworkOutput {
 pub mod get_network_output {
 
     /// A builder for [`GetNetworkOutput`](crate::output::GetNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
@@ -902,6 +919,7 @@ impl GetMemberOutput {
 pub mod get_member_output {
 
     /// A builder for [`GetMemberOutput`](crate::output::GetMemberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Member>,
@@ -950,6 +968,7 @@ impl GetAccessorOutput {
 pub mod get_accessor_output {
 
     /// A builder for [`GetAccessorOutput`](crate::output::GetAccessorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accessor: std::option::Option<crate::model::Accessor>,
@@ -988,6 +1007,7 @@ pub struct DeleteNodeOutput {}
 pub mod delete_node_output {
 
     /// A builder for [`DeleteNodeOutput`](crate::output::DeleteNodeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1012,6 +1032,7 @@ pub struct DeleteMemberOutput {}
 pub mod delete_member_output {
 
     /// A builder for [`DeleteMemberOutput`](crate::output::DeleteMemberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1036,6 +1057,7 @@ pub struct DeleteAccessorOutput {}
 pub mod delete_accessor_output {
 
     /// A builder for [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1070,6 +1092,7 @@ impl CreateProposalOutput {
 pub mod create_proposal_output {
 
     /// A builder for [`CreateProposalOutput`](crate::output::CreateProposalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -1118,6 +1141,7 @@ impl CreateNodeOutput {
 pub mod create_node_output {
 
     /// A builder for [`CreateNodeOutput`](crate::output::CreateNodeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
@@ -1173,6 +1197,7 @@ impl CreateNetworkOutput {
 pub mod create_network_output {
 
     /// A builder for [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
@@ -1233,6 +1258,7 @@ impl CreateMemberOutput {
 pub mod create_member_output {
 
     /// A builder for [`CreateMemberOutput`](crate::output::CreateMemberOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -1288,6 +1314,7 @@ impl CreateAccessorOutput {
 pub mod create_accessor_output {
 
     /// A builder for [`CreateAccessorOutput`](crate::output::CreateAccessorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accessor_id: std::option::Option<std::string::String>,

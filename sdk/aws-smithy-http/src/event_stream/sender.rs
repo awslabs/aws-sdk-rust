@@ -228,9 +228,7 @@ mod tests {
         type Input = TestServiceError;
 
         fn marshall(&self, _input: Self::Input) -> Result<Message, EventStreamError> {
-            Err(Message::read_from(&b""[..])
-                .err()
-                .expect("this should always fail"))
+            Err(Message::read_from(&b""[..]).expect_err("this should always fail"))
         }
     }
 

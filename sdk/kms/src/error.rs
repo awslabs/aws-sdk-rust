@@ -204,6 +204,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -269,6 +270,7 @@ impl std::error::Error for KmsInvalidStateException {}
 pub mod kms_invalid_state_exception {
 
     /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -329,6 +331,7 @@ impl std::error::Error for KmsInvalidMacException {}
 pub mod kms_invalid_mac_exception {
 
     /// A builder for [`KmsInvalidMacException`](crate::error::KmsInvalidMacException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -389,6 +392,7 @@ impl std::error::Error for KmsInternalException {}
 pub mod kms_internal_exception {
 
     /// A builder for [`KmsInternalException`](crate::error::KmsInternalException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -449,6 +453,7 @@ impl std::error::Error for KeyUnavailableException {}
 pub mod key_unavailable_exception {
 
     /// A builder for [`KeyUnavailableException`](crate::error::KeyUnavailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -515,6 +520,7 @@ impl std::error::Error for InvalidKeyUsageException {}
 pub mod invalid_key_usage_exception {
 
     /// A builder for [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -575,6 +581,7 @@ impl std::error::Error for InvalidGrantTokenException {}
 pub mod invalid_grant_token_exception {
 
     /// A builder for [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -635,6 +642,7 @@ impl std::error::Error for DisabledException {}
 pub mod disabled_exception {
 
     /// A builder for [`DisabledException`](crate::error::DisabledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -878,6 +886,7 @@ impl std::error::Error for KmsInvalidSignatureException {}
 pub mod kms_invalid_signature_exception {
 
     /// A builder for [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -938,6 +947,7 @@ impl std::error::Error for DependencyTimeoutException {}
 pub mod dependency_timeout_exception {
 
     /// A builder for [`DependencyTimeoutException`](crate::error::DependencyTimeoutException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1166,6 +1176,7 @@ impl std::error::Error for UnsupportedOperationException {}
 pub mod unsupported_operation_exception {
 
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1226,6 +1237,7 @@ impl std::error::Error for InvalidArnException {}
 pub mod invalid_arn_exception {
 
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1838,6 +1850,7 @@ impl std::error::Error for XksProxyVpcEndpointServiceNotFoundException {}
 pub mod xks_proxy_vpc_endpoint_service_not_found_exception {
 
     /// A builder for [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1898,6 +1911,7 @@ impl std::error::Error for XksProxyVpcEndpointServiceInvalidConfigurationExcepti
 pub mod xks_proxy_vpc_endpoint_service_invalid_configuration_exception {
 
     /// A builder for [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1961,6 +1975,7 @@ impl std::error::Error for XksProxyVpcEndpointServiceInUseException {}
 pub mod xks_proxy_vpc_endpoint_service_in_use_exception {
 
     /// A builder for [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2022,6 +2037,7 @@ impl std::error::Error for XksProxyUriUnreachableException {}
 pub mod xks_proxy_uri_unreachable_exception {
 
     /// A builder for [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2082,6 +2098,7 @@ impl std::error::Error for XksProxyUriInUseException {}
 pub mod xks_proxy_uri_in_use_exception {
 
     /// A builder for [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2142,6 +2159,7 @@ impl std::error::Error for XksProxyUriEndpointInUseException {}
 pub mod xks_proxy_uri_endpoint_in_use_exception {
 
     /// A builder for [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2203,6 +2221,7 @@ impl std::error::Error for XksProxyInvalidResponseException {}
 pub mod xks_proxy_invalid_response_exception {
 
     /// A builder for [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2263,6 +2282,7 @@ impl std::error::Error for XksProxyInvalidConfigurationException {}
 pub mod xks_proxy_invalid_configuration_exception {
 
     /// A builder for [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2323,6 +2343,7 @@ impl std::error::Error for XksProxyIncorrectAuthenticationCredentialException {}
 pub mod xks_proxy_incorrect_authentication_credential_exception {
 
     /// A builder for [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2384,6 +2405,7 @@ impl std::error::Error for CustomKeyStoreNotFoundException {}
 pub mod custom_key_store_not_found_exception {
 
     /// A builder for [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2444,6 +2466,7 @@ impl std::error::Error for CustomKeyStoreNameInUseException {}
 pub mod custom_key_store_name_in_use_exception {
 
     /// A builder for [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2512,6 +2535,7 @@ impl std::error::Error for CustomKeyStoreInvalidStateException {}
 pub mod custom_key_store_invalid_state_exception {
 
     /// A builder for [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2574,6 +2598,7 @@ impl std::error::Error for CloudHsmClusterNotRelatedException {}
 pub mod cloud_hsm_cluster_not_related_exception {
 
     /// A builder for [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2634,6 +2659,7 @@ impl std::error::Error for CloudHsmClusterNotFoundException {}
 pub mod cloud_hsm_cluster_not_found_exception {
 
     /// A builder for [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2694,6 +2720,7 @@ impl std::error::Error for CloudHsmClusterNotActiveException {}
 pub mod cloud_hsm_cluster_not_active_exception {
 
     /// A builder for [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2761,6 +2788,7 @@ impl std::error::Error for CloudHsmClusterInvalidConfigurationException {}
 pub mod cloud_hsm_cluster_invalid_configuration_exception {
 
     /// A builder for [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2969,6 +2997,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3174,6 +3203,7 @@ impl std::error::Error for TagException {}
 pub mod tag_exception {
 
     /// A builder for [`TagException`](crate::error::TagException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3872,6 +3902,7 @@ impl std::error::Error for InvalidGrantIdException {}
 pub mod invalid_grant_id_exception {
 
     /// A builder for [`InvalidGrantIdException`](crate::error::InvalidGrantIdException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4290,6 +4321,7 @@ impl std::error::Error for MalformedPolicyDocumentException {}
 pub mod malformed_policy_document_exception {
 
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4350,6 +4382,7 @@ impl std::error::Error for AlreadyExistsException {}
 pub mod already_exists_exception {
 
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4609,6 +4642,7 @@ impl std::error::Error for InvalidCiphertextException {}
 pub mod invalid_ciphertext_exception {
 
     /// A builder for [`InvalidCiphertextException`](crate::error::InvalidCiphertextException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4669,6 +4703,7 @@ impl std::error::Error for IncorrectKeyException {}
 pub mod incorrect_key_exception {
 
     /// A builder for [`IncorrectKeyException`](crate::error::IncorrectKeyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5059,6 +5094,7 @@ impl std::error::Error for InvalidMarkerException {}
 pub mod invalid_marker_exception {
 
     /// A builder for [`InvalidMarkerException`](crate::error::InvalidMarkerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6040,6 +6076,7 @@ impl std::error::Error for InvalidImportTokenException {}
 pub mod invalid_import_token_exception {
 
     /// A builder for [`InvalidImportTokenException`](crate::error::InvalidImportTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6100,6 +6137,7 @@ impl std::error::Error for IncorrectKeyMaterialException {}
 pub mod incorrect_key_material_exception {
 
     /// A builder for [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6160,6 +6198,7 @@ impl std::error::Error for ExpiredImportTokenException {}
 pub mod expired_import_token_exception {
 
     /// A builder for [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9700,6 +9739,7 @@ impl std::error::Error for CustomKeyStoreHasCmKsException {}
 pub mod custom_key_store_has_cm_ks_exception {
 
     /// A builder for [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10338,6 +10378,7 @@ impl std::error::Error for XksKeyNotFoundException {}
 pub mod xks_key_not_found_exception {
 
     /// A builder for [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10399,6 +10440,7 @@ impl std::error::Error for XksKeyInvalidConfigurationException {}
 pub mod xks_key_invalid_configuration_exception {
 
     /// A builder for [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10459,6 +10501,7 @@ impl std::error::Error for XksKeyAlreadyInUseException {}
 pub mod xks_key_already_in_use_exception {
 
     /// A builder for [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11078,6 +11121,7 @@ impl std::error::Error for IncorrectTrustAnchorException {}
 pub mod incorrect_trust_anchor_exception {
 
     /// A builder for [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11139,6 +11183,7 @@ impl std::error::Error for CloudHsmClusterInUseException {}
 pub mod cloud_hsm_cluster_in_use_exception {
 
     /// A builder for [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11366,6 +11411,7 @@ impl std::error::Error for InvalidAliasNameException {}
 pub mod invalid_alias_name_exception {
 
     /// A builder for [`InvalidAliasNameException`](crate::error::InvalidAliasNameException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

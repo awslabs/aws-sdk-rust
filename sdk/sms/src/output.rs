@@ -7,6 +7,7 @@ pub struct UpdateReplicationJobOutput {}
 pub mod update_replication_job_output {
 
     /// A builder for [`UpdateReplicationJobOutput`](crate::output::UpdateReplicationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +56,7 @@ impl UpdateAppOutput {
 pub mod update_app_output {
 
     /// A builder for [`UpdateAppOutput`](crate::output::UpdateAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_summary: std::option::Option<crate::model::AppSummary>,
@@ -138,6 +140,7 @@ pub struct TerminateAppOutput {}
 pub mod terminate_app_output {
 
     /// A builder for [`TerminateAppOutput`](crate::output::TerminateAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -162,6 +165,7 @@ pub struct StopAppReplicationOutput {}
 pub mod stop_app_replication_output {
 
     /// A builder for [`StopAppReplicationOutput`](crate::output::StopAppReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -196,6 +200,7 @@ impl StartOnDemandReplicationRunOutput {
 pub mod start_on_demand_replication_run_output {
 
     /// A builder for [`StartOnDemandReplicationRunOutput`](crate::output::StartOnDemandReplicationRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_run_id: std::option::Option<std::string::String>,
@@ -237,6 +242,7 @@ pub struct StartOnDemandAppReplicationOutput {}
 pub mod start_on_demand_app_replication_output {
 
     /// A builder for [`StartOnDemandAppReplicationOutput`](crate::output::StartOnDemandAppReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -261,6 +267,7 @@ pub struct StartAppReplicationOutput {}
 pub mod start_app_replication_output {
 
     /// A builder for [`StartAppReplicationOutput`](crate::output::StartAppReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -285,6 +292,7 @@ pub struct PutAppValidationConfigurationOutput {}
 pub mod put_app_validation_configuration_output {
 
     /// A builder for [`PutAppValidationConfigurationOutput`](crate::output::PutAppValidationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -309,6 +317,7 @@ pub struct PutAppReplicationConfigurationOutput {}
 pub mod put_app_replication_configuration_output {
 
     /// A builder for [`PutAppReplicationConfigurationOutput`](crate::output::PutAppReplicationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -333,6 +342,7 @@ pub struct PutAppLaunchConfigurationOutput {}
 pub mod put_app_launch_configuration_output {
 
     /// A builder for [`PutAppLaunchConfigurationOutput`](crate::output::PutAppLaunchConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -357,6 +367,7 @@ pub struct NotifyAppValidationOutputOutput {}
 pub mod notify_app_validation_output_output {
 
     /// A builder for [`NotifyAppValidationOutputOutput`](crate::output::NotifyAppValidationOutputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -398,6 +409,7 @@ impl ListAppsOutput {
 pub mod list_apps_output {
 
     /// A builder for [`ListAppsOutput`](crate::output::ListAppsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apps: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
@@ -457,6 +469,7 @@ pub struct LaunchAppOutput {}
 pub mod launch_app_output {
 
     /// A builder for [`LaunchAppOutput`](crate::output::LaunchAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -481,6 +494,7 @@ pub struct ImportServerCatalogOutput {}
 pub mod import_server_catalog_output {
 
     /// A builder for [`ImportServerCatalogOutput`](crate::output::ImportServerCatalogOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -505,6 +519,7 @@ pub struct ImportAppCatalogOutput {}
 pub mod import_app_catalog_output {
 
     /// A builder for [`ImportAppCatalogOutput`](crate::output::ImportAppCatalogOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -560,6 +575,7 @@ impl GetServersOutput {
 pub mod get_servers_output {
 
     /// A builder for [`GetServersOutput`](crate::output::GetServersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
@@ -673,6 +689,7 @@ impl GetReplicationRunsOutput {
 pub mod get_replication_runs_output {
 
     /// A builder for [`GetReplicationRunsOutput`](crate::output::GetReplicationRunsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job: std::option::Option<crate::model::ReplicationJob>,
@@ -765,6 +782,7 @@ impl GetReplicationJobsOutput {
 pub mod get_replication_jobs_output {
 
     /// A builder for [`GetReplicationJobsOutput`](crate::output::GetReplicationJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_list:
@@ -842,6 +860,7 @@ impl GetConnectorsOutput {
 pub mod get_connectors_output {
 
     /// A builder for [`GetConnectorsOutput`](crate::output::GetConnectorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_list: std::option::Option<std::vec::Vec<crate::model::Connector>>,
@@ -911,6 +930,7 @@ impl GetAppValidationOutputOutput {
 pub mod get_app_validation_output_output {
 
     /// A builder for [`GetAppValidationOutputOutput`](crate::output::GetAppValidationOutputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_output_list:
@@ -982,6 +1002,7 @@ impl GetAppValidationConfigurationOutput {
 pub mod get_app_validation_configuration_output {
 
     /// A builder for [`GetAppValidationConfigurationOutput`](crate::output::GetAppValidationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_validation_configurations:
@@ -1075,6 +1096,7 @@ impl GetAppReplicationConfigurationOutput {
 pub mod get_app_replication_configuration_output {
 
     /// A builder for [`GetAppReplicationConfigurationOutput`](crate::output::GetAppReplicationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_replication_configurations:
@@ -1165,6 +1187,7 @@ impl GetAppLaunchConfigurationOutput {
 pub mod get_app_launch_configuration_output {
 
     /// A builder for [`GetAppLaunchConfigurationOutput`](crate::output::GetAppLaunchConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1276,6 +1299,7 @@ impl GetAppOutput {
 pub mod get_app_output {
 
     /// A builder for [`GetAppOutput`](crate::output::GetAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_summary: std::option::Option<crate::model::AppSummary>,
@@ -1369,6 +1393,7 @@ impl GenerateTemplateOutput {
 pub mod generate_template_output {
 
     /// A builder for [`GenerateTemplateOutput`](crate::output::GenerateTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -1420,6 +1445,7 @@ impl GenerateChangeSetOutput {
 pub mod generate_change_set_output {
 
     /// A builder for [`GenerateChangeSetOutput`](crate::output::GenerateChangeSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -1461,6 +1487,7 @@ pub struct DisassociateConnectorOutput {}
 pub mod disassociate_connector_output {
 
     /// A builder for [`DisassociateConnectorOutput`](crate::output::DisassociateConnectorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1485,6 +1512,7 @@ pub struct DeleteServerCatalogOutput {}
 pub mod delete_server_catalog_output {
 
     /// A builder for [`DeleteServerCatalogOutput`](crate::output::DeleteServerCatalogOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1509,6 +1537,7 @@ pub struct DeleteReplicationJobOutput {}
 pub mod delete_replication_job_output {
 
     /// A builder for [`DeleteReplicationJobOutput`](crate::output::DeleteReplicationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1533,6 +1562,7 @@ pub struct DeleteAppValidationConfigurationOutput {}
 pub mod delete_app_validation_configuration_output {
 
     /// A builder for [`DeleteAppValidationConfigurationOutput`](crate::output::DeleteAppValidationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1557,6 +1587,7 @@ pub struct DeleteAppReplicationConfigurationOutput {}
 pub mod delete_app_replication_configuration_output {
 
     /// A builder for [`DeleteAppReplicationConfigurationOutput`](crate::output::DeleteAppReplicationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1581,6 +1612,7 @@ pub struct DeleteAppLaunchConfigurationOutput {}
 pub mod delete_app_launch_configuration_output {
 
     /// A builder for [`DeleteAppLaunchConfigurationOutput`](crate::output::DeleteAppLaunchConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1605,6 +1637,7 @@ pub struct DeleteAppOutput {}
 pub mod delete_app_output {
 
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1639,6 +1672,7 @@ impl CreateReplicationJobOutput {
 pub mod create_replication_job_output {
 
     /// A builder for [`CreateReplicationJobOutput`](crate::output::CreateReplicationJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
@@ -1704,6 +1738,7 @@ impl CreateAppOutput {
 pub mod create_app_output {
 
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_summary: std::option::Option<crate::model::AppSummary>,

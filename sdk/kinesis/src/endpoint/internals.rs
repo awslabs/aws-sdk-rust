@@ -50,7 +50,7 @@ pub(super) fn resolve_endpoint(
                                 ) {
                                     if (arn.service()) == ("kinesis") {
                                         #[allow(unused_variables)]
-                                        if let Some(arn_type) = arn.resource_id().get(0).cloned() {
+                                        if let Some(arn_type) = arn.resource_id().first().cloned() {
                                             if !((arn_type) == ("")) {
                                                 if (arn_type) == ("stream") {
                                                     if (partition_result.name())
@@ -229,7 +229,7 @@ out }));
                                 ) {
                                     if (arn.service()) == ("kinesis") {
                                         #[allow(unused_variables)]
-                                        if let Some(arn_type) = arn.resource_id().get(0).cloned() {
+                                        if let Some(arn_type) = arn.resource_id().first().cloned() {
                                             if !((arn_type) == ("")) {
                                                 if (arn_type) == ("stream") {
                                                     if (partition_result.name())

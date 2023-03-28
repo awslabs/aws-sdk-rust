@@ -24,6 +24,7 @@ impl ListDetectorsOutput {
 pub mod list_detectors_output {
 
     /// A builder for [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_summaries:
@@ -101,6 +102,7 @@ impl ListAlarmsOutput {
 pub mod list_alarms_output {
 
     /// A builder for [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmSummary>>,
@@ -170,6 +172,7 @@ impl DescribeDetectorOutput {
 pub mod describe_detector_output {
 
     /// A builder for [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector: std::option::Option<crate::model::Detector>,
@@ -218,6 +221,7 @@ impl DescribeAlarmOutput {
 pub mod describe_alarm_output {
 
     /// A builder for [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm: std::option::Option<crate::model::Alarm>,
@@ -267,6 +271,7 @@ impl BatchUpdateDetectorOutput {
 pub mod batch_update_detector_output {
 
     /// A builder for [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_update_detector_error_entries:
@@ -330,6 +335,7 @@ impl BatchSnoozeAlarmOutput {
 pub mod batch_snooze_alarm_output {
 
     /// A builder for [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
@@ -390,6 +396,7 @@ impl BatchResetAlarmOutput {
 pub mod batch_reset_alarm_output {
 
     /// A builder for [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
@@ -451,6 +458,7 @@ impl BatchPutMessageOutput {
 pub mod batch_put_message_output {
 
     /// A builder for [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_put_message_error_entries:
@@ -514,6 +522,7 @@ impl BatchEnableAlarmOutput {
 pub mod batch_enable_alarm_output {
 
     /// A builder for [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
@@ -574,6 +583,7 @@ impl BatchDisableAlarmOutput {
 pub mod batch_disable_alarm_output {
 
     /// A builder for [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
@@ -635,6 +645,7 @@ impl BatchDeleteDetectorOutput {
 pub mod batch_delete_detector_output {
 
     /// A builder for [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_delete_detector_error_entries:
@@ -698,6 +709,7 @@ impl BatchAcknowledgeAlarmOutput {
 pub mod batch_acknowledge_alarm_output {
 
     /// A builder for [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:

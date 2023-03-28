@@ -110,6 +110,7 @@ impl CustomDomainConfigType {
 pub mod custom_domain_config_type {
 
     /// A builder for [`CustomDomainConfigType`](crate::model::CustomDomainConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -516,6 +517,7 @@ impl std::fmt::Debug for UserPoolClientType {
 pub mod user_pool_client_type {
 
     /// A builder for [`UserPoolClientType`](crate::model::UserPoolClientType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1265,6 +1267,7 @@ impl AnalyticsConfigurationType {
 pub mod analytics_configuration_type {
 
     /// A builder for [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1607,6 +1610,7 @@ impl TokenValidityUnitsType {
 pub mod token_validity_units_type {
 
     /// A builder for [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<crate::model::TimeUnitsType>,
@@ -1788,6 +1792,7 @@ impl AccountRecoverySettingType {
 pub mod account_recovery_setting_type {
 
     /// A builder for [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_mechanisms:
@@ -1853,6 +1858,7 @@ impl RecoveryOptionType {
 pub mod recovery_option_type {
 
     /// A builder for [`RecoveryOptionType`](crate::model::RecoveryOptionType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
@@ -2015,6 +2021,7 @@ impl UserPoolAddOnsType {
 pub mod user_pool_add_ons_type {
 
     /// A builder for [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) advanced_security_mode:
@@ -2189,6 +2196,7 @@ impl AdminCreateUserConfigType {
 pub mod admin_create_user_config_type {
 
     /// A builder for [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_admin_create_user_only: std::option::Option<bool>,
@@ -2287,6 +2295,7 @@ impl MessageTemplateType {
 pub mod message_template_type {
 
     /// A builder for [`MessageTemplateType`](crate::model::MessageTemplateType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_message: std::option::Option<std::string::String>,
@@ -2383,6 +2392,7 @@ impl SmsConfigurationType {
 pub mod sms_configuration_type {
 
     /// A builder for [`SmsConfigurationType`](crate::model::SmsConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_caller_arn: std::option::Option<std::string::String>,
@@ -2570,6 +2580,7 @@ impl EmailConfigurationType {
 pub mod email_configuration_type {
 
     /// A builder for [`EmailConfigurationType`](crate::model::EmailConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -2863,6 +2874,7 @@ impl DeviceConfigurationType {
 pub mod device_configuration_type {
 
     /// A builder for [`DeviceConfigurationType`](crate::model::DeviceConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) challenge_required_on_new_device: std::option::Option<bool>,
@@ -3042,6 +3054,7 @@ impl UserAttributeUpdateSettingsType {
 pub mod user_attribute_update_settings_type {
 
     /// A builder for [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes_require_verification_before_update:
@@ -3239,6 +3252,7 @@ impl VerificationMessageTemplateType {
 pub mod verification_message_template_type {
 
     /// A builder for [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_message: std::option::Option<std::string::String>,
@@ -3542,6 +3556,7 @@ impl LambdaConfigType {
 pub mod lambda_config_type {
 
     /// A builder for [`LambdaConfigType`](crate::model::LambdaConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pre_sign_up: std::option::Option<std::string::String>,
@@ -3787,6 +3802,7 @@ impl CustomEmailLambdaVersionConfigType {
 pub mod custom_email_lambda_version_config_type {
 
     /// A builder for [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_version:
@@ -3950,6 +3966,7 @@ impl CustomSmsLambdaVersionConfigType {
 pub mod custom_sms_lambda_version_config_type {
 
     /// A builder for [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_version:
@@ -4196,6 +4213,7 @@ impl UserPoolPolicyType {
 pub mod user_pool_policy_type {
 
     /// A builder for [`UserPoolPolicyType`](crate::model::UserPoolPolicyType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_policy: std::option::Option<crate::model::PasswordPolicyType>,
@@ -4286,6 +4304,7 @@ impl PasswordPolicyType {
 pub mod password_policy_type {
 
     /// A builder for [`PasswordPolicyType`](crate::model::PasswordPolicyType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) minimum_length: std::option::Option<i32>,
@@ -4417,6 +4436,7 @@ impl CodeDeliveryDetailsType {
 pub mod code_delivery_details_type {
 
     /// A builder for [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -4602,6 +4622,7 @@ impl std::fmt::Debug for AttributeType {
 pub mod attribute_type {
 
     /// A builder for [`AttributeType`](crate::model::AttributeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4691,6 +4712,7 @@ impl ResourceServerType {
 pub mod resource_server_type {
 
     /// A builder for [`ResourceServerType`](crate::model::ResourceServerType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -4792,6 +4814,7 @@ impl ResourceServerScopeType {
 pub mod resource_server_scope_type {
 
     /// A builder for [`ResourceServerScopeType`](crate::model::ResourceServerScopeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope_name: std::option::Option<std::string::String>,
@@ -5006,6 +5029,7 @@ impl IdentityProviderType {
 pub mod identity_provider_type {
 
     /// A builder for [`IdentityProviderType`](crate::model::IdentityProviderType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -5452,6 +5476,7 @@ impl GroupType {
 pub mod group_type {
 
     /// A builder for [`GroupType`](crate::model::GroupType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -5870,6 +5895,7 @@ impl UserImportJobType {
 pub mod user_import_job_type {
 
     /// A builder for [`UserImportJobType`](crate::model::UserImportJobType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -6241,6 +6267,7 @@ impl UserContextDataType {
 pub mod user_context_data_type {
 
     /// A builder for [`UserContextDataType`](crate::model::UserContextDataType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -6302,6 +6329,7 @@ impl AnalyticsMetadataType {
 pub mod analytics_metadata_type {
 
     /// A builder for [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analytics_endpoint_id: std::option::Option<std::string::String>,
@@ -6360,6 +6388,7 @@ impl MfaOptionType {
 pub mod mfa_option_type {
 
     /// A builder for [`MfaOptionType`](crate::model::MfaOptionType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_medium: std::option::Option<crate::model::DeliveryMediumType>,
@@ -6426,6 +6455,7 @@ impl SoftwareTokenMfaConfigType {
 pub mod software_token_mfa_config_type {
 
     /// A builder for [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -6481,6 +6511,7 @@ impl SmsMfaConfigType {
 pub mod sms_mfa_config_type {
 
     /// A builder for [`SmsMfaConfigType`](crate::model::SmsMfaConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_authentication_message: std::option::Option<std::string::String>,
@@ -6554,6 +6585,7 @@ impl SoftwareTokenMfaSettingsType {
 pub mod software_token_mfa_settings_type {
 
     /// A builder for [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -6621,6 +6653,7 @@ impl SmsMfaSettingsType {
 pub mod sms_mfa_settings_type {
 
     /// A builder for [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -6736,6 +6769,7 @@ impl std::fmt::Debug for UiCustomizationType {
 pub mod ui_customization_type {
 
     /// A builder for [`UiCustomizationType`](crate::model::UiCustomizationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -6940,6 +6974,7 @@ impl std::fmt::Debug for RiskConfigurationType {
 pub mod risk_configuration_type {
 
     /// A builder for [`RiskConfigurationType`](crate::model::RiskConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -7101,6 +7136,7 @@ impl RiskExceptionConfigurationType {
 pub mod risk_exception_configuration_type {
 
     /// A builder for [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blocked_ip_range_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7188,6 +7224,7 @@ impl AccountTakeoverRiskConfigurationType {
 pub mod account_takeover_risk_configuration_type {
 
     /// A builder for [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notify_configuration: std::option::Option<crate::model::NotifyConfigurationType>,
@@ -7271,6 +7308,7 @@ impl AccountTakeoverActionsType {
 pub mod account_takeover_actions_type {
 
     /// A builder for [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) low_action: std::option::Option<crate::model::AccountTakeoverActionType>,
@@ -7373,6 +7411,7 @@ impl AccountTakeoverActionType {
 pub mod account_takeover_action_type {
 
     /// A builder for [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notify: std::option::Option<bool>,
@@ -7585,6 +7624,7 @@ impl NotifyConfigurationType {
 pub mod notify_configuration_type {
 
     /// A builder for [`NotifyConfigurationType`](crate::model::NotifyConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<std::string::String>,
@@ -7716,6 +7756,7 @@ impl NotifyEmailType {
 pub mod notify_email_type {
 
     /// A builder for [`NotifyEmailType`](crate::model::NotifyEmailType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -7795,6 +7836,7 @@ impl CompromisedCredentialsRiskConfigurationType {
 pub mod compromised_credentials_risk_configuration_type {
 
     /// A builder for [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_filter: std::option::Option<std::vec::Vec<crate::model::EventFilterType>>,
@@ -7869,6 +7911,7 @@ impl CompromisedCredentialsActionsType {
 pub mod compromised_credentials_actions_type {
 
     /// A builder for [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_action:
@@ -8158,6 +8201,7 @@ impl std::fmt::Debug for AuthenticationResultType {
 pub mod authentication_result_type {
 
     /// A builder for [`AuthenticationResultType`](crate::model::AuthenticationResultType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -8291,6 +8335,7 @@ impl NewDeviceMetadataType {
 pub mod new_device_metadata_type {
 
     /// A builder for [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -8570,6 +8615,7 @@ impl std::fmt::Debug for UserType {
 pub mod user_type {
 
     /// A builder for [`UserType`](crate::model::UserType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -8906,6 +8952,7 @@ impl UserPoolDescriptionType {
 pub mod user_pool_description_type {
 
     /// A builder for [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9136,6 +9183,7 @@ impl std::fmt::Debug for UserPoolClientDescription {
 pub mod user_pool_client_description {
 
     /// A builder for [`UserPoolClientDescription`](crate::model::UserPoolClientDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -9238,6 +9286,7 @@ impl ProviderDescription {
 pub mod provider_description {
 
     /// A builder for [`ProviderDescription`](crate::model::ProviderDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -9364,6 +9413,7 @@ impl DeviceType {
 pub mod device_type {
 
     /// A builder for [`DeviceType`](crate::model::DeviceType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -9653,6 +9703,7 @@ impl DomainDescriptionType {
 pub mod domain_description_type {
 
     /// A builder for [`DomainDescriptionType`](crate::model::DomainDescriptionType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -10202,6 +10253,7 @@ impl UserPoolType {
 pub mod user_pool_type {
 
     /// A builder for [`UserPoolType`](crate::model::UserPoolType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10864,6 +10916,7 @@ impl UsernameConfigurationType {
 pub mod username_configuration_type {
 
     /// A builder for [`UsernameConfigurationType`](crate::model::UsernameConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_sensitive: std::option::Option<bool>,
@@ -11187,6 +11240,7 @@ impl SchemaAttributeType {
 pub mod schema_attribute_type {
 
     /// A builder for [`SchemaAttributeType`](crate::model::SchemaAttributeType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11339,6 +11393,7 @@ impl StringAttributeConstraintsType {
 pub mod string_attribute_constraints_type {
 
     /// A builder for [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_length: std::option::Option<std::string::String>,
@@ -11406,6 +11461,7 @@ impl NumberAttributeConstraintsType {
 pub mod number_attribute_constraints_type {
 
     /// A builder for [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_value: std::option::Option<std::string::String>,
@@ -11575,6 +11631,7 @@ impl DeviceSecretVerifierConfigType {
 pub mod device_secret_verifier_config_type {
 
     /// A builder for [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_verifier: std::option::Option<std::string::String>,
@@ -11666,6 +11723,7 @@ impl ContextDataType {
 pub mod context_data_type {
 
     /// A builder for [`ContextDataType`](crate::model::ContextDataType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -11778,6 +11836,7 @@ impl HttpHeader {
 pub mod http_header {
 
     /// A builder for [`HttpHeader`](crate::model::HttpHeader).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_name: std::option::Option<std::string::String>,
@@ -11890,6 +11949,7 @@ impl AuthEventType {
 pub mod auth_event_type {
 
     /// A builder for [`AuthEventType`](crate::model::AuthEventType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
@@ -12064,6 +12124,7 @@ impl EventFeedbackType {
 pub mod event_feedback_type {
 
     /// A builder for [`EventFeedbackType`](crate::model::EventFeedbackType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feedback_value: std::option::Option<crate::model::FeedbackValueType>,
@@ -12170,6 +12231,7 @@ impl EventContextDataType {
 pub mod event_context_data_type {
 
     /// A builder for [`EventContextDataType`](crate::model::EventContextDataType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -12273,6 +12335,7 @@ impl ChallengeResponseType {
 pub mod challenge_response_type {
 
     /// A builder for [`ChallengeResponseType`](crate::model::ChallengeResponseType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) challenge_name: std::option::Option<crate::model::ChallengeName>,
@@ -12535,6 +12598,7 @@ impl EventRiskType {
 pub mod event_risk_type {
 
     /// A builder for [`EventRiskType`](crate::model::EventRiskType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) risk_decision: std::option::Option<crate::model::RiskDecisionType>,
@@ -13028,6 +13092,7 @@ impl ProviderUserIdentifierType {
 pub mod provider_user_identifier_type {
 
     /// A builder for [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_name: std::option::Option<std::string::String>,

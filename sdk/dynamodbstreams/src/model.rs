@@ -44,6 +44,7 @@ impl Stream {
 pub mod stream {
 
     /// A builder for [`Stream`](crate::model::Stream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -297,6 +298,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
@@ -456,6 +458,7 @@ impl Identity {
 pub mod identity {
 
     /// A builder for [`Identity`](crate::model::Identity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal_id: std::option::Option<std::string::String>,
@@ -590,6 +593,7 @@ impl StreamRecord {
 pub mod stream_record {
 
     /// A builder for [`StreamRecord`](crate::model::StreamRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1263,6 +1267,7 @@ impl StreamDescription {
 pub mod stream_description {
 
     /// A builder for [`StreamDescription`](crate::model::StreamDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -1491,6 +1496,7 @@ impl Shard {
 pub mod shard {
 
     /// A builder for [`Shard`](crate::model::Shard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_id: std::option::Option<std::string::String>,
@@ -1576,6 +1582,7 @@ impl SequenceNumberRange {
 pub mod sequence_number_range {
 
     /// A builder for [`SequenceNumberRange`](crate::model::SequenceNumberRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
@@ -1665,6 +1672,7 @@ impl KeySchemaElement {
 pub mod key_schema_element {
 
     /// A builder for [`KeySchemaElement`](crate::model::KeySchemaElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,

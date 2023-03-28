@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -95,6 +96,7 @@ impl MetricPolicy {
 pub mod metric_policy {
 
     /// A builder for [`MetricPolicy`](crate::model::MetricPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_level_metrics:
@@ -179,6 +181,7 @@ impl MetricPolicyRule {
 pub mod metric_policy_rule {
 
     /// A builder for [`MetricPolicyRule`](crate::model::MetricPolicyRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_group: std::option::Option<std::string::String>,
@@ -372,6 +375,7 @@ impl CorsRule {
 pub mod cors_rule {
 
     /// A builder for [`CorsRule`](crate::model::CorsRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -667,6 +671,7 @@ impl Container {
 pub mod container {
 
     /// A builder for [`Container`](crate::model::Container).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,

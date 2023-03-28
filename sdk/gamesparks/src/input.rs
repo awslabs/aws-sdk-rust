@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_game_input {
 
     /// A builder for [`CreateGameInput`](crate::input::CreateGameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -215,6 +216,7 @@ impl CreateGameInput {
 pub mod create_snapshot_input {
 
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -404,6 +406,7 @@ impl CreateSnapshotInput {
 pub mod create_stage_input {
 
     /// A builder for [`CreateStageInput`](crate::input::CreateStageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -658,6 +661,7 @@ impl CreateStageInput {
 pub mod delete_game_input {
 
     /// A builder for [`DeleteGameInput`](crate::input::DeleteGameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -821,6 +825,7 @@ impl DeleteGameInput {
 pub mod delete_stage_input {
 
     /// A builder for [`DeleteStageInput`](crate::input::DeleteStageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -1020,6 +1025,7 @@ impl DeleteStageInput {
 pub mod disconnect_player_input {
 
     /// A builder for [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
@@ -1253,6 +1259,7 @@ impl DisconnectPlayerInput {
 pub mod export_snapshot_input {
 
     /// A builder for [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -1452,6 +1459,7 @@ impl ExportSnapshotInput {
 pub mod get_extension_input {
 
     /// A builder for [`GetExtensionInput`](crate::input::GetExtensionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -1651,6 +1659,7 @@ impl GetExtensionInput {
 pub mod get_extension_version_input {
 
     /// A builder for [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -1887,6 +1896,7 @@ impl GetExtensionVersionInput {
 pub mod get_game_input {
 
     /// A builder for [`GetGameInput`](crate::input::GetGameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -2048,6 +2058,7 @@ impl GetGameInput {
 pub mod get_game_configuration_input {
 
     /// A builder for [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -2256,6 +2267,7 @@ impl GetGameConfigurationInput {
 pub mod get_generated_code_job_input {
 
     /// A builder for [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -2489,6 +2501,7 @@ impl GetGeneratedCodeJobInput {
 pub mod get_player_connection_status_input {
 
     /// A builder for [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
@@ -2722,6 +2735,7 @@ impl GetPlayerConnectionStatusInput {
 pub mod get_snapshot_input {
 
     /// A builder for [`GetSnapshotInput`](crate::input::GetSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -2960,6 +2974,7 @@ impl GetSnapshotInput {
 pub mod get_stage_input {
 
     /// A builder for [`GetStageInput`](crate::input::GetStageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -3157,6 +3172,7 @@ impl GetStageInput {
 pub mod get_stage_deployment_input {
 
     /// A builder for [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -3389,6 +3405,7 @@ impl GetStageDeploymentInput {
 pub mod import_game_configuration_input {
 
     /// A builder for [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -3589,6 +3606,7 @@ impl ImportGameConfigurationInput {
 pub mod list_extensions_input {
 
     /// A builder for [`ListExtensionsInput`](crate::input::ListExtensionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3769,6 +3787,7 @@ impl ListExtensionsInput {
 pub mod list_extension_versions_input {
 
     /// A builder for [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -4019,6 +4038,7 @@ impl ListExtensionVersionsInput {
 pub mod list_games_input {
 
     /// A builder for [`ListGamesInput`](crate::input::ListGamesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4197,6 +4217,7 @@ impl ListGamesInput {
 pub mod list_generated_code_jobs_input {
 
     /// A builder for [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -4447,6 +4468,7 @@ impl ListGeneratedCodeJobsInput {
 pub mod list_snapshots_input {
 
     /// A builder for [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -4659,6 +4681,7 @@ impl ListSnapshotsInput {
 pub mod list_stage_deployments_input {
 
     /// A builder for [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -4909,6 +4932,7 @@ impl ListStageDeploymentsInput {
 pub mod list_stages_input {
 
     /// A builder for [`ListStagesInput`](crate::input::ListStagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -5121,6 +5145,7 @@ impl ListStagesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5286,6 +5311,7 @@ impl ListTagsForResourceInput {
 pub mod start_generated_code_job_input {
 
     /// A builder for [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -5518,6 +5544,7 @@ impl StartGeneratedCodeJobInput {
 pub mod start_stage_deployment_input {
 
     /// A builder for [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -5759,6 +5786,7 @@ impl StartStageDeploymentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5965,6 +5993,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6167,6 +6196,7 @@ impl UntagResourceInput {
 pub mod update_game_input {
 
     /// A builder for [`UpdateGameInput`](crate::input::UpdateGameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -6356,6 +6386,7 @@ impl UpdateGameInput {
 pub mod update_game_configuration_input {
 
     /// A builder for [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -6563,6 +6594,7 @@ impl UpdateGameConfigurationInput {
 pub mod update_snapshot_input {
 
     /// A builder for [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,
@@ -6788,6 +6820,7 @@ impl UpdateSnapshotInput {
 pub mod update_stage_input {
 
     /// A builder for [`UpdateStageInput`](crate::input::UpdateStageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_name: std::option::Option<std::string::String>,

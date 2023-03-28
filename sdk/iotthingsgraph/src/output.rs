@@ -17,6 +17,7 @@ impl UploadEntityDefinitionsOutput {
 pub mod upload_entity_definitions_output {
 
     /// A builder for [`UploadEntityDefinitionsOutput`](crate::output::UploadEntityDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -65,6 +66,7 @@ impl UpdateSystemTemplateOutput {
 pub mod update_system_template_output {
 
     /// A builder for [`UpdateSystemTemplateOutput`](crate::output::UpdateSystemTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemTemplateSummary>,
@@ -116,6 +118,7 @@ impl UpdateFlowTemplateOutput {
 pub mod update_flow_template_output {
 
     /// A builder for [`UpdateFlowTemplateOutput`](crate::output::UpdateFlowTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::FlowTemplateSummary>,
@@ -157,6 +160,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -191,6 +195,7 @@ impl UndeploySystemInstanceOutput {
 pub mod undeploy_system_instance_output {
 
     /// A builder for [`UndeploySystemInstanceOutput`](crate::output::UndeploySystemInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemInstanceSummary>,
@@ -232,6 +237,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -273,6 +279,7 @@ impl SearchThingsOutput {
 pub mod search_things_output {
 
     /// A builder for [`SearchThingsOutput`](crate::output::SearchThingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) things: std::option::Option<std::vec::Vec<crate::model::Thing>>,
@@ -349,6 +356,7 @@ impl SearchSystemTemplatesOutput {
 pub mod search_system_templates_output {
 
     /// A builder for [`SearchSystemTemplatesOutput`](crate::output::SearchSystemTemplatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
@@ -426,6 +434,7 @@ impl SearchSystemInstancesOutput {
 pub mod search_system_instances_output {
 
     /// A builder for [`SearchSystemInstancesOutput`](crate::output::SearchSystemInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
@@ -503,6 +512,7 @@ impl SearchFlowTemplatesOutput {
 pub mod search_flow_templates_output {
 
     /// A builder for [`SearchFlowTemplatesOutput`](crate::output::SearchFlowTemplatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::FlowTemplateSummary>>,
@@ -579,6 +589,7 @@ impl SearchFlowExecutionsOutput {
 pub mod search_flow_executions_output {
 
     /// A builder for [`SearchFlowExecutionsOutput`](crate::output::SearchFlowExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
@@ -656,6 +667,7 @@ impl SearchEntitiesOutput {
 pub mod search_entities_output {
 
     /// A builder for [`SearchEntitiesOutput`](crate::output::SearchEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) descriptions:
@@ -733,6 +745,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -809,6 +822,7 @@ impl ListFlowExecutionMessagesOutput {
 pub mod list_flow_execution_messages_output {
 
     /// A builder for [`ListFlowExecutionMessagesOutput`](crate::output::ListFlowExecutionMessagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::FlowExecutionMessage>>,
@@ -920,6 +934,7 @@ impl GetUploadStatusOutput {
 pub mod get_upload_status_output {
 
     /// A builder for [`GetUploadStatusOutput`](crate::output::GetUploadStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -1068,6 +1083,7 @@ impl GetSystemTemplateRevisionsOutput {
 pub mod get_system_template_revisions_output {
 
     /// A builder for [`GetSystemTemplateRevisionsOutput`](crate::output::GetSystemTemplateRevisionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
@@ -1138,6 +1154,7 @@ impl GetSystemTemplateOutput {
 pub mod get_system_template_output {
 
     /// A builder for [`GetSystemTemplateOutput`](crate::output::GetSystemTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<crate::model::SystemTemplateDescription>,
@@ -1189,6 +1206,7 @@ impl GetSystemInstanceOutput {
 pub mod get_system_instance_output {
 
     /// A builder for [`GetSystemInstanceOutput`](crate::output::GetSystemInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<crate::model::SystemInstanceDescription>,
@@ -1270,6 +1288,7 @@ impl GetNamespaceDeletionStatusOutput {
 pub mod get_namespace_deletion_status_output {
 
     /// A builder for [`GetNamespaceDeletionStatusOutput`](crate::output::GetNamespaceDeletionStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_arn: std::option::Option<std::string::String>,
@@ -1391,6 +1410,7 @@ impl GetFlowTemplateRevisionsOutput {
 pub mod get_flow_template_revisions_output {
 
     /// A builder for [`GetFlowTemplateRevisionsOutput`](crate::output::GetFlowTemplateRevisionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::FlowTemplateSummary>>,
@@ -1460,6 +1480,7 @@ impl GetFlowTemplateOutput {
 pub mod get_flow_template_output {
 
     /// A builder for [`GetFlowTemplateOutput`](crate::output::GetFlowTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<crate::model::FlowTemplateDescription>,
@@ -1511,6 +1532,7 @@ impl GetEntitiesOutput {
 pub mod get_entities_output {
 
     /// A builder for [`GetEntitiesOutput`](crate::output::GetEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) descriptions:
@@ -1559,6 +1581,7 @@ pub struct DissociateEntityFromThingOutput {}
 pub mod dissociate_entity_from_thing_output {
 
     /// A builder for [`DissociateEntityFromThingOutput`](crate::output::DissociateEntityFromThingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1621,6 +1644,7 @@ impl DescribeNamespaceOutput {
 pub mod describe_namespace_output {
 
     /// A builder for [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_arn: std::option::Option<std::string::String>,
@@ -1716,6 +1740,7 @@ pub struct DeprecateSystemTemplateOutput {}
 pub mod deprecate_system_template_output {
 
     /// A builder for [`DeprecateSystemTemplateOutput`](crate::output::DeprecateSystemTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1740,6 +1765,7 @@ pub struct DeprecateFlowTemplateOutput {}
 pub mod deprecate_flow_template_output {
 
     /// A builder for [`DeprecateFlowTemplateOutput`](crate::output::DeprecateFlowTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1781,6 +1807,7 @@ impl DeploySystemInstanceOutput {
 pub mod deploy_system_instance_output {
 
     /// A builder for [`DeploySystemInstanceOutput`](crate::output::DeploySystemInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemInstanceSummary>,
@@ -1837,6 +1864,7 @@ pub struct DeleteSystemTemplateOutput {}
 pub mod delete_system_template_output {
 
     /// A builder for [`DeleteSystemTemplateOutput`](crate::output::DeleteSystemTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1861,6 +1889,7 @@ pub struct DeleteSystemInstanceOutput {}
 pub mod delete_system_instance_output {
 
     /// A builder for [`DeleteSystemInstanceOutput`](crate::output::DeleteSystemInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1902,6 +1931,7 @@ impl DeleteNamespaceOutput {
 pub mod delete_namespace_output {
 
     /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_arn: std::option::Option<std::string::String>,
@@ -1958,6 +1988,7 @@ pub struct DeleteFlowTemplateOutput {}
 pub mod delete_flow_template_output {
 
     /// A builder for [`DeleteFlowTemplateOutput`](crate::output::DeleteFlowTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1992,6 +2023,7 @@ impl CreateSystemTemplateOutput {
 pub mod create_system_template_output {
 
     /// A builder for [`CreateSystemTemplateOutput`](crate::output::CreateSystemTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemTemplateSummary>,
@@ -2043,6 +2075,7 @@ impl CreateSystemInstanceOutput {
 pub mod create_system_instance_output {
 
     /// A builder for [`CreateSystemInstanceOutput`](crate::output::CreateSystemInstanceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemInstanceSummary>,
@@ -2094,6 +2127,7 @@ impl CreateFlowTemplateOutput {
 pub mod create_flow_template_output {
 
     /// A builder for [`CreateFlowTemplateOutput`](crate::output::CreateFlowTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::FlowTemplateSummary>,
@@ -2135,6 +2169,7 @@ pub struct AssociateEntityToThingOutput {}
 pub mod associate_entity_to_thing_output {
 
     /// A builder for [`AssociateEntityToThingOutput`](crate::output::AssociateEntityToThingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_container_input {
 
     /// A builder for [`CreateContainerInput`](crate::input::CreateContainerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -191,6 +192,7 @@ impl CreateContainerInput {
 pub mod delete_container_input {
 
     /// A builder for [`DeleteContainerInput`](crate::input::DeleteContainerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -356,6 +358,7 @@ impl DeleteContainerInput {
 pub mod delete_container_policy_input {
 
     /// A builder for [`DeleteContainerPolicyInput`](crate::input::DeleteContainerPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -525,6 +528,7 @@ impl DeleteContainerPolicyInput {
 pub mod delete_cors_policy_input {
 
     /// A builder for [`DeleteCorsPolicyInput`](crate::input::DeleteCorsPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -692,6 +696,7 @@ impl DeleteCorsPolicyInput {
 pub mod delete_lifecycle_policy_input {
 
     /// A builder for [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -861,6 +866,7 @@ impl DeleteLifecyclePolicyInput {
 pub mod delete_metric_policy_input {
 
     /// A builder for [`DeleteMetricPolicyInput`](crate::input::DeleteMetricPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -1028,6 +1034,7 @@ impl DeleteMetricPolicyInput {
 pub mod describe_container_input {
 
     /// A builder for [`DescribeContainerInput`](crate::input::DescribeContainerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -1195,6 +1202,7 @@ impl DescribeContainerInput {
 pub mod get_container_policy_input {
 
     /// A builder for [`GetContainerPolicyInput`](crate::input::GetContainerPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -1362,6 +1370,7 @@ impl GetContainerPolicyInput {
 pub mod get_cors_policy_input {
 
     /// A builder for [`GetCorsPolicyInput`](crate::input::GetCorsPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -1527,6 +1536,7 @@ impl GetCorsPolicyInput {
 pub mod get_lifecycle_policy_input {
 
     /// A builder for [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -1694,6 +1704,7 @@ impl GetLifecyclePolicyInput {
 pub mod get_metric_policy_input {
 
     /// A builder for [`GetMetricPolicyInput`](crate::input::GetMetricPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -1859,6 +1870,7 @@ impl GetMetricPolicyInput {
 pub mod list_containers_input {
 
     /// A builder for [`ListContainersInput`](crate::input::ListContainersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2033,6 +2045,7 @@ impl ListContainersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -2199,6 +2212,7 @@ impl ListTagsForResourceInput {
 pub mod put_container_policy_input {
 
     /// A builder for [`PutContainerPolicyInput`](crate::input::PutContainerPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -2386,6 +2400,7 @@ impl PutContainerPolicyInput {
 pub mod put_cors_policy_input {
 
     /// A builder for [`PutCorsPolicyInput`](crate::input::PutCorsPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -2572,6 +2587,7 @@ impl PutCorsPolicyInput {
 pub mod put_lifecycle_policy_input {
 
     /// A builder for [`PutLifecyclePolicyInput`](crate::input::PutLifecyclePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -2754,6 +2770,7 @@ impl PutLifecyclePolicyInput {
 pub mod put_metric_policy_input {
 
     /// A builder for [`PutMetricPolicyInput`](crate::input::PutMetricPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -2942,6 +2959,7 @@ impl PutMetricPolicyInput {
 pub mod start_access_logging_input {
 
     /// A builder for [`StartAccessLoggingInput`](crate::input::StartAccessLoggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -3109,6 +3127,7 @@ impl StartAccessLoggingInput {
 pub mod stop_access_logging_input {
 
     /// A builder for [`StopAccessLoggingInput`](crate::input::StopAccessLoggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -3276,6 +3295,7 @@ impl StopAccessLoggingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -3459,6 +3479,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,

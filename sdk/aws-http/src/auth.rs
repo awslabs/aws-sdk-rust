@@ -188,10 +188,7 @@ mod tests {
             .create_cache(SharedCredentialsProvider::new(provide_credentials_fn(
                 || async { Ok(Credentials::for_tests()) },
             )));
-        set_credentials_cache(
-            &mut req.properties_mut(),
-            SharedCredentialsCache::from(credentials_cache),
-        );
+        set_credentials_cache(&mut req.properties_mut(), credentials_cache);
         let req = CredentialsStage::new()
             .apply(req)
             .await

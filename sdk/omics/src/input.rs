@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_delete_read_set_input {
 
     /// A builder for [`BatchDeleteReadSetInput`](crate::input::BatchDeleteReadSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -214,6 +215,7 @@ impl BatchDeleteReadSetInput {
 pub mod cancel_annotation_import_job_input {
 
     /// A builder for [`CancelAnnotationImportJobInput`](crate::input::CancelAnnotationImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -381,6 +383,7 @@ impl CancelAnnotationImportJobInput {
 pub mod cancel_run_input {
 
     /// A builder for [`CancelRunInput`](crate::input::CancelRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -541,6 +544,7 @@ impl CancelRunInput {
 pub mod cancel_variant_import_job_input {
 
     /// A builder for [`CancelVariantImportJobInput`](crate::input::CancelVariantImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -708,6 +712,7 @@ impl CancelVariantImportJobInput {
 pub mod create_annotation_store_input {
 
     /// A builder for [`CreateAnnotationStoreInput`](crate::input::CreateAnnotationStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference: std::option::Option<crate::model::ReferenceItem>,
@@ -972,6 +977,7 @@ impl CreateAnnotationStoreInput {
 pub mod create_reference_store_input {
 
     /// A builder for [`CreateReferenceStoreInput`](crate::input::CreateReferenceStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1203,6 +1209,7 @@ impl CreateReferenceStoreInput {
 pub mod create_run_group_input {
 
     /// A builder for [`CreateRunGroupInput`](crate::input::CreateRunGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1442,6 +1449,7 @@ impl CreateRunGroupInput {
 pub mod create_sequence_store_input {
 
     /// A builder for [`CreateSequenceStoreInput`](crate::input::CreateSequenceStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1671,6 +1679,7 @@ impl CreateSequenceStoreInput {
 pub mod create_variant_store_input {
 
     /// A builder for [`CreateVariantStoreInput`](crate::input::CreateVariantStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference: std::option::Option<crate::model::ReferenceItem>,
@@ -1903,6 +1912,7 @@ impl CreateVariantStoreInput {
 pub mod create_workflow_input {
 
     /// A builder for [`CreateWorkflowInput`](crate::input::CreateWorkflowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2216,6 +2226,7 @@ impl CreateWorkflowInput {
 pub mod delete_annotation_store_input {
 
     /// A builder for [`DeleteAnnotationStoreInput`](crate::input::DeleteAnnotationStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2411,6 +2422,7 @@ impl DeleteAnnotationStoreInput {
 pub mod delete_reference_input {
 
     /// A builder for [`DeleteReferenceInput`](crate::input::DeleteReferenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2615,6 +2627,7 @@ impl DeleteReferenceInput {
 pub mod delete_reference_store_input {
 
     /// A builder for [`DeleteReferenceStoreInput`](crate::input::DeleteReferenceStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2779,6 +2792,7 @@ impl DeleteReferenceStoreInput {
 pub mod delete_run_input {
 
     /// A builder for [`DeleteRunInput`](crate::input::DeleteRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2939,6 +2953,7 @@ impl DeleteRunInput {
 pub mod delete_run_group_input {
 
     /// A builder for [`DeleteRunGroupInput`](crate::input::DeleteRunGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3101,6 +3116,7 @@ impl DeleteRunGroupInput {
 pub mod delete_sequence_store_input {
 
     /// A builder for [`DeleteSequenceStoreInput`](crate::input::DeleteSequenceStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3265,6 +3281,7 @@ impl DeleteSequenceStoreInput {
 pub mod delete_variant_store_input {
 
     /// A builder for [`DeleteVariantStoreInput`](crate::input::DeleteVariantStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3460,6 +3477,7 @@ impl DeleteVariantStoreInput {
 pub mod delete_workflow_input {
 
     /// A builder for [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3622,6 +3640,7 @@ impl DeleteWorkflowInput {
 pub mod get_annotation_import_job_input {
 
     /// A builder for [`GetAnnotationImportJobInput`](crate::input::GetAnnotationImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3789,6 +3808,7 @@ impl GetAnnotationImportJobInput {
 pub mod get_annotation_store_input {
 
     /// A builder for [`GetAnnotationStoreInput`](crate::input::GetAnnotationStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3954,6 +3974,7 @@ impl GetAnnotationStoreInput {
 pub mod get_read_set_input {
 
     /// A builder for [`GetReadSetInput`](crate::input::GetReadSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4206,6 +4227,7 @@ impl GetReadSetInput {
 pub mod get_read_set_activation_job_input {
 
     /// A builder for [`GetReadSetActivationJobInput`](crate::input::GetReadSetActivationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4412,6 +4434,7 @@ impl GetReadSetActivationJobInput {
 pub mod get_read_set_export_job_input {
 
     /// A builder for [`GetReadSetExportJobInput`](crate::input::GetReadSetExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -4618,6 +4641,7 @@ impl GetReadSetExportJobInput {
 pub mod get_read_set_import_job_input {
 
     /// A builder for [`GetReadSetImportJobInput`](crate::input::GetReadSetImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4824,6 +4848,7 @@ impl GetReadSetImportJobInput {
 pub mod get_read_set_metadata_input {
 
     /// A builder for [`GetReadSetMetadataInput`](crate::input::GetReadSetMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5030,6 +5055,7 @@ impl GetReadSetMetadataInput {
 pub mod get_reference_input {
 
     /// A builder for [`GetReferenceInput`](crate::input::GetReferenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5295,6 +5321,7 @@ impl GetReferenceInput {
 pub mod get_reference_import_job_input {
 
     /// A builder for [`GetReferenceImportJobInput`](crate::input::GetReferenceImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5501,6 +5528,7 @@ impl GetReferenceImportJobInput {
 pub mod get_reference_metadata_input {
 
     /// A builder for [`GetReferenceMetadataInput`](crate::input::GetReferenceMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5707,6 +5735,7 @@ impl GetReferenceMetadataInput {
 pub mod get_reference_store_input {
 
     /// A builder for [`GetReferenceStoreInput`](crate::input::GetReferenceStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5871,6 +5900,7 @@ impl GetReferenceStoreInput {
 pub mod get_run_input {
 
     /// A builder for [`GetRunInput`](crate::input::GetRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6066,6 +6096,7 @@ impl GetRunInput {
 pub mod get_run_group_input {
 
     /// A builder for [`GetRunGroupInput`](crate::input::GetRunGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6228,6 +6259,7 @@ impl GetRunGroupInput {
 pub mod get_run_task_input {
 
     /// A builder for [`GetRunTaskInput`](crate::input::GetRunTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6424,6 +6456,7 @@ impl GetRunTaskInput {
 pub mod get_sequence_store_input {
 
     /// A builder for [`GetSequenceStoreInput`](crate::input::GetSequenceStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6588,6 +6621,7 @@ impl GetSequenceStoreInput {
 pub mod get_variant_import_job_input {
 
     /// A builder for [`GetVariantImportJobInput`](crate::input::GetVariantImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -6755,6 +6789,7 @@ impl GetVariantImportJobInput {
 pub mod get_variant_store_input {
 
     /// A builder for [`GetVariantStoreInput`](crate::input::GetVariantStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6918,6 +6953,7 @@ impl GetVariantStoreInput {
 pub mod get_workflow_input {
 
     /// A builder for [`GetWorkflowInput`](crate::input::GetWorkflowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7135,6 +7171,7 @@ impl GetWorkflowInput {
 pub mod list_annotation_import_jobs_input {
 
     /// A builder for [`ListAnnotationImportJobsInput`](crate::input::ListAnnotationImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -7367,6 +7404,7 @@ impl ListAnnotationImportJobsInput {
 pub mod list_annotation_stores_input {
 
     /// A builder for [`ListAnnotationStoresInput`](crate::input::ListAnnotationStoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7599,6 +7637,7 @@ impl ListAnnotationStoresInput {
 pub mod list_read_set_activation_jobs_input {
 
     /// A builder for [`ListReadSetActivationJobsInput`](crate::input::ListReadSetActivationJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -7847,6 +7886,7 @@ impl ListReadSetActivationJobsInput {
 pub mod list_read_set_export_jobs_input {
 
     /// A builder for [`ListReadSetExportJobsInput`](crate::input::ListReadSetExportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -8097,6 +8137,7 @@ impl ListReadSetExportJobsInput {
 pub mod list_read_set_import_jobs_input {
 
     /// A builder for [`ListReadSetImportJobsInput`](crate::input::ListReadSetImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -8347,6 +8388,7 @@ impl ListReadSetImportJobsInput {
 pub mod list_read_sets_input {
 
     /// A builder for [`ListReadSetsInput`](crate::input::ListReadSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -8593,6 +8635,7 @@ impl ListReadSetsInput {
 pub mod list_reference_import_jobs_input {
 
     /// A builder for [`ListReferenceImportJobsInput`](crate::input::ListReferenceImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -8843,6 +8886,7 @@ impl ListReferenceImportJobsInput {
 pub mod list_references_input {
 
     /// A builder for [`ListReferencesInput`](crate::input::ListReferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_store_id: std::option::Option<std::string::String>,
@@ -9089,6 +9133,7 @@ impl ListReferencesInput {
 pub mod list_reference_stores_input {
 
     /// A builder for [`ListReferenceStoresInput`](crate::input::ListReferenceStoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -9298,6 +9343,7 @@ impl ListReferenceStoresInput {
 pub mod list_run_groups_input {
 
     /// A builder for [`ListRunGroupsInput`](crate::input::ListRunGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9499,6 +9545,7 @@ impl ListRunGroupsInput {
 pub mod list_runs_input {
 
     /// A builder for [`ListRunsInput`](crate::input::ListRunsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9714,6 +9761,7 @@ impl ListRunsInput {
 pub mod list_run_tasks_input {
 
     /// A builder for [`ListRunTasksInput`](crate::input::ListRunTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9946,6 +9994,7 @@ impl ListRunTasksInput {
 pub mod list_sequence_stores_input {
 
     /// A builder for [`ListSequenceStoresInput`](crate::input::ListSequenceStoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -10155,6 +10204,7 @@ impl ListSequenceStoresInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10322,6 +10372,7 @@ impl ListTagsForResourceInput {
 pub mod list_variant_import_jobs_input {
 
     /// A builder for [`ListVariantImportJobsInput`](crate::input::ListVariantImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -10554,6 +10605,7 @@ impl ListVariantImportJobsInput {
 pub mod list_variant_stores_input {
 
     /// A builder for [`ListVariantStoresInput`](crate::input::ListVariantStoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -10784,6 +10836,7 @@ impl ListVariantStoresInput {
 pub mod list_workflows_input {
 
     /// A builder for [`ListWorkflowsInput`](crate::input::ListWorkflowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WorkflowType>,
@@ -11002,6 +11055,7 @@ impl ListWorkflowsInput {
 pub mod start_annotation_import_job_input {
 
     /// A builder for [`StartAnnotationImportJobInput`](crate::input::StartAnnotationImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
@@ -11229,6 +11283,7 @@ impl StartAnnotationImportJobInput {
 pub mod start_read_set_activation_job_input {
 
     /// A builder for [`StartReadSetActivationJobInput`](crate::input::StartReadSetActivationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -11453,6 +11508,7 @@ impl StartReadSetActivationJobInput {
 pub mod start_read_set_export_job_input {
 
     /// A builder for [`StartReadSetExportJobInput`](crate::input::StartReadSetExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -11700,6 +11756,7 @@ impl StartReadSetExportJobInput {
 pub mod start_read_set_import_job_input {
 
     /// A builder for [`StartReadSetImportJobInput`](crate::input::StartReadSetImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_store_id: std::option::Option<std::string::String>,
@@ -11938,6 +11995,7 @@ impl StartReadSetImportJobInput {
 pub mod start_reference_import_job_input {
 
     /// A builder for [`StartReferenceImportJobInput`](crate::input::StartReferenceImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_store_id: std::option::Option<std::string::String>,
@@ -12176,6 +12234,7 @@ impl StartReferenceImportJobInput {
 pub mod start_run_input {
 
     /// A builder for [`StartRunInput`](crate::input::StartRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -12505,6 +12564,7 @@ impl StartRunInput {
 pub mod start_variant_import_job_input {
 
     /// A builder for [`StartVariantImportJobInput`](crate::input::StartVariantImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
@@ -12716,6 +12776,7 @@ impl StartVariantImportJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -12924,6 +12985,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -13128,6 +13190,7 @@ impl UntagResourceInput {
 pub mod update_annotation_store_input {
 
     /// A builder for [`UpdateAnnotationStoreInput`](crate::input::UpdateAnnotationStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -13323,6 +13386,7 @@ impl UpdateAnnotationStoreInput {
 pub mod update_run_group_input {
 
     /// A builder for [`UpdateRunGroupInput`](crate::input::UpdateRunGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -13549,6 +13613,7 @@ impl UpdateRunGroupInput {
 pub mod update_variant_store_input {
 
     /// A builder for [`UpdateVariantStoreInput`](crate::input::UpdateVariantStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -13742,6 +13807,7 @@ impl UpdateVariantStoreInput {
 pub mod update_workflow_input {
 
     /// A builder for [`UpdateWorkflowInput`](crate::input::UpdateWorkflowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

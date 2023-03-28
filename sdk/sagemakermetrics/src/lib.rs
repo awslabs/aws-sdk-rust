@@ -8,6 +8,7 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>Contains all data plane API operations and data types for Amazon SageMaker Metrics.

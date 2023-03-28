@@ -34,6 +34,7 @@ impl Interpretation {
 pub mod interpretation {
 
     /// A builder for [`Interpretation`](crate::model::Interpretation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nlu_confidence: std::option::Option<crate::model::ConfidenceScore>,
@@ -139,6 +140,7 @@ impl Intent {
 pub mod intent {
 
     /// A builder for [`Intent`](crate::model::Intent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -477,6 +479,7 @@ impl Slot {
 pub mod slot {
 
     /// A builder for [`Slot`](crate::model::Slot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::Value>,
@@ -695,6 +698,7 @@ impl Value {
 pub mod value {
 
     /// A builder for [`Value`](crate::model::Value).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) original_value: std::option::Option<std::string::String>,
@@ -790,6 +794,7 @@ impl SentimentResponse {
 pub mod sentiment_response {
 
     /// A builder for [`SentimentResponse`](crate::model::SentimentResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sentiment: std::option::Option<crate::model::SentimentType>,
@@ -877,6 +882,7 @@ impl SentimentScore {
 pub mod sentiment_score {
 
     /// A builder for [`SentimentScore`](crate::model::SentimentScore).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) positive: std::option::Option<f64>,
@@ -1061,6 +1067,7 @@ impl ConfidenceScore {
 pub mod confidence_score {
 
     /// A builder for [`ConfidenceScore`](crate::model::ConfidenceScore).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f64>,
@@ -1148,6 +1155,7 @@ impl SessionState {
 pub mod session_state {
 
     /// A builder for [`SessionState`](crate::model::SessionState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dialog_action: std::option::Option<crate::model::DialogAction>,
@@ -1309,6 +1317,7 @@ impl RuntimeHints {
 pub mod runtime_hints {
 
     /// A builder for [`RuntimeHints`](crate::model::RuntimeHints).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_hints: std::option::Option<
@@ -1400,6 +1409,7 @@ impl RuntimeHintDetails {
 pub mod runtime_hint_details {
 
     /// A builder for [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime_hint_values:
@@ -1487,6 +1497,7 @@ impl RuntimeHintValue {
 pub mod runtime_hint_value {
 
     /// A builder for [`RuntimeHintValue`](crate::model::RuntimeHintValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phrase: std::option::Option<std::string::String>,
@@ -1556,6 +1567,7 @@ impl ActiveContext {
 pub mod active_context {
 
     /// A builder for [`ActiveContext`](crate::model::ActiveContext).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1657,6 +1669,7 @@ impl ActiveContextTimeToLive {
 pub mod active_context_time_to_live {
 
     /// A builder for [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_in_seconds: std::option::Option<i32>,
@@ -1762,6 +1775,7 @@ impl DialogAction {
 pub mod dialog_action {
 
     /// A builder for [`DialogAction`](crate::model::DialogAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DialogActionType>,
@@ -1889,6 +1903,7 @@ impl ElicitSubSlot {
 pub mod elicit_sub_slot {
 
     /// A builder for [`ElicitSubSlot`](crate::model::ElicitSubSlot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2193,6 +2208,7 @@ impl std::fmt::Debug for Message {
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -2304,6 +2320,7 @@ impl ImageResponseCard {
 pub mod image_response_card {
 
     /// A builder for [`ImageResponseCard`](crate::model::ImageResponseCard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -2404,6 +2421,7 @@ impl Button {
 pub mod button {
 
     /// A builder for [`Button`](crate::model::Button).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,

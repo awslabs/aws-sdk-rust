@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod build_suggesters_input {
 
     /// A builder for [`BuildSuggestersInput`](crate::input::BuildSuggestersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -162,6 +163,7 @@ impl BuildSuggestersInput {
 pub mod create_domain_input {
 
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -319,6 +321,7 @@ impl CreateDomainInput {
 pub mod define_analysis_scheme_input {
 
     /// A builder for [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -495,6 +498,7 @@ impl DefineAnalysisSchemeInput {
 pub mod define_expression_input {
 
     /// A builder for [`DefineExpressionInput`](crate::input::DefineExpressionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -669,6 +673,7 @@ impl DefineExpressionInput {
 pub mod define_index_field_input {
 
     /// A builder for [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -843,6 +848,7 @@ impl DefineIndexFieldInput {
 pub mod define_suggester_input {
 
     /// A builder for [`DefineSuggesterInput`](crate::input::DefineSuggesterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1015,6 +1021,7 @@ impl DefineSuggesterInput {
 pub mod delete_analysis_scheme_input {
 
     /// A builder for [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1191,6 +1198,7 @@ impl DeleteAnalysisSchemeInput {
 pub mod delete_domain_input {
 
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1348,6 +1356,7 @@ impl DeleteDomainInput {
 pub mod delete_expression_input {
 
     /// A builder for [`DeleteExpressionInput`](crate::input::DeleteExpressionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1522,6 +1531,7 @@ impl DeleteExpressionInput {
 pub mod delete_index_field_input {
 
     /// A builder for [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1696,6 +1706,7 @@ impl DeleteIndexFieldInput {
 pub mod delete_suggester_input {
 
     /// A builder for [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1868,6 +1879,7 @@ impl DeleteSuggesterInput {
 pub mod describe_analysis_schemes_input {
 
     /// A builder for [`DescribeAnalysisSchemesInput`](crate::input::DescribeAnalysisSchemesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2062,6 +2074,7 @@ impl DescribeAnalysisSchemesInput {
 pub mod describe_availability_options_input {
 
     /// A builder for [`DescribeAvailabilityOptionsInput`](crate::input::DescribeAvailabilityOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2233,6 +2246,7 @@ impl DescribeAvailabilityOptionsInput {
 pub mod describe_domain_endpoint_options_input {
 
     /// A builder for [`DescribeDomainEndpointOptionsInput`](crate::input::DescribeDomainEndpointOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2404,6 +2418,7 @@ impl DescribeDomainEndpointOptionsInput {
 pub mod describe_domains_input {
 
     /// A builder for [`DescribeDomainsInput`](crate::input::DescribeDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2570,6 +2585,7 @@ impl DescribeDomainsInput {
 pub mod describe_expressions_input {
 
     /// A builder for [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2762,6 +2778,7 @@ impl DescribeExpressionsInput {
 pub mod describe_index_fields_input {
 
     /// A builder for [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2954,6 +2971,7 @@ impl DescribeIndexFieldsInput {
 pub mod describe_scaling_parameters_input {
 
     /// A builder for [`DescribeScalingParametersInput`](crate::input::DescribeScalingParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3115,6 +3133,7 @@ impl DescribeScalingParametersInput {
 pub mod describe_service_access_policies_input {
 
     /// A builder for [`DescribeServiceAccessPoliciesInput`](crate::input::DescribeServiceAccessPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3286,6 +3305,7 @@ impl DescribeServiceAccessPoliciesInput {
 pub mod describe_suggesters_input {
 
     /// A builder for [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3478,6 +3498,7 @@ impl DescribeSuggestersInput {
 pub mod index_documents_input {
 
     /// A builder for [`IndexDocumentsInput`](crate::input::IndexDocumentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3635,6 +3656,7 @@ impl IndexDocumentsInput {
 pub mod list_domain_names_input {
 
     /// A builder for [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3771,6 +3793,7 @@ impl ListDomainNamesInput {
 pub mod update_availability_options_input {
 
     /// A builder for [`UpdateAvailabilityOptionsInput`](crate::input::UpdateAvailabilityOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3944,6 +3967,7 @@ impl UpdateAvailabilityOptionsInput {
 pub mod update_domain_endpoint_options_input {
 
     /// A builder for [`UpdateDomainEndpointOptionsInput`](crate::input::UpdateDomainEndpointOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4122,6 +4146,7 @@ impl UpdateDomainEndpointOptionsInput {
 pub mod update_scaling_parameters_input {
 
     /// A builder for [`UpdateScalingParametersInput`](crate::input::UpdateScalingParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4298,6 +4323,7 @@ impl UpdateScalingParametersInput {
 pub mod update_service_access_policies_input {
 
     /// A builder for [`UpdateServiceAccessPoliciesInput`](crate::input::UpdateServiceAccessPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,

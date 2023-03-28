@@ -131,6 +131,7 @@ impl ListSinksItem {
 pub mod list_sinks_item {
 
     /// A builder for [`ListSinksItem`](crate::model::ListSinksItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -231,6 +232,7 @@ impl ListLinksItem {
 pub mod list_links_item {
 
     /// A builder for [`ListLinksItem`](crate::model::ListLinksItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -350,6 +352,7 @@ impl ListAttachedLinksItem {
 pub mod list_attached_links_item {
 
     /// A builder for [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,

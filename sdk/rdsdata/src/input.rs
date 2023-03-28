@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_execute_statement_input {
 
     /// A builder for [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -273,6 +274,7 @@ impl BatchExecuteStatementInput {
 pub mod begin_transaction_input {
 
     /// A builder for [`BeginTransactionInput`](crate::input::BeginTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -468,6 +470,7 @@ impl BeginTransactionInput {
 pub mod commit_transaction_input {
 
     /// A builder for [`CommitTransactionInput`](crate::input::CommitTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -654,6 +657,7 @@ impl CommitTransactionInput {
 pub mod execute_sql_input {
 
     /// A builder for [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_or_instance_arn: std::option::Option<std::string::String>,
@@ -872,6 +876,7 @@ impl ExecuteSqlInput {
 pub mod execute_statement_input {
 
     /// A builder for [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1187,6 +1192,7 @@ impl ExecuteStatementInput {
 pub mod rollback_transaction_input {
 
     /// A builder for [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

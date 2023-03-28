@@ -331,6 +331,7 @@ impl std::error::Error for InvalidAttributeName {}
 pub mod invalid_attribute_name {
 
     /// A builder for [`InvalidAttributeName`](crate::error::InvalidAttributeName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -551,6 +552,7 @@ impl std::error::Error for UnsupportedOperation {}
 pub mod unsupported_operation {
 
     /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -611,6 +613,7 @@ impl std::error::Error for TooManyEntriesInBatchRequest {}
 pub mod too_many_entries_in_batch_request {
 
     /// A builder for [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -671,6 +674,7 @@ impl std::error::Error for InvalidBatchEntryId {}
 pub mod invalid_batch_entry_id {
 
     /// A builder for [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -731,6 +735,7 @@ impl std::error::Error for EmptyBatchRequest {}
 pub mod empty_batch_request {
 
     /// A builder for [`EmptyBatchRequest`](crate::error::EmptyBatchRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -791,6 +796,7 @@ impl std::error::Error for BatchRequestTooLong {}
 pub mod batch_request_too_long {
 
     /// A builder for [`BatchRequestTooLong`](crate::error::BatchRequestTooLong).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -851,6 +857,7 @@ impl std::error::Error for BatchEntryIdsNotDistinct {}
 pub mod batch_entry_ids_not_distinct {
 
     /// A builder for [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1024,6 +1031,7 @@ impl std::error::Error for InvalidMessageContents {}
 pub mod invalid_message_contents {
 
     /// A builder for [`InvalidMessageContents`](crate::error::InvalidMessageContents).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1286,6 +1294,7 @@ impl std::error::Error for OverLimit {}
 pub mod over_limit {
 
     /// A builder for [`OverLimit`](crate::error::OverLimit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1459,6 +1468,7 @@ impl std::error::Error for QueueDoesNotExist {}
 pub mod queue_does_not_exist {
 
     /// A builder for [`QueueDoesNotExist`](crate::error::QueueDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1519,6 +1529,7 @@ impl std::error::Error for PurgeQueueInProgress {}
 pub mod purge_queue_in_progress {
 
     /// A builder for [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2454,6 +2465,7 @@ impl std::error::Error for ReceiptHandleIsInvalid {}
 pub mod receipt_handle_is_invalid {
 
     /// A builder for [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2514,6 +2526,7 @@ impl std::error::Error for InvalidIdFormat {}
 pub mod invalid_id_format {
 
     /// A builder for [`InvalidIdFormat`](crate::error::InvalidIdFormat).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2687,6 +2700,7 @@ impl std::error::Error for QueueNameExists {}
 pub mod queue_name_exists {
 
     /// A builder for [`QueueNameExists`](crate::error::QueueNameExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2747,6 +2761,7 @@ impl std::error::Error for QueueDeletedRecently {}
 pub mod queue_deleted_recently {
 
     /// A builder for [`QueueDeletedRecently`](crate::error::QueueDeletedRecently).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3083,6 +3098,7 @@ impl std::error::Error for MessageNotInflight {}
 pub mod message_not_inflight {
 
     /// A builder for [`MessageNotInflight`](crate::error::MessageNotInflight).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

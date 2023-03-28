@@ -7,6 +7,7 @@ pub struct WriteGetObjectResponseOutput {}
 pub mod write_get_object_response_output {
 
     /// A builder for [`WriteGetObjectResponseOutput`](crate::output::WriteGetObjectResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -106,6 +107,7 @@ impl std::fmt::Debug for UploadPartCopyOutput {
 pub mod upload_part_copy_output {
 
     /// A builder for [`UploadPartCopyOutput`](crate::output::UploadPartCopyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) copy_source_version_id: std::option::Option<std::string::String>,
@@ -362,6 +364,7 @@ impl std::fmt::Debug for UploadPartOutput {
 pub mod upload_part_output {
 
     /// A builder for [`UploadPartOutput`](crate::output::UploadPartOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -581,6 +584,7 @@ impl SelectObjectContentOutput {
 pub mod select_object_content_output {
 
     /// A builder for [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<
@@ -666,6 +670,7 @@ impl RestoreObjectOutput {
 pub mod restore_object_output {
 
     /// A builder for [`RestoreObjectOutput`](crate::output::RestoreObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
@@ -722,6 +727,7 @@ pub struct PutPublicAccessBlockOutput {}
 pub mod put_public_access_block_output {
 
     /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -756,6 +762,7 @@ impl PutObjectTaggingOutput {
 pub mod put_object_tagging_output {
 
     /// A builder for [`PutObjectTaggingOutput`](crate::output::PutObjectTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -804,6 +811,7 @@ impl PutObjectRetentionOutput {
 pub mod put_object_retention_output {
 
     /// A builder for [`PutObjectRetentionOutput`](crate::output::PutObjectRetentionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
@@ -855,6 +863,7 @@ impl PutObjectLockConfigurationOutput {
 pub mod put_object_lock_configuration_output {
 
     /// A builder for [`PutObjectLockConfigurationOutput`](crate::output::PutObjectLockConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
@@ -906,6 +915,7 @@ impl PutObjectLegalHoldOutput {
 pub mod put_object_legal_hold_output {
 
     /// A builder for [`PutObjectLegalHoldOutput`](crate::output::PutObjectLegalHoldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
@@ -957,6 +967,7 @@ impl PutObjectAclOutput {
 pub mod put_object_acl_output {
 
     /// A builder for [`PutObjectAclOutput`](crate::output::PutObjectAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
@@ -1124,6 +1135,7 @@ impl std::fmt::Debug for PutObjectOutput {
 pub mod put_object_output {
 
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) expiration: std::option::Option<std::string::String>,
@@ -1371,6 +1383,7 @@ pub struct PutBucketWebsiteOutput {}
 pub mod put_bucket_website_output {
 
     /// A builder for [`PutBucketWebsiteOutput`](crate::output::PutBucketWebsiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1395,6 +1408,7 @@ pub struct PutBucketVersioningOutput {}
 pub mod put_bucket_versioning_output {
 
     /// A builder for [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1419,6 +1433,7 @@ pub struct PutBucketTaggingOutput {}
 pub mod put_bucket_tagging_output {
 
     /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1443,6 +1458,7 @@ pub struct PutBucketRequestPaymentOutput {}
 pub mod put_bucket_request_payment_output {
 
     /// A builder for [`PutBucketRequestPaymentOutput`](crate::output::PutBucketRequestPaymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1467,6 +1483,7 @@ pub struct PutBucketReplicationOutput {}
 pub mod put_bucket_replication_output {
 
     /// A builder for [`PutBucketReplicationOutput`](crate::output::PutBucketReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1491,6 +1508,7 @@ pub struct PutBucketPolicyOutput {}
 pub mod put_bucket_policy_output {
 
     /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1515,6 +1533,7 @@ pub struct PutBucketOwnershipControlsOutput {}
 pub mod put_bucket_ownership_controls_output {
 
     /// A builder for [`PutBucketOwnershipControlsOutput`](crate::output::PutBucketOwnershipControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1539,6 +1558,7 @@ pub struct PutBucketNotificationConfigurationOutput {}
 pub mod put_bucket_notification_configuration_output {
 
     /// A builder for [`PutBucketNotificationConfigurationOutput`](crate::output::PutBucketNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1563,6 +1583,7 @@ pub struct PutBucketMetricsConfigurationOutput {}
 pub mod put_bucket_metrics_configuration_output {
 
     /// A builder for [`PutBucketMetricsConfigurationOutput`](crate::output::PutBucketMetricsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1587,6 +1608,7 @@ pub struct PutBucketLoggingOutput {}
 pub mod put_bucket_logging_output {
 
     /// A builder for [`PutBucketLoggingOutput`](crate::output::PutBucketLoggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1611,6 +1633,7 @@ pub struct PutBucketLifecycleConfigurationOutput {}
 pub mod put_bucket_lifecycle_configuration_output {
 
     /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1635,6 +1658,7 @@ pub struct PutBucketInventoryConfigurationOutput {}
 pub mod put_bucket_inventory_configuration_output {
 
     /// A builder for [`PutBucketInventoryConfigurationOutput`](crate::output::PutBucketInventoryConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1659,6 +1683,7 @@ pub struct PutBucketIntelligentTieringConfigurationOutput {}
 pub mod put_bucket_intelligent_tiering_configuration_output {
 
     /// A builder for [`PutBucketIntelligentTieringConfigurationOutput`](crate::output::PutBucketIntelligentTieringConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1684,6 +1709,7 @@ pub struct PutBucketEncryptionOutput {}
 pub mod put_bucket_encryption_output {
 
     /// A builder for [`PutBucketEncryptionOutput`](crate::output::PutBucketEncryptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1708,6 +1734,7 @@ pub struct PutBucketCorsOutput {}
 pub mod put_bucket_cors_output {
 
     /// A builder for [`PutBucketCorsOutput`](crate::output::PutBucketCorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1732,6 +1759,7 @@ pub struct PutBucketAnalyticsConfigurationOutput {}
 pub mod put_bucket_analytics_configuration_output {
 
     /// A builder for [`PutBucketAnalyticsConfigurationOutput`](crate::output::PutBucketAnalyticsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1756,6 +1784,7 @@ pub struct PutBucketAclOutput {}
 pub mod put_bucket_acl_output {
 
     /// A builder for [`PutBucketAclOutput`](crate::output::PutBucketAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1780,6 +1809,7 @@ pub struct PutBucketAccelerateConfigurationOutput {}
 pub mod put_bucket_accelerate_configuration_output {
 
     /// A builder for [`PutBucketAccelerateConfigurationOutput`](crate::output::PutBucketAccelerateConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1914,6 +1944,7 @@ impl ListPartsOutput {
 pub mod list_parts_output {
 
     /// A builder for [`ListPartsOutput`](crate::output::ListPartsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) abort_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2253,6 +2284,7 @@ impl ListObjectVersionsOutput {
 pub mod list_object_versions_output {
 
     /// A builder for [`ListObjectVersionsOutput`](crate::output::ListObjectVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2582,6 +2614,7 @@ impl ListObjectsV2Output {
 pub mod list_objects_v2_output {
 
     /// A builder for [`ListObjectsV2Output`](crate::output::ListObjectsV2Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2876,6 +2909,7 @@ impl ListObjectsOutput {
 pub mod list_objects_output {
 
     /// A builder for [`ListObjectsOutput`](crate::output::ListObjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3142,6 +3176,7 @@ impl ListMultipartUploadsOutput {
 pub mod list_multipart_uploads_output {
 
     /// A builder for [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3363,6 +3398,7 @@ impl ListBucketsOutput {
 pub mod list_buckets_output {
 
     /// A builder for [`ListBucketsOutput`](crate::output::ListBucketsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
@@ -3456,6 +3492,7 @@ impl ListBucketMetricsConfigurationsOutput {
 pub mod list_bucket_metrics_configurations_output {
 
     /// A builder for [`ListBucketMetricsConfigurationsOutput`](crate::output::ListBucketMetricsConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3583,6 +3620,7 @@ impl ListBucketInventoryConfigurationsOutput {
 pub mod list_bucket_inventory_configurations_output {
 
     /// A builder for [`ListBucketInventoryConfigurationsOutput`](crate::output::ListBucketInventoryConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuation_token: std::option::Option<std::string::String>,
@@ -3710,6 +3748,7 @@ impl ListBucketIntelligentTieringConfigurationsOutput {
 pub mod list_bucket_intelligent_tiering_configurations_output {
 
     /// A builder for [`ListBucketIntelligentTieringConfigurationsOutput`](crate::output::ListBucketIntelligentTieringConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3842,6 +3881,7 @@ impl ListBucketAnalyticsConfigurationsOutput {
 pub mod list_bucket_analytics_configurations_output {
 
     /// A builder for [`ListBucketAnalyticsConfigurationsOutput`](crate::output::ListBucketAnalyticsConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -4256,6 +4296,7 @@ impl std::fmt::Debug for HeadObjectOutput {
 pub mod head_object_output {
 
     /// A builder for [`HeadObjectOutput`](crate::output::HeadObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) delete_marker: std::option::Option<bool>,
@@ -4850,6 +4891,7 @@ pub struct HeadBucketOutput {}
 pub mod head_bucket_output {
 
     /// A builder for [`HeadBucketOutput`](crate::output::HeadBucketOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4887,6 +4929,7 @@ impl GetPublicAccessBlockOutput {
 pub mod get_public_access_block_output {
 
     /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access_block_configuration:
@@ -4948,6 +4991,7 @@ impl GetObjectTorrentOutput {
 pub mod get_object_torrent_output {
 
     /// A builder for [`GetObjectTorrentOutput`](crate::output::GetObjectTorrentOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -5021,6 +5065,7 @@ impl GetObjectTaggingOutput {
 pub mod get_object_tagging_output {
 
     /// A builder for [`GetObjectTaggingOutput`](crate::output::GetObjectTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -5090,6 +5135,7 @@ impl GetObjectRetentionOutput {
 pub mod get_object_retention_output {
 
     /// A builder for [`GetObjectRetentionOutput`](crate::output::GetObjectRetentionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention: std::option::Option<crate::model::ObjectLockRetention>,
@@ -5143,6 +5189,7 @@ impl GetObjectLockConfigurationOutput {
 pub mod get_object_lock_configuration_output {
 
     /// A builder for [`GetObjectLockConfigurationOutput`](crate::output::GetObjectLockConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_lock_configuration:
@@ -5198,6 +5245,7 @@ impl GetObjectLegalHoldOutput {
 pub mod get_object_legal_hold_output {
 
     /// A builder for [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
@@ -5307,6 +5355,7 @@ impl GetObjectAttributesOutput {
 pub mod get_object_attributes_output {
 
     /// A builder for [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_marker: std::option::Option<bool>,
@@ -5479,6 +5528,7 @@ impl GetObjectAclOutput {
 pub mod get_object_acl_output {
 
     /// A builder for [`GetObjectAclOutput`](crate::output::GetObjectAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
@@ -5864,6 +5914,7 @@ impl std::fmt::Debug for GetObjectOutput {
 pub mod get_object_output {
 
     /// A builder for [`GetObjectOutput`](crate::output::GetObjectOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -6496,6 +6547,7 @@ impl GetBucketWebsiteOutput {
 pub mod get_bucket_website_output {
 
     /// A builder for [`GetBucketWebsiteOutput`](crate::output::GetBucketWebsiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) redirect_all_requests_to:
@@ -6609,6 +6661,7 @@ impl GetBucketVersioningOutput {
 pub mod get_bucket_versioning_output {
 
     /// A builder for [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
@@ -6675,6 +6728,7 @@ impl GetBucketTaggingOutput {
 pub mod get_bucket_tagging_output {
 
     /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6732,6 +6786,7 @@ impl GetBucketRequestPaymentOutput {
 pub mod get_bucket_request_payment_output {
 
     /// A builder for [`GetBucketRequestPaymentOutput`](crate::output::GetBucketRequestPaymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payer: std::option::Option<crate::model::Payer>,
@@ -6780,6 +6835,7 @@ impl GetBucketReplicationOutput {
 pub mod get_bucket_replication_output {
 
     /// A builder for [`GetBucketReplicationOutput`](crate::output::GetBucketReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration:
@@ -6835,6 +6891,7 @@ impl GetBucketPolicyStatusOutput {
 pub mod get_bucket_policy_status_output {
 
     /// A builder for [`GetBucketPolicyStatusOutput`](crate::output::GetBucketPolicyStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
@@ -6886,6 +6943,7 @@ impl GetBucketPolicyOutput {
 pub mod get_bucket_policy_output {
 
     /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -6934,6 +6992,7 @@ impl GetBucketOwnershipControlsOutput {
 pub mod get_bucket_ownership_controls_output {
 
     /// A builder for [`GetBucketOwnershipControlsOutput`](crate::output::GetBucketOwnershipControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ownership_controls: std::option::Option<crate::model::OwnershipControls>,
@@ -7011,6 +7070,7 @@ impl GetBucketNotificationConfigurationOutput {
 pub mod get_bucket_notification_configuration_output {
 
     /// A builder for [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_configurations:
@@ -7137,6 +7197,7 @@ impl GetBucketMetricsConfigurationOutput {
 pub mod get_bucket_metrics_configuration_output {
 
     /// A builder for [`GetBucketMetricsConfigurationOutput`](crate::output::GetBucketMetricsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
@@ -7188,6 +7249,7 @@ impl GetBucketLoggingOutput {
 pub mod get_bucket_logging_output {
 
     /// A builder for [`GetBucketLoggingOutput`](crate::output::GetBucketLoggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
@@ -7241,6 +7303,7 @@ impl GetBucketLocationOutput {
 pub mod get_bucket_location_output {
 
     /// A builder for [`GetBucketLocationOutput`](crate::output::GetBucketLocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
@@ -7295,6 +7358,7 @@ impl GetBucketLifecycleConfigurationOutput {
 pub mod get_bucket_lifecycle_configuration_output {
 
     /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
@@ -7352,6 +7416,7 @@ impl GetBucketInventoryConfigurationOutput {
 pub mod get_bucket_inventory_configuration_output {
 
     /// A builder for [`GetBucketInventoryConfigurationOutput`](crate::output::GetBucketInventoryConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inventory_configuration:
@@ -7410,6 +7475,7 @@ impl GetBucketIntelligentTieringConfigurationOutput {
 pub mod get_bucket_intelligent_tiering_configuration_output {
 
     /// A builder for [`GetBucketIntelligentTieringConfigurationOutput`](crate::output::GetBucketIntelligentTieringConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intelligent_tiering_configuration:
@@ -7469,6 +7535,7 @@ impl GetBucketEncryptionOutput {
 pub mod get_bucket_encryption_output {
 
     /// A builder for [`GetBucketEncryptionOutput`](crate::output::GetBucketEncryptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_side_encryption_configuration:
@@ -7524,6 +7591,7 @@ impl GetBucketCorsOutput {
 pub mod get_bucket_cors_output {
 
     /// A builder for [`GetBucketCorsOutput`](crate::output::GetBucketCorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -7583,6 +7651,7 @@ impl GetBucketAnalyticsConfigurationOutput {
 pub mod get_bucket_analytics_configuration_output {
 
     /// A builder for [`GetBucketAnalyticsConfigurationOutput`](crate::output::GetBucketAnalyticsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analytics_configuration:
@@ -7645,6 +7714,7 @@ impl GetBucketAclOutput {
 pub mod get_bucket_acl_output {
 
     /// A builder for [`GetBucketAclOutput`](crate::output::GetBucketAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
@@ -7714,6 +7784,7 @@ impl GetBucketAccelerateConfigurationOutput {
 pub mod get_bucket_accelerate_configuration_output {
 
     /// A builder for [`GetBucketAccelerateConfigurationOutput`](crate::output::GetBucketAccelerateConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BucketAccelerateStatus>,
@@ -7755,6 +7826,7 @@ pub struct DeletePublicAccessBlockOutput {}
 pub mod delete_public_access_block_output {
 
     /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7789,6 +7861,7 @@ impl DeleteObjectTaggingOutput {
 pub mod delete_object_tagging_output {
 
     /// A builder for [`DeleteObjectTaggingOutput`](crate::output::DeleteObjectTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -7851,6 +7924,7 @@ impl DeleteObjectsOutput {
 pub mod delete_objects_output {
 
     /// A builder for [`DeleteObjectsOutput`](crate::output::DeleteObjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deleted: std::option::Option<std::vec::Vec<crate::model::DeletedObject>>,
@@ -7958,6 +8032,7 @@ impl DeleteObjectOutput {
 pub mod delete_object_output {
 
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_marker: std::option::Option<bool>,
@@ -8023,6 +8098,7 @@ pub struct DeleteBucketWebsiteOutput {}
 pub mod delete_bucket_website_output {
 
     /// A builder for [`DeleteBucketWebsiteOutput`](crate::output::DeleteBucketWebsiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8047,6 +8123,7 @@ pub struct DeleteBucketTaggingOutput {}
 pub mod delete_bucket_tagging_output {
 
     /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8071,6 +8148,7 @@ pub struct DeleteBucketReplicationOutput {}
 pub mod delete_bucket_replication_output {
 
     /// A builder for [`DeleteBucketReplicationOutput`](crate::output::DeleteBucketReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8095,6 +8173,7 @@ pub struct DeleteBucketPolicyOutput {}
 pub mod delete_bucket_policy_output {
 
     /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8119,6 +8198,7 @@ pub struct DeleteBucketOwnershipControlsOutput {}
 pub mod delete_bucket_ownership_controls_output {
 
     /// A builder for [`DeleteBucketOwnershipControlsOutput`](crate::output::DeleteBucketOwnershipControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8143,6 +8223,7 @@ pub struct DeleteBucketMetricsConfigurationOutput {}
 pub mod delete_bucket_metrics_configuration_output {
 
     /// A builder for [`DeleteBucketMetricsConfigurationOutput`](crate::output::DeleteBucketMetricsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8167,6 +8248,7 @@ pub struct DeleteBucketLifecycleOutput {}
 pub mod delete_bucket_lifecycle_output {
 
     /// A builder for [`DeleteBucketLifecycleOutput`](crate::output::DeleteBucketLifecycleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8191,6 +8273,7 @@ pub struct DeleteBucketInventoryConfigurationOutput {}
 pub mod delete_bucket_inventory_configuration_output {
 
     /// A builder for [`DeleteBucketInventoryConfigurationOutput`](crate::output::DeleteBucketInventoryConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8215,6 +8298,7 @@ pub struct DeleteBucketIntelligentTieringConfigurationOutput {}
 pub mod delete_bucket_intelligent_tiering_configuration_output {
 
     /// A builder for [`DeleteBucketIntelligentTieringConfigurationOutput`](crate::output::DeleteBucketIntelligentTieringConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8240,6 +8324,7 @@ pub struct DeleteBucketEncryptionOutput {}
 pub mod delete_bucket_encryption_output {
 
     /// A builder for [`DeleteBucketEncryptionOutput`](crate::output::DeleteBucketEncryptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8264,6 +8349,7 @@ pub struct DeleteBucketCorsOutput {}
 pub mod delete_bucket_cors_output {
 
     /// A builder for [`DeleteBucketCorsOutput`](crate::output::DeleteBucketCorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8288,6 +8374,7 @@ pub struct DeleteBucketAnalyticsConfigurationOutput {}
 pub mod delete_bucket_analytics_configuration_output {
 
     /// A builder for [`DeleteBucketAnalyticsConfigurationOutput`](crate::output::DeleteBucketAnalyticsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8312,6 +8399,7 @@ pub struct DeleteBucketOutput {}
 pub mod delete_bucket_output {
 
     /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8460,6 +8548,7 @@ impl std::fmt::Debug for CreateMultipartUploadOutput {
 pub mod create_multipart_upload_output {
 
     /// A builder for [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) abort_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -8707,6 +8796,7 @@ impl CreateBucketOutput {
 pub mod create_bucket_output {
 
     /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -8847,6 +8937,7 @@ impl std::fmt::Debug for CopyObjectOutput {
 pub mod copy_object_output {
 
     /// A builder for [`CopyObjectOutput`](crate::output::CopyObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) copy_object_result: std::option::Option<crate::model::CopyObjectResult>,
@@ -9176,6 +9267,7 @@ impl std::fmt::Debug for CompleteMultipartUploadOutput {
 pub mod complete_multipart_upload_output {
 
     /// A builder for [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -9425,6 +9517,7 @@ impl AbortMultipartUploadOutput {
 pub mod abort_multipart_upload_output {
 
     /// A builder for [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,

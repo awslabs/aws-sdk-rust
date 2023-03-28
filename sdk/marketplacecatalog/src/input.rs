@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_change_set_input {
 
     /// A builder for [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -203,6 +204,7 @@ impl CancelChangeSetInput {
 pub mod describe_change_set_input {
 
     /// A builder for [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -403,6 +405,7 @@ impl DescribeChangeSetInput {
 pub mod describe_entity_input {
 
     /// A builder for [`DescribeEntityInput`](crate::input::DescribeEntityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -598,6 +601,7 @@ impl DescribeEntityInput {
 pub mod list_change_sets_input {
 
     /// A builder for [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -812,6 +816,7 @@ impl ListChangeSetsInput {
 pub mod list_entities_input {
 
     /// A builder for [`ListEntitiesInput`](crate::input::ListEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -1038,6 +1043,7 @@ impl ListEntitiesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1199,6 +1205,7 @@ impl ListTagsForResourceInput {
 pub mod start_change_set_input {
 
     /// A builder for [`StartChangeSetInput`](crate::input::StartChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -1431,6 +1438,7 @@ impl StartChangeSetInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1609,6 +1617,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

@@ -36,6 +36,7 @@ impl UploadMetadata {
 pub mod upload_metadata {
 
     /// A builder for [`UploadMetadata`](crate::model::UploadMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -204,6 +205,7 @@ impl Item {
 pub mod item {
 
     /// A builder for [`Item`](crate::model::Item).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) absolute_time: std::option::Option<std::string::String>,
@@ -417,6 +419,7 @@ impl MessageMetadata {
 pub mod message_metadata {
 
     /// A builder for [`MessageMetadata`](crate::model::MessageMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -500,6 +503,7 @@ impl Receipt {
 pub mod receipt {
 
     /// A builder for [`Receipt`](crate::model::Receipt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivered_timestamp: std::option::Option<std::string::String>,
@@ -602,6 +606,7 @@ impl AttachmentItem {
 pub mod attachment_item {
 
     /// A builder for [`AttachmentItem`](crate::model::AttachmentItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -1054,6 +1059,7 @@ impl StartPosition {
 pub mod start_position {
 
     /// A builder for [`StartPosition`](crate::model::StartPosition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1320,6 +1326,7 @@ impl ConnectionCredentials {
 pub mod connection_credentials {
 
     /// A builder for [`ConnectionCredentials`](crate::model::ConnectionCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_token: std::option::Option<std::string::String>,
@@ -1394,6 +1401,7 @@ impl Websocket {
 pub mod websocket {
 
     /// A builder for [`Websocket`](crate::model::Websocket).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,

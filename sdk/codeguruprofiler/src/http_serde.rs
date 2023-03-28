@@ -7,16 +7,15 @@ pub fn add_headers_get_profile(
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "accept",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "accept",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Accept", header_value);
         }
     }
@@ -31,16 +30,15 @@ pub fn add_headers_post_agent_profile(
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_type",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_type",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Type", header_value);
         }
     }

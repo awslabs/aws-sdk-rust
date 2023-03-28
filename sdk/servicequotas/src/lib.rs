@@ -8,6 +8,7 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>With Service Quotas, you can view and manage your quotas easily as your AWS workloads

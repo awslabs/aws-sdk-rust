@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_page_input {
 
     /// A builder for [`AcceptPageInput`](crate::input::AcceptPageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_id: std::option::Option<std::string::String>,
@@ -238,6 +239,7 @@ impl AcceptPageInput {
 pub mod activate_contact_channel_input {
 
     /// A builder for [`ActivateContactChannelInput`](crate::input::ActivateContactChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,
@@ -422,6 +424,7 @@ impl ActivateContactChannelInput {
 pub mod create_contact_input {
 
     /// A builder for [`CreateContactInput`](crate::input::CreateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -659,6 +662,7 @@ impl CreateContactInput {
 pub mod create_contact_channel_input {
 
     /// A builder for [`CreateContactChannelInput`](crate::input::CreateContactChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -914,6 +918,7 @@ impl CreateContactChannelInput {
 pub mod deactivate_contact_channel_input {
 
     /// A builder for [`DeactivateContactChannelInput`](crate::input::DeactivateContactChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,
@@ -1083,6 +1088,7 @@ impl DeactivateContactChannelInput {
 pub mod delete_contact_input {
 
     /// A builder for [`DeleteContactInput`](crate::input::DeleteContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -1245,6 +1251,7 @@ impl DeleteContactInput {
 pub mod delete_contact_channel_input {
 
     /// A builder for [`DeleteContactChannelInput`](crate::input::DeleteContactChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,
@@ -1414,6 +1421,7 @@ impl DeleteContactChannelInput {
 pub mod describe_engagement_input {
 
     /// A builder for [`DescribeEngagementInput`](crate::input::DescribeEngagementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engagement_id: std::option::Option<std::string::String>,
@@ -1581,6 +1589,7 @@ impl DescribeEngagementInput {
 pub mod describe_page_input {
 
     /// A builder for [`DescribePageInput`](crate::input::DescribePageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_id: std::option::Option<std::string::String>,
@@ -1743,6 +1752,7 @@ impl DescribePageInput {
 pub mod get_contact_input {
 
     /// A builder for [`GetContactInput`](crate::input::GetContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -1905,6 +1915,7 @@ impl GetContactInput {
 pub mod get_contact_channel_input {
 
     /// A builder for [`GetContactChannelInput`](crate::input::GetContactChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,
@@ -2072,6 +2083,7 @@ impl GetContactChannelInput {
 pub mod get_contact_policy_input {
 
     /// A builder for [`GetContactPolicyInput`](crate::input::GetContactPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -2236,6 +2248,7 @@ impl GetContactPolicyInput {
 pub mod list_contact_channels_input {
 
     /// A builder for [`ListContactChannelsInput`](crate::input::ListContactChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -2424,6 +2437,7 @@ impl ListContactChannelsInput {
 pub mod list_contacts_input {
 
     /// A builder for [`ListContactsInput`](crate::input::ListContactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2622,6 +2636,7 @@ impl ListContactsInput {
 pub mod list_engagements_input {
 
     /// A builder for [`ListEngagementsInput`](crate::input::ListEngagementsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2823,6 +2838,7 @@ impl ListEngagementsInput {
 pub mod list_page_receipts_input {
 
     /// A builder for [`ListPageReceiptsInput`](crate::input::ListPageReceiptsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_id: std::option::Option<std::string::String>,
@@ -3011,6 +3027,7 @@ impl ListPageReceiptsInput {
 pub mod list_pages_by_contact_input {
 
     /// A builder for [`ListPagesByContactInput`](crate::input::ListPagesByContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -3199,6 +3216,7 @@ impl ListPagesByContactInput {
 pub mod list_pages_by_engagement_input {
 
     /// A builder for [`ListPagesByEngagementInput`](crate::input::ListPagesByEngagementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engagement_id: std::option::Option<std::string::String>,
@@ -3392,6 +3410,7 @@ impl ListPagesByEngagementInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3558,6 +3577,7 @@ impl ListTagsForResourceInput {
 pub mod put_contact_policy_input {
 
     /// A builder for [`PutContactPolicyInput`](crate::input::PutContactPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -3734,6 +3754,7 @@ impl PutContactPolicyInput {
 pub mod send_activation_code_input {
 
     /// A builder for [`SendActivationCodeInput`](crate::input::SendActivationCodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,
@@ -3901,6 +3922,7 @@ impl SendActivationCodeInput {
 pub mod start_engagement_input {
 
     /// A builder for [`StartEngagementInput`](crate::input::StartEngagementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -4159,6 +4181,7 @@ impl StartEngagementInput {
 pub mod stop_engagement_input {
 
     /// A builder for [`StopEngagementInput`](crate::input::StopEngagementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engagement_id: std::option::Option<std::string::String>,
@@ -4336,6 +4359,7 @@ impl StopEngagementInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4519,6 +4543,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4702,6 +4727,7 @@ impl UntagResourceInput {
 pub mod update_contact_input {
 
     /// A builder for [`UpdateContactInput`](crate::input::UpdateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -4888,6 +4914,7 @@ impl UpdateContactInput {
 pub mod update_contact_channel_input {
 
     /// A builder for [`UpdateContactChannelInput`](crate::input::UpdateContactChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_id: std::option::Option<std::string::String>,

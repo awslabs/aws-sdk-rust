@@ -24,6 +24,7 @@ impl UpdateJobExecutionOutput {
 pub mod update_job_execution_output {
 
     /// A builder for [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_state: std::option::Option<crate::model::JobExecutionState>,
@@ -87,6 +88,7 @@ impl StartNextPendingJobExecutionOutput {
 pub mod start_next_pending_job_execution_output {
 
     /// A builder for [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::JobExecution>,
@@ -145,6 +147,7 @@ impl GetPendingJobExecutionsOutput {
 pub mod get_pending_job_executions_output {
 
     /// A builder for [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_progress_jobs:
@@ -225,6 +228,7 @@ impl DescribeJobExecutionOutput {
 pub mod describe_job_execution_output {
 
     /// A builder for [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::JobExecution>,

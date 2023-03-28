@@ -53,6 +53,7 @@ impl Prediction {
 pub mod prediction {
 
     /// A builder for [`Prediction`](crate::model::Prediction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predicted_label: std::option::Option<std::string::String>,
@@ -397,6 +398,7 @@ impl RealtimeEndpointInfo {
 pub mod realtime_endpoint_info {
 
     /// A builder for [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peak_requests_per_second: std::option::Option<i32>,
@@ -743,6 +745,7 @@ impl PerformanceMetrics {
 pub mod performance_metrics {
 
     /// A builder for [`PerformanceMetrics`](crate::model::PerformanceMetrics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) properties: std::option::Option<
@@ -842,6 +845,7 @@ impl RdsMetadata {
 pub mod rds_metadata {
 
     /// A builder for [`RdsMetadata`](crate::model::RdsMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<crate::model::RdsDatabase>,
@@ -972,6 +976,7 @@ impl RdsDatabase {
 pub mod rds_database {
 
     /// A builder for [`RdsDatabase`](crate::model::RdsDatabase).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_identifier: std::option::Option<std::string::String>,
@@ -1052,6 +1057,7 @@ impl RedshiftMetadata {
 pub mod redshift_metadata {
 
     /// A builder for [`RedshiftMetadata`](crate::model::RedshiftMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) redshift_database: std::option::Option<crate::model::RedshiftDatabase>,
@@ -1140,6 +1146,7 @@ impl RedshiftDatabase {
 pub mod redshift_database {
 
     /// A builder for [`RedshiftDatabase`](crate::model::RedshiftDatabase).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -1213,6 +1220,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1554,6 +1562,7 @@ impl MlModel {
 pub mod ml_model {
 
     /// A builder for [`MlModel`](crate::model::MlModel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -2376,6 +2385,7 @@ impl Evaluation {
 pub mod evaluation {
 
     /// A builder for [`Evaluation`](crate::model::Evaluation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -2933,6 +2943,7 @@ impl DataSource {
 pub mod data_source {
 
     /// A builder for [`DataSource`](crate::model::DataSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -3498,6 +3509,7 @@ impl BatchPrediction {
 pub mod batch_prediction {
 
     /// A builder for [`BatchPrediction`](crate::model::BatchPrediction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -3990,6 +4002,7 @@ impl S3DataSpec {
 pub mod s3_data_spec {
 
     /// A builder for [`S3DataSpec`](crate::model::S3DataSpec).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_location_s3: std::option::Option<std::string::String>,
@@ -4199,6 +4212,7 @@ impl RedshiftDataSpec {
 pub mod redshift_data_spec {
 
     /// A builder for [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_information: std::option::Option<crate::model::RedshiftDatabase>,
@@ -4384,6 +4398,7 @@ impl RedshiftDatabaseCredentials {
 pub mod redshift_database_credentials {
 
     /// A builder for [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4552,6 +4567,7 @@ impl RdsDataSpec {
 pub mod rds_data_spec {
 
     /// A builder for [`RdsDataSpec`](crate::model::RdsDataSpec).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_information: std::option::Option<crate::model::RdsDatabase>,
@@ -4793,6 +4809,7 @@ impl RdsDatabaseCredentials {
 pub mod rds_database_credentials {
 
     /// A builder for [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,

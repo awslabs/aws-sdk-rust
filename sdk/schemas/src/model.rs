@@ -222,6 +222,7 @@ impl SearchSchemaSummary {
 pub mod search_schema_summary {
 
     /// A builder for [`SearchSchemaSummary`](crate::model::SearchSchemaSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -333,6 +334,7 @@ impl SearchSchemaVersionSummary {
 pub mod search_schema_version_summary {
 
     /// A builder for [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -529,6 +531,7 @@ impl SchemaVersionSummary {
 pub mod schema_version_summary {
 
     /// A builder for [`SchemaVersionSummary`](crate::model::SchemaVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -648,6 +651,7 @@ impl SchemaSummary {
 pub mod schema_summary {
 
     /// A builder for [`SchemaSummary`](crate::model::SchemaSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -782,6 +786,7 @@ impl RegistrySummary {
 pub mod registry_summary {
 
     /// A builder for [`RegistrySummary`](crate::model::RegistrySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_arn: std::option::Option<std::string::String>,
@@ -913,6 +918,7 @@ impl DiscovererSummary {
 pub mod discoverer_summary {
 
     /// A builder for [`DiscovererSummary`](crate::model::DiscovererSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_arn: std::option::Option<std::string::String>,

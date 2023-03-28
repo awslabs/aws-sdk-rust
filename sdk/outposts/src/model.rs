@@ -184,6 +184,7 @@ impl Site {
 pub mod site {
 
     /// A builder for [`Site`](crate::model::Site).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -451,6 +452,7 @@ impl RackPhysicalProperties {
 pub mod rack_physical_properties {
 
     /// A builder for [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) power_draw_kva: std::option::Option<crate::model::PowerDrawKva>,
@@ -1686,6 +1688,7 @@ impl Address {
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_name: std::option::Option<std::string::String>,
@@ -2045,6 +2048,7 @@ impl Outpost {
 pub mod outpost {
 
     /// A builder for [`Outpost`](crate::model::Outpost).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -2413,6 +2417,7 @@ impl OrderSummary {
 pub mod order_summary {
 
     /// A builder for [`OrderSummary`](crate::model::OrderSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -2978,6 +2983,7 @@ impl CatalogItem {
 pub mod catalog_item {
 
     /// A builder for [`CatalogItem`](crate::model::CatalogItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_item_id: std::option::Option<std::string::String>,
@@ -3238,6 +3244,7 @@ impl Ec2Capacity {
 pub mod ec2_capacity {
 
     /// A builder for [`Ec2Capacity`](crate::model::Ec2Capacity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) family: std::option::Option<std::string::String>,
@@ -3520,6 +3527,7 @@ impl AssetInfo {
 pub mod asset_info {
 
     /// A builder for [`AssetInfo`](crate::model::AssetInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -3625,6 +3633,7 @@ impl AssetLocation {
 pub mod asset_location {
 
     /// A builder for [`AssetLocation`](crate::model::AssetLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rack_elevation: std::option::Option<f32>,
@@ -3690,6 +3699,7 @@ impl ComputeAttributes {
 pub mod compute_attributes {
 
     /// A builder for [`ComputeAttributes`](crate::model::ComputeAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_id: std::option::Option<std::string::String>,
@@ -4035,6 +4045,7 @@ impl InstanceTypeItem {
 pub mod instance_type_item {
 
     /// A builder for [`InstanceTypeItem`](crate::model::InstanceTypeItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -4146,6 +4157,7 @@ impl Order {
 pub mod order {
 
     /// A builder for [`Order`](crate::model::Order).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
@@ -4435,6 +4447,7 @@ impl LineItem {
 pub mod line_item {
 
     /// A builder for [`LineItem`](crate::model::LineItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_item_id: std::option::Option<std::string::String>,
@@ -4572,6 +4585,7 @@ impl LineItemAssetInformation {
 pub mod line_item_asset_information {
 
     /// A builder for [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -4648,6 +4662,7 @@ impl ShipmentInformation {
 pub mod shipment_information {
 
     /// A builder for [`ShipmentInformation`](crate::model::ShipmentInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shipment_tracking_number: std::option::Option<std::string::String>,
@@ -4849,6 +4864,7 @@ impl ConnectionDetails {
 pub mod connection_details {
 
     /// A builder for [`ConnectionDetails`](crate::model::ConnectionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_public_key: std::option::Option<std::string::String>,
@@ -5078,6 +5094,7 @@ impl LineItemRequest {
 pub mod line_item_request {
 
     /// A builder for [`LineItemRequest`](crate::model::LineItemRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_item_id: std::option::Option<std::string::String>,

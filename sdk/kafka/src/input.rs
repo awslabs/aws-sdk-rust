@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_associate_scram_secret_input {
 
     /// A builder for [`BatchAssociateScramSecretInput`](crate::input::BatchAssociateScramSecretInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -211,6 +212,7 @@ impl BatchAssociateScramSecretInput {
 pub mod batch_disassociate_scram_secret_input {
 
     /// A builder for [`BatchDisassociateScramSecretInput`](crate::input::BatchDisassociateScramSecretInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -415,6 +417,7 @@ impl BatchDisassociateScramSecretInput {
 pub mod create_cluster_input {
 
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_node_group_info: std::option::Option<crate::model::BrokerNodeGroupInfo>,
@@ -748,6 +751,7 @@ impl CreateClusterInput {
 pub mod create_cluster_v2_input {
 
     /// A builder for [`CreateClusterV2Input`](crate::input::CreateClusterV2Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -964,6 +968,7 @@ impl CreateClusterV2Input {
 pub mod create_configuration_input {
 
     /// A builder for [`CreateConfigurationInput`](crate::input::CreateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1179,6 +1184,7 @@ impl CreateConfigurationInput {
 pub mod delete_cluster_input {
 
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -1377,6 +1383,7 @@ impl DeleteClusterInput {
 pub mod delete_configuration_input {
 
     /// A builder for [`DeleteConfigurationInput`](crate::input::DeleteConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1540,6 +1547,7 @@ impl DeleteConfigurationInput {
 pub mod describe_cluster_input {
 
     /// A builder for [`DescribeClusterInput`](crate::input::DescribeClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -1707,6 +1715,7 @@ impl DescribeClusterInput {
 pub mod describe_cluster_operation_input {
 
     /// A builder for [`DescribeClusterOperationInput`](crate::input::DescribeClusterOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -1879,6 +1888,7 @@ impl DescribeClusterOperationInput {
 pub mod describe_cluster_v2_input {
 
     /// A builder for [`DescribeClusterV2Input`](crate::input::DescribeClusterV2Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -2048,6 +2058,7 @@ impl DescribeClusterV2Input {
 pub mod describe_configuration_input {
 
     /// A builder for [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2211,6 +2222,7 @@ impl DescribeConfigurationInput {
 pub mod describe_configuration_revision_input {
 
     /// A builder for [`DescribeConfigurationRevisionInput`](crate::input::DescribeConfigurationRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2404,6 +2416,7 @@ impl DescribeConfigurationRevisionInput {
 pub mod get_bootstrap_brokers_input {
 
     /// A builder for [`GetBootstrapBrokersInput`](crate::input::GetBootstrapBrokersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -2573,6 +2586,7 @@ impl GetBootstrapBrokersInput {
 pub mod get_compatible_kafka_versions_input {
 
     /// A builder for [`GetCompatibleKafkaVersionsInput`](crate::input::GetCompatibleKafkaVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -2731,6 +2745,7 @@ impl GetCompatibleKafkaVersionsInput {
 pub mod list_cluster_operations_input {
 
     /// A builder for [`ListClusterOperationsInput`](crate::input::ListClusterOperationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -2943,6 +2958,7 @@ impl ListClusterOperationsInput {
 pub mod list_clusters_input {
 
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name_filter: std::option::Option<std::string::String>,
@@ -3140,6 +3156,7 @@ impl ListClustersInput {
 pub mod list_clusters_v2_input {
 
     /// A builder for [`ListClustersV2Input`](crate::input::ListClustersV2Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name_filter: std::option::Option<std::string::String>,
@@ -3360,6 +3377,7 @@ impl ListClustersV2Input {
 pub mod list_configuration_revisions_input {
 
     /// A builder for [`ListConfigurationRevisionsInput`](crate::input::ListConfigurationRevisionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3568,6 +3586,7 @@ impl ListConfigurationRevisionsInput {
 pub mod list_configurations_input {
 
     /// A builder for [`ListConfigurationsInput`](crate::input::ListConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3744,6 +3763,7 @@ impl ListConfigurationsInput {
 pub mod list_kafka_versions_input {
 
     /// A builder for [`ListKafkaVersionsInput`](crate::input::ListKafkaVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3920,6 +3940,7 @@ impl ListKafkaVersionsInput {
 pub mod list_nodes_input {
 
     /// A builder for [`ListNodesInput`](crate::input::ListNodesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -4128,6 +4149,7 @@ impl ListNodesInput {
 pub mod list_scram_secrets_input {
 
     /// A builder for [`ListScramSecretsInput`](crate::input::ListScramSecretsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -4340,6 +4362,7 @@ impl ListScramSecretsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4505,6 +4528,7 @@ impl ListTagsForResourceInput {
 pub mod reboot_broker_input {
 
     /// A builder for [`RebootBrokerInput`](crate::input::RebootBrokerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4707,6 +4731,7 @@ impl RebootBrokerInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4913,6 +4938,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5127,6 +5153,7 @@ impl UntagResourceInput {
 pub mod update_broker_count_input {
 
     /// A builder for [`UpdateBrokerCountInput`](crate::input::UpdateBrokerCountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -5342,6 +5369,7 @@ impl UpdateBrokerCountInput {
 pub mod update_broker_storage_input {
 
     /// A builder for [`UpdateBrokerStorageInput`](crate::input::UpdateBrokerStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -5565,6 +5593,7 @@ impl UpdateBrokerStorageInput {
 pub mod update_broker_type_input {
 
     /// A builder for [`UpdateBrokerTypeInput`](crate::input::UpdateBrokerTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -5778,6 +5807,7 @@ impl UpdateBrokerTypeInput {
 pub mod update_cluster_configuration_input {
 
     /// A builder for [`UpdateClusterConfigurationInput`](crate::input::UpdateClusterConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -5993,6 +6023,7 @@ impl UpdateClusterConfigurationInput {
 pub mod update_cluster_kafka_version_input {
 
     /// A builder for [`UpdateClusterKafkaVersionInput`](crate::input::UpdateClusterKafkaVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -6223,6 +6254,7 @@ impl UpdateClusterKafkaVersionInput {
 pub mod update_configuration_input {
 
     /// A builder for [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6437,6 +6469,7 @@ impl UpdateConfigurationInput {
 pub mod update_connectivity_input {
 
     /// A builder for [`UpdateConnectivityInput`](crate::input::UpdateConnectivityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -6650,6 +6683,7 @@ impl UpdateConnectivityInput {
 pub mod update_monitoring_input {
 
     /// A builder for [`UpdateMonitoringInput`](crate::input::UpdateMonitoringInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -6893,6 +6927,7 @@ impl UpdateMonitoringInput {
 pub mod update_security_input {
 
     /// A builder for [`UpdateSecurityInput`](crate::input::UpdateSecurityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
@@ -7119,6 +7154,7 @@ impl UpdateSecurityInput {
 pub mod update_storage_input {
 
     /// A builder for [`UpdateStorageInput`](crate::input::UpdateStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,

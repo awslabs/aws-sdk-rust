@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -106,6 +107,7 @@ impl BatchResultErrorEntry {
 pub mod batch_result_error_entry {
 
     /// A builder for [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -208,6 +210,7 @@ impl PublishBatchResultEntry {
 pub mod publish_batch_result_entry {
 
     /// A builder for [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -399,6 +402,7 @@ impl PublishBatchRequestEntry {
 pub mod publish_batch_request_entry {
 
     /// A builder for [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -624,6 +628,7 @@ impl MessageAttributeValue {
 pub mod message_attribute_value {
 
     /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_type: std::option::Option<std::string::String>,
@@ -699,6 +704,7 @@ impl Topic {
 pub mod topic {
 
     /// A builder for [`Topic`](crate::model::Topic).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -775,6 +781,7 @@ impl Subscription {
 pub mod subscription {
 
     /// A builder for [`Subscription`](crate::model::Subscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -884,6 +891,7 @@ impl SmsSandboxPhoneNumber {
 pub mod sms_sandbox_phone_number {
 
     /// A builder for [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -1057,6 +1065,7 @@ impl PlatformApplication {
 pub mod platform_application {
 
     /// A builder for [`PlatformApplication`](crate::model::PlatformApplication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -1172,6 +1181,7 @@ impl PhoneNumberInformation {
 pub mod phone_number_information {
 
     /// A builder for [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1503,6 +1513,7 @@ impl Endpoint {
 pub mod endpoint {
 
     /// A builder for [`Endpoint`](crate::model::Endpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,

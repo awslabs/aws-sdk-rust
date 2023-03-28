@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_personalized_ranking_input {
 
     /// A builder for [`GetPersonalizedRankingInput`](crate::input::GetPersonalizedRankingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
@@ -273,6 +274,7 @@ impl GetPersonalizedRankingInput {
 pub mod get_recommendations_input {
 
     /// A builder for [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,

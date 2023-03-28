@@ -7,6 +7,7 @@ pub struct SendHeartbeatOutput {}
 pub mod send_heartbeat_output {
 
     /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -48,6 +49,7 @@ impl GetDeviceRegistrationOutput {
 pub mod get_device_registration_output {
 
     /// A builder for [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration: std::option::Option<std::string::String>,
@@ -111,6 +113,7 @@ impl GetDeploymentsOutput {
 pub mod get_deployments_output {
 
     /// A builder for [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,

@@ -163,6 +163,7 @@ impl std::error::Error for TooManyBucketsException {}
 pub mod too_many_buckets_exception {
 
     /// A builder for [`TooManyBucketsException`](crate::error::TooManyBucketsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -223,6 +224,7 @@ impl std::error::Error for InsufficientPrivilegesException {}
 pub mod insufficient_privileges_exception {
 
     /// A builder for [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -447,6 +449,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -507,6 +510,7 @@ impl std::error::Error for ResourceTypeNotSupportedException {}
 pub mod resource_type_not_supported_exception {
 
     /// A builder for [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -567,6 +571,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -627,6 +632,7 @@ impl std::error::Error for OperationInProgressException {}
 pub mod operation_in_progress_exception {
 
     /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2133,6 +2139,7 @@ impl std::error::Error for ElasticBeanstalkServiceException {}
 pub mod elastic_beanstalk_service_exception {
 
     /// A builder for [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2776,6 +2783,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
 
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4235,6 +4243,7 @@ impl std::error::Error for PlatformVersionStillReferencedException {}
 pub mod platform_version_still_referenced_exception {
 
     /// A builder for [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4685,6 +4694,7 @@ impl std::error::Error for SourceBundleDeletionException {}
 pub mod source_bundle_deletion_exception {
 
     /// A builder for [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4750,6 +4760,7 @@ impl std::error::Error for S3LocationNotInServiceRegionException {}
 pub mod s3_location_not_in_service_region_exception {
 
     /// A builder for [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5056,6 +5067,7 @@ impl std::error::Error for S3SubscriptionRequiredException {}
 pub mod s3_subscription_required_exception {
 
     /// A builder for [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5256,6 +5268,7 @@ impl std::error::Error for TooManyPlatformsException {}
 pub mod too_many_platforms_exception {
 
     /// A builder for [`TooManyPlatformsException`](crate::error::TooManyPlatformsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5435,6 +5448,7 @@ impl std::error::Error for TooManyEnvironmentsException {}
 pub mod too_many_environments_exception {
 
     /// A builder for [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5639,6 +5653,7 @@ impl std::error::Error for TooManyConfigurationTemplatesException {}
 pub mod too_many_configuration_templates_exception {
 
     /// A builder for [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5880,6 +5895,7 @@ impl std::error::Error for TooManyApplicationVersionsException {}
 pub mod too_many_application_versions_exception {
 
     /// A builder for [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5940,6 +5956,7 @@ impl std::error::Error for TooManyApplicationsException {}
 pub mod too_many_applications_exception {
 
     /// A builder for [`TooManyApplicationsException`](crate::error::TooManyApplicationsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6000,6 +6017,7 @@ impl std::error::Error for CodeBuildNotInServiceRegionException {}
 pub mod code_build_not_in_service_region_exception {
 
     /// A builder for [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6645,6 +6663,7 @@ impl std::error::Error for ManagedActionInvalidStateException {}
 pub mod managed_action_invalid_state_exception {
 
     /// A builder for [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

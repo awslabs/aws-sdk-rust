@@ -17,6 +17,7 @@ impl UpdateAttributeGroupOutput {
 pub mod update_attribute_group_output {
 
     /// A builder for [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_group: std::option::Option<crate::model::AttributeGroup>,
@@ -68,6 +69,7 @@ impl UpdateApplicationOutput {
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
@@ -109,6 +111,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -133,6 +136,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -181,6 +185,7 @@ impl SyncResourceOutput {
 pub mod sync_resource_output {
 
     /// A builder for [`SyncResourceOutput`](crate::output::SyncResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -249,6 +254,7 @@ pub struct PutConfigurationOutput {}
 pub mod put_configuration_output {
 
     /// A builder for [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -287,6 +293,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -360,6 +367,7 @@ impl ListAttributeGroupsForApplicationOutput {
 pub mod list_attribute_groups_for_application_output {
 
     /// A builder for [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_groups_details:
@@ -440,6 +448,7 @@ impl ListAttributeGroupsOutput {
 pub mod list_attribute_groups_output {
 
     /// A builder for [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_groups:
@@ -517,6 +526,7 @@ impl ListAssociatedResourcesOutput {
 pub mod list_associated_resources_output {
 
     /// A builder for [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>,
@@ -593,6 +603,7 @@ impl ListAssociatedAttributeGroupsOutput {
 pub mod list_associated_attribute_groups_output {
 
     /// A builder for [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -669,6 +680,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications:
@@ -739,6 +751,7 @@ impl GetConfigurationOutput {
 pub mod get_configuration_output {
 
     /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::AppRegistryConfiguration>,
@@ -843,6 +856,7 @@ impl GetAttributeGroupOutput {
 pub mod get_attribute_group_output {
 
     /// A builder for [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -998,6 +1012,7 @@ impl GetAssociatedResourceOutput {
 pub mod get_associated_resource_output {
 
     /// A builder for [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<crate::model::Resource>,
@@ -1106,6 +1121,7 @@ impl GetApplicationOutput {
 pub mod get_application_output {
 
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1283,6 +1299,7 @@ impl DisassociateResourceOutput {
 pub mod disassociate_resource_output {
 
     /// A builder for [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1353,6 +1370,7 @@ impl DisassociateAttributeGroupOutput {
 pub mod disassociate_attribute_group_output {
 
     /// A builder for [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1419,6 +1437,7 @@ impl DeleteAttributeGroupOutput {
 pub mod delete_attribute_group_output {
 
     /// A builder for [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_group: std::option::Option<crate::model::AttributeGroupSummary>,
@@ -1470,6 +1489,7 @@ impl DeleteApplicationOutput {
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::ApplicationSummary>,
@@ -1521,6 +1541,7 @@ impl CreateAttributeGroupOutput {
 pub mod create_attribute_group_output {
 
     /// A builder for [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_group: std::option::Option<crate::model::AttributeGroup>,
@@ -1572,6 +1593,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
@@ -1630,6 +1652,7 @@ impl AssociateResourceOutput {
 pub mod associate_resource_output {
 
     /// A builder for [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1700,6 +1723,7 @@ impl AssociateAttributeGroupOutput {
 pub mod associate_attribute_group_output {
 
     /// A builder for [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,

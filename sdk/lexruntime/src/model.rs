@@ -255,6 +255,7 @@ impl ActiveContext {
 pub mod active_context {
 
     /// A builder for [`ActiveContext`](crate::model::ActiveContext).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -354,6 +355,7 @@ impl ActiveContextTimeToLive {
 pub mod active_context_time_to_live {
 
     /// A builder for [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_in_seconds: std::option::Option<i32>,
@@ -507,6 +509,7 @@ impl std::fmt::Debug for IntentSummary {
 pub mod intent_summary {
 
     /// A builder for [`IntentSummary`](crate::model::IntentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -1102,6 +1105,7 @@ impl std::fmt::Debug for DialogAction {
 pub mod dialog_action {
 
     /// A builder for [`DialogAction`](crate::model::DialogAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DialogActionType>,
@@ -1312,6 +1316,7 @@ impl ResponseCard {
 pub mod response_card {
 
     /// A builder for [`ResponseCard`](crate::model::ResponseCard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1425,6 +1430,7 @@ impl GenericAttachment {
 pub mod generic_attachment {
 
     /// A builder for [`GenericAttachment`](crate::model::GenericAttachment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -1540,6 +1546,7 @@ impl Button {
 pub mod button {
 
     /// A builder for [`Button`](crate::model::Button).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1693,6 +1700,7 @@ impl SentimentResponse {
 pub mod sentiment_response {
 
     /// A builder for [`SentimentResponse`](crate::model::SentimentResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sentiment_label: std::option::Option<std::string::String>,
@@ -1786,6 +1794,7 @@ impl std::fmt::Debug for PredictedIntent {
 pub mod predicted_intent {
 
     /// A builder for [`PredictedIntent`](crate::model::PredictedIntent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -1887,6 +1896,7 @@ impl IntentConfidence {
 pub mod intent_confidence {
 
     /// A builder for [`IntentConfidence`](crate::model::IntentConfidence).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f64>,

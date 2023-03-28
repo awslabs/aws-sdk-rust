@@ -18,6 +18,7 @@ impl UpdateXssMatchSetOutput {
 pub mod update_xss_match_set_output {
 
     /// A builder for [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -66,6 +67,7 @@ impl UpdateWebAclOutput {
 pub mod update_web_acl_output {
 
     /// A builder for [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -114,6 +116,7 @@ impl UpdateSqlInjectionMatchSetOutput {
 pub mod update_sql_injection_match_set_output {
 
     /// A builder for [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -162,6 +165,7 @@ impl UpdateSizeConstraintSetOutput {
 pub mod update_size_constraint_set_output {
 
     /// A builder for [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -210,6 +214,7 @@ impl UpdateRuleGroupOutput {
 pub mod update_rule_group_output {
 
     /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -258,6 +263,7 @@ impl UpdateRuleOutput {
 pub mod update_rule_output {
 
     /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -306,6 +312,7 @@ impl UpdateRegexPatternSetOutput {
 pub mod update_regex_pattern_set_output {
 
     /// A builder for [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -354,6 +361,7 @@ impl UpdateRegexMatchSetOutput {
 pub mod update_regex_match_set_output {
 
     /// A builder for [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -402,6 +410,7 @@ impl UpdateRateBasedRuleOutput {
 pub mod update_rate_based_rule_output {
 
     /// A builder for [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -450,6 +459,7 @@ impl UpdateIpSetOutput {
 pub mod update_ip_set_output {
 
     /// A builder for [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -498,6 +508,7 @@ impl UpdateGeoMatchSetOutput {
 pub mod update_geo_match_set_output {
 
     /// A builder for [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -546,6 +557,7 @@ impl UpdateByteMatchSetOutput {
 pub mod update_byte_match_set_output {
 
     /// A builder for [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -584,6 +596,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -608,6 +621,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -632,6 +646,7 @@ pub struct PutPermissionPolicyOutput {}
 pub mod put_permission_policy_output {
 
     /// A builder for [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -668,6 +683,7 @@ impl PutLoggingConfigurationOutput {
 pub mod put_logging_configuration_output {
 
     /// A builder for [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -726,6 +742,7 @@ impl ListXssMatchSetsOutput {
 pub mod list_xss_match_sets_output {
 
     /// A builder for [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -803,6 +820,7 @@ impl ListWebAcLsOutput {
 pub mod list_web_ac_ls_output {
 
     /// A builder for [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -879,6 +897,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -949,6 +968,7 @@ impl ListSubscribedRuleGroupsOutput {
 pub mod list_subscribed_rule_groups_output {
 
     /// A builder for [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1029,6 +1049,7 @@ impl ListSqlInjectionMatchSetsOutput {
 pub mod list_sql_injection_match_sets_output {
 
     /// A builder for [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1112,6 +1133,7 @@ impl ListSizeConstraintSetsOutput {
 pub mod list_size_constraint_sets_output {
 
     /// A builder for [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1192,6 +1214,7 @@ impl ListRulesOutput {
 pub mod list_rules_output {
 
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1268,6 +1291,7 @@ impl ListRuleGroupsOutput {
 pub mod list_rule_groups_output {
 
     /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1347,6 +1371,7 @@ impl ListRegexPatternSetsOutput {
 pub mod list_regex_pattern_sets_output {
 
     /// A builder for [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1424,6 +1449,7 @@ impl ListRegexMatchSetsOutput {
 pub mod list_regex_match_sets_output {
 
     /// A builder for [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1501,6 +1527,7 @@ impl ListRateBasedRulesOutput {
 pub mod list_rate_based_rules_output {
 
     /// A builder for [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1580,6 +1607,7 @@ impl ListLoggingConfigurationsOutput {
 pub mod list_logging_configurations_output {
 
     /// A builder for [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configurations:
@@ -1657,6 +1685,7 @@ impl ListIpSetsOutput {
 pub mod list_ip_sets_output {
 
     /// A builder for [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1733,6 +1762,7 @@ impl ListGeoMatchSetsOutput {
 pub mod list_geo_match_sets_output {
 
     /// A builder for [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1810,6 +1840,7 @@ impl ListByteMatchSetsOutput {
 pub mod list_byte_match_sets_output {
 
     /// A builder for [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1887,6 +1918,7 @@ impl ListActivatedRulesInRuleGroupOutput {
 pub mod list_activated_rules_in_rule_group_output {
 
     /// A builder for [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1966,6 +1998,7 @@ impl GetXssMatchSetOutput {
 pub mod get_xss_match_set_output {
 
     /// A builder for [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
@@ -2039,6 +2072,7 @@ impl GetWebAclOutput {
 pub mod get_web_acl_output {
 
     /// A builder for [`GetWebAclOutput`](crate::output::GetWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
@@ -2111,6 +2145,7 @@ impl GetSqlInjectionMatchSetOutput {
 pub mod get_sql_injection_match_set_output {
 
     /// A builder for [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
@@ -2185,6 +2220,7 @@ impl GetSizeConstraintSetOutput {
 pub mod get_size_constraint_set_output {
 
     /// A builder for [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
@@ -2260,6 +2296,7 @@ impl GetSampledRequestsOutput {
 pub mod get_sampled_requests_output {
 
     /// A builder for [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampled_requests:
@@ -2345,6 +2382,7 @@ impl GetRuleGroupOutput {
 pub mod get_rule_group_output {
 
     /// A builder for [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -2404,6 +2442,7 @@ impl GetRuleOutput {
 pub mod get_rule_output {
 
     /// A builder for [`GetRuleOutput`](crate::output::GetRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
@@ -2458,6 +2497,7 @@ impl GetRegexPatternSetOutput {
 pub mod get_regex_pattern_set_output {
 
     /// A builder for [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
@@ -2509,6 +2549,7 @@ impl GetRegexMatchSetOutput {
 pub mod get_regex_match_set_output {
 
     /// A builder for [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
@@ -2567,6 +2608,7 @@ impl GetRateBasedRuleManagedKeysOutput {
 pub mod get_rate_based_rule_managed_keys_output {
 
     /// A builder for [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2636,6 +2678,7 @@ impl GetRateBasedRuleOutput {
 pub mod get_rate_based_rule_output {
 
     /// A builder for [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::RateBasedRule>,
@@ -2682,6 +2725,7 @@ impl GetPermissionPolicyOutput {
 pub mod get_permission_policy_output {
 
     /// A builder for [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2732,6 +2776,7 @@ impl GetLoggingConfigurationOutput {
 pub mod get_logging_configuration_output {
 
     /// A builder for [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -2791,6 +2836,7 @@ impl GetIpSetOutput {
 pub mod get_ip_set_output {
 
     /// A builder for [`GetIpSetOutput`](crate::output::GetIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
@@ -2847,6 +2893,7 @@ impl GetGeoMatchSetOutput {
 pub mod get_geo_match_set_output {
 
     /// A builder for [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
@@ -2898,6 +2945,7 @@ impl GetChangeTokenStatusOutput {
 pub mod get_change_token_status_output {
 
     /// A builder for [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token_status: std::option::Option<crate::model::ChangeTokenStatus>,
@@ -2949,6 +2997,7 @@ impl GetChangeTokenOutput {
 pub mod get_change_token_output {
 
     /// A builder for [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3007,6 +3056,7 @@ impl GetByteMatchSetOutput {
 pub mod get_byte_match_set_output {
 
     /// A builder for [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
@@ -3068,6 +3118,7 @@ impl DeleteXssMatchSetOutput {
 pub mod delete_xss_match_set_output {
 
     /// A builder for [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3116,6 +3167,7 @@ impl DeleteWebAclOutput {
 pub mod delete_web_acl_output {
 
     /// A builder for [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3164,6 +3216,7 @@ impl DeleteSqlInjectionMatchSetOutput {
 pub mod delete_sql_injection_match_set_output {
 
     /// A builder for [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3212,6 +3265,7 @@ impl DeleteSizeConstraintSetOutput {
 pub mod delete_size_constraint_set_output {
 
     /// A builder for [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3260,6 +3314,7 @@ impl DeleteRuleGroupOutput {
 pub mod delete_rule_group_output {
 
     /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3308,6 +3363,7 @@ impl DeleteRuleOutput {
 pub mod delete_rule_output {
 
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3356,6 +3412,7 @@ impl DeleteRegexPatternSetOutput {
 pub mod delete_regex_pattern_set_output {
 
     /// A builder for [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3404,6 +3461,7 @@ impl DeleteRegexMatchSetOutput {
 pub mod delete_regex_match_set_output {
 
     /// A builder for [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3452,6 +3510,7 @@ impl DeleteRateBasedRuleOutput {
 pub mod delete_rate_based_rule_output {
 
     /// A builder for [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3490,6 +3549,7 @@ pub struct DeletePermissionPolicyOutput {}
 pub mod delete_permission_policy_output {
 
     /// A builder for [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3514,6 +3574,7 @@ pub struct DeleteLoggingConfigurationOutput {}
 pub mod delete_logging_configuration_output {
 
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3548,6 +3609,7 @@ impl DeleteIpSetOutput {
 pub mod delete_ip_set_output {
 
     /// A builder for [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3596,6 +3658,7 @@ impl DeleteGeoMatchSetOutput {
 pub mod delete_geo_match_set_output {
 
     /// A builder for [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3644,6 +3707,7 @@ impl DeleteByteMatchSetOutput {
 pub mod delete_byte_match_set_output {
 
     /// A builder for [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
@@ -3699,6 +3763,7 @@ impl CreateXssMatchSetOutput {
 pub mod create_xss_match_set_output {
 
     /// A builder for [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
@@ -3762,6 +3827,7 @@ impl CreateWebAclMigrationStackOutput {
 pub mod create_web_acl_migration_stack_output {
 
     /// A builder for [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object_url: std::option::Option<std::string::String>,
@@ -3820,6 +3886,7 @@ impl CreateWebAclOutput {
 pub mod create_web_acl_output {
 
     /// A builder for [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
@@ -3889,6 +3956,7 @@ impl CreateSqlInjectionMatchSetOutput {
 pub mod create_sql_injection_match_set_output {
 
     /// A builder for [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
@@ -3962,6 +4030,7 @@ impl CreateSizeConstraintSetOutput {
 pub mod create_size_constraint_set_output {
 
     /// A builder for [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
@@ -4032,6 +4101,7 @@ impl CreateRuleGroupOutput {
 pub mod create_rule_group_output {
 
     /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -4102,6 +4172,7 @@ impl CreateRuleOutput {
 pub mod create_rule_output {
 
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
@@ -4169,6 +4240,7 @@ impl CreateRegexPatternSetOutput {
 pub mod create_regex_pattern_set_output {
 
     /// A builder for [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
@@ -4239,6 +4311,7 @@ impl CreateRegexMatchSetOutput {
 pub mod create_regex_match_set_output {
 
     /// A builder for [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
@@ -4309,6 +4382,7 @@ impl CreateRateBasedRuleOutput {
 pub mod create_rate_based_rule_output {
 
     /// A builder for [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::RateBasedRule>,
@@ -4376,6 +4450,7 @@ impl CreateIpSetOutput {
 pub mod create_ip_set_output {
 
     /// A builder for [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
@@ -4443,6 +4518,7 @@ impl CreateGeoMatchSetOutput {
 pub mod create_geo_match_set_output {
 
     /// A builder for [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
@@ -4513,6 +4589,7 @@ impl CreateByteMatchSetOutput {
 pub mod create_byte_match_set_output {
 
     /// A builder for [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,

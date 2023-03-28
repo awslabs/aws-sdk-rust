@@ -579,6 +579,7 @@ impl TranscriptEvent {
 pub mod transcript_event {
 
     /// A builder for [`TranscriptEvent`](crate::model::TranscriptEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
@@ -631,6 +632,7 @@ impl Transcript {
 pub mod transcript {
 
     /// A builder for [`Transcript`](crate::model::Transcript).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -745,6 +747,7 @@ impl Result {
 pub mod result {
 
     /// A builder for [`Result`](crate::model::Result).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_id: std::option::Option<std::string::String>,
@@ -910,6 +913,7 @@ impl LanguageWithScore {
 pub mod language_with_score {
 
     /// A builder for [`LanguageWithScore`](crate::model::LanguageWithScore).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -987,6 +991,7 @@ impl Alternative {
 pub mod alternative {
 
     /// A builder for [`Alternative`](crate::model::Alternative).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<std::string::String>,
@@ -1114,6 +1119,7 @@ impl Entity {
 pub mod entity {
 
     /// A builder for [`Entity`](crate::model::Entity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<f64>,
@@ -1275,6 +1281,7 @@ impl Item {
 pub mod item {
 
     /// A builder for [`Item`](crate::model::Item).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<f64>,
@@ -1658,6 +1665,7 @@ impl ConfigurationEvent {
 pub mod configuration_event {
 
     /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_definitions:
@@ -1799,6 +1807,7 @@ impl PostCallAnalyticsSettings {
 pub mod post_call_analytics_settings {
 
     /// A builder for [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_location: std::option::Option<std::string::String>,
@@ -2041,6 +2050,7 @@ impl ChannelDefinition {
 pub mod channel_definition {
 
     /// A builder for [`ChannelDefinition`](crate::model::ChannelDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<i32>,
@@ -2195,6 +2205,7 @@ impl AudioEvent {
 pub mod audio_event {
 
     /// A builder for [`AudioEvent`](crate::model::AudioEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_chunk: std::option::Option<aws_smithy_types::Blob>,
@@ -2374,6 +2385,7 @@ impl MedicalTranscriptEvent {
 pub mod medical_transcript_event {
 
     /// A builder for [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<crate::model::MedicalTranscript>,
@@ -2426,6 +2438,7 @@ impl MedicalTranscript {
 pub mod medical_transcript {
 
     /// A builder for [`MedicalTranscript`](crate::model::MedicalTranscript).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
@@ -2521,6 +2534,7 @@ impl MedicalResult {
 pub mod medical_result {
 
     /// A builder for [`MedicalResult`](crate::model::MedicalResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_id: std::option::Option<std::string::String>,
@@ -2655,6 +2669,7 @@ impl MedicalAlternative {
 pub mod medical_alternative {
 
     /// A builder for [`MedicalAlternative`](crate::model::MedicalAlternative).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<std::string::String>,
@@ -2775,6 +2790,7 @@ impl MedicalEntity {
 pub mod medical_entity {
 
     /// A builder for [`MedicalEntity`](crate::model::MedicalEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<f64>,
@@ -2910,6 +2926,7 @@ impl MedicalItem {
 pub mod medical_item {
 
     /// A builder for [`MedicalItem`](crate::model::MedicalItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<f64>,
@@ -3291,6 +3308,7 @@ impl CategoryEvent {
 pub mod category_event {
 
     /// A builder for [`CategoryEvent`](crate::model::CategoryEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3377,6 +3395,7 @@ impl PointsOfInterest {
 pub mod points_of_interest {
 
     /// A builder for [`PointsOfInterest`](crate::model::PointsOfInterest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp_ranges:
@@ -3442,6 +3461,7 @@ impl TimestampRange {
 pub mod timestamp_range {
 
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i64>,
@@ -3565,6 +3585,7 @@ impl UtteranceEvent {
 pub mod utterance_event {
 
     /// A builder for [`UtteranceEvent`](crate::model::UtteranceEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utterance_id: std::option::Option<std::string::String>,
@@ -3754,6 +3775,7 @@ impl IssueDetected {
 pub mod issue_detected {
 
     /// A builder for [`IssueDetected`](crate::model::IssueDetected).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) character_offsets: std::option::Option<crate::model::CharacterOffsets>,
@@ -3812,6 +3834,7 @@ impl CharacterOffsets {
 pub mod character_offsets {
 
     /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin: std::option::Option<i32>,
@@ -4009,6 +4032,7 @@ impl CallAnalyticsEntity {
 pub mod call_analytics_entity {
 
     /// A builder for [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i64>,
@@ -4163,6 +4187,7 @@ impl CallAnalyticsItem {
 pub mod call_analytics_item {
 
     /// A builder for [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i64>,

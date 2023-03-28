@@ -230,6 +230,7 @@ impl Item {
 pub mod item {
 
     /// A builder for [`Item`](crate::model::Item).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

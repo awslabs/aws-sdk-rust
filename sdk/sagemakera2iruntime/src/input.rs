@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_human_loop_input {
 
     /// A builder for [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -175,6 +176,7 @@ impl DeleteHumanLoopInput {
 pub mod describe_human_loop_input {
 
     /// A builder for [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -347,6 +349,7 @@ impl DescribeHumanLoopInput {
 pub mod list_human_loops_input {
 
     /// A builder for [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -629,6 +632,7 @@ impl ListHumanLoopsInput {
 pub mod start_human_loop_input {
 
     /// A builder for [`StartHumanLoopInput`](crate::input::StartHumanLoopInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -834,6 +838,7 @@ impl StartHumanLoopInput {
 pub mod stop_human_loop_input {
 
     /// A builder for [`StopHumanLoopInput`](crate::input::StopHumanLoopInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,

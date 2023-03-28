@@ -21,6 +21,7 @@ impl CertificateOptions {
 pub mod certificate_options {
 
     /// A builder for [`CertificateOptions`](crate::model::CertificateOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_transparency_logging_preference:
@@ -299,6 +300,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -380,6 +382,7 @@ impl DomainValidationOption {
 pub mod domain_validation_option {
 
     /// A builder for [`DomainValidationOption`](crate::model::DomainValidationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -547,6 +550,7 @@ impl ExpiryEventsConfiguration {
 pub mod expiry_events_configuration {
 
     /// A builder for [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days_before_expiry: std::option::Option<i32>,
@@ -726,6 +730,7 @@ impl CertificateSummary {
 pub mod certificate_summary {
 
     /// A builder for [`CertificateSummary`](crate::model::CertificateSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1860,6 +1865,7 @@ impl Filters {
 pub mod filters {
 
     /// A builder for [`Filters`](crate::model::Filters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extended_key_usage:
@@ -2144,6 +2150,7 @@ impl CertificateDetail {
 pub mod certificate_detail {
 
     /// A builder for [`CertificateDetail`](crate::model::CertificateDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -2624,6 +2631,7 @@ impl ExtendedKeyUsage {
 pub mod extended_key_usage {
 
     /// A builder for [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtendedKeyUsageName>,
@@ -2709,6 +2717,7 @@ impl KeyUsage {
 pub mod key_usage {
 
     /// A builder for [`KeyUsage`](crate::model::KeyUsage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::KeyUsageName>,
@@ -2779,6 +2788,7 @@ impl RenewalSummary {
 pub mod renewal_summary {
 
     /// A builder for [`RenewalSummary`](crate::model::RenewalSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) renewal_status: std::option::Option<crate::model::RenewalStatus>,
@@ -3112,6 +3122,7 @@ impl DomainValidation {
 pub mod domain_validation {
 
     /// A builder for [`DomainValidation`](crate::model::DomainValidation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3267,6 +3278,7 @@ impl ResourceRecord {
 pub mod resource_record {
 
     /// A builder for [`ResourceRecord`](crate::model::ResourceRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

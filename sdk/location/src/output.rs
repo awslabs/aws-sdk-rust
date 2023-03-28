@@ -24,6 +24,7 @@ impl ListTrackerConsumersOutput {
 pub mod list_tracker_consumers_output {
 
     /// A builder for [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -102,6 +103,7 @@ impl ListDevicePositionsOutput {
 pub mod list_device_positions_output {
 
     /// A builder for [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -181,6 +183,7 @@ impl GetDevicePositionHistoryOutput {
 pub mod get_device_position_history_output {
 
     /// A builder for [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_positions:
@@ -302,6 +305,7 @@ impl std::fmt::Debug for GetDevicePositionOutput {
 pub mod get_device_position_output {
 
     /// A builder for [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -444,6 +448,7 @@ pub struct DisassociateTrackerConsumerOutput {}
 pub mod disassociate_tracker_consumer_output {
 
     /// A builder for [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -478,6 +483,7 @@ impl BatchUpdateDevicePositionOutput {
 pub mod batch_update_device_position_output {
 
     /// A builder for [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -543,6 +549,7 @@ impl BatchGetDevicePositionOutput {
 pub mod batch_get_device_position_output {
 
     /// A builder for [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -626,6 +633,7 @@ impl BatchDeleteDevicePositionHistoryOutput {
 pub mod batch_delete_device_position_history_output {
 
     /// A builder for [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -679,6 +687,7 @@ pub struct AssociateTrackerConsumerOutput {}
 pub mod associate_tracker_consumer_output {
 
     /// A builder for [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -720,6 +729,7 @@ impl ListTrackersOutput {
 pub mod list_trackers_output {
 
     /// A builder for [`ListTrackersOutput`](crate::output::ListTrackersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -810,6 +820,7 @@ impl CreateTrackerOutput {
 pub mod create_tracker_output {
 
     /// A builder for [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -881,6 +892,7 @@ pub struct DeleteTrackerOutput {}
 pub mod delete_tracker_output {
 
     /// A builder for [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -935,6 +947,7 @@ impl UpdateTrackerOutput {
 pub mod update_tracker_output {
 
     /// A builder for [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -1099,6 +1112,7 @@ impl DescribeTrackerOutput {
 pub mod describe_tracker_output {
 
     /// A builder for [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -1327,6 +1341,7 @@ impl CalculateRouteMatrixOutput {
 pub mod calculate_route_matrix_output {
 
     /// A builder for [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_matrix:
@@ -1476,6 +1491,7 @@ impl CalculateRouteOutput {
 pub mod calculate_route_output {
 
     /// A builder for [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) legs: std::option::Option<std::vec::Vec<crate::model::Leg>>,
@@ -1578,6 +1594,7 @@ impl ListRouteCalculatorsOutput {
 pub mod list_route_calculators_output {
 
     /// A builder for [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -1682,6 +1699,7 @@ impl CreateRouteCalculatorOutput {
 pub mod create_route_calculator_output {
 
     /// A builder for [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -1771,6 +1789,7 @@ pub struct DeleteRouteCalculatorOutput {}
 pub mod delete_route_calculator_output {
 
     /// A builder for [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1825,6 +1844,7 @@ impl UpdateRouteCalculatorOutput {
 pub mod update_route_calculator_output {
 
     /// A builder for [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -2003,6 +2023,7 @@ impl DescribeRouteCalculatorOutput {
 pub mod describe_route_calculator_output {
 
     /// A builder for [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -2214,6 +2235,7 @@ impl SearchPlaceIndexForTextOutput {
 pub mod search_place_index_for_text_output {
 
     /// A builder for [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
@@ -2297,6 +2319,7 @@ impl SearchPlaceIndexForSuggestionsOutput {
 pub mod search_place_index_for_suggestions_output {
 
     /// A builder for [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary:
@@ -2383,6 +2406,7 @@ impl SearchPlaceIndexForPositionOutput {
 pub mod search_place_index_for_position_output {
 
     /// A builder for [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
@@ -2456,6 +2480,7 @@ impl GetPlaceOutput {
 pub mod get_place_output {
 
     /// A builder for [`GetPlaceOutput`](crate::output::GetPlaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
@@ -2509,6 +2534,7 @@ impl ListPlaceIndexesOutput {
 pub mod list_place_indexes_output {
 
     /// A builder for [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -2599,6 +2625,7 @@ impl CreatePlaceIndexOutput {
 pub mod create_place_index_output {
 
     /// A builder for [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -2670,6 +2697,7 @@ pub struct DeletePlaceIndexOutput {}
 pub mod delete_place_index_output {
 
     /// A builder for [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2724,6 +2752,7 @@ impl UpdatePlaceIndexOutput {
 pub mod update_place_index_output {
 
     /// A builder for [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -2893,6 +2922,7 @@ impl DescribePlaceIndexOutput {
 pub mod describe_place_index_output {
 
     /// A builder for [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -3103,6 +3133,7 @@ impl GetMapTileOutput {
 pub mod get_map_tile_output {
 
     /// A builder for [`GetMapTileOutput`](crate::output::GetMapTileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3170,6 +3201,7 @@ impl GetMapStyleDescriptorOutput {
 pub mod get_map_style_descriptor_output {
 
     /// A builder for [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3237,6 +3269,7 @@ impl GetMapSpritesOutput {
 pub mod get_map_sprites_output {
 
     /// A builder for [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3304,6 +3337,7 @@ impl GetMapGlyphsOutput {
 pub mod get_map_glyphs_output {
 
     /// A builder for [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
@@ -3371,6 +3405,7 @@ impl ListMapsOutput {
 pub mod list_maps_output {
 
     /// A builder for [`ListMapsOutput`](crate::output::ListMapsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>,
@@ -3460,6 +3495,7 @@ impl CreateMapOutput {
 pub mod create_map_output {
 
     /// A builder for [`CreateMapOutput`](crate::output::CreateMapOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -3531,6 +3567,7 @@ pub struct DeleteMapOutput {}
 pub mod delete_map_output {
 
     /// A builder for [`DeleteMapOutput`](crate::output::DeleteMapOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3585,6 +3622,7 @@ impl UpdateMapOutput {
 pub mod update_map_output {
 
     /// A builder for [`UpdateMapOutput`](crate::output::UpdateMapOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -3740,6 +3778,7 @@ impl DescribeMapOutput {
 pub mod describe_map_output {
 
     /// A builder for [`DescribeMapOutput`](crate::output::DescribeMapOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -3941,6 +3980,7 @@ impl PutGeofenceOutput {
 pub mod put_geofence_output {
 
     /// A builder for [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -4026,6 +4066,7 @@ impl ListGeofencesOutput {
 pub mod list_geofences_output {
 
     /// A builder for [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -4138,6 +4179,7 @@ impl GetGeofenceOutput {
 pub mod get_geofence_output {
 
     /// A builder for [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -4264,6 +4306,7 @@ impl BatchPutGeofenceOutput {
 pub mod batch_put_geofence_output {
 
     /// A builder for [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successes:
@@ -4343,6 +4386,7 @@ impl BatchEvaluateGeofencesOutput {
 pub mod batch_evaluate_geofences_output {
 
     /// A builder for [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -4401,6 +4445,7 @@ impl BatchDeleteGeofenceOutput {
 pub mod batch_delete_geofence_output {
 
     /// A builder for [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -4469,6 +4514,7 @@ impl ListGeofenceCollectionsOutput {
 pub mod list_geofence_collections_output {
 
     /// A builder for [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -4564,6 +4610,7 @@ impl CreateGeofenceCollectionOutput {
 pub mod create_geofence_collection_output {
 
     /// A builder for [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -4641,6 +4688,7 @@ pub struct DeleteGeofenceCollectionOutput {}
 pub mod delete_geofence_collection_output {
 
     /// A builder for [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4695,6 +4743,7 @@ impl UpdateGeofenceCollectionOutput {
 pub mod update_geofence_collection_output {
 
     /// A builder for [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -4858,6 +4907,7 @@ impl DescribeGeofenceCollectionOutput {
 pub mod describe_geofence_collection_output {
 
     /// A builder for [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -5043,6 +5093,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5067,6 +5118,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5111,6 +5163,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<

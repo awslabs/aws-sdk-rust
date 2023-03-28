@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_assessment_report_evidence_folder_input {
 
     /// A builder for [`AssociateAssessmentReportEvidenceFolderInput`](crate::input::AssociateAssessmentReportEvidenceFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -206,6 +207,7 @@ impl AssociateAssessmentReportEvidenceFolderInput {
 pub mod batch_associate_assessment_report_evidence_input {
 
     /// A builder for [`BatchAssociateAssessmentReportEvidenceInput`](crate::input::BatchAssociateAssessmentReportEvidenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -428,6 +430,7 @@ impl BatchAssociateAssessmentReportEvidenceInput {
 pub mod batch_create_delegation_by_assessment_input {
 
     /// A builder for [`BatchCreateDelegationByAssessmentInput`](crate::input::BatchCreateDelegationByAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_delegation_requests:
@@ -639,6 +642,7 @@ impl BatchCreateDelegationByAssessmentInput {
 pub mod batch_delete_delegation_by_assessment_input {
 
     /// A builder for [`BatchDeleteDelegationByAssessmentInput`](crate::input::BatchDeleteDelegationByAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -846,6 +850,7 @@ impl BatchDeleteDelegationByAssessmentInput {
 pub mod batch_disassociate_assessment_report_evidence_input {
 
     /// A builder for [`BatchDisassociateAssessmentReportEvidenceInput`](crate::input::BatchDisassociateAssessmentReportEvidenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -1070,6 +1075,7 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
 pub mod batch_import_evidence_to_assessment_control_input {
 
     /// A builder for [`BatchImportEvidenceToAssessmentControlInput`](crate::input::BatchImportEvidenceToAssessmentControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -1338,6 +1344,7 @@ impl BatchImportEvidenceToAssessmentControlInput {
 pub mod create_assessment_input {
 
     /// A builder for [`CreateAssessmentInput`](crate::input::CreateAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1602,6 +1609,7 @@ impl CreateAssessmentInput {
 pub mod create_assessment_framework_input {
 
     /// A builder for [`CreateAssessmentFrameworkInput`](crate::input::CreateAssessmentFrameworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1846,6 +1854,7 @@ impl CreateAssessmentFrameworkInput {
 pub mod create_assessment_report_input {
 
     /// A builder for [`CreateAssessmentReportInput`](crate::input::CreateAssessmentReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2079,6 +2088,7 @@ impl CreateAssessmentReportInput {
 pub mod create_control_input {
 
     /// A builder for [`CreateControlInput`](crate::input::CreateControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2347,6 +2357,7 @@ impl CreateControlInput {
 pub mod delete_assessment_input {
 
     /// A builder for [`DeleteAssessmentInput`](crate::input::DeleteAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -2519,6 +2530,7 @@ impl DeleteAssessmentInput {
 pub mod delete_assessment_framework_input {
 
     /// A builder for [`DeleteAssessmentFrameworkInput`](crate::input::DeleteAssessmentFrameworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_id: std::option::Option<std::string::String>,
@@ -2688,6 +2700,7 @@ impl DeleteAssessmentFrameworkInput {
 pub mod delete_assessment_framework_share_input {
 
     /// A builder for [`DeleteAssessmentFrameworkShareInput`](crate::input::DeleteAssessmentFrameworkShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2891,6 +2904,7 @@ impl DeleteAssessmentFrameworkShareInput {
 pub mod delete_assessment_report_input {
 
     /// A builder for [`DeleteAssessmentReportInput`](crate::input::DeleteAssessmentReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -3098,6 +3112,7 @@ impl DeleteAssessmentReportInput {
 pub mod delete_control_input {
 
     /// A builder for [`DeleteControlInput`](crate::input::DeleteControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
@@ -3261,6 +3276,7 @@ impl DeleteControlInput {
 pub mod deregister_account_input {
 
     /// A builder for [`DeregisterAccountInput`](crate::input::DeregisterAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3392,6 +3408,7 @@ impl DeregisterAccountInput {
 pub mod deregister_organization_admin_account_input {
 
     /// A builder for [`DeregisterOrganizationAdminAccountInput`](crate::input::DeregisterOrganizationAdminAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
@@ -3555,6 +3572,7 @@ impl DeregisterOrganizationAdminAccountInput {
 pub mod disassociate_assessment_report_evidence_folder_input {
 
     /// A builder for [`DisassociateAssessmentReportEvidenceFolderInput`](crate::input::DisassociateAssessmentReportEvidenceFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -3759,6 +3777,7 @@ impl DisassociateAssessmentReportEvidenceFolderInput {
 pub mod get_account_status_input {
 
     /// A builder for [`GetAccountStatusInput`](crate::input::GetAccountStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3890,6 +3909,7 @@ impl GetAccountStatusInput {
 pub mod get_assessment_input {
 
     /// A builder for [`GetAssessmentInput`](crate::input::GetAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -4060,6 +4080,7 @@ impl GetAssessmentInput {
 pub mod get_assessment_framework_input {
 
     /// A builder for [`GetAssessmentFrameworkInput`](crate::input::GetAssessmentFrameworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_id: std::option::Option<std::string::String>,
@@ -4229,6 +4250,7 @@ impl GetAssessmentFrameworkInput {
 pub mod get_assessment_report_url_input {
 
     /// A builder for [`GetAssessmentReportUrlInput`](crate::input::GetAssessmentReportUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_report_id: std::option::Option<std::string::String>,
@@ -4436,6 +4458,7 @@ impl GetAssessmentReportUrlInput {
 pub mod get_change_logs_input {
 
     /// A builder for [`GetChangeLogsInput`](crate::input::GetChangeLogsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -4691,6 +4714,7 @@ impl GetChangeLogsInput {
 pub mod get_control_input {
 
     /// A builder for [`GetControlInput`](crate::input::GetControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
@@ -4854,6 +4878,7 @@ impl GetControlInput {
 pub mod get_delegations_input {
 
     /// A builder for [`GetDelegationsInput`](crate::input::GetDelegationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5030,6 +5055,7 @@ impl GetDelegationsInput {
 pub mod get_evidence_input {
 
     /// A builder for [`GetEvidenceInput`](crate::input::GetEvidenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -5294,6 +5320,7 @@ impl GetEvidenceInput {
 pub mod get_evidence_by_evidence_folder_input {
 
     /// A builder for [`GetEvidenceByEvidenceFolderInput`](crate::input::GetEvidenceByEvidenceFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -5574,6 +5601,7 @@ impl GetEvidenceByEvidenceFolderInput {
 pub mod get_evidence_folder_input {
 
     /// A builder for [`GetEvidenceFolderInput`](crate::input::GetEvidenceFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -5809,6 +5837,7 @@ impl GetEvidenceFolderInput {
 pub mod get_evidence_folders_by_assessment_input {
 
     /// A builder for [`GetEvidenceFoldersByAssessmentInput`](crate::input::GetEvidenceFoldersByAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -6026,6 +6055,7 @@ impl GetEvidenceFoldersByAssessmentInput {
 pub mod get_evidence_folders_by_assessment_control_input {
 
     /// A builder for [`GetEvidenceFoldersByAssessmentControlInput`](crate::input::GetEvidenceFoldersByAssessmentControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -6303,6 +6333,7 @@ impl GetEvidenceFoldersByAssessmentControlInput {
 pub mod get_insights_input {
 
     /// A builder for [`GetInsightsInput`](crate::input::GetInsightsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6432,6 +6463,7 @@ impl GetInsightsInput {
 pub mod get_insights_by_assessment_input {
 
     /// A builder for [`GetInsightsByAssessmentInput`](crate::input::GetInsightsByAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -6604,6 +6636,7 @@ impl GetInsightsByAssessmentInput {
 pub mod get_organization_admin_account_input {
 
     /// A builder for [`GetOrganizationAdminAccountInput`](crate::input::GetOrganizationAdminAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6736,6 +6769,7 @@ impl GetOrganizationAdminAccountInput {
 pub mod get_services_in_scope_input {
 
     /// A builder for [`GetServicesInScopeInput`](crate::input::GetServicesInScopeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6867,6 +6901,7 @@ impl GetServicesInScopeInput {
 pub mod get_settings_input {
 
     /// A builder for [`GetSettingsInput`](crate::input::GetSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::SettingAttribute>,
@@ -7033,6 +7068,7 @@ impl GetSettingsInput {
 pub mod list_assessment_control_insights_by_control_domain_input {
 
     /// A builder for [`ListAssessmentControlInsightsByControlDomainInput`](crate::input::ListAssessmentControlInsightsByControlDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_domain_id: std::option::Option<std::string::String>,
@@ -7283,6 +7319,7 @@ impl ListAssessmentControlInsightsByControlDomainInput {
 pub mod list_assessment_frameworks_input {
 
     /// A builder for [`ListAssessmentFrameworksInput`](crate::input::ListAssessmentFrameworksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_type: std::option::Option<crate::model::FrameworkType>,
@@ -7487,6 +7524,7 @@ impl ListAssessmentFrameworksInput {
 pub mod list_assessment_framework_share_requests_input {
 
     /// A builder for [`ListAssessmentFrameworkShareRequestsInput`](crate::input::ListAssessmentFrameworkShareRequestsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_type: std::option::Option<crate::model::ShareRequestType>,
@@ -7692,6 +7730,7 @@ impl ListAssessmentFrameworkShareRequestsInput {
 pub mod list_assessment_reports_input {
 
     /// A builder for [`ListAssessmentReportsInput`](crate::input::ListAssessmentReportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7870,6 +7909,7 @@ impl ListAssessmentReportsInput {
 pub mod list_assessments_input {
 
     /// A builder for [`ListAssessmentsInput`](crate::input::ListAssessmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AssessmentStatus>,
@@ -8066,6 +8106,7 @@ impl ListAssessmentsInput {
 pub mod list_control_domain_insights_input {
 
     /// A builder for [`ListControlDomainInsightsInput`](crate::input::ListControlDomainInsightsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8244,6 +8285,7 @@ impl ListControlDomainInsightsInput {
 pub mod list_control_domain_insights_by_assessment_input {
 
     /// A builder for [`ListControlDomainInsightsByAssessmentInput`](crate::input::ListControlDomainInsightsByAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -8457,6 +8499,7 @@ impl ListControlDomainInsightsByAssessmentInput {
 pub mod list_control_insights_by_control_domain_input {
 
     /// A builder for [`ListControlInsightsByControlDomainInput`](crate::input::ListControlInsightsByControlDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_domain_id: std::option::Option<std::string::String>,
@@ -8669,6 +8712,7 @@ impl ListControlInsightsByControlDomainInput {
 pub mod list_controls_input {
 
     /// A builder for [`ListControlsInput`](crate::input::ListControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_type: std::option::Option<crate::model::ControlType>,
@@ -8871,6 +8915,7 @@ impl ListControlsInput {
 pub mod list_keywords_for_data_source_input {
 
     /// A builder for [`ListKeywordsForDataSourceInput`](crate::input::ListKeywordsForDataSourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::SourceType>,
@@ -9069,6 +9114,7 @@ impl ListKeywordsForDataSourceInput {
 pub mod list_notifications_input {
 
     /// A builder for [`ListNotificationsInput`](crate::input::ListNotificationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9247,6 +9293,7 @@ impl ListNotificationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9412,6 +9459,7 @@ impl ListTagsForResourceInput {
 pub mod register_account_input {
 
     /// A builder for [`RegisterAccountInput`](crate::input::RegisterAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key: std::option::Option<std::string::String>,
@@ -9584,6 +9632,7 @@ impl RegisterAccountInput {
 pub mod register_organization_admin_account_input {
 
     /// A builder for [`RegisterOrganizationAdminAccountInput`](crate::input::RegisterOrganizationAdminAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
@@ -9747,6 +9796,7 @@ impl RegisterOrganizationAdminAccountInput {
 pub mod start_assessment_framework_share_input {
 
     /// A builder for [`StartAssessmentFrameworkShareInput`](crate::input::StartAssessmentFrameworkShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_id: std::option::Option<std::string::String>,
@@ -9972,6 +10022,7 @@ impl StartAssessmentFrameworkShareInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10178,6 +10229,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10380,6 +10432,7 @@ impl UntagResourceInput {
 pub mod update_assessment_input {
 
     /// A builder for [`UpdateAssessmentInput`](crate::input::UpdateAssessmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -10648,6 +10701,7 @@ impl UpdateAssessmentInput {
 pub mod update_assessment_control_input {
 
     /// A builder for [`UpdateAssessmentControlInput`](crate::input::UpdateAssessmentControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -10930,6 +10984,7 @@ impl UpdateAssessmentControlInput {
 pub mod update_assessment_control_set_status_input {
 
     /// A builder for [`UpdateAssessmentControlSetStatusInput`](crate::input::UpdateAssessmentControlSetStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -11178,6 +11233,7 @@ impl UpdateAssessmentControlSetStatusInput {
 pub mod update_assessment_framework_input {
 
     /// A builder for [`UpdateAssessmentFrameworkInput`](crate::input::UpdateAssessmentFrameworkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_id: std::option::Option<std::string::String>,
@@ -11429,6 +11485,7 @@ impl UpdateAssessmentFrameworkInput {
 pub mod update_assessment_framework_share_input {
 
     /// A builder for [`UpdateAssessmentFrameworkShareInput`](crate::input::UpdateAssessmentFrameworkShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -11642,6 +11699,7 @@ impl UpdateAssessmentFrameworkShareInput {
 pub mod update_assessment_status_input {
 
     /// A builder for [`UpdateAssessmentStatusInput`](crate::input::UpdateAssessmentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
@@ -11845,6 +11903,7 @@ impl UpdateAssessmentStatusInput {
 pub mod update_control_input {
 
     /// A builder for [`UpdateControlInput`](crate::input::UpdateControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
@@ -12116,6 +12175,7 @@ impl UpdateControlInput {
 pub mod update_settings_input {
 
     /// A builder for [`UpdateSettingsInput`](crate::input::UpdateSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic: std::option::Option<std::string::String>,
@@ -12356,6 +12416,7 @@ impl UpdateSettingsInput {
 pub mod validate_assessment_report_integrity_input {
 
     /// A builder for [`ValidateAssessmentReportIntegrityInput`](crate::input::ValidateAssessmentReportIntegrityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_relative_path: std::option::Option<std::string::String>,

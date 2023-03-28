@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod clone_receipt_rule_set_input {
 
     /// A builder for [`CloneReceiptRuleSetInput`](crate::input::CloneReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -194,6 +195,7 @@ impl CloneReceiptRuleSetInput {
 pub mod create_configuration_set_input {
 
     /// A builder for [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set: std::option::Option<crate::model::ConfigurationSet>,
@@ -358,6 +360,7 @@ impl CreateConfigurationSetInput {
 pub mod create_configuration_set_event_destination_input {
 
     /// A builder for [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -535,6 +538,7 @@ impl CreateConfigurationSetEventDestinationInput {
 pub mod create_configuration_set_tracking_options_input {
 
     /// A builder for [`CreateConfigurationSetTrackingOptionsInput`](crate::input::CreateConfigurationSetTrackingOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -714,6 +718,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
 pub mod create_custom_verification_email_template_input {
 
     /// A builder for [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -951,6 +956,7 @@ impl CreateCustomVerificationEmailTemplateInput {
 pub mod create_receipt_filter_input {
 
     /// A builder for [`CreateReceiptFilterInput`](crate::input::CreateReceiptFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ReceiptFilter>,
@@ -1113,6 +1119,7 @@ impl CreateReceiptFilterInput {
 pub mod create_receipt_rule_input {
 
     /// A builder for [`CreateReceiptRuleInput`](crate::input::CreateReceiptRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -1299,6 +1306,7 @@ impl CreateReceiptRuleInput {
 pub mod create_receipt_rule_set_input {
 
     /// A builder for [`CreateReceiptRuleSetInput`](crate::input::CreateReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -1473,6 +1481,7 @@ impl CreateReceiptRuleSetInput {
 pub mod create_template_input {
 
     /// A builder for [`CreateTemplateInput`](crate::input::CreateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<crate::model::Template>,
@@ -1630,6 +1639,7 @@ impl CreateTemplateInput {
 pub mod delete_configuration_set_input {
 
     /// A builder for [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1794,6 +1804,7 @@ impl DeleteConfigurationSetInput {
 pub mod delete_configuration_set_event_destination_input {
 
     /// A builder for [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1971,6 +1982,7 @@ impl DeleteConfigurationSetEventDestinationInput {
 pub mod delete_configuration_set_tracking_options_input {
 
     /// A builder for [`DeleteConfigurationSetTrackingOptionsInput`](crate::input::DeleteConfigurationSetTrackingOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -2133,6 +2145,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
 pub mod delete_custom_verification_email_template_input {
 
     /// A builder for [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2295,6 +2308,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
 pub mod delete_identity_input {
 
     /// A builder for [`DeleteIdentityInput`](crate::input::DeleteIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -2452,6 +2466,7 @@ impl DeleteIdentityInput {
 pub mod delete_identity_policy_input {
 
     /// A builder for [`DeleteIdentityPolicyInput`](crate::input::DeleteIdentityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -2627,6 +2642,7 @@ impl DeleteIdentityPolicyInput {
 pub mod delete_receipt_filter_input {
 
     /// A builder for [`DeleteReceiptFilterInput`](crate::input::DeleteReceiptFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -2786,6 +2802,7 @@ impl DeleteReceiptFilterInput {
 pub mod delete_receipt_rule_input {
 
     /// A builder for [`DeleteReceiptRuleInput`](crate::input::DeleteReceiptRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -2960,6 +2977,7 @@ impl DeleteReceiptRuleInput {
 pub mod delete_receipt_rule_set_input {
 
     /// A builder for [`DeleteReceiptRuleSetInput`](crate::input::DeleteReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -3124,6 +3142,7 @@ impl DeleteReceiptRuleSetInput {
 pub mod delete_template_input {
 
     /// A builder for [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -3284,6 +3303,7 @@ impl DeleteTemplateInput {
 pub mod delete_verified_email_address_input {
 
     /// A builder for [`DeleteVerifiedEmailAddressInput`](crate::input::DeleteVerifiedEmailAddressInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -3446,6 +3466,7 @@ impl DeleteVerifiedEmailAddressInput {
 pub mod describe_active_receipt_rule_set_input {
 
     /// A builder for [`DescribeActiveReceiptRuleSetInput`](crate::input::DescribeActiveReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3584,6 +3605,7 @@ impl DescribeActiveReceiptRuleSetInput {
 pub mod describe_configuration_set_input {
 
     /// A builder for [`DescribeConfigurationSetInput`](crate::input::DescribeConfigurationSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -3773,6 +3795,7 @@ impl DescribeConfigurationSetInput {
 pub mod describe_receipt_rule_input {
 
     /// A builder for [`DescribeReceiptRuleInput`](crate::input::DescribeReceiptRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -3947,6 +3970,7 @@ impl DescribeReceiptRuleInput {
 pub mod describe_receipt_rule_set_input {
 
     /// A builder for [`DescribeReceiptRuleSetInput`](crate::input::DescribeReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -4111,6 +4135,7 @@ impl DescribeReceiptRuleSetInput {
 pub mod get_account_sending_enabled_input {
 
     /// A builder for [`GetAccountSendingEnabledInput`](crate::input::GetAccountSendingEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4251,6 +4276,7 @@ impl GetAccountSendingEnabledInput {
 pub mod get_custom_verification_email_template_input {
 
     /// A builder for [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -4413,6 +4439,7 @@ impl GetCustomVerificationEmailTemplateInput {
 pub mod get_identity_dkim_attributes_input {
 
     /// A builder for [`GetIdentityDkimAttributesInput`](crate::input::GetIdentityDkimAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4583,6 +4610,7 @@ impl GetIdentityDkimAttributesInput {
 pub mod get_identity_mail_from_domain_attributes_input {
 
     /// A builder for [`GetIdentityMailFromDomainAttributesInput`](crate::input::GetIdentityMailFromDomainAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4751,6 +4779,7 @@ impl GetIdentityMailFromDomainAttributesInput {
 pub mod get_identity_notification_attributes_input {
 
     /// A builder for [`GetIdentityNotificationAttributesInput`](crate::input::GetIdentityNotificationAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4919,6 +4948,7 @@ impl GetIdentityNotificationAttributesInput {
 pub mod get_identity_policies_input {
 
     /// A builder for [`GetIdentityPoliciesInput`](crate::input::GetIdentityPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -5101,6 +5131,7 @@ impl GetIdentityPoliciesInput {
 pub mod get_identity_verification_attributes_input {
 
     /// A builder for [`GetIdentityVerificationAttributesInput`](crate::input::GetIdentityVerificationAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5269,6 +5300,7 @@ impl GetIdentityVerificationAttributesInput {
 pub mod get_send_quota_input {
 
     /// A builder for [`GetSendQuotaInput`](crate::input::GetSendQuotaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5405,6 +5437,7 @@ impl GetSendQuotaInput {
 pub mod get_send_statistics_input {
 
     /// A builder for [`GetSendStatisticsInput`](crate::input::GetSendStatisticsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5543,6 +5576,7 @@ impl GetSendStatisticsInput {
 pub mod get_template_input {
 
     /// A builder for [`GetTemplateInput`](crate::input::GetTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -5703,6 +5737,7 @@ impl GetTemplateInput {
 pub mod list_configuration_sets_input {
 
     /// A builder for [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5876,6 +5911,7 @@ impl ListConfigurationSetsInput {
 pub mod list_custom_verification_email_templates_input {
 
     /// A builder for [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6047,6 +6083,7 @@ impl ListCustomVerificationEmailTemplatesInput {
 pub mod list_identities_input {
 
     /// A builder for [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
@@ -6231,6 +6268,7 @@ impl ListIdentitiesInput {
 pub mod list_identity_policies_input {
 
     /// A builder for [`ListIdentityPoliciesInput`](crate::input::ListIdentityPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -6394,6 +6432,7 @@ impl ListIdentityPoliciesInput {
 pub mod list_receipt_filters_input {
 
     /// A builder for [`ListReceiptFiltersInput`](crate::input::ListReceiptFiltersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6532,6 +6571,7 @@ impl ListReceiptFiltersInput {
 pub mod list_receipt_rule_sets_input {
 
     /// A builder for [`ListReceiptRuleSetsInput`](crate::input::ListReceiptRuleSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6693,6 +6733,7 @@ impl ListReceiptRuleSetsInput {
 pub mod list_templates_input {
 
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6862,6 +6903,7 @@ impl ListTemplatesInput {
 pub mod list_verified_email_addresses_input {
 
     /// A builder for [`ListVerifiedEmailAddressesInput`](crate::input::ListVerifiedEmailAddressesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7000,6 +7042,7 @@ impl ListVerifiedEmailAddressesInput {
 pub mod put_configuration_set_delivery_options_input {
 
     /// A builder for [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -7177,6 +7220,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
 pub mod put_identity_policy_input {
 
     /// A builder for [`PutIdentityPolicyInput`](crate::input::PutIdentityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -7366,6 +7410,7 @@ impl PutIdentityPolicyInput {
 pub mod reorder_receipt_rule_set_input {
 
     /// A builder for [`ReorderReceiptRuleSetInput`](crate::input::ReorderReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -7551,6 +7596,7 @@ impl ReorderReceiptRuleSetInput {
 pub mod send_bounce_input {
 
     /// A builder for [`SendBounceInput`](crate::input::SendBounceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) original_message_id: std::option::Option<std::string::String>,
@@ -7793,6 +7839,7 @@ impl SendBounceInput {
 pub mod send_bulk_templated_email_input {
 
     /// A builder for [`SendBulkTemplatedEmailInput`](crate::input::SendBulkTemplatedEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -8127,6 +8174,7 @@ impl SendBulkTemplatedEmailInput {
 pub mod send_custom_verification_email_input {
 
     /// A builder for [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -8319,6 +8367,7 @@ impl SendCustomVerificationEmailInput {
 pub mod send_email_input {
 
     /// A builder for [`SendEmailInput`](crate::input::SendEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -8611,6 +8660,7 @@ impl SendEmailInput {
 pub mod send_raw_email_input {
 
     /// A builder for [`SendRawEmailInput`](crate::input::SendRawEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -8929,6 +8979,7 @@ impl SendRawEmailInput {
 pub mod send_templated_email_input {
 
     /// A builder for [`SendTemplatedEmailInput`](crate::input::SendTemplatedEmailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -9252,6 +9303,7 @@ impl SendTemplatedEmailInput {
 pub mod set_active_receipt_rule_set_input {
 
     /// A builder for [`SetActiveReceiptRuleSetInput`](crate::input::SetActiveReceiptRuleSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -9416,6 +9468,7 @@ impl SetActiveReceiptRuleSetInput {
 pub mod set_identity_dkim_enabled_input {
 
     /// A builder for [`SetIdentityDkimEnabledInput`](crate::input::SetIdentityDkimEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -9589,6 +9642,7 @@ impl SetIdentityDkimEnabledInput {
 pub mod set_identity_feedback_forwarding_enabled_input {
 
     /// A builder for [`SetIdentityFeedbackForwardingEnabledInput`](crate::input::SetIdentityFeedbackForwardingEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -9760,6 +9814,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
 pub mod set_identity_headers_in_notifications_enabled_input {
 
     /// A builder for [`SetIdentityHeadersInNotificationsEnabledInput`](crate::input::SetIdentityHeadersInNotificationsEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -9950,6 +10005,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
 pub mod set_identity_mail_from_domain_input {
 
     /// A builder for [`SetIdentityMailFromDomainInput`](crate::input::SetIdentityMailFromDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -10141,6 +10197,7 @@ impl SetIdentityMailFromDomainInput {
 pub mod set_identity_notification_topic_input {
 
     /// A builder for [`SetIdentityNotificationTopicInput`](crate::input::SetIdentityNotificationTopicInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -10333,6 +10390,7 @@ impl SetIdentityNotificationTopicInput {
 pub mod set_receipt_rule_position_input {
 
     /// A builder for [`SetReceiptRulePositionInput`](crate::input::SetReceiptRulePositionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -10521,6 +10579,7 @@ impl SetReceiptRulePositionInput {
 pub mod test_render_template_input {
 
     /// A builder for [`TestRenderTemplateInput`](crate::input::TestRenderTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -10698,6 +10757,7 @@ impl TestRenderTemplateInput {
 pub mod update_account_sending_enabled_input {
 
     /// A builder for [`UpdateAccountSendingEnabledInput`](crate::input::UpdateAccountSendingEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -10857,6 +10917,7 @@ impl UpdateAccountSendingEnabledInput {
 pub mod update_configuration_set_event_destination_input {
 
     /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -11034,6 +11095,7 @@ impl UpdateConfigurationSetEventDestinationInput {
 pub mod update_configuration_set_reputation_metrics_enabled_input {
 
     /// A builder for [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::input::UpdateConfigurationSetReputationMetricsEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -11211,6 +11273,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
 pub mod update_configuration_set_sending_enabled_input {
 
     /// A builder for [`UpdateConfigurationSetSendingEnabledInput`](crate::input::UpdateConfigurationSetSendingEnabledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -11385,6 +11448,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
 pub mod update_configuration_set_tracking_options_input {
 
     /// A builder for [`UpdateConfigurationSetTrackingOptionsInput`](crate::input::UpdateConfigurationSetTrackingOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -11564,6 +11628,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
 pub mod update_custom_verification_email_template_input {
 
     /// A builder for [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -11801,6 +11866,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
 pub mod update_receipt_rule_input {
 
     /// A builder for [`UpdateReceiptRuleInput`](crate::input::UpdateReceiptRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
@@ -11975,6 +12041,7 @@ impl UpdateReceiptRuleInput {
 pub mod update_template_input {
 
     /// A builder for [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<crate::model::Template>,
@@ -12132,6 +12199,7 @@ impl UpdateTemplateInput {
 pub mod verify_domain_dkim_input {
 
     /// A builder for [`VerifyDomainDkimInput`](crate::input::VerifyDomainDkimInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -12291,6 +12359,7 @@ impl VerifyDomainDkimInput {
 pub mod verify_domain_identity_input {
 
     /// A builder for [`VerifyDomainIdentityInput`](crate::input::VerifyDomainIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -12452,6 +12521,7 @@ impl VerifyDomainIdentityInput {
 pub mod verify_email_address_input {
 
     /// A builder for [`VerifyEmailAddressInput`](crate::input::VerifyEmailAddressInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -12614,6 +12684,7 @@ impl VerifyEmailAddressInput {
 pub mod verify_email_identity_input {
 
     /// A builder for [`VerifyEmailIdentityInput`](crate::input::VerifyEmailIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,

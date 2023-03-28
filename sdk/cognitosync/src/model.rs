@@ -53,6 +53,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -198,6 +199,7 @@ impl RecordPatch {
 pub mod record_patch {
 
     /// A builder for [`RecordPatch`](crate::model::RecordPatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) op: std::option::Option<crate::model::Operation>,
@@ -405,6 +407,7 @@ impl CognitoStreams {
 pub mod cognito_streams {
 
     /// A builder for [`CognitoStreams`](crate::model::CognitoStreams).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -581,6 +584,7 @@ impl PushSync {
 pub mod push_sync {
 
     /// A builder for [`PushSync`](crate::model::PushSync).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -771,6 +775,7 @@ impl IdentityPoolUsage {
 pub mod identity_pool_usage {
 
     /// A builder for [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -903,6 +908,7 @@ impl Dataset {
 pub mod dataset {
 
     /// A builder for [`Dataset`](crate::model::Dataset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
@@ -1162,6 +1168,7 @@ impl IdentityUsage {
 pub mod identity_usage {
 
     /// A builder for [`IdentityUsage`](crate::model::IdentityUsage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,

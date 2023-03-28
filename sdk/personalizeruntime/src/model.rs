@@ -33,6 +33,7 @@ impl PredictedItem {
 pub mod predicted_item {
 
     /// A builder for [`PredictedItem`](crate::model::PredictedItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_id: std::option::Option<std::string::String>,
@@ -137,6 +138,7 @@ impl Promotion {
 pub mod promotion {
 
     /// A builder for [`Promotion`](crate::model::Promotion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

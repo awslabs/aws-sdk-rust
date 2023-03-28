@@ -7,16 +7,15 @@ pub fn add_headers_abort_document_version_upload(
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -31,16 +30,15 @@ pub fn add_headers_activate_user(
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -55,16 +53,15 @@ pub fn add_headers_add_resource_permissions(
         let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -79,16 +76,15 @@ pub fn add_headers_create_comment(
         let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -103,16 +99,15 @@ pub fn add_headers_create_custom_metadata(
         let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -127,16 +122,15 @@ pub fn add_headers_create_folder(
         let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -151,16 +145,15 @@ pub fn add_headers_create_labels(
         let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -175,16 +168,15 @@ pub fn add_headers_create_user(
         let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -199,16 +191,15 @@ pub fn add_headers_deactivate_user(
         let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -223,16 +214,15 @@ pub fn add_headers_delete_comment(
         let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -247,16 +237,15 @@ pub fn add_headers_delete_custom_metadata(
         let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -271,16 +260,15 @@ pub fn add_headers_delete_document(
         let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -295,16 +283,15 @@ pub fn add_headers_delete_document_version(
         let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -319,16 +306,15 @@ pub fn add_headers_delete_folder(
         let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -343,16 +329,15 @@ pub fn add_headers_delete_folder_contents(
         let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -367,16 +352,15 @@ pub fn add_headers_delete_labels(
         let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -391,16 +375,15 @@ pub fn add_headers_delete_user(
         let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -415,16 +398,15 @@ pub fn add_headers_describe_activities(
         let formatted_36 = inner_35.as_str();
         if !formatted_36.is_empty() {
             let header_value = formatted_36;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -439,16 +421,15 @@ pub fn add_headers_describe_comments(
         let formatted_38 = inner_37.as_str();
         if !formatted_38.is_empty() {
             let header_value = formatted_38;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -463,16 +444,15 @@ pub fn add_headers_describe_document_versions(
         let formatted_40 = inner_39.as_str();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -487,16 +467,15 @@ pub fn add_headers_describe_folder_contents(
         let formatted_42 = inner_41.as_str();
         if !formatted_42.is_empty() {
             let header_value = formatted_42;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -511,16 +490,15 @@ pub fn add_headers_describe_groups(
         let formatted_44 = inner_43.as_str();
         if !formatted_44.is_empty() {
             let header_value = formatted_44;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -535,16 +513,15 @@ pub fn add_headers_describe_resource_permissions(
         let formatted_46 = inner_45.as_str();
         if !formatted_46.is_empty() {
             let header_value = formatted_46;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -559,16 +536,15 @@ pub fn add_headers_describe_root_folders(
         let formatted_48 = inner_47.as_str();
         if !formatted_48.is_empty() {
             let header_value = formatted_48;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -583,16 +559,15 @@ pub fn add_headers_describe_users(
         let formatted_50 = inner_49.as_str();
         if !formatted_50.is_empty() {
             let header_value = formatted_50;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -607,16 +582,15 @@ pub fn add_headers_get_current_user(
         let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -631,16 +605,15 @@ pub fn add_headers_get_document(
         let formatted_54 = inner_53.as_str();
         if !formatted_54.is_empty() {
             let header_value = formatted_54;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -655,16 +628,15 @@ pub fn add_headers_get_document_path(
         let formatted_56 = inner_55.as_str();
         if !formatted_56.is_empty() {
             let header_value = formatted_56;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -679,16 +651,15 @@ pub fn add_headers_get_document_version(
         let formatted_58 = inner_57.as_str();
         if !formatted_58.is_empty() {
             let header_value = formatted_58;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -703,16 +674,15 @@ pub fn add_headers_get_folder(
         let formatted_60 = inner_59.as_str();
         if !formatted_60.is_empty() {
             let header_value = formatted_60;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -727,16 +697,15 @@ pub fn add_headers_get_folder_path(
         let formatted_62 = inner_61.as_str();
         if !formatted_62.is_empty() {
             let header_value = formatted_62;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -751,16 +720,15 @@ pub fn add_headers_get_resources(
         let formatted_64 = inner_63.as_str();
         if !formatted_64.is_empty() {
             let header_value = formatted_64;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -775,16 +743,15 @@ pub fn add_headers_initiate_document_version_upload(
         let formatted_66 = inner_65.as_str();
         if !formatted_66.is_empty() {
             let header_value = formatted_66;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -799,16 +766,15 @@ pub fn add_headers_remove_all_resource_permissions(
         let formatted_68 = inner_67.as_str();
         if !formatted_68.is_empty() {
             let header_value = formatted_68;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -823,16 +789,15 @@ pub fn add_headers_remove_resource_permission(
         let formatted_70 = inner_69.as_str();
         if !formatted_70.is_empty() {
             let header_value = formatted_70;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -847,16 +812,15 @@ pub fn add_headers_restore_document_versions(
         let formatted_72 = inner_71.as_str();
         if !formatted_72.is_empty() {
             let header_value = formatted_72;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -871,16 +835,15 @@ pub fn add_headers_update_document(
         let formatted_74 = inner_73.as_str();
         if !formatted_74.is_empty() {
             let header_value = formatted_74;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -895,16 +858,15 @@ pub fn add_headers_update_document_version(
         let formatted_76 = inner_75.as_str();
         if !formatted_76.is_empty() {
             let header_value = formatted_76;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -919,16 +881,15 @@ pub fn add_headers_update_folder(
         let formatted_78 = inner_77.as_str();
         if !formatted_78.is_empty() {
             let header_value = formatted_78;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }
@@ -943,16 +904,15 @@ pub fn add_headers_update_user(
         let formatted_80 = inner_79.as_str();
         if !formatted_80.is_empty() {
             let header_value = formatted_80;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "authentication_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "authentication_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("Authentication", header_value);
         }
     }

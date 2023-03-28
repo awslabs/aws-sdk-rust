@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_link_input {
 
     /// A builder for [`CreateLinkInput`](crate::input::CreateLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_template: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl CreateLinkInput {
 pub mod create_sink_input {
 
     /// A builder for [`CreateSinkInput`](crate::input::CreateSinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -438,6 +440,7 @@ impl CreateSinkInput {
 pub mod delete_link_input {
 
     /// A builder for [`DeleteLinkInput`](crate::input::DeleteLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -595,6 +598,7 @@ impl DeleteLinkInput {
 pub mod delete_sink_input {
 
     /// A builder for [`DeleteSinkInput`](crate::input::DeleteSinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -752,6 +756,7 @@ impl DeleteSinkInput {
 pub mod get_link_input {
 
     /// A builder for [`GetLinkInput`](crate::input::GetLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -904,6 +909,7 @@ impl GetLinkInput {
 pub mod get_sink_input {
 
     /// A builder for [`GetSinkInput`](crate::input::GetSinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1056,6 +1062,7 @@ impl GetSinkInput {
 pub mod get_sink_policy_input {
 
     /// A builder for [`GetSinkPolicyInput`](crate::input::GetSinkPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sink_identifier: std::option::Option<std::string::String>,
@@ -1216,6 +1223,7 @@ impl GetSinkPolicyInput {
 pub mod list_attached_links_input {
 
     /// A builder for [`ListAttachedLinksInput`](crate::input::ListAttachedLinksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1402,6 +1410,7 @@ impl ListAttachedLinksInput {
 pub mod list_links_input {
 
     /// A builder for [`ListLinksInput`](crate::input::ListLinksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1569,6 +1578,7 @@ impl ListLinksInput {
 pub mod list_sinks_input {
 
     /// A builder for [`ListSinksInput`](crate::input::ListSinksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -1736,6 +1746,7 @@ impl ListSinksInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1911,6 +1922,7 @@ impl ListTagsForResourceInput {
 pub mod put_sink_policy_input {
 
     /// A builder for [`PutSinkPolicyInput`](crate::input::PutSinkPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sink_identifier: std::option::Option<std::string::String>,
@@ -2087,6 +2099,7 @@ impl PutSinkPolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2299,6 +2312,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2507,6 +2521,7 @@ impl UntagResourceInput {
 pub mod update_link_input {
 
     /// A builder for [`UpdateLinkInput`](crate::input::UpdateLinkInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,

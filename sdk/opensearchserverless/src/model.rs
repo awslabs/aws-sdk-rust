@@ -32,6 +32,7 @@ impl VpcEndpointSummary {
 pub mod vpc_endpoint_summary {
 
     /// A builder for [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -209,6 +210,7 @@ impl VpcEndpointFilters {
 pub mod vpc_endpoint_filters {
 
     /// A builder for [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VpcEndpointStatus>,
@@ -274,6 +276,7 @@ impl CreateVpcEndpointDetail {
 pub mod create_vpc_endpoint_detail {
 
     /// A builder for [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -363,6 +366,7 @@ impl DeleteVpcEndpointDetail {
 pub mod delete_vpc_endpoint_detail {
 
     /// A builder for [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -473,6 +477,7 @@ impl SecurityPolicySummary {
 pub mod security_policy_summary {
 
     /// A builder for [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -721,6 +726,7 @@ impl SecurityPolicyDetail {
 pub mod security_policy_detail {
 
     /// A builder for [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -885,6 +891,7 @@ impl SecurityConfigSummary {
 pub mod security_config_summary {
 
     /// A builder for [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1128,6 +1135,7 @@ impl SecurityConfigDetail {
 pub mod security_config_detail {
 
     /// A builder for [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1278,6 +1286,7 @@ impl SamlConfigOptions {
 pub mod saml_config_options {
 
     /// A builder for [`SamlConfigOptions`](crate::model::SamlConfigOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<std::string::String>,
@@ -1389,6 +1398,7 @@ impl CollectionSummary {
 pub mod collection_summary {
 
     /// A builder for [`CollectionSummary`](crate::model::CollectionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1583,6 +1593,7 @@ impl CollectionFilters {
 pub mod collection_filters {
 
     /// A builder for [`CollectionFilters`](crate::model::CollectionFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1702,6 +1713,7 @@ impl CreateCollectionDetail {
 pub mod create_collection_detail {
 
     /// A builder for [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1949,6 +1961,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2023,6 +2036,7 @@ impl DeleteCollectionDetail {
 pub mod delete_collection_detail {
 
     /// A builder for [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2147,6 +2161,7 @@ impl UpdateCollectionDetail {
 pub mod update_collection_detail {
 
     /// A builder for [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2320,6 +2335,7 @@ impl AccessPolicySummary {
 pub mod access_policy_summary {
 
     /// A builder for [`AccessPolicySummary`](crate::model::AccessPolicySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -2561,6 +2577,7 @@ impl AccessPolicyDetail {
 pub mod access_policy_detail {
 
     /// A builder for [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -2725,6 +2742,7 @@ impl UpdateVpcEndpointDetail {
 pub mod update_vpc_endpoint_detail {
 
     /// A builder for [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2854,6 +2872,7 @@ impl AccountSettingsDetail {
 pub mod account_settings_detail {
 
     /// A builder for [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_limits: std::option::Option<crate::model::CapacityLimits>,
@@ -2912,6 +2931,7 @@ impl CapacityLimits {
 pub mod capacity_limits {
 
     /// A builder for [`CapacityLimits`](crate::model::CapacityLimits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_indexing_capacity_in_ocu: std::option::Option<i32>,
@@ -2972,6 +2992,7 @@ impl SecurityConfigStats {
 pub mod security_config_stats {
 
     /// A builder for [`SecurityConfigStats`](crate::model::SecurityConfigStats).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_config_count: std::option::Option<i64>,
@@ -3027,6 +3048,7 @@ impl SecurityPolicyStats {
 pub mod security_policy_stats {
 
     /// A builder for [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_policy_count: std::option::Option<i64>,
@@ -3087,6 +3109,7 @@ impl AccessPolicyStats {
 pub mod access_policy_stats {
 
     /// A builder for [`AccessPolicyStats`](crate::model::AccessPolicyStats).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_policy_count: std::option::Option<i64>,
@@ -3149,6 +3172,7 @@ impl VpcEndpointErrorDetail {
 pub mod vpc_endpoint_error_detail {
 
     /// A builder for [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3266,6 +3290,7 @@ impl VpcEndpointDetail {
 pub mod vpc_endpoint_detail {
 
     /// A builder for [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3428,6 +3453,7 @@ impl CollectionErrorDetail {
 pub mod collection_error_detail {
 
     /// A builder for [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3585,6 +3611,7 @@ impl CollectionDetail {
 pub mod collection_detail {
 
     /// A builder for [`CollectionDetail`](crate::model::CollectionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

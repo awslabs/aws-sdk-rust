@@ -52,6 +52,7 @@ impl StartDeviceAuthorizationOutput {
 pub mod start_device_authorization_output {
 
     /// A builder for [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_code: std::option::Option<std::string::String>,
@@ -201,6 +202,7 @@ impl RegisterClientOutput {
 pub mod register_client_output {
 
     /// A builder for [`RegisterClientOutput`](crate::output::RegisterClientOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -350,6 +352,7 @@ impl CreateTokenOutput {
 pub mod create_token_output {
 
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_tracker_consumer_input {
 
     /// A builder for [`AssociateTrackerConsumerInput`](crate::input::AssociateTrackerConsumerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -210,6 +211,7 @@ impl AssociateTrackerConsumerInput {
 pub mod batch_delete_device_position_history_input {
 
     /// A builder for [`BatchDeleteDevicePositionHistoryInput`](crate::input::BatchDeleteDevicePositionHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -422,6 +424,7 @@ impl BatchDeleteDevicePositionHistoryInput {
 pub mod batch_delete_geofence_input {
 
     /// A builder for [`BatchDeleteGeofenceInput`](crate::input::BatchDeleteGeofenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -631,6 +634,7 @@ impl BatchDeleteGeofenceInput {
 pub mod batch_evaluate_geofences_input {
 
     /// A builder for [`BatchEvaluateGeofencesInput`](crate::input::BatchEvaluateGeofencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -846,6 +850,7 @@ impl BatchEvaluateGeofencesInput {
 pub mod batch_get_device_position_input {
 
     /// A builder for [`BatchGetDevicePositionInput`](crate::input::BatchGetDevicePositionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -1060,6 +1065,7 @@ impl BatchGetDevicePositionInput {
 pub mod batch_put_geofence_input {
 
     /// A builder for [`BatchPutGeofenceInput`](crate::input::BatchPutGeofenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -1270,6 +1276,7 @@ impl BatchPutGeofenceInput {
 pub mod batch_update_device_position_input {
 
     /// A builder for [`BatchUpdateDevicePositionInput`](crate::input::BatchUpdateDevicePositionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -1478,6 +1485,7 @@ impl BatchUpdateDevicePositionInput {
 pub mod calculate_route_input {
 
     /// A builder for [`CalculateRouteInput`](crate::input::CalculateRouteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -1935,6 +1943,7 @@ impl CalculateRouteInput {
 pub mod calculate_route_matrix_input {
 
     /// A builder for [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -2322,6 +2331,7 @@ impl CalculateRouteMatrixInput {
 pub mod create_geofence_collection_input {
 
     /// A builder for [`CreateGeofenceCollectionInput`](crate::input::CreateGeofenceCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -2613,6 +2623,7 @@ impl CreateGeofenceCollectionInput {
 pub mod create_map_input {
 
     /// A builder for [`CreateMapInput`](crate::input::CreateMapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -2881,6 +2892,7 @@ impl CreateMapInput {
 pub mod create_place_index_input {
 
     /// A builder for [`CreatePlaceIndexInput`](crate::input::CreatePlaceIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -3191,6 +3203,7 @@ impl CreatePlaceIndexInput {
 pub mod create_route_calculator_input {
 
     /// A builder for [`CreateRouteCalculatorInput`](crate::input::CreateRouteCalculatorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -3489,6 +3502,7 @@ impl CreateRouteCalculatorInput {
 pub mod create_tracker_input {
 
     /// A builder for [`CreateTrackerInput`](crate::input::CreateTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -3802,6 +3816,7 @@ impl CreateTrackerInput {
 pub mod delete_geofence_collection_input {
 
     /// A builder for [`DeleteGeofenceCollectionInput`](crate::input::DeleteGeofenceCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -3976,6 +3991,7 @@ impl DeleteGeofenceCollectionInput {
 pub mod delete_map_input {
 
     /// A builder for [`DeleteMapInput`](crate::input::DeleteMapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -4139,6 +4155,7 @@ impl DeleteMapInput {
 pub mod delete_place_index_input {
 
     /// A builder for [`DeletePlaceIndexInput`](crate::input::DeletePlaceIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -4310,6 +4327,7 @@ impl DeletePlaceIndexInput {
 pub mod delete_route_calculator_input {
 
     /// A builder for [`DeleteRouteCalculatorInput`](crate::input::DeleteRouteCalculatorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -4484,6 +4502,7 @@ impl DeleteRouteCalculatorInput {
 pub mod delete_tracker_input {
 
     /// A builder for [`DeleteTrackerInput`](crate::input::DeleteTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -4653,6 +4672,7 @@ impl DeleteTrackerInput {
 pub mod describe_geofence_collection_input {
 
     /// A builder for [`DescribeGeofenceCollectionInput`](crate::input::DescribeGeofenceCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -4827,6 +4847,7 @@ impl DescribeGeofenceCollectionInput {
 pub mod describe_map_input {
 
     /// A builder for [`DescribeMapInput`](crate::input::DescribeMapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -4992,6 +5013,7 @@ impl DescribeMapInput {
 pub mod describe_place_index_input {
 
     /// A builder for [`DescribePlaceIndexInput`](crate::input::DescribePlaceIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -5163,6 +5185,7 @@ impl DescribePlaceIndexInput {
 pub mod describe_route_calculator_input {
 
     /// A builder for [`DescribeRouteCalculatorInput`](crate::input::DescribeRouteCalculatorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -5337,6 +5360,7 @@ impl DescribeRouteCalculatorInput {
 pub mod describe_tracker_input {
 
     /// A builder for [`DescribeTrackerInput`](crate::input::DescribeTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -5506,6 +5530,7 @@ impl DescribeTrackerInput {
 pub mod disassociate_tracker_consumer_input {
 
     /// A builder for [`DisassociateTrackerConsumerInput`](crate::input::DisassociateTrackerConsumerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -5715,6 +5740,7 @@ impl DisassociateTrackerConsumerInput {
 pub mod get_device_position_input {
 
     /// A builder for [`GetDevicePositionInput`](crate::input::GetDevicePositionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -5918,6 +5944,7 @@ impl GetDevicePositionInput {
 pub mod get_device_position_history_input {
 
     /// A builder for [`GetDevicePositionHistoryInput`](crate::input::GetDevicePositionHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -6211,6 +6238,7 @@ impl GetDevicePositionHistoryInput {
 pub mod get_geofence_input {
 
     /// A builder for [`GetGeofenceInput`](crate::input::GetGeofenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -6415,6 +6443,7 @@ impl GetGeofenceInput {
 pub mod get_map_glyphs_input {
 
     /// A builder for [`GetMapGlyphsInput`](crate::input::GetMapGlyphsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -6697,6 +6726,7 @@ impl GetMapGlyphsInput {
 pub mod get_map_sprites_input {
 
     /// A builder for [`GetMapSpritesInput`](crate::input::GetMapSpritesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -6916,6 +6946,7 @@ impl GetMapSpritesInput {
 pub mod get_map_style_descriptor_input {
 
     /// A builder for [`GetMapStyleDescriptorInput`](crate::input::GetMapStyleDescriptorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -7087,6 +7118,7 @@ impl GetMapStyleDescriptorInput {
 pub mod get_map_tile_input {
 
     /// A builder for [`GetMapTileInput`](crate::input::GetMapTileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -7352,6 +7384,7 @@ impl GetMapTileInput {
 pub mod get_place_input {
 
     /// A builder for [`GetPlaceInput`](crate::input::GetPlaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -7583,6 +7616,7 @@ impl GetPlaceInput {
 pub mod list_device_positions_input {
 
     /// A builder for [`ListDevicePositionsInput`](crate::input::ListDevicePositionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -7796,6 +7830,7 @@ impl ListDevicePositionsInput {
 pub mod list_geofence_collections_input {
 
     /// A builder for [`ListGeofenceCollectionsInput`](crate::input::ListGeofenceCollectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -7976,6 +8011,7 @@ impl ListGeofenceCollectionsInput {
 pub mod list_geofences_input {
 
     /// A builder for [`ListGeofencesInput`](crate::input::ListGeofencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -8190,6 +8226,7 @@ impl ListGeofencesInput {
 pub mod list_maps_input {
 
     /// A builder for [`ListMapsInput`](crate::input::ListMapsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -8362,6 +8399,7 @@ impl ListMapsInput {
 pub mod list_place_indexes_input {
 
     /// A builder for [`ListPlaceIndexesInput`](crate::input::ListPlaceIndexesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -8539,6 +8577,7 @@ impl ListPlaceIndexesInput {
 pub mod list_route_calculators_input {
 
     /// A builder for [`ListRouteCalculatorsInput`](crate::input::ListRouteCalculatorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -8718,6 +8757,7 @@ impl ListRouteCalculatorsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8891,6 +8931,7 @@ impl ListTagsForResourceInput {
 pub mod list_tracker_consumers_input {
 
     /// A builder for [`ListTrackerConsumersInput`](crate::input::ListTrackerConsumersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -9106,6 +9147,7 @@ impl ListTrackerConsumersInput {
 pub mod list_trackers_input {
 
     /// A builder for [`ListTrackersInput`](crate::input::ListTrackersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -9281,6 +9323,7 @@ impl ListTrackersInput {
 pub mod put_geofence_input {
 
     /// A builder for [`PutGeofenceInput`](crate::input::PutGeofenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -9518,6 +9561,7 @@ impl PutGeofenceInput {
 pub mod search_place_index_for_position_input {
 
     /// A builder for [`SearchPlaceIndexForPositionInput`](crate::input::SearchPlaceIndexForPositionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -9769,6 +9813,7 @@ impl SearchPlaceIndexForPositionInput {
 pub mod search_place_index_for_suggestions_input {
 
     /// A builder for [`SearchPlaceIndexForSuggestionsInput`](crate::input::SearchPlaceIndexForSuggestionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -10092,6 +10137,7 @@ impl SearchPlaceIndexForSuggestionsInput {
 pub mod search_place_index_for_text_input {
 
     /// A builder for [`SearchPlaceIndexForTextInput`](crate::input::SearchPlaceIndexForTextInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -10417,6 +10463,7 @@ impl SearchPlaceIndexForTextInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10651,6 +10698,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10861,6 +10909,7 @@ impl UntagResourceInput {
 pub mod update_geofence_collection_input {
 
     /// A builder for [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -11103,6 +11152,7 @@ impl UpdateGeofenceCollectionInput {
 pub mod update_map_input {
 
     /// A builder for [`UpdateMapInput`](crate::input::UpdateMapInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -11315,6 +11365,7 @@ impl UpdateMapInput {
 pub mod update_place_index_input {
 
     /// A builder for [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -11554,6 +11605,7 @@ impl UpdatePlaceIndexInput {
 pub mod update_route_calculator_input {
 
     /// A builder for [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -11779,6 +11831,7 @@ impl UpdateRouteCalculatorInput {
 pub mod update_tracker_input {
 
     /// A builder for [`UpdateTrackerInput`](crate::input::UpdateTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,

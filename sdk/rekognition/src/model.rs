@@ -114,6 +114,7 @@ impl StreamProcessorDataSharingPreference {
 pub mod stream_processor_data_sharing_preference {
 
     /// A builder for [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in: std::option::Option<bool>,
@@ -170,6 +171,7 @@ impl RegionOfInterest {
 pub mod region_of_interest {
 
     /// A builder for [`RegionOfInterest`](crate::model::RegionOfInterest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -250,6 +252,7 @@ impl Point {
 pub mod point {
 
     /// A builder for [`Point`](crate::model::Point).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) x: std::option::Option<f32>,
@@ -335,6 +338,7 @@ impl BoundingBox {
 pub mod bounding_box {
 
     /// A builder for [`BoundingBox`](crate::model::BoundingBox).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) width: std::option::Option<f32>,
@@ -422,6 +426,7 @@ impl StreamProcessorSettingsForUpdate {
 pub mod stream_processor_settings_for_update {
 
     /// A builder for [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connected_home_for_update:
@@ -484,6 +489,7 @@ impl ConnectedHomeSettingsForUpdate {
 pub mod connected_home_settings_for_update {
 
     /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -555,6 +561,7 @@ impl DatasetChanges {
 pub mod dataset_changes {
 
     /// A builder for [`DatasetChanges`](crate::model::DatasetChanges).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ground_truth: std::option::Option<aws_smithy_types::Blob>,
@@ -770,6 +777,7 @@ impl StartTextDetectionFilters {
 pub mod start_text_detection_filters {
 
     /// A builder for [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) word_filter: std::option::Option<crate::model::DetectionFilter>,
@@ -857,6 +865,7 @@ impl DetectionFilter {
 pub mod detection_filter {
 
     /// A builder for [`DetectionFilter`](crate::model::DetectionFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_confidence: std::option::Option<f32>,
@@ -936,6 +945,7 @@ impl NotificationChannel {
 pub mod notification_channel {
 
     /// A builder for [`NotificationChannel`](crate::model::NotificationChannel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -999,6 +1009,7 @@ impl Video {
 pub mod video {
 
     /// A builder for [`Video`](crate::model::Video).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
@@ -1063,6 +1074,7 @@ impl S3Object {
 pub mod s3_object {
 
     /// A builder for [`S3Object`](crate::model::S3Object).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1135,6 +1147,7 @@ impl StreamProcessingStopSelector {
 pub mod stream_processing_stop_selector {
 
     /// A builder for [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_duration_in_seconds: std::option::Option<i64>,
@@ -1186,6 +1199,7 @@ impl StreamProcessingStartSelector {
 pub mod stream_processing_start_selector {
 
     /// A builder for [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kvs_stream_start_selector:
@@ -1248,6 +1262,7 @@ impl KinesisVideoStreamStartSelector {
 pub mod kinesis_video_stream_start_selector {
 
     /// A builder for [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) producer_timestamp: std::option::Option<i64>,
@@ -1410,6 +1425,7 @@ impl StartSegmentDetectionFilters {
 pub mod start_segment_detection_filters {
 
     /// A builder for [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) technical_cue_filter:
@@ -1482,6 +1498,7 @@ impl StartShotDetectionFilter {
 pub mod start_shot_detection_filter {
 
     /// A builder for [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_segment_confidence: std::option::Option<f32>,
@@ -1541,6 +1558,7 @@ impl StartTechnicalCueDetectionFilter {
 pub mod start_technical_cue_detection_filter {
 
     /// A builder for [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_segment_confidence: std::option::Option<f32>,
@@ -1619,6 +1637,7 @@ impl BlackFrame {
 pub mod black_frame {
 
     /// A builder for [`BlackFrame`](crate::model::BlackFrame).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_pixel_threshold: std::option::Option<f32>,
@@ -1685,6 +1704,7 @@ impl LabelDetectionSettings {
 pub mod label_detection_settings {
 
     /// A builder for [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
@@ -1757,6 +1777,7 @@ impl GeneralLabelsSettings {
 pub mod general_labels_settings {
 
     /// A builder for [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_inclusion_filters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2069,6 +2090,7 @@ impl FaceMatch {
 pub mod face_match {
 
     /// A builder for [`FaceMatch`](crate::model::FaceMatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) similarity: std::option::Option<f32>,
@@ -2164,6 +2186,7 @@ impl Face {
 pub mod face {
 
     /// A builder for [`Face`](crate::model::Face).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) face_id: std::option::Option<std::string::String>,
@@ -2399,6 +2422,7 @@ impl Image {
 pub mod image {
 
     /// A builder for [`Image`](crate::model::Image).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
@@ -2603,6 +2627,7 @@ impl ComparedFace {
 pub mod compared_face {
 
     /// A builder for [`ComparedFace`](crate::model::ComparedFace).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -2754,6 +2779,7 @@ impl Smile {
 pub mod smile {
 
     /// A builder for [`Smile`](crate::model::Smile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -2821,6 +2847,7 @@ impl Emotion {
 pub mod emotion {
 
     /// A builder for [`Emotion`](crate::model::Emotion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EmotionName>,
@@ -3023,6 +3050,7 @@ impl ImageQuality {
 pub mod image_quality {
 
     /// A builder for [`ImageQuality`](crate::model::ImageQuality).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) brightness: std::option::Option<f32>,
@@ -3097,6 +3125,7 @@ impl Pose {
 pub mod pose {
 
     /// A builder for [`Pose`](crate::model::Pose).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) roll: std::option::Option<f32>,
@@ -3183,6 +3212,7 @@ impl Landmark {
 pub mod landmark {
 
     /// A builder for [`Landmark`](crate::model::Landmark).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::LandmarkType>,
@@ -3551,6 +3581,7 @@ impl Celebrity {
 pub mod celebrity {
 
     /// A builder for [`Celebrity`](crate::model::Celebrity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3671,6 +3702,7 @@ impl KnownGender {
 pub mod known_gender {
 
     /// A builder for [`KnownGender`](crate::model::KnownGender).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::KnownGenderType>,
@@ -3829,6 +3861,7 @@ impl StreamProcessor {
 pub mod stream_processor {
 
     /// A builder for [`StreamProcessor`](crate::model::StreamProcessor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4042,6 +4075,7 @@ impl ProjectPolicy {
 pub mod project_policy {
 
     /// A builder for [`ProjectPolicy`](crate::model::ProjectPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -4169,6 +4203,7 @@ impl DatasetLabelDescription {
 pub mod dataset_label_description {
 
     /// A builder for [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_name: std::option::Option<std::string::String>,
@@ -4239,6 +4274,7 @@ impl DatasetLabelStats {
 pub mod dataset_label_stats {
 
     /// A builder for [`DatasetLabelStats`](crate::model::DatasetLabelStats).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_count: std::option::Option<i32>,
@@ -4322,6 +4358,7 @@ impl UnindexedFace {
 pub mod unindexed_face {
 
     /// A builder for [`UnindexedFace`](crate::model::UnindexedFace).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reasons: std::option::Option<std::vec::Vec<crate::model::Reason>>,
@@ -4516,6 +4553,7 @@ impl FaceDetail {
 pub mod face_detail {
 
     /// A builder for [`FaceDetail`](crate::model::FaceDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -4772,6 +4810,7 @@ impl MouthOpen {
 pub mod mouth_open {
 
     /// A builder for [`MouthOpen`](crate::model::MouthOpen).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -4839,6 +4878,7 @@ impl EyeOpen {
 pub mod eye_open {
 
     /// A builder for [`EyeOpen`](crate::model::EyeOpen).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -4906,6 +4946,7 @@ impl Mustache {
 pub mod mustache {
 
     /// A builder for [`Mustache`](crate::model::Mustache).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -4973,6 +5014,7 @@ impl Beard {
 pub mod beard {
 
     /// A builder for [`Beard`](crate::model::Beard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -5043,6 +5085,7 @@ impl Gender {
 pub mod gender {
 
     /// A builder for [`Gender`](crate::model::Gender).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::GenderType>,
@@ -5200,6 +5243,7 @@ impl Sunglasses {
 pub mod sunglasses {
 
     /// A builder for [`Sunglasses`](crate::model::Sunglasses).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -5267,6 +5311,7 @@ impl Eyeglasses {
 pub mod eyeglasses {
 
     /// A builder for [`Eyeglasses`](crate::model::Eyeglasses).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -5335,6 +5380,7 @@ impl AgeRange {
 pub mod age_range {
 
     /// A builder for [`AgeRange`](crate::model::AgeRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) low: std::option::Option<i32>,
@@ -5525,6 +5571,7 @@ impl FaceRecord {
 pub mod face_record {
 
     /// A builder for [`FaceRecord`](crate::model::FaceRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) face: std::option::Option<crate::model::Face>,
@@ -5685,6 +5732,7 @@ impl TextDetectionResult {
 pub mod text_detection_result {
 
     /// A builder for [`TextDetectionResult`](crate::model::TextDetectionResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -5786,6 +5834,7 @@ impl TextDetection {
 pub mod text_detection {
 
     /// A builder for [`TextDetection`](crate::model::TextDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detected_text: std::option::Option<std::string::String>,
@@ -5904,6 +5953,7 @@ impl Geometry {
 pub mod geometry {
 
     /// A builder for [`Geometry`](crate::model::Geometry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -6108,6 +6158,7 @@ impl VideoMetadata {
 pub mod video_metadata {
 
     /// A builder for [`VideoMetadata`](crate::model::VideoMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<std::string::String>,
@@ -6423,6 +6474,7 @@ impl SegmentTypeInfo {
 pub mod segment_type_info {
 
     /// A builder for [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SegmentType>,
@@ -6563,6 +6615,7 @@ impl SegmentDetection {
 pub mod segment_detection {
 
     /// A builder for [`SegmentDetection`](crate::model::SegmentDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SegmentType>,
@@ -6765,6 +6818,7 @@ impl ShotSegment {
 pub mod shot_segment {
 
     /// A builder for [`ShotSegment`](crate::model::ShotSegment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i64>,
@@ -6832,6 +6886,7 @@ impl TechnicalCueSegment {
 pub mod technical_cue_segment {
 
     /// A builder for [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::TechnicalCueType>,
@@ -7039,6 +7094,7 @@ impl AudioMetadata {
 pub mod audio_metadata {
 
     /// A builder for [`AudioMetadata`](crate::model::AudioMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<std::string::String>,
@@ -7131,6 +7187,7 @@ impl PersonDetection {
 pub mod person_detection {
 
     /// A builder for [`PersonDetection`](crate::model::PersonDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -7208,6 +7265,7 @@ impl PersonDetail {
 pub mod person_detail {
 
     /// A builder for [`PersonDetail`](crate::model::PersonDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i64>,
@@ -7403,6 +7461,7 @@ impl LabelDetection {
 pub mod label_detection {
 
     /// A builder for [`LabelDetection`](crate::model::LabelDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -7535,6 +7594,7 @@ impl Label {
 pub mod label {
 
     /// A builder for [`Label`](crate::model::Label).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7679,6 +7739,7 @@ impl LabelCategory {
 pub mod label_category {
 
     /// A builder for [`LabelCategory`](crate::model::LabelCategory).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7725,6 +7786,7 @@ impl LabelAlias {
 pub mod label_alias {
 
     /// A builder for [`LabelAlias`](crate::model::LabelAlias).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7771,6 +7833,7 @@ impl Parent {
 pub mod parent {
 
     /// A builder for [`Parent`](crate::model::Parent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7831,6 +7894,7 @@ impl Instance {
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -7957,6 +8021,7 @@ impl DominantColor {
 pub mod dominant_color {
 
     /// A builder for [`DominantColor`](crate::model::DominantColor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) red: std::option::Option<i32>,
@@ -8278,6 +8343,7 @@ impl PersonMatch {
 pub mod person_match {
 
     /// A builder for [`PersonMatch`](crate::model::PersonMatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -8459,6 +8525,7 @@ impl FaceDetection {
 pub mod face_detection {
 
     /// A builder for [`FaceDetection`](crate::model::FaceDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -8526,6 +8593,7 @@ impl ContentModerationDetection {
 pub mod content_moderation_detection {
 
     /// A builder for [`ContentModerationDetection`](crate::model::ContentModerationDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -8605,6 +8673,7 @@ impl ModerationLabel {
 pub mod moderation_label {
 
     /// A builder for [`ModerationLabel`](crate::model::ModerationLabel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) confidence: std::option::Option<f32>,
@@ -8778,6 +8847,7 @@ impl CelebrityRecognition {
 pub mod celebrity_recognition {
 
     /// A builder for [`CelebrityRecognition`](crate::model::CelebrityRecognition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -8883,6 +8953,7 @@ impl CelebrityDetail {
 pub mod celebrity_detail {
 
     /// A builder for [`CelebrityDetail`](crate::model::CelebrityDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9110,6 +9181,7 @@ impl DistributeDataset {
 pub mod distribute_dataset {
 
     /// A builder for [`DistributeDataset`](crate::model::DistributeDataset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9163,6 +9235,7 @@ impl DetectTextFilters {
 pub mod detect_text_filters {
 
     /// A builder for [`DetectTextFilters`](crate::model::DetectTextFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) word_filter: std::option::Option<crate::model::DetectionFilter>,
@@ -9251,6 +9324,7 @@ impl ProtectiveEquipmentSummary {
 pub mod protective_equipment_summary {
 
     /// A builder for [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) persons_with_required_equipment: std::option::Option<std::vec::Vec<i32>>,
@@ -9371,6 +9445,7 @@ impl ProtectiveEquipmentPerson {
 pub mod protective_equipment_person {
 
     /// A builder for [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body_parts:
@@ -9482,6 +9557,7 @@ impl ProtectiveEquipmentBodyPart {
 pub mod protective_equipment_body_part {
 
     /// A builder for [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::BodyPart>,
@@ -9585,6 +9661,7 @@ impl EquipmentDetection {
 pub mod equipment_detection {
 
     /// A builder for [`EquipmentDetection`](crate::model::EquipmentDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -9685,6 +9762,7 @@ impl CoversBodyPart {
 pub mod covers_body_part {
 
     /// A builder for [`CoversBodyPart`](crate::model::CoversBodyPart).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) confidence: std::option::Option<f32>,
@@ -9956,6 +10034,7 @@ impl ProtectiveEquipmentSummarizationAttributes {
 pub mod protective_equipment_summarization_attributes {
 
     /// A builder for [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_confidence: std::option::Option<f32>,
@@ -10049,6 +10128,7 @@ impl HumanLoopActivationOutput {
 pub mod human_loop_activation_output {
 
     /// A builder for [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
@@ -10159,6 +10239,7 @@ impl HumanLoopConfig {
 pub mod human_loop_config {
 
     /// A builder for [`HumanLoopConfig`](crate::model::HumanLoopConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -10240,6 +10321,7 @@ impl HumanLoopDataAttributes {
 pub mod human_loop_data_attributes {
 
     /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_classifiers:
@@ -10418,6 +10500,7 @@ impl DetectLabelsImageProperties {
 pub mod detect_labels_image_properties {
 
     /// A builder for [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
@@ -10527,6 +10610,7 @@ impl DetectLabelsImageBackground {
 pub mod detect_labels_image_background {
 
     /// A builder for [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
@@ -10613,6 +10697,7 @@ impl DetectLabelsImageQuality {
 pub mod detect_labels_image_quality {
 
     /// A builder for [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) brightness: std::option::Option<f32>,
@@ -10692,6 +10777,7 @@ impl DetectLabelsImageForeground {
 pub mod detect_labels_image_foreground {
 
     /// A builder for [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quality: std::option::Option<crate::model::DetectLabelsImageQuality>,
@@ -10773,6 +10859,7 @@ impl DetectLabelsSettings {
 pub mod detect_labels_settings {
 
     /// A builder for [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) general_labels: std::option::Option<crate::model::GeneralLabelsSettings>,
@@ -10843,6 +10930,7 @@ impl DetectLabelsImagePropertiesSettings {
 pub mod detect_labels_image_properties_settings {
 
     /// A builder for [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_dominant_colors: std::option::Option<i32>,
@@ -10997,6 +11085,7 @@ impl CustomLabel {
 pub mod custom_label {
 
     /// A builder for [`CustomLabel`](crate::model::CustomLabel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11071,6 +11160,7 @@ impl StreamProcessorNotificationChannel {
 pub mod stream_processor_notification_channel {
 
     /// A builder for [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -11129,6 +11219,7 @@ impl StreamProcessorSettings {
 pub mod stream_processor_settings {
 
     /// A builder for [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) face_search: std::option::Option<crate::model::FaceSearchSettings>,
@@ -11202,6 +11293,7 @@ impl ConnectedHomeSettings {
 pub mod connected_home_settings {
 
     /// A builder for [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11278,6 +11370,7 @@ impl FaceSearchSettings {
 pub mod face_search_settings {
 
     /// A builder for [`FaceSearchSettings`](crate::model::FaceSearchSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
@@ -11348,6 +11441,7 @@ impl StreamProcessorOutput {
 pub mod stream_processor_output {
 
     /// A builder for [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_data_stream: std::option::Option<crate::model::KinesisDataStream>,
@@ -11421,6 +11515,7 @@ impl S3Destination {
 pub mod s3_destination {
 
     /// A builder for [`S3Destination`](crate::model::S3Destination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -11481,6 +11576,7 @@ impl KinesisDataStream {
 pub mod kinesis_data_stream {
 
     /// A builder for [`KinesisDataStream`](crate::model::KinesisDataStream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -11527,6 +11623,7 @@ impl StreamProcessorInput {
 pub mod stream_processor_input {
 
     /// A builder for [`StreamProcessorInput`](crate::model::StreamProcessorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_video_stream: std::option::Option<crate::model::KinesisVideoStream>,
@@ -11578,6 +11675,7 @@ impl KinesisVideoStream {
 pub mod kinesis_video_stream {
 
     /// A builder for [`KinesisVideoStream`](crate::model::KinesisVideoStream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -11722,6 +11820,7 @@ impl ProjectVersionDescription {
 pub mod project_version_description {
 
     /// A builder for [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
@@ -11978,6 +12077,7 @@ impl GroundTruthManifest {
 pub mod ground_truth_manifest {
 
     /// A builder for [`GroundTruthManifest`](crate::model::GroundTruthManifest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
@@ -12037,6 +12137,7 @@ impl EvaluationResult {
 pub mod evaluation_result {
 
     /// A builder for [`EvaluationResult`](crate::model::EvaluationResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f1_score: std::option::Option<f32>,
@@ -12102,6 +12203,7 @@ impl Summary {
 pub mod summary {
 
     /// A builder for [`Summary`](crate::model::Summary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
@@ -12168,6 +12270,7 @@ impl TestingDataResult {
 pub mod testing_data_result {
 
     /// A builder for [`TestingDataResult`](crate::model::TestingDataResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::TestingData>,
@@ -12246,6 +12349,7 @@ impl ValidationData {
 pub mod validation_data {
 
     /// A builder for [`ValidationData`](crate::model::ValidationData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
@@ -12303,6 +12407,7 @@ impl Asset {
 pub mod asset {
 
     /// A builder for [`Asset`](crate::model::Asset).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
@@ -12361,6 +12466,7 @@ impl TestingData {
 pub mod testing_data {
 
     /// A builder for [`TestingData`](crate::model::TestingData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
@@ -12444,6 +12550,7 @@ impl TrainingDataResult {
 pub mod training_data_result {
 
     /// A builder for [`TrainingDataResult`](crate::model::TrainingDataResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::TrainingData>,
@@ -12522,6 +12629,7 @@ impl TrainingData {
 pub mod training_data {
 
     /// A builder for [`TrainingData`](crate::model::TrainingData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::Asset>>,
@@ -12586,6 +12694,7 @@ impl OutputConfig {
 pub mod output_config {
 
     /// A builder for [`OutputConfig`](crate::model::OutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -12670,6 +12779,7 @@ impl ProjectDescription {
 pub mod project_description {
 
     /// A builder for [`ProjectDescription`](crate::model::ProjectDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -12806,6 +12916,7 @@ impl DatasetMetadata {
 pub mod dataset_metadata {
 
     /// A builder for [`DatasetMetadata`](crate::model::DatasetMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -13375,6 +13486,7 @@ impl DatasetDescription {
 pub mod dataset_description {
 
     /// A builder for [`DatasetDescription`](crate::model::DatasetDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -13525,6 +13637,7 @@ impl DatasetStats {
 pub mod dataset_stats {
 
     /// A builder for [`DatasetStats`](crate::model::DatasetStats).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) labeled_entries: std::option::Option<i32>,
@@ -13618,6 +13731,7 @@ impl DatasetSource {
 pub mod dataset_source {
 
     /// A builder for [`DatasetSource`](crate::model::DatasetSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ground_truth_manifest: std::option::Option<crate::model::GroundTruthManifest>,
@@ -13688,6 +13802,7 @@ impl CompareFacesMatch {
 pub mod compare_faces_match {
 
     /// A builder for [`CompareFacesMatch`](crate::model::CompareFacesMatch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) similarity: std::option::Option<f32>,
@@ -13755,6 +13870,7 @@ impl ComparedSourceImageFace {
 pub mod compared_source_image_face {
 
     /// A builder for [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,

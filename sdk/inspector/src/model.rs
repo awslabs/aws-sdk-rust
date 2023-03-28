@@ -1227,6 +1227,7 @@ impl AgentAlreadyRunningAssessment {
 pub mod agent_already_running_assessment {
 
     /// A builder for [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_id: std::option::Option<std::string::String>,
@@ -1297,6 +1298,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1364,6 +1366,7 @@ impl FailedItemDetails {
 pub mod failed_item_details {
 
     /// A builder for [`FailedItemDetails`](crate::model::FailedItemDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_code: std::option::Option<crate::model::FailedItemErrorCode>,
@@ -1595,6 +1598,7 @@ impl AgentPreview {
 pub mod agent_preview {
 
     /// A builder for [`AgentPreview`](crate::model::AgentPreview).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -1886,6 +1890,7 @@ impl FindingFilter {
 pub mod finding_filter {
 
     /// A builder for [`FindingFilter`](crate::model::FindingFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2091,6 +2096,7 @@ impl TimestampRange {
 pub mod timestamp_range {
 
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2164,6 +2170,7 @@ impl Attribute {
 pub mod attribute {
 
     /// A builder for [`Attribute`](crate::model::Attribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2343,6 +2350,7 @@ impl Subscription {
 pub mod subscription {
 
     /// A builder for [`Subscription`](crate::model::Subscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2432,6 +2440,7 @@ impl EventSubscription {
 pub mod event_subscription {
 
     /// A builder for [`EventSubscription`](crate::model::EventSubscription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::InspectorEvent>,
@@ -2512,6 +2521,7 @@ impl AssessmentTemplateFilter {
 pub mod assessment_template_filter {
 
     /// A builder for [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name_pattern: std::option::Option<std::string::String>,
@@ -2603,6 +2613,7 @@ impl DurationRange {
 pub mod duration_range {
 
     /// A builder for [`DurationRange`](crate::model::DurationRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_seconds: std::option::Option<i32>,
@@ -2663,6 +2674,7 @@ impl AssessmentTargetFilter {
 pub mod assessment_target_filter {
 
     /// A builder for [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_name_pattern: std::option::Option<std::string::String>,
@@ -2759,6 +2771,7 @@ impl AssessmentRunFilter {
 pub mod assessment_run_filter {
 
     /// A builder for [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name_pattern: std::option::Option<std::string::String>,
@@ -3116,6 +3129,7 @@ impl AssessmentRunAgent {
 pub mod assessment_run_agent {
 
     /// A builder for [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_id: std::option::Option<std::string::String>,
@@ -3275,6 +3289,7 @@ impl TelemetryMetadata {
 pub mod telemetry_metadata {
 
     /// A builder for [`TelemetryMetadata`](crate::model::TelemetryMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_type: std::option::Option<std::string::String>,
@@ -3471,6 +3486,7 @@ impl AgentFilter {
 pub mod agent_filter {
 
     /// A builder for [`AgentFilter`](crate::model::AgentFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_healths: std::option::Option<std::vec::Vec<crate::model::AgentHealth>>,
@@ -3578,6 +3594,7 @@ impl ExclusionPreview {
 pub mod exclusion_preview {
 
     /// A builder for [`ExclusionPreview`](crate::model::ExclusionPreview).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -3702,6 +3719,7 @@ impl Scope {
 pub mod scope {
 
     /// A builder for [`Scope`](crate::model::Scope).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::ScopeType>,
@@ -4330,6 +4348,7 @@ impl RulesPackage {
 pub mod rules_package {
 
     /// A builder for [`RulesPackage`](crate::model::RulesPackage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4440,6 +4459,7 @@ impl ResourceGroup {
 pub mod resource_group {
 
     /// A builder for [`ResourceGroup`](crate::model::ResourceGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4531,6 +4551,7 @@ impl ResourceGroupTag {
 pub mod resource_group_tag {
 
     /// A builder for [`ResourceGroupTag`](crate::model::ResourceGroupTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -4712,6 +4733,7 @@ impl Finding {
 pub mod finding {
 
     /// A builder for [`Finding`](crate::model::Finding).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5053,6 +5075,7 @@ impl AssetAttributes {
 pub mod asset_attributes {
 
     /// A builder for [`AssetAttributes`](crate::model::AssetAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_version: std::option::Option<i32>,
@@ -5279,6 +5302,7 @@ impl NetworkInterface {
 pub mod network_interface {
 
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -5482,6 +5506,7 @@ impl SecurityGroup {
 pub mod security_group {
 
     /// A builder for [`SecurityGroup`](crate::model::SecurityGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -5549,6 +5574,7 @@ impl PrivateIp {
 pub mod private_ip {
 
     /// A builder for [`PrivateIp`](crate::model::PrivateIp).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) private_dns_name: std::option::Option<std::string::String>,
@@ -5714,6 +5740,7 @@ impl InspectorServiceAttributes {
 pub mod inspector_service_attributes {
 
     /// A builder for [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_version: std::option::Option<i32>,
@@ -5827,6 +5854,7 @@ impl Exclusion {
 pub mod exclusion {
 
     /// A builder for [`Exclusion`](crate::model::Exclusion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6012,6 +6040,7 @@ impl AssessmentTemplate {
 pub mod assessment_template {
 
     /// A builder for [`AssessmentTemplate`](crate::model::AssessmentTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6212,6 +6241,7 @@ impl AssessmentTarget {
 pub mod assessment_target {
 
     /// A builder for [`AssessmentTarget`](crate::model::AssessmentTarget).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6418,6 +6448,7 @@ impl AssessmentRun {
 pub mod assessment_run {
 
     /// A builder for [`AssessmentRun`](crate::model::AssessmentRun).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6739,6 +6770,7 @@ impl AssessmentRunNotification {
 pub mod assessment_run_notification {
 
     /// A builder for [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6974,6 +7006,7 @@ impl AssessmentRunStateChange {
 pub mod assessment_run_state_change {
 
     /// A builder for [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_changed_at: std::option::Option<aws_smithy_types::DateTime>,

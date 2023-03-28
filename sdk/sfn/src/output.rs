@@ -17,6 +17,7 @@ impl UpdateStateMachineOutput {
 pub mod update_state_machine_output {
 
     /// A builder for [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -58,6 +59,7 @@ pub struct UpdateMapRunOutput {}
 pub mod update_map_run_output {
 
     /// A builder for [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -82,6 +84,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -106,6 +109,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -140,6 +144,7 @@ impl StopExecutionOutput {
 pub mod stop_execution_output {
 
     /// A builder for [`StopExecutionOutput`](crate::output::StopExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -310,6 +315,7 @@ impl std::fmt::Debug for StartSyncExecutionOutput {
 pub mod start_sync_execution_output {
 
     /// A builder for [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
@@ -577,6 +583,7 @@ impl StartExecutionOutput {
 pub mod start_execution_output {
 
     /// A builder for [`StartExecutionOutput`](crate::output::StartExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
@@ -633,6 +640,7 @@ pub struct SendTaskSuccessOutput {}
 pub mod send_task_success_output {
 
     /// A builder for [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -657,6 +665,7 @@ pub struct SendTaskHeartbeatOutput {}
 pub mod send_task_heartbeat_output {
 
     /// A builder for [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -681,6 +690,7 @@ pub struct SendTaskFailureOutput {}
 pub mod send_task_failure_output {
 
     /// A builder for [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -715,6 +725,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -777,6 +788,7 @@ impl ListStateMachinesOutput {
 pub mod list_state_machines_output {
 
     /// A builder for [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machines:
@@ -853,6 +865,7 @@ impl ListMapRunsOutput {
 pub mod list_map_runs_output {
 
     /// A builder for [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_runs: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>,
@@ -929,6 +942,7 @@ impl ListExecutionsOutput {
 pub mod list_executions_output {
 
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) executions: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>,
@@ -1005,6 +1019,7 @@ impl ListActivitiesOutput {
 pub mod list_activities_output {
 
     /// A builder for [`ListActivitiesOutput`](crate::output::ListActivitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>,
@@ -1081,6 +1096,7 @@ impl GetExecutionHistoryOutput {
 pub mod get_execution_history_output {
 
     /// A builder for [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
@@ -1165,6 +1181,7 @@ impl std::fmt::Debug for GetActivityTaskOutput {
 pub mod get_activity_task_output {
 
     /// A builder for [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -1308,6 +1325,7 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
 pub mod describe_state_machine_for_execution_output {
 
     /// A builder for [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -1580,6 +1598,7 @@ impl std::fmt::Debug for DescribeStateMachineOutput {
 pub mod describe_state_machine_output {
 
     /// A builder for [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -1851,6 +1870,7 @@ impl DescribeMapRunOutput {
 pub mod describe_map_run_output {
 
     /// A builder for [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_run_arn: std::option::Option<std::string::String>,
@@ -2162,6 +2182,7 @@ impl std::fmt::Debug for DescribeExecutionOutput {
 pub mod describe_execution_output {
 
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
@@ -2469,6 +2490,7 @@ impl DescribeActivityOutput {
 pub mod describe_activity_output {
 
     /// A builder for [`DescribeActivityOutput`](crate::output::DescribeActivityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
@@ -2552,6 +2574,7 @@ pub struct DeleteStateMachineOutput {}
 pub mod delete_state_machine_output {
 
     /// A builder for [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2576,6 +2599,7 @@ pub struct DeleteActivityOutput {}
 pub mod delete_activity_output {
 
     /// A builder for [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2617,6 +2641,7 @@ impl CreateStateMachineOutput {
 pub mod create_state_machine_output {
 
     /// A builder for [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -2690,6 +2715,7 @@ impl CreateActivityOutput {
 pub mod create_activity_output {
 
     /// A builder for [`CreateActivityOutput`](crate::output::CreateActivityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,

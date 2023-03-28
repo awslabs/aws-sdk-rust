@@ -37,6 +37,7 @@ impl BatchPutMetricsError {
 pub mod batch_put_metrics_error {
 
     /// A builder for [`BatchPutMetricsError`](crate::model::BatchPutMetricsError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::PutMetricsErrorCode>,
@@ -240,6 +241,7 @@ impl RawMetricData {
 pub mod raw_metric_data {
 
     /// A builder for [`RawMetricData`](crate::model::RawMetricData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,

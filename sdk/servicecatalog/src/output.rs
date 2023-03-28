@@ -17,6 +17,7 @@ impl UpdateTagOptionOutput {
 pub mod update_tag_option_output {
 
     /// A builder for [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
@@ -68,6 +69,7 @@ impl UpdateServiceActionOutput {
 pub mod update_service_action_output {
 
     /// A builder for [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
@@ -139,6 +141,7 @@ impl UpdateProvisioningArtifactOutput {
 pub mod update_provisioning_artifact_output {
 
     /// A builder for [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioning_artifact_detail:
@@ -262,6 +265,7 @@ impl UpdateProvisionedProductPropertiesOutput {
 pub mod update_provisioned_product_properties_output {
 
     /// A builder for [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
@@ -369,6 +373,7 @@ impl UpdateProvisionedProductOutput {
 pub mod update_provisioned_product_output {
 
     /// A builder for [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -427,6 +432,7 @@ impl UpdateProductOutput {
 pub mod update_product_output {
 
     /// A builder for [`UpdateProductOutput`](crate::output::UpdateProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
@@ -506,6 +512,7 @@ impl UpdatePortfolioShareOutput {
 pub mod update_portfolio_share_output {
 
     /// A builder for [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_share_token: std::option::Option<std::string::String>,
@@ -576,6 +583,7 @@ impl UpdatePortfolioOutput {
 pub mod update_portfolio_output {
 
     /// A builder for [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
@@ -662,6 +670,7 @@ impl UpdateConstraintOutput {
 pub mod update_constraint_output {
 
     /// A builder for [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
@@ -740,6 +749,7 @@ impl TerminateProvisionedProductOutput {
 pub mod terminate_provisioned_product_output {
 
     /// A builder for [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -808,6 +818,7 @@ impl SearchProvisionedProductsOutput {
 pub mod search_provisioned_products_output {
 
     /// A builder for [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_products:
@@ -903,6 +914,7 @@ impl SearchProductsAsAdminOutput {
 pub mod search_products_as_admin_output {
 
     /// A builder for [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_details:
@@ -1005,6 +1017,7 @@ impl SearchProductsOutput {
 pub mod search_products_output {
 
     /// A builder for [`SearchProductsOutput`](crate::output::SearchProductsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_summaries:
@@ -1123,6 +1136,7 @@ impl ScanProvisionedProductsOutput {
 pub mod scan_provisioned_products_output {
 
     /// A builder for [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_products:
@@ -1189,6 +1203,7 @@ pub struct RejectPortfolioShareOutput {}
 pub mod reject_portfolio_share_output {
 
     /// A builder for [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1223,6 +1238,7 @@ impl ProvisionProductOutput {
 pub mod provision_product_output {
 
     /// A builder for [`ProvisionProductOutput`](crate::output::ProvisionProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -1281,6 +1297,7 @@ impl ListTagOptionsOutput {
 pub mod list_tag_options_output {
 
     /// A builder for [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_option_details:
@@ -1358,6 +1375,7 @@ impl ListStackInstancesForProvisionedProductOutput {
 pub mod list_stack_instances_for_provisioned_product_output {
 
     /// A builder for [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_instances: std::option::Option<std::vec::Vec<crate::model::StackInstance>>,
@@ -1441,6 +1459,7 @@ impl ListServiceActionsForProvisioningArtifactOutput {
 pub mod list_service_actions_for_provisioning_artifact_output {
 
     /// A builder for [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_summaries:
@@ -1528,6 +1547,7 @@ impl ListServiceActionsOutput {
 pub mod list_service_actions_output {
 
     /// A builder for [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_summaries:
@@ -1611,6 +1631,7 @@ impl ListResourcesForTagOptionOutput {
 pub mod list_resources_for_tag_option_output {
 
     /// A builder for [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_details:
@@ -1688,6 +1709,7 @@ impl ListRecordHistoryOutput {
 pub mod list_record_history_output {
 
     /// A builder for [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_details: std::option::Option<std::vec::Vec<crate::model::RecordDetail>>,
@@ -1770,6 +1792,7 @@ impl ListProvisioningArtifactsForServiceActionOutput {
 pub mod list_provisioning_artifacts_for_service_action_output {
 
     /// A builder for [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioning_artifact_views:
@@ -1857,6 +1880,7 @@ impl ListProvisioningArtifactsOutput {
 pub mod list_provisioning_artifacts_output {
 
     /// A builder for [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioning_artifact_details:
@@ -1943,6 +1967,7 @@ impl ListProvisionedProductPlansOutput {
 pub mod list_provisioned_product_plans_output {
 
     /// A builder for [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_plans:
@@ -2026,6 +2051,7 @@ impl ListPrincipalsForPortfolioOutput {
 pub mod list_principals_for_portfolio_output {
 
     /// A builder for [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -2105,6 +2131,7 @@ impl ListPortfoliosForProductOutput {
 pub mod list_portfolios_for_product_output {
 
     /// A builder for [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_details:
@@ -2185,6 +2212,7 @@ impl ListPortfoliosOutput {
 pub mod list_portfolios_output {
 
     /// A builder for [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_details:
@@ -2265,6 +2293,7 @@ impl ListPortfolioAccessOutput {
 pub mod list_portfolio_access_output {
 
     /// A builder for [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2344,6 +2373,7 @@ impl ListOrganizationPortfolioAccessOutput {
 pub mod list_organization_portfolio_access_output {
 
     /// A builder for [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_nodes:
@@ -2424,6 +2454,7 @@ impl ListLaunchPathsOutput {
 pub mod list_launch_paths_output {
 
     /// A builder for [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_path_summaries:
@@ -2504,6 +2535,7 @@ impl ListConstraintsForPortfolioOutput {
 pub mod list_constraints_for_portfolio_output {
 
     /// A builder for [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constraint_details:
@@ -2584,6 +2616,7 @@ impl ListBudgetsForResourceOutput {
 pub mod list_budgets_for_resource_output {
 
     /// A builder for [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budgets: std::option::Option<std::vec::Vec<crate::model::BudgetDetail>>,
@@ -2663,6 +2696,7 @@ impl ListAcceptedPortfolioSharesOutput {
 pub mod list_accepted_portfolio_shares_output {
 
     /// A builder for [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_details:
@@ -2736,6 +2770,7 @@ impl ImportAsProvisionedProductOutput {
 pub mod import_as_provisioned_product_output {
 
     /// A builder for [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -2794,6 +2829,7 @@ impl GetProvisionedProductOutputsOutput {
 pub mod get_provisioned_product_outputs_output {
 
     /// A builder for [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::RecordOutput>>,
@@ -2866,6 +2902,7 @@ impl GetAwsOrganizationsAccessStatusOutput {
 pub mod get_aws_organizations_access_status_output {
 
     /// A builder for [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_status: std::option::Option<crate::model::AccessStatus>,
@@ -2917,6 +2954,7 @@ impl ExecuteProvisionedProductServiceActionOutput {
 pub mod execute_provisioned_product_service_action_output {
 
     /// A builder for [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -2968,6 +3006,7 @@ impl ExecuteProvisionedProductPlanOutput {
 pub mod execute_provisioned_product_plan_output {
 
     /// A builder for [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -3009,6 +3048,7 @@ pub struct EnableAwsOrganizationsAccessOutput {}
 pub mod enable_aws_organizations_access_output {
 
     /// A builder for [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3033,6 +3073,7 @@ pub struct DisassociateTagOptionFromResourceOutput {}
 pub mod disassociate_tag_option_from_resource_output {
 
     /// A builder for [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3057,6 +3098,7 @@ pub struct DisassociateServiceActionFromProvisioningArtifactOutput {}
 pub mod disassociate_service_action_from_provisioning_artifact_output {
 
     /// A builder for [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3084,6 +3126,7 @@ pub struct DisassociateProductFromPortfolioOutput {}
 pub mod disassociate_product_from_portfolio_output {
 
     /// A builder for [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3108,6 +3151,7 @@ pub struct DisassociatePrincipalFromPortfolioOutput {}
 pub mod disassociate_principal_from_portfolio_output {
 
     /// A builder for [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3132,6 +3176,7 @@ pub struct DisassociateBudgetFromResourceOutput {}
 pub mod disassociate_budget_from_resource_output {
 
     /// A builder for [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3156,6 +3201,7 @@ pub struct DisableAwsOrganizationsAccessOutput {}
 pub mod disable_aws_organizations_access_output {
 
     /// A builder for [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3190,6 +3236,7 @@ impl DescribeTagOptionOutput {
 pub mod describe_tag_option_output {
 
     /// A builder for [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
@@ -3244,6 +3291,7 @@ impl DescribeServiceActionExecutionParametersOutput {
 pub mod describe_service_action_execution_parameters_output {
 
     /// A builder for [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_parameters:
@@ -3306,6 +3354,7 @@ impl DescribeServiceActionOutput {
 pub mod describe_service_action_output {
 
     /// A builder for [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
@@ -3371,6 +3420,7 @@ impl DescribeRecordOutput {
 pub mod describe_record_output {
 
     /// A builder for [`DescribeRecordOutput`](crate::output::DescribeRecordOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_detail: std::option::Option<crate::model::RecordDetail>,
@@ -3518,6 +3568,7 @@ impl DescribeProvisioningParametersOutput {
 pub mod describe_provisioning_parameters_output {
 
     /// A builder for [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioning_artifact_parameters:
@@ -3739,6 +3790,7 @@ impl DescribeProvisioningArtifactOutput {
 pub mod describe_provisioning_artifact_output {
 
     /// A builder for [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioning_artifact_detail:
@@ -3852,6 +3904,7 @@ impl DescribeProvisionedProductPlanOutput {
 pub mod describe_provisioned_product_plan_output {
 
     /// A builder for [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_plan_details:
@@ -3956,6 +4009,7 @@ impl DescribeProvisionedProductOutput {
 pub mod describe_provisioned_product_output {
 
     /// A builder for [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_product_detail:
@@ -4043,6 +4097,7 @@ impl DescribeProductViewOutput {
 pub mod describe_product_view_output {
 
     /// A builder for [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
@@ -4147,6 +4202,7 @@ impl DescribeProductAsAdminOutput {
 pub mod describe_product_as_admin_output {
 
     /// A builder for [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
@@ -4310,6 +4366,7 @@ impl DescribeProductOutput {
 pub mod describe_product_output {
 
     /// A builder for [`DescribeProductOutput`](crate::output::DescribeProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
@@ -4453,6 +4510,7 @@ impl DescribePortfolioShareStatusOutput {
 pub mod describe_portfolio_share_status_output {
 
     /// A builder for [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_share_token: std::option::Option<std::string::String>,
@@ -4568,6 +4626,7 @@ impl DescribePortfolioSharesOutput {
 pub mod describe_portfolio_shares_output {
 
     /// A builder for [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -4665,6 +4724,7 @@ impl DescribePortfolioOutput {
 pub mod describe_portfolio_output {
 
     /// A builder for [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
@@ -4793,6 +4853,7 @@ impl DescribeCopyProductStatusOutput {
 pub mod describe_copy_product_status_output {
 
     /// A builder for [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_product_status: std::option::Option<crate::model::CopyProductStatus>,
@@ -4888,6 +4949,7 @@ impl DescribeConstraintOutput {
 pub mod describe_constraint_output {
 
     /// A builder for [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
@@ -4956,6 +5018,7 @@ pub struct DeleteTagOptionOutput {}
 pub mod delete_tag_option_output {
 
     /// A builder for [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4980,6 +5043,7 @@ pub struct DeleteServiceActionOutput {}
 pub mod delete_service_action_output {
 
     /// A builder for [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5004,6 +5068,7 @@ pub struct DeleteProvisioningArtifactOutput {}
 pub mod delete_provisioning_artifact_output {
 
     /// A builder for [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5028,6 +5093,7 @@ pub struct DeleteProvisionedProductPlanOutput {}
 pub mod delete_provisioned_product_plan_output {
 
     /// A builder for [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5052,6 +5118,7 @@ pub struct DeleteProductOutput {}
 pub mod delete_product_output {
 
     /// A builder for [`DeleteProductOutput`](crate::output::DeleteProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5086,6 +5153,7 @@ impl DeletePortfolioShareOutput {
 pub mod delete_portfolio_share_output {
 
     /// A builder for [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_share_token: std::option::Option<std::string::String>,
@@ -5127,6 +5195,7 @@ pub struct DeletePortfolioOutput {}
 pub mod delete_portfolio_output {
 
     /// A builder for [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5151,6 +5220,7 @@ pub struct DeleteConstraintOutput {}
 pub mod delete_constraint_output {
 
     /// A builder for [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5185,6 +5255,7 @@ impl CreateTagOptionOutput {
 pub mod create_tag_option_output {
 
     /// A builder for [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_option_detail: std::option::Option<crate::model::TagOptionDetail>,
@@ -5236,6 +5307,7 @@ impl CreateServiceActionOutput {
 pub mod create_service_action_output {
 
     /// A builder for [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_action_detail: std::option::Option<crate::model::ServiceActionDetail>,
@@ -5317,6 +5389,7 @@ impl CreateProvisioningArtifactOutput {
 pub mod create_provisioning_artifact_output {
 
     /// A builder for [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioning_artifact_detail:
@@ -5451,6 +5524,7 @@ impl CreateProvisionedProductPlanOutput {
 pub mod create_provisioned_product_plan_output {
 
     /// A builder for [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) plan_name: std::option::Option<std::string::String>,
@@ -5572,6 +5646,7 @@ impl CreateProductOutput {
 pub mod create_product_output {
 
     /// A builder for [`CreateProductOutput`](crate::output::CreateProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_view_detail: std::option::Option<crate::model::ProductViewDetail>,
@@ -5663,6 +5738,7 @@ impl CreatePortfolioShareOutput {
 pub mod create_portfolio_share_output {
 
     /// A builder for [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_share_token: std::option::Option<std::string::String>,
@@ -5721,6 +5797,7 @@ impl CreatePortfolioOutput {
 pub mod create_portfolio_output {
 
     /// A builder for [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portfolio_detail: std::option::Option<crate::model::PortfolioDetail>,
@@ -5807,6 +5884,7 @@ impl CreateConstraintOutput {
 pub mod create_constraint_output {
 
     /// A builder for [`CreateConstraintOutput`](crate::output::CreateConstraintOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constraint_detail: std::option::Option<crate::model::ConstraintDetail>,
@@ -5885,6 +5963,7 @@ impl CopyProductOutput {
 pub mod copy_product_output {
 
     /// A builder for [`CopyProductOutput`](crate::output::CopyProductOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_product_token: std::option::Option<std::string::String>,
@@ -5939,6 +6018,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
 pub mod batch_disassociate_service_action_from_provisioning_artifact_output {
 
     /// A builder for [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_service_action_associations:
@@ -6007,6 +6087,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
 pub mod batch_associate_service_action_with_provisioning_artifact_output {
 
     /// A builder for [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_service_action_associations:
@@ -6062,6 +6143,7 @@ pub struct AssociateTagOptionWithResourceOutput {}
 pub mod associate_tag_option_with_resource_output {
 
     /// A builder for [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6086,6 +6168,7 @@ pub struct AssociateServiceActionWithProvisioningArtifactOutput {}
 pub mod associate_service_action_with_provisioning_artifact_output {
 
     /// A builder for [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6112,6 +6195,7 @@ pub struct AssociateProductWithPortfolioOutput {}
 pub mod associate_product_with_portfolio_output {
 
     /// A builder for [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6136,6 +6220,7 @@ pub struct AssociatePrincipalWithPortfolioOutput {}
 pub mod associate_principal_with_portfolio_output {
 
     /// A builder for [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6160,6 +6245,7 @@ pub struct AssociateBudgetWithResourceOutput {}
 pub mod associate_budget_with_resource_output {
 
     /// A builder for [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6184,6 +6270,7 @@ pub struct AcceptPortfolioShareOutput {}
 pub mod accept_portfolio_share_output {
 
     /// A builder for [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

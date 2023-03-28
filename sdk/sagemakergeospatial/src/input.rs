@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_earth_observation_job_input {
 
     /// A builder for [`DeleteEarthObservationJobInput`](crate::input::DeleteEarthObservationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -168,6 +169,7 @@ impl DeleteEarthObservationJobInput {
 pub mod delete_vector_enrichment_job_input {
 
     /// A builder for [`DeleteVectorEnrichmentJobInput`](crate::input::DeleteVectorEnrichmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -331,6 +333,7 @@ impl DeleteVectorEnrichmentJobInput {
 pub mod export_earth_observation_job_input {
 
     /// A builder for [`ExportEarthObservationJobInput`](crate::input::ExportEarthObservationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -534,6 +537,7 @@ impl ExportEarthObservationJobInput {
 pub mod export_vector_enrichment_job_input {
 
     /// A builder for [`ExportVectorEnrichmentJobInput`](crate::input::ExportVectorEnrichmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -730,6 +734,7 @@ impl ExportVectorEnrichmentJobInput {
 pub mod get_earth_observation_job_input {
 
     /// A builder for [`GetEarthObservationJobInput`](crate::input::GetEarthObservationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -893,6 +898,7 @@ impl GetEarthObservationJobInput {
 pub mod get_raster_data_collection_input {
 
     /// A builder for [`GetRasterDataCollectionInput`](crate::input::GetRasterDataCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1056,6 +1062,7 @@ impl GetRasterDataCollectionInput {
 pub mod get_tile_input {
 
     /// A builder for [`GetTileInput`](crate::input::GetTileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) x: std::option::Option<i32>,
@@ -1475,6 +1482,7 @@ impl GetTileInput {
 pub mod get_vector_enrichment_job_input {
 
     /// A builder for [`GetVectorEnrichmentJobInput`](crate::input::GetVectorEnrichmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1638,6 +1646,7 @@ impl GetVectorEnrichmentJobInput {
 pub mod list_earth_observation_jobs_input {
 
     /// A builder for [`ListEarthObservationJobsInput`](crate::input::ListEarthObservationJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) status_equals: std::option::Option<crate::model::EarthObservationJobStatus>,
@@ -1864,6 +1873,7 @@ impl ListEarthObservationJobsInput {
 pub mod list_raster_data_collections_input {
 
     /// A builder for [`ListRasterDataCollectionsInput`](crate::input::ListRasterDataCollectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2050,6 +2060,7 @@ impl ListRasterDataCollectionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2215,6 +2226,7 @@ impl ListTagsForResourceInput {
 pub mod list_vector_enrichment_jobs_input {
 
     /// A builder for [`ListVectorEnrichmentJobsInput`](crate::input::ListVectorEnrichmentJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) status_equals: std::option::Option<std::string::String>,
@@ -2441,6 +2453,7 @@ impl ListVectorEnrichmentJobsInput {
 pub mod search_raster_data_collection_input {
 
     /// A builder for [`SearchRasterDataCollectionInput`](crate::input::SearchRasterDataCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2644,6 +2657,7 @@ impl SearchRasterDataCollectionInput {
 pub mod start_earth_observation_job_input {
 
     /// A builder for [`StartEarthObservationJobInput`](crate::input::StartEarthObservationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2906,6 +2920,7 @@ impl StartEarthObservationJobInput {
 pub mod start_vector_enrichment_job_input {
 
     /// A builder for [`StartVectorEnrichmentJobInput`](crate::input::StartVectorEnrichmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3168,6 +3183,7 @@ impl StartVectorEnrichmentJobInput {
 pub mod stop_earth_observation_job_input {
 
     /// A builder for [`StopEarthObservationJobInput`](crate::input::StopEarthObservationJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3327,6 +3343,7 @@ impl StopEarthObservationJobInput {
 pub mod stop_vector_enrichment_job_input {
 
     /// A builder for [`StopVectorEnrichmentJobInput`](crate::input::StopVectorEnrichmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3486,6 +3503,7 @@ impl StopVectorEnrichmentJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3692,6 +3710,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

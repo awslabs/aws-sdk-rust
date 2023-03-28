@@ -549,6 +549,7 @@ impl std::error::Error for TemplateDoesNotExistException {}
 pub mod template_does_not_exist_exception {
 
     /// A builder for [`TemplateDoesNotExistException`](crate::error::TemplateDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -633,6 +634,7 @@ impl std::error::Error for InvalidTemplateException {}
 pub mod invalid_template_exception {
 
     /// A builder for [`InvalidTemplateException`](crate::error::InvalidTemplateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -880,6 +882,7 @@ impl std::error::Error for RuleSetDoesNotExistException {}
 pub mod rule_set_does_not_exist_exception {
 
     /// A builder for [`RuleSetDoesNotExistException`](crate::error::RuleSetDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -961,6 +964,7 @@ impl std::error::Error for RuleDoesNotExistException {}
 pub mod rule_does_not_exist_exception {
 
     /// A builder for [`RuleDoesNotExistException`](crate::error::RuleDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1033,6 +1037,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1102,6 +1107,7 @@ impl std::error::Error for InvalidSnsTopicException {}
 pub mod invalid_sns_topic_exception {
 
     /// A builder for [`InvalidSnsTopicException`](crate::error::InvalidSnsTopicException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
@@ -1183,6 +1189,7 @@ impl std::error::Error for InvalidS3ConfigurationException {}
 pub mod invalid_s3_configuration_exception {
 
     /// A builder for [`InvalidS3ConfigurationException`](crate::error::InvalidS3ConfigurationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1264,6 +1271,7 @@ impl std::error::Error for InvalidLambdaFunctionException {}
 pub mod invalid_lambda_function_exception {
 
     /// A builder for [`InvalidLambdaFunctionException`](crate::error::InvalidLambdaFunctionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
@@ -1498,6 +1506,7 @@ impl std::error::Error for FromEmailAddressNotVerifiedException {}
 pub mod from_email_address_not_verified_exception {
 
     /// A builder for [`FromEmailAddressNotVerifiedException`](crate::error::FromEmailAddressNotVerifiedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_email_address: std::option::Option<std::string::String>,
@@ -1582,6 +1591,7 @@ impl std::error::Error for CustomVerificationEmailTemplateDoesNotExistException 
 pub mod custom_verification_email_template_does_not_exist_exception {
 
     /// A builder for [`CustomVerificationEmailTemplateDoesNotExistException`](crate::error::CustomVerificationEmailTemplateDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_verification_email_template_name:
@@ -1664,6 +1674,7 @@ impl std::error::Error for CustomVerificationEmailInvalidContentException {}
 pub mod custom_verification_email_invalid_content_exception {
 
     /// A builder for [`CustomVerificationEmailInvalidContentException`](crate::error::CustomVerificationEmailInvalidContentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1894,6 +1905,7 @@ impl std::error::Error for TrackingOptionsDoesNotExistException {}
 pub mod tracking_options_does_not_exist_exception {
 
     /// A builder for [`TrackingOptionsDoesNotExistException`](crate::error::TrackingOptionsDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -1973,6 +1985,7 @@ impl std::error::Error for InvalidTrackingOptionsException {}
 pub mod invalid_tracking_options_exception {
 
     /// A builder for [`InvalidTrackingOptionsException`](crate::error::InvalidTrackingOptionsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2042,6 +2055,7 @@ impl std::error::Error for ConfigurationSetDoesNotExistException {}
 pub mod configuration_set_does_not_exist_exception {
 
     /// A builder for [`ConfigurationSetDoesNotExistException`](crate::error::ConfigurationSetDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -2578,6 +2592,7 @@ impl std::error::Error for InvalidSnsDestinationException {}
 pub mod invalid_sns_destination_exception {
 
     /// A builder for [`InvalidSnsDestinationException`](crate::error::InvalidSnsDestinationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -2684,6 +2699,7 @@ impl std::error::Error for InvalidFirehoseDestinationException {}
 pub mod invalid_firehose_destination_exception {
 
     /// A builder for [`InvalidFirehoseDestinationException`](crate::error::InvalidFirehoseDestinationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -2790,6 +2806,7 @@ impl std::error::Error for InvalidCloudWatchDestinationException {}
 pub mod invalid_cloud_watch_destination_exception {
 
     /// A builder for [`InvalidCloudWatchDestinationException`](crate::error::InvalidCloudWatchDestinationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -2896,6 +2913,7 @@ impl std::error::Error for EventDestinationDoesNotExistException {}
 pub mod event_destination_does_not_exist_exception {
 
     /// A builder for [`EventDestinationDoesNotExistException`](crate::error::EventDestinationDoesNotExistException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -3232,6 +3250,7 @@ impl std::error::Error for MissingRenderingAttributeException {}
 pub mod missing_rendering_attribute_exception {
 
     /// A builder for [`MissingRenderingAttributeException`](crate::error::MissingRenderingAttributeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -3316,6 +3335,7 @@ impl std::error::Error for InvalidRenderingParameterException {}
 pub mod invalid_rendering_parameter_exception {
 
     /// A builder for [`InvalidRenderingParameterException`](crate::error::InvalidRenderingParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -4319,6 +4339,7 @@ impl std::error::Error for MessageRejected {}
 pub mod message_rejected {
 
     /// A builder for [`MessageRejected`](crate::error::MessageRejected).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4379,6 +4400,7 @@ impl std::error::Error for MailFromDomainNotVerifiedException {}
 pub mod mail_from_domain_not_verified_exception {
 
     /// A builder for [`MailFromDomainNotVerifiedException`](crate::error::MailFromDomainNotVerifiedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4449,6 +4471,7 @@ impl std::error::Error for ConfigurationSetSendingPausedException {}
 pub mod configuration_set_sending_paused_exception {
 
     /// A builder for [`ConfigurationSetSendingPausedException`](crate::error::ConfigurationSetSendingPausedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -4525,6 +4548,7 @@ impl std::error::Error for AccountSendingPausedException {}
 pub mod account_sending_paused_exception {
 
     /// A builder for [`AccountSendingPausedException`](crate::error::AccountSendingPausedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5068,6 +5092,7 @@ impl std::error::Error for ProductionAccessNotGrantedException {}
 pub mod production_access_not_granted_exception {
 
     /// A builder for [`ProductionAccessNotGrantedException`](crate::error::ProductionAccessNotGrantedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5645,6 +5670,7 @@ impl std::error::Error for InvalidPolicyException {}
 pub mod invalid_policy_exception {
 
     /// A builder for [`InvalidPolicyException`](crate::error::InvalidPolicyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5841,6 +5867,7 @@ impl std::error::Error for InvalidDeliveryOptionsException {}
 pub mod invalid_delivery_options_exception {
 
     /// A builder for [`InvalidDeliveryOptionsException`](crate::error::InvalidDeliveryOptionsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8520,6 +8547,7 @@ impl std::error::Error for CannotDeleteException {}
 pub mod cannot_delete_exception {
 
     /// A builder for [`CannotDeleteException`](crate::error::CannotDeleteException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9642,6 +9670,7 @@ impl std::error::Error for AlreadyExistsException {}
 pub mod already_exists_exception {
 
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10307,6 +10336,7 @@ impl std::error::Error for CustomVerificationEmailTemplateAlreadyExistsException
 pub mod custom_verification_email_template_already_exists_exception {
 
     /// A builder for [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::error::CustomVerificationEmailTemplateAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_verification_email_template_name:
@@ -10561,6 +10591,7 @@ impl std::error::Error for TrackingOptionsAlreadyExistsException {}
 pub mod tracking_options_already_exists_exception {
 
     /// A builder for [`TrackingOptionsAlreadyExistsException`](crate::error::TrackingOptionsAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -10858,6 +10889,7 @@ impl std::error::Error for EventDestinationAlreadyExistsException {}
 pub mod event_destination_already_exists_exception {
 
     /// A builder for [`EventDestinationAlreadyExistsException`](crate::error::EventDestinationAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
@@ -11090,6 +11122,7 @@ impl std::error::Error for InvalidConfigurationSetException {}
 pub mod invalid_configuration_set_exception {
 
     /// A builder for [`InvalidConfigurationSetException`](crate::error::InvalidConfigurationSetException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11159,6 +11192,7 @@ impl std::error::Error for ConfigurationSetAlreadyExistsException {}
 pub mod configuration_set_already_exists_exception {
 
     /// A builder for [`ConfigurationSetAlreadyExistsException`](crate::error::ConfigurationSetAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,

@@ -53,6 +53,7 @@ impl Update {
 pub mod update {
 
     /// A builder for [`Update`](crate::model::Update).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -217,6 +218,7 @@ impl ErrorDetail {
 pub mod error_detail {
 
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -512,6 +514,7 @@ impl UpdateParam {
 pub mod update_param {
 
     /// A builder for [`UpdateParam`](crate::model::UpdateParam).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::UpdateParamType>,
@@ -1042,6 +1045,7 @@ impl LaunchTemplateSpecification {
 pub mod launch_template_specification {
 
     /// A builder for [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1125,6 +1129,7 @@ impl NodegroupUpdateConfig {
 pub mod nodegroup_update_config {
 
     /// A builder for [`NodegroupUpdateConfig`](crate::model::NodegroupUpdateConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_unavailable: std::option::Option<i32>,
@@ -1207,6 +1212,7 @@ impl NodegroupScalingConfig {
 pub mod nodegroup_scaling_config {
 
     /// A builder for [`NodegroupScalingConfig`](crate::model::NodegroupScalingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_size: std::option::Option<i32>,
@@ -1294,6 +1300,7 @@ impl UpdateTaintsPayload {
 pub mod update_taints_payload {
 
     /// A builder for [`UpdateTaintsPayload`](crate::model::UpdateTaintsPayload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_or_update_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
@@ -1386,6 +1393,7 @@ impl Taint {
 pub mod taint {
 
     /// A builder for [`Taint`](crate::model::Taint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1564,6 +1572,7 @@ impl UpdateLabelsPayload {
 pub mod update_labels_payload {
 
     /// A builder for [`UpdateLabelsPayload`](crate::model::UpdateLabelsPayload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_or_update_labels: std::option::Option<
@@ -1650,6 +1659,7 @@ impl Logging {
 pub mod logging {
 
     /// A builder for [`Logging`](crate::model::Logging).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_logging: std::option::Option<std::vec::Vec<crate::model::LogSetup>>,
@@ -1714,6 +1724,7 @@ impl LogSetup {
 pub mod log_setup {
 
     /// A builder for [`LogSetup`](crate::model::LogSetup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) types: std::option::Option<std::vec::Vec<crate::model::LogType>>,
@@ -1922,6 +1933,7 @@ impl VpcConfigRequest {
 pub mod vpc_config_request {
 
     /// A builder for [`VpcConfigRequest`](crate::model::VpcConfigRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2280,6 +2292,7 @@ impl Cluster {
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2633,6 +2646,7 @@ impl OutpostConfigResponse {
 pub mod outpost_config_response {
 
     /// A builder for [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2727,6 +2741,7 @@ impl ControlPlanePlacementResponse {
 pub mod control_plane_placement_response {
 
     /// A builder for [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -2775,6 +2790,7 @@ impl ClusterHealth {
 pub mod cluster_health {
 
     /// A builder for [`ClusterHealth`](crate::model::ClusterHealth).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) issues: std::option::Option<std::vec::Vec<crate::model::ClusterIssue>>,
@@ -2846,6 +2862,7 @@ impl ClusterIssue {
 pub mod cluster_issue {
 
     /// A builder for [`ClusterIssue`](crate::model::ClusterIssue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ClusterIssueCode>,
@@ -3075,6 +3092,7 @@ impl ConnectorConfigResponse {
 pub mod connector_config_response {
 
     /// A builder for [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_id: std::option::Option<std::string::String>,
@@ -3187,6 +3205,7 @@ impl EncryptionConfig {
 pub mod encryption_config {
 
     /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3256,6 +3275,7 @@ impl Provider {
 pub mod provider {
 
     /// A builder for [`Provider`](crate::model::Provider).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
@@ -3304,6 +3324,7 @@ impl Certificate {
 pub mod certificate {
 
     /// A builder for [`Certificate`](crate::model::Certificate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<std::string::String>,
@@ -3462,6 +3483,7 @@ impl Identity {
 pub mod identity {
 
     /// A builder for [`Identity`](crate::model::Identity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) oidc: std::option::Option<crate::model::Oidc>,
@@ -3508,6 +3530,7 @@ impl Oidc {
 pub mod oidc {
 
     /// A builder for [`Oidc`](crate::model::Oidc).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) issuer: std::option::Option<std::string::String>,
@@ -3570,6 +3593,7 @@ impl KubernetesNetworkConfigResponse {
 pub mod kubernetes_network_config_response {
 
     /// A builder for [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_ipv4_cidr: std::option::Option<std::string::String>,
@@ -3780,6 +3804,7 @@ impl VpcConfigResponse {
 pub mod vpc_config_response {
 
     /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3937,6 +3962,7 @@ impl ConnectorConfigRequest {
 pub mod connector_config_request {
 
     /// A builder for [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4144,6 +4170,7 @@ impl IdentityProviderConfig {
 pub mod identity_provider_config {
 
     /// A builder for [`IdentityProviderConfig`](crate::model::IdentityProviderConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -4372,6 +4399,7 @@ impl Nodegroup {
 pub mod nodegroup {
 
     /// A builder for [`Nodegroup`](crate::model::Nodegroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nodegroup_name: std::option::Option<std::string::String>,
@@ -4788,6 +4816,7 @@ impl NodegroupHealth {
 pub mod nodegroup_health {
 
     /// A builder for [`NodegroupHealth`](crate::model::NodegroupHealth).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) issues: std::option::Option<std::vec::Vec<crate::model::Issue>>,
@@ -4893,6 +4922,7 @@ impl Issue {
 pub mod issue {
 
     /// A builder for [`Issue`](crate::model::Issue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::NodegroupIssueCode>,
@@ -5227,6 +5257,7 @@ impl NodegroupResources {
 pub mod nodegroup_resources {
 
     /// A builder for [`NodegroupResources`](crate::model::NodegroupResources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_groups:
@@ -5303,6 +5334,7 @@ impl AutoScalingGroup {
 pub mod auto_scaling_group {
 
     /// A builder for [`AutoScalingGroup`](crate::model::AutoScalingGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5509,6 +5541,7 @@ impl RemoteAccessConfig {
 pub mod remote_access_config {
 
     /// A builder for [`RemoteAccessConfig`](crate::model::RemoteAccessConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_ssh_key: std::option::Option<std::string::String>,
@@ -5791,6 +5824,7 @@ impl IdentityProviderConfigResponse {
 pub mod identity_provider_config_response {
 
     /// A builder for [`IdentityProviderConfigResponse`](crate::model::IdentityProviderConfigResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) oidc: std::option::Option<crate::model::OidcIdentityProviderConfig>,
@@ -5925,6 +5959,7 @@ impl OidcIdentityProviderConfig {
 pub mod oidc_identity_provider_config {
 
     /// A builder for [`OidcIdentityProviderConfig`](crate::model::OidcIdentityProviderConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_config_name: std::option::Option<std::string::String>,
@@ -6318,6 +6353,7 @@ impl FargateProfile {
 pub mod fargate_profile {
 
     /// A builder for [`FargateProfile`](crate::model::FargateProfile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fargate_profile_name: std::option::Option<std::string::String>,
@@ -6637,6 +6673,7 @@ impl FargateProfileSelector {
 pub mod fargate_profile_selector {
 
     /// A builder for [`FargateProfileSelector`](crate::model::FargateProfileSelector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -6751,6 +6788,7 @@ impl AddonInfo {
 pub mod addon_info {
 
     /// A builder for [`AddonInfo`](crate::model::AddonInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon_name: std::option::Option<std::string::String>,
@@ -6883,6 +6921,7 @@ impl MarketplaceInformation {
 pub mod marketplace_information {
 
     /// A builder for [`MarketplaceInformation`](crate::model::MarketplaceInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_id: std::option::Option<std::string::String>,
@@ -6964,6 +7003,7 @@ impl AddonVersionInfo {
 pub mod addon_version_info {
 
     /// A builder for [`AddonVersionInfo`](crate::model::AddonVersionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon_version: std::option::Option<std::string::String>,
@@ -7083,6 +7123,7 @@ impl Compatibility {
 pub mod compatibility {
 
     /// A builder for [`Compatibility`](crate::model::Compatibility).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_version: std::option::Option<std::string::String>,
@@ -7264,6 +7305,7 @@ impl Addon {
 pub mod addon {
 
     /// A builder for [`Addon`](crate::model::Addon).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addon_name: std::option::Option<std::string::String>,
@@ -7507,6 +7549,7 @@ impl AddonHealth {
 pub mod addon_health {
 
     /// A builder for [`AddonHealth`](crate::model::AddonHealth).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) issues: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
@@ -7578,6 +7621,7 @@ impl AddonIssue {
 pub mod addon_issue {
 
     /// A builder for [`AddonIssue`](crate::model::AddonIssue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::AddonIssueCode>,
@@ -7940,6 +7984,7 @@ impl OutpostConfigRequest {
 pub mod outpost_config_request {
 
     /// A builder for [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8038,6 +8083,7 @@ impl ControlPlanePlacementRequest {
 pub mod control_plane_placement_request {
 
     /// A builder for [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -8109,6 +8155,7 @@ impl KubernetesNetworkConfigRequest {
 pub mod kubernetes_network_config_request {
 
     /// A builder for [`KubernetesNetworkConfigRequest`](crate::model::KubernetesNetworkConfigRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_ipv4_cidr: std::option::Option<std::string::String>,
@@ -8241,6 +8288,7 @@ impl OidcIdentityProviderConfigRequest {
 pub mod oidc_identity_provider_config_request {
 
     /// A builder for [`OidcIdentityProviderConfigRequest`](crate::model::OidcIdentityProviderConfigRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_config_name: std::option::Option<std::string::String>,

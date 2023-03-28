@@ -220,6 +220,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -295,6 +296,7 @@ impl std::error::Error for StateMachineDoesNotExist {}
 pub mod state_machine_does_not_exist {
 
     /// A builder for [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -355,6 +357,7 @@ impl std::error::Error for StateMachineDeleting {}
 pub mod state_machine_deleting {
 
     /// A builder for [`StateMachineDeleting`](crate::error::StateMachineDeleting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -415,6 +418,7 @@ impl std::error::Error for MissingRequiredParameter {}
 pub mod missing_required_parameter {
 
     /// A builder for [`MissingRequiredParameter`](crate::error::MissingRequiredParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -475,6 +479,7 @@ impl std::error::Error for InvalidTracingConfiguration {}
 pub mod invalid_tracing_configuration {
 
     /// A builder for [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -535,6 +540,7 @@ impl std::error::Error for InvalidLoggingConfiguration {}
 pub mod invalid_logging_configuration {
 
     /// A builder for [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -595,6 +601,7 @@ impl std::error::Error for InvalidDefinition {}
 pub mod invalid_definition {
 
     /// A builder for [`InvalidDefinition`](crate::error::InvalidDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -655,6 +662,7 @@ impl std::error::Error for InvalidArn {}
 pub mod invalid_arn {
 
     /// A builder for [`InvalidArn`](crate::error::InvalidArn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -845,6 +853,7 @@ impl std::error::Error for ResourceNotFound {}
 pub mod resource_not_found {
 
     /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1163,6 +1172,7 @@ impl std::error::Error for TooManyTags {}
 pub mod too_many_tags {
 
     /// A builder for [`TooManyTags`](crate::error::TooManyTags).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1359,6 +1369,7 @@ impl std::error::Error for ExecutionDoesNotExist {}
 pub mod execution_does_not_exist {
 
     /// A builder for [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1576,6 +1587,7 @@ impl std::error::Error for StateMachineTypeNotSupported {}
 pub mod state_machine_type_not_supported {
 
     /// A builder for [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1636,6 +1648,7 @@ impl std::error::Error for InvalidName {}
 pub mod invalid_name {
 
     /// A builder for [`InvalidName`](crate::error::InvalidName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1696,6 +1709,7 @@ impl std::error::Error for InvalidExecutionInput {}
 pub mod invalid_execution_input {
 
     /// A builder for [`InvalidExecutionInput`](crate::error::InvalidExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1931,6 +1945,7 @@ impl std::error::Error for ExecutionLimitExceeded {}
 pub mod execution_limit_exceeded {
 
     /// A builder for [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1993,6 +2008,7 @@ impl std::error::Error for ExecutionAlreadyExists {}
 pub mod execution_already_exists {
 
     /// A builder for [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2182,6 +2198,7 @@ impl std::error::Error for TaskTimedOut {}
 pub mod task_timed_out {
 
     /// A builder for [`TaskTimedOut`](crate::error::TaskTimedOut).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2242,6 +2259,7 @@ impl std::error::Error for TaskDoesNotExist {}
 pub mod task_does_not_exist {
 
     /// A builder for [`TaskDoesNotExist`](crate::error::TaskDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2302,6 +2320,7 @@ impl std::error::Error for InvalidToken {}
 pub mod invalid_token {
 
     /// A builder for [`InvalidToken`](crate::error::InvalidToken).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2362,6 +2381,7 @@ impl std::error::Error for InvalidOutput {}
 pub mod invalid_output {
 
     /// A builder for [`InvalidOutput`](crate::error::InvalidOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3513,6 +3533,7 @@ impl std::error::Error for ActivityWorkerLimitExceeded {}
 pub mod activity_worker_limit_exceeded {
 
     /// A builder for [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3573,6 +3594,7 @@ impl std::error::Error for ActivityDoesNotExist {}
 pub mod activity_does_not_exist {
 
     /// A builder for [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4649,6 +4671,7 @@ impl std::error::Error for StateMachineLimitExceeded {}
 pub mod state_machine_limit_exceeded {
 
     /// A builder for [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4709,6 +4732,7 @@ impl std::error::Error for StateMachineAlreadyExists {}
 pub mod state_machine_already_exists {
 
     /// A builder for [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4893,6 +4917,7 @@ impl std::error::Error for ActivityLimitExceeded {}
 pub mod activity_limit_exceeded {
 
     /// A builder for [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

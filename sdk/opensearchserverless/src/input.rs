@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_collection_input {
 
     /// A builder for [`BatchGetCollectionInput`](crate::input::BatchGetCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -199,6 +200,7 @@ impl BatchGetCollectionInput {
 pub mod batch_get_vpc_endpoint_input {
 
     /// A builder for [`BatchGetVpcEndpointInput`](crate::input::BatchGetVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -372,6 +374,7 @@ impl BatchGetVpcEndpointInput {
 pub mod create_access_policy_input {
 
     /// A builder for [`CreateAccessPolicyInput`](crate::input::CreateAccessPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -590,6 +593,7 @@ impl CreateAccessPolicyInput {
 pub mod create_collection_input {
 
     /// A builder for [`CreateCollectionInput`](crate::input::CreateCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -817,6 +821,7 @@ impl CreateCollectionInput {
 pub mod create_security_config_input {
 
     /// A builder for [`CreateSecurityConfigInput`](crate::input::CreateSecurityConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityConfigType>,
@@ -1040,6 +1045,7 @@ impl CreateSecurityConfigInput {
 pub mod create_security_policy_input {
 
     /// A builder for [`CreateSecurityPolicyInput`](crate::input::CreateSecurityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -1260,6 +1266,7 @@ impl CreateSecurityPolicyInput {
 pub mod create_vpc_endpoint_input {
 
     /// A builder for [`CreateVpcEndpointInput`](crate::input::CreateVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1493,6 +1500,7 @@ impl CreateVpcEndpointInput {
 pub mod delete_access_policy_input {
 
     /// A builder for [`DeleteAccessPolicyInput`](crate::input::DeleteAccessPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -1687,6 +1695,7 @@ impl DeleteAccessPolicyInput {
 pub mod delete_collection_input {
 
     /// A builder for [`DeleteCollectionInput`](crate::input::DeleteCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1866,6 +1875,7 @@ impl DeleteCollectionInput {
 pub mod delete_security_config_input {
 
     /// A builder for [`DeleteSecurityConfigInput`](crate::input::DeleteSecurityConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2047,6 +2057,7 @@ impl DeleteSecurityConfigInput {
 pub mod delete_security_policy_input {
 
     /// A builder for [`DeleteSecurityPolicyInput`](crate::input::DeleteSecurityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -2243,6 +2254,7 @@ impl DeleteSecurityPolicyInput {
 pub mod delete_vpc_endpoint_input {
 
     /// A builder for [`DeleteVpcEndpointInput`](crate::input::DeleteVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2422,6 +2434,7 @@ impl DeleteVpcEndpointInput {
 pub mod get_access_policy_input {
 
     /// A builder for [`GetAccessPolicyInput`](crate::input::GetAccessPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -2599,6 +2612,7 @@ impl GetAccessPolicyInput {
 pub mod get_account_settings_input {
 
     /// A builder for [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2742,6 +2756,7 @@ impl GetAccountSettingsInput {
 pub mod get_policies_stats_input {
 
     /// A builder for [`GetPoliciesStatsInput`](crate::input::GetPoliciesStatsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2885,6 +2900,7 @@ impl GetPoliciesStatsInput {
 pub mod get_security_config_input {
 
     /// A builder for [`GetSecurityConfigInput`](crate::input::GetSecurityConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3047,6 +3063,7 @@ impl GetSecurityConfigInput {
 pub mod get_security_policy_input {
 
     /// A builder for [`GetSecurityPolicyInput`](crate::input::GetSecurityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -3226,6 +3243,7 @@ impl GetSecurityPolicyInput {
 pub mod list_access_policies_input {
 
     /// A builder for [`ListAccessPoliciesInput`](crate::input::ListAccessPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -3438,6 +3456,7 @@ impl ListAccessPoliciesInput {
 pub mod list_collections_input {
 
     /// A builder for [`ListCollectionsInput`](crate::input::ListCollectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_filters: std::option::Option<crate::model::CollectionFilters>,
@@ -3627,6 +3646,7 @@ impl ListCollectionsInput {
 pub mod list_security_configs_input {
 
     /// A builder for [`ListSecurityConfigsInput`](crate::input::ListSecurityConfigsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityConfigType>,
@@ -3818,6 +3838,7 @@ impl ListSecurityConfigsInput {
 pub mod list_security_policies_input {
 
     /// A builder for [`ListSecurityPoliciesInput`](crate::input::ListSecurityPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -4032,6 +4053,7 @@ impl ListSecurityPoliciesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4198,6 +4220,7 @@ impl ListTagsForResourceInput {
 pub mod list_vpc_endpoints_input {
 
     /// A builder for [`ListVpcEndpointsInput`](crate::input::ListVpcEndpointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_endpoint_filters: std::option::Option<crate::model::VpcEndpointFilters>,
@@ -4389,6 +4412,7 @@ impl ListVpcEndpointsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4572,6 +4596,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4755,6 +4780,7 @@ impl UntagResourceInput {
 pub mod update_access_policy_input {
 
     /// A builder for [`UpdateAccessPolicyInput`](crate::input::UpdateAccessPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccessPolicyType>,
@@ -4988,6 +5014,7 @@ impl UpdateAccessPolicyInput {
 pub mod update_account_settings_input {
 
     /// A builder for [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_limits: std::option::Option<crate::model::CapacityLimits>,
@@ -5157,6 +5184,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_collection_input {
 
     /// A builder for [`UpdateCollectionInput`](crate::input::UpdateCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5348,6 +5376,7 @@ impl UpdateCollectionInput {
 pub mod update_security_config_input {
 
     /// A builder for [`UpdateSecurityConfigInput`](crate::input::UpdateSecurityConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5571,6 +5600,7 @@ impl UpdateSecurityConfigInput {
 pub mod update_security_policy_input {
 
     /// A builder for [`UpdateSecurityPolicyInput`](crate::input::UpdateSecurityPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityPolicyType>,
@@ -5806,6 +5836,7 @@ impl UpdateSecurityPolicyInput {
 pub mod update_vpc_endpoint_input {
 
     /// A builder for [`UpdateVpcEndpointInput`](crate::input::UpdateVpcEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

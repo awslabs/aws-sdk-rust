@@ -78,6 +78,7 @@ impl Theme {
 pub mod theme {
 
     /// A builder for [`Theme`](crate::model::Theme).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -273,6 +274,7 @@ impl ThemeValues {
 pub mod theme_values {
 
     /// A builder for [`ThemeValues`](crate::model::ThemeValues).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -340,6 +342,7 @@ impl ThemeValue {
 pub mod theme_value {
 
     /// A builder for [`ThemeValue`](crate::model::ThemeValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -430,6 +433,7 @@ impl ThemeSummary {
 pub mod theme_summary {
 
     /// A builder for [`ThemeSummary`](crate::model::ThemeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -542,6 +546,7 @@ impl CreateThemeData {
 pub mod create_theme_data {
 
     /// A builder for [`CreateThemeData`](crate::model::CreateThemeData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -682,6 +687,7 @@ impl UpdateThemeData {
 pub mod update_theme_data {
 
     /// A builder for [`UpdateThemeData`](crate::model::UpdateThemeData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -877,6 +883,7 @@ impl Form {
 pub mod form {
 
     /// A builder for [`Form`](crate::model::Form).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1141,6 +1148,7 @@ impl FormCta {
 pub mod form_cta {
 
     /// A builder for [`FormCta`](crate::model::FormCta).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) position: std::option::Option<crate::model::FormButtonsPosition>,
@@ -1242,6 +1250,7 @@ impl FormButton {
 pub mod form_button {
 
     /// A builder for [`FormButton`](crate::model::FormButton).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) excluded: std::option::Option<bool>,
@@ -1593,6 +1602,7 @@ impl SectionalElement {
 pub mod sectional_element {
 
     /// A builder for [`SectionalElement`](crate::model::SectionalElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1722,6 +1732,7 @@ impl FieldConfig {
 pub mod field_config {
 
     /// A builder for [`FieldConfig`](crate::model::FieldConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
@@ -1855,6 +1866,7 @@ impl FieldValidationConfiguration {
 pub mod field_validation_configuration {
 
     /// A builder for [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2055,6 +2067,7 @@ impl FieldInputConfig {
 pub mod field_input_config {
 
     /// A builder for [`FieldInputConfig`](crate::model::FieldInputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2283,6 +2296,7 @@ impl ValueMappings {
 pub mod value_mappings {
 
     /// A builder for [`ValueMappings`](crate::model::ValueMappings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>,
@@ -2347,6 +2361,7 @@ impl ValueMapping {
 pub mod value_mapping {
 
     /// A builder for [`ValueMapping`](crate::model::ValueMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_value: std::option::Option<crate::model::FormInputValueProperty>,
@@ -2413,6 +2428,7 @@ impl FormInputValueProperty {
 pub mod form_input_value_property {
 
     /// A builder for [`FormInputValueProperty`](crate::model::FormInputValueProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2466,6 +2482,7 @@ impl FormDataTypeConfig {
 pub mod form_data_type_config {
 
     /// A builder for [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_type: std::option::Option<crate::model::FormDataSourceType>,
@@ -2638,6 +2655,7 @@ impl FormStyle {
 pub mod form_style {
 
     /// A builder for [`FormStyle`](crate::model::FormStyle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) horizontal_gap: std::option::Option<crate::model::FormStyleConfig>,
@@ -2895,6 +2913,7 @@ impl FormSummary {
 pub mod form_summary {
 
     /// A builder for [`FormSummary`](crate::model::FormSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3084,6 +3103,7 @@ impl CreateFormData {
 pub mod create_form_data {
 
     /// A builder for [`CreateFormData`](crate::model::CreateFormData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3349,6 +3369,7 @@ impl UpdateFormData {
 pub mod update_form_data {
 
     /// A builder for [`UpdateFormData`](crate::model::UpdateFormData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3684,6 +3705,7 @@ impl Component {
 pub mod component {
 
     /// A builder for [`Component`](crate::model::Component).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4093,6 +4115,7 @@ impl ComponentEvent {
 pub mod component_event {
 
     /// A builder for [`ComponentEvent`](crate::model::ComponentEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
@@ -4233,6 +4256,7 @@ impl ActionParameters {
 pub mod action_parameters {
 
     /// A builder for [`ActionParameters`](crate::model::ActionParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ComponentProperty>,
@@ -4429,6 +4453,7 @@ impl MutationActionSetStateParameter {
 pub mod mutation_action_set_state_parameter {
 
     /// A builder for [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -4616,6 +4641,7 @@ impl ComponentProperty {
 pub mod component_property {
 
     /// A builder for [`ComponentProperty`](crate::model::ComponentProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4929,6 +4955,7 @@ impl ComponentConditionProperty {
 pub mod component_condition_property {
 
     /// A builder for [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property: std::option::Option<std::string::String>,
@@ -5068,6 +5095,7 @@ impl FormBindingElement {
 pub mod form_binding_element {
 
     /// A builder for [`FormBindingElement`](crate::model::FormBindingElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) element: std::option::Option<std::string::String>,
@@ -5135,6 +5163,7 @@ impl ComponentPropertyBindingProperties {
 pub mod component_property_binding_properties {
 
     /// A builder for [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property: std::option::Option<std::string::String>,
@@ -5216,6 +5245,7 @@ impl ComponentDataConfiguration {
 pub mod component_data_configuration {
 
     /// A builder for [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model: std::option::Option<std::string::String>,
@@ -5349,6 +5379,7 @@ impl Predicate {
 pub mod predicate {
 
     /// A builder for [`Predicate`](crate::model::Predicate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) or: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
@@ -5470,6 +5501,7 @@ impl SortProperty {
 pub mod sort_property {
 
     /// A builder for [`SortProperty`](crate::model::SortProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -5581,6 +5613,7 @@ impl ComponentBindingPropertiesValue {
 pub mod component_binding_properties_value {
 
     /// A builder for [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -5712,6 +5745,7 @@ impl ComponentBindingPropertiesValueProperties {
 pub mod component_binding_properties_value_properties {
 
     /// A builder for [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model: std::option::Option<std::string::String>,
@@ -5882,6 +5916,7 @@ impl ComponentVariant {
 pub mod component_variant {
 
     /// A builder for [`ComponentVariant`](crate::model::ComponentVariant).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) variant_values: std::option::Option<
@@ -6029,6 +6064,7 @@ impl ComponentChild {
 pub mod component_child {
 
     /// A builder for [`ComponentChild`](crate::model::ComponentChild).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_type: std::option::Option<std::string::String>,
@@ -6211,6 +6247,7 @@ impl ComponentSummary {
 pub mod component_summary {
 
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -6436,6 +6473,7 @@ impl CreateComponentData {
 pub mod create_component_data {
 
     /// A builder for [`CreateComponentData`](crate::model::CreateComponentData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6879,6 +6917,7 @@ impl UpdateComponentData {
 pub mod update_component_data {
 
     /// A builder for [`UpdateComponentData`](crate::model::UpdateComponentData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7193,6 +7232,7 @@ impl std::fmt::Debug for RefreshTokenRequestBody {
 pub mod refresh_token_request_body {
 
     /// A builder for [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
@@ -7331,6 +7371,7 @@ impl PutMetadataFlagBody {
 pub mod put_metadata_flag_body {
 
     /// A builder for [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) new_value: std::option::Option<std::string::String>,
@@ -7394,6 +7435,7 @@ impl std::fmt::Debug for ExchangeCodeForTokenRequestBody {
 pub mod exchange_code_for_token_request_body {
 
     /// A builder for [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,

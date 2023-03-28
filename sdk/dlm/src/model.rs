@@ -78,6 +78,7 @@ impl PolicyDetails {
 pub mod policy_details {
 
     /// A builder for [`PolicyDetails`](crate::model::PolicyDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type: std::option::Option<crate::model::PolicyTypeValues>,
@@ -281,6 +282,7 @@ impl Action {
 pub mod action {
 
     /// A builder for [`Action`](crate::model::Action).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -369,6 +371,7 @@ impl CrossRegionCopyAction {
 pub mod cross_region_copy_action {
 
     /// A builder for [`CrossRegionCopyAction`](crate::model::CrossRegionCopyAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
@@ -458,6 +461,7 @@ impl CrossRegionCopyRetainRule {
 pub mod cross_region_copy_retain_rule {
 
     /// A builder for [`CrossRegionCopyRetainRule`](crate::model::CrossRegionCopyRetainRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<i32>,
@@ -630,6 +634,7 @@ impl EncryptionConfiguration {
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encrypted: std::option::Option<bool>,
@@ -697,6 +702,7 @@ impl EventSource {
 pub mod event_source {
 
     /// A builder for [`EventSource`](crate::model::EventSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EventSourceValues>,
@@ -779,6 +785,7 @@ impl EventParameters {
 pub mod event_parameters {
 
     /// A builder for [`EventParameters`](crate::model::EventParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type: std::option::Option<crate::model::EventTypeValues>,
@@ -1057,6 +1064,7 @@ impl Parameters {
 pub mod parameters {
 
     /// A builder for [`Parameters`](crate::model::Parameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclude_boot_volume: std::option::Option<bool>,
@@ -1147,6 +1155,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1286,6 +1295,7 @@ impl Schedule {
 pub mod schedule {
 
     /// A builder for [`Schedule`](crate::model::Schedule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1512,6 +1522,7 @@ impl ArchiveRule {
 pub mod archive_rule {
 
     /// A builder for [`ArchiveRule`](crate::model::ArchiveRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retain_rule: std::option::Option<crate::model::ArchiveRetainRule>,
@@ -1565,6 +1576,7 @@ impl ArchiveRetainRule {
 pub mod archive_retain_rule {
 
     /// A builder for [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_archive_tier: std::option::Option<crate::model::RetentionArchiveTier>,
@@ -1634,6 +1646,7 @@ impl RetentionArchiveTier {
 pub mod retention_archive_tier {
 
     /// A builder for [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -1724,6 +1737,7 @@ impl DeprecateRule {
 pub mod deprecate_rule {
 
     /// A builder for [`DeprecateRule`](crate::model::DeprecateRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -1815,6 +1829,7 @@ impl ShareRule {
 pub mod share_rule {
 
     /// A builder for [`ShareRule`](crate::model::ShareRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1957,6 +1972,7 @@ impl CrossRegionCopyRule {
 pub mod cross_region_copy_rule {
 
     /// A builder for [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_region: std::option::Option<std::string::String>,
@@ -2101,6 +2117,7 @@ impl CrossRegionCopyDeprecateRule {
 pub mod cross_region_copy_deprecate_rule {
 
     /// A builder for [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<i32>,
@@ -2185,6 +2202,7 @@ impl FastRestoreRule {
 pub mod fast_restore_rule {
 
     /// A builder for [`FastRestoreRule`](crate::model::FastRestoreRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -2303,6 +2321,7 @@ impl RetainRule {
 pub mod retain_rule {
 
     /// A builder for [`RetainRule`](crate::model::RetainRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -2415,6 +2434,7 @@ impl CreateRule {
 pub mod create_rule {
 
     /// A builder for [`CreateRule`](crate::model::CreateRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<crate::model::LocationValues>,
@@ -3152,6 +3172,7 @@ impl LifecyclePolicy {
 pub mod lifecycle_policy {
 
     /// A builder for [`LifecyclePolicy`](crate::model::LifecyclePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -3472,6 +3493,7 @@ impl LifecyclePolicySummary {
 pub mod lifecycle_policy_summary {
 
     /// A builder for [`LifecyclePolicySummary`](crate::model::LifecyclePolicySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,

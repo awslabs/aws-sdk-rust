@@ -321,6 +321,7 @@ impl std::error::Error for UnsupportedApiEndpointException {}
 pub mod unsupported_api_endpoint_exception {
 
     /// A builder for [`UnsupportedApiEndpointException`](crate::error::UnsupportedApiEndpointException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -391,6 +392,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
 
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -463,6 +465,7 @@ impl std::error::Error for ServiceException {}
 pub mod service_exception {
 
     /// A builder for [`ServiceException`](crate::error::ServiceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -523,6 +526,7 @@ impl std::error::Error for PolicyNotFoundException {}
 pub mod policy_not_found_exception {
 
     /// A builder for [`PolicyNotFoundException`](crate::error::PolicyNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -583,6 +587,7 @@ impl std::error::Error for PolicyChangesInProgressException {}
 pub mod policy_changes_in_progress_exception {
 
     /// A builder for [`PolicyChangesInProgressException`](crate::error::PolicyChangesInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -643,6 +648,7 @@ impl std::error::Error for MalformedPolicyDocumentException {}
 pub mod malformed_policy_document_exception {
 
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -740,6 +746,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
 
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -815,6 +822,7 @@ impl std::error::Error for DuplicatePolicyException {}
 pub mod duplicate_policy_exception {
 
     /// A builder for [`DuplicatePolicyException`](crate::error::DuplicatePolicyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -924,6 +932,7 @@ impl std::error::Error for ConstraintViolationException {}
 pub mod constraint_violation_exception {
 
     /// A builder for [`ConstraintViolationException`](crate::error::ConstraintViolationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -999,6 +1008,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1062,6 +1072,7 @@ impl std::error::Error for AwsOrganizationsNotInUseException {}
 pub mod aws_organizations_not_in_use_exception {
 
     /// A builder for [`AwsOrganizationsNotInUseException`](crate::error::AwsOrganizationsNotInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1122,6 +1133,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1418,6 +1430,7 @@ impl std::error::Error for OrganizationalUnitNotFoundException {}
 pub mod organizational_unit_not_found_exception {
 
     /// A builder for [`OrganizationalUnitNotFoundException`](crate::error::OrganizationalUnitNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1478,6 +1491,7 @@ impl std::error::Error for DuplicateOrganizationalUnitException {}
 pub mod duplicate_organizational_unit_exception {
 
     /// A builder for [`DuplicateOrganizationalUnitException`](crate::error::DuplicateOrganizationalUnitException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1783,6 +1797,7 @@ impl std::error::Error for TargetNotFoundException {}
 pub mod target_not_found_exception {
 
     /// A builder for [`TargetNotFoundException`](crate::error::TargetNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2383,6 +2398,7 @@ impl std::error::Error for MasterCannotLeaveOrganizationException {}
 pub mod master_cannot_leave_organization_exception {
 
     /// A builder for [`MasterCannotLeaveOrganizationException`](crate::error::MasterCannotLeaveOrganizationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2443,6 +2459,7 @@ impl std::error::Error for AccountNotFoundException {}
 pub mod account_not_found_exception {
 
     /// A builder for [`AccountNotFoundException`](crate::error::AccountNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2816,6 +2833,7 @@ impl std::error::Error for AccountAlreadyRegisteredException {}
 pub mod account_already_registered_exception {
 
     /// A builder for [`AccountAlreadyRegisteredException`](crate::error::AccountAlreadyRegisteredException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3354,6 +3372,7 @@ impl std::error::Error for SourceParentNotFoundException {}
 pub mod source_parent_not_found_exception {
 
     /// A builder for [`SourceParentNotFoundException`](crate::error::SourceParentNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3414,6 +3433,7 @@ impl std::error::Error for DuplicateAccountException {}
 pub mod duplicate_account_exception {
 
     /// A builder for [`DuplicateAccountException`](crate::error::DuplicateAccountException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3474,6 +3494,7 @@ impl std::error::Error for DestinationParentNotFoundException {}
 pub mod destination_parent_not_found_exception {
 
     /// A builder for [`DestinationParentNotFoundException`](crate::error::DestinationParentNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4684,6 +4705,7 @@ impl std::error::Error for ChildNotFoundException {}
 pub mod child_not_found_exception {
 
     /// A builder for [`ChildNotFoundException`](crate::error::ChildNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4965,6 +4987,7 @@ impl std::error::Error for ParentNotFoundException {}
 pub mod parent_not_found_exception {
 
     /// A builder for [`ParentNotFoundException`](crate::error::ParentNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5731,6 +5754,7 @@ impl std::error::Error for AccountNotRegisteredException {}
 pub mod account_not_registered_exception {
 
     /// A builder for [`AccountNotRegisteredException`](crate::error::AccountNotRegisteredException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7715,6 +7739,7 @@ impl std::error::Error for HandshakeConstraintViolationException {}
 pub mod handshake_constraint_violation_exception {
 
     /// A builder for [`HandshakeConstraintViolationException`](crate::error::HandshakeConstraintViolationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7794,6 +7819,7 @@ impl std::error::Error for FinalizingOrganizationException {}
 pub mod finalizing_organization_exception {
 
     /// A builder for [`FinalizingOrganizationException`](crate::error::FinalizingOrganizationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7854,6 +7880,7 @@ impl std::error::Error for DuplicateHandshakeException {}
 pub mod duplicate_handshake_exception {
 
     /// A builder for [`DuplicateHandshakeException`](crate::error::DuplicateHandshakeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7914,6 +7941,7 @@ impl std::error::Error for AccountOwnerNotVerifiedException {}
 pub mod account_owner_not_verified_exception {
 
     /// A builder for [`AccountOwnerNotVerifiedException`](crate::error::AccountOwnerNotVerifiedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8275,6 +8303,7 @@ impl std::error::Error for RootNotFoundException {}
 pub mod root_not_found_exception {
 
     /// A builder for [`RootNotFoundException`](crate::error::RootNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8335,6 +8364,7 @@ impl std::error::Error for PolicyTypeNotAvailableForOrganizationException {}
 pub mod policy_type_not_available_for_organization_exception {
 
     /// A builder for [`PolicyTypeNotAvailableForOrganizationException`](crate::error::PolicyTypeNotAvailableForOrganizationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8396,6 +8426,7 @@ impl std::error::Error for PolicyTypeAlreadyEnabledException {}
 pub mod policy_type_already_enabled_exception {
 
     /// A builder for [`PolicyTypeAlreadyEnabledException`](crate::error::PolicyTypeAlreadyEnabledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9229,6 +9260,7 @@ impl std::error::Error for PolicyTypeNotEnabledException {}
 pub mod policy_type_not_enabled_exception {
 
     /// A builder for [`PolicyTypeNotEnabledException`](crate::error::PolicyTypeNotEnabledException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9848,6 +9880,7 @@ impl std::error::Error for PolicyNotAttachedException {}
 pub mod policy_not_attached_exception {
 
     /// A builder for [`PolicyNotAttachedException`](crate::error::PolicyNotAttachedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10139,6 +10172,7 @@ impl std::error::Error for ResourcePolicyNotFoundException {}
 pub mod resource_policy_not_found_exception {
 
     /// A builder for [`ResourcePolicyNotFoundException`](crate::error::ResourcePolicyNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10955,6 +10989,7 @@ impl std::error::Error for HandshakeNotFoundException {}
 pub mod handshake_not_found_exception {
 
     /// A builder for [`HandshakeNotFoundException`](crate::error::HandshakeNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11296,6 +11331,7 @@ impl std::error::Error for EffectivePolicyNotFoundException {}
 pub mod effective_policy_not_found_exception {
 
     /// A builder for [`EffectivePolicyNotFoundException`](crate::error::EffectivePolicyNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11577,6 +11613,7 @@ impl std::error::Error for CreateAccountStatusNotFoundException {}
 pub mod create_account_status_not_found_exception {
 
     /// A builder for [`CreateAccountStatusNotFoundException`](crate::error::CreateAccountStatusNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12594,6 +12631,7 @@ impl std::error::Error for PolicyInUseException {}
 pub mod policy_in_use_exception {
 
     /// A builder for [`PolicyInUseException`](crate::error::PolicyInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -12890,6 +12928,7 @@ impl std::error::Error for OrganizationalUnitNotEmptyException {}
 pub mod organizational_unit_not_empty_exception {
 
     /// A builder for [`OrganizationalUnitNotEmptyException`](crate::error::OrganizationalUnitNotEmptyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13150,6 +13189,7 @@ impl std::error::Error for OrganizationNotEmptyException {}
 pub mod organization_not_empty_exception {
 
     /// A builder for [`OrganizationNotEmptyException`](crate::error::OrganizationNotEmptyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13421,6 +13461,7 @@ impl std::error::Error for InvalidHandshakeTransitionException {}
 pub mod invalid_handshake_transition_exception {
 
     /// A builder for [`InvalidHandshakeTransitionException`](crate::error::InvalidHandshakeTransitionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13481,6 +13522,7 @@ impl std::error::Error for HandshakeAlreadyInStateException {}
 pub mod handshake_already_in_state_exception {
 
     /// A builder for [`HandshakeAlreadyInStateException`](crate::error::HandshakeAlreadyInStateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14363,6 +14405,7 @@ impl std::error::Error for AlreadyInOrganizationException {}
 pub mod already_in_organization_exception {
 
     /// A builder for [`AlreadyInOrganizationException`](crate::error::AlreadyInOrganizationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14434,6 +14477,7 @@ impl std::error::Error for AccessDeniedForDependencyException {}
 pub mod access_denied_for_dependency_exception {
 
     /// A builder for [`AccessDeniedForDependencyException`](crate::error::AccessDeniedForDependencyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15323,6 +15367,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15383,6 +15428,7 @@ impl std::error::Error for AccountAlreadyClosedException {}
 pub mod account_already_closed_exception {
 
     /// A builder for [`AccountAlreadyClosedException`](crate::error::AccountAlreadyClosedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15954,6 +16000,7 @@ impl std::error::Error for DuplicatePolicyAttachmentException {}
 pub mod duplicate_policy_attachment_exception {
 
     /// A builder for [`DuplicatePolicyAttachmentException`](crate::error::DuplicatePolicyAttachmentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![allow(clippy::derive_partial_eq_without_eq)]
+
 //! Abstractions for the Smithy AWS Query protocol
 
 use aws_smithy_types::date_time::{DateTimeFormatError, Format};

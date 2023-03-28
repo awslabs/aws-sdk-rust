@@ -63,6 +63,7 @@ impl UpdateLinkOutput {
 pub mod update_link_output {
 
     /// A builder for [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -202,6 +203,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -226,6 +228,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -274,6 +277,7 @@ impl PutSinkPolicyOutput {
 pub mod put_sink_policy_output {
 
     /// A builder for [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sink_arn: std::option::Option<std::string::String>,
@@ -350,6 +354,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -420,6 +425,7 @@ impl ListSinksOutput {
 pub mod list_sinks_output {
 
     /// A builder for [`ListSinksOutput`](crate::output::ListSinksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListSinksItem>>,
@@ -496,6 +502,7 @@ impl ListLinksOutput {
 pub mod list_links_output {
 
     /// A builder for [`ListLinksOutput`](crate::output::ListLinksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListLinksItem>>,
@@ -572,6 +579,7 @@ impl ListAttachedLinksOutput {
 pub mod list_attached_links_output {
 
     /// A builder for [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListAttachedLinksItem>>,
@@ -655,6 +663,7 @@ impl GetSinkPolicyOutput {
 pub mod get_sink_policy_output {
 
     /// A builder for [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sink_arn: std::option::Option<std::string::String>,
@@ -752,6 +761,7 @@ impl GetSinkOutput {
 pub mod get_sink_output {
 
     /// A builder for [`GetSinkOutput`](crate::output::GetSinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -899,6 +909,7 @@ impl GetLinkOutput {
 pub mod get_link_output {
 
     /// A builder for [`GetLinkOutput`](crate::output::GetLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1038,6 +1049,7 @@ pub struct DeleteSinkOutput {}
 pub mod delete_sink_output {
 
     /// A builder for [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1062,6 +1074,7 @@ pub struct DeleteLinkOutput {}
 pub mod delete_link_output {
 
     /// A builder for [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1121,6 +1134,7 @@ impl CreateSinkOutput {
 pub mod create_sink_output {
 
     /// A builder for [`CreateSinkOutput`](crate::output::CreateSinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1268,6 +1282,7 @@ impl CreateLinkOutput {
 pub mod create_link_output {
 
     /// A builder for [`CreateLinkOutput`](crate::output::CreateLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

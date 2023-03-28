@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_budget_input {
 
     /// A builder for [`CreateBudgetInput`](crate::input::CreateBudgetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -204,6 +205,7 @@ impl CreateBudgetInput {
 pub mod create_budget_action_input {
 
     /// A builder for [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -491,6 +493,7 @@ impl CreateBudgetActionInput {
 pub mod create_notification_input {
 
     /// A builder for [`CreateNotificationInput`](crate::input::CreateNotificationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -703,6 +706,7 @@ impl CreateNotificationInput {
 pub mod create_subscriber_input {
 
     /// A builder for [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -909,6 +913,7 @@ impl CreateSubscriberInput {
 pub mod delete_budget_input {
 
     /// A builder for [`DeleteBudgetInput`](crate::input::DeleteBudgetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1083,6 +1088,7 @@ impl DeleteBudgetInput {
 pub mod delete_budget_action_input {
 
     /// A builder for [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1271,6 +1277,7 @@ impl DeleteBudgetActionInput {
 pub mod delete_notification_input {
 
     /// A builder for [`DeleteNotificationInput`](crate::input::DeleteNotificationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1462,6 +1469,7 @@ impl DeleteNotificationInput {
 pub mod delete_subscriber_input {
 
     /// A builder for [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1668,6 +1676,7 @@ impl DeleteSubscriberInput {
 pub mod describe_budget_input {
 
     /// A builder for [`DescribeBudgetInput`](crate::input::DescribeBudgetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1842,6 +1851,7 @@ impl DescribeBudgetInput {
 pub mod describe_budget_action_input {
 
     /// A builder for [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2032,6 +2042,7 @@ impl DescribeBudgetActionInput {
 pub mod describe_budget_action_histories_input {
 
     /// A builder for [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2259,6 +2270,7 @@ impl DescribeBudgetActionHistoriesInput {
 pub mod describe_budget_actions_for_account_input {
 
     /// A builder for [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2447,6 +2459,7 @@ impl DescribeBudgetActionsForAccountInput {
 pub mod describe_budget_actions_for_budget_input {
 
     /// A builder for [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2647,6 +2660,7 @@ impl DescribeBudgetActionsForBudgetInput {
 pub mod describe_budget_notifications_for_account_input {
 
     /// A builder for [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2835,6 +2849,7 @@ impl DescribeBudgetNotificationsForAccountInput {
 pub mod describe_budget_performance_history_input {
 
     /// A builder for [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3050,6 +3065,7 @@ impl DescribeBudgetPerformanceHistoryInput {
 pub mod describe_budgets_input {
 
     /// A builder for [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3236,6 +3252,7 @@ impl DescribeBudgetsInput {
 pub mod describe_notifications_for_budget_input {
 
     /// A builder for [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3436,6 +3453,7 @@ impl DescribeNotificationsForBudgetInput {
 pub mod describe_subscribers_for_notification_input {
 
     /// A builder for [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3651,6 +3669,7 @@ impl DescribeSubscribersForNotificationInput {
 pub mod execute_budget_action_input {
 
     /// A builder for [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3854,6 +3873,7 @@ impl ExecuteBudgetActionInput {
 pub mod update_budget_input {
 
     /// A builder for [`UpdateBudgetInput`](crate::input::UpdateBudgetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4028,6 +4048,7 @@ impl UpdateBudgetInput {
 pub mod update_budget_action_input {
 
     /// A builder for [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4312,6 +4333,7 @@ impl UpdateBudgetActionInput {
 pub mod update_notification_input {
 
     /// A builder for [`UpdateNotificationInput`](crate::input::UpdateNotificationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4518,6 +4540,7 @@ impl UpdateNotificationInput {
 pub mod update_subscriber_input {
 
     /// A builder for [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,

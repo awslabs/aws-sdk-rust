@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_connector_profile_input {
 
     /// A builder for [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
@@ -245,6 +246,7 @@ impl CreateConnectorProfileInput {
 pub mod create_flow_input {
 
     /// A builder for [`CreateFlowInput`](crate::input::CreateFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
@@ -550,6 +552,7 @@ impl CreateFlowInput {
 pub mod delete_connector_profile_input {
 
     /// A builder for [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
@@ -726,6 +729,7 @@ impl DeleteConnectorProfileInput {
 pub mod delete_flow_input {
 
     /// A builder for [`DeleteFlowInput`](crate::input::DeleteFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
@@ -895,6 +899,7 @@ impl DeleteFlowInput {
 pub mod describe_connector_input {
 
     /// A builder for [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -1072,6 +1077,7 @@ impl DescribeConnectorInput {
 pub mod describe_connector_entity_input {
 
     /// A builder for [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_entity_name: std::option::Option<std::string::String>,
@@ -1278,6 +1284,7 @@ impl DescribeConnectorEntityInput {
 pub mod describe_connector_profiles_input {
 
     /// A builder for [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1502,6 +1509,7 @@ impl DescribeConnectorProfilesInput {
 pub mod describe_connectors_input {
 
     /// A builder for [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_types: std::option::Option<std::vec::Vec<crate::model::ConnectorType>>,
@@ -1694,6 +1702,7 @@ impl DescribeConnectorsInput {
 pub mod describe_flow_input {
 
     /// A builder for [`DescribeFlowInput`](crate::input::DescribeFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
@@ -1851,6 +1860,7 @@ impl DescribeFlowInput {
 pub mod describe_flow_execution_records_input {
 
     /// A builder for [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
@@ -2035,6 +2045,7 @@ impl DescribeFlowExecutionRecordsInput {
 pub mod list_connector_entities_input {
 
     /// A builder for [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
@@ -2265,6 +2276,7 @@ impl ListConnectorEntitiesInput {
 pub mod list_connectors_input {
 
     /// A builder for [`ListConnectorsInput`](crate::input::ListConnectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2434,6 +2446,7 @@ impl ListConnectorsInput {
 pub mod list_flows_input {
 
     /// A builder for [`ListFlowsInput`](crate::input::ListFlowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2601,6 +2614,7 @@ impl ListFlowsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2766,6 +2780,7 @@ impl ListTagsForResourceInput {
 pub mod register_connector_input {
 
     /// A builder for [`RegisterConnectorInput`](crate::input::RegisterConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_label: std::option::Option<std::string::String>,
@@ -2978,6 +2993,7 @@ impl RegisterConnectorInput {
 pub mod start_flow_input {
 
     /// A builder for [`StartFlowInput`](crate::input::StartFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
@@ -3133,6 +3149,7 @@ impl StartFlowInput {
 pub mod stop_flow_input {
 
     /// A builder for [`StopFlowInput`](crate::input::StopFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,
@@ -3287,6 +3304,7 @@ impl StopFlowInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3493,6 +3511,7 @@ impl TagResourceInput {
 pub mod unregister_connector_input {
 
     /// A builder for [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_label: std::option::Option<std::string::String>,
@@ -3667,6 +3686,7 @@ impl UnregisterConnectorInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3869,6 +3889,7 @@ impl UntagResourceInput {
 pub mod update_connector_profile_input {
 
     /// A builder for [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_name: std::option::Option<std::string::String>,
@@ -4067,6 +4088,7 @@ impl UpdateConnectorProfileInput {
 pub mod update_connector_registration_input {
 
     /// A builder for [`UpdateConnectorRegistrationInput`](crate::input::UpdateConnectorRegistrationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_label: std::option::Option<std::string::String>,
@@ -4261,6 +4283,7 @@ impl UpdateConnectorRegistrationInput {
 pub mod update_flow_input {
 
     /// A builder for [`UpdateFlowInput`](crate::input::UpdateFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_name: std::option::Option<std::string::String>,

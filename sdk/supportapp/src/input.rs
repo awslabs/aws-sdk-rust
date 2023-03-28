@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_slack_channel_configuration_input {
 
     /// A builder for [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
@@ -293,6 +294,7 @@ impl CreateSlackChannelConfigurationInput {
 pub mod delete_account_alias_input {
 
     /// A builder for [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -424,6 +426,7 @@ impl DeleteAccountAliasInput {
 pub mod delete_slack_channel_configuration_input {
 
     /// A builder for [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
@@ -596,6 +599,7 @@ impl DeleteSlackChannelConfigurationInput {
 pub mod delete_slack_workspace_configuration_input {
 
     /// A builder for [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
@@ -756,6 +760,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
 pub mod get_account_alias_input {
 
     /// A builder for [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -885,6 +890,7 @@ impl GetAccountAliasInput {
 pub mod list_slack_channel_configurations_input {
 
     /// A builder for [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1045,6 +1051,7 @@ impl ListSlackChannelConfigurationsInput {
 pub mod list_slack_workspace_configurations_input {
 
     /// A builder for [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1205,6 +1212,7 @@ impl ListSlackWorkspaceConfigurationsInput {
 pub mod put_account_alias_input {
 
     /// A builder for [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
@@ -1365,6 +1373,7 @@ impl PutAccountAliasInput {
 pub mod register_slack_workspace_for_organization_input {
 
     /// A builder for [`RegisterSlackWorkspaceForOrganizationInput`](crate::input::RegisterSlackWorkspaceForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
@@ -1525,6 +1534,7 @@ impl RegisterSlackWorkspaceForOrganizationInput {
 pub mod update_slack_channel_configuration_input {
 
     /// A builder for [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,

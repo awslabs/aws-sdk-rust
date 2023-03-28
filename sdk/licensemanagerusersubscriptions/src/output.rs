@@ -19,6 +19,7 @@ impl UpdateIdentityProviderSettingsOutput {
 pub mod update_identity_provider_settings_output {
 
     /// A builder for [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_summary:
@@ -74,6 +75,7 @@ impl StopProductSubscriptionOutput {
 pub mod stop_product_subscription_output {
 
     /// A builder for [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
@@ -125,6 +127,7 @@ impl StartProductSubscriptionOutput {
 pub mod start_product_subscription_output {
 
     /// A builder for [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
@@ -178,6 +181,7 @@ impl RegisterIdentityProviderOutput {
 pub mod register_identity_provider_output {
 
     /// A builder for [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_summary:
@@ -243,6 +247,7 @@ impl ListUserAssociationsOutput {
 pub mod list_user_associations_output {
 
     /// A builder for [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_user_summaries:
@@ -323,6 +328,7 @@ impl ListProductSubscriptionsOutput {
 pub mod list_product_subscriptions_output {
 
     /// A builder for [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_user_summaries:
@@ -400,6 +406,7 @@ impl ListInstancesOutput {
 pub mod list_instances_output {
 
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_summaries:
@@ -480,6 +487,7 @@ impl ListIdentityProvidersOutput {
 pub mod list_identity_providers_output {
 
     /// A builder for [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_summaries:
@@ -553,6 +561,7 @@ impl DisassociateUserOutput {
 pub mod disassociate_user_output {
 
     /// A builder for [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
@@ -606,6 +615,7 @@ impl DeregisterIdentityProviderOutput {
 pub mod deregister_identity_provider_output {
 
     /// A builder for [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_summary:
@@ -661,6 +671,7 @@ impl AssociateUserOutput {
 pub mod associate_user_output {
 
     /// A builder for [`AssociateUserOutput`](crate::output::AssociateUserOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,

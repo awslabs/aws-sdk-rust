@@ -7,6 +7,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -72,6 +74,7 @@ impl StartChangeSetOutput {
 pub mod start_change_set_output {
 
     /// A builder for [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -145,6 +148,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -221,6 +225,7 @@ impl ListEntitiesOutput {
 pub mod list_entities_output {
 
     /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_summary_list:
@@ -301,6 +306,7 @@ impl ListChangeSetsOutput {
 pub mod list_change_sets_output {
 
     /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_summary_list:
@@ -402,6 +408,7 @@ impl DescribeEntityOutput {
 pub mod describe_entity_output {
 
     /// A builder for [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_type: std::option::Option<std::string::String>,
@@ -560,6 +567,7 @@ impl DescribeChangeSetOutput {
 pub mod describe_change_set_output {
 
     /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -738,6 +746,7 @@ impl CancelChangeSetOutput {
 pub mod cancel_change_set_output {
 
     /// A builder for [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,

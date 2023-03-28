@@ -18,6 +18,7 @@ impl UploadMultipartPartOutput {
 pub mod upload_multipart_part_output {
 
     /// A builder for [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
@@ -81,6 +82,7 @@ impl UploadArchiveOutput {
 pub mod upload_archive_output {
 
     /// A builder for [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -143,6 +145,7 @@ pub struct SetVaultNotificationsOutput {}
 pub mod set_vault_notifications_output {
 
     /// A builder for [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -167,6 +170,7 @@ pub struct SetVaultAccessPolicyOutput {}
 pub mod set_vault_access_policy_output {
 
     /// A builder for [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -191,6 +195,7 @@ pub struct SetDataRetrievalPolicyOutput {}
 pub mod set_data_retrieval_policy_output {
 
     /// A builder for [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -215,6 +220,7 @@ pub struct RemoveTagsFromVaultOutput {}
 pub mod remove_tags_from_vault_output {
 
     /// A builder for [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -249,6 +255,7 @@ impl PurchaseProvisionedCapacityOutput {
 pub mod purchase_provisioned_capacity_output {
 
     /// A builder for [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_id: std::option::Option<std::string::String>,
@@ -304,6 +311,7 @@ impl ListVaultsOutput {
 pub mod list_vaults_output {
 
     /// A builder for [`ListVaultsOutput`](crate::output::ListVaultsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_list:
@@ -378,6 +386,7 @@ impl ListTagsForVaultOutput {
 pub mod list_tags_for_vault_output {
 
     /// A builder for [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -444,6 +453,7 @@ impl ListProvisionedCapacityOutput {
 pub mod list_provisioned_capacity_output {
 
     /// A builder for [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provisioned_capacity_list:
@@ -547,6 +557,7 @@ impl ListPartsOutput {
 pub mod list_parts_output {
 
     /// A builder for [`ListPartsOutput`](crate::output::ListPartsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multipart_upload_id: std::option::Option<std::string::String>,
@@ -692,6 +703,7 @@ impl ListMultipartUploadsOutput {
 pub mod list_multipart_uploads_output {
 
     /// A builder for [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uploads_list:
@@ -769,6 +781,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_list:
@@ -839,6 +852,7 @@ impl InitiateVaultLockOutput {
 pub mod initiate_vault_lock_output {
 
     /// A builder for [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lock_id: std::option::Option<std::string::String>,
@@ -894,6 +908,7 @@ impl InitiateMultipartUploadOutput {
 pub mod initiate_multipart_upload_output {
 
     /// A builder for [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -968,6 +983,7 @@ impl InitiateJobOutput {
 pub mod initiate_job_output {
 
     /// A builder for [`InitiateJobOutput`](crate::output::InitiateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -1045,6 +1061,7 @@ impl GetVaultNotificationsOutput {
 pub mod get_vault_notifications_output {
 
     /// A builder for [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_notification_config:
@@ -1121,6 +1138,7 @@ impl GetVaultLockOutput {
 pub mod get_vault_lock_output {
 
     /// A builder for [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1211,6 +1229,7 @@ impl GetVaultAccessPolicyOutput {
 pub mod get_vault_access_policy_output {
 
     /// A builder for [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::VaultAccessPolicy>,
@@ -1313,6 +1332,7 @@ impl GetJobOutputOutput {
 pub mod get_job_output_output {
 
     /// A builder for [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1455,6 +1475,7 @@ impl GetDataRetrievalPolicyOutput {
 pub mod get_data_retrieval_policy_output {
 
     /// A builder for [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::DataRetrievalPolicy>,
@@ -1541,6 +1562,7 @@ impl DescribeVaultOutput {
 pub mod describe_vault_output {
 
     /// A builder for [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_arn: std::option::Option<std::string::String>,
@@ -1824,6 +1846,7 @@ impl DescribeJobOutput {
 pub mod describe_job_output {
 
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2168,6 +2191,7 @@ pub struct DeleteVaultNotificationsOutput {}
 pub mod delete_vault_notifications_output {
 
     /// A builder for [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2192,6 +2216,7 @@ pub struct DeleteVaultAccessPolicyOutput {}
 pub mod delete_vault_access_policy_output {
 
     /// A builder for [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2216,6 +2241,7 @@ pub struct DeleteVaultOutput {}
 pub mod delete_vault_output {
 
     /// A builder for [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2240,6 +2266,7 @@ pub struct DeleteArchiveOutput {}
 pub mod delete_archive_output {
 
     /// A builder for [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2274,6 +2301,7 @@ impl CreateVaultOutput {
 pub mod create_vault_output {
 
     /// A builder for [`CreateVaultOutput`](crate::output::CreateVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -2312,6 +2340,7 @@ pub struct CompleteVaultLockOutput {}
 pub mod complete_vault_lock_output {
 
     /// A builder for [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2361,6 +2390,7 @@ impl CompleteMultipartUploadOutput {
 pub mod complete_multipart_upload_output {
 
     /// A builder for [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -2423,6 +2453,7 @@ pub struct AddTagsToVaultOutput {}
 pub mod add_tags_to_vault_output {
 
     /// A builder for [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2447,6 +2478,7 @@ pub struct AbortVaultLockOutput {}
 pub mod abort_vault_lock_output {
 
     /// A builder for [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2471,6 +2503,7 @@ pub struct AbortMultipartUploadOutput {}
 pub mod abort_multipart_upload_output {
 
     /// A builder for [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

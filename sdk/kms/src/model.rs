@@ -464,6 +464,7 @@ impl std::fmt::Debug for XksProxyAuthenticationCredentialType {
 pub mod xks_proxy_authentication_credential_type {
 
     /// A builder for [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -546,6 +547,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -938,6 +940,7 @@ impl KeyMetadata {
 pub mod key_metadata {
 
     /// A builder for [`KeyMetadata`](crate::model::KeyMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1380,6 +1383,7 @@ impl XksKeyConfigurationType {
 pub mod xks_key_configuration_type {
 
     /// A builder for [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1441,6 +1445,7 @@ impl MultiRegionConfiguration {
 pub mod multi_region_configuration {
 
     /// A builder for [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
@@ -1535,6 +1540,7 @@ impl MultiRegionKey {
 pub mod multi_region_key {
 
     /// A builder for [`MultiRegionKey`](crate::model::MultiRegionKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2550,6 +2556,7 @@ impl GrantListEntry {
 pub mod grant_list_entry {
 
     /// A builder for [`GrantListEntry`](crate::model::GrantListEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -2740,6 +2747,7 @@ impl GrantConstraints {
 pub mod grant_constraints {
 
     /// A builder for [`GrantConstraints`](crate::model::GrantConstraints).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context_subset: std::option::Option<
@@ -3022,6 +3030,7 @@ impl KeyListEntry {
 pub mod key_list_entry {
 
     /// A builder for [`KeyListEntry`](crate::model::KeyListEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -3110,6 +3119,7 @@ impl AliasListEntry {
 pub mod alias_list_entry {
 
     /// A builder for [`AliasListEntry`](crate::model::AliasListEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
@@ -3766,6 +3776,7 @@ impl CustomKeyStoresListEntry {
 pub mod custom_key_stores_list_entry {
 
     /// A builder for [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
@@ -4080,6 +4091,7 @@ impl std::fmt::Debug for XksProxyConfigurationType {
 pub mod xks_proxy_configuration_type {
 
     /// A builder for [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) connectivity: std::option::Option<crate::model::XksProxyConnectivityType>,

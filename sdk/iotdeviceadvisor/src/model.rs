@@ -60,6 +60,7 @@ impl SuiteDefinitionConfiguration {
 pub mod suite_definition_configuration {
 
     /// A builder for [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_name: std::option::Option<std::string::String>,
@@ -292,6 +293,7 @@ impl DeviceUnderTest {
 pub mod device_under_test {
 
     /// A builder for [`DeviceUnderTest`](crate::model::DeviceUnderTest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -369,6 +371,7 @@ impl SuiteRunConfiguration {
 pub mod suite_run_configuration {
 
     /// A builder for [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_device: std::option::Option<crate::model::DeviceUnderTest>,
@@ -517,6 +520,7 @@ impl SuiteRunInformation {
 pub mod suite_run_information {
 
     /// A builder for [`SuiteRunInformation`](crate::model::SuiteRunInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -871,6 +875,7 @@ impl SuiteDefinitionInformation {
 pub mod suite_definition_information {
 
     /// A builder for [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -1010,6 +1015,7 @@ impl TestResult {
 pub mod test_result {
 
     /// A builder for [`TestResult`](crate::model::TestResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
@@ -1081,6 +1087,7 @@ impl GroupResult {
 pub mod group_result {
 
     /// A builder for [`GroupResult`](crate::model::GroupResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -1245,6 +1252,7 @@ impl TestCaseRun {
 pub mod test_case_run {
 
     /// A builder for [`TestCaseRun`](crate::model::TestCaseRun).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_case_run_id: std::option::Option<std::string::String>,
@@ -1504,6 +1512,7 @@ impl TestCaseScenario {
 pub mod test_case_scenario {
 
     /// A builder for [`TestCaseScenario`](crate::model::TestCaseScenario).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_case_scenario_id: std::option::Option<std::string::String>,

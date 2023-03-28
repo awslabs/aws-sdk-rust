@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod describe_job_execution_input {
 
     /// A builder for [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -254,6 +255,7 @@ impl DescribeJobExecutionInput {
 pub mod get_pending_job_executions_input {
 
     /// A builder for [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -419,6 +421,7 @@ impl GetPendingJobExecutionsInput {
 pub mod start_next_pending_job_execution_input {
 
     /// A builder for [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -643,6 +646,7 @@ impl StartNextPendingJobExecutionInput {
 pub mod update_job_execution_input {
 
     /// A builder for [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,

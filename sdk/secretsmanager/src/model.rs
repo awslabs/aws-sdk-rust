@@ -25,6 +25,7 @@ impl ValidationErrorsEntry {
 pub mod validation_errors_entry {
 
     /// A builder for [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_name: std::option::Option<std::string::String>,
@@ -95,6 +96,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -175,6 +177,7 @@ impl RotationRulesType {
 pub mod rotation_rules_type {
 
     /// A builder for [`RotationRulesType`](crate::model::RotationRulesType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatically_after_days: std::option::Option<i64>,
@@ -284,6 +287,7 @@ impl ReplicationStatusType {
 pub mod replication_status_type {
 
     /// A builder for [`ReplicationStatusType`](crate::model::ReplicationStatusType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -488,6 +492,7 @@ impl ReplicaRegionType {
 pub mod replica_region_type {
 
     /// A builder for [`ReplicaRegionType`](crate::model::ReplicaRegionType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -576,6 +581,7 @@ impl SecretVersionsListEntry {
 pub mod secret_versions_list_entry {
 
     /// A builder for [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -818,6 +824,7 @@ impl SecretListEntry {
 pub mod secret_list_entry {
 
     /// A builder for [`SecretListEntry`](crate::model::SecretListEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1235,6 +1242,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::FilterNameStringType>,

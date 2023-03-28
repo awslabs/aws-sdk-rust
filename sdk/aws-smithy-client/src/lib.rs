@@ -14,6 +14,7 @@
 //! | `rustls`          | Use `rustls` as the HTTP client's TLS implementation |
 //! | `client-hyper`    | Use `hyper` to handle HTTP requests |
 
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![warn(
     missing_debug_implementations,
     missing_docs,

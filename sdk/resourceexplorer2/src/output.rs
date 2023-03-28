@@ -17,6 +17,7 @@ impl AssociateDefaultViewOutput {
 pub mod associate_default_view_output {
 
     /// A builder for [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -72,6 +73,7 @@ impl ListViewsOutput {
 pub mod list_views_output {
 
     /// A builder for [`ListViewsOutput`](crate::output::ListViewsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) views: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -141,6 +143,7 @@ impl CreateViewOutput {
 pub mod create_view_output {
 
     /// A builder for [`CreateViewOutput`](crate::output::CreateViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
@@ -187,6 +190,7 @@ impl DeleteViewOutput {
 pub mod delete_view_output {
 
     /// A builder for [`DeleteViewOutput`](crate::output::DeleteViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -235,6 +239,7 @@ impl UpdateViewOutput {
 pub mod update_view_output {
 
     /// A builder for [`UpdateViewOutput`](crate::output::UpdateViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
@@ -292,6 +297,7 @@ impl GetViewOutput {
 pub mod get_view_output {
 
     /// A builder for [`GetViewOutput`](crate::output::GetViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
@@ -376,6 +382,7 @@ impl ListIndexesOutput {
 pub mod list_indexes_output {
 
     /// A builder for [`ListIndexesOutput`](crate::output::ListIndexesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) indexes: std::option::Option<std::vec::Vec<crate::model::Index>>,
@@ -463,6 +470,7 @@ impl CreateIndexOutput {
 pub mod create_index_output {
 
     /// A builder for [`CreateIndexOutput`](crate::output::CreateIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -560,6 +568,7 @@ impl DeleteIndexOutput {
 pub mod delete_index_output {
 
     /// A builder for [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -660,6 +669,7 @@ impl UpdateIndexTypeOutput {
 pub mod update_index_type_output {
 
     /// A builder for [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -737,6 +747,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -761,6 +772,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -816,6 +828,7 @@ impl SearchOutput {
 pub mod search_output {
 
     /// A builder for [`SearchOutput`](crate::output::SearchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -916,6 +929,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -986,6 +1000,7 @@ impl ListSupportedResourceTypesOutput {
 pub mod list_supported_resource_types_output {
 
     /// A builder for [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_types:
@@ -1113,6 +1128,7 @@ impl GetIndexOutput {
 pub mod get_index_output {
 
     /// A builder for [`GetIndexOutput`](crate::output::GetIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1290,6 +1306,7 @@ impl GetDefaultViewOutput {
 pub mod get_default_view_output {
 
     /// A builder for [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
@@ -1328,6 +1345,7 @@ pub struct DisassociateDefaultViewOutput {}
 pub mod disassociate_default_view_output {
 
     /// A builder for [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1369,6 +1387,7 @@ impl BatchGetViewOutput {
 pub mod batch_get_view_output {
 
     /// A builder for [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) views: std::option::Option<std::vec::Vec<crate::model::View>>,

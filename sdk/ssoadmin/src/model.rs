@@ -21,6 +21,7 @@ impl InstanceAccessControlAttributeConfiguration {
 pub mod instance_access_control_attribute_configuration {
 
     /// A builder for [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_control_attributes:
@@ -89,6 +90,7 @@ impl AccessControlAttribute {
 pub mod access_control_attribute {
 
     /// A builder for [`AccessControlAttribute`](crate::model::AccessControlAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -152,6 +154,7 @@ impl AccessControlAttributeValue {
 pub mod access_control_attribute_value {
 
     /// A builder for [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -216,6 +219,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -288,6 +292,7 @@ impl PermissionsBoundary {
 pub mod permissions_boundary {
 
     /// A builder for [`PermissionsBoundary`](crate::model::PermissionsBoundary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_managed_policy_reference:
@@ -365,6 +370,7 @@ impl CustomerManagedPolicyReference {
 pub mod customer_managed_policy_reference {
 
     /// A builder for [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -460,6 +466,7 @@ impl PermissionSetProvisioningStatus {
 pub mod permission_set_provisioning_status {
 
     /// A builder for [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -884,6 +891,7 @@ impl PermissionSetProvisioningStatusMetadata {
 pub mod permission_set_provisioning_status_metadata {
 
     /// A builder for [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -962,6 +970,7 @@ impl OperationStatusFilter {
 pub mod operation_status_filter {
 
     /// A builder for [`OperationStatusFilter`](crate::model::OperationStatusFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -1020,6 +1029,7 @@ impl AttachedManagedPolicy {
 pub mod attached_managed_policy {
 
     /// A builder for [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1087,6 +1097,7 @@ impl InstanceMetadata {
 pub mod instance_metadata {
 
     /// A builder for [`InstanceMetadata`](crate::model::InstanceMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -1173,6 +1184,7 @@ impl AccountAssignment {
 pub mod account_assignment {
 
     /// A builder for [`AccountAssignment`](crate::model::AccountAssignment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1367,6 +1379,7 @@ impl AccountAssignmentOperationStatusMetadata {
 pub mod account_assignment_operation_status_metadata {
 
     /// A builder for [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -1480,6 +1493,7 @@ impl PermissionSet {
 pub mod permission_set {
 
     /// A builder for [`PermissionSet`](crate::model::PermissionSet).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1754,6 +1768,7 @@ impl AccountAssignmentOperationStatus {
 pub mod account_assignment_operation_status {
 
     /// A builder for [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,

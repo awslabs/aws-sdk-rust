@@ -7,6 +7,7 @@ pub struct UpdateRumMetricDefinitionOutput {}
 pub mod update_rum_metric_definition_output {
 
     /// A builder for [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct PutRumMetricsDestinationOutput {}
 pub mod put_rum_metrics_destination_output {
 
     /// A builder for [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -72,6 +74,7 @@ impl ListRumMetricsDestinationsOutput {
 pub mod list_rum_metrics_destinations_output {
 
     /// A builder for [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations:
@@ -149,6 +152,7 @@ impl GetAppMonitorDataOutput {
 pub mod get_app_monitor_data_output {
 
     /// A builder for [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -208,6 +212,7 @@ pub struct DeleteRumMetricsDestinationOutput {}
 pub mod delete_rum_metrics_destination_output {
 
     /// A builder for [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -242,6 +247,7 @@ impl CreateAppMonitorOutput {
 pub mod create_app_monitor_output {
 
     /// A builder for [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -295,6 +301,7 @@ impl BatchGetRumMetricDefinitionsOutput {
 pub mod batch_get_rum_metric_definitions_output {
 
     /// A builder for [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_definitions:
@@ -375,6 +382,7 @@ impl BatchDeleteRumMetricDefinitionsOutput {
 pub mod batch_delete_rum_metric_definitions_output {
 
     /// A builder for [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -466,6 +474,7 @@ impl BatchCreateRumMetricDefinitionsOutput {
 pub mod batch_create_rum_metric_definitions_output {
 
     /// A builder for [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -555,6 +564,7 @@ impl ListAppMonitorsOutput {
 pub mod list_app_monitors_output {
 
     /// A builder for [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -615,6 +625,7 @@ pub struct DeleteAppMonitorOutput {}
 pub mod delete_app_monitor_output {
 
     /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -639,6 +650,7 @@ pub struct UpdateAppMonitorOutput {}
 pub mod update_app_monitor_output {
 
     /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -673,6 +685,7 @@ impl GetAppMonitorOutput {
 pub mod get_app_monitor_output {
 
     /// A builder for [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor: std::option::Option<crate::model::AppMonitor>,
@@ -714,6 +727,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -738,6 +752,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -762,6 +777,7 @@ pub struct PutRumEventsOutput {}
 pub mod put_rum_events_output {
 
     /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -807,6 +823,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

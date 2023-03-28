@@ -216,6 +216,7 @@ impl std::error::Error for UnsupportedFeatureException {}
 pub mod unsupported_feature_exception {
 
     /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -276,6 +277,7 @@ impl std::error::Error for TaskSetNotFoundException {}
 pub mod task_set_not_found_exception {
 
     /// A builder for [`TaskSetNotFoundException`](crate::error::TaskSetNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -336,6 +338,7 @@ impl std::error::Error for ServiceNotFoundException {}
 pub mod service_not_found_exception {
 
     /// A builder for [`ServiceNotFoundException`](crate::error::ServiceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -396,6 +399,7 @@ impl std::error::Error for ServiceNotActiveException {}
 pub mod service_not_active_exception {
 
     /// A builder for [`ServiceNotActiveException`](crate::error::ServiceNotActiveException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -456,6 +460,7 @@ impl std::error::Error for ServerException {}
 pub mod server_exception {
 
     /// A builder for [`ServerException`](crate::error::ServerException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -516,6 +521,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -576,6 +582,7 @@ impl std::error::Error for ClusterNotFoundException {}
 pub mod cluster_not_found_exception {
 
     /// A builder for [`ClusterNotFoundException`](crate::error::ClusterNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -636,6 +643,7 @@ impl std::error::Error for ClientException {}
 pub mod client_exception {
 
     /// A builder for [`ClientException`](crate::error::ClientException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -696,6 +704,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -934,6 +943,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1408,6 +1418,7 @@ impl std::error::Error for PlatformUnknownException {}
 pub mod platform_unknown_exception {
 
     /// A builder for [`PlatformUnknownException`](crate::error::PlatformUnknownException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1468,6 +1479,7 @@ impl std::error::Error for PlatformTaskDefinitionIncompatibilityException {}
 pub mod platform_task_definition_incompatibility_exception {
 
     /// A builder for [`PlatformTaskDefinitionIncompatibilityException`](crate::error::PlatformTaskDefinitionIncompatibilityException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1528,6 +1540,7 @@ impl std::error::Error for NamespaceNotFoundException {}
 pub mod namespace_not_found_exception {
 
     /// A builder for [`NamespaceNotFoundException`](crate::error::NamespaceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1924,6 +1937,7 @@ impl std::error::Error for UpdateInProgressException {}
 pub mod update_in_progress_exception {
 
     /// A builder for [`UpdateInProgressException`](crate::error::UpdateInProgressException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1984,6 +1998,7 @@ impl std::error::Error for NoUpdateAvailableException {}
 pub mod no_update_available_exception {
 
     /// A builder for [`NoUpdateAvailableException`](crate::error::NoUpdateAvailableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2044,6 +2059,7 @@ impl std::error::Error for MissingVersionException {}
 pub mod missing_version_exception {
 
     /// A builder for [`MissingVersionException`](crate::error::MissingVersionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3678,6 +3694,7 @@ impl std::error::Error for BlockedException {}
 pub mod blocked_exception {
 
     /// A builder for [`BlockedException`](crate::error::BlockedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4181,6 +4198,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
 
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4382,6 +4400,7 @@ impl std::error::Error for TargetNotFoundException {}
 pub mod target_not_found_exception {
 
     /// A builder for [`TargetNotFoundException`](crate::error::TargetNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4442,6 +4461,7 @@ impl std::error::Error for AttributeLimitExceededException {}
 pub mod attribute_limit_exceeded_exception {
 
     /// A builder for [`AttributeLimitExceededException`](crate::error::AttributeLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6423,6 +6443,7 @@ impl std::error::Error for TargetNotConnectedException {}
 pub mod target_not_connected_exception {
 
     /// A builder for [`TargetNotConnectedException`](crate::error::TargetNotConnectedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8399,6 +8420,7 @@ impl std::error::Error for ClusterContainsTasksException {}
 pub mod cluster_contains_tasks_exception {
 
     /// A builder for [`ClusterContainsTasksException`](crate::error::ClusterContainsTasksException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8459,6 +8481,7 @@ impl std::error::Error for ClusterContainsServicesException {}
 pub mod cluster_contains_services_exception {
 
     /// A builder for [`ClusterContainsServicesException`](crate::error::ClusterContainsServicesException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8519,6 +8542,7 @@ impl std::error::Error for ClusterContainsContainerInstancesException {}
 pub mod cluster_contains_container_instances_exception {
 
     /// A builder for [`ClusterContainsContainerInstancesException`](crate::error::ClusterContainsContainerInstancesException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9665,6 +9689,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

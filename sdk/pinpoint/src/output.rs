@@ -19,6 +19,7 @@ impl VerifyOtpMessageOutput {
 pub mod verify_otp_message_output {
 
     /// A builder for [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) verification_response: std::option::Option<crate::model::VerificationResponse>,
@@ -70,6 +71,7 @@ impl UpdateVoiceTemplateOutput {
 pub mod update_voice_template_output {
 
     /// A builder for [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -123,6 +125,7 @@ impl UpdateVoiceChannelOutput {
 pub mod update_voice_channel_output {
 
     /// A builder for [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
@@ -174,6 +177,7 @@ impl UpdateTemplateActiveVersionOutput {
 pub mod update_template_active_version_output {
 
     /// A builder for [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -225,6 +229,7 @@ impl UpdateSmsTemplateOutput {
 pub mod update_sms_template_output {
 
     /// A builder for [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -276,6 +281,7 @@ impl UpdateSmsChannelOutput {
 pub mod update_sms_channel_output {
 
     /// A builder for [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
@@ -327,6 +333,7 @@ impl UpdateSegmentOutput {
 pub mod update_segment_output {
 
     /// A builder for [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
@@ -381,6 +388,7 @@ impl UpdateRecommenderConfigurationOutput {
 pub mod update_recommender_configuration_output {
 
     /// A builder for [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response:
@@ -436,6 +444,7 @@ impl UpdatePushTemplateOutput {
 pub mod update_push_template_output {
 
     /// A builder for [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -487,6 +496,7 @@ impl UpdateJourneyStateOutput {
 pub mod update_journey_state_output {
 
     /// A builder for [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
@@ -538,6 +548,7 @@ impl UpdateJourneyOutput {
 pub mod update_journey_output {
 
     /// A builder for [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
@@ -589,6 +600,7 @@ impl UpdateInAppTemplateOutput {
 pub mod update_in_app_template_output {
 
     /// A builder for [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -640,6 +652,7 @@ impl UpdateGcmChannelOutput {
 pub mod update_gcm_channel_output {
 
     /// A builder for [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
@@ -691,6 +704,7 @@ impl UpdateEndpointsBatchOutput {
 pub mod update_endpoints_batch_output {
 
     /// A builder for [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -742,6 +756,7 @@ impl UpdateEndpointOutput {
 pub mod update_endpoint_output {
 
     /// A builder for [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -793,6 +808,7 @@ impl UpdateEmailTemplateOutput {
 pub mod update_email_template_output {
 
     /// A builder for [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -846,6 +862,7 @@ impl UpdateEmailChannelOutput {
 pub mod update_email_channel_output {
 
     /// A builder for [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
@@ -897,6 +914,7 @@ impl UpdateCampaignOutput {
 pub mod update_campaign_output {
 
     /// A builder for [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
@@ -950,6 +968,7 @@ impl UpdateBaiduChannelOutput {
 pub mod update_baidu_channel_output {
 
     /// A builder for [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
@@ -1004,6 +1023,7 @@ impl UpdateApplicationSettingsOutput {
 pub mod update_application_settings_output {
 
     /// A builder for [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_settings_resource:
@@ -1062,6 +1082,7 @@ impl UpdateApnsVoipSandboxChannelOutput {
 pub mod update_apns_voip_sandbox_channel_output {
 
     /// A builder for [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_response:
@@ -1119,6 +1140,7 @@ impl UpdateApnsVoipChannelOutput {
 pub mod update_apns_voip_channel_output {
 
     /// A builder for [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_response:
@@ -1177,6 +1199,7 @@ impl UpdateApnsSandboxChannelOutput {
 pub mod update_apns_sandbox_channel_output {
 
     /// A builder for [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_response:
@@ -1232,6 +1255,7 @@ impl UpdateApnsChannelOutput {
 pub mod update_apns_channel_output {
 
     /// A builder for [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
@@ -1283,6 +1307,7 @@ impl UpdateAdmChannelOutput {
 pub mod update_adm_channel_output {
 
     /// A builder for [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
@@ -1324,6 +1349,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1348,6 +1374,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1384,6 +1411,7 @@ impl SendUsersMessagesOutput {
 pub mod send_users_messages_output {
 
     /// A builder for [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) send_users_message_response:
@@ -1439,6 +1467,7 @@ impl SendOtpMessageOutput {
 pub mod send_otp_message_output {
 
     /// A builder for [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_response: std::option::Option<crate::model::MessageResponse>,
@@ -1490,6 +1519,7 @@ impl SendMessagesOutput {
 pub mod send_messages_output {
 
     /// A builder for [`SendMessagesOutput`](crate::output::SendMessagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_response: std::option::Option<crate::model::MessageResponse>,
@@ -1541,6 +1571,7 @@ impl RemoveAttributesOutput {
 pub mod remove_attributes_output {
 
     /// A builder for [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes_resource: std::option::Option<crate::model::AttributesResource>,
@@ -1592,6 +1623,7 @@ impl PutEventStreamOutput {
 pub mod put_event_stream_output {
 
     /// A builder for [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_stream: std::option::Option<crate::model::EventStream>,
@@ -1643,6 +1675,7 @@ impl PutEventsOutput {
 pub mod put_events_output {
 
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events_response: std::option::Option<crate::model::EventsResponse>,
@@ -1696,6 +1729,7 @@ impl PhoneNumberValidateOutput {
 pub mod phone_number_validate_output {
 
     /// A builder for [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_validate_response:
@@ -1753,6 +1787,7 @@ impl ListTemplateVersionsOutput {
 pub mod list_template_versions_output {
 
     /// A builder for [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_versions_response:
@@ -1808,6 +1843,7 @@ impl ListTemplatesOutput {
 pub mod list_templates_output {
 
     /// A builder for [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) templates_response: std::option::Option<crate::model::TemplatesResponse>,
@@ -1859,6 +1895,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags_model: std::option::Option<crate::model::TagsModel>,
@@ -1910,6 +1947,7 @@ impl ListJourneysOutput {
 pub mod list_journeys_output {
 
     /// A builder for [`ListJourneysOutput`](crate::output::ListJourneysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journeys_response: std::option::Option<crate::model::JourneysResponse>,
@@ -1963,6 +2001,7 @@ impl GetVoiceTemplateOutput {
 pub mod get_voice_template_output {
 
     /// A builder for [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_template_response:
@@ -2020,6 +2059,7 @@ impl GetVoiceChannelOutput {
 pub mod get_voice_channel_output {
 
     /// A builder for [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
@@ -2071,6 +2111,7 @@ impl GetUserEndpointsOutput {
 pub mod get_user_endpoints_output {
 
     /// A builder for [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
@@ -2122,6 +2163,7 @@ impl GetSmsTemplateOutput {
 pub mod get_sms_template_output {
 
     /// A builder for [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_template_response: std::option::Option<crate::model::SmsTemplateResponse>,
@@ -2173,6 +2215,7 @@ impl GetSmsChannelOutput {
 pub mod get_sms_channel_output {
 
     /// A builder for [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
@@ -2224,6 +2267,7 @@ impl GetSegmentVersionsOutput {
 pub mod get_segment_versions_output {
 
     /// A builder for [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segments_response: std::option::Option<crate::model::SegmentsResponse>,
@@ -2275,6 +2319,7 @@ impl GetSegmentVersionOutput {
 pub mod get_segment_version_output {
 
     /// A builder for [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
@@ -2326,6 +2371,7 @@ impl GetSegmentsOutput {
 pub mod get_segments_output {
 
     /// A builder for [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segments_response: std::option::Option<crate::model::SegmentsResponse>,
@@ -2377,6 +2423,7 @@ impl GetSegmentImportJobsOutput {
 pub mod get_segment_import_jobs_output {
 
     /// A builder for [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
@@ -2428,6 +2475,7 @@ impl GetSegmentExportJobsOutput {
 pub mod get_segment_export_jobs_output {
 
     /// A builder for [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
@@ -2479,6 +2527,7 @@ impl GetSegmentOutput {
 pub mod get_segment_output {
 
     /// A builder for [`GetSegmentOutput`](crate::output::GetSegmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
@@ -2533,6 +2582,7 @@ impl GetRecommenderConfigurationsOutput {
 pub mod get_recommender_configurations_output {
 
     /// A builder for [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_recommender_configurations_response:
@@ -2592,6 +2642,7 @@ impl GetRecommenderConfigurationOutput {
 pub mod get_recommender_configuration_output {
 
     /// A builder for [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response:
@@ -2650,6 +2701,7 @@ impl GetPushTemplateOutput {
 pub mod get_push_template_output {
 
     /// A builder for [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) push_notification_template_response:
@@ -2708,6 +2760,7 @@ impl GetJourneyExecutionMetricsOutput {
 pub mod get_journey_execution_metrics_output {
 
     /// A builder for [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_execution_metrics_response:
@@ -2766,6 +2819,7 @@ impl GetJourneyExecutionActivityMetricsOutput {
 pub mod get_journey_execution_activity_metrics_output {
 
     /// A builder for [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_execution_activity_metrics_response:
@@ -2825,6 +2879,7 @@ impl GetJourneyDateRangeKpiOutput {
 pub mod get_journey_date_range_kpi_output {
 
     /// A builder for [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_date_range_kpi_response:
@@ -2880,6 +2935,7 @@ impl GetJourneyOutput {
 pub mod get_journey_output {
 
     /// A builder for [`GetJourneyOutput`](crate::output::GetJourneyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
@@ -2933,6 +2989,7 @@ impl GetInAppTemplateOutput {
 pub mod get_in_app_template_output {
 
     /// A builder for [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_app_template_response:
@@ -2990,6 +3047,7 @@ impl GetInAppMessagesOutput {
 pub mod get_in_app_messages_output {
 
     /// A builder for [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_app_messages_response:
@@ -3045,6 +3103,7 @@ impl GetImportJobsOutput {
 pub mod get_import_jobs_output {
 
     /// A builder for [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
@@ -3096,6 +3155,7 @@ impl GetImportJobOutput {
 pub mod get_import_job_output {
 
     /// A builder for [`GetImportJobOutput`](crate::output::GetImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_response: std::option::Option<crate::model::ImportJobResponse>,
@@ -3147,6 +3207,7 @@ impl GetGcmChannelOutput {
 pub mod get_gcm_channel_output {
 
     /// A builder for [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
@@ -3198,6 +3259,7 @@ impl GetExportJobsOutput {
 pub mod get_export_jobs_output {
 
     /// A builder for [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
@@ -3249,6 +3311,7 @@ impl GetExportJobOutput {
 pub mod get_export_job_output {
 
     /// A builder for [`GetExportJobOutput`](crate::output::GetExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_response: std::option::Option<crate::model::ExportJobResponse>,
@@ -3300,6 +3363,7 @@ impl GetEventStreamOutput {
 pub mod get_event_stream_output {
 
     /// A builder for [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_stream: std::option::Option<crate::model::EventStream>,
@@ -3351,6 +3415,7 @@ impl GetEndpointOutput {
 pub mod get_endpoint_output {
 
     /// A builder for [`GetEndpointOutput`](crate::output::GetEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_response: std::option::Option<crate::model::EndpointResponse>,
@@ -3404,6 +3469,7 @@ impl GetEmailTemplateOutput {
 pub mod get_email_template_output {
 
     /// A builder for [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_template_response:
@@ -3461,6 +3527,7 @@ impl GetEmailChannelOutput {
 pub mod get_email_channel_output {
 
     /// A builder for [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
@@ -3512,6 +3579,7 @@ impl GetChannelsOutput {
 pub mod get_channels_output {
 
     /// A builder for [`GetChannelsOutput`](crate::output::GetChannelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels_response: std::option::Option<crate::model::ChannelsResponse>,
@@ -3563,6 +3631,7 @@ impl GetCampaignVersionsOutput {
 pub mod get_campaign_versions_output {
 
     /// A builder for [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
@@ -3614,6 +3683,7 @@ impl GetCampaignVersionOutput {
 pub mod get_campaign_version_output {
 
     /// A builder for [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
@@ -3665,6 +3735,7 @@ impl GetCampaignsOutput {
 pub mod get_campaigns_output {
 
     /// A builder for [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
@@ -3719,6 +3790,7 @@ impl GetCampaignDateRangeKpiOutput {
 pub mod get_campaign_date_range_kpi_output {
 
     /// A builder for [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_date_range_kpi_response:
@@ -3774,6 +3846,7 @@ impl GetCampaignActivitiesOutput {
 pub mod get_campaign_activities_output {
 
     /// A builder for [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities_response: std::option::Option<crate::model::ActivitiesResponse>,
@@ -3825,6 +3898,7 @@ impl GetCampaignOutput {
 pub mod get_campaign_output {
 
     /// A builder for [`GetCampaignOutput`](crate::output::GetCampaignOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
@@ -3878,6 +3952,7 @@ impl GetBaiduChannelOutput {
 pub mod get_baidu_channel_output {
 
     /// A builder for [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
@@ -3931,6 +4006,7 @@ impl GetAppsOutput {
 pub mod get_apps_output {
 
     /// A builder for [`GetAppsOutput`](crate::output::GetAppsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications_response: std::option::Option<crate::model::ApplicationsResponse>,
@@ -3985,6 +4061,7 @@ impl GetApplicationSettingsOutput {
 pub mod get_application_settings_output {
 
     /// A builder for [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_settings_resource:
@@ -4043,6 +4120,7 @@ impl GetApplicationDateRangeKpiOutput {
 pub mod get_application_date_range_kpi_output {
 
     /// A builder for [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_date_range_kpi_response:
@@ -4098,6 +4176,7 @@ impl GetAppOutput {
 pub mod get_app_output {
 
     /// A builder for [`GetAppOutput`](crate::output::GetAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_response: std::option::Option<crate::model::ApplicationResponse>,
@@ -4152,6 +4231,7 @@ impl GetApnsVoipSandboxChannelOutput {
 pub mod get_apns_voip_sandbox_channel_output {
 
     /// A builder for [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_response:
@@ -4209,6 +4289,7 @@ impl GetApnsVoipChannelOutput {
 pub mod get_apns_voip_channel_output {
 
     /// A builder for [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_response:
@@ -4267,6 +4348,7 @@ impl GetApnsSandboxChannelOutput {
 pub mod get_apns_sandbox_channel_output {
 
     /// A builder for [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_response:
@@ -4322,6 +4404,7 @@ impl GetApnsChannelOutput {
 pub mod get_apns_channel_output {
 
     /// A builder for [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
@@ -4373,6 +4456,7 @@ impl GetAdmChannelOutput {
 pub mod get_adm_channel_output {
 
     /// A builder for [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
@@ -4424,6 +4508,7 @@ impl DeleteVoiceTemplateOutput {
 pub mod delete_voice_template_output {
 
     /// A builder for [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -4477,6 +4562,7 @@ impl DeleteVoiceChannelOutput {
 pub mod delete_voice_channel_output {
 
     /// A builder for [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
@@ -4528,6 +4614,7 @@ impl DeleteUserEndpointsOutput {
 pub mod delete_user_endpoints_output {
 
     /// A builder for [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
@@ -4579,6 +4666,7 @@ impl DeleteSmsTemplateOutput {
 pub mod delete_sms_template_output {
 
     /// A builder for [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -4630,6 +4718,7 @@ impl DeleteSmsChannelOutput {
 pub mod delete_sms_channel_output {
 
     /// A builder for [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
@@ -4681,6 +4770,7 @@ impl DeleteSegmentOutput {
 pub mod delete_segment_output {
 
     /// A builder for [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
@@ -4735,6 +4825,7 @@ impl DeleteRecommenderConfigurationOutput {
 pub mod delete_recommender_configuration_output {
 
     /// A builder for [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response:
@@ -4790,6 +4881,7 @@ impl DeletePushTemplateOutput {
 pub mod delete_push_template_output {
 
     /// A builder for [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -4841,6 +4933,7 @@ impl DeleteJourneyOutput {
 pub mod delete_journey_output {
 
     /// A builder for [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
@@ -4892,6 +4985,7 @@ impl DeleteInAppTemplateOutput {
 pub mod delete_in_app_template_output {
 
     /// A builder for [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -4943,6 +5037,7 @@ impl DeleteGcmChannelOutput {
 pub mod delete_gcm_channel_output {
 
     /// A builder for [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
@@ -4994,6 +5089,7 @@ impl DeleteEventStreamOutput {
 pub mod delete_event_stream_output {
 
     /// A builder for [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_stream: std::option::Option<crate::model::EventStream>,
@@ -5045,6 +5141,7 @@ impl DeleteEndpointOutput {
 pub mod delete_endpoint_output {
 
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_response: std::option::Option<crate::model::EndpointResponse>,
@@ -5096,6 +5193,7 @@ impl DeleteEmailTemplateOutput {
 pub mod delete_email_template_output {
 
     /// A builder for [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
@@ -5149,6 +5247,7 @@ impl DeleteEmailChannelOutput {
 pub mod delete_email_channel_output {
 
     /// A builder for [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
@@ -5200,6 +5299,7 @@ impl DeleteCampaignOutput {
 pub mod delete_campaign_output {
 
     /// A builder for [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
@@ -5253,6 +5353,7 @@ impl DeleteBaiduChannelOutput {
 pub mod delete_baidu_channel_output {
 
     /// A builder for [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
@@ -5304,6 +5405,7 @@ impl DeleteAppOutput {
 pub mod delete_app_output {
 
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_response: std::option::Option<crate::model::ApplicationResponse>,
@@ -5358,6 +5460,7 @@ impl DeleteApnsVoipSandboxChannelOutput {
 pub mod delete_apns_voip_sandbox_channel_output {
 
     /// A builder for [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_response:
@@ -5415,6 +5518,7 @@ impl DeleteApnsVoipChannelOutput {
 pub mod delete_apns_voip_channel_output {
 
     /// A builder for [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_response:
@@ -5473,6 +5577,7 @@ impl DeleteApnsSandboxChannelOutput {
 pub mod delete_apns_sandbox_channel_output {
 
     /// A builder for [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_response:
@@ -5528,6 +5633,7 @@ impl DeleteApnsChannelOutput {
 pub mod delete_apns_channel_output {
 
     /// A builder for [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
@@ -5579,6 +5685,7 @@ impl DeleteAdmChannelOutput {
 pub mod delete_adm_channel_output {
 
     /// A builder for [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
@@ -5632,6 +5739,7 @@ impl CreateVoiceTemplateOutput {
 pub mod create_voice_template_output {
 
     /// A builder for [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body:
@@ -5689,6 +5797,7 @@ impl CreateSmsTemplateOutput {
 pub mod create_sms_template_output {
 
     /// A builder for [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body:
@@ -5744,6 +5853,7 @@ impl CreateSegmentOutput {
 pub mod create_segment_output {
 
     /// A builder for [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
@@ -5798,6 +5908,7 @@ impl CreateRecommenderConfigurationOutput {
 pub mod create_recommender_configuration_output {
 
     /// A builder for [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response:
@@ -5855,6 +5966,7 @@ impl CreatePushTemplateOutput {
 pub mod create_push_template_output {
 
     /// A builder for [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body:
@@ -5910,6 +6022,7 @@ impl CreateJourneyOutput {
 pub mod create_journey_output {
 
     /// A builder for [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
@@ -5963,6 +6076,7 @@ impl CreateInAppTemplateOutput {
 pub mod create_in_app_template_output {
 
     /// A builder for [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_create_message_body:
@@ -6018,6 +6132,7 @@ impl CreateImportJobOutput {
 pub mod create_import_job_output {
 
     /// A builder for [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_response: std::option::Option<crate::model::ImportJobResponse>,
@@ -6069,6 +6184,7 @@ impl CreateExportJobOutput {
 pub mod create_export_job_output {
 
     /// A builder for [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_response: std::option::Option<crate::model::ExportJobResponse>,
@@ -6122,6 +6238,7 @@ impl CreateEmailTemplateOutput {
 pub mod create_email_template_output {
 
     /// A builder for [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body:
@@ -6177,6 +6294,7 @@ impl CreateCampaignOutput {
 pub mod create_campaign_output {
 
     /// A builder for [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
@@ -6228,6 +6346,7 @@ impl CreateAppOutput {
 pub mod create_app_output {
 
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_response: std::option::Option<crate::model::ApplicationResponse>,

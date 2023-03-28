@@ -7,16 +7,15 @@ pub fn add_headers_abort_multipart_upload(
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -24,16 +23,15 @@ pub fn add_headers_abort_multipart_upload(
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -48,16 +46,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-crc32", header_value);
         }
     }
@@ -65,16 +62,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32_c",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32_c",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-crc32c", header_value);
         }
     }
@@ -82,16 +78,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha1",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha1",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-sha1", header_value);
         }
     }
@@ -99,16 +94,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha256",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha256",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-sha256", header_value);
         }
     }
@@ -116,16 +110,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -133,16 +126,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_16 = inner_15.as_str();
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -150,16 +142,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -170,16 +161,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -187,16 +177,15 @@ pub fn add_headers_complete_multipart_upload(
         let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -214,16 +203,15 @@ pub fn add_headers_copy_object(
         let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "acl",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "acl",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-acl", header_value);
         }
     }
@@ -231,16 +219,15 @@ pub fn add_headers_copy_object(
         let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "cache_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "cache_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Cache-Control", header_value);
         }
     }
@@ -248,16 +235,15 @@ pub fn add_headers_copy_object(
         let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-algorithm", header_value);
         }
     }
@@ -265,16 +251,15 @@ pub fn add_headers_copy_object(
         let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_disposition",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_disposition",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Disposition", header_value);
         }
     }
@@ -282,16 +267,15 @@ pub fn add_headers_copy_object(
         let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_encoding",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_encoding",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Encoding", header_value);
         }
     }
@@ -299,16 +283,15 @@ pub fn add_headers_copy_object(
         let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_language",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_language",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Language", header_value);
         }
     }
@@ -316,16 +299,15 @@ pub fn add_headers_copy_object(
         let formatted_36 = inner_35.as_str();
         if !formatted_36.is_empty() {
             let header_value = formatted_36;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_type",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_type",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Type", header_value);
         }
     }
@@ -333,16 +315,15 @@ pub fn add_headers_copy_object(
         let formatted_38 = inner_37.as_str();
         if !formatted_38.is_empty() {
             let header_value = formatted_38;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source", header_value);
         }
     }
@@ -350,16 +331,15 @@ pub fn add_headers_copy_object(
         let formatted_40 = inner_39.as_str();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-match", header_value);
         }
     }
@@ -367,16 +347,15 @@ pub fn add_headers_copy_object(
         let formatted_42 = inner_41.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_42.is_empty() {
             let header_value = formatted_42;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_modified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_modified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
         }
     }
@@ -384,16 +363,15 @@ pub fn add_headers_copy_object(
         let formatted_44 = inner_43.as_str();
         if !formatted_44.is_empty() {
             let header_value = formatted_44;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_none_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_none_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-none-match", header_value);
         }
     }
@@ -401,16 +379,15 @@ pub fn add_headers_copy_object(
         let formatted_46 = inner_45.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_46.is_empty() {
             let header_value = formatted_46;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_unmodified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_unmodified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
         }
     }
@@ -418,16 +395,15 @@ pub fn add_headers_copy_object(
         let formatted_48 = inner_47.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_48.is_empty() {
             let header_value = formatted_48;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expires",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expires",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Expires", header_value);
         }
     }
@@ -435,16 +411,15 @@ pub fn add_headers_copy_object(
         let formatted_50 = inner_49.as_str();
         if !formatted_50.is_empty() {
             let header_value = formatted_50;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_full_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_full_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
@@ -452,16 +427,15 @@ pub fn add_headers_copy_object(
         let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
@@ -469,16 +443,15 @@ pub fn add_headers_copy_object(
         let formatted_54 = inner_53.as_str();
         if !formatted_54.is_empty() {
             let header_value = formatted_54;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
@@ -486,16 +459,15 @@ pub fn add_headers_copy_object(
         let formatted_56 = inner_55.as_str();
         if !formatted_56.is_empty() {
             let header_value = formatted_56;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
@@ -503,16 +475,15 @@ pub fn add_headers_copy_object(
         let formatted_58 = inner_57.as_str();
         if !formatted_58.is_empty() {
             let header_value = formatted_58;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "metadata_directive",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "metadata_directive",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-metadata-directive", header_value);
         }
     }
@@ -520,16 +491,15 @@ pub fn add_headers_copy_object(
         let formatted_60 = inner_59.as_str();
         if !formatted_60.is_empty() {
             let header_value = formatted_60;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "tagging_directive",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "tagging_directive",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-tagging-directive", header_value);
         }
     }
@@ -537,16 +507,15 @@ pub fn add_headers_copy_object(
         let formatted_62 = inner_61.as_str();
         if !formatted_62.is_empty() {
             let header_value = formatted_62;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "server_side_encryption",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "server_side_encryption",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption", header_value);
         }
     }
@@ -554,16 +523,15 @@ pub fn add_headers_copy_object(
         let formatted_64 = inner_63.as_str();
         if !formatted_64.is_empty() {
             let header_value = formatted_64;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "storage_class",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "storage_class",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-storage-class", header_value);
         }
     }
@@ -571,16 +539,15 @@ pub fn add_headers_copy_object(
         let formatted_66 = inner_65.as_str();
         if !formatted_66.is_empty() {
             let header_value = formatted_66;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "website_redirect_location",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "website_redirect_location",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-website-redirect-location", header_value);
         }
     }
@@ -588,16 +555,15 @@ pub fn add_headers_copy_object(
         let formatted_68 = inner_67.as_str();
         if !formatted_68.is_empty() {
             let header_value = formatted_68;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -608,16 +574,15 @@ pub fn add_headers_copy_object(
         let formatted_70 = inner_69.as_str();
         if !formatted_70.is_empty() {
             let header_value = formatted_70;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -625,16 +590,15 @@ pub fn add_headers_copy_object(
         let formatted_72 = inner_71.as_str();
         if !formatted_72.is_empty() {
             let header_value = formatted_72;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -645,16 +609,15 @@ pub fn add_headers_copy_object(
         let formatted_74 = inner_73.as_str();
         if !formatted_74.is_empty() {
             let header_value = formatted_74;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_key_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_key_id",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
         }
     }
@@ -662,16 +625,15 @@ pub fn add_headers_copy_object(
         let formatted_76 = inner_75.as_str();
         if !formatted_76.is_empty() {
             let header_value = formatted_76;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_encryption_context",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_encryption_context",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-context", header_value);
         }
     }
@@ -680,16 +642,15 @@ pub fn add_headers_copy_object(
         let formatted_77 = encoder.encode();
         if !formatted_77.is_empty() {
             let header_value = formatted_77;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bucket_key_enabled",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bucket_key_enabled",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-bucket-key-enabled",
                 header_value,
@@ -700,16 +661,15 @@ pub fn add_headers_copy_object(
         let formatted_79 = inner_78.as_str();
         if !formatted_79.is_empty() {
             let header_value = formatted_79;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-copy-source-server-side-encryption-customer-algorithm",
                 header_value,
@@ -720,16 +680,15 @@ pub fn add_headers_copy_object(
         let formatted_81 = inner_80.as_str();
         if !formatted_81.is_empty() {
             let header_value = formatted_81;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-copy-source-server-side-encryption-customer-key",
                 header_value,
@@ -740,16 +699,15 @@ pub fn add_headers_copy_object(
         let formatted_83 = inner_82.as_str();
         if !formatted_83.is_empty() {
             let header_value = formatted_83;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-copy-source-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -760,16 +718,15 @@ pub fn add_headers_copy_object(
         let formatted_85 = inner_84.as_str();
         if !formatted_85.is_empty() {
             let header_value = formatted_85;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -777,16 +734,15 @@ pub fn add_headers_copy_object(
         let formatted_87 = inner_86.as_str();
         if !formatted_87.is_empty() {
             let header_value = formatted_87;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "tagging",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "tagging",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-tagging", header_value);
         }
     }
@@ -794,16 +750,15 @@ pub fn add_headers_copy_object(
         let formatted_89 = inner_88.as_str();
         if !formatted_89.is_empty() {
             let header_value = formatted_89;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_mode",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_mode",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-mode", header_value);
         }
     }
@@ -811,16 +766,15 @@ pub fn add_headers_copy_object(
         let formatted_91 = inner_90.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_91.is_empty() {
             let header_value = formatted_91;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_retain_until_date",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_retain_until_date",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
         }
     }
@@ -828,16 +782,15 @@ pub fn add_headers_copy_object(
         let formatted_93 = inner_92.as_str();
         if !formatted_93.is_empty() {
             let header_value = formatted_93;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_legal_hold_status",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_legal_hold_status",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-legal-hold", header_value);
         }
     }
@@ -845,16 +798,15 @@ pub fn add_headers_copy_object(
         let formatted_95 = inner_94.as_str();
         if !formatted_95.is_empty() {
             let header_value = formatted_95;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -862,16 +814,15 @@ pub fn add_headers_copy_object(
         let formatted_97 = inner_96.as_str();
         if !formatted_97.is_empty() {
             let header_value = formatted_97;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_source_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_source_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-source-expected-bucket-owner", header_value);
         }
     }
@@ -888,13 +839,12 @@ pub fn add_headers_copy_object(
                             )
                         })?;
                 let header_value = v.as_str();
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        aws_smithy_http::operation::error::BuildError::invalid_field(
-                            "metadata",
-                            format!("`{}` cannot be used as a header value: {}", v, err),
-                        )
-                    })?;
+                let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "metadata",
+                        format!("`{}` cannot be used as a header value: {}", v, err),
+                    )
+                })?;
                 builder = builder.header(header_name, header_value);
             }
         }
@@ -910,16 +860,15 @@ pub fn add_headers_create_bucket(
         let formatted_100 = inner_99.as_str();
         if !formatted_100.is_empty() {
             let header_value = formatted_100;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "acl",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "acl",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-acl", header_value);
         }
     }
@@ -927,16 +876,15 @@ pub fn add_headers_create_bucket(
         let formatted_102 = inner_101.as_str();
         if !formatted_102.is_empty() {
             let header_value = formatted_102;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_full_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_full_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
@@ -944,16 +892,15 @@ pub fn add_headers_create_bucket(
         let formatted_104 = inner_103.as_str();
         if !formatted_104.is_empty() {
             let header_value = formatted_104;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
@@ -961,16 +908,15 @@ pub fn add_headers_create_bucket(
         let formatted_106 = inner_105.as_str();
         if !formatted_106.is_empty() {
             let header_value = formatted_106;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
@@ -978,16 +924,15 @@ pub fn add_headers_create_bucket(
         let formatted_108 = inner_107.as_str();
         if !formatted_108.is_empty() {
             let header_value = formatted_108;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write", header_value);
         }
     }
@@ -995,16 +940,15 @@ pub fn add_headers_create_bucket(
         let formatted_110 = inner_109.as_str();
         if !formatted_110.is_empty() {
             let header_value = formatted_110;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
@@ -1014,16 +958,15 @@ pub fn add_headers_create_bucket(
         let formatted_111 = encoder.encode();
         if !formatted_111.is_empty() {
             let header_value = formatted_111;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_enabled_for_bucket",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_enabled_for_bucket",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-bucket-object-lock-enabled", header_value);
         }
     }
@@ -1031,16 +974,15 @@ pub fn add_headers_create_bucket(
         let formatted_113 = inner_112.as_str();
         if !formatted_113.is_empty() {
             let header_value = formatted_113;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_ownership",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_ownership",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-ownership", header_value);
         }
     }
@@ -1055,16 +997,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_115 = inner_114.as_str();
         if !formatted_115.is_empty() {
             let header_value = formatted_115;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "acl",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "acl",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-acl", header_value);
         }
     }
@@ -1072,16 +1013,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_117 = inner_116.as_str();
         if !formatted_117.is_empty() {
             let header_value = formatted_117;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "cache_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "cache_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Cache-Control", header_value);
         }
     }
@@ -1089,16 +1029,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_119 = inner_118.as_str();
         if !formatted_119.is_empty() {
             let header_value = formatted_119;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_disposition",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_disposition",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Disposition", header_value);
         }
     }
@@ -1106,16 +1045,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_121 = inner_120.as_str();
         if !formatted_121.is_empty() {
             let header_value = formatted_121;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_encoding",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_encoding",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Encoding", header_value);
         }
     }
@@ -1123,16 +1061,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_123 = inner_122.as_str();
         if !formatted_123.is_empty() {
             let header_value = formatted_123;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_language",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_language",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Language", header_value);
         }
     }
@@ -1140,16 +1077,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_125 = inner_124.as_str();
         if !formatted_125.is_empty() {
             let header_value = formatted_125;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_type",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_type",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Type", header_value);
         }
     }
@@ -1157,16 +1093,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_127 = inner_126.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_127.is_empty() {
             let header_value = formatted_127;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expires",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expires",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Expires", header_value);
         }
     }
@@ -1174,16 +1109,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_129 = inner_128.as_str();
         if !formatted_129.is_empty() {
             let header_value = formatted_129;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_full_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_full_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
@@ -1191,16 +1125,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_131 = inner_130.as_str();
         if !formatted_131.is_empty() {
             let header_value = formatted_131;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
@@ -1208,16 +1141,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_133 = inner_132.as_str();
         if !formatted_133.is_empty() {
             let header_value = formatted_133;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
@@ -1225,16 +1157,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_135 = inner_134.as_str();
         if !formatted_135.is_empty() {
             let header_value = formatted_135;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
@@ -1242,16 +1173,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_137 = inner_136.as_str();
         if !formatted_137.is_empty() {
             let header_value = formatted_137;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "server_side_encryption",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "server_side_encryption",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption", header_value);
         }
     }
@@ -1259,16 +1189,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_139 = inner_138.as_str();
         if !formatted_139.is_empty() {
             let header_value = formatted_139;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "storage_class",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "storage_class",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-storage-class", header_value);
         }
     }
@@ -1276,16 +1205,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_141 = inner_140.as_str();
         if !formatted_141.is_empty() {
             let header_value = formatted_141;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "website_redirect_location",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "website_redirect_location",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-website-redirect-location", header_value);
         }
     }
@@ -1293,16 +1221,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_143 = inner_142.as_str();
         if !formatted_143.is_empty() {
             let header_value = formatted_143;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -1313,16 +1240,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_145 = inner_144.as_str();
         if !formatted_145.is_empty() {
             let header_value = formatted_145;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -1330,16 +1256,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_147 = inner_146.as_str();
         if !formatted_147.is_empty() {
             let header_value = formatted_147;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -1350,16 +1275,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_149 = inner_148.as_str();
         if !formatted_149.is_empty() {
             let header_value = formatted_149;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_key_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_key_id",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
         }
     }
@@ -1367,16 +1291,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_151 = inner_150.as_str();
         if !formatted_151.is_empty() {
             let header_value = formatted_151;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_encryption_context",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_encryption_context",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-context", header_value);
         }
     }
@@ -1385,16 +1308,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_152 = encoder.encode();
         if !formatted_152.is_empty() {
             let header_value = formatted_152;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bucket_key_enabled",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bucket_key_enabled",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-bucket-key-enabled",
                 header_value,
@@ -1405,16 +1327,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_154 = inner_153.as_str();
         if !formatted_154.is_empty() {
             let header_value = formatted_154;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -1422,16 +1343,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_156 = inner_155.as_str();
         if !formatted_156.is_empty() {
             let header_value = formatted_156;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "tagging",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "tagging",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-tagging", header_value);
         }
     }
@@ -1439,16 +1359,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_158 = inner_157.as_str();
         if !formatted_158.is_empty() {
             let header_value = formatted_158;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_mode",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_mode",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-mode", header_value);
         }
     }
@@ -1456,16 +1375,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_160 = inner_159.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_160.is_empty() {
             let header_value = formatted_160;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_retain_until_date",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_retain_until_date",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
         }
     }
@@ -1473,16 +1391,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_162 = inner_161.as_str();
         if !formatted_162.is_empty() {
             let header_value = formatted_162;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_legal_hold_status",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_legal_hold_status",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-legal-hold", header_value);
         }
     }
@@ -1490,16 +1407,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_164 = inner_163.as_str();
         if !formatted_164.is_empty() {
             let header_value = formatted_164;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1507,16 +1423,15 @@ pub fn add_headers_create_multipart_upload(
         let formatted_166 = inner_165.as_str();
         if !formatted_166.is_empty() {
             let header_value = formatted_166;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-algorithm", header_value);
         }
     }
@@ -1533,13 +1448,12 @@ pub fn add_headers_create_multipart_upload(
                             )
                         })?;
                 let header_value = v.as_str();
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        aws_smithy_http::operation::error::BuildError::invalid_field(
-                            "metadata",
-                            format!("`{}` cannot be used as a header value: {}", v, err),
-                        )
-                    })?;
+                let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "metadata",
+                        format!("`{}` cannot be used as a header value: {}", v, err),
+                    )
+                })?;
                 builder = builder.header(header_name, header_value);
             }
         }
@@ -1555,16 +1469,15 @@ pub fn add_headers_delete_bucket(
         let formatted_169 = inner_168.as_str();
         if !formatted_169.is_empty() {
             let header_value = formatted_169;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1579,16 +1492,15 @@ pub fn add_headers_delete_bucket_analytics_configuration(
         let formatted_171 = inner_170.as_str();
         if !formatted_171.is_empty() {
             let header_value = formatted_171;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1603,16 +1515,15 @@ pub fn add_headers_delete_bucket_cors(
         let formatted_173 = inner_172.as_str();
         if !formatted_173.is_empty() {
             let header_value = formatted_173;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1627,16 +1538,15 @@ pub fn add_headers_delete_bucket_encryption(
         let formatted_175 = inner_174.as_str();
         if !formatted_175.is_empty() {
             let header_value = formatted_175;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1651,16 +1561,15 @@ pub fn add_headers_delete_bucket_inventory_configuration(
         let formatted_177 = inner_176.as_str();
         if !formatted_177.is_empty() {
             let header_value = formatted_177;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1675,16 +1584,15 @@ pub fn add_headers_delete_bucket_lifecycle(
         let formatted_179 = inner_178.as_str();
         if !formatted_179.is_empty() {
             let header_value = formatted_179;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1699,16 +1607,15 @@ pub fn add_headers_delete_bucket_metrics_configuration(
         let formatted_181 = inner_180.as_str();
         if !formatted_181.is_empty() {
             let header_value = formatted_181;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1723,16 +1630,15 @@ pub fn add_headers_delete_bucket_ownership_controls(
         let formatted_183 = inner_182.as_str();
         if !formatted_183.is_empty() {
             let header_value = formatted_183;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1747,16 +1653,15 @@ pub fn add_headers_delete_bucket_policy(
         let formatted_185 = inner_184.as_str();
         if !formatted_185.is_empty() {
             let header_value = formatted_185;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1771,16 +1676,15 @@ pub fn add_headers_delete_bucket_replication(
         let formatted_187 = inner_186.as_str();
         if !formatted_187.is_empty() {
             let header_value = formatted_187;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1795,16 +1699,15 @@ pub fn add_headers_delete_bucket_tagging(
         let formatted_189 = inner_188.as_str();
         if !formatted_189.is_empty() {
             let header_value = formatted_189;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1819,16 +1722,15 @@ pub fn add_headers_delete_bucket_website(
         let formatted_191 = inner_190.as_str();
         if !formatted_191.is_empty() {
             let header_value = formatted_191;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1843,16 +1745,15 @@ pub fn add_headers_delete_object(
         let formatted_193 = inner_192.as_str();
         if !formatted_193.is_empty() {
             let header_value = formatted_193;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "mfa",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "mfa",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-mfa", header_value);
         }
     }
@@ -1860,16 +1761,15 @@ pub fn add_headers_delete_object(
         let formatted_195 = inner_194.as_str();
         if !formatted_195.is_empty() {
             let header_value = formatted_195;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -1879,16 +1779,15 @@ pub fn add_headers_delete_object(
         let formatted_196 = encoder.encode();
         if !formatted_196.is_empty() {
             let header_value = formatted_196;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bypass_governance_retention",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bypass_governance_retention",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
         }
     }
@@ -1896,16 +1795,15 @@ pub fn add_headers_delete_object(
         let formatted_198 = inner_197.as_str();
         if !formatted_198.is_empty() {
             let header_value = formatted_198;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1920,16 +1818,15 @@ pub fn add_headers_delete_objects(
         let formatted_200 = inner_199.as_str();
         if !formatted_200.is_empty() {
             let header_value = formatted_200;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "mfa",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "mfa",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-mfa", header_value);
         }
     }
@@ -1937,16 +1834,15 @@ pub fn add_headers_delete_objects(
         let formatted_202 = inner_201.as_str();
         if !formatted_202.is_empty() {
             let header_value = formatted_202;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -1956,16 +1852,15 @@ pub fn add_headers_delete_objects(
         let formatted_203 = encoder.encode();
         if !formatted_203.is_empty() {
             let header_value = formatted_203;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bypass_governance_retention",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bypass_governance_retention",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
         }
     }
@@ -1973,16 +1868,15 @@ pub fn add_headers_delete_objects(
         let formatted_205 = inner_204.as_str();
         if !formatted_205.is_empty() {
             let header_value = formatted_205;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -1990,16 +1884,15 @@ pub fn add_headers_delete_objects(
         let formatted_207 = inner_206.as_str();
         if !formatted_207.is_empty() {
             let header_value = formatted_207;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -2014,16 +1907,15 @@ pub fn add_headers_delete_object_tagging(
         let formatted_209 = inner_208.as_str();
         if !formatted_209.is_empty() {
             let header_value = formatted_209;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2038,16 +1930,15 @@ pub fn add_headers_delete_public_access_block(
         let formatted_211 = inner_210.as_str();
         if !formatted_211.is_empty() {
             let header_value = formatted_211;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2062,16 +1953,15 @@ pub fn add_headers_get_bucket_accelerate_configuration(
         let formatted_213 = inner_212.as_str();
         if !formatted_213.is_empty() {
             let header_value = formatted_213;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2086,16 +1976,15 @@ pub fn add_headers_get_bucket_acl(
         let formatted_215 = inner_214.as_str();
         if !formatted_215.is_empty() {
             let header_value = formatted_215;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2110,16 +1999,15 @@ pub fn add_headers_get_bucket_analytics_configuration(
         let formatted_217 = inner_216.as_str();
         if !formatted_217.is_empty() {
             let header_value = formatted_217;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2134,16 +2022,15 @@ pub fn add_headers_get_bucket_cors(
         let formatted_219 = inner_218.as_str();
         if !formatted_219.is_empty() {
             let header_value = formatted_219;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2158,16 +2045,15 @@ pub fn add_headers_get_bucket_encryption(
         let formatted_221 = inner_220.as_str();
         if !formatted_221.is_empty() {
             let header_value = formatted_221;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2182,16 +2068,15 @@ pub fn add_headers_get_bucket_inventory_configuration(
         let formatted_223 = inner_222.as_str();
         if !formatted_223.is_empty() {
             let header_value = formatted_223;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2206,16 +2091,15 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
         let formatted_225 = inner_224.as_str();
         if !formatted_225.is_empty() {
             let header_value = formatted_225;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2230,16 +2114,15 @@ pub fn add_headers_get_bucket_location(
         let formatted_227 = inner_226.as_str();
         if !formatted_227.is_empty() {
             let header_value = formatted_227;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2254,16 +2137,15 @@ pub fn add_headers_get_bucket_logging(
         let formatted_229 = inner_228.as_str();
         if !formatted_229.is_empty() {
             let header_value = formatted_229;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2278,16 +2160,15 @@ pub fn add_headers_get_bucket_metrics_configuration(
         let formatted_231 = inner_230.as_str();
         if !formatted_231.is_empty() {
             let header_value = formatted_231;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2302,16 +2183,15 @@ pub fn add_headers_get_bucket_notification_configuration(
         let formatted_233 = inner_232.as_str();
         if !formatted_233.is_empty() {
             let header_value = formatted_233;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2326,16 +2206,15 @@ pub fn add_headers_get_bucket_ownership_controls(
         let formatted_235 = inner_234.as_str();
         if !formatted_235.is_empty() {
             let header_value = formatted_235;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2350,16 +2229,15 @@ pub fn add_headers_get_bucket_policy(
         let formatted_237 = inner_236.as_str();
         if !formatted_237.is_empty() {
             let header_value = formatted_237;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2374,16 +2252,15 @@ pub fn add_headers_get_bucket_policy_status(
         let formatted_239 = inner_238.as_str();
         if !formatted_239.is_empty() {
             let header_value = formatted_239;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2398,16 +2275,15 @@ pub fn add_headers_get_bucket_replication(
         let formatted_241 = inner_240.as_str();
         if !formatted_241.is_empty() {
             let header_value = formatted_241;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2422,16 +2298,15 @@ pub fn add_headers_get_bucket_request_payment(
         let formatted_243 = inner_242.as_str();
         if !formatted_243.is_empty() {
             let header_value = formatted_243;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2446,16 +2321,15 @@ pub fn add_headers_get_bucket_tagging(
         let formatted_245 = inner_244.as_str();
         if !formatted_245.is_empty() {
             let header_value = formatted_245;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2470,16 +2344,15 @@ pub fn add_headers_get_bucket_versioning(
         let formatted_247 = inner_246.as_str();
         if !formatted_247.is_empty() {
             let header_value = formatted_247;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2494,16 +2367,15 @@ pub fn add_headers_get_bucket_website(
         let formatted_249 = inner_248.as_str();
         if !formatted_249.is_empty() {
             let header_value = formatted_249;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2518,16 +2390,15 @@ pub fn add_headers_get_object(
         let formatted_251 = inner_250.as_str();
         if !formatted_251.is_empty() {
             let header_value = formatted_251;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-Match", header_value);
         }
     }
@@ -2535,16 +2406,15 @@ pub fn add_headers_get_object(
         let formatted_253 = inner_252.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_253.is_empty() {
             let header_value = formatted_253;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_modified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_modified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-Modified-Since", header_value);
         }
     }
@@ -2552,16 +2422,15 @@ pub fn add_headers_get_object(
         let formatted_255 = inner_254.as_str();
         if !formatted_255.is_empty() {
             let header_value = formatted_255;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_none_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_none_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-None-Match", header_value);
         }
     }
@@ -2569,16 +2438,15 @@ pub fn add_headers_get_object(
         let formatted_257 = inner_256.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_257.is_empty() {
             let header_value = formatted_257;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_unmodified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_unmodified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-Unmodified-Since", header_value);
         }
     }
@@ -2586,16 +2454,15 @@ pub fn add_headers_get_object(
         let formatted_259 = inner_258.as_str();
         if !formatted_259.is_empty() {
             let header_value = formatted_259;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "range",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "range",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Range", header_value);
         }
     }
@@ -2603,16 +2470,15 @@ pub fn add_headers_get_object(
         let formatted_261 = inner_260.as_str();
         if !formatted_261.is_empty() {
             let header_value = formatted_261;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -2623,16 +2489,15 @@ pub fn add_headers_get_object(
         let formatted_263 = inner_262.as_str();
         if !formatted_263.is_empty() {
             let header_value = formatted_263;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -2640,16 +2505,15 @@ pub fn add_headers_get_object(
         let formatted_265 = inner_264.as_str();
         if !formatted_265.is_empty() {
             let header_value = formatted_265;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -2660,16 +2524,15 @@ pub fn add_headers_get_object(
         let formatted_267 = inner_266.as_str();
         if !formatted_267.is_empty() {
             let header_value = formatted_267;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -2677,16 +2540,15 @@ pub fn add_headers_get_object(
         let formatted_269 = inner_268.as_str();
         if !formatted_269.is_empty() {
             let header_value = formatted_269;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2694,16 +2556,15 @@ pub fn add_headers_get_object(
         let formatted_271 = inner_270.as_str();
         if !formatted_271.is_empty() {
             let header_value = formatted_271;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_mode",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_mode",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-mode", header_value);
         }
     }
@@ -2718,16 +2579,15 @@ pub fn add_headers_get_object_acl(
         let formatted_273 = inner_272.as_str();
         if !formatted_273.is_empty() {
             let header_value = formatted_273;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -2735,16 +2595,15 @@ pub fn add_headers_get_object_acl(
         let formatted_275 = inner_274.as_str();
         if !formatted_275.is_empty() {
             let header_value = formatted_275;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2760,16 +2619,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_276 = encoder.encode();
         if !formatted_276.is_empty() {
             let header_value = formatted_276;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "max_parts",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "max_parts",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-max-parts", header_value);
         }
     }
@@ -2777,16 +2635,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_278 = inner_277.as_str();
         if !formatted_278.is_empty() {
             let header_value = formatted_278;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "part_number_marker",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "part_number_marker",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-part-number-marker", header_value);
         }
     }
@@ -2794,16 +2651,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_280 = inner_279.as_str();
         if !formatted_280.is_empty() {
             let header_value = formatted_280;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -2814,16 +2670,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_282 = inner_281.as_str();
         if !formatted_282.is_empty() {
             let header_value = formatted_282;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -2831,16 +2686,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_284 = inner_283.as_str();
         if !formatted_284.is_empty() {
             let header_value = formatted_284;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -2851,16 +2705,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_286 = inner_285.as_str();
         if !formatted_286.is_empty() {
             let header_value = formatted_286;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -2868,16 +2721,15 @@ pub fn add_headers_get_object_attributes(
         let formatted_288 = inner_287.as_str();
         if !formatted_288.is_empty() {
             let header_value = formatted_288;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2886,16 +2738,15 @@ pub fn add_headers_get_object_attributes(
             let formatted_291 = aws_smithy_http::header::quote_header_value(inner_290.as_str());
             if !formatted_291.is_empty() {
                 let header_value = formatted_291;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        aws_smithy_http::operation::error::BuildError::invalid_field(
-                            "object_attributes",
-                            format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        )
-                    })?;
+                let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "object_attributes",
+                        format!(
+                            "`{}` cannot be used as a header value: {}",
+                            &header_value, err
+                        ),
+                    )
+                })?;
                 builder = builder.header("x-amz-object-attributes", header_value);
             }
         }
@@ -2911,16 +2762,15 @@ pub fn add_headers_get_object_legal_hold(
         let formatted_293 = inner_292.as_str();
         if !formatted_293.is_empty() {
             let header_value = formatted_293;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -2928,16 +2778,15 @@ pub fn add_headers_get_object_legal_hold(
         let formatted_295 = inner_294.as_str();
         if !formatted_295.is_empty() {
             let header_value = formatted_295;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2952,16 +2801,15 @@ pub fn add_headers_get_object_lock_configuration(
         let formatted_297 = inner_296.as_str();
         if !formatted_297.is_empty() {
             let header_value = formatted_297;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -2976,16 +2824,15 @@ pub fn add_headers_get_object_retention(
         let formatted_299 = inner_298.as_str();
         if !formatted_299.is_empty() {
             let header_value = formatted_299;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -2993,16 +2840,15 @@ pub fn add_headers_get_object_retention(
         let formatted_301 = inner_300.as_str();
         if !formatted_301.is_empty() {
             let header_value = formatted_301;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3017,16 +2863,15 @@ pub fn add_headers_get_object_tagging(
         let formatted_303 = inner_302.as_str();
         if !formatted_303.is_empty() {
             let header_value = formatted_303;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3034,16 +2879,15 @@ pub fn add_headers_get_object_tagging(
         let formatted_305 = inner_304.as_str();
         if !formatted_305.is_empty() {
             let header_value = formatted_305;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -3058,16 +2902,15 @@ pub fn add_headers_get_object_torrent(
         let formatted_307 = inner_306.as_str();
         if !formatted_307.is_empty() {
             let header_value = formatted_307;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -3075,16 +2918,15 @@ pub fn add_headers_get_object_torrent(
         let formatted_309 = inner_308.as_str();
         if !formatted_309.is_empty() {
             let header_value = formatted_309;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3099,16 +2941,15 @@ pub fn add_headers_get_public_access_block(
         let formatted_311 = inner_310.as_str();
         if !formatted_311.is_empty() {
             let header_value = formatted_311;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3123,16 +2964,15 @@ pub fn add_headers_head_bucket(
         let formatted_313 = inner_312.as_str();
         if !formatted_313.is_empty() {
             let header_value = formatted_313;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3147,16 +2987,15 @@ pub fn add_headers_head_object(
         let formatted_315 = inner_314.as_str();
         if !formatted_315.is_empty() {
             let header_value = formatted_315;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-Match", header_value);
         }
     }
@@ -3164,16 +3003,15 @@ pub fn add_headers_head_object(
         let formatted_317 = inner_316.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_317.is_empty() {
             let header_value = formatted_317;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_modified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_modified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-Modified-Since", header_value);
         }
     }
@@ -3181,16 +3019,15 @@ pub fn add_headers_head_object(
         let formatted_319 = inner_318.as_str();
         if !formatted_319.is_empty() {
             let header_value = formatted_319;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_none_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_none_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-None-Match", header_value);
         }
     }
@@ -3198,16 +3035,15 @@ pub fn add_headers_head_object(
         let formatted_321 = inner_320.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_321.is_empty() {
             let header_value = formatted_321;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "if_unmodified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "if_unmodified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("If-Unmodified-Since", header_value);
         }
     }
@@ -3215,16 +3051,15 @@ pub fn add_headers_head_object(
         let formatted_323 = inner_322.as_str();
         if !formatted_323.is_empty() {
             let header_value = formatted_323;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "range",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "range",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Range", header_value);
         }
     }
@@ -3232,16 +3067,15 @@ pub fn add_headers_head_object(
         let formatted_325 = inner_324.as_str();
         if !formatted_325.is_empty() {
             let header_value = formatted_325;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -3252,16 +3086,15 @@ pub fn add_headers_head_object(
         let formatted_327 = inner_326.as_str();
         if !formatted_327.is_empty() {
             let header_value = formatted_327;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -3269,16 +3102,15 @@ pub fn add_headers_head_object(
         let formatted_329 = inner_328.as_str();
         if !formatted_329.is_empty() {
             let header_value = formatted_329;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -3289,16 +3121,15 @@ pub fn add_headers_head_object(
         let formatted_331 = inner_330.as_str();
         if !formatted_331.is_empty() {
             let header_value = formatted_331;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -3306,16 +3137,15 @@ pub fn add_headers_head_object(
         let formatted_333 = inner_332.as_str();
         if !formatted_333.is_empty() {
             let header_value = formatted_333;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3323,16 +3153,15 @@ pub fn add_headers_head_object(
         let formatted_335 = inner_334.as_str();
         if !formatted_335.is_empty() {
             let header_value = formatted_335;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_mode",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_mode",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-mode", header_value);
         }
     }
@@ -3347,16 +3176,15 @@ pub fn add_headers_list_bucket_analytics_configurations(
         let formatted_337 = inner_336.as_str();
         if !formatted_337.is_empty() {
             let header_value = formatted_337;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3371,16 +3199,15 @@ pub fn add_headers_list_bucket_inventory_configurations(
         let formatted_339 = inner_338.as_str();
         if !formatted_339.is_empty() {
             let header_value = formatted_339;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3395,16 +3222,15 @@ pub fn add_headers_list_bucket_metrics_configurations(
         let formatted_341 = inner_340.as_str();
         if !formatted_341.is_empty() {
             let header_value = formatted_341;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3419,16 +3245,15 @@ pub fn add_headers_list_multipart_uploads(
         let formatted_343 = inner_342.as_str();
         if !formatted_343.is_empty() {
             let header_value = formatted_343;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3443,16 +3268,15 @@ pub fn add_headers_list_objects(
         let formatted_345 = inner_344.as_str();
         if !formatted_345.is_empty() {
             let header_value = formatted_345;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -3460,16 +3284,15 @@ pub fn add_headers_list_objects(
         let formatted_347 = inner_346.as_str();
         if !formatted_347.is_empty() {
             let header_value = formatted_347;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3484,16 +3307,15 @@ pub fn add_headers_list_objects_v2(
         let formatted_349 = inner_348.as_str();
         if !formatted_349.is_empty() {
             let header_value = formatted_349;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -3501,16 +3323,15 @@ pub fn add_headers_list_objects_v2(
         let formatted_351 = inner_350.as_str();
         if !formatted_351.is_empty() {
             let header_value = formatted_351;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3525,16 +3346,15 @@ pub fn add_headers_list_object_versions(
         let formatted_353 = inner_352.as_str();
         if !formatted_353.is_empty() {
             let header_value = formatted_353;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3549,16 +3369,15 @@ pub fn add_headers_list_parts(
         let formatted_355 = inner_354.as_str();
         if !formatted_355.is_empty() {
             let header_value = formatted_355;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -3566,16 +3385,15 @@ pub fn add_headers_list_parts(
         let formatted_357 = inner_356.as_str();
         if !formatted_357.is_empty() {
             let header_value = formatted_357;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3583,16 +3401,15 @@ pub fn add_headers_list_parts(
         let formatted_359 = inner_358.as_str();
         if !formatted_359.is_empty() {
             let header_value = formatted_359;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -3603,16 +3420,15 @@ pub fn add_headers_list_parts(
         let formatted_361 = inner_360.as_str();
         if !formatted_361.is_empty() {
             let header_value = formatted_361;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -3620,16 +3436,15 @@ pub fn add_headers_list_parts(
         let formatted_363 = inner_362.as_str();
         if !formatted_363.is_empty() {
             let header_value = formatted_363;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -3647,16 +3462,15 @@ pub fn add_headers_put_bucket_accelerate_configuration(
         let formatted_365 = inner_364.as_str();
         if !formatted_365.is_empty() {
             let header_value = formatted_365;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3664,16 +3478,15 @@ pub fn add_headers_put_bucket_accelerate_configuration(
         let formatted_367 = inner_366.as_str();
         if !formatted_367.is_empty() {
             let header_value = formatted_367;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -3688,16 +3501,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_369 = inner_368.as_str();
         if !formatted_369.is_empty() {
             let header_value = formatted_369;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "acl",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "acl",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-acl", header_value);
         }
     }
@@ -3705,16 +3517,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_371 = inner_370.as_str();
         if !formatted_371.is_empty() {
             let header_value = formatted_371;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -3722,16 +3533,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_373 = inner_372.as_str();
         if !formatted_373.is_empty() {
             let header_value = formatted_373;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -3739,16 +3549,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_375 = inner_374.as_str();
         if !formatted_375.is_empty() {
             let header_value = formatted_375;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_full_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_full_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
@@ -3756,16 +3565,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_377 = inner_376.as_str();
         if !formatted_377.is_empty() {
             let header_value = formatted_377;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
@@ -3773,16 +3581,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_379 = inner_378.as_str();
         if !formatted_379.is_empty() {
             let header_value = formatted_379;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
@@ -3790,16 +3597,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_381 = inner_380.as_str();
         if !formatted_381.is_empty() {
             let header_value = formatted_381;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write", header_value);
         }
     }
@@ -3807,16 +3613,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_383 = inner_382.as_str();
         if !formatted_383.is_empty() {
             let header_value = formatted_383;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
@@ -3824,16 +3629,15 @@ pub fn add_headers_put_bucket_acl(
         let formatted_385 = inner_384.as_str();
         if !formatted_385.is_empty() {
             let header_value = formatted_385;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3848,16 +3652,15 @@ pub fn add_headers_put_bucket_analytics_configuration(
         let formatted_387 = inner_386.as_str();
         if !formatted_387.is_empty() {
             let header_value = formatted_387;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3872,16 +3675,15 @@ pub fn add_headers_put_bucket_cors(
         let formatted_389 = inner_388.as_str();
         if !formatted_389.is_empty() {
             let header_value = formatted_389;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -3889,16 +3691,15 @@ pub fn add_headers_put_bucket_cors(
         let formatted_391 = inner_390.as_str();
         if !formatted_391.is_empty() {
             let header_value = formatted_391;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -3906,16 +3707,15 @@ pub fn add_headers_put_bucket_cors(
         let formatted_393 = inner_392.as_str();
         if !formatted_393.is_empty() {
             let header_value = formatted_393;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3930,16 +3730,15 @@ pub fn add_headers_put_bucket_encryption(
         let formatted_395 = inner_394.as_str();
         if !formatted_395.is_empty() {
             let header_value = formatted_395;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -3947,16 +3746,15 @@ pub fn add_headers_put_bucket_encryption(
         let formatted_397 = inner_396.as_str();
         if !formatted_397.is_empty() {
             let header_value = formatted_397;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -3964,16 +3762,15 @@ pub fn add_headers_put_bucket_encryption(
         let formatted_399 = inner_398.as_str();
         if !formatted_399.is_empty() {
             let header_value = formatted_399;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -3988,16 +3785,15 @@ pub fn add_headers_put_bucket_inventory_configuration(
         let formatted_401 = inner_400.as_str();
         if !formatted_401.is_empty() {
             let header_value = formatted_401;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4012,16 +3808,15 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
         let formatted_403 = inner_402.as_str();
         if !formatted_403.is_empty() {
             let header_value = formatted_403;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4029,16 +3824,15 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
         let formatted_405 = inner_404.as_str();
         if !formatted_405.is_empty() {
             let header_value = formatted_405;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4053,16 +3847,15 @@ pub fn add_headers_put_bucket_logging(
         let formatted_407 = inner_406.as_str();
         if !formatted_407.is_empty() {
             let header_value = formatted_407;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4070,16 +3863,15 @@ pub fn add_headers_put_bucket_logging(
         let formatted_409 = inner_408.as_str();
         if !formatted_409.is_empty() {
             let header_value = formatted_409;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4087,16 +3879,15 @@ pub fn add_headers_put_bucket_logging(
         let formatted_411 = inner_410.as_str();
         if !formatted_411.is_empty() {
             let header_value = formatted_411;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4111,16 +3902,15 @@ pub fn add_headers_put_bucket_metrics_configuration(
         let formatted_413 = inner_412.as_str();
         if !formatted_413.is_empty() {
             let header_value = formatted_413;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4135,16 +3925,15 @@ pub fn add_headers_put_bucket_notification_configuration(
         let formatted_415 = inner_414.as_str();
         if !formatted_415.is_empty() {
             let header_value = formatted_415;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4154,16 +3943,15 @@ pub fn add_headers_put_bucket_notification_configuration(
         let formatted_416 = encoder.encode();
         if !formatted_416.is_empty() {
             let header_value = formatted_416;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "skip_destination_validation",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "skip_destination_validation",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-skip-destination-validation", header_value);
         }
     }
@@ -4178,16 +3966,15 @@ pub fn add_headers_put_bucket_ownership_controls(
         let formatted_418 = inner_417.as_str();
         if !formatted_418.is_empty() {
             let header_value = formatted_418;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4195,16 +3982,15 @@ pub fn add_headers_put_bucket_ownership_controls(
         let formatted_420 = inner_419.as_str();
         if !formatted_420.is_empty() {
             let header_value = formatted_420;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4219,16 +4005,15 @@ pub fn add_headers_put_bucket_policy(
         let formatted_422 = inner_421.as_str();
         if !formatted_422.is_empty() {
             let header_value = formatted_422;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4236,16 +4021,15 @@ pub fn add_headers_put_bucket_policy(
         let formatted_424 = inner_423.as_str();
         if !formatted_424.is_empty() {
             let header_value = formatted_424;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4255,16 +4039,15 @@ pub fn add_headers_put_bucket_policy(
         let formatted_425 = encoder.encode();
         if !formatted_425.is_empty() {
             let header_value = formatted_425;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "confirm_remove_self_bucket_access",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "confirm_remove_self_bucket_access",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-confirm-remove-self-bucket-access", header_value);
         }
     }
@@ -4272,16 +4055,15 @@ pub fn add_headers_put_bucket_policy(
         let formatted_427 = inner_426.as_str();
         if !formatted_427.is_empty() {
             let header_value = formatted_427;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4296,16 +4078,15 @@ pub fn add_headers_put_bucket_replication(
         let formatted_429 = inner_428.as_str();
         if !formatted_429.is_empty() {
             let header_value = formatted_429;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4313,16 +4094,15 @@ pub fn add_headers_put_bucket_replication(
         let formatted_431 = inner_430.as_str();
         if !formatted_431.is_empty() {
             let header_value = formatted_431;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4330,16 +4110,15 @@ pub fn add_headers_put_bucket_replication(
         let formatted_433 = inner_432.as_str();
         if !formatted_433.is_empty() {
             let header_value = formatted_433;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-bucket-object-lock-token", header_value);
         }
     }
@@ -4347,16 +4126,15 @@ pub fn add_headers_put_bucket_replication(
         let formatted_435 = inner_434.as_str();
         if !formatted_435.is_empty() {
             let header_value = formatted_435;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4371,16 +4149,15 @@ pub fn add_headers_put_bucket_request_payment(
         let formatted_437 = inner_436.as_str();
         if !formatted_437.is_empty() {
             let header_value = formatted_437;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4388,16 +4165,15 @@ pub fn add_headers_put_bucket_request_payment(
         let formatted_439 = inner_438.as_str();
         if !formatted_439.is_empty() {
             let header_value = formatted_439;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4405,16 +4181,15 @@ pub fn add_headers_put_bucket_request_payment(
         let formatted_441 = inner_440.as_str();
         if !formatted_441.is_empty() {
             let header_value = formatted_441;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4429,16 +4204,15 @@ pub fn add_headers_put_bucket_tagging(
         let formatted_443 = inner_442.as_str();
         if !formatted_443.is_empty() {
             let header_value = formatted_443;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4446,16 +4220,15 @@ pub fn add_headers_put_bucket_tagging(
         let formatted_445 = inner_444.as_str();
         if !formatted_445.is_empty() {
             let header_value = formatted_445;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4463,16 +4236,15 @@ pub fn add_headers_put_bucket_tagging(
         let formatted_447 = inner_446.as_str();
         if !formatted_447.is_empty() {
             let header_value = formatted_447;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4487,16 +4259,15 @@ pub fn add_headers_put_bucket_versioning(
         let formatted_449 = inner_448.as_str();
         if !formatted_449.is_empty() {
             let header_value = formatted_449;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4504,16 +4275,15 @@ pub fn add_headers_put_bucket_versioning(
         let formatted_451 = inner_450.as_str();
         if !formatted_451.is_empty() {
             let header_value = formatted_451;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4521,16 +4291,15 @@ pub fn add_headers_put_bucket_versioning(
         let formatted_453 = inner_452.as_str();
         if !formatted_453.is_empty() {
             let header_value = formatted_453;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "mfa",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "mfa",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-mfa", header_value);
         }
     }
@@ -4538,16 +4307,15 @@ pub fn add_headers_put_bucket_versioning(
         let formatted_455 = inner_454.as_str();
         if !formatted_455.is_empty() {
             let header_value = formatted_455;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4562,16 +4330,15 @@ pub fn add_headers_put_bucket_website(
         let formatted_457 = inner_456.as_str();
         if !formatted_457.is_empty() {
             let header_value = formatted_457;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4579,16 +4346,15 @@ pub fn add_headers_put_bucket_website(
         let formatted_459 = inner_458.as_str();
         if !formatted_459.is_empty() {
             let header_value = formatted_459;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4596,16 +4362,15 @@ pub fn add_headers_put_bucket_website(
         let formatted_461 = inner_460.as_str();
         if !formatted_461.is_empty() {
             let header_value = formatted_461;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -4620,16 +4385,15 @@ pub fn add_headers_put_object(
         let formatted_463 = inner_462.as_str();
         if !formatted_463.is_empty() {
             let header_value = formatted_463;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "acl",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "acl",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-acl", header_value);
         }
     }
@@ -4637,16 +4401,15 @@ pub fn add_headers_put_object(
         let formatted_465 = inner_464.as_str();
         if !formatted_465.is_empty() {
             let header_value = formatted_465;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "cache_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "cache_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Cache-Control", header_value);
         }
     }
@@ -4654,16 +4417,15 @@ pub fn add_headers_put_object(
         let formatted_467 = inner_466.as_str();
         if !formatted_467.is_empty() {
             let header_value = formatted_467;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_disposition",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_disposition",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Disposition", header_value);
         }
     }
@@ -4671,16 +4433,15 @@ pub fn add_headers_put_object(
         let formatted_469 = inner_468.as_str();
         if !formatted_469.is_empty() {
             let header_value = formatted_469;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_encoding",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_encoding",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Encoding", header_value);
         }
     }
@@ -4688,16 +4449,15 @@ pub fn add_headers_put_object(
         let formatted_471 = inner_470.as_str();
         if !formatted_471.is_empty() {
             let header_value = formatted_471;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_language",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_language",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Language", header_value);
         }
     }
@@ -4706,16 +4466,15 @@ pub fn add_headers_put_object(
         let formatted_472 = encoder.encode();
         if !formatted_472.is_empty() {
             let header_value = formatted_472;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_length",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_length",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Length", header_value);
         }
     }
@@ -4723,16 +4482,15 @@ pub fn add_headers_put_object(
         let formatted_474 = inner_473.as_str();
         if !formatted_474.is_empty() {
             let header_value = formatted_474;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -4740,16 +4498,15 @@ pub fn add_headers_put_object(
         let formatted_476 = inner_475.as_str();
         if !formatted_476.is_empty() {
             let header_value = formatted_476;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_type",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_type",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Type", header_value);
         }
     }
@@ -4757,16 +4514,15 @@ pub fn add_headers_put_object(
         let formatted_478 = inner_477.as_str();
         if !formatted_478.is_empty() {
             let header_value = formatted_478;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -4774,16 +4530,15 @@ pub fn add_headers_put_object(
         let formatted_480 = inner_479.as_str();
         if !formatted_480.is_empty() {
             let header_value = formatted_480;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-crc32", header_value);
         }
     }
@@ -4791,16 +4546,15 @@ pub fn add_headers_put_object(
         let formatted_482 = inner_481.as_str();
         if !formatted_482.is_empty() {
             let header_value = formatted_482;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32_c",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32_c",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-crc32c", header_value);
         }
     }
@@ -4808,16 +4562,15 @@ pub fn add_headers_put_object(
         let formatted_484 = inner_483.as_str();
         if !formatted_484.is_empty() {
             let header_value = formatted_484;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha1",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha1",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-sha1", header_value);
         }
     }
@@ -4825,16 +4578,15 @@ pub fn add_headers_put_object(
         let formatted_486 = inner_485.as_str();
         if !formatted_486.is_empty() {
             let header_value = formatted_486;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha256",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha256",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-sha256", header_value);
         }
     }
@@ -4842,16 +4594,15 @@ pub fn add_headers_put_object(
         let formatted_488 = inner_487.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_488.is_empty() {
             let header_value = formatted_488;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expires",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expires",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Expires", header_value);
         }
     }
@@ -4859,16 +4610,15 @@ pub fn add_headers_put_object(
         let formatted_490 = inner_489.as_str();
         if !formatted_490.is_empty() {
             let header_value = formatted_490;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_full_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_full_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
@@ -4876,16 +4626,15 @@ pub fn add_headers_put_object(
         let formatted_492 = inner_491.as_str();
         if !formatted_492.is_empty() {
             let header_value = formatted_492;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
@@ -4893,16 +4642,15 @@ pub fn add_headers_put_object(
         let formatted_494 = inner_493.as_str();
         if !formatted_494.is_empty() {
             let header_value = formatted_494;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
@@ -4910,16 +4658,15 @@ pub fn add_headers_put_object(
         let formatted_496 = inner_495.as_str();
         if !formatted_496.is_empty() {
             let header_value = formatted_496;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
@@ -4927,16 +4674,15 @@ pub fn add_headers_put_object(
         let formatted_498 = inner_497.as_str();
         if !formatted_498.is_empty() {
             let header_value = formatted_498;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "server_side_encryption",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "server_side_encryption",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption", header_value);
         }
     }
@@ -4944,16 +4690,15 @@ pub fn add_headers_put_object(
         let formatted_500 = inner_499.as_str();
         if !formatted_500.is_empty() {
             let header_value = formatted_500;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "storage_class",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "storage_class",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-storage-class", header_value);
         }
     }
@@ -4961,16 +4706,15 @@ pub fn add_headers_put_object(
         let formatted_502 = inner_501.as_str();
         if !formatted_502.is_empty() {
             let header_value = formatted_502;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "website_redirect_location",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "website_redirect_location",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-website-redirect-location", header_value);
         }
     }
@@ -4978,16 +4722,15 @@ pub fn add_headers_put_object(
         let formatted_504 = inner_503.as_str();
         if !formatted_504.is_empty() {
             let header_value = formatted_504;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -4998,16 +4741,15 @@ pub fn add_headers_put_object(
         let formatted_506 = inner_505.as_str();
         if !formatted_506.is_empty() {
             let header_value = formatted_506;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -5015,16 +4757,15 @@ pub fn add_headers_put_object(
         let formatted_508 = inner_507.as_str();
         if !formatted_508.is_empty() {
             let header_value = formatted_508;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -5035,16 +4776,15 @@ pub fn add_headers_put_object(
         let formatted_510 = inner_509.as_str();
         if !formatted_510.is_empty() {
             let header_value = formatted_510;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_key_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_key_id",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
         }
     }
@@ -5052,16 +4792,15 @@ pub fn add_headers_put_object(
         let formatted_512 = inner_511.as_str();
         if !formatted_512.is_empty() {
             let header_value = formatted_512;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_encryption_context",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_encryption_context",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-context", header_value);
         }
     }
@@ -5070,16 +4809,15 @@ pub fn add_headers_put_object(
         let formatted_513 = encoder.encode();
         if !formatted_513.is_empty() {
             let header_value = formatted_513;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bucket_key_enabled",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bucket_key_enabled",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-bucket-key-enabled",
                 header_value,
@@ -5090,16 +4828,15 @@ pub fn add_headers_put_object(
         let formatted_515 = inner_514.as_str();
         if !formatted_515.is_empty() {
             let header_value = formatted_515;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5107,16 +4844,15 @@ pub fn add_headers_put_object(
         let formatted_517 = inner_516.as_str();
         if !formatted_517.is_empty() {
             let header_value = formatted_517;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "tagging",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "tagging",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-tagging", header_value);
         }
     }
@@ -5124,16 +4860,15 @@ pub fn add_headers_put_object(
         let formatted_519 = inner_518.as_str();
         if !formatted_519.is_empty() {
             let header_value = formatted_519;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_mode",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_mode",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-mode", header_value);
         }
     }
@@ -5141,16 +4876,15 @@ pub fn add_headers_put_object(
         let formatted_521 = inner_520.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_521.is_empty() {
             let header_value = formatted_521;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_retain_until_date",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_retain_until_date",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
         }
     }
@@ -5158,16 +4892,15 @@ pub fn add_headers_put_object(
         let formatted_523 = inner_522.as_str();
         if !formatted_523.is_empty() {
             let header_value = formatted_523;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_legal_hold_status",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_legal_hold_status",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-object-lock-legal-hold", header_value);
         }
     }
@@ -5175,16 +4908,15 @@ pub fn add_headers_put_object(
         let formatted_525 = inner_524.as_str();
         if !formatted_525.is_empty() {
             let header_value = formatted_525;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5201,13 +4933,12 @@ pub fn add_headers_put_object(
                             )
                         })?;
                 let header_value = v.as_str();
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        aws_smithy_http::operation::error::BuildError::invalid_field(
-                            "metadata",
-                            format!("`{}` cannot be used as a header value: {}", v, err),
-                        )
-                    })?;
+                let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "metadata",
+                        format!("`{}` cannot be used as a header value: {}", v, err),
+                    )
+                })?;
                 builder = builder.header(header_name, header_value);
             }
         }
@@ -5223,16 +4954,15 @@ pub fn add_headers_put_object_acl(
         let formatted_528 = inner_527.as_str();
         if !formatted_528.is_empty() {
             let header_value = formatted_528;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "acl",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "acl",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-acl", header_value);
         }
     }
@@ -5240,16 +4970,15 @@ pub fn add_headers_put_object_acl(
         let formatted_530 = inner_529.as_str();
         if !formatted_530.is_empty() {
             let header_value = formatted_530;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5257,16 +4986,15 @@ pub fn add_headers_put_object_acl(
         let formatted_532 = inner_531.as_str();
         if !formatted_532.is_empty() {
             let header_value = formatted_532;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5274,16 +5002,15 @@ pub fn add_headers_put_object_acl(
         let formatted_534 = inner_533.as_str();
         if !formatted_534.is_empty() {
             let header_value = formatted_534;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_full_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_full_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
         }
     }
@@ -5291,16 +5018,15 @@ pub fn add_headers_put_object_acl(
         let formatted_536 = inner_535.as_str();
         if !formatted_536.is_empty() {
             let header_value = formatted_536;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read", header_value);
         }
     }
@@ -5308,16 +5034,15 @@ pub fn add_headers_put_object_acl(
         let formatted_538 = inner_537.as_str();
         if !formatted_538.is_empty() {
             let header_value = formatted_538;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_read_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_read_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
         }
     }
@@ -5325,16 +5050,15 @@ pub fn add_headers_put_object_acl(
         let formatted_540 = inner_539.as_str();
         if !formatted_540.is_empty() {
             let header_value = formatted_540;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write", header_value);
         }
     }
@@ -5342,16 +5066,15 @@ pub fn add_headers_put_object_acl(
         let formatted_542 = inner_541.as_str();
         if !formatted_542.is_empty() {
             let header_value = formatted_542;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "grant_write_acp",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "grant_write_acp",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
         }
     }
@@ -5359,16 +5082,15 @@ pub fn add_headers_put_object_acl(
         let formatted_544 = inner_543.as_str();
         if !formatted_544.is_empty() {
             let header_value = formatted_544;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5376,16 +5098,15 @@ pub fn add_headers_put_object_acl(
         let formatted_546 = inner_545.as_str();
         if !formatted_546.is_empty() {
             let header_value = formatted_546;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5400,16 +5121,15 @@ pub fn add_headers_put_object_legal_hold(
         let formatted_548 = inner_547.as_str();
         if !formatted_548.is_empty() {
             let header_value = formatted_548;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5417,16 +5137,15 @@ pub fn add_headers_put_object_legal_hold(
         let formatted_550 = inner_549.as_str();
         if !formatted_550.is_empty() {
             let header_value = formatted_550;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5434,16 +5153,15 @@ pub fn add_headers_put_object_legal_hold(
         let formatted_552 = inner_551.as_str();
         if !formatted_552.is_empty() {
             let header_value = formatted_552;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5451,16 +5169,15 @@ pub fn add_headers_put_object_legal_hold(
         let formatted_554 = inner_553.as_str();
         if !formatted_554.is_empty() {
             let header_value = formatted_554;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5475,16 +5192,15 @@ pub fn add_headers_put_object_lock_configuration(
         let formatted_556 = inner_555.as_str();
         if !formatted_556.is_empty() {
             let header_value = formatted_556;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5492,16 +5208,15 @@ pub fn add_headers_put_object_lock_configuration(
         let formatted_558 = inner_557.as_str();
         if !formatted_558.is_empty() {
             let header_value = formatted_558;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-bucket-object-lock-token", header_value);
         }
     }
@@ -5509,16 +5224,15 @@ pub fn add_headers_put_object_lock_configuration(
         let formatted_560 = inner_559.as_str();
         if !formatted_560.is_empty() {
             let header_value = formatted_560;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5526,16 +5240,15 @@ pub fn add_headers_put_object_lock_configuration(
         let formatted_562 = inner_561.as_str();
         if !formatted_562.is_empty() {
             let header_value = formatted_562;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5543,16 +5256,15 @@ pub fn add_headers_put_object_lock_configuration(
         let formatted_564 = inner_563.as_str();
         if !formatted_564.is_empty() {
             let header_value = formatted_564;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5567,16 +5279,15 @@ pub fn add_headers_put_object_retention(
         let formatted_566 = inner_565.as_str();
         if !formatted_566.is_empty() {
             let header_value = formatted_566;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5586,16 +5297,15 @@ pub fn add_headers_put_object_retention(
         let formatted_567 = encoder.encode();
         if !formatted_567.is_empty() {
             let header_value = formatted_567;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bypass_governance_retention",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bypass_governance_retention",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-bypass-governance-retention", header_value);
         }
     }
@@ -5603,16 +5313,15 @@ pub fn add_headers_put_object_retention(
         let formatted_569 = inner_568.as_str();
         if !formatted_569.is_empty() {
             let header_value = formatted_569;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5620,16 +5329,15 @@ pub fn add_headers_put_object_retention(
         let formatted_571 = inner_570.as_str();
         if !formatted_571.is_empty() {
             let header_value = formatted_571;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5637,16 +5345,15 @@ pub fn add_headers_put_object_retention(
         let formatted_573 = inner_572.as_str();
         if !formatted_573.is_empty() {
             let header_value = formatted_573;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5661,16 +5368,15 @@ pub fn add_headers_put_object_tagging(
         let formatted_575 = inner_574.as_str();
         if !formatted_575.is_empty() {
             let header_value = formatted_575;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5678,16 +5384,15 @@ pub fn add_headers_put_object_tagging(
         let formatted_577 = inner_576.as_str();
         if !formatted_577.is_empty() {
             let header_value = formatted_577;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5695,16 +5400,15 @@ pub fn add_headers_put_object_tagging(
         let formatted_579 = inner_578.as_str();
         if !formatted_579.is_empty() {
             let header_value = formatted_579;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5712,16 +5416,15 @@ pub fn add_headers_put_object_tagging(
         let formatted_581 = inner_580.as_str();
         if !formatted_581.is_empty() {
             let header_value = formatted_581;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5736,16 +5439,15 @@ pub fn add_headers_put_public_access_block(
         let formatted_583 = inner_582.as_str();
         if !formatted_583.is_empty() {
             let header_value = formatted_583;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5753,16 +5455,15 @@ pub fn add_headers_put_public_access_block(
         let formatted_585 = inner_584.as_str();
         if !formatted_585.is_empty() {
             let header_value = formatted_585;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5770,16 +5471,15 @@ pub fn add_headers_put_public_access_block(
         let formatted_587 = inner_586.as_str();
         if !formatted_587.is_empty() {
             let header_value = formatted_587;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5794,16 +5494,15 @@ pub fn add_headers_restore_object(
         let formatted_589 = inner_588.as_str();
         if !formatted_589.is_empty() {
             let header_value = formatted_589;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -5811,16 +5510,15 @@ pub fn add_headers_restore_object(
         let formatted_591 = inner_590.as_str();
         if !formatted_591.is_empty() {
             let header_value = formatted_591;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5828,16 +5526,15 @@ pub fn add_headers_restore_object(
         let formatted_593 = inner_592.as_str();
         if !formatted_593.is_empty() {
             let header_value = formatted_593;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5852,16 +5549,15 @@ pub fn add_headers_select_object_content(
         let formatted_595 = inner_594.as_str();
         if !formatted_595.is_empty() {
             let header_value = formatted_595;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -5872,16 +5568,15 @@ pub fn add_headers_select_object_content(
         let formatted_597 = inner_596.as_str();
         if !formatted_597.is_empty() {
             let header_value = formatted_597;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -5889,16 +5584,15 @@ pub fn add_headers_select_object_content(
         let formatted_599 = inner_598.as_str();
         if !formatted_599.is_empty() {
             let header_value = formatted_599;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -5909,16 +5603,15 @@ pub fn add_headers_select_object_content(
         let formatted_601 = inner_600.as_str();
         if !formatted_601.is_empty() {
             let header_value = formatted_601;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -5934,16 +5627,15 @@ pub fn add_headers_upload_part(
         let formatted_602 = encoder.encode();
         if !formatted_602.is_empty() {
             let header_value = formatted_602;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_length",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_length",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Length", header_value);
         }
     }
@@ -5951,16 +5643,15 @@ pub fn add_headers_upload_part(
         let formatted_604 = inner_603.as_str();
         if !formatted_604.is_empty() {
             let header_value = formatted_604;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-MD5", header_value);
         }
     }
@@ -5968,16 +5659,15 @@ pub fn add_headers_upload_part(
         let formatted_606 = inner_605.as_str();
         if !formatted_606.is_empty() {
             let header_value = formatted_606;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
         }
     }
@@ -5985,16 +5675,15 @@ pub fn add_headers_upload_part(
         let formatted_608 = inner_607.as_str();
         if !formatted_608.is_empty() {
             let header_value = formatted_608;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-crc32", header_value);
         }
     }
@@ -6002,16 +5691,15 @@ pub fn add_headers_upload_part(
         let formatted_610 = inner_609.as_str();
         if !formatted_610.is_empty() {
             let header_value = formatted_610;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32_c",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32_c",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-crc32c", header_value);
         }
     }
@@ -6019,16 +5707,15 @@ pub fn add_headers_upload_part(
         let formatted_612 = inner_611.as_str();
         if !formatted_612.is_empty() {
             let header_value = formatted_612;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha1",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha1",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-sha1", header_value);
         }
     }
@@ -6036,16 +5723,15 @@ pub fn add_headers_upload_part(
         let formatted_614 = inner_613.as_str();
         if !formatted_614.is_empty() {
             let header_value = formatted_614;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha256",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha256",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-checksum-sha256", header_value);
         }
     }
@@ -6053,16 +5739,15 @@ pub fn add_headers_upload_part(
         let formatted_616 = inner_615.as_str();
         if !formatted_616.is_empty() {
             let header_value = formatted_616;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -6073,16 +5758,15 @@ pub fn add_headers_upload_part(
         let formatted_618 = inner_617.as_str();
         if !formatted_618.is_empty() {
             let header_value = formatted_618;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -6090,16 +5774,15 @@ pub fn add_headers_upload_part(
         let formatted_620 = inner_619.as_str();
         if !formatted_620.is_empty() {
             let header_value = formatted_620;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -6110,16 +5793,15 @@ pub fn add_headers_upload_part(
         let formatted_622 = inner_621.as_str();
         if !formatted_622.is_empty() {
             let header_value = formatted_622;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -6127,16 +5809,15 @@ pub fn add_headers_upload_part(
         let formatted_624 = inner_623.as_str();
         if !formatted_624.is_empty() {
             let header_value = formatted_624;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -6151,16 +5832,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_626 = inner_625.as_str();
         if !formatted_626.is_empty() {
             let header_value = formatted_626;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source", header_value);
         }
     }
@@ -6168,16 +5848,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_628 = inner_627.as_str();
         if !formatted_628.is_empty() {
             let header_value = formatted_628;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-match", header_value);
         }
     }
@@ -6185,16 +5864,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_630 = inner_629.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_630.is_empty() {
             let header_value = formatted_630;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_modified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_modified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
         }
     }
@@ -6202,16 +5880,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_632 = inner_631.as_str();
         if !formatted_632.is_empty() {
             let header_value = formatted_632;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_none_match",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_none_match",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-none-match", header_value);
         }
     }
@@ -6219,16 +5896,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_634 = inner_633.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_634.is_empty() {
             let header_value = formatted_634;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_if_unmodified_since",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_if_unmodified_since",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
         }
     }
@@ -6236,16 +5912,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_636 = inner_635.as_str();
         if !formatted_636.is_empty() {
             let header_value = formatted_636;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_range",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_range",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-copy-source-range", header_value);
         }
     }
@@ -6253,16 +5928,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_638 = inner_637.as_str();
         if !formatted_638.is_empty() {
             let header_value = formatted_638;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -6273,16 +5947,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_640 = inner_639.as_str();
         if !formatted_640.is_empty() {
             let header_value = formatted_640;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
@@ -6290,16 +5963,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_642 = inner_641.as_str();
         if !formatted_642.is_empty() {
             let header_value = formatted_642;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -6310,16 +5982,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_644 = inner_643.as_str();
         if !formatted_644.is_empty() {
             let header_value = formatted_644;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-copy-source-server-side-encryption-customer-algorithm",
                 header_value,
@@ -6330,16 +6001,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_646 = inner_645.as_str();
         if !formatted_646.is_empty() {
             let header_value = formatted_646;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_sse_customer_key",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_sse_customer_key",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-copy-source-server-side-encryption-customer-key",
                 header_value,
@@ -6350,16 +6020,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_648 = inner_647.as_str();
         if !formatted_648.is_empty() {
             let header_value = formatted_648;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "copy_source_sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "copy_source_sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-copy-source-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -6370,16 +6039,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_650 = inner_649.as_str();
         if !formatted_650.is_empty() {
             let header_value = formatted_650;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_payer",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_payer",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-payer", header_value);
         }
     }
@@ -6387,16 +6055,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_652 = inner_651.as_str();
         if !formatted_652.is_empty() {
             let header_value = formatted_652;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
@@ -6404,16 +6071,15 @@ pub fn add_headers_upload_part_copy(
         let formatted_654 = inner_653.as_str();
         if !formatted_654.is_empty() {
             let header_value = formatted_654;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expected_source_bucket_owner",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expected_source_bucket_owner",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-source-expected-bucket-owner", header_value);
         }
     }
@@ -6428,16 +6094,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_656 = inner_655.as_str();
         if !formatted_656.is_empty() {
             let header_value = formatted_656;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_route",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_route",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-route", header_value);
         }
     }
@@ -6445,16 +6110,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_658 = inner_657.as_str();
         if !formatted_658.is_empty() {
             let header_value = formatted_658;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-request-token", header_value);
         }
     }
@@ -6463,16 +6127,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_659 = encoder.encode();
         if !formatted_659.is_empty() {
             let header_value = formatted_659;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "status_code",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "status_code",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-status", header_value);
         }
     }
@@ -6480,16 +6143,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_661 = inner_660.as_str();
         if !formatted_661.is_empty() {
             let header_value = formatted_661;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "error_code",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "error_code",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-error-code", header_value);
         }
     }
@@ -6497,16 +6159,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_663 = inner_662.as_str();
         if !formatted_663.is_empty() {
             let header_value = formatted_663;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "error_message",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "error_message",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-error-message", header_value);
         }
     }
@@ -6514,16 +6175,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_665 = inner_664.as_str();
         if !formatted_665.is_empty() {
             let header_value = formatted_665;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "accept_ranges",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "accept_ranges",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-accept-ranges", header_value);
         }
     }
@@ -6531,16 +6191,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_667 = inner_666.as_str();
         if !formatted_667.is_empty() {
             let header_value = formatted_667;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "cache_control",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "cache_control",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Cache-Control", header_value);
         }
     }
@@ -6548,16 +6207,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_669 = inner_668.as_str();
         if !formatted_669.is_empty() {
             let header_value = formatted_669;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_disposition",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_disposition",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Content-Disposition", header_value);
         }
     }
@@ -6565,16 +6223,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_671 = inner_670.as_str();
         if !formatted_671.is_empty() {
             let header_value = formatted_671;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_encoding",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_encoding",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Content-Encoding", header_value);
         }
     }
@@ -6582,16 +6239,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_673 = inner_672.as_str();
         if !formatted_673.is_empty() {
             let header_value = formatted_673;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_language",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_language",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Content-Language", header_value);
         }
     }
@@ -6600,16 +6256,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_674 = encoder.encode();
         if !formatted_674.is_empty() {
             let header_value = formatted_674;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_length",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_length",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("Content-Length", header_value);
         }
     }
@@ -6617,16 +6272,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_676 = inner_675.as_str();
         if !formatted_676.is_empty() {
             let header_value = formatted_676;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_range",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_range",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Content-Range", header_value);
         }
     }
@@ -6634,16 +6288,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_678 = inner_677.as_str();
         if !formatted_678.is_empty() {
             let header_value = formatted_678;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "content_type",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "content_type",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Content-Type", header_value);
         }
     }
@@ -6651,16 +6304,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_680 = inner_679.as_str();
         if !formatted_680.is_empty() {
             let header_value = formatted_680;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-crc32", header_value);
         }
     }
@@ -6668,16 +6320,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_682 = inner_681.as_str();
         if !formatted_682.is_empty() {
             let header_value = formatted_682;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_crc32_c",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_crc32_c",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-crc32c", header_value);
         }
     }
@@ -6685,16 +6336,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_684 = inner_683.as_str();
         if !formatted_684.is_empty() {
             let header_value = formatted_684;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha1",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha1",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-sha1", header_value);
         }
     }
@@ -6702,16 +6352,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_686 = inner_685.as_str();
         if !formatted_686.is_empty() {
             let header_value = formatted_686;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "checksum_sha256",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "checksum_sha256",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-checksum-sha256", header_value);
         }
     }
@@ -6720,16 +6369,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_687 = encoder.encode();
         if !formatted_687.is_empty() {
             let header_value = formatted_687;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "delete_marker",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "delete_marker",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-delete-marker", header_value);
         }
     }
@@ -6737,16 +6385,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_689 = inner_688.as_str();
         if !formatted_689.is_empty() {
             let header_value = formatted_689;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "e_tag",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "e_tag",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-ETag", header_value);
         }
     }
@@ -6754,16 +6401,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_691 = inner_690.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_691.is_empty() {
             let header_value = formatted_691;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expires",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expires",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Expires", header_value);
         }
     }
@@ -6771,16 +6417,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_693 = inner_692.as_str();
         if !formatted_693.is_empty() {
             let header_value = formatted_693;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "expiration",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "expiration",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-expiration", header_value);
         }
     }
@@ -6788,16 +6433,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_695 = inner_694.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
         if !formatted_695.is_empty() {
             let header_value = formatted_695;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "last_modified",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "last_modified",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-Last-Modified", header_value);
         }
     }
@@ -6806,16 +6450,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_696 = encoder.encode();
         if !formatted_696.is_empty() {
             let header_value = formatted_696;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "missing_meta",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "missing_meta",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-missing-meta", header_value);
         }
     }
@@ -6823,16 +6466,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_698 = inner_697.as_str();
         if !formatted_698.is_empty() {
             let header_value = formatted_698;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_mode",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_mode",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-object-lock-mode", header_value);
         }
     }
@@ -6840,16 +6482,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_700 = inner_699.as_str();
         if !formatted_700.is_empty() {
             let header_value = formatted_700;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_legal_hold_status",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_legal_hold_status",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-object-lock-legal-hold",
                 header_value,
@@ -6860,16 +6501,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_702 = inner_701.fmt(aws_smithy_types::date_time::Format::DateTime)?;
         if !formatted_702.is_empty() {
             let header_value = formatted_702;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "object_lock_retain_until_date",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "object_lock_retain_until_date",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-object-lock-retain-until-date",
                 header_value,
@@ -6881,16 +6521,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_703 = encoder.encode();
         if !formatted_703.is_empty() {
             let header_value = formatted_703;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "parts_count",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "parts_count",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-mp-parts-count", header_value);
         }
     }
@@ -6898,16 +6537,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_705 = inner_704.as_str();
         if !formatted_705.is_empty() {
             let header_value = formatted_705;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "replication_status",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "replication_status",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-replication-status", header_value);
         }
     }
@@ -6915,16 +6553,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_707 = inner_706.as_str();
         if !formatted_707.is_empty() {
             let header_value = formatted_707;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "request_charged",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_charged",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-request-charged", header_value);
         }
     }
@@ -6932,16 +6569,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_709 = inner_708.as_str();
         if !formatted_709.is_empty() {
             let header_value = formatted_709;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "restore",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "restore",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-restore", header_value);
         }
     }
@@ -6949,16 +6585,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_711 = inner_710.as_str();
         if !formatted_711.is_empty() {
             let header_value = formatted_711;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "server_side_encryption",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "server_side_encryption",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-server-side-encryption",
                 header_value,
@@ -6969,16 +6604,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_713 = inner_712.as_str();
         if !formatted_713.is_empty() {
             let header_value = formatted_713;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_algorithm",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_algorithm",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm",
                 header_value,
@@ -6989,16 +6623,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_715 = inner_714.as_str();
         if !formatted_715.is_empty() {
             let header_value = formatted_715;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "ssekms_key_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "ssekms_key_id",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id",
                 header_value,
@@ -7009,16 +6642,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_717 = inner_716.as_str();
         if !formatted_717.is_empty() {
             let header_value = formatted_717;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "sse_customer_key_md5",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "sse_customer_key_md5",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5",
                 header_value,
@@ -7029,16 +6661,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_719 = inner_718.as_str();
         if !formatted_719.is_empty() {
             let header_value = formatted_719;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "storage_class",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "storage_class",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-storage-class", header_value);
         }
     }
@@ -7047,16 +6678,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_720 = encoder.encode();
         if !formatted_720.is_empty() {
             let header_value = formatted_720;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "tag_count",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "tag_count",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-tagging-count", header_value);
         }
     }
@@ -7064,16 +6694,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_722 = inner_721.as_str();
         if !formatted_722.is_empty() {
             let header_value = formatted_722;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "version_id",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "version_id",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-fwd-header-x-amz-version-id", header_value);
         }
     }
@@ -7082,16 +6711,15 @@ pub fn add_headers_write_get_object_response(
         let formatted_723 = encoder.encode();
         if !formatted_723.is_empty() {
             let header_value = formatted_723;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "bucket_key_enabled",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "bucket_key_enabled",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &header_value, err
+                    ),
+                )
+            })?;
             builder = builder.header(
                 "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled",
                 header_value,
@@ -7111,13 +6739,12 @@ pub fn add_headers_write_get_object_response(
                             )
                         })?;
                 let header_value = v.as_str();
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        aws_smithy_http::operation::error::BuildError::invalid_field(
-                            "metadata",
-                            format!("`{}` cannot be used as a header value: {}", v, err),
-                        )
-                    })?;
+                let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "metadata",
+                        format!("`{}` cannot be used as a header value: {}", v, err),
+                    )
+                })?;
                 builder = builder.header(header_name, header_value);
             }
         }

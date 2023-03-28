@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_create_rum_metric_definitions_input {
 
     /// A builder for [`BatchCreateRumMetricDefinitionsInput`](crate::input::BatchCreateRumMetricDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,
@@ -245,6 +246,7 @@ impl BatchCreateRumMetricDefinitionsInput {
 pub mod batch_delete_rum_metric_definitions_input {
 
     /// A builder for [`BatchDeleteRumMetricDefinitionsInput`](crate::input::BatchDeleteRumMetricDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,
@@ -507,6 +509,7 @@ impl BatchDeleteRumMetricDefinitionsInput {
 pub mod batch_get_rum_metric_definitions_input {
 
     /// A builder for [`BatchGetRumMetricDefinitionsInput`](crate::input::BatchGetRumMetricDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,
@@ -774,6 +777,7 @@ impl BatchGetRumMetricDefinitionsInput {
 pub mod create_app_monitor_input {
 
     /// A builder for [`CreateAppMonitorInput`](crate::input::CreateAppMonitorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1034,6 +1038,7 @@ impl CreateAppMonitorInput {
 pub mod delete_app_monitor_input {
 
     /// A builder for [`DeleteAppMonitorInput`](crate::input::DeleteAppMonitorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1197,6 +1202,7 @@ impl DeleteAppMonitorInput {
 pub mod delete_rum_metrics_destination_input {
 
     /// A builder for [`DeleteRumMetricsDestinationInput`](crate::input::DeleteRumMetricsDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,
@@ -1426,6 +1432,7 @@ impl DeleteRumMetricsDestinationInput {
 pub mod get_app_monitor_input {
 
     /// A builder for [`GetAppMonitorInput`](crate::input::GetAppMonitorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1587,6 +1594,7 @@ impl GetAppMonitorInput {
 pub mod get_app_monitor_data_input {
 
     /// A builder for [`GetAppMonitorDataInput`](crate::input::GetAppMonitorDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1826,6 +1834,7 @@ impl GetAppMonitorDataInput {
 pub mod list_app_monitors_input {
 
     /// A builder for [`ListAppMonitorsInput`](crate::input::ListAppMonitorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2002,6 +2011,7 @@ impl ListAppMonitorsInput {
 pub mod list_rum_metrics_destinations_input {
 
     /// A builder for [`ListRumMetricsDestinationsInput`](crate::input::ListRumMetricsDestinationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,
@@ -2221,6 +2231,7 @@ impl ListRumMetricsDestinationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2386,6 +2397,7 @@ impl ListTagsForResourceInput {
 pub mod put_rum_events_input {
 
     /// A builder for [`PutRumEventsInput`](crate::input::PutRumEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2627,6 +2639,7 @@ impl PutRumEventsInput {
 pub mod put_rum_metrics_destination_input {
 
     /// A builder for [`PutRumMetricsDestinationInput`](crate::input::PutRumMetricsDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,
@@ -2859,6 +2872,7 @@ impl PutRumMetricsDestinationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3065,6 +3079,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3267,6 +3282,7 @@ impl UntagResourceInput {
 pub mod update_app_monitor_input {
 
     /// A builder for [`UpdateAppMonitorInput`](crate::input::UpdateAppMonitorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3506,6 +3522,7 @@ impl UpdateAppMonitorInput {
 pub mod update_rum_metric_definition_input {
 
     /// A builder for [`UpdateRumMetricDefinitionInput`](crate::input::UpdateRumMetricDefinitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor_name: std::option::Option<std::string::String>,

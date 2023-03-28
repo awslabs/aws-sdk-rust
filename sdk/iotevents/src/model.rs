@@ -53,6 +53,7 @@ impl InputConfiguration {
 pub mod input_configuration {
 
     /// A builder for [`InputConfiguration`](crate::model::InputConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
@@ -270,6 +271,7 @@ impl InputDefinition {
 pub mod input_definition {
 
     /// A builder for [`InputDefinition`](crate::model::InputDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -341,6 +343,7 @@ impl Attribute {
 pub mod attribute {
 
     /// A builder for [`Attribute`](crate::model::Attribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) json_path: std::option::Option<std::string::String>,
@@ -468,6 +471,7 @@ impl DetectorModelConfiguration {
 pub mod detector_model_configuration {
 
     /// A builder for [`DetectorModelConfiguration`](crate::model::DetectorModelConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -872,6 +876,7 @@ impl DetectorModelDefinition {
 pub mod detector_model_definition {
 
     /// A builder for [`DetectorModelDefinition`](crate::model::DetectorModelDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) states: std::option::Option<std::vec::Vec<crate::model::State>>,
@@ -965,6 +970,7 @@ impl State {
 pub mod state {
 
     /// A builder for [`State`](crate::model::State).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
@@ -1058,6 +1064,7 @@ impl OnExitLifecycle {
 pub mod on_exit_lifecycle {
 
     /// A builder for [`OnExitLifecycle`](crate::model::OnExitLifecycle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -1129,6 +1136,7 @@ impl Event {
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_name: std::option::Option<std::string::String>,
@@ -1294,6 +1302,7 @@ impl Action {
 pub mod action {
 
     /// A builder for [`Action`](crate::model::Action).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) set_variable: std::option::Option<crate::model::SetVariableAction>,
@@ -1559,6 +1568,7 @@ impl IotSiteWiseAction {
 pub mod iot_site_wise_action {
 
     /// A builder for [`IotSiteWiseAction`](crate::model::IotSiteWiseAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entry_id: std::option::Option<std::string::String>,
@@ -1682,6 +1692,7 @@ impl AssetPropertyValue {
 pub mod asset_property_value {
 
     /// A builder for [`AssetPropertyValue`](crate::model::AssetPropertyValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::AssetPropertyVariant>,
@@ -1775,6 +1786,7 @@ impl AssetPropertyTimestamp {
 pub mod asset_property_timestamp {
 
     /// A builder for [`AssetPropertyTimestamp`](crate::model::AssetPropertyTimestamp).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_in_seconds: std::option::Option<std::string::String>,
@@ -1871,6 +1883,7 @@ impl AssetPropertyVariant {
 pub mod asset_property_variant {
 
     /// A builder for [`AssetPropertyVariant`](crate::model::AssetPropertyVariant).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -1980,6 +1993,7 @@ impl DynamoDBv2Action {
 pub mod dynamo_d_bv2_action {
 
     /// A builder for [`DynamoDBv2Action`](crate::model::DynamoDBv2Action).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -2066,6 +2080,7 @@ impl Payload {
 pub mod payload {
 
     /// A builder for [`Payload`](crate::model::Payload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_expression: std::option::Option<std::string::String>,
@@ -2347,6 +2362,7 @@ impl DynamoDbAction {
 pub mod dynamo_db_action {
 
     /// A builder for [`DynamoDbAction`](crate::model::DynamoDbAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hash_key_type: std::option::Option<std::string::String>,
@@ -2574,6 +2590,7 @@ impl FirehoseAction {
 pub mod firehose_action {
 
     /// A builder for [`FirehoseAction`](crate::model::FirehoseAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -2663,6 +2680,7 @@ impl SqsAction {
 pub mod sqs_action {
 
     /// A builder for [`SqsAction`](crate::model::SqsAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -2742,6 +2760,7 @@ impl IotEventsAction {
 pub mod iot_events_action {
 
     /// A builder for [`IotEventsAction`](crate::model::IotEventsAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
@@ -2809,6 +2828,7 @@ impl LambdaAction {
 pub mod lambda_action {
 
     /// A builder for [`LambdaAction`](crate::model::LambdaAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
@@ -2869,6 +2889,7 @@ impl ResetTimerAction {
 pub mod reset_timer_action {
 
     /// A builder for [`ResetTimerAction`](crate::model::ResetTimerAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_name: std::option::Option<std::string::String>,
@@ -2917,6 +2938,7 @@ impl ClearTimerAction {
 pub mod clear_timer_action {
 
     /// A builder for [`ClearTimerAction`](crate::model::ClearTimerAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_name: std::option::Option<std::string::String>,
@@ -2995,6 +3017,7 @@ impl SetTimerAction {
 pub mod set_timer_action {
 
     /// A builder for [`SetTimerAction`](crate::model::SetTimerAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_name: std::option::Option<std::string::String>,
@@ -3103,6 +3126,7 @@ impl IotTopicPublishAction {
 pub mod iot_topic_publish_action {
 
     /// A builder for [`IotTopicPublishAction`](crate::model::IotTopicPublishAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mqtt_topic: std::option::Option<std::string::String>,
@@ -3180,6 +3204,7 @@ impl SnsTopicPublishAction {
 pub mod sns_topic_publish_action {
 
     /// A builder for [`SnsTopicPublishAction`](crate::model::SnsTopicPublishAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -3247,6 +3272,7 @@ impl SetVariableAction {
 pub mod set_variable_action {
 
     /// A builder for [`SetVariableAction`](crate::model::SetVariableAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) variable_name: std::option::Option<std::string::String>,
@@ -3310,6 +3336,7 @@ impl OnEnterLifecycle {
 pub mod on_enter_lifecycle {
 
     /// A builder for [`OnEnterLifecycle`](crate::model::OnEnterLifecycle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -3374,6 +3401,7 @@ impl OnInputLifecycle {
 pub mod on_input_lifecycle {
 
     /// A builder for [`OnInputLifecycle`](crate::model::OnInputLifecycle).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -3474,6 +3502,7 @@ impl TransitionEvent {
 pub mod transition_event {
 
     /// A builder for [`TransitionEvent`](crate::model::TransitionEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_name: std::option::Option<std::string::String>,
@@ -3679,6 +3708,7 @@ impl AlarmCapabilities {
 pub mod alarm_capabilities {
 
     /// A builder for [`AlarmCapabilities`](crate::model::AlarmCapabilities).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initialization_configuration:
@@ -3749,6 +3779,7 @@ impl AcknowledgeFlow {
 pub mod acknowledge_flow {
 
     /// A builder for [`AcknowledgeFlow`](crate::model::AcknowledgeFlow).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -3797,6 +3828,7 @@ impl InitializationConfiguration {
 pub mod initialization_configuration {
 
     /// A builder for [`InitializationConfiguration`](crate::model::InitializationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disabled_on_initialization: std::option::Option<bool>,
@@ -3845,6 +3877,7 @@ impl AlarmEventActions {
 pub mod alarm_event_actions {
 
     /// A builder for [`AlarmEventActions`](crate::model::AlarmEventActions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<crate::model::AlarmAction>>,
@@ -4022,6 +4055,7 @@ impl AlarmAction {
 pub mod alarm_action {
 
     /// A builder for [`AlarmAction`](crate::model::AlarmAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns: std::option::Option<crate::model::SnsTopicPublishAction>,
@@ -4254,6 +4288,7 @@ impl AlarmNotification {
 pub mod alarm_notification {
 
     /// A builder for [`AlarmNotification`](crate::model::AlarmNotification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_actions:
@@ -4326,6 +4361,7 @@ impl NotificationAction {
 pub mod notification_action {
 
     /// A builder for [`NotificationAction`](crate::model::NotificationAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::NotificationTargetActions>,
@@ -4443,6 +4479,7 @@ impl EmailConfiguration {
 pub mod email_configuration {
 
     /// A builder for [`EmailConfiguration`](crate::model::EmailConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<std::string::String>,
@@ -4531,6 +4568,7 @@ impl EmailRecipients {
 pub mod email_recipients {
 
     /// A builder for [`EmailRecipients`](crate::model::EmailRecipients).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) to: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
@@ -4586,6 +4624,7 @@ impl RecipientDetail {
 pub mod recipient_detail {
 
     /// A builder for [`RecipientDetail`](crate::model::RecipientDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sso_identity: std::option::Option<crate::model::SsoIdentity>,
@@ -4644,6 +4683,7 @@ impl SsoIdentity {
 pub mod sso_identity {
 
     /// A builder for [`SsoIdentity`](crate::model::SsoIdentity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
@@ -4714,6 +4754,7 @@ impl EmailContent {
 pub mod email_content {
 
     /// A builder for [`EmailContent`](crate::model::EmailContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -4795,6 +4836,7 @@ impl SmsConfiguration {
 pub mod sms_configuration {
 
     /// A builder for [`SmsConfiguration`](crate::model::SmsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sender_id: std::option::Option<std::string::String>,
@@ -4883,6 +4925,7 @@ impl NotificationTargetActions {
 pub mod notification_target_actions {
 
     /// A builder for [`NotificationTargetActions`](crate::model::NotificationTargetActions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_action: std::option::Option<crate::model::LambdaAction>,
@@ -4934,6 +4977,7 @@ impl AlarmRule {
 pub mod alarm_rule {
 
     /// A builder for [`AlarmRule`](crate::model::AlarmRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_rule: std::option::Option<crate::model::SimpleRule>,
@@ -4999,6 +5043,7 @@ impl SimpleRule {
 pub mod simple_rule {
 
     /// A builder for [`SimpleRule`](crate::model::SimpleRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_property: std::option::Option<std::string::String>,
@@ -5203,6 +5248,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -5287,6 +5333,7 @@ impl LoggingOptions {
 pub mod logging_options {
 
     /// A builder for [`LoggingOptions`](crate::model::LoggingOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -5388,6 +5435,7 @@ impl DetectorDebugOption {
 pub mod detector_debug_option {
 
     /// A builder for [`DetectorDebugOption`](crate::model::DetectorDebugOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -5581,6 +5629,7 @@ impl InputSummary {
 pub mod input_summary {
 
     /// A builder for [`InputSummary`](crate::model::InputSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
@@ -5705,6 +5754,7 @@ impl RoutedResource {
 pub mod routed_resource {
 
     /// A builder for [`RoutedResource`](crate::model::RoutedResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5777,6 +5827,7 @@ impl InputIdentifier {
 pub mod input_identifier {
 
     /// A builder for [`InputIdentifier`](crate::model::InputIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_events_input_identifier:
@@ -5854,6 +5905,7 @@ impl IotSiteWiseInputIdentifier {
 pub mod iot_site_wise_input_identifier {
 
     /// A builder for [`IotSiteWiseInputIdentifier`](crate::model::IotSiteWiseInputIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_site_wise_asset_model_property_identifier:
@@ -5917,6 +5969,7 @@ impl IotSiteWiseAssetModelPropertyIdentifier {
 pub mod iot_site_wise_asset_model_property_identifier {
 
     /// A builder for [`IotSiteWiseAssetModelPropertyIdentifier`](crate::model::IotSiteWiseAssetModelPropertyIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_model_id: std::option::Option<std::string::String>,
@@ -5980,6 +6033,7 @@ impl IotEventsInputIdentifier {
 pub mod iot_events_input_identifier {
 
     /// A builder for [`IotEventsInputIdentifier`](crate::model::IotEventsInputIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
@@ -6077,6 +6131,7 @@ impl DetectorModelVersionSummary {
 pub mod detector_model_version_summary {
 
     /// A builder for [`DetectorModelVersionSummary`](crate::model::DetectorModelVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -6244,6 +6299,7 @@ impl DetectorModelSummary {
 pub mod detector_model_summary {
 
     /// A builder for [`DetectorModelSummary`](crate::model::DetectorModelSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -6386,6 +6442,7 @@ impl AlarmModelVersionSummary {
 pub mod alarm_model_version_summary {
 
     /// A builder for [`AlarmModelVersionSummary`](crate::model::AlarmModelVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -6565,6 +6622,7 @@ impl AlarmModelSummary {
 pub mod alarm_model_summary {
 
     /// A builder for [`AlarmModelSummary`](crate::model::AlarmModelSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6697,6 +6755,7 @@ impl AnalysisResult {
 pub mod analysis_result {
 
     /// A builder for [`AnalysisResult`](crate::model::AnalysisResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -6824,6 +6883,7 @@ impl AnalysisResultLocation {
 pub mod analysis_result_location {
 
     /// A builder for [`AnalysisResultLocation`](crate::model::AnalysisResultLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -6974,6 +7034,7 @@ impl Input {
 pub mod input {
 
     /// A builder for [`Input`](crate::model::Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_configuration: std::option::Option<crate::model::InputConfiguration>,
@@ -7146,6 +7207,7 @@ impl DetectorModel {
 pub mod detector_model {
 
     /// A builder for [`DetectorModel`](crate::model::DetectorModel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_definition:

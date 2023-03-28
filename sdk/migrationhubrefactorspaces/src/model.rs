@@ -361,6 +361,7 @@ impl std::fmt::Debug for ServiceSummary {
 pub mod service_summary {
 
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
@@ -710,6 +711,7 @@ impl ErrorResponse {
 pub mod error_response {
 
     /// A builder for [`ErrorResponse`](crate::model::ErrorResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
@@ -1295,6 +1297,7 @@ impl LambdaEndpointSummary {
 pub mod lambda_endpoint_summary {
 
     /// A builder for [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1348,6 +1351,7 @@ impl UrlEndpointSummary {
 pub mod url_endpoint_summary {
 
     /// A builder for [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -1643,6 +1647,7 @@ impl std::fmt::Debug for RouteSummary {
 pub mod route_summary {
 
     /// A builder for [`RouteSummary`](crate::model::RouteSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) route_id: std::option::Option<std::string::String>,
@@ -2220,6 +2225,7 @@ impl EnvironmentVpc {
 pub mod environment_vpc {
 
     /// A builder for [`EnvironmentVpc`](crate::model::EnvironmentVpc).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -2457,6 +2463,7 @@ impl std::fmt::Debug for EnvironmentSummary {
 pub mod environment_summary {
 
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2998,6 +3005,7 @@ impl std::fmt::Debug for ApplicationSummary {
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3416,6 +3424,7 @@ impl ApiGatewayProxySummary {
 pub mod api_gateway_proxy_summary {
 
     /// A builder for [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_url: std::option::Option<std::string::String>,
@@ -3719,6 +3728,7 @@ impl LambdaEndpointConfig {
 pub mod lambda_endpoint_config {
 
     /// A builder for [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3772,6 +3782,7 @@ impl UrlEndpointConfig {
 pub mod url_endpoint_config {
 
     /// A builder for [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -3874,6 +3885,7 @@ impl ApiGatewayProxyConfig {
 pub mod api_gateway_proxy_config {
 
     /// A builder for [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_url: std::option::Option<std::string::String>,
@@ -4000,6 +4012,7 @@ impl LambdaEndpointInput {
 pub mod lambda_endpoint_input {
 
     /// A builder for [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4053,6 +4066,7 @@ impl UrlEndpointInput {
 pub mod url_endpoint_input {
 
     /// A builder for [`UrlEndpointInput`](crate::model::UrlEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -4134,6 +4148,7 @@ impl UriPathRouteInput {
 pub mod uri_path_route_input {
 
     /// A builder for [`UriPathRouteInput`](crate::model::UriPathRouteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -4230,6 +4245,7 @@ impl DefaultRouteInput {
 pub mod default_route_input {
 
     /// A builder for [`DefaultRouteInput`](crate::model::DefaultRouteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_state: std::option::Option<crate::model::RouteActivationState>,
@@ -4290,6 +4306,7 @@ impl ApiGatewayProxyInput {
 pub mod api_gateway_proxy_input {
 
     /// A builder for [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,

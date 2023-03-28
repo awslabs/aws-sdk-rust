@@ -7,16 +7,15 @@ pub fn add_headers_get_role_credentials(
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "access_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "access_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sso_bearer_token", header_value);
         }
     }
@@ -31,16 +30,15 @@ pub fn add_headers_list_account_roles(
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "access_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "access_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sso_bearer_token", header_value);
         }
     }
@@ -55,16 +53,15 @@ pub fn add_headers_list_accounts(
         let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "access_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "access_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sso_bearer_token", header_value);
         }
     }
@@ -79,16 +76,15 @@ pub fn add_headers_logout(
         let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
-            let header_value =
-                http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::error::BuildError::invalid_field(
-                        "access_token",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
-                        ),
-                    )
-                })?;
+            let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "access_token",
+                    format!(
+                        "`{}` cannot be used as a header value: {}",
+                        &"*** Sensitive Data Redacted ***", err
+                    ),
+                )
+            })?;
             builder = builder.header("x-amz-sso_bearer_token", header_value);
         }
     }

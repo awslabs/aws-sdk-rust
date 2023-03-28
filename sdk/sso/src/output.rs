@@ -7,6 +7,7 @@ pub struct LogoutOutput {}
 pub mod logout_output {
 
     /// A builder for [`LogoutOutput`](crate::output::LogoutOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -48,6 +49,7 @@ impl ListAccountsOutput {
 pub mod list_accounts_output {
 
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -124,6 +126,7 @@ impl ListAccountRolesOutput {
 pub mod list_account_roles_output {
 
     /// A builder for [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -193,6 +196,7 @@ impl GetRoleCredentialsOutput {
 pub mod get_role_credentials_output {
 
     /// A builder for [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_credentials: std::option::Option<crate::model::RoleCredentials>,

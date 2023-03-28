@@ -44,6 +44,7 @@ impl SynthesizeSpeechOutput {
 pub mod synthesize_speech_output {
 
     /// A builder for [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -133,6 +134,7 @@ impl StartSpeechSynthesisTaskOutput {
 pub mod start_speech_synthesis_task_output {
 
     /// A builder for [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
@@ -174,6 +176,7 @@ pub struct PutLexiconOutput {}
 pub mod put_lexicon_output {
 
     /// A builder for [`PutLexiconOutput`](crate::output::PutLexiconOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -215,6 +218,7 @@ impl ListSpeechSynthesisTasksOutput {
 pub mod list_speech_synthesis_tasks_output {
 
     /// A builder for [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -291,6 +295,7 @@ impl ListLexiconsOutput {
 pub mod list_lexicons_output {
 
     /// A builder for [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
@@ -360,6 +365,7 @@ impl GetSpeechSynthesisTaskOutput {
 pub mod get_speech_synthesis_task_output {
 
     /// A builder for [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
@@ -418,6 +424,7 @@ impl GetLexiconOutput {
 pub mod get_lexicon_output {
 
     /// A builder for [`GetLexiconOutput`](crate::output::GetLexiconOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lexicon: std::option::Option<crate::model::Lexicon>,
@@ -488,6 +495,7 @@ impl DescribeVoicesOutput {
 pub mod describe_voices_output {
 
     /// A builder for [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
@@ -547,6 +555,7 @@ pub struct DeleteLexiconOutput {}
 pub mod delete_lexicon_output {
 
     /// A builder for [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

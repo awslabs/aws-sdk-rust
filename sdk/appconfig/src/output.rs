@@ -7,6 +7,7 @@ pub struct ValidateConfigurationOutput {}
 pub mod validate_configuration_output {
 
     /// A builder for [`ValidateConfigurationOutput`](crate::output::ValidateConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -80,6 +81,7 @@ impl UpdateExtensionAssociationOutput {
 pub mod update_extension_association_output {
 
     /// A builder for [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -261,6 +263,7 @@ impl UpdateExtensionOutput {
 pub mod update_extension_output {
 
     /// A builder for [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -456,6 +459,7 @@ impl UpdateEnvironmentOutput {
 pub mod update_environment_output {
 
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -628,6 +632,7 @@ impl UpdateDeploymentStrategyOutput {
 pub mod update_deployment_strategy_output {
 
     /// A builder for [`UpdateDeploymentStrategyOutput`](crate::output::UpdateDeploymentStrategyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -824,6 +829,7 @@ impl UpdateConfigurationProfileOutput {
 pub mod update_configuration_profile_output {
 
     /// A builder for [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -989,6 +995,7 @@ impl UpdateApplicationOutput {
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1051,6 +1058,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1075,6 +1083,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1235,6 +1244,7 @@ impl StopDeploymentOutput {
 pub mod stop_deployment_output {
 
     /// A builder for [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1682,6 +1692,7 @@ impl StartDeploymentOutput {
 pub mod start_deployment_output {
 
     /// A builder for [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2007,6 +2018,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -2077,6 +2089,7 @@ impl ListHostedConfigurationVersionsOutput {
 pub mod list_hosted_configuration_versions_output {
 
     /// A builder for [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items:
@@ -2156,6 +2169,7 @@ impl ListExtensionsOutput {
 pub mod list_extensions_output {
 
     /// A builder for [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>,
@@ -2232,6 +2246,7 @@ impl ListExtensionAssociationsOutput {
 pub mod list_extension_associations_output {
 
     /// A builder for [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items:
@@ -2309,6 +2324,7 @@ impl ListEnvironmentsOutput {
 pub mod list_environments_output {
 
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Environment>>,
@@ -2385,6 +2401,7 @@ impl ListDeploymentStrategiesOutput {
 pub mod list_deployment_strategies_output {
 
     /// A builder for [`ListDeploymentStrategiesOutput`](crate::output::ListDeploymentStrategiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DeploymentStrategy>>,
@@ -2461,6 +2478,7 @@ impl ListDeploymentsOutput {
 pub mod list_deployments_output {
 
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DeploymentSummary>>,
@@ -2537,6 +2555,7 @@ impl ListConfigurationProfilesOutput {
 pub mod list_configuration_profiles_output {
 
     /// A builder for [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items:
@@ -2614,6 +2633,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -2730,6 +2750,7 @@ impl std::fmt::Debug for GetHostedConfigurationVersionOutput {
 pub mod get_hosted_configuration_version_output {
 
     /// A builder for [`GetHostedConfigurationVersionOutput`](crate::output::GetHostedConfigurationVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2895,6 +2916,7 @@ impl GetExtensionAssociationOutput {
 pub mod get_extension_association_output {
 
     /// A builder for [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3076,6 +3098,7 @@ impl GetExtensionOutput {
 pub mod get_extension_output {
 
     /// A builder for [`GetExtensionOutput`](crate::output::GetExtensionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3271,6 +3294,7 @@ impl GetEnvironmentOutput {
 pub mod get_environment_output {
 
     /// A builder for [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3443,6 +3467,7 @@ impl GetDeploymentStrategyOutput {
 pub mod get_deployment_strategy_output {
 
     /// A builder for [`GetDeploymentStrategyOutput`](crate::output::GetDeploymentStrategyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3712,6 +3737,7 @@ impl GetDeploymentOutput {
 pub mod get_deployment_output {
 
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4086,6 +4112,7 @@ impl GetConfigurationProfileOutput {
 pub mod get_configuration_profile_output {
 
     /// A builder for [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4264,6 +4291,7 @@ impl std::fmt::Debug for GetConfigurationOutput {
 pub mod get_configuration_output {
 
     /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
@@ -4366,6 +4394,7 @@ impl GetApplicationOutput {
 pub mod get_application_output {
 
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4428,6 +4457,7 @@ pub struct DeleteHostedConfigurationVersionOutput {}
 pub mod delete_hosted_configuration_version_output {
 
     /// A builder for [`DeleteHostedConfigurationVersionOutput`](crate::output::DeleteHostedConfigurationVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4452,6 +4482,7 @@ pub struct DeleteExtensionAssociationOutput {}
 pub mod delete_extension_association_output {
 
     /// A builder for [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4476,6 +4507,7 @@ pub struct DeleteExtensionOutput {}
 pub mod delete_extension_output {
 
     /// A builder for [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4500,6 +4532,7 @@ pub struct DeleteEnvironmentOutput {}
 pub mod delete_environment_output {
 
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4524,6 +4557,7 @@ pub struct DeleteDeploymentStrategyOutput {}
 pub mod delete_deployment_strategy_output {
 
     /// A builder for [`DeleteDeploymentStrategyOutput`](crate::output::DeleteDeploymentStrategyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4548,6 +4582,7 @@ pub struct DeleteConfigurationProfileOutput {}
 pub mod delete_configuration_profile_output {
 
     /// A builder for [`DeleteConfigurationProfileOutput`](crate::output::DeleteConfigurationProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4572,6 +4607,7 @@ pub struct DeleteApplicationOutput {}
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4653,6 +4689,7 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionOutput {
 pub mod create_hosted_configuration_version_output {
 
     /// A builder for [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4818,6 +4855,7 @@ impl CreateExtensionAssociationOutput {
 pub mod create_extension_association_output {
 
     /// A builder for [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4999,6 +5037,7 @@ impl CreateExtensionOutput {
 pub mod create_extension_output {
 
     /// A builder for [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5194,6 +5233,7 @@ impl CreateEnvironmentOutput {
 pub mod create_environment_output {
 
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -5366,6 +5406,7 @@ impl CreateDeploymentStrategyOutput {
 pub mod create_deployment_strategy_output {
 
     /// A builder for [`CreateDeploymentStrategyOutput`](crate::output::CreateDeploymentStrategyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5562,6 +5603,7 @@ impl CreateConfigurationProfileOutput {
 pub mod create_configuration_profile_output {
 
     /// A builder for [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -5727,6 +5769,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

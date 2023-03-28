@@ -99,6 +99,7 @@ impl KnowledgeBaseData {
 pub mod knowledge_base_data {
 
     /// A builder for [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -316,6 +317,7 @@ impl ServerSideEncryptionConfiguration {
 pub mod server_side_encryption_configuration {
 
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -374,6 +376,7 @@ impl RenderingConfiguration {
 pub mod rendering_configuration {
 
     /// A builder for [`RenderingConfiguration`](crate::model::RenderingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_uri: std::option::Option<std::string::String>,
@@ -488,6 +491,7 @@ impl AppIntegrationsConfiguration {
 pub mod app_integrations_configuration {
 
     /// A builder for [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_integration_arn: std::option::Option<std::string::String>,
@@ -859,6 +863,7 @@ impl ContentSummary {
 pub mod content_summary {
 
     /// A builder for [`ContentSummary`](crate::model::ContentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_arn: std::option::Option<std::string::String>,
@@ -1193,6 +1198,7 @@ impl SearchExpression {
 pub mod search_expression {
 
     /// A builder for [`SearchExpression`](crate::model::SearchExpression).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1264,6 +1270,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<crate::model::FilterField>,
@@ -1581,6 +1588,7 @@ impl KnowledgeBaseSummary {
 pub mod knowledge_base_summary {
 
     /// A builder for [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -1902,6 +1910,7 @@ impl std::fmt::Debug for ContentData {
 pub mod content_data {
 
     /// A builder for [`ContentData`](crate::model::ContentData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) content_arn: std::option::Option<std::string::String>,
@@ -2193,6 +2202,7 @@ impl SessionSummary {
 pub mod session_summary {
 
     /// A builder for [`SessionSummary`](crate::model::SessionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -2294,6 +2304,7 @@ impl ResultData {
 pub mod result_data {
 
     /// A builder for [`ResultData`](crate::model::ResultData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_id: std::option::Option<std::string::String>,
@@ -2380,6 +2391,7 @@ impl Document {
 pub mod document {
 
     /// A builder for [`Document`](crate::model::Document).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_reference: std::option::Option<crate::model::ContentReference>,
@@ -2473,6 +2485,7 @@ impl std::fmt::Debug for DocumentText {
 pub mod document_text {
 
     /// A builder for [`DocumentText`](crate::model::DocumentText).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -2557,6 +2570,7 @@ impl Highlight {
 pub mod highlight {
 
     /// A builder for [`Highlight`](crate::model::Highlight).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_inclusive: std::option::Option<i32>,
@@ -2638,6 +2652,7 @@ impl ContentReference {
 pub mod content_reference {
 
     /// A builder for [`ContentReference`](crate::model::ContentReference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_arn: std::option::Option<std::string::String>,
@@ -2735,6 +2750,7 @@ impl NotifyRecommendationsReceivedError {
 pub mod notify_recommendations_received_error {
 
     /// A builder for [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -2834,6 +2850,7 @@ impl RecommendationTrigger {
 pub mod recommendation_trigger {
 
     /// A builder for [`RecommendationTrigger`](crate::model::RecommendationTrigger).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3002,6 +3019,7 @@ impl std::fmt::Debug for QueryRecommendationTriggerData {
 pub mod query_recommendation_trigger_data {
 
     /// A builder for [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3267,6 +3285,7 @@ impl RecommendationData {
 pub mod recommendation_data {
 
     /// A builder for [`RecommendationData`](crate::model::RecommendationData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -3610,6 +3629,7 @@ impl AssistantSummary {
 pub mod assistant_summary {
 
     /// A builder for [`AssistantSummary`](crate::model::AssistantSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -4030,6 +4050,7 @@ impl AssistantData {
 pub mod assistant_data {
 
     /// A builder for [`AssistantData`](crate::model::AssistantData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -4224,6 +4245,7 @@ impl SessionData {
 pub mod session_data {
 
     /// A builder for [`SessionData`](crate::model::SessionData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_arn: std::option::Option<std::string::String>,
@@ -4385,6 +4407,7 @@ impl AssistantAssociationSummary {
 pub mod assistant_association_summary {
 
     /// A builder for [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association_id: std::option::Option<std::string::String>,
@@ -4587,6 +4610,7 @@ impl KnowledgeBaseAssociationData {
 pub mod knowledge_base_association_data {
 
     /// A builder for [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -4786,6 +4810,7 @@ impl AssistantAssociationData {
 pub mod assistant_association_data {
 
     /// A builder for [`AssistantAssociationData`](crate::model::AssistantAssociationData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association_id: std::option::Option<std::string::String>,

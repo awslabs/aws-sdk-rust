@@ -32,6 +32,7 @@ impl AgentConfigurationStatus {
 pub mod agent_configuration_status {
 
     /// A builder for [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_id: std::option::Option<std::string::String>,
@@ -192,6 +193,7 @@ impl ImportTask {
 pub mod import_task {
 
     /// A builder for [`ImportTask`](crate::model::ImportTask).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_task_id: std::option::Option<std::string::String>,
@@ -573,6 +575,7 @@ impl ExportFilter {
 pub mod export_filter {
 
     /// A builder for [`ExportFilter`](crate::model::ExportFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -857,6 +860,7 @@ impl NeighborConnectionDetail {
 pub mod neighbor_connection_detail {
 
     /// A builder for [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -969,6 +973,7 @@ impl OrderByElement {
 pub mod order_by_element {
 
     /// A builder for [`OrderByElement`](crate::model::OrderByElement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_name: std::option::Option<std::string::String>,
@@ -1137,6 +1142,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1362,6 +1368,7 @@ impl CustomerAgentlessCollectorInfo {
 pub mod customer_agentless_collector_info {
 
     /// A builder for [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_agentless_collectors: std::option::Option<i32>,
@@ -1539,6 +1546,7 @@ impl CustomerMeCollectorInfo {
 pub mod customer_me_collector_info {
 
     /// A builder for [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_me_collectors: std::option::Option<i32>,
@@ -1701,6 +1709,7 @@ impl CustomerConnectorInfo {
 pub mod customer_connector_info {
 
     /// A builder for [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_connectors: std::option::Option<i32>,
@@ -1863,6 +1872,7 @@ impl CustomerAgentInfo {
 pub mod customer_agent_info {
 
     /// A builder for [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_agents: std::option::Option<i32>,
@@ -2011,6 +2021,7 @@ impl ConfigurationTag {
 pub mod configuration_tag {
 
     /// A builder for [`ConfigurationTag`](crate::model::ConfigurationTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
@@ -2123,6 +2134,7 @@ impl TagFilter {
 pub mod tag_filter {
 
     /// A builder for [`TagFilter`](crate::model::TagFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2201,6 +2213,7 @@ impl ImportTaskFilter {
 pub mod import_task_filter {
 
     /// A builder for [`ImportTaskFilter`](crate::model::ImportTaskFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ImportTaskFilterName>,
@@ -2419,6 +2432,7 @@ impl ExportInfo {
 pub mod export_info {
 
     /// A builder for [`ExportInfo`](crate::model::ExportInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -2780,6 +2794,7 @@ impl ContinuousExportDescription {
 pub mod continuous_export_description {
 
     /// A builder for [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -3194,6 +3209,7 @@ impl AgentInfo {
 pub mod agent_info {
 
     /// A builder for [`AgentInfo`](crate::model::AgentInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_id: std::option::Option<std::string::String>,
@@ -3493,6 +3509,7 @@ impl AgentNetworkInfo {
 pub mod agent_network_info {
 
     /// A builder for [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -3562,6 +3579,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3636,6 +3654,7 @@ impl BatchDeleteImportDataError {
 pub mod batch_delete_import_data_error {
 
     /// A builder for [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_task_id: std::option::Option<std::string::String>,

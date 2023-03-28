@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_component_input {
 
     /// A builder for [`CreateComponentInput`](crate::input::CreateComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -266,6 +267,7 @@ impl CreateComponentInput {
 pub mod create_form_input {
 
     /// A builder for [`CreateFormInput`](crate::input::CreateFormInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -525,6 +527,7 @@ impl CreateFormInput {
 pub mod create_theme_input {
 
     /// A builder for [`CreateThemeInput`](crate::input::CreateThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -784,6 +787,7 @@ impl CreateThemeInput {
 pub mod delete_component_input {
 
     /// A builder for [`DeleteComponentInput`](crate::input::DeleteComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1018,6 +1022,7 @@ impl DeleteComponentInput {
 pub mod delete_form_input {
 
     /// A builder for [`DeleteFormInput`](crate::input::DeleteFormInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1252,6 +1257,7 @@ impl DeleteFormInput {
 pub mod delete_theme_input {
 
     /// A builder for [`DeleteThemeInput`](crate::input::DeleteThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1486,6 +1492,7 @@ impl DeleteThemeInput {
 pub mod exchange_code_for_token_input {
 
     /// A builder for [`ExchangeCodeForTokenInput`](crate::input::ExchangeCodeForTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider: std::option::Option<crate::model::TokenProviders>,
@@ -1683,6 +1690,7 @@ impl ExchangeCodeForTokenInput {
 pub mod export_components_input {
 
     /// A builder for [`ExportComponentsInput`](crate::input::ExportComponentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1912,6 +1920,7 @@ impl ExportComponentsInput {
 pub mod export_forms_input {
 
     /// A builder for [`ExportFormsInput`](crate::input::ExportFormsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2139,6 +2148,7 @@ impl ExportFormsInput {
 pub mod export_themes_input {
 
     /// A builder for [`ExportThemesInput`](crate::input::ExportThemesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2366,6 +2376,7 @@ impl ExportThemesInput {
 pub mod get_component_input {
 
     /// A builder for [`GetComponentInput`](crate::input::GetComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2600,6 +2611,7 @@ impl GetComponentInput {
 pub mod get_form_input {
 
     /// A builder for [`GetFormInput`](crate::input::GetFormInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2832,6 +2844,7 @@ impl GetFormInput {
 pub mod get_metadata_input {
 
     /// A builder for [`GetMetadataInput`](crate::input::GetMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3034,6 +3047,7 @@ impl GetMetadataInput {
 pub mod get_theme_input {
 
     /// A builder for [`GetThemeInput`](crate::input::GetThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3266,6 +3280,7 @@ impl GetThemeInput {
 pub mod list_components_input {
 
     /// A builder for [`ListComponentsInput`](crate::input::ListComponentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3511,6 +3526,7 @@ impl ListComponentsInput {
 pub mod list_forms_input {
 
     /// A builder for [`ListFormsInput`](crate::input::ListFormsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3754,6 +3770,7 @@ impl ListFormsInput {
 pub mod list_themes_input {
 
     /// A builder for [`ListThemesInput`](crate::input::ListThemesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3999,6 +4016,7 @@ impl ListThemesInput {
 pub mod put_metadata_flag_input {
 
     /// A builder for [`PutMetadataFlagInput`](crate::input::PutMetadataFlagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4262,6 +4280,7 @@ impl PutMetadataFlagInput {
 pub mod refresh_token_input {
 
     /// A builder for [`RefreshTokenInput`](crate::input::RefreshTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider: std::option::Option<crate::model::TokenProviders>,
@@ -4457,6 +4476,7 @@ impl RefreshTokenInput {
 pub mod update_component_input {
 
     /// A builder for [`UpdateComponentInput`](crate::input::UpdateComponentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4753,6 +4773,7 @@ impl UpdateComponentInput {
 pub mod update_form_input {
 
     /// A builder for [`UpdateFormInput`](crate::input::UpdateFormInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5047,6 +5068,7 @@ impl UpdateFormInput {
 pub mod update_theme_input {
 
     /// A builder for [`UpdateThemeInput`](crate::input::UpdateThemeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,

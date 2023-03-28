@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod describe_entities_detection_v2_job_input {
 
     /// A builder for [`DescribeEntitiesDetectionV2JobInput`](crate::input::DescribeEntitiesDetectionV2JobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -169,6 +170,7 @@ impl DescribeEntitiesDetectionV2JobInput {
 pub mod describe_icd10_cm_inference_job_input {
 
     /// A builder for [`DescribeIcd10CmInferenceJobInput`](crate::input::DescribeIcd10CmInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -333,6 +335,7 @@ impl DescribeIcd10CmInferenceJobInput {
 pub mod describe_phi_detection_job_input {
 
     /// A builder for [`DescribePhiDetectionJobInput`](crate::input::DescribePhiDetectionJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -499,6 +502,7 @@ impl DescribePhiDetectionJobInput {
 pub mod describe_rx_norm_inference_job_input {
 
     /// A builder for [`DescribeRxNormInferenceJobInput`](crate::input::DescribeRxNormInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -663,6 +667,7 @@ impl DescribeRxNormInferenceJobInput {
 pub mod describe_snomedct_inference_job_input {
 
     /// A builder for [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -827,6 +832,7 @@ impl DescribeSnomedctInferenceJobInput {
 pub mod detect_entities_input {
 
     /// A builder for [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -987,6 +993,7 @@ impl DetectEntitiesInput {
 pub mod detect_entities_v2_input {
 
     /// A builder for [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1149,6 +1156,7 @@ impl DetectEntitiesV2Input {
 pub mod detect_phi_input {
 
     /// A builder for [`DetectPhiInput`](crate::input::DetectPhiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1307,6 +1315,7 @@ impl DetectPhiInput {
 pub mod infer_icd10_cm_input {
 
     /// A builder for [`InferIcd10CmInput`](crate::input::InferIcd10CmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1467,6 +1476,7 @@ impl InferIcd10CmInput {
 pub mod infer_rx_norm_input {
 
     /// A builder for [`InferRxNormInput`](crate::input::InferRxNormInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1627,6 +1637,7 @@ impl InferRxNormInput {
 pub mod infer_snomedct_input {
 
     /// A builder for [`InferSnomedctInput`](crate::input::InferSnomedctInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1787,6 +1798,7 @@ impl InferSnomedctInput {
 pub mod list_entities_detection_v2_jobs_input {
 
     /// A builder for [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1978,6 +1990,7 @@ impl ListEntitiesDetectionV2JobsInput {
 pub mod list_icd10_cm_inference_jobs_input {
 
     /// A builder for [`ListIcd10CmInferenceJobsInput`](crate::input::ListIcd10CmInferenceJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -2171,6 +2184,7 @@ impl ListIcd10CmInferenceJobsInput {
 pub mod list_phi_detection_jobs_input {
 
     /// A builder for [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -2364,6 +2378,7 @@ impl ListPhiDetectionJobsInput {
 pub mod list_rx_norm_inference_jobs_input {
 
     /// A builder for [`ListRxNormInferenceJobsInput`](crate::input::ListRxNormInferenceJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -2557,6 +2572,7 @@ impl ListRxNormInferenceJobsInput {
 pub mod list_snomedct_inference_jobs_input {
 
     /// A builder for [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -2750,6 +2766,7 @@ impl ListSnomedctInferenceJobsInput {
 pub mod start_entities_detection_v2_job_input {
 
     /// A builder for [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -3004,6 +3021,7 @@ impl StartEntitiesDetectionV2JobInput {
 pub mod start_icd10_cm_inference_job_input {
 
     /// A builder for [`StartIcd10CmInferenceJobInput`](crate::input::StartIcd10CmInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -3260,6 +3278,7 @@ impl StartIcd10CmInferenceJobInput {
 pub mod start_phi_detection_job_input {
 
     /// A builder for [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -3516,6 +3535,7 @@ impl StartPhiDetectionJobInput {
 pub mod start_rx_norm_inference_job_input {
 
     /// A builder for [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -3772,6 +3792,7 @@ impl StartRxNormInferenceJobInput {
 pub mod start_snomedct_inference_job_input {
 
     /// A builder for [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -4028,6 +4049,7 @@ impl StartSnomedctInferenceJobInput {
 pub mod stop_entities_detection_v2_job_input {
 
     /// A builder for [`StopEntitiesDetectionV2JobInput`](crate::input::StopEntitiesDetectionV2JobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4192,6 +4214,7 @@ impl StopEntitiesDetectionV2JobInput {
 pub mod stop_icd10_cm_inference_job_input {
 
     /// A builder for [`StopIcd10CmInferenceJobInput`](crate::input::StopIcd10CmInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4358,6 +4381,7 @@ impl StopIcd10CmInferenceJobInput {
 pub mod stop_phi_detection_job_input {
 
     /// A builder for [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4524,6 +4548,7 @@ impl StopPhiDetectionJobInput {
 pub mod stop_rx_norm_inference_job_input {
 
     /// A builder for [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4690,6 +4715,7 @@ impl StopRxNormInferenceJobInput {
 pub mod stop_snomedct_inference_job_input {
 
     /// A builder for [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,

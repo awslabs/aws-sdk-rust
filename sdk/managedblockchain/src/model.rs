@@ -110,6 +110,7 @@ impl NodeLogPublishingConfiguration {
 pub mod node_log_publishing_configuration {
 
     /// A builder for [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric: std::option::Option<crate::model::NodeFabricLogPublishingConfiguration>,
@@ -168,6 +169,7 @@ impl NodeFabricLogPublishingConfiguration {
 pub mod node_fabric_log_publishing_configuration {
 
     /// A builder for [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chaincode_logs: std::option::Option<crate::model::LogConfigurations>,
@@ -234,6 +236,7 @@ impl LogConfigurations {
 pub mod log_configurations {
 
     /// A builder for [`LogConfigurations`](crate::model::LogConfigurations).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloudwatch: std::option::Option<crate::model::LogConfiguration>,
@@ -285,6 +288,7 @@ impl LogConfiguration {
 pub mod log_configuration {
 
     /// A builder for [`LogConfiguration`](crate::model::LogConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -335,6 +339,7 @@ impl MemberLogPublishingConfiguration {
 pub mod member_log_publishing_configuration {
 
     /// A builder for [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric:
@@ -390,6 +395,7 @@ impl MemberFabricLogPublishingConfiguration {
 pub mod member_fabric_log_publishing_configuration {
 
     /// A builder for [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ca_logs: std::option::Option<crate::model::LogConfigurations>,
@@ -456,6 +462,7 @@ impl VoteSummary {
 pub mod vote_summary {
 
     /// A builder for [`VoteSummary`](crate::model::VoteSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vote: std::option::Option<crate::model::VoteValue>,
@@ -592,6 +599,7 @@ impl ProposalSummary {
 pub mod proposal_summary {
 
     /// A builder for [`ProposalSummary`](crate::model::ProposalSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -899,6 +907,7 @@ impl NodeSummary {
 pub mod node_summary {
 
     /// A builder for [`NodeSummary`](crate::model::NodeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1200,6 +1209,7 @@ impl NetworkSummary {
 pub mod network_summary {
 
     /// A builder for [`NetworkSummary`](crate::model::NetworkSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1606,6 +1616,7 @@ impl MemberSummary {
 pub mod member_summary {
 
     /// A builder for [`MemberSummary`](crate::model::MemberSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1923,6 +1934,7 @@ impl Invitation {
 pub mod invitation {
 
     /// A builder for [`Invitation`](crate::model::Invitation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invitation_id: std::option::Option<std::string::String>,
@@ -2200,6 +2212,7 @@ impl AccessorSummary {
 pub mod accessor_summary {
 
     /// A builder for [`AccessorSummary`](crate::model::AccessorSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2598,6 +2611,7 @@ impl Proposal {
 pub mod proposal {
 
     /// A builder for [`Proposal`](crate::model::Proposal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -2861,6 +2875,7 @@ impl ProposalActions {
 pub mod proposal_actions {
 
     /// A builder for [`ProposalActions`](crate::model::ProposalActions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invitations: std::option::Option<std::vec::Vec<crate::model::InviteAction>>,
@@ -2940,6 +2955,7 @@ impl RemoveAction {
 pub mod remove_action {
 
     /// A builder for [`RemoveAction`](crate::model::RemoveAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -2989,6 +3005,7 @@ impl InviteAction {
 pub mod invite_action {
 
     /// A builder for [`InviteAction`](crate::model::InviteAction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -3162,6 +3179,7 @@ impl Node {
 pub mod node {
 
     /// A builder for [`Node`](crate::model::Node).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
@@ -3525,6 +3543,7 @@ impl NodeFrameworkAttributes {
 pub mod node_framework_attributes {
 
     /// A builder for [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric: std::option::Option<crate::model::NodeFabricAttributes>,
@@ -3598,6 +3617,7 @@ impl NodeEthereumAttributes {
 pub mod node_ethereum_attributes {
 
     /// A builder for [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_endpoint: std::option::Option<std::string::String>,
@@ -3671,6 +3691,7 @@ impl NodeFabricAttributes {
 pub mod node_fabric_attributes {
 
     /// A builder for [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peer_endpoint: std::option::Option<std::string::String>,
@@ -3822,6 +3843,7 @@ impl Network {
 pub mod network {
 
     /// A builder for [`Network`](crate::model::Network).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4049,6 +4071,7 @@ impl VotingPolicy {
 pub mod voting_policy {
 
     /// A builder for [`VotingPolicy`](crate::model::VotingPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_threshold_policy:
@@ -4119,6 +4142,7 @@ impl ApprovalThresholdPolicy {
 pub mod approval_threshold_policy {
 
     /// A builder for [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) threshold_percentage: std::option::Option<i32>,
@@ -4293,6 +4317,7 @@ impl NetworkFrameworkAttributes {
 pub mod network_framework_attributes {
 
     /// A builder for [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric: std::option::Option<crate::model::NetworkFabricAttributes>,
@@ -4371,6 +4396,7 @@ impl NetworkEthereumAttributes {
 pub mod network_ethereum_attributes {
 
     /// A builder for [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chain_id: std::option::Option<std::string::String>,
@@ -4438,6 +4464,7 @@ impl NetworkFabricAttributes {
 pub mod network_fabric_attributes {
 
     /// A builder for [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ordering_service_endpoint: std::option::Option<std::string::String>,
@@ -4691,6 +4718,7 @@ impl Member {
 pub mod member {
 
     /// A builder for [`Member`](crate::model::Member).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
@@ -4916,6 +4944,7 @@ impl MemberFrameworkAttributes {
 pub mod member_framework_attributes {
 
     /// A builder for [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric: std::option::Option<crate::model::MemberFabricAttributes>,
@@ -4974,6 +5003,7 @@ impl MemberFabricAttributes {
 pub mod member_fabric_attributes {
 
     /// A builder for [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_username: std::option::Option<std::string::String>,
@@ -5079,6 +5109,7 @@ impl Accessor {
 pub mod accessor {
 
     /// A builder for [`Accessor`](crate::model::Accessor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5226,6 +5257,7 @@ impl NodeConfiguration {
 pub mod node_configuration {
 
     /// A builder for [`NodeConfiguration`](crate::model::NodeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -5385,6 +5417,7 @@ impl MemberConfiguration {
 pub mod member_configuration {
 
     /// A builder for [`MemberConfiguration`](crate::model::MemberConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5536,6 +5569,7 @@ impl MemberFrameworkConfiguration {
 pub mod member_framework_configuration {
 
     /// A builder for [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric: std::option::Option<crate::model::MemberFabricConfiguration>,
@@ -5602,6 +5636,7 @@ impl std::fmt::Debug for MemberFabricConfiguration {
 pub mod member_fabric_configuration {
 
     /// A builder for [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) admin_username: std::option::Option<std::string::String>,
@@ -5676,6 +5711,7 @@ impl NetworkFrameworkConfiguration {
 pub mod network_framework_configuration {
 
     /// A builder for [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fabric: std::option::Option<crate::model::NetworkFabricConfiguration>,
@@ -5727,6 +5763,7 @@ impl NetworkFabricConfiguration {
 pub mod network_fabric_configuration {
 
     /// A builder for [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edition: std::option::Option<crate::model::Edition>,

@@ -18,6 +18,7 @@ impl StreamModeDetails {
 pub mod stream_mode_details {
 
     /// A builder for [`StreamModeDetails`](crate::model::StreamModeDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_mode: std::option::Option<crate::model::StreamMode>,
@@ -357,6 +358,7 @@ impl Consumer {
 pub mod consumer {
 
     /// A builder for [`Consumer`](crate::model::Consumer).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumer_name: std::option::Option<std::string::String>,
@@ -568,6 +570,7 @@ impl PutRecordsResultEntry {
 pub mod put_records_result_entry {
 
     /// A builder for [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_number: std::option::Option<std::string::String>,
@@ -672,6 +675,7 @@ impl PutRecordsRequestEntry {
 pub mod put_records_request_entry {
 
     /// A builder for [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
@@ -757,6 +761,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -845,6 +850,7 @@ impl StreamSummary {
 pub mod stream_summary {
 
     /// A builder for [`StreamSummary`](crate::model::StreamSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -1078,6 +1084,7 @@ impl Shard {
 pub mod shard {
 
     /// A builder for [`Shard`](crate::model::Shard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_id: std::option::Option<std::string::String>,
@@ -1193,6 +1200,7 @@ impl SequenceNumberRange {
 pub mod sequence_number_range {
 
     /// A builder for [`SequenceNumberRange`](crate::model::SequenceNumberRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
@@ -1266,6 +1274,7 @@ impl HashKeyRange {
 pub mod hash_key_range {
 
     /// A builder for [`HashKeyRange`](crate::model::HashKeyRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) starting_hash_key: std::option::Option<std::string::String>,
@@ -1364,6 +1373,7 @@ impl ShardFilter {
 pub mod shard_filter {
 
     /// A builder for [`ShardFilter`](crate::model::ShardFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ShardFilterType>,
@@ -1704,6 +1714,7 @@ impl ChildShard {
 pub mod child_shard {
 
     /// A builder for [`ChildShard`](crate::model::ChildShard).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_id: std::option::Option<std::string::String>,
@@ -1826,6 +1837,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence_number: std::option::Option<std::string::String>,
@@ -2175,6 +2187,7 @@ impl StreamDescriptionSummary {
 pub mod stream_description_summary {
 
     /// A builder for [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -2423,6 +2436,7 @@ impl EnhancedMetrics {
 pub mod enhanced_metrics {
 
     /// A builder for [`EnhancedMetrics`](crate::model::EnhancedMetrics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_level_metrics:
@@ -2535,6 +2549,7 @@ impl ConsumerDescription {
 pub mod consumer_description {
 
     /// A builder for [`ConsumerDescription`](crate::model::ConsumerDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumer_name: std::option::Option<std::string::String>,
@@ -2746,6 +2761,7 @@ impl StreamDescription {
 pub mod stream_description {
 
     /// A builder for [`StreamDescription`](crate::model::StreamDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,

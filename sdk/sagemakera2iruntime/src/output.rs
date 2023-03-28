@@ -7,6 +7,7 @@ pub struct StopHumanLoopOutput {}
 pub mod stop_human_loop_output {
 
     /// A builder for [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -41,6 +42,7 @@ impl StartHumanLoopOutput {
 pub mod start_human_loop_output {
 
     /// A builder for [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
@@ -99,6 +101,7 @@ impl ListHumanLoopsOutput {
 pub mod list_human_loops_output {
 
     /// A builder for [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_summaries:
@@ -220,6 +223,7 @@ impl DescribeHumanLoopOutput {
 pub mod describe_human_loop_output {
 
     /// A builder for [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -365,6 +369,7 @@ pub struct DeleteHumanLoopOutput {}
 pub mod delete_human_loop_output {
 
     /// A builder for [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

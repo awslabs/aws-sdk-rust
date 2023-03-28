@@ -1088,7 +1088,7 @@ mod upload_archive_request_test {
         pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -1130,7 +1130,7 @@ mod upload_archive_request_test {
             ),
         ];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -1164,7 +1164,7 @@ mod upload_archive_request_test {
         pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -1195,7 +1195,7 @@ mod upload_archive_request_test {
         pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -1279,7 +1279,7 @@ mod upload_multipart_part_request_test {
             ),
         ];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");

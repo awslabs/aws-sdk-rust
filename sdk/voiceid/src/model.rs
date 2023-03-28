@@ -101,6 +101,7 @@ impl std::fmt::Debug for DomainSummary {
 pub mod domain_summary {
 
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -305,6 +306,7 @@ impl ServerSideEncryptionUpdateDetails {
 pub mod server_side_encryption_update_details {
 
     /// A builder for [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) old_kms_key_id: std::option::Option<std::string::String>,
@@ -484,6 +486,7 @@ impl ServerSideEncryptionConfiguration {
 pub mod server_side_encryption_configuration {
 
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -964,6 +967,7 @@ impl std::fmt::Debug for Domain {
 pub mod domain {
 
     /// A builder for [`Domain`](crate::model::Domain).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -1167,6 +1171,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1330,6 +1335,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJob {
 pub mod speaker_enrollment_job {
 
     /// A builder for [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -1555,6 +1561,7 @@ impl JobProgress {
 pub mod job_progress {
 
     /// A builder for [`JobProgress`](crate::model::JobProgress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_complete: std::option::Option<i32>,
@@ -1610,6 +1617,7 @@ impl FailureDetails {
 pub mod failure_details {
 
     /// A builder for [`FailureDetails`](crate::model::FailureDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<i32>,
@@ -1677,6 +1685,7 @@ impl OutputDataConfig {
 pub mod output_data_config {
 
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -1737,6 +1746,7 @@ impl InputDataConfig {
 pub mod input_data_config {
 
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -1797,6 +1807,7 @@ impl EnrollmentConfig {
 pub mod enrollment_config {
 
     /// A builder for [`EnrollmentConfig`](crate::model::EnrollmentConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) existing_enrollment_action:
@@ -1880,6 +1891,7 @@ impl EnrollmentJobFraudDetectionConfig {
 pub mod enrollment_job_fraud_detection_config {
 
     /// A builder for [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fraud_detection_action: std::option::Option<crate::model::FraudDetectionAction>,
@@ -2335,6 +2347,7 @@ impl std::fmt::Debug for FraudsterRegistrationJob {
 pub mod fraudster_registration_job {
 
     /// A builder for [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2570,6 +2583,7 @@ impl RegistrationConfig {
 pub mod registration_config {
 
     /// A builder for [`RegistrationConfig`](crate::model::RegistrationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duplicate_registration_action:
@@ -2900,6 +2914,7 @@ impl std::fmt::Debug for Speaker {
 pub mod speaker {
 
     /// A builder for [`Speaker`](crate::model::Speaker).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3206,6 +3221,7 @@ impl std::fmt::Debug for SpeakerSummary {
 pub mod speaker_summary {
 
     /// A builder for [`SpeakerSummary`](crate::model::SpeakerSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3420,6 +3436,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJobSummary {
 pub mod speaker_enrollment_job_summary {
 
     /// A builder for [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -3644,6 +3661,7 @@ impl std::fmt::Debug for FraudsterRegistrationJobSummary {
 pub mod fraudster_registration_job_summary {
 
     /// A builder for [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -3847,6 +3865,7 @@ impl FraudDetectionResult {
 pub mod fraud_detection_result {
 
     /// A builder for [`FraudDetectionResult`](crate::model::FraudDetectionResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fraud_detection_result_id: std::option::Option<std::string::String>,
@@ -4001,6 +4020,7 @@ impl FraudRiskDetails {
 pub mod fraud_risk_details {
 
     /// A builder for [`FraudRiskDetails`](crate::model::FraudRiskDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) known_fraudster_risk: std::option::Option<crate::model::KnownFraudsterRisk>,
@@ -4067,6 +4087,7 @@ impl VoiceSpoofingRisk {
 pub mod voice_spoofing_risk {
 
     /// A builder for [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) risk_score: std::option::Option<i32>,
@@ -4122,6 +4143,7 @@ impl KnownFraudsterRisk {
 pub mod known_fraudster_risk {
 
     /// A builder for [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) risk_score: std::option::Option<i32>,
@@ -4374,6 +4396,7 @@ impl FraudDetectionConfiguration {
 pub mod fraud_detection_configuration {
 
     /// A builder for [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) risk_threshold: std::option::Option<i32>,
@@ -4491,6 +4514,7 @@ impl std::fmt::Debug for AuthenticationResult {
 pub mod authentication_result {
 
     /// A builder for [`AuthenticationResult`](crate::model::AuthenticationResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) authentication_result_id: std::option::Option<std::string::String>,
@@ -4664,6 +4688,7 @@ impl AuthenticationConfiguration {
 pub mod authentication_configuration {
 
     /// A builder for [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acceptance_threshold: std::option::Option<i32>,
@@ -4946,6 +4971,7 @@ impl Fraudster {
 pub mod fraudster {
 
     /// A builder for [`Fraudster`](crate::model::Fraudster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,

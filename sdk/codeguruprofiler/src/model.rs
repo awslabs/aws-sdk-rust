@@ -193,6 +193,7 @@ impl NotificationConfiguration {
 pub mod notification_configuration {
 
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -264,6 +265,7 @@ impl Channel {
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -431,6 +433,7 @@ impl ProfileTime {
 pub mod profile_time {
 
     /// A builder for [`ProfileTime`](crate::model::ProfileTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
@@ -692,6 +695,7 @@ impl FindingsReportSummary {
 pub mod findings_report_summary {
 
     /// A builder for [`FindingsReportSummary`](crate::model::FindingsReportSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -811,6 +815,7 @@ impl Anomaly {
 pub mod anomaly {
 
     /// A builder for [`Anomaly`](crate::model::Anomaly).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<crate::model::Metric>,
@@ -913,6 +918,7 @@ impl AnomalyInstance {
 pub mod anomaly_instance {
 
     /// A builder for [`AnomalyInstance`](crate::model::AnomalyInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1006,6 +1012,7 @@ impl UserFeedback {
 pub mod user_feedback {
 
     /// A builder for [`UserFeedback`](crate::model::UserFeedback).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FeedbackType>,
@@ -1068,6 +1075,7 @@ impl Metric {
 pub mod metric {
 
     /// A builder for [`Metric`](crate::model::Metric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_name: std::option::Option<std::string::String>,
@@ -1269,6 +1277,7 @@ impl Recommendation {
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) all_matches_count: std::option::Option<i32>,
@@ -1406,6 +1415,7 @@ impl Match {
 pub mod r#match {
 
     /// A builder for [`Match`](crate::model::Match).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_frames_index: std::option::Option<i32>,
@@ -1523,6 +1533,7 @@ impl Pattern {
 pub mod pattern {
 
     /// A builder for [`Pattern`](crate::model::Pattern).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1699,6 +1710,7 @@ impl AgentConfiguration {
 pub mod agent_configuration {
 
     /// A builder for [`AgentConfiguration`](crate::model::AgentConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) should_profile: std::option::Option<bool>,
@@ -2073,6 +2085,7 @@ impl FrameMetricDatum {
 pub mod frame_metric_datum {
 
     /// A builder for [`FrameMetricDatum`](crate::model::FrameMetricDatum).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_metric: std::option::Option<crate::model::FrameMetric>,
@@ -2156,6 +2169,7 @@ impl FrameMetric {
 pub mod frame_metric {
 
     /// A builder for [`FrameMetric`](crate::model::FrameMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_name: std::option::Option<std::string::String>,
@@ -2237,6 +2251,7 @@ impl TimestampStructure {
 pub mod timestamp_structure {
 
     /// A builder for [`TimestampStructure`](crate::model::TimestampStructure).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<aws_smithy_types::DateTime>,
@@ -2338,6 +2353,7 @@ impl ProfilingGroupDescription {
 pub mod profiling_group_description {
 
     /// A builder for [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2614,6 +2630,7 @@ impl ProfilingStatus {
 pub mod profiling_status {
 
     /// A builder for [`ProfilingStatus`](crate::model::ProfilingStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_agent_profile_reported_at:
@@ -2722,6 +2739,7 @@ impl AggregatedProfileTime {
 pub mod aggregated_profile_time {
 
     /// A builder for [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
@@ -2797,6 +2815,7 @@ impl AgentOrchestrationConfig {
 pub mod agent_orchestration_config {
 
     /// A builder for [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_enabled: std::option::Option<bool>,

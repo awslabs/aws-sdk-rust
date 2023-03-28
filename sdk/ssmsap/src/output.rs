@@ -24,6 +24,7 @@ impl UpdateApplicationSettingsOutput {
 pub mod update_application_settings_output {
 
     /// A builder for [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -83,6 +84,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -107,6 +109,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -148,6 +151,7 @@ impl RegisterApplicationOutput {
 pub mod register_application_output {
 
     /// A builder for [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
@@ -211,6 +215,7 @@ impl PutResourcePermissionOutput {
 pub mod put_resource_permission_output {
 
     /// A builder for [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -263,6 +268,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -333,6 +339,7 @@ impl ListOperationsOutput {
 pub mod list_operations_output {
 
     /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -409,6 +416,7 @@ impl ListDatabasesOutput {
 pub mod list_databases_output {
 
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) databases: std::option::Option<std::vec::Vec<crate::model::DatabaseSummary>>,
@@ -485,6 +493,7 @@ impl ListComponentsOutput {
 pub mod list_components_output {
 
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) components: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
@@ -561,6 +570,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications:
@@ -631,6 +641,7 @@ impl GetResourcePermissionOutput {
 pub mod get_resource_permission_output {
 
     /// A builder for [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -679,6 +690,7 @@ impl GetOperationOutput {
 pub mod get_operation_output {
 
     /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
@@ -741,6 +753,7 @@ impl GetDatabaseOutput {
 pub mod get_database_output {
 
     /// A builder for [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<crate::model::Database>,
@@ -818,6 +831,7 @@ impl GetComponentOutput {
 pub mod get_component_output {
 
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component: std::option::Option<crate::model::Component>,
@@ -880,6 +894,7 @@ impl GetApplicationOutput {
 pub mod get_application_output {
 
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
@@ -950,6 +965,7 @@ pub struct DeregisterApplicationOutput {}
 pub mod deregister_application_output {
 
     /// A builder for [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -984,6 +1000,7 @@ impl DeleteResourcePermissionOutput {
 pub mod delete_resource_permission_output {
 
     /// A builder for [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,

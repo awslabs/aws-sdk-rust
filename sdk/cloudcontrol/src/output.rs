@@ -19,6 +19,7 @@ impl UpdateResourceOutput {
 pub mod update_resource_output {
 
     /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -89,6 +90,7 @@ impl ListResourcesOutput {
 pub mod list_resources_output {
 
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -181,6 +183,7 @@ impl ListResourceRequestsOutput {
 pub mod list_resource_requests_output {
 
     /// A builder for [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_request_status_summaries:
@@ -254,6 +257,7 @@ impl GetResourceRequestStatusOutput {
 pub mod get_resource_request_status_output {
 
     /// A builder for [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -312,6 +316,7 @@ impl GetResourceOutput {
 pub mod get_resource_output {
 
     /// A builder for [`GetResourceOutput`](crate::output::GetResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -377,6 +382,7 @@ impl DeleteResourceOutput {
 pub mod delete_resource_output {
 
     /// A builder for [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -432,6 +438,7 @@ impl CreateResourceOutput {
 pub mod create_resource_output {
 
     /// A builder for [`CreateResourceOutput`](crate::output::CreateResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -485,6 +492,7 @@ impl CancelResourceRequestOutput {
 pub mod cancel_resource_request_output {
 
     /// A builder for [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,

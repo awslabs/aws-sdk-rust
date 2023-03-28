@@ -77,6 +77,7 @@ impl UpdateVpcLinkOutput {
 pub mod update_vpc_link_output {
 
     /// A builder for [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -373,6 +374,7 @@ impl UpdateStageOutput {
 pub mod update_stage_output {
 
     /// A builder for [`UpdateStageOutput`](crate::output::UpdateStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
@@ -690,6 +692,7 @@ impl UpdateRouteResponseOutput {
 pub mod update_route_response_output {
 
     /// A builder for [`UpdateRouteResponseOutput`](crate::output::UpdateRouteResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_selection_expression: std::option::Option<std::string::String>,
@@ -923,6 +926,7 @@ impl UpdateRouteOutput {
 pub mod update_route_output {
 
     /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -1204,6 +1208,7 @@ impl UpdateModelOutput {
 pub mod update_model_output {
 
     /// A builder for [`UpdateModelOutput`](crate::output::UpdateModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -1351,6 +1356,7 @@ impl UpdateIntegrationResponseOutput {
 pub mod update_integration_response_output {
 
     /// A builder for [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_handling_strategy:
@@ -1719,6 +1725,7 @@ impl UpdateIntegrationOutput {
 pub mod update_integration_output {
 
     /// A builder for [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -2189,6 +2196,7 @@ impl UpdateDomainNameOutput {
 pub mod update_domain_name_output {
 
     /// A builder for [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_mapping_selection_expression: std::option::Option<std::string::String>,
@@ -2363,6 +2371,7 @@ impl UpdateDeploymentOutput {
 pub mod update_deployment_output {
 
     /// A builder for [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
@@ -2573,6 +2582,7 @@ impl UpdateAuthorizerOutput {
 pub mod update_authorizer_output {
 
     /// A builder for [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorizer_credentials_arn: std::option::Option<std::string::String>,
@@ -2823,6 +2833,7 @@ impl UpdateApiMappingOutput {
 pub mod update_api_mapping_output {
 
     /// A builder for [`UpdateApiMappingOutput`](crate::output::UpdateApiMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
@@ -3022,6 +3033,7 @@ impl UpdateApiOutput {
 pub mod update_api_output {
 
     /// A builder for [`UpdateApiOutput`](crate::output::UpdateApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -3296,6 +3308,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3320,6 +3333,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3344,6 +3358,7 @@ pub struct ResetAuthorizersCacheOutput {}
 pub mod reset_authorizers_cache_output {
 
     /// A builder for [`ResetAuthorizersCacheOutput`](crate::output::ResetAuthorizersCacheOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3487,6 +3502,7 @@ impl ReimportApiOutput {
 pub mod reimport_api_output {
 
     /// A builder for [`ReimportApiOutput`](crate::output::ReimportApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -3880,6 +3896,7 @@ impl ImportApiOutput {
 pub mod import_api_output {
 
     /// A builder for [`ImportApiOutput`](crate::output::ImportApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -4171,6 +4188,7 @@ impl GetVpcLinksOutput {
 pub mod get_vpc_links_output {
 
     /// A builder for [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
@@ -4300,6 +4318,7 @@ impl GetVpcLinkOutput {
 pub mod get_vpc_link_output {
 
     /// A builder for [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -4495,6 +4514,7 @@ impl GetTagsOutput {
 pub mod get_tags_output {
 
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -4565,6 +4585,7 @@ impl GetStagesOutput {
 pub mod get_stages_output {
 
     /// A builder for [`GetStagesOutput`](crate::output::GetStagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Stage>>,
@@ -4739,6 +4760,7 @@ impl GetStageOutput {
 pub mod get_stage_output {
 
     /// A builder for [`GetStageOutput`](crate::output::GetStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
@@ -5025,6 +5047,7 @@ impl GetRoutesOutput {
 pub mod get_routes_output {
 
     /// A builder for [`GetRoutesOutput`](crate::output::GetRoutesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -5101,6 +5124,7 @@ impl GetRouteResponsesOutput {
 pub mod get_route_responses_output {
 
     /// A builder for [`GetRouteResponsesOutput`](crate::output::GetRouteResponsesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::RouteResponse>>,
@@ -5208,6 +5232,7 @@ impl GetRouteResponseOutput {
 pub mod get_route_response_output {
 
     /// A builder for [`GetRouteResponseOutput`](crate::output::GetRouteResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_selection_expression: std::option::Option<std::string::String>,
@@ -5441,6 +5466,7 @@ impl GetRouteOutput {
 pub mod get_route_output {
 
     /// A builder for [`GetRouteOutput`](crate::output::GetRouteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -5694,6 +5720,7 @@ impl GetModelTemplateOutput {
 pub mod get_model_template_output {
 
     /// A builder for [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -5747,6 +5774,7 @@ impl GetModelsOutput {
 pub mod get_models_output {
 
     /// A builder for [`GetModelsOutput`](crate::output::GetModelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Model>>,
@@ -5844,6 +5872,7 @@ impl GetModelOutput {
 pub mod get_model_output {
 
     /// A builder for [`GetModelOutput`](crate::output::GetModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -5947,6 +5976,7 @@ impl GetIntegrationsOutput {
 pub mod get_integrations_output {
 
     /// A builder for [`GetIntegrationsOutput`](crate::output::GetIntegrationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Integration>>,
@@ -6023,6 +6053,7 @@ impl GetIntegrationResponsesOutput {
 pub mod get_integration_responses_output {
 
     /// A builder for [`GetIntegrationResponsesOutput`](crate::output::GetIntegrationResponsesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::IntegrationResponse>>,
@@ -6143,6 +6174,7 @@ impl GetIntegrationResponseOutput {
 pub mod get_integration_response_output {
 
     /// A builder for [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_handling_strategy:
@@ -6511,6 +6543,7 @@ impl GetIntegrationOutput {
 pub mod get_integration_output {
 
     /// A builder for [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -6951,6 +6984,7 @@ impl GetDomainNamesOutput {
 pub mod get_domain_names_output {
 
     /// A builder for [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
@@ -7057,6 +7091,7 @@ impl GetDomainNameOutput {
 pub mod get_domain_name_output {
 
     /// A builder for [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_mapping_selection_expression: std::option::Option<std::string::String>,
@@ -7203,6 +7238,7 @@ impl GetDeploymentsOutput {
 pub mod get_deployments_output {
 
     /// A builder for [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -7307,6 +7343,7 @@ impl GetDeploymentOutput {
 pub mod get_deployment_output {
 
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
@@ -7434,6 +7471,7 @@ impl GetAuthorizersOutput {
 pub mod get_authorizers_output {
 
     /// A builder for [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
@@ -7593,6 +7631,7 @@ impl GetAuthorizerOutput {
 pub mod get_authorizer_output {
 
     /// A builder for [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorizer_credentials_arn: std::option::Option<std::string::String>,
@@ -7829,6 +7868,7 @@ impl GetApisOutput {
 pub mod get_apis_output {
 
     /// A builder for [`GetApisOutput`](crate::output::GetApisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Api>>,
@@ -7905,6 +7945,7 @@ impl GetApiMappingsOutput {
 pub mod get_api_mappings_output {
 
     /// A builder for [`GetApiMappingsOutput`](crate::output::GetApiMappingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ApiMapping>>,
@@ -7995,6 +8036,7 @@ impl GetApiMappingOutput {
 pub mod get_api_mapping_output {
 
     /// A builder for [`GetApiMappingOutput`](crate::output::GetApiMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
@@ -8194,6 +8236,7 @@ impl GetApiOutput {
 pub mod get_api_output {
 
     /// A builder for [`GetApiOutput`](crate::output::GetApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -8478,6 +8521,7 @@ impl ExportApiOutput {
 pub mod export_api_output {
 
     /// A builder for [`ExportApiOutput`](crate::output::ExportApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
@@ -8514,6 +8558,7 @@ pub struct DeleteVpcLinkOutput {}
 pub mod delete_vpc_link_output {
 
     /// A builder for [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8538,6 +8583,7 @@ pub struct DeleteStageOutput {}
 pub mod delete_stage_output {
 
     /// A builder for [`DeleteStageOutput`](crate::output::DeleteStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8562,6 +8608,7 @@ pub struct DeleteRouteSettingsOutput {}
 pub mod delete_route_settings_output {
 
     /// A builder for [`DeleteRouteSettingsOutput`](crate::output::DeleteRouteSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8586,6 +8633,7 @@ pub struct DeleteRouteResponseOutput {}
 pub mod delete_route_response_output {
 
     /// A builder for [`DeleteRouteResponseOutput`](crate::output::DeleteRouteResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8610,6 +8658,7 @@ pub struct DeleteRouteRequestParameterOutput {}
 pub mod delete_route_request_parameter_output {
 
     /// A builder for [`DeleteRouteRequestParameterOutput`](crate::output::DeleteRouteRequestParameterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8634,6 +8683,7 @@ pub struct DeleteRouteOutput {}
 pub mod delete_route_output {
 
     /// A builder for [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8658,6 +8708,7 @@ pub struct DeleteModelOutput {}
 pub mod delete_model_output {
 
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8682,6 +8733,7 @@ pub struct DeleteIntegrationResponseOutput {}
 pub mod delete_integration_response_output {
 
     /// A builder for [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8706,6 +8758,7 @@ pub struct DeleteIntegrationOutput {}
 pub mod delete_integration_output {
 
     /// A builder for [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8730,6 +8783,7 @@ pub struct DeleteDomainNameOutput {}
 pub mod delete_domain_name_output {
 
     /// A builder for [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8754,6 +8808,7 @@ pub struct DeleteDeploymentOutput {}
 pub mod delete_deployment_output {
 
     /// A builder for [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8778,6 +8833,7 @@ pub struct DeleteCorsConfigurationOutput {}
 pub mod delete_cors_configuration_output {
 
     /// A builder for [`DeleteCorsConfigurationOutput`](crate::output::DeleteCorsConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8802,6 +8858,7 @@ pub struct DeleteAuthorizerOutput {}
 pub mod delete_authorizer_output {
 
     /// A builder for [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8826,6 +8883,7 @@ pub struct DeleteApiMappingOutput {}
 pub mod delete_api_mapping_output {
 
     /// A builder for [`DeleteApiMappingOutput`](crate::output::DeleteApiMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8850,6 +8908,7 @@ pub struct DeleteApiOutput {}
 pub mod delete_api_output {
 
     /// A builder for [`DeleteApiOutput`](crate::output::DeleteApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8874,6 +8933,7 @@ pub struct DeleteAccessLogSettingsOutput {}
 pub mod delete_access_log_settings_output {
 
     /// A builder for [`DeleteAccessLogSettingsOutput`](crate::output::DeleteAccessLogSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -8968,6 +9028,7 @@ impl CreateVpcLinkOutput {
 pub mod create_vpc_link_output {
 
     /// A builder for [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -9264,6 +9325,7 @@ impl CreateStageOutput {
 pub mod create_stage_output {
 
     /// A builder for [`CreateStageOutput`](crate::output::CreateStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
@@ -9581,6 +9643,7 @@ impl CreateRouteResponseOutput {
 pub mod create_route_response_output {
 
     /// A builder for [`CreateRouteResponseOutput`](crate::output::CreateRouteResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_selection_expression: std::option::Option<std::string::String>,
@@ -9814,6 +9877,7 @@ impl CreateRouteOutput {
 pub mod create_route_output {
 
     /// A builder for [`CreateRouteOutput`](crate::output::CreateRouteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -10095,6 +10159,7 @@ impl CreateModelOutput {
 pub mod create_model_output {
 
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -10242,6 +10307,7 @@ impl CreateIntegrationResponseOutput {
 pub mod create_integration_response_output {
 
     /// A builder for [`CreateIntegrationResponseOutput`](crate::output::CreateIntegrationResponseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_handling_strategy:
@@ -10610,6 +10676,7 @@ impl CreateIntegrationOutput {
 pub mod create_integration_output {
 
     /// A builder for [`CreateIntegrationOutput`](crate::output::CreateIntegrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -11080,6 +11147,7 @@ impl CreateDomainNameOutput {
 pub mod create_domain_name_output {
 
     /// A builder for [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_mapping_selection_expression: std::option::Option<std::string::String>,
@@ -11254,6 +11322,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
@@ -11464,6 +11533,7 @@ impl CreateAuthorizerOutput {
 pub mod create_authorizer_output {
 
     /// A builder for [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorizer_credentials_arn: std::option::Option<std::string::String>,
@@ -11714,6 +11784,7 @@ impl CreateApiMappingOutput {
 pub mod create_api_mapping_output {
 
     /// A builder for [`CreateApiMappingOutput`](crate::output::CreateApiMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
@@ -11913,6 +11984,7 @@ impl CreateApiOutput {
 pub mod create_api_output {
 
     /// A builder for [`CreateApiOutput`](crate::output::CreateApiOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_alias_input {
 
     /// A builder for [`AssociateAliasInput`](crate::input::AssociateAliasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_distribution_id: std::option::Option<std::string::String>,
@@ -211,6 +212,7 @@ impl AssociateAliasInput {
 pub mod copy_distribution_input {
 
     /// A builder for [`CopyDistributionInput`](crate::input::CopyDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_distribution_id: std::option::Option<std::string::String>,
@@ -437,6 +439,7 @@ impl CopyDistributionInput {
 pub mod create_cache_policy_input {
 
     /// A builder for [`CreateCachePolicyInput`](crate::input::CreateCachePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
@@ -601,6 +604,7 @@ impl CreateCachePolicyInput {
 pub mod create_cloud_front_origin_access_identity_input {
 
     /// A builder for [`CreateCloudFrontOriginAccessIdentityInput`](crate::input::CreateCloudFrontOriginAccessIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_front_origin_access_identity_config:
@@ -769,6 +773,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
 pub mod create_continuous_deployment_policy_input {
 
     /// A builder for [`CreateContinuousDeploymentPolicyInput`](crate::input::CreateContinuousDeploymentPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_deployment_policy_config:
@@ -938,6 +943,7 @@ impl CreateContinuousDeploymentPolicyInput {
 pub mod create_distribution_input {
 
     /// A builder for [`CreateDistributionInput`](crate::input::CreateDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_config: std::option::Option<crate::model::DistributionConfig>,
@@ -1102,6 +1108,7 @@ impl CreateDistributionInput {
 pub mod create_distribution_with_tags_input {
 
     /// A builder for [`CreateDistributionWithTagsInput`](crate::input::CreateDistributionWithTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_config_with_tags:
@@ -1279,6 +1286,7 @@ impl CreateDistributionWithTagsInput {
 pub mod create_field_level_encryption_config_input {
 
     /// A builder for [`CreateFieldLevelEncryptionConfigInput`](crate::input::CreateFieldLevelEncryptionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_level_encryption_config:
@@ -1448,6 +1456,7 @@ impl CreateFieldLevelEncryptionConfigInput {
 pub mod create_field_level_encryption_profile_input {
 
     /// A builder for [`CreateFieldLevelEncryptionProfileInput`](crate::input::CreateFieldLevelEncryptionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_level_encryption_profile_config:
@@ -1617,6 +1626,7 @@ impl CreateFieldLevelEncryptionProfileInput {
 pub mod create_function_input {
 
     /// A builder for [`CreateFunctionInput`](crate::input::CreateFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1813,6 +1823,7 @@ impl CreateFunctionInput {
 pub mod create_invalidation_input {
 
     /// A builder for [`CreateInvalidationInput`](crate::input::CreateInvalidationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -2016,6 +2027,7 @@ impl CreateInvalidationInput {
 pub mod create_key_group_input {
 
     /// A builder for [`CreateKeyGroupInput`](crate::input::CreateKeyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
@@ -2176,6 +2188,7 @@ impl CreateKeyGroupInput {
 pub mod create_monitoring_subscription_input {
 
     /// A builder for [`CreateMonitoringSubscriptionInput`](crate::input::CreateMonitoringSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -2383,6 +2396,7 @@ impl CreateMonitoringSubscriptionInput {
 pub mod create_origin_access_control_input {
 
     /// A builder for [`CreateOriginAccessControlInput`](crate::input::CreateOriginAccessControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_access_control_config:
@@ -2552,6 +2566,7 @@ impl CreateOriginAccessControlInput {
 pub mod create_origin_request_policy_input {
 
     /// A builder for [`CreateOriginRequestPolicyInput`](crate::input::CreateOriginRequestPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_request_policy_config:
@@ -2721,6 +2736,7 @@ impl CreateOriginRequestPolicyInput {
 pub mod create_public_key_input {
 
     /// A builder for [`CreatePublicKeyInput`](crate::input::CreatePublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
@@ -2883,6 +2899,7 @@ impl CreatePublicKeyInput {
 pub mod create_realtime_log_config_input {
 
     /// A builder for [`CreateRealtimeLogConfigInput`](crate::input::CreateRealtimeLogConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -3101,6 +3118,7 @@ impl CreateRealtimeLogConfigInput {
 pub mod create_response_headers_policy_input {
 
     /// A builder for [`CreateResponseHeadersPolicyInput`](crate::input::CreateResponseHeadersPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_headers_policy_config:
@@ -3270,6 +3288,7 @@ impl CreateResponseHeadersPolicyInput {
 pub mod create_streaming_distribution_input {
 
     /// A builder for [`CreateStreamingDistributionInput`](crate::input::CreateStreamingDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_distribution_config:
@@ -3439,6 +3458,7 @@ impl CreateStreamingDistributionInput {
 pub mod create_streaming_distribution_with_tags_input {
 
     /// A builder for [`CreateStreamingDistributionWithTagsInput`](crate::input::CreateStreamingDistributionWithTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_distribution_config_with_tags:
@@ -3618,6 +3638,7 @@ impl CreateStreamingDistributionWithTagsInput {
 pub mod delete_cache_policy_input {
 
     /// A builder for [`DeleteCachePolicyInput`](crate::input::DeleteCachePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3796,6 +3817,7 @@ impl DeleteCachePolicyInput {
 pub mod delete_cloud_front_origin_access_identity_input {
 
     /// A builder for [`DeleteCloudFrontOriginAccessIdentityInput`](crate::input::DeleteCloudFrontOriginAccessIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3981,6 +4003,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
 pub mod delete_continuous_deployment_policy_input {
 
     /// A builder for [`DeleteContinuousDeploymentPolicyInput`](crate::input::DeleteContinuousDeploymentPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4165,6 +4188,7 @@ impl DeleteContinuousDeploymentPolicyInput {
 pub mod delete_distribution_input {
 
     /// A builder for [`DeleteDistributionInput`](crate::input::DeleteDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4343,6 +4367,7 @@ impl DeleteDistributionInput {
 pub mod delete_field_level_encryption_config_input {
 
     /// A builder for [`DeleteFieldLevelEncryptionConfigInput`](crate::input::DeleteFieldLevelEncryptionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4523,6 +4548,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
 pub mod delete_field_level_encryption_profile_input {
 
     /// A builder for [`DeleteFieldLevelEncryptionProfileInput`](crate::input::DeleteFieldLevelEncryptionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4707,6 +4733,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
 pub mod delete_function_input {
 
     /// A builder for [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4883,6 +4910,7 @@ impl DeleteFunctionInput {
 pub mod delete_key_group_input {
 
     /// A builder for [`DeleteKeyGroupInput`](crate::input::DeleteKeyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5059,6 +5087,7 @@ impl DeleteKeyGroupInput {
 pub mod delete_monitoring_subscription_input {
 
     /// A builder for [`DeleteMonitoringSubscriptionInput`](crate::input::DeleteMonitoringSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -5231,6 +5260,7 @@ impl DeleteMonitoringSubscriptionInput {
 pub mod delete_origin_access_control_input {
 
     /// A builder for [`DeleteOriginAccessControlInput`](crate::input::DeleteOriginAccessControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5410,6 +5440,7 @@ impl DeleteOriginAccessControlInput {
 pub mod delete_origin_request_policy_input {
 
     /// A builder for [`DeleteOriginRequestPolicyInput`](crate::input::DeleteOriginRequestPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5589,6 +5620,7 @@ impl DeleteOriginRequestPolicyInput {
 pub mod delete_public_key_input {
 
     /// A builder for [`DeletePublicKeyInput`](crate::input::DeletePublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5765,6 +5797,7 @@ impl DeletePublicKeyInput {
 pub mod delete_realtime_log_config_input {
 
     /// A builder for [`DeleteRealtimeLogConfigInput`](crate::input::DeleteRealtimeLogConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5939,6 +5972,7 @@ impl DeleteRealtimeLogConfigInput {
 pub mod delete_response_headers_policy_input {
 
     /// A builder for [`DeleteResponseHeadersPolicyInput`](crate::input::DeleteResponseHeadersPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6122,6 +6156,7 @@ impl DeleteResponseHeadersPolicyInput {
 pub mod delete_streaming_distribution_input {
 
     /// A builder for [`DeleteStreamingDistributionInput`](crate::input::DeleteStreamingDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6301,6 +6336,7 @@ impl DeleteStreamingDistributionInput {
 pub mod describe_function_input {
 
     /// A builder for [`DescribeFunctionInput`](crate::input::DescribeFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6494,6 +6530,7 @@ impl DescribeFunctionInput {
 pub mod get_cache_policy_input {
 
     /// A builder for [`GetCachePolicyInput`](crate::input::GetCachePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6655,6 +6692,7 @@ impl GetCachePolicyInput {
 pub mod get_cache_policy_config_input {
 
     /// A builder for [`GetCachePolicyConfigInput`](crate::input::GetCachePolicyConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6818,6 +6856,7 @@ impl GetCachePolicyConfigInput {
 pub mod get_cloud_front_origin_access_identity_input {
 
     /// A builder for [`GetCloudFrontOriginAccessIdentityInput`](crate::input::GetCloudFrontOriginAccessIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6985,6 +7024,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
 pub mod get_cloud_front_origin_access_identity_config_input {
 
     /// A builder for [`GetCloudFrontOriginAccessIdentityConfigInput`](crate::input::GetCloudFrontOriginAccessIdentityConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7152,6 +7192,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
 pub mod get_continuous_deployment_policy_input {
 
     /// A builder for [`GetContinuousDeploymentPolicyInput`](crate::input::GetContinuousDeploymentPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7319,6 +7360,7 @@ impl GetContinuousDeploymentPolicyInput {
 pub mod get_continuous_deployment_policy_config_input {
 
     /// A builder for [`GetContinuousDeploymentPolicyConfigInput`](crate::input::GetContinuousDeploymentPolicyConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7486,6 +7528,7 @@ impl GetContinuousDeploymentPolicyConfigInput {
 pub mod get_distribution_input {
 
     /// A builder for [`GetDistributionInput`](crate::input::GetDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7647,6 +7690,7 @@ impl GetDistributionInput {
 pub mod get_distribution_config_input {
 
     /// A builder for [`GetDistributionConfigInput`](crate::input::GetDistributionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7810,6 +7854,7 @@ impl GetDistributionConfigInput {
 pub mod get_field_level_encryption_input {
 
     /// A builder for [`GetFieldLevelEncryptionInput`](crate::input::GetFieldLevelEncryptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7973,6 +8018,7 @@ impl GetFieldLevelEncryptionInput {
 pub mod get_field_level_encryption_config_input {
 
     /// A builder for [`GetFieldLevelEncryptionConfigInput`](crate::input::GetFieldLevelEncryptionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8140,6 +8186,7 @@ impl GetFieldLevelEncryptionConfigInput {
 pub mod get_field_level_encryption_profile_input {
 
     /// A builder for [`GetFieldLevelEncryptionProfileInput`](crate::input::GetFieldLevelEncryptionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8307,6 +8354,7 @@ impl GetFieldLevelEncryptionProfileInput {
 pub mod get_field_level_encryption_profile_config_input {
 
     /// A builder for [`GetFieldLevelEncryptionProfileConfigInput`](crate::input::GetFieldLevelEncryptionProfileConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8474,6 +8522,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
 pub mod get_function_input {
 
     /// A builder for [`GetFunctionInput`](crate::input::GetFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8665,6 +8714,7 @@ impl GetFunctionInput {
 pub mod get_invalidation_input {
 
     /// A builder for [`GetInvalidationInput`](crate::input::GetInvalidationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -8867,6 +8917,7 @@ impl GetInvalidationInput {
 pub mod get_key_group_input {
 
     /// A builder for [`GetKeyGroupInput`](crate::input::GetKeyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9028,6 +9079,7 @@ impl GetKeyGroupInput {
 pub mod get_key_group_config_input {
 
     /// A builder for [`GetKeyGroupConfigInput`](crate::input::GetKeyGroupConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9191,6 +9243,7 @@ impl GetKeyGroupConfigInput {
 pub mod get_monitoring_subscription_input {
 
     /// A builder for [`GetMonitoringSubscriptionInput`](crate::input::GetMonitoringSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -9363,6 +9416,7 @@ impl GetMonitoringSubscriptionInput {
 pub mod get_origin_access_control_input {
 
     /// A builder for [`GetOriginAccessControlInput`](crate::input::GetOriginAccessControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9526,6 +9580,7 @@ impl GetOriginAccessControlInput {
 pub mod get_origin_access_control_config_input {
 
     /// A builder for [`GetOriginAccessControlConfigInput`](crate::input::GetOriginAccessControlConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9693,6 +9748,7 @@ impl GetOriginAccessControlConfigInput {
 pub mod get_origin_request_policy_input {
 
     /// A builder for [`GetOriginRequestPolicyInput`](crate::input::GetOriginRequestPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -9856,6 +9912,7 @@ impl GetOriginRequestPolicyInput {
 pub mod get_origin_request_policy_config_input {
 
     /// A builder for [`GetOriginRequestPolicyConfigInput`](crate::input::GetOriginRequestPolicyConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10023,6 +10080,7 @@ impl GetOriginRequestPolicyConfigInput {
 pub mod get_public_key_input {
 
     /// A builder for [`GetPublicKeyInput`](crate::input::GetPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10184,6 +10242,7 @@ impl GetPublicKeyInput {
 pub mod get_public_key_config_input {
 
     /// A builder for [`GetPublicKeyConfigInput`](crate::input::GetPublicKeyConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10347,6 +10406,7 @@ impl GetPublicKeyConfigInput {
 pub mod get_realtime_log_config_input {
 
     /// A builder for [`GetRealtimeLogConfigInput`](crate::input::GetRealtimeLogConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10521,6 +10581,7 @@ impl GetRealtimeLogConfigInput {
 pub mod get_response_headers_policy_input {
 
     /// A builder for [`GetResponseHeadersPolicyInput`](crate::input::GetResponseHeadersPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10686,6 +10747,7 @@ impl GetResponseHeadersPolicyInput {
 pub mod get_response_headers_policy_config_input {
 
     /// A builder for [`GetResponseHeadersPolicyConfigInput`](crate::input::GetResponseHeadersPolicyConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -10855,6 +10917,7 @@ impl GetResponseHeadersPolicyConfigInput {
 pub mod get_streaming_distribution_input {
 
     /// A builder for [`GetStreamingDistributionInput`](crate::input::GetStreamingDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11018,6 +11081,7 @@ impl GetStreamingDistributionInput {
 pub mod get_streaming_distribution_config_input {
 
     /// A builder for [`GetStreamingDistributionConfigInput`](crate::input::GetStreamingDistributionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11185,6 +11249,7 @@ impl GetStreamingDistributionConfigInput {
 pub mod list_cache_policies_input {
 
     /// A builder for [`ListCachePoliciesInput`](crate::input::ListCachePoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::CachePolicyType>,
@@ -11391,6 +11456,7 @@ impl ListCachePoliciesInput {
 pub mod list_cloud_front_origin_access_identities_input {
 
     /// A builder for [`ListCloudFrontOriginAccessIdentitiesInput`](crate::input::ListCloudFrontOriginAccessIdentitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -11570,6 +11636,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
 pub mod list_conflicting_aliases_input {
 
     /// A builder for [`ListConflictingAliasesInput`](crate::input::ListConflictingAliasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -11810,6 +11877,7 @@ impl ListConflictingAliasesInput {
 pub mod list_continuous_deployment_policies_input {
 
     /// A builder for [`ListContinuousDeploymentPoliciesInput`](crate::input::ListContinuousDeploymentPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -11989,6 +12057,7 @@ impl ListContinuousDeploymentPoliciesInput {
 pub mod list_distributions_input {
 
     /// A builder for [`ListDistributionsInput`](crate::input::ListDistributionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -12167,6 +12236,7 @@ impl ListDistributionsInput {
 pub mod list_distributions_by_cache_policy_id_input {
 
     /// A builder for [`ListDistributionsByCachePolicyIdInput`](crate::input::ListDistributionsByCachePolicyIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -12384,6 +12454,7 @@ impl ListDistributionsByCachePolicyIdInput {
 pub mod list_distributions_by_key_group_input {
 
     /// A builder for [`ListDistributionsByKeyGroupInput`](crate::input::ListDistributionsByKeyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -12598,6 +12669,7 @@ impl ListDistributionsByKeyGroupInput {
 pub mod list_distributions_by_origin_request_policy_id_input {
 
     /// A builder for [`ListDistributionsByOriginRequestPolicyIdInput`](crate::input::ListDistributionsByOriginRequestPolicyIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -12818,6 +12890,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
 pub mod list_distributions_by_realtime_log_config_input {
 
     /// A builder for [`ListDistributionsByRealtimeLogConfigInput`](crate::input::ListDistributionsByRealtimeLogConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -13020,6 +13093,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
 pub mod list_distributions_by_response_headers_policy_id_input {
 
     /// A builder for [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::input::ListDistributionsByResponseHeadersPolicyIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -13240,6 +13314,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
 pub mod list_distributions_by_web_acl_id_input {
 
     /// A builder for [`ListDistributionsByWebAclIdInput`](crate::input::ListDistributionsByWebAclIdInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -13454,6 +13529,7 @@ impl ListDistributionsByWebAclIdInput {
 pub mod list_field_level_encryption_configs_input {
 
     /// A builder for [`ListFieldLevelEncryptionConfigsInput`](crate::input::ListFieldLevelEncryptionConfigsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -13633,6 +13709,7 @@ impl ListFieldLevelEncryptionConfigsInput {
 pub mod list_field_level_encryption_profiles_input {
 
     /// A builder for [`ListFieldLevelEncryptionProfilesInput`](crate::input::ListFieldLevelEncryptionProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -13812,6 +13889,7 @@ impl ListFieldLevelEncryptionProfilesInput {
 pub mod list_functions_input {
 
     /// A builder for [`ListFunctionsInput`](crate::input::ListFunctionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -14008,6 +14086,7 @@ impl ListFunctionsInput {
 pub mod list_invalidations_input {
 
     /// A builder for [`ListInvalidationsInput`](crate::input::ListInvalidationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_id: std::option::Option<std::string::String>,
@@ -14225,6 +14304,7 @@ impl ListInvalidationsInput {
 pub mod list_key_groups_input {
 
     /// A builder for [`ListKeyGroupsInput`](crate::input::ListKeyGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -14401,6 +14481,7 @@ impl ListKeyGroupsInput {
 pub mod list_origin_access_controls_input {
 
     /// A builder for [`ListOriginAccessControlsInput`](crate::input::ListOriginAccessControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -14580,6 +14661,7 @@ impl ListOriginAccessControlsInput {
 pub mod list_origin_request_policies_input {
 
     /// A builder for [`ListOriginRequestPoliciesInput`](crate::input::ListOriginRequestPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
@@ -14787,6 +14869,7 @@ impl ListOriginRequestPoliciesInput {
 pub mod list_public_keys_input {
 
     /// A builder for [`ListPublicKeysInput`](crate::input::ListPublicKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -14963,6 +15046,7 @@ impl ListPublicKeysInput {
 pub mod list_realtime_log_configs_input {
 
     /// A builder for [`ListRealtimeLogConfigsInput`](crate::input::ListRealtimeLogConfigsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
@@ -15142,6 +15226,7 @@ impl ListRealtimeLogConfigsInput {
 pub mod list_response_headers_policies_input {
 
     /// A builder for [`ListResponseHeadersPoliciesInput`](crate::input::ListResponseHeadersPoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
@@ -15349,6 +15434,7 @@ impl ListResponseHeadersPoliciesInput {
 pub mod list_streaming_distributions_input {
 
     /// A builder for [`ListStreamingDistributionsInput`](crate::input::ListStreamingDistributionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -15528,6 +15614,7 @@ impl ListStreamingDistributionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -15697,6 +15784,7 @@ impl ListTagsForResourceInput {
 pub mod publish_function_input {
 
     /// A builder for [`PublishFunctionInput`](crate::input::PublishFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -15873,6 +15961,7 @@ impl PublishFunctionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -16067,6 +16156,7 @@ impl TagResourceInput {
 pub mod test_function_input {
 
     /// A builder for [`TestFunctionInput`](crate::input::TestFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16297,6 +16387,7 @@ impl TestFunctionInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -16491,6 +16582,7 @@ impl UntagResourceInput {
 pub mod update_cache_policy_input {
 
     /// A builder for [`UpdateCachePolicyInput`](crate::input::UpdateCachePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
@@ -16700,6 +16792,7 @@ impl UpdateCachePolicyInput {
 pub mod update_cloud_front_origin_access_identity_input {
 
     /// A builder for [`UpdateCloudFrontOriginAccessIdentityInput`](crate::input::UpdateCloudFrontOriginAccessIdentityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_front_origin_access_identity_config:
@@ -16919,6 +17012,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
 pub mod update_continuous_deployment_policy_input {
 
     /// A builder for [`UpdateContinuousDeploymentPolicyInput`](crate::input::UpdateContinuousDeploymentPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_deployment_policy_config:
@@ -17138,6 +17232,7 @@ impl UpdateContinuousDeploymentPolicyInput {
 pub mod update_distribution_input {
 
     /// A builder for [`UpdateDistributionInput`](crate::input::UpdateDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distribution_config: std::option::Option<crate::model::DistributionConfig>,
@@ -17347,6 +17442,7 @@ impl UpdateDistributionInput {
 pub mod update_distribution_with_staging_config_input {
 
     /// A builder for [`UpdateDistributionWithStagingConfigInput`](crate::input::UpdateDistributionWithStagingConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -17573,6 +17669,7 @@ impl UpdateDistributionWithStagingConfigInput {
 pub mod update_field_level_encryption_config_input {
 
     /// A builder for [`UpdateFieldLevelEncryptionConfigInput`](crate::input::UpdateFieldLevelEncryptionConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_level_encryption_config:
@@ -17792,6 +17889,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
 pub mod update_field_level_encryption_profile_input {
 
     /// A builder for [`UpdateFieldLevelEncryptionProfileInput`](crate::input::UpdateFieldLevelEncryptionProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_level_encryption_profile_config:
@@ -18011,6 +18109,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
 pub mod update_function_input {
 
     /// A builder for [`UpdateFunctionInput`](crate::input::UpdateFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -18241,6 +18340,7 @@ impl UpdateFunctionInput {
 pub mod update_key_group_input {
 
     /// A builder for [`UpdateKeyGroupInput`](crate::input::UpdateKeyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
@@ -18446,6 +18546,7 @@ impl UpdateKeyGroupInput {
 pub mod update_origin_access_control_input {
 
     /// A builder for [`UpdateOriginAccessControlInput`](crate::input::UpdateOriginAccessControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_access_control_config:
@@ -18664,6 +18765,7 @@ impl UpdateOriginAccessControlInput {
 pub mod update_origin_request_policy_input {
 
     /// A builder for [`UpdateOriginRequestPolicyInput`](crate::input::UpdateOriginRequestPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_request_policy_config:
@@ -18878,6 +18980,7 @@ impl UpdateOriginRequestPolicyInput {
 pub mod update_public_key_input {
 
     /// A builder for [`UpdatePublicKeyInput`](crate::input::UpdatePublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
@@ -19085,6 +19188,7 @@ impl UpdatePublicKeyInput {
 pub mod update_realtime_log_config_input {
 
     /// A builder for [`UpdateRealtimeLogConfigInput`](crate::input::UpdateRealtimeLogConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -19315,6 +19419,7 @@ impl UpdateRealtimeLogConfigInput {
 pub mod update_response_headers_policy_input {
 
     /// A builder for [`UpdateResponseHeadersPolicyInput`](crate::input::UpdateResponseHeadersPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_headers_policy_config:
@@ -19531,6 +19636,7 @@ impl UpdateResponseHeadersPolicyInput {
 pub mod update_streaming_distribution_input {
 
     /// A builder for [`UpdateStreamingDistributionInput`](crate::input::UpdateStreamingDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_distribution_config:

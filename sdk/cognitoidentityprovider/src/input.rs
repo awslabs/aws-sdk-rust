@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_custom_attributes_input {
 
     /// A builder for [`AddCustomAttributesInput`](crate::input::AddCustomAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -191,6 +192,7 @@ impl AddCustomAttributesInput {
 pub mod admin_add_user_to_group_input {
 
     /// A builder for [`AdminAddUserToGroupInput`](crate::input::AdminAddUserToGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -390,6 +392,7 @@ impl AdminAddUserToGroupInput {
 pub mod admin_confirm_sign_up_input {
 
     /// A builder for [`AdminConfirmSignUpInput`](crate::input::AdminConfirmSignUpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -622,6 +625,7 @@ impl AdminConfirmSignUpInput {
 pub mod admin_create_user_input {
 
     /// A builder for [`AdminCreateUserInput`](crate::input::AdminCreateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -992,6 +996,7 @@ impl AdminCreateUserInput {
 pub mod admin_delete_user_input {
 
     /// A builder for [`AdminDeleteUserInput`](crate::input::AdminDeleteUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1174,6 +1179,7 @@ impl AdminDeleteUserInput {
 pub mod admin_delete_user_attributes_input {
 
     /// A builder for [`AdminDeleteUserAttributesInput`](crate::input::AdminDeleteUserAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1384,6 +1390,7 @@ impl AdminDeleteUserAttributesInput {
 pub mod admin_disable_provider_for_user_input {
 
     /// A builder for [`AdminDisableProviderForUserInput`](crate::input::AdminDisableProviderForUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1563,6 +1570,7 @@ impl AdminDisableProviderForUserInput {
 pub mod admin_disable_user_input {
 
     /// A builder for [`AdminDisableUserInput`](crate::input::AdminDisableUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1747,6 +1755,7 @@ impl AdminDisableUserInput {
 pub mod admin_enable_user_input {
 
     /// A builder for [`AdminEnableUserInput`](crate::input::AdminEnableUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1929,6 +1938,7 @@ impl AdminEnableUserInput {
 pub mod admin_forget_device_input {
 
     /// A builder for [`AdminForgetDeviceInput`](crate::input::AdminForgetDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -2126,6 +2136,7 @@ impl AdminForgetDeviceInput {
 pub mod admin_get_device_input {
 
     /// A builder for [`AdminGetDeviceInput`](crate::input::AdminGetDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -2321,6 +2332,7 @@ impl AdminGetDeviceInput {
 pub mod admin_get_user_input {
 
     /// A builder for [`AdminGetUserInput`](crate::input::AdminGetUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -2503,6 +2515,7 @@ impl AdminGetUserInput {
 pub mod admin_initiate_auth_input {
 
     /// A builder for [`AdminInitiateAuthInput`](crate::input::AdminInitiateAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -2881,6 +2894,7 @@ impl AdminInitiateAuthInput {
 pub mod admin_link_provider_for_user_input {
 
     /// A builder for [`AdminLinkProviderForUserInput`](crate::input::AdminLinkProviderForUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -3093,6 +3107,7 @@ impl AdminLinkProviderForUserInput {
 pub mod admin_list_devices_input {
 
     /// A builder for [`AdminListDevicesInput`](crate::input::AdminListDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -3306,6 +3321,7 @@ impl AdminListDevicesInput {
 pub mod admin_list_groups_for_user_input {
 
     /// A builder for [`AdminListGroupsForUserInput`](crate::input::AdminListGroupsForUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -3518,6 +3534,7 @@ impl AdminListGroupsForUserInput {
 pub mod admin_list_user_auth_events_input {
 
     /// A builder for [`AdminListUserAuthEventsInput`](crate::input::AdminListUserAuthEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -3730,6 +3747,7 @@ impl AdminListUserAuthEventsInput {
 pub mod admin_remove_user_from_group_input {
 
     /// A builder for [`AdminRemoveUserFromGroupInput`](crate::input::AdminRemoveUserFromGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -3929,6 +3947,7 @@ impl AdminRemoveUserFromGroupInput {
 pub mod admin_reset_user_password_input {
 
     /// A builder for [`AdminResetUserPasswordInput`](crate::input::AdminResetUserPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -4163,6 +4182,7 @@ impl AdminResetUserPasswordInput {
 pub mod admin_respond_to_auth_challenge_input {
 
     /// A builder for [`AdminRespondToAuthChallengeInput`](crate::input::AdminRespondToAuthChallengeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -4532,6 +4552,7 @@ impl AdminRespondToAuthChallengeInput {
 pub mod admin_set_user_mfa_preference_input {
 
     /// A builder for [`AdminSetUserMfaPreferenceInput`](crate::input::AdminSetUserMfaPreferenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) sms_mfa_settings: std::option::Option<crate::model::SmsMfaSettingsType>,
@@ -4755,6 +4776,7 @@ impl AdminSetUserMfaPreferenceInput {
 pub mod admin_set_user_password_input {
 
     /// A builder for [`AdminSetUserPasswordInput`](crate::input::AdminSetUserPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -4967,6 +4989,7 @@ impl AdminSetUserPasswordInput {
 pub mod admin_set_user_settings_input {
 
     /// A builder for [`AdminSetUserSettingsInput`](crate::input::AdminSetUserSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -5175,6 +5198,7 @@ impl AdminSetUserSettingsInput {
 pub mod admin_update_auth_event_feedback_input {
 
     /// A builder for [`AdminUpdateAuthEventFeedbackInput`](crate::input::AdminUpdateAuthEventFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -5388,6 +5412,7 @@ impl AdminUpdateAuthEventFeedbackInput {
 pub mod admin_update_device_status_input {
 
     /// A builder for [`AdminUpdateDeviceStatusInput`](crate::input::AdminUpdateDeviceStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -5607,6 +5632,7 @@ impl AdminUpdateDeviceStatusInput {
 pub mod admin_update_user_attributes_input {
 
     /// A builder for [`AdminUpdateUserAttributesInput`](crate::input::AdminUpdateUserAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -5869,6 +5895,7 @@ impl AdminUpdateUserAttributesInput {
 pub mod admin_user_global_sign_out_input {
 
     /// A builder for [`AdminUserGlobalSignOutInput`](crate::input::AdminUserGlobalSignOutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -6055,6 +6082,7 @@ impl AdminUserGlobalSignOutInput {
 pub mod associate_software_token_input {
 
     /// A builder for [`AssociateSoftwareTokenInput`](crate::input::AssociateSoftwareTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -6241,6 +6269,7 @@ impl AssociateSoftwareTokenInput {
 pub mod change_password_input {
 
     /// A builder for [`ChangePasswordInput`](crate::input::ChangePasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) previous_password: std::option::Option<std::string::String>,
@@ -6443,6 +6472,7 @@ impl ChangePasswordInput {
 pub mod confirm_device_input {
 
     /// A builder for [`ConfirmDeviceInput`](crate::input::ConfirmDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -6661,6 +6691,7 @@ impl ConfirmDeviceInput {
 pub mod confirm_forgot_password_input {
 
     /// A builder for [`ConfirmForgotPasswordInput`](crate::input::ConfirmForgotPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -6970,6 +7001,7 @@ impl ConfirmForgotPasswordInput {
 pub mod confirm_sign_up_input {
 
     /// A builder for [`ConfirmSignUpInput`](crate::input::ConfirmSignUpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -7275,6 +7307,7 @@ impl ConfirmSignUpInput {
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -7489,6 +7522,7 @@ impl CreateGroupInput {
 pub mod create_identity_provider_input {
 
     /// A builder for [`CreateIdentityProviderInput`](crate::input::CreateIdentityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -7858,6 +7892,7 @@ impl CreateIdentityProviderInput {
 pub mod create_resource_server_input {
 
     /// A builder for [`CreateResourceServerInput`](crate::input::CreateResourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -8070,6 +8105,7 @@ impl CreateResourceServerInput {
 pub mod create_user_import_job_input {
 
     /// A builder for [`CreateUserImportJobInput`](crate::input::CreateUserImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -8263,6 +8299,7 @@ impl CreateUserImportJobInput {
 pub mod create_user_pool_input {
 
     /// A builder for [`CreateUserPoolInput`](crate::input::CreateUserPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_name: std::option::Option<std::string::String>,
@@ -8838,6 +8875,7 @@ impl CreateUserPoolInput {
 pub mod create_user_pool_client_input {
 
     /// A builder for [`CreateUserPoolClientInput`](crate::input::CreateUserPoolClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -9497,6 +9535,7 @@ impl CreateUserPoolClientInput {
 pub mod create_user_pool_domain_input {
 
     /// A builder for [`CreateUserPoolDomainInput`](crate::input::CreateUserPoolDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -9694,6 +9733,7 @@ impl CreateUserPoolDomainInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -9868,6 +9908,7 @@ impl DeleteGroupInput {
 pub mod delete_identity_provider_input {
 
     /// A builder for [`DeleteIdentityProviderInput`](crate::input::DeleteIdentityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -10049,6 +10090,7 @@ impl DeleteIdentityProviderInput {
 pub mod delete_resource_server_input {
 
     /// A builder for [`DeleteResourceServerInput`](crate::input::DeleteResourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -10227,6 +10269,7 @@ impl DeleteResourceServerInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -10397,6 +10440,7 @@ impl DeleteUserInput {
 pub mod delete_user_attributes_input {
 
     /// A builder for [`DeleteUserAttributesInput`](crate::input::DeleteUserAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10595,6 +10639,7 @@ impl DeleteUserAttributesInput {
 pub mod delete_user_pool_input {
 
     /// A builder for [`DeleteUserPoolInput`](crate::input::DeleteUserPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -10757,6 +10802,7 @@ impl DeleteUserPoolInput {
 pub mod delete_user_pool_client_input {
 
     /// A builder for [`DeleteUserPoolClientInput`](crate::input::DeleteUserPoolClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -10943,6 +10989,7 @@ impl DeleteUserPoolClientInput {
 pub mod delete_user_pool_domain_input {
 
     /// A builder for [`DeleteUserPoolDomainInput`](crate::input::DeleteUserPoolDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -11121,6 +11168,7 @@ impl DeleteUserPoolDomainInput {
 pub mod describe_identity_provider_input {
 
     /// A builder for [`DescribeIdentityProviderInput`](crate::input::DescribeIdentityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -11302,6 +11350,7 @@ impl DescribeIdentityProviderInput {
 pub mod describe_resource_server_input {
 
     /// A builder for [`DescribeResourceServerInput`](crate::input::DescribeResourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -11480,6 +11529,7 @@ impl DescribeResourceServerInput {
 pub mod describe_risk_configuration_input {
 
     /// A builder for [`DescribeRiskConfigurationInput`](crate::input::DescribeRiskConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -11666,6 +11716,7 @@ impl DescribeRiskConfigurationInput {
 pub mod describe_user_import_job_input {
 
     /// A builder for [`DescribeUserImportJobInput`](crate::input::DescribeUserImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -11844,6 +11895,7 @@ impl DescribeUserImportJobInput {
 pub mod describe_user_pool_input {
 
     /// A builder for [`DescribeUserPoolInput`](crate::input::DescribeUserPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -12008,6 +12060,7 @@ impl DescribeUserPoolInput {
 pub mod describe_user_pool_client_input {
 
     /// A builder for [`DescribeUserPoolClientInput`](crate::input::DescribeUserPoolClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -12194,6 +12247,7 @@ impl DescribeUserPoolClientInput {
 pub mod describe_user_pool_domain_input {
 
     /// A builder for [`DescribeUserPoolDomainInput`](crate::input::DescribeUserPoolDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -12360,6 +12414,7 @@ impl DescribeUserPoolDomainInput {
 pub mod forget_device_input {
 
     /// A builder for [`ForgetDeviceInput`](crate::input::ForgetDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -12542,6 +12597,7 @@ impl ForgetDeviceInput {
 pub mod forgot_password_input {
 
     /// A builder for [`ForgotPasswordInput`](crate::input::ForgotPasswordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -12818,6 +12874,7 @@ impl ForgotPasswordInput {
 pub mod get_csv_header_input {
 
     /// A builder for [`GetCsvHeaderInput`](crate::input::GetCsvHeaderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -12980,6 +13037,7 @@ impl GetCsvHeaderInput {
 pub mod get_device_input {
 
     /// A builder for [`GetDeviceInput`](crate::input::GetDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_key: std::option::Option<std::string::String>,
@@ -13160,6 +13218,7 @@ impl GetDeviceInput {
 pub mod get_group_input {
 
     /// A builder for [`GetGroupInput`](crate::input::GetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -13332,6 +13391,7 @@ impl GetGroupInput {
 pub mod get_identity_provider_by_identifier_input {
 
     /// A builder for [`GetIdentityProviderByIdentifierInput`](crate::input::GetIdentityProviderByIdentifierInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -13511,6 +13571,7 @@ impl GetIdentityProviderByIdentifierInput {
 pub mod get_signing_certificate_input {
 
     /// A builder for [`GetSigningCertificateInput`](crate::input::GetSigningCertificateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -13677,6 +13738,7 @@ impl GetSigningCertificateInput {
 pub mod get_ui_customization_input {
 
     /// A builder for [`GetUiCustomizationInput`](crate::input::GetUiCustomizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -13861,6 +13923,7 @@ impl GetUiCustomizationInput {
 pub mod get_user_input {
 
     /// A builder for [`GetUserInput`](crate::input::GetUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -14029,6 +14092,7 @@ impl GetUserInput {
 pub mod get_user_attribute_verification_code_input {
 
     /// A builder for [`GetUserAttributeVerificationCodeInput`](crate::input::GetUserAttributeVerificationCodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -14265,6 +14329,7 @@ impl GetUserAttributeVerificationCodeInput {
 pub mod get_user_pool_mfa_config_input {
 
     /// A builder for [`GetUserPoolMfaConfigInput`](crate::input::GetUserPoolMfaConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -14431,6 +14496,7 @@ impl GetUserPoolMfaConfigInput {
 pub mod global_sign_out_input {
 
     /// A builder for [`GlobalSignOutInput`](crate::input::GlobalSignOutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -14600,6 +14666,7 @@ impl GlobalSignOutInput {
 pub mod initiate_auth_input {
 
     /// A builder for [`InitiateAuthInput`](crate::input::InitiateAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) auth_flow: std::option::Option<crate::model::AuthFlowType>,
@@ -14962,6 +15029,7 @@ impl InitiateAuthInput {
 pub mod list_devices_input {
 
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -15160,6 +15228,7 @@ impl ListDevicesInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -15346,6 +15415,7 @@ impl ListGroupsInput {
 pub mod list_identity_providers_input {
 
     /// A builder for [`ListIdentityProvidersInput`](crate::input::ListIdentityProvidersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -15536,6 +15606,7 @@ impl ListIdentityProvidersInput {
 pub mod list_resource_servers_input {
 
     /// A builder for [`ListResourceServersInput`](crate::input::ListResourceServersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -15724,6 +15795,7 @@ impl ListResourceServersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -15890,6 +15962,7 @@ impl ListTagsForResourceInput {
 pub mod list_user_import_jobs_input {
 
     /// A builder for [`ListUserImportJobsInput`](crate::input::ListUserImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -16081,6 +16154,7 @@ impl ListUserImportJobsInput {
 pub mod list_user_pool_clients_input {
 
     /// A builder for [`ListUserPoolClientsInput`](crate::input::ListUserPoolClientsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -16271,6 +16345,7 @@ impl ListUserPoolClientsInput {
 pub mod list_user_pools_input {
 
     /// A builder for [`ListUserPoolsInput`](crate::input::ListUserPoolsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -16445,6 +16520,7 @@ impl ListUserPoolsInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -16713,6 +16789,7 @@ impl ListUsersInput {
 pub mod list_users_in_group_input {
 
     /// A builder for [`ListUsersInGroupInput`](crate::input::ListUsersInGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -16913,6 +16990,7 @@ impl ListUsersInGroupInput {
 pub mod resend_confirmation_code_input {
 
     /// A builder for [`ResendConfirmationCodeInput`](crate::input::ResendConfirmationCodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -17193,6 +17271,7 @@ impl ResendConfirmationCodeInput {
 pub mod respond_to_auth_challenge_input {
 
     /// A builder for [`RespondToAuthChallengeInput`](crate::input::RespondToAuthChallengeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -17538,6 +17617,7 @@ impl RespondToAuthChallengeInput {
 pub mod revoke_token_input {
 
     /// A builder for [`RevokeTokenInput`](crate::input::RevokeTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
@@ -17736,6 +17816,7 @@ impl RevokeTokenInput {
 pub mod set_risk_configuration_input {
 
     /// A builder for [`SetRiskConfigurationInput`](crate::input::SetRiskConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -17994,6 +18075,7 @@ impl SetRiskConfigurationInput {
 pub mod set_ui_customization_input {
 
     /// A builder for [`SetUiCustomizationInput`](crate::input::SetUiCustomizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -18207,6 +18289,7 @@ impl SetUiCustomizationInput {
 pub mod set_user_mfa_preference_input {
 
     /// A builder for [`SetUserMfaPreferenceInput`](crate::input::SetUserMfaPreferenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) sms_mfa_settings: std::option::Option<crate::model::SmsMfaSettingsType>,
@@ -18419,6 +18502,7 @@ impl SetUserMfaPreferenceInput {
 pub mod set_user_pool_mfa_config_input {
 
     /// A builder for [`SetUserPoolMfaConfigInput`](crate::input::SetUserPoolMfaConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -18644,6 +18728,7 @@ impl SetUserPoolMfaConfigInput {
 pub mod set_user_settings_input {
 
     /// A builder for [`SetUserSettingsInput`](crate::input::SetUserSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -18836,6 +18921,7 @@ impl SetUserSettingsInput {
 pub mod sign_up_input {
 
     /// A builder for [`SignUpInput`](crate::input::SignUpInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -19169,6 +19255,7 @@ impl SignUpInput {
 pub mod start_user_import_job_input {
 
     /// A builder for [`StartUserImportJobInput`](crate::input::StartUserImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -19345,6 +19432,7 @@ impl StartUserImportJobInput {
 pub mod stop_user_import_job_input {
 
     /// A builder for [`StopUserImportJobInput`](crate::input::StopUserImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -19521,6 +19609,7 @@ impl StopUserImportJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -19712,6 +19801,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -19895,6 +19985,7 @@ impl UntagResourceInput {
 pub mod update_auth_event_feedback_input {
 
     /// A builder for [`UpdateAuthEventFeedbackInput`](crate::input::UpdateAuthEventFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -20126,6 +20217,7 @@ impl UpdateAuthEventFeedbackInput {
 pub mod update_device_status_input {
 
     /// A builder for [`UpdateDeviceStatusInput`](crate::input::UpdateDeviceStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -20330,6 +20422,7 @@ impl UpdateDeviceStatusInput {
 pub mod update_group_input {
 
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -20540,6 +20633,7 @@ impl UpdateGroupInput {
 pub mod update_identity_provider_input {
 
     /// A builder for [`UpdateIdentityProviderInput`](crate::input::UpdateIdentityProviderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -20800,6 +20894,7 @@ impl UpdateIdentityProviderInput {
 pub mod update_resource_server_input {
 
     /// A builder for [`UpdateResourceServerInput`](crate::input::UpdateResourceServerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -21012,6 +21107,7 @@ impl UpdateResourceServerInput {
 pub mod update_user_attributes_input {
 
     /// A builder for [`UpdateUserAttributesInput`](crate::input::UpdateUserAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -21260,6 +21356,7 @@ impl UpdateUserAttributesInput {
 pub mod update_user_pool_input {
 
     /// A builder for [`UpdateUserPoolInput`](crate::input::UpdateUserPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -21751,6 +21848,7 @@ impl UpdateUserPoolInput {
 pub mod update_user_pool_client_input {
 
     /// A builder for [`UpdateUserPoolClientInput`](crate::input::UpdateUserPoolClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -22446,6 +22544,7 @@ impl UpdateUserPoolClientInput {
 pub mod update_user_pool_domain_input {
 
     /// A builder for [`UpdateUserPoolDomainInput`](crate::input::UpdateUserPoolDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -22641,6 +22740,7 @@ impl UpdateUserPoolDomainInput {
 pub mod verify_software_token_input {
 
     /// A builder for [`VerifySoftwareTokenInput`](crate::input::VerifySoftwareTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -22854,6 +22954,7 @@ impl VerifySoftwareTokenInput {
 pub mod verify_user_attribute_input {
 
     /// A builder for [`VerifyUserAttributeInput`](crate::input::VerifyUserAttributeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,

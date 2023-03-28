@@ -25,6 +25,7 @@ impl AccessPoliciesStatus {
 pub mod access_policies_status {
 
     /// A builder for [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<std::string::String>,
@@ -128,6 +129,7 @@ impl OptionStatus {
 pub mod option_status {
 
     /// A builder for [`OptionStatus`](crate::model::OptionStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -360,6 +362,7 @@ impl ScalingParametersStatus {
 pub mod scaling_parameters_status {
 
     /// A builder for [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::ScalingParameters>,
@@ -442,6 +445,7 @@ impl ScalingParameters {
 pub mod scaling_parameters {
 
     /// A builder for [`ScalingParameters`](crate::model::ScalingParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) desired_instance_type: std::option::Option<crate::model::PartitionInstanceType>,
@@ -725,6 +729,7 @@ impl DomainEndpointOptionsStatus {
 pub mod domain_endpoint_options_status {
 
     /// A builder for [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -798,6 +803,7 @@ impl DomainEndpointOptions {
 pub mod domain_endpoint_options {
 
     /// A builder for [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce_https: std::option::Option<bool>,
@@ -960,6 +966,7 @@ impl AvailabilityOptionsStatus {
 pub mod availability_options_status {
 
     /// A builder for [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<bool>,
@@ -1030,6 +1037,7 @@ impl SuggesterStatus {
 pub mod suggester_status {
 
     /// A builder for [`SuggesterStatus`](crate::model::SuggesterStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::Suggester>,
@@ -1102,6 +1110,7 @@ impl Suggester {
 pub mod suggester {
 
     /// A builder for [`Suggester`](crate::model::Suggester).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester_name: std::option::Option<std::string::String>,
@@ -1186,6 +1195,7 @@ impl DocumentSuggesterOptions {
 pub mod document_suggester_options {
 
     /// A builder for [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_field: std::option::Option<std::string::String>,
@@ -1368,6 +1378,7 @@ impl IndexFieldStatus {
 pub mod index_field_status {
 
     /// A builder for [`IndexFieldStatus`](crate::model::IndexFieldStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::IndexField>,
@@ -1519,6 +1530,7 @@ impl IndexField {
 pub mod index_field {
 
     /// A builder for [`IndexField`](crate::model::IndexField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field_name: std::option::Option<std::string::String>,
@@ -1782,6 +1794,7 @@ impl DateArrayOptions {
 pub mod date_array_options {
 
     /// A builder for [`DateArrayOptions`](crate::model::DateArrayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -1912,6 +1925,7 @@ impl TextArrayOptions {
 pub mod text_array_options {
 
     /// A builder for [`TextArrayOptions`](crate::model::TextArrayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2045,6 +2059,7 @@ impl LiteralArrayOptions {
 pub mod literal_array_options {
 
     /// A builder for [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2175,6 +2190,7 @@ impl DoubleArrayOptions {
 pub mod double_array_options {
 
     /// A builder for [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<f64>,
@@ -2302,6 +2318,7 @@ impl IntArrayOptions {
 pub mod int_array_options {
 
     /// A builder for [`IntArrayOptions`](crate::model::IntArrayOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<i64>,
@@ -2440,6 +2457,7 @@ impl LatLonOptions {
 pub mod lat_lon_options {
 
     /// A builder for [`LatLonOptions`](crate::model::LatLonOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2594,6 +2612,7 @@ impl DateOptions {
 pub mod date_options {
 
     /// A builder for [`DateOptions`](crate::model::DateOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2748,6 +2767,7 @@ impl TextOptions {
 pub mod text_options {
 
     /// A builder for [`TextOptions`](crate::model::TextOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2905,6 +2925,7 @@ impl LiteralOptions {
 pub mod literal_options {
 
     /// A builder for [`LiteralOptions`](crate::model::LiteralOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -3055,6 +3076,7 @@ impl DoubleOptions {
 pub mod double_options {
 
     /// A builder for [`DoubleOptions`](crate::model::DoubleOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<f64>,
@@ -3198,6 +3220,7 @@ impl IntOptions {
 pub mod int_options {
 
     /// A builder for [`IntOptions`](crate::model::IntOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<i64>,
@@ -3460,6 +3483,7 @@ impl ExpressionStatus {
 pub mod expression_status {
 
     /// A builder for [`ExpressionStatus`](crate::model::ExpressionStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::Expression>,
@@ -3530,6 +3554,7 @@ impl Expression {
 pub mod expression {
 
     /// A builder for [`Expression`](crate::model::Expression).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression_name: std::option::Option<std::string::String>,
@@ -3680,6 +3705,7 @@ impl DomainStatus {
 pub mod domain_status {
 
     /// A builder for [`DomainStatus`](crate::model::DomainStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3888,6 +3914,7 @@ impl Limits {
 pub mod limits {
 
     /// A builder for [`Limits`](crate::model::Limits).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum_replication_count: std::option::Option<i32>,
@@ -3948,6 +3975,7 @@ impl ServiceEndpoint {
 pub mod service_endpoint {
 
     /// A builder for [`ServiceEndpoint`](crate::model::ServiceEndpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -4003,6 +4031,7 @@ impl AnalysisSchemeStatus {
 pub mod analysis_scheme_status {
 
     /// A builder for [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::AnalysisScheme>,
@@ -4085,6 +4114,7 @@ impl AnalysisScheme {
 pub mod analysis_scheme {
 
     /// A builder for [`AnalysisScheme`](crate::model::AnalysisScheme).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme_name: std::option::Option<std::string::String>,
@@ -4198,6 +4228,7 @@ impl AnalysisOptions {
 pub mod analysis_options {
 
     /// A builder for [`AnalysisOptions`](crate::model::AnalysisOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synonyms: std::option::Option<std::string::String>,

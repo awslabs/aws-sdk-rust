@@ -7,6 +7,7 @@ pub struct UpdateRescoreExecutionPlanOutput {}
 pub mod update_rescore_execution_plan_output {
 
     /// A builder for [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -96,6 +99,7 @@ impl RescoreOutput {
 pub mod rescore_output {
 
     /// A builder for [`RescoreOutput`](crate::output::RescoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescore_id: std::option::Option<std::string::String>,
@@ -166,6 +170,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -231,6 +236,7 @@ impl ListRescoreExecutionPlansOutput {
 pub mod list_rescore_execution_plans_output {
 
     /// A builder for [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_items:
@@ -357,6 +363,7 @@ impl DescribeRescoreExecutionPlanOutput {
 pub mod describe_rescore_execution_plan_output {
 
     /// A builder for [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -506,6 +513,7 @@ pub struct DeleteRescoreExecutionPlanOutput {}
 pub mod delete_rescore_execution_plan_output {
 
     /// A builder for [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -547,6 +555,7 @@ impl CreateRescoreExecutionPlanOutput {
 pub mod create_rescore_execution_plan_output {
 
     /// A builder for [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

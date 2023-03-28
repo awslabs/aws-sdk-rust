@@ -24,6 +24,7 @@ impl StartAttachmentUploadOutput {
 pub mod start_attachment_upload_output {
 
     /// A builder for [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
@@ -99,6 +100,7 @@ impl SendMessageOutput {
 pub mod send_message_output {
 
     /// A builder for [`SendMessageOutput`](crate::output::SendMessageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -173,6 +175,7 @@ impl SendEventOutput {
 pub mod send_event_output {
 
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -252,6 +255,7 @@ impl GetTranscriptOutput {
 pub mod get_transcript_output {
 
     /// A builder for [`GetTranscriptOutput`](crate::output::GetTranscriptOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_contact_id: std::option::Option<std::string::String>,
@@ -343,6 +347,7 @@ impl GetAttachmentOutput {
 pub mod get_attachment_output {
 
     /// A builder for [`GetAttachmentOutput`](crate::output::GetAttachmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -393,6 +398,7 @@ pub struct DisconnectParticipantOutput {}
 pub mod disconnect_participant_output {
 
     /// A builder for [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -436,6 +442,7 @@ impl CreateParticipantConnectionOutput {
 pub mod create_participant_connection_output {
 
     /// A builder for [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) websocket: std::option::Option<crate::model::Websocket>,
@@ -495,6 +502,7 @@ pub struct CompleteAttachmentUploadOutput {}
 pub mod complete_attachment_upload_output {
 
     /// A builder for [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

@@ -38,6 +38,7 @@ impl Forecast {
 pub mod forecast {
 
     /// A builder for [`Forecast`](crate::model::Forecast).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictions: std::option::Option<
@@ -127,6 +128,7 @@ impl DataPoint {
 pub mod data_point {
 
     /// A builder for [`DataPoint`](crate::model::DataPoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<std::string::String>,

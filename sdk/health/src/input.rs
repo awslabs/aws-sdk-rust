@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod describe_affected_accounts_for_organization_input {
 
     /// A builder for [`DescribeAffectedAccountsForOrganizationInput`](crate::input::DescribeAffectedAccountsForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -197,6 +198,7 @@ impl DescribeAffectedAccountsForOrganizationInput {
 pub mod describe_affected_entities_input {
 
     /// A builder for [`DescribeAffectedEntitiesInput`](crate::input::DescribeAffectedEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EntityFilter>,
@@ -402,6 +404,7 @@ impl DescribeAffectedEntitiesInput {
 pub mod describe_affected_entities_for_organization_input {
 
     /// A builder for [`DescribeAffectedEntitiesForOrganizationInput`](crate::input::DescribeAffectedEntitiesForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_entity_filters:
@@ -615,6 +618,7 @@ impl DescribeAffectedEntitiesForOrganizationInput {
 pub mod describe_entity_aggregates_input {
 
     /// A builder for [`DescribeEntityAggregatesInput`](crate::input::DescribeEntityAggregatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -790,6 +794,7 @@ impl DescribeEntityAggregatesInput {
 pub mod describe_event_aggregates_input {
 
     /// A builder for [`DescribeEventAggregatesInput`](crate::input::DescribeEventAggregatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EventFilter>,
@@ -995,6 +1000,7 @@ impl DescribeEventAggregatesInput {
 pub mod describe_event_details_input {
 
     /// A builder for [`DescribeEventDetailsInput`](crate::input::DescribeEventDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1182,6 +1188,7 @@ impl DescribeEventDetailsInput {
 pub mod describe_event_details_for_organization_input {
 
     /// A builder for [`DescribeEventDetailsForOrganizationInput`](crate::input::DescribeEventDetailsForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_event_detail_filters:
@@ -1371,6 +1378,7 @@ impl DescribeEventDetailsForOrganizationInput {
 pub mod describe_events_input {
 
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EventFilter>,
@@ -1569,6 +1577,7 @@ impl DescribeEventsInput {
 pub mod describe_events_for_organization_input {
 
     /// A builder for [`DescribeEventsForOrganizationInput`](crate::input::DescribeEventsForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::OrganizationEventFilter>,
@@ -1772,6 +1781,7 @@ impl DescribeEventsForOrganizationInput {
 pub mod describe_event_types_input {
 
     /// A builder for [`DescribeEventTypesInput`](crate::input::DescribeEventTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EventTypeFilter>,
@@ -1975,6 +1985,7 @@ impl DescribeEventTypesInput {
 pub mod describe_health_service_status_for_organization_input {
 
     /// A builder for [`DescribeHealthServiceStatusForOrganizationInput`](crate::input::DescribeHealthServiceStatusForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2119,6 +2130,7 @@ impl DescribeHealthServiceStatusForOrganizationInput {
 pub mod disable_health_service_access_for_organization_input {
 
     /// A builder for [`DisableHealthServiceAccessForOrganizationInput`](crate::input::DisableHealthServiceAccessForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2263,6 +2275,7 @@ impl DisableHealthServiceAccessForOrganizationInput {
 pub mod enable_health_service_access_for_organization_input {
 
     /// A builder for [`EnableHealthServiceAccessForOrganizationInput`](crate::input::EnableHealthServiceAccessForOrganizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

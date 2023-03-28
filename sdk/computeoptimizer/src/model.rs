@@ -118,6 +118,7 @@ impl ExternalMetricsPreference {
 pub mod external_metrics_preference {
 
     /// A builder for [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ExternalMetricsSource>,
@@ -491,6 +492,7 @@ impl Scope {
 pub mod scope {
 
     /// A builder for [`Scope`](crate::model::Scope).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ScopeName>,
@@ -822,6 +824,7 @@ impl RecommendationSummary {
 pub mod recommendation_summary {
 
     /// A builder for [`RecommendationSummary`](crate::model::RecommendationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::Summary>>,
@@ -966,6 +969,7 @@ impl CurrentPerformanceRiskRatings {
 pub mod current_performance_risk_ratings {
 
     /// A builder for [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) high: std::option::Option<i64>,
@@ -1062,6 +1066,7 @@ impl SavingsOpportunity {
 pub mod savings_opportunity {
 
     /// A builder for [`SavingsOpportunity`](crate::model::SavingsOpportunity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_opportunity_percentage: std::option::Option<f64>,
@@ -1142,6 +1147,7 @@ impl EstimatedMonthlySavings {
 pub mod estimated_monthly_savings {
 
     /// A builder for [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) currency: std::option::Option<crate::model::Currency>,
@@ -1419,6 +1425,7 @@ impl Summary {
 pub mod summary {
 
     /// A builder for [`Summary`](crate::model::Summary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::Finding>,
@@ -1508,6 +1515,7 @@ impl ReasonCodeSummary {
 pub mod reason_code_summary {
 
     /// A builder for [`ReasonCodeSummary`](crate::model::ReasonCodeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FindingReasonCode>,
@@ -1815,6 +1823,7 @@ impl RecommendationPreferencesDetail {
 pub mod recommendation_preferences_detail {
 
     /// A builder for [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -2072,6 +2081,7 @@ impl LambdaFunctionRecommendation {
 pub mod lambda_function_recommendation {
 
     /// A builder for [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
@@ -2477,6 +2487,7 @@ impl LambdaFunctionMemoryRecommendationOption {
 pub mod lambda_function_memory_recommendation_option {
 
     /// A builder for [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rank: std::option::Option<i32>,
@@ -2597,6 +2608,7 @@ impl LambdaFunctionMemoryProjectedMetric {
 pub mod lambda_function_memory_projected_metric {
 
     /// A builder for [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::LambdaFunctionMemoryMetricName>,
@@ -3103,6 +3115,7 @@ impl LambdaFunctionUtilizationMetric {
 pub mod lambda_function_utilization_metric {
 
     /// A builder for [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::LambdaFunctionMetricName>,
@@ -3403,6 +3416,7 @@ impl LambdaFunctionRecommendationFilter {
 pub mod lambda_function_recommendation_filter {
 
     /// A builder for [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::LambdaFunctionRecommendationFilterName>,
@@ -3604,6 +3618,7 @@ impl AccountEnrollmentStatus {
 pub mod account_enrollment_status {
 
     /// A builder for [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3707,6 +3722,7 @@ impl EnrollmentFilter {
 pub mod enrollment_filter {
 
     /// A builder for [`EnrollmentFilter`](crate::model::EnrollmentFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EnrollmentFilterName>,
@@ -3885,6 +3901,7 @@ impl GetRecommendationError {
 pub mod get_recommendation_error {
 
     /// A builder for [`GetRecommendationError`](crate::model::GetRecommendationError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -4074,6 +4091,7 @@ impl EcsServiceRecommendation {
 pub mod ecs_service_recommendation {
 
     /// A builder for [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -4381,6 +4399,7 @@ impl EcsServiceRecommendationOption {
 pub mod ecs_service_recommendation_option {
 
     /// A builder for [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memory: std::option::Option<i32>,
@@ -4530,6 +4549,7 @@ impl ContainerRecommendation {
 pub mod container_recommendation {
 
     /// A builder for [`ContainerRecommendation`](crate::model::ContainerRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -4619,6 +4639,7 @@ impl MemorySizeConfiguration {
 pub mod memory_size_configuration {
 
     /// A builder for [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memory: std::option::Option<i32>,
@@ -4715,6 +4736,7 @@ impl EcsServiceProjectedUtilizationMetric {
 pub mod ecs_service_projected_utilization_metric {
 
     /// A builder for [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EcsServiceMetricName>,
@@ -5336,6 +5358,7 @@ impl EcsServiceUtilizationMetric {
 pub mod ecs_service_utilization_metric {
 
     /// A builder for [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EcsServiceMetricName>,
@@ -5473,6 +5496,7 @@ impl ServiceConfiguration {
 pub mod service_configuration {
 
     /// A builder for [`ServiceConfiguration`](crate::model::ServiceConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memory: std::option::Option<i32>,
@@ -5712,6 +5736,7 @@ impl ContainerConfiguration {
 pub mod container_configuration {
 
     /// A builder for [`ContainerConfiguration`](crate::model::ContainerConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -5815,6 +5840,7 @@ impl EcsServiceRecommendationFilter {
 pub mod ecs_service_recommendation_filter {
 
     /// A builder for [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EcsServiceRecommendationFilterName>,
@@ -6011,6 +6037,7 @@ impl EcsServiceRecommendedOptionProjectedMetric {
 pub mod ecs_service_recommended_option_projected_metric {
 
     /// A builder for [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_cpu_units: std::option::Option<i32>,
@@ -6125,6 +6152,7 @@ impl EcsServiceProjectedMetric {
 pub mod ecs_service_projected_metric {
 
     /// A builder for [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EcsServiceMetricName>,
@@ -6359,6 +6387,7 @@ impl RecommendedOptionProjectedMetric {
 pub mod recommended_option_projected_metric {
 
     /// A builder for [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_instance_type: std::option::Option<std::string::String>,
@@ -6479,6 +6508,7 @@ impl ProjectedMetric {
 pub mod projected_metric {
 
     /// A builder for [`ProjectedMetric`](crate::model::ProjectedMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::MetricName>,
@@ -6760,6 +6790,7 @@ impl RecommendationPreferences {
 pub mod recommendation_preferences {
 
     /// A builder for [`RecommendationPreferences`](crate::model::RecommendationPreferences).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_vendor_architectures:
@@ -7111,6 +7142,7 @@ impl InstanceRecommendation {
 pub mod instance_recommendation {
 
     /// A builder for [`InstanceRecommendation`](crate::model::InstanceRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -7654,6 +7686,7 @@ impl EffectiveRecommendationPreferences {
 pub mod effective_recommendation_preferences {
 
     /// A builder for [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_vendor_architectures:
@@ -7801,6 +7834,7 @@ impl RecommendationSource {
 pub mod recommendation_source {
 
     /// A builder for [`RecommendationSource`](crate::model::RecommendationSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_source_arn: std::option::Option<std::string::String>,
@@ -7946,6 +7980,7 @@ impl InstanceRecommendationOption {
 pub mod instance_recommendation_option {
 
     /// A builder for [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -8404,6 +8439,7 @@ impl UtilizationMetric {
 pub mod utilization_metric {
 
     /// A builder for [`UtilizationMetric`](crate::model::UtilizationMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::MetricName>,
@@ -8820,6 +8856,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FilterName>,
@@ -9113,6 +9150,7 @@ impl VolumeRecommendation {
 pub mod volume_recommendation {
 
     /// A builder for [`VolumeRecommendation`](crate::model::VolumeRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -9330,6 +9368,7 @@ impl VolumeRecommendationOption {
 pub mod volume_recommendation_option {
 
     /// A builder for [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::VolumeConfiguration>,
@@ -9463,6 +9502,7 @@ impl VolumeConfiguration {
 pub mod volume_configuration {
 
     /// A builder for [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_type: std::option::Option<std::string::String>,
@@ -9606,6 +9646,7 @@ impl EbsUtilizationMetric {
 pub mod ebs_utilization_metric {
 
     /// A builder for [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EbsMetricName>,
@@ -9906,6 +9947,7 @@ impl EbsFilter {
 pub mod ebs_filter {
 
     /// A builder for [`EbsFilter`](crate::model::EbsFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EbsFilterName>,
@@ -10184,6 +10226,7 @@ impl AutoScalingGroupRecommendation {
 pub mod auto_scaling_group_recommendation {
 
     /// A builder for [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10514,6 +10557,7 @@ impl AutoScalingGroupRecommendationOption {
 pub mod auto_scaling_group_recommendation_option {
 
     /// A builder for [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::AutoScalingGroupConfiguration>,
@@ -10677,6 +10721,7 @@ impl AutoScalingGroupConfiguration {
 pub mod auto_scaling_group_configuration {
 
     /// A builder for [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) desired_capacity: std::option::Option<i32>,
@@ -10782,6 +10827,7 @@ impl S3Destination {
 pub mod s3_destination {
 
     /// A builder for [`S3Destination`](crate::model::S3Destination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -10951,6 +10997,7 @@ impl S3DestinationConfig {
 pub mod s3_destination_config {
 
     /// A builder for [`S3DestinationConfig`](crate::model::S3DestinationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -12650,6 +12697,7 @@ impl RecommendationExportJob {
 pub mod recommendation_export_job {
 
     /// A builder for [`RecommendationExportJob`](crate::model::RecommendationExportJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -12885,6 +12933,7 @@ impl ExportDestination {
 pub mod export_destination {
 
     /// A builder for [`ExportDestination`](crate::model::ExportDestination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Destination>,
@@ -12953,6 +13002,7 @@ impl JobFilter {
 pub mod job_filter {
 
     /// A builder for [`JobFilter`](crate::model::JobFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::JobFilterName>,

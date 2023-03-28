@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_profile_input {
 
     /// A builder for [`CreateProfileInput`](crate::input::CreateProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -276,6 +277,7 @@ impl CreateProfileInput {
 pub mod create_trust_anchor_input {
 
     /// A builder for [`CreateTrustAnchorInput`](crate::input::CreateTrustAnchorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -480,6 +482,7 @@ impl CreateTrustAnchorInput {
 pub mod delete_crl_input {
 
     /// A builder for [`DeleteCrlInput`](crate::input::DeleteCrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
@@ -640,6 +643,7 @@ impl DeleteCrlInput {
 pub mod delete_profile_input {
 
     /// A builder for [`DeleteProfileInput`](crate::input::DeleteProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -803,6 +807,7 @@ impl DeleteProfileInput {
 pub mod delete_trust_anchor_input {
 
     /// A builder for [`DeleteTrustAnchorInput`](crate::input::DeleteTrustAnchorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
@@ -975,6 +980,7 @@ impl DeleteTrustAnchorInput {
 pub mod disable_crl_input {
 
     /// A builder for [`DisableCrlInput`](crate::input::DisableCrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
@@ -1138,6 +1144,7 @@ impl DisableCrlInput {
 pub mod disable_profile_input {
 
     /// A builder for [`DisableProfileInput`](crate::input::DisableProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -1305,6 +1312,7 @@ impl DisableProfileInput {
 pub mod disable_trust_anchor_input {
 
     /// A builder for [`DisableTrustAnchorInput`](crate::input::DisableTrustAnchorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
@@ -1477,6 +1485,7 @@ impl DisableTrustAnchorInput {
 pub mod enable_crl_input {
 
     /// A builder for [`EnableCrlInput`](crate::input::EnableCrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
@@ -1638,6 +1647,7 @@ impl EnableCrlInput {
 pub mod enable_profile_input {
 
     /// A builder for [`EnableProfileInput`](crate::input::EnableProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -1805,6 +1815,7 @@ impl EnableProfileInput {
 pub mod enable_trust_anchor_input {
 
     /// A builder for [`EnableTrustAnchorInput`](crate::input::EnableTrustAnchorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
@@ -1977,6 +1988,7 @@ impl EnableTrustAnchorInput {
 pub mod get_crl_input {
 
     /// A builder for [`GetCrlInput`](crate::input::GetCrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
@@ -2137,6 +2149,7 @@ impl GetCrlInput {
 pub mod get_profile_input {
 
     /// A builder for [`GetProfileInput`](crate::input::GetProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -2300,6 +2313,7 @@ impl GetProfileInput {
 pub mod get_subject_input {
 
     /// A builder for [`GetSubjectInput`](crate::input::GetSubjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject_id: std::option::Option<std::string::String>,
@@ -2463,6 +2477,7 @@ impl GetSubjectInput {
 pub mod get_trust_anchor_input {
 
     /// A builder for [`GetTrustAnchorInput`](crate::input::GetTrustAnchorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
@@ -2633,6 +2648,7 @@ impl GetTrustAnchorInput {
 pub mod import_crl_input {
 
     /// A builder for [`ImportCrlInput`](crate::input::ImportCrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2848,6 +2864,7 @@ impl ImportCrlInput {
 pub mod list_crls_input {
 
     /// A builder for [`ListCrlsInput`](crate::input::ListCrlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3022,6 +3039,7 @@ impl ListCrlsInput {
 pub mod list_profiles_input {
 
     /// A builder for [`ListProfilesInput`](crate::input::ListProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3198,6 +3216,7 @@ impl ListProfilesInput {
 pub mod list_subjects_input {
 
     /// A builder for [`ListSubjectsInput`](crate::input::ListSubjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3374,6 +3393,7 @@ impl ListSubjectsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3546,6 +3566,7 @@ impl ListTagsForResourceInput {
 pub mod list_trust_anchors_input {
 
     /// A builder for [`ListTrustAnchorsInput`](crate::input::ListTrustAnchorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3724,6 +3745,7 @@ impl ListTrustAnchorsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3902,6 +3924,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4080,6 +4103,7 @@ impl UntagResourceInput {
 pub mod update_crl_input {
 
     /// A builder for [`UpdateCrlInput`](crate::input::UpdateCrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
@@ -4278,6 +4302,7 @@ impl UpdateCrlInput {
 pub mod update_profile_input {
 
     /// A builder for [`UpdateProfileInput`](crate::input::UpdateProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
@@ -4536,6 +4561,7 @@ impl UpdateProfileInput {
 pub mod update_trust_anchor_input {
 
     /// A builder for [`UpdateTrustAnchorInput`](crate::input::UpdateTrustAnchorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,

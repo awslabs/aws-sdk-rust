@@ -39,6 +39,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
@@ -163,6 +164,7 @@ impl DnsTargetResource {
 pub mod dns_target_resource {
 
     /// A builder for [`DnsTargetResource`](crate::model::DnsTargetResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -275,6 +277,7 @@ impl TargetResource {
 pub mod target_resource {
 
     /// A builder for [`TargetResource`](crate::model::TargetResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nlb_resource: std::option::Option<crate::model::NlbResource>,
@@ -348,6 +351,7 @@ impl R53ResourceRecord {
 pub mod r53_resource_record {
 
     /// A builder for [`R53ResourceRecord`](crate::model::R53ResourceRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -411,6 +415,7 @@ impl NlbResource {
 pub mod nlb_resource {
 
     /// A builder for [`NlbResource`](crate::model::NlbResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -471,6 +476,7 @@ impl ListRulesOutput {
 pub mod list_rules_output {
 
     /// A builder for [`ListRulesOutput`](crate::model::ListRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -583,6 +589,7 @@ impl ResourceSetOutput {
 pub mod resource_set_output {
 
     /// A builder for [`ResourceSetOutput`](crate::model::ResourceSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_arn: std::option::Option<std::string::String>,
@@ -741,6 +748,7 @@ impl RecoveryGroupOutput {
 pub mod recovery_group_output {
 
     /// A builder for [`RecoveryGroupOutput`](crate::model::RecoveryGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -882,6 +890,7 @@ impl ReadinessCheckOutput {
 pub mod readiness_check_output {
 
     /// A builder for [`ReadinessCheckOutput`](crate::model::ReadinessCheckOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
@@ -1021,6 +1030,7 @@ impl CellOutput {
 pub mod cell_output {
 
     /// A builder for [`CellOutput`](crate::model::CellOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_arn: std::option::Option<std::string::String>,
@@ -1159,6 +1169,7 @@ impl ReadinessCheckSummary {
 pub mod readiness_check_summary {
 
     /// A builder for [`ReadinessCheckSummary`](crate::model::ReadinessCheckSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
@@ -1348,6 +1359,7 @@ impl ResourceResult {
 pub mod resource_result {
 
     /// A builder for [`ResourceResult`](crate::model::ResourceResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
@@ -1438,6 +1450,7 @@ impl Message {
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_text: std::option::Option<std::string::String>,
@@ -1507,6 +1520,7 @@ impl RuleResult {
 pub mod rule_result {
 
     /// A builder for [`RuleResult`](crate::model::RuleResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1606,6 +1620,7 @@ impl Recommendation {
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_text: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_connector_input {
 
     /// A builder for [`CreateConnectorInput`](crate::input::CreateConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<crate::model::Capacity>,
@@ -385,6 +386,7 @@ impl CreateConnectorInput {
 pub mod create_custom_plugin_input {
 
     /// A builder for [`CreateCustomPluginInput`](crate::input::CreateCustomPluginInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<crate::model::CustomPluginContentType>,
@@ -586,6 +588,7 @@ impl CreateCustomPluginInput {
 pub mod create_worker_configuration_input {
 
     /// A builder for [`CreateWorkerConfigurationInput`](crate::input::CreateWorkerConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -786,6 +789,7 @@ impl CreateWorkerConfigurationInput {
 pub mod delete_connector_input {
 
     /// A builder for [`DeleteConnectorInput`](crate::input::DeleteConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
@@ -987,6 +991,7 @@ impl DeleteConnectorInput {
 pub mod delete_custom_plugin_input {
 
     /// A builder for [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
@@ -1159,6 +1164,7 @@ impl DeleteCustomPluginInput {
 pub mod describe_connector_input {
 
     /// A builder for [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
@@ -1331,6 +1337,7 @@ impl DescribeConnectorInput {
 pub mod describe_custom_plugin_input {
 
     /// A builder for [`DescribeCustomPluginInput`](crate::input::DescribeCustomPluginInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
@@ -1503,6 +1510,7 @@ impl DescribeCustomPluginInput {
 pub mod describe_worker_configuration_input {
 
     /// A builder for [`DescribeWorkerConfigurationInput`](crate::input::DescribeWorkerConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_configuration_arn: std::option::Option<std::string::String>,
@@ -1675,6 +1683,7 @@ impl DescribeWorkerConfigurationInput {
 pub mod list_connectors_input {
 
     /// A builder for [`ListConnectorsInput`](crate::input::ListConnectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_name_prefix: std::option::Option<std::string::String>,
@@ -1872,6 +1881,7 @@ impl ListConnectorsInput {
 pub mod list_custom_plugins_input {
 
     /// A builder for [`ListCustomPluginsInput`](crate::input::ListCustomPluginsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2048,6 +2058,7 @@ impl ListCustomPluginsInput {
 pub mod list_worker_configurations_input {
 
     /// A builder for [`ListWorkerConfigurationsInput`](crate::input::ListWorkerConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2224,6 +2235,7 @@ impl ListWorkerConfigurationsInput {
 pub mod update_connector_input {
 
     /// A builder for [`UpdateConnectorInput`](crate::input::UpdateConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<crate::model::CapacityUpdate>,

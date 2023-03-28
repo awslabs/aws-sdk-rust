@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod send_serial_console_ssh_public_key_input {
 
     /// A builder for [`SendSerialConsoleSshPublicKeyInput`](crate::input::SendSerialConsoleSshPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -198,6 +199,7 @@ impl SendSerialConsoleSshPublicKeyInput {
 pub mod send_ssh_public_key_input {
 
     /// A builder for [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,

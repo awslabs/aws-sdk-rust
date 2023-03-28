@@ -152,6 +152,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -562,6 +563,7 @@ impl std::error::Error for UnsupportedLocale {}
 pub mod unsupported_locale {
 
     /// A builder for [`UnsupportedLocale`](crate::error::UnsupportedLocale).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -622,6 +624,7 @@ impl std::error::Error for InvalidPaginationToken {}
 pub mod invalid_pagination_token {
 
     /// A builder for [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

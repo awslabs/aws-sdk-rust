@@ -17,6 +17,7 @@ impl UpdateWebAclOutput {
 pub mod update_web_acl_output {
 
     /// A builder for [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_lock_token: std::option::Option<std::string::String>,
@@ -68,6 +69,7 @@ impl UpdateRuleGroupOutput {
 pub mod update_rule_group_output {
 
     /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_lock_token: std::option::Option<std::string::String>,
@@ -119,6 +121,7 @@ impl UpdateRegexPatternSetOutput {
 pub mod update_regex_pattern_set_output {
 
     /// A builder for [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_lock_token: std::option::Option<std::string::String>,
@@ -186,6 +189,7 @@ impl UpdateManagedRuleSetVersionExpiryDateOutput {
 pub mod update_managed_rule_set_version_expiry_date_output {
 
     /// A builder for [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiring_version: std::option::Option<std::string::String>,
@@ -269,6 +273,7 @@ impl UpdateIpSetOutput {
 pub mod update_ip_set_output {
 
     /// A builder for [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_lock_token: std::option::Option<std::string::String>,
@@ -310,6 +315,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -334,6 +340,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -358,6 +365,7 @@ pub struct PutPermissionPolicyOutput {}
 pub mod put_permission_policy_output {
 
     /// A builder for [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -392,6 +400,7 @@ impl PutManagedRuleSetVersionsOutput {
 pub mod put_managed_rule_set_versions_output {
 
     /// A builder for [`PutManagedRuleSetVersionsOutput`](crate::output::PutManagedRuleSetVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_lock_token: std::option::Option<std::string::String>,
@@ -445,6 +454,7 @@ impl PutLoggingConfigurationOutput {
 pub mod put_logging_configuration_output {
 
     /// A builder for [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -503,6 +513,7 @@ impl ListWebAcLsOutput {
 pub mod list_web_ac_ls_output {
 
     /// A builder for [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -579,6 +590,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -649,6 +661,7 @@ impl ListRuleGroupsOutput {
 pub mod list_rule_groups_output {
 
     /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -718,6 +731,7 @@ impl ListResourcesForWebAclOutput {
 pub mod list_resources_for_web_acl_output {
 
     /// A builder for [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -785,6 +799,7 @@ impl ListRegexPatternSetsOutput {
 pub mod list_regex_pattern_sets_output {
 
     /// A builder for [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -862,6 +877,7 @@ impl ListMobileSdkReleasesOutput {
 pub mod list_mobile_sdk_releases_output {
 
     /// A builder for [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_summaries:
@@ -939,6 +955,7 @@ impl ListManagedRuleSetsOutput {
 pub mod list_managed_rule_sets_output {
 
     /// A builder for [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1019,6 +1036,7 @@ impl ListLoggingConfigurationsOutput {
 pub mod list_logging_configurations_output {
 
     /// A builder for [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configurations:
@@ -1096,6 +1114,7 @@ impl ListIpSetsOutput {
 pub mod list_ip_sets_output {
 
     /// A builder for [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1179,6 +1198,7 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
 pub mod list_available_managed_rule_group_versions_output {
 
     /// A builder for [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1274,6 +1294,7 @@ impl ListAvailableManagedRuleGroupsOutput {
 pub mod list_available_managed_rule_groups_output {
 
     /// A builder for [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -1344,6 +1365,7 @@ impl GetWebAclForResourceOutput {
 pub mod get_web_acl_for_resource_output {
 
     /// A builder for [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
@@ -1406,6 +1428,7 @@ impl GetWebAclOutput {
 pub mod get_web_acl_output {
 
     /// A builder for [`GetWebAclOutput`](crate::output::GetWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
@@ -1498,6 +1521,7 @@ impl GetSampledRequestsOutput {
 pub mod get_sampled_requests_output {
 
     /// A builder for [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampled_requests:
@@ -1590,6 +1614,7 @@ impl GetRuleGroupOutput {
 pub mod get_rule_group_output {
 
     /// A builder for [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -1660,6 +1685,7 @@ impl GetRegexPatternSetOutput {
 pub mod get_regex_pattern_set_output {
 
     /// A builder for [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
@@ -1734,6 +1760,7 @@ impl GetRateBasedStatementManagedKeysOutput {
 pub mod get_rate_based_statement_managed_keys_output {
 
     /// A builder for [`GetRateBasedStatementManagedKeysOutput`](crate::output::GetRateBasedStatementManagedKeysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_keys_ipv4:
@@ -1808,6 +1835,7 @@ impl GetPermissionPolicyOutput {
 pub mod get_permission_policy_output {
 
     /// A builder for [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1856,6 +1884,7 @@ impl GetMobileSdkReleaseOutput {
 pub mod get_mobile_sdk_release_output {
 
     /// A builder for [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mobile_sdk_release: std::option::Option<crate::model::MobileSdkRelease>,
@@ -1914,6 +1943,7 @@ impl GetManagedRuleSetOutput {
 pub mod get_managed_rule_set_output {
 
     /// A builder for [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_rule_set: std::option::Option<crate::model::ManagedRuleSet>,
@@ -1979,6 +2009,7 @@ impl GetLoggingConfigurationOutput {
 pub mod get_logging_configuration_output {
 
     /// A builder for [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -2037,6 +2068,7 @@ impl GetIpSetOutput {
 pub mod get_ip_set_output {
 
     /// A builder for [`GetIpSetOutput`](crate::output::GetIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
@@ -2097,6 +2129,7 @@ impl GenerateMobileSdkReleaseUrlOutput {
 pub mod generate_mobile_sdk_release_url_output {
 
     /// A builder for [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -2133,6 +2166,7 @@ pub struct DisassociateWebAclOutput {}
 pub mod disassociate_web_acl_output {
 
     /// A builder for [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2225,6 +2259,7 @@ impl DescribeManagedRuleGroupOutput {
 pub mod describe_managed_rule_group_output {
 
     /// A builder for [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_name: std::option::Option<std::string::String>,
@@ -2384,6 +2419,7 @@ pub struct DeleteWebAclOutput {}
 pub mod delete_web_acl_output {
 
     /// A builder for [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2408,6 +2444,7 @@ pub struct DeleteRuleGroupOutput {}
 pub mod delete_rule_group_output {
 
     /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2432,6 +2469,7 @@ pub struct DeleteRegexPatternSetOutput {}
 pub mod delete_regex_pattern_set_output {
 
     /// A builder for [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2456,6 +2494,7 @@ pub struct DeletePermissionPolicyOutput {}
 pub mod delete_permission_policy_output {
 
     /// A builder for [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2480,6 +2519,7 @@ pub struct DeleteLoggingConfigurationOutput {}
 pub mod delete_logging_configuration_output {
 
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2504,6 +2544,7 @@ pub struct DeleteIpSetOutput {}
 pub mod delete_ip_set_output {
 
     /// A builder for [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2538,6 +2579,7 @@ impl DeleteFirewallManagerRuleGroupsOutput {
 pub mod delete_firewall_manager_rule_groups_output {
 
     /// A builder for [`DeleteFirewallManagerRuleGroupsOutput`](crate::output::DeleteFirewallManagerRuleGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_web_acl_lock_token: std::option::Option<std::string::String>,
@@ -2589,6 +2631,7 @@ impl CreateWebAclOutput {
 pub mod create_web_acl_output {
 
     /// A builder for [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::WebAclSummary>,
@@ -2640,6 +2683,7 @@ impl CreateRuleGroupOutput {
 pub mod create_rule_group_output {
 
     /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::RuleGroupSummary>,
@@ -2691,6 +2735,7 @@ impl CreateRegexPatternSetOutput {
 pub mod create_regex_pattern_set_output {
 
     /// A builder for [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::RegexPatternSetSummary>,
@@ -2742,6 +2787,7 @@ impl CreateIpSetOutput {
 pub mod create_ip_set_output {
 
     /// A builder for [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::IpSetSummary>,
@@ -2793,6 +2839,7 @@ impl CheckCapacityOutput {
 pub mod check_capacity_output {
 
     /// A builder for [`CheckCapacityOutput`](crate::output::CheckCapacityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<i64>,
@@ -2831,6 +2878,7 @@ pub struct AssociateWebAclOutput {}
 pub mod associate_web_acl_output {
 
     /// A builder for [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

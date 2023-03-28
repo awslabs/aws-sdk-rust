@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_resource_input {
 
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -190,6 +191,7 @@ impl AddTagsToResourceInput {
 pub mod create_hapg_input {
 
     /// A builder for [`CreateHapgInput`](crate::input::CreateHapgInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
@@ -350,6 +352,7 @@ impl CreateHapgInput {
 pub mod create_hsm_input {
 
     /// A builder for [`CreateHsmInput`](crate::input::CreateHsmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -607,6 +610,7 @@ impl CreateHsmInput {
 pub mod create_luna_client_input {
 
     /// A builder for [`CreateLunaClientInput`](crate::input::CreateLunaClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
@@ -783,6 +787,7 @@ impl CreateLunaClientInput {
 pub mod delete_hapg_input {
 
     /// A builder for [`DeleteHapgInput`](crate::input::DeleteHapgInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -945,6 +950,7 @@ impl DeleteHapgInput {
 pub mod delete_hsm_input {
 
     /// A builder for [`DeleteHsmInput`](crate::input::DeleteHsmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -1105,6 +1111,7 @@ impl DeleteHsmInput {
 pub mod delete_luna_client_input {
 
     /// A builder for [`DeleteLunaClientInput`](crate::input::DeleteLunaClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -1269,6 +1276,7 @@ impl DeleteLunaClientInput {
 pub mod describe_hapg_input {
 
     /// A builder for [`DescribeHapgInput`](crate::input::DescribeHapgInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -1431,6 +1439,7 @@ impl DescribeHapgInput {
 pub mod describe_hsm_input {
 
     /// A builder for [`DescribeHsmInput`](crate::input::DescribeHsmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -1608,6 +1617,7 @@ impl DescribeHsmInput {
 pub mod describe_luna_client_input {
 
     /// A builder for [`DescribeLunaClientInput`](crate::input::DescribeLunaClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -1787,6 +1797,7 @@ impl DescribeLunaClientInput {
 pub mod get_config_input {
 
     /// A builder for [`GetConfigInput`](crate::input::GetConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -1983,6 +1994,7 @@ impl GetConfigInput {
 pub mod list_available_zones_input {
 
     /// A builder for [`ListAvailableZonesInput`](crate::input::ListAvailableZonesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2126,6 +2138,7 @@ impl ListAvailableZonesInput {
 pub mod list_hapgs_input {
 
     /// A builder for [`ListHapgsInput`](crate::input::ListHapgsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2286,6 +2299,7 @@ impl ListHapgsInput {
 pub mod list_hsms_input {
 
     /// A builder for [`ListHsmsInput`](crate::input::ListHsmsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2445,6 +2459,7 @@ impl ListHsmsInput {
 pub mod list_luna_clients_input {
 
     /// A builder for [`ListLunaClientsInput`](crate::input::ListLunaClientsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2607,6 +2622,7 @@ impl ListLunaClientsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2773,6 +2789,7 @@ impl ListTagsForResourceInput {
 pub mod modify_hapg_input {
 
     /// A builder for [`ModifyHapgInput`](crate::input::ModifyHapgInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -2968,6 +2985,7 @@ impl ModifyHapgInput {
 pub mod modify_hsm_input {
 
     /// A builder for [`ModifyHsmInput`](crate::input::ModifyHsmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -3190,6 +3208,7 @@ impl ModifyHsmInput {
 pub mod modify_luna_client_input {
 
     /// A builder for [`ModifyLunaClientInput`](crate::input::ModifyLunaClientInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -3366,6 +3385,7 @@ impl ModifyLunaClientInput {
 pub mod remove_tags_from_resource_input {
 
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

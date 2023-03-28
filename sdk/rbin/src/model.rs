@@ -476,6 +476,7 @@ impl ResourceTag {
 pub mod resource_tag {
 
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_key: std::option::Option<std::string::String>,
@@ -639,6 +640,7 @@ impl RetentionPeriod {
 pub mod retention_period {
 
     /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_period_value: std::option::Option<i32>,
@@ -789,6 +791,7 @@ impl LockConfiguration {
 pub mod lock_configuration {
 
     /// A builder for [`LockConfiguration`](crate::model::LockConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unlock_delay: std::option::Option<crate::model::UnlockDelay>,
@@ -847,6 +850,7 @@ impl UnlockDelay {
 pub mod unlock_delay {
 
     /// A builder for [`UnlockDelay`](crate::model::UnlockDelay).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unlock_delay_value: std::option::Option<i32>,
@@ -1089,6 +1093,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1182,6 +1187,7 @@ impl RuleSummary {
 pub mod rule_summary {
 
     /// A builder for [`RuleSummary`](crate::model::RuleSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,

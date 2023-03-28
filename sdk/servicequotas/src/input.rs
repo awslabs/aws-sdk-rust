@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_service_quota_template_input {
 
     /// A builder for [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -148,6 +149,7 @@ impl AssociateServiceQuotaTemplateInput {
 pub mod delete_service_quota_increase_request_from_template_input {
 
     /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -339,6 +341,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInput {
 pub mod disassociate_service_quota_template_input {
 
     /// A builder for [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -482,6 +485,7 @@ impl DisassociateServiceQuotaTemplateInput {
 pub mod get_association_for_service_quota_template_input {
 
     /// A builder for [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -625,6 +629,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
 pub mod get_aws_default_service_quota_input {
 
     /// A builder for [`GetAwsDefaultServiceQuotaInput`](crate::input::GetAwsDefaultServiceQuotaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -801,6 +806,7 @@ impl GetAwsDefaultServiceQuotaInput {
 pub mod get_requested_service_quota_change_input {
 
     /// A builder for [`GetRequestedServiceQuotaChangeInput`](crate::input::GetRequestedServiceQuotaChangeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -965,6 +971,7 @@ impl GetRequestedServiceQuotaChangeInput {
 pub mod get_service_quota_input {
 
     /// A builder for [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -1139,6 +1146,7 @@ impl GetServiceQuotaInput {
 pub mod get_service_quota_increase_request_from_template_input {
 
     /// A builder for [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -1330,6 +1338,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
 pub mod list_aws_default_service_quotas_input {
 
     /// A builder for [`ListAwsDefaultServiceQuotasInput`](crate::input::ListAwsDefaultServiceQuotasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -1518,6 +1527,7 @@ impl ListAwsDefaultServiceQuotasInput {
 pub mod list_requested_service_quota_change_history_input {
 
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryInput`](crate::input::ListRequestedServiceQuotaChangeHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -1721,6 +1731,7 @@ impl ListRequestedServiceQuotaChangeHistoryInput {
 pub mod list_requested_service_quota_change_history_by_quota_input {
 
     /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -1939,6 +1950,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
 pub mod list_service_quota_increase_requests_in_template_input {
 
     /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -2142,6 +2154,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
 pub mod list_service_quotas_input {
 
     /// A builder for [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -2330,6 +2343,7 @@ impl ListServiceQuotasInput {
 pub mod list_services_input {
 
     /// A builder for [`ListServicesInput`](crate::input::ListServicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2504,6 +2518,7 @@ impl ListServicesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2670,6 +2685,7 @@ impl ListTagsForResourceInput {
 pub mod put_service_quota_increase_request_into_template_input {
 
     /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quota_code: std::option::Option<std::string::String>,
@@ -2873,6 +2889,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
 pub mod request_service_quota_increase_input {
 
     /// A builder for [`RequestServiceQuotaIncreaseInput`](crate::input::RequestServiceQuotaIncreaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -3061,6 +3078,7 @@ impl RequestServiceQuotaIncreaseInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3244,6 +3262,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

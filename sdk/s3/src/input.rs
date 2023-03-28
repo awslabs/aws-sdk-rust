@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod abort_multipart_upload_input {
 
     /// A builder for [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -262,6 +263,7 @@ impl AbortMultipartUploadInput {
 pub mod complete_multipart_upload_input {
 
     /// A builder for [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -674,6 +676,7 @@ impl CompleteMultipartUploadInput {
 pub mod copy_object_input {
 
     /// A builder for [`CopyObjectInput`](crate::input::CopyObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
@@ -1615,6 +1618,7 @@ impl CopyObjectInput {
 pub mod create_bucket_input {
 
     /// A builder for [`CreateBucketInput`](crate::input::CreateBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
@@ -1927,6 +1931,7 @@ impl CreateBucketInput {
 pub mod create_multipart_upload_input {
 
     /// A builder for [`CreateMultipartUploadInput`](crate::input::CreateMultipartUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
@@ -2610,6 +2615,7 @@ impl CreateMultipartUploadInput {
 pub mod delete_bucket_input {
 
     /// A builder for [`DeleteBucketInput`](crate::input::DeleteBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2777,6 +2783,7 @@ impl DeleteBucketInput {
 pub mod delete_bucket_analytics_configuration_input {
 
     /// A builder for [`DeleteBucketAnalyticsConfigurationInput`](crate::input::DeleteBucketAnalyticsConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2985,6 +2992,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
 pub mod delete_bucket_cors_input {
 
     /// A builder for [`DeleteBucketCorsInput`](crate::input::DeleteBucketCorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3163,6 +3171,7 @@ impl DeleteBucketCorsInput {
 pub mod delete_bucket_encryption_input {
 
     /// A builder for [`DeleteBucketEncryptionInput`](crate::input::DeleteBucketEncryptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3342,6 +3351,7 @@ impl DeleteBucketEncryptionInput {
 pub mod delete_bucket_intelligent_tiering_configuration_input {
 
     /// A builder for [`DeleteBucketIntelligentTieringConfigurationInput`](crate::input::DeleteBucketIntelligentTieringConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3535,6 +3545,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
 pub mod delete_bucket_inventory_configuration_input {
 
     /// A builder for [`DeleteBucketInventoryConfigurationInput`](crate::input::DeleteBucketInventoryConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3743,6 +3754,7 @@ impl DeleteBucketInventoryConfigurationInput {
 pub mod delete_bucket_lifecycle_input {
 
     /// A builder for [`DeleteBucketLifecycleInput`](crate::input::DeleteBucketLifecycleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3922,6 +3934,7 @@ impl DeleteBucketLifecycleInput {
 pub mod delete_bucket_metrics_configuration_input {
 
     /// A builder for [`DeleteBucketMetricsConfigurationInput`](crate::input::DeleteBucketMetricsConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4130,6 +4143,7 @@ impl DeleteBucketMetricsConfigurationInput {
 pub mod delete_bucket_ownership_controls_input {
 
     /// A builder for [`DeleteBucketOwnershipControlsInput`](crate::input::DeleteBucketOwnershipControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4310,6 +4324,7 @@ impl DeleteBucketOwnershipControlsInput {
 pub mod delete_bucket_policy_input {
 
     /// A builder for [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4488,6 +4503,7 @@ impl DeleteBucketPolicyInput {
 pub mod delete_bucket_replication_input {
 
     /// A builder for [`DeleteBucketReplicationInput`](crate::input::DeleteBucketReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4667,6 +4683,7 @@ impl DeleteBucketReplicationInput {
 pub mod delete_bucket_tagging_input {
 
     /// A builder for [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4845,6 +4862,7 @@ impl DeleteBucketTaggingInput {
 pub mod delete_bucket_website_input {
 
     /// A builder for [`DeleteBucketWebsiteInput`](crate::input::DeleteBucketWebsiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5023,6 +5041,7 @@ impl DeleteBucketWebsiteInput {
 pub mod delete_object_input {
 
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5480,6 +5499,7 @@ impl DeleteObjectInput {
 pub mod delete_objects_input {
 
     /// A builder for [`DeleteObjectsInput`](crate::input::DeleteObjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5767,6 +5787,7 @@ impl DeleteObjectsInput {
 pub mod delete_object_tagging_input {
 
     /// A builder for [`DeleteObjectTaggingInput`](crate::input::DeleteObjectTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5997,6 +6018,7 @@ impl DeleteObjectTaggingInput {
 pub mod delete_public_access_block_input {
 
     /// A builder for [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -6176,6 +6198,7 @@ impl DeletePublicAccessBlockInput {
 pub mod get_bucket_accelerate_configuration_input {
 
     /// A builder for [`GetBucketAccelerateConfigurationInput`](crate::input::GetBucketAccelerateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -6356,6 +6379,7 @@ impl GetBucketAccelerateConfigurationInput {
 pub mod get_bucket_acl_input {
 
     /// A builder for [`GetBucketAclInput`](crate::input::GetBucketAclInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -6532,6 +6556,7 @@ impl GetBucketAclInput {
 pub mod get_bucket_analytics_configuration_input {
 
     /// A builder for [`GetBucketAnalyticsConfigurationInput`](crate::input::GetBucketAnalyticsConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -6741,6 +6766,7 @@ impl GetBucketAnalyticsConfigurationInput {
 pub mod get_bucket_cors_input {
 
     /// A builder for [`GetBucketCorsInput`](crate::input::GetBucketCorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -6917,6 +6943,7 @@ impl GetBucketCorsInput {
 pub mod get_bucket_encryption_input {
 
     /// A builder for [`GetBucketEncryptionInput`](crate::input::GetBucketEncryptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -7095,6 +7122,7 @@ impl GetBucketEncryptionInput {
 pub mod get_bucket_intelligent_tiering_configuration_input {
 
     /// A builder for [`GetBucketIntelligentTieringConfigurationInput`](crate::input::GetBucketIntelligentTieringConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -7288,6 +7316,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
 pub mod get_bucket_inventory_configuration_input {
 
     /// A builder for [`GetBucketInventoryConfigurationInput`](crate::input::GetBucketInventoryConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -7497,6 +7526,7 @@ impl GetBucketInventoryConfigurationInput {
 pub mod get_bucket_lifecycle_configuration_input {
 
     /// A builder for [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -7677,6 +7707,7 @@ impl GetBucketLifecycleConfigurationInput {
 pub mod get_bucket_location_input {
 
     /// A builder for [`GetBucketLocationInput`](crate::input::GetBucketLocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -7855,6 +7886,7 @@ impl GetBucketLocationInput {
 pub mod get_bucket_logging_input {
 
     /// A builder for [`GetBucketLoggingInput`](crate::input::GetBucketLoggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -8033,6 +8065,7 @@ impl GetBucketLoggingInput {
 pub mod get_bucket_metrics_configuration_input {
 
     /// A builder for [`GetBucketMetricsConfigurationInput`](crate::input::GetBucketMetricsConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -8242,6 +8275,7 @@ impl GetBucketMetricsConfigurationInput {
 pub mod get_bucket_notification_configuration_input {
 
     /// A builder for [`GetBucketNotificationConfigurationInput`](crate::input::GetBucketNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -8422,6 +8456,7 @@ impl GetBucketNotificationConfigurationInput {
 pub mod get_bucket_ownership_controls_input {
 
     /// A builder for [`GetBucketOwnershipControlsInput`](crate::input::GetBucketOwnershipControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -8601,6 +8636,7 @@ impl GetBucketOwnershipControlsInput {
 pub mod get_bucket_policy_input {
 
     /// A builder for [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -8777,6 +8813,7 @@ impl GetBucketPolicyInput {
 pub mod get_bucket_policy_status_input {
 
     /// A builder for [`GetBucketPolicyStatusInput`](crate::input::GetBucketPolicyStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -8956,6 +8993,7 @@ impl GetBucketPolicyStatusInput {
 pub mod get_bucket_replication_input {
 
     /// A builder for [`GetBucketReplicationInput`](crate::input::GetBucketReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9135,6 +9173,7 @@ impl GetBucketReplicationInput {
 pub mod get_bucket_request_payment_input {
 
     /// A builder for [`GetBucketRequestPaymentInput`](crate::input::GetBucketRequestPaymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9314,6 +9353,7 @@ impl GetBucketRequestPaymentInput {
 pub mod get_bucket_tagging_input {
 
     /// A builder for [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9492,6 +9532,7 @@ impl GetBucketTaggingInput {
 pub mod get_bucket_versioning_input {
 
     /// A builder for [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9670,6 +9711,7 @@ impl GetBucketVersioningInput {
 pub mod get_bucket_website_input {
 
     /// A builder for [`GetBucketWebsiteInput`](crate::input::GetBucketWebsiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -9848,6 +9890,7 @@ impl GetBucketWebsiteInput {
 pub mod get_object_input {
 
     /// A builder for [`GetObjectInput`](crate::input::GetObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -10669,6 +10712,7 @@ impl GetObjectInput {
 pub mod get_object_acl_input {
 
     /// A builder for [`GetObjectAclInput`](crate::input::GetObjectAclInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -10910,6 +10954,7 @@ impl GetObjectAclInput {
 pub mod get_object_attributes_input {
 
     /// A builder for [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -11266,6 +11311,7 @@ impl GetObjectAttributesInput {
 pub mod get_object_legal_hold_input {
 
     /// A builder for [`GetObjectLegalHoldInput`](crate::input::GetObjectLegalHoldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -11509,6 +11555,7 @@ impl GetObjectLegalHoldInput {
 pub mod get_object_lock_configuration_input {
 
     /// A builder for [`GetObjectLockConfigurationInput`](crate::input::GetObjectLockConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -11690,6 +11737,7 @@ impl GetObjectLockConfigurationInput {
 pub mod get_object_retention_input {
 
     /// A builder for [`GetObjectRetentionInput`](crate::input::GetObjectRetentionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -11933,6 +11981,7 @@ impl GetObjectRetentionInput {
 pub mod get_object_tagging_input {
 
     /// A builder for [`GetObjectTaggingInput`](crate::input::GetObjectTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -12178,6 +12227,7 @@ impl GetObjectTaggingInput {
 pub mod get_object_torrent_input {
 
     /// A builder for [`GetObjectTorrentInput`](crate::input::GetObjectTorrentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -12402,6 +12452,7 @@ impl GetObjectTorrentInput {
 pub mod get_public_access_block_input {
 
     /// A builder for [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -12581,6 +12632,7 @@ impl GetPublicAccessBlockInput {
 pub mod head_bucket_input {
 
     /// A builder for [`HeadBucketInput`](crate::input::HeadBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -12752,6 +12804,7 @@ impl HeadBucketInput {
 pub mod head_object_input {
 
     /// A builder for [`HeadObjectInput`](crate::input::HeadObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -13164,6 +13217,7 @@ impl HeadObjectInput {
 pub mod list_bucket_analytics_configurations_input {
 
     /// A builder for [`ListBucketAnalyticsConfigurationsInput`](crate::input::ListBucketAnalyticsConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -13368,6 +13422,7 @@ impl ListBucketAnalyticsConfigurationsInput {
 pub mod list_bucket_intelligent_tiering_configurations_input {
 
     /// A builder for [`ListBucketIntelligentTieringConfigurationsInput`](crate::input::ListBucketIntelligentTieringConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -13557,6 +13612,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
 pub mod list_bucket_inventory_configurations_input {
 
     /// A builder for [`ListBucketInventoryConfigurationsInput`](crate::input::ListBucketInventoryConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -13761,6 +13817,7 @@ impl ListBucketInventoryConfigurationsInput {
 pub mod list_bucket_metrics_configurations_input {
 
     /// A builder for [`ListBucketMetricsConfigurationsInput`](crate::input::ListBucketMetricsConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -13965,6 +14022,7 @@ impl ListBucketMetricsConfigurationsInput {
 pub mod list_buckets_input {
 
     /// A builder for [`ListBucketsInput`](crate::input::ListBucketsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -14101,6 +14159,7 @@ impl ListBucketsInput {
 pub mod list_multipart_uploads_input {
 
     /// A builder for [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -14405,6 +14464,7 @@ impl ListMultipartUploadsInput {
 pub mod list_objects_input {
 
     /// A builder for [`ListObjectsInput`](crate::input::ListObjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -14691,6 +14751,7 @@ impl ListObjectsInput {
 pub mod list_objects_v2_input {
 
     /// A builder for [`ListObjectsV2Input`](crate::input::ListObjectsV2Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -15022,6 +15083,7 @@ impl ListObjectsV2Input {
 pub mod list_object_versions_input {
 
     /// A builder for [`ListObjectVersionsInput`](crate::input::ListObjectVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -15319,6 +15381,7 @@ impl ListObjectVersionsInput {
 pub mod list_parts_input {
 
     /// A builder for [`ListPartsInput`](crate::input::ListPartsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -15670,6 +15733,7 @@ impl ListPartsInput {
 pub mod put_bucket_accelerate_configuration_input {
 
     /// A builder for [`PutBucketAccelerateConfigurationInput`](crate::input::PutBucketAccelerateConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -15922,6 +15986,7 @@ impl PutBucketAccelerateConfigurationInput {
 pub mod put_bucket_acl_input {
 
     /// A builder for [`PutBucketAclInput`](crate::input::PutBucketAclInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
@@ -16268,6 +16333,7 @@ impl PutBucketAclInput {
 pub mod put_bucket_analytics_configuration_input {
 
     /// A builder for [`PutBucketAnalyticsConfigurationInput`](crate::input::PutBucketAnalyticsConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -16511,6 +16577,7 @@ impl PutBucketAnalyticsConfigurationInput {
 pub mod put_bucket_cors_input {
 
     /// A builder for [`PutBucketCorsInput`](crate::input::PutBucketCorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -16771,6 +16838,7 @@ impl PutBucketCorsInput {
 pub mod put_bucket_encryption_input {
 
     /// A builder for [`PutBucketEncryptionInput`](crate::input::PutBucketEncryptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -17037,6 +17105,7 @@ impl PutBucketEncryptionInput {
 pub mod put_bucket_intelligent_tiering_configuration_input {
 
     /// A builder for [`PutBucketIntelligentTieringConfigurationInput`](crate::input::PutBucketIntelligentTieringConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -17262,6 +17331,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
 pub mod put_bucket_inventory_configuration_input {
 
     /// A builder for [`PutBucketInventoryConfigurationInput`](crate::input::PutBucketInventoryConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -17505,6 +17575,7 @@ impl PutBucketInventoryConfigurationInput {
 pub mod put_bucket_lifecycle_configuration_input {
 
     /// A builder for [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -17759,6 +17830,7 @@ impl PutBucketLifecycleConfigurationInput {
 pub mod put_bucket_logging_input {
 
     /// A builder for [`PutBucketLoggingInput`](crate::input::PutBucketLoggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -18021,6 +18093,7 @@ impl PutBucketLoggingInput {
 pub mod put_bucket_metrics_configuration_input {
 
     /// A builder for [`PutBucketMetricsConfigurationInput`](crate::input::PutBucketMetricsConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -18260,6 +18333,7 @@ impl PutBucketMetricsConfigurationInput {
 pub mod put_bucket_notification_configuration_input {
 
     /// A builder for [`PutBucketNotificationConfigurationInput`](crate::input::PutBucketNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -18487,6 +18561,7 @@ impl PutBucketNotificationConfigurationInput {
 pub mod put_bucket_ownership_controls_input {
 
     /// A builder for [`PutBucketOwnershipControlsInput`](crate::input::PutBucketOwnershipControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -18729,6 +18804,7 @@ impl PutBucketOwnershipControlsInput {
 pub mod put_bucket_policy_input {
 
     /// A builder for [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -19001,6 +19077,7 @@ impl PutBucketPolicyInput {
 pub mod put_bucket_replication_input {
 
     /// A builder for [`PutBucketReplicationInput`](crate::input::PutBucketReplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -19280,6 +19357,7 @@ impl PutBucketReplicationInput {
 pub mod put_bucket_request_payment_input {
 
     /// A builder for [`PutBucketRequestPaymentInput`](crate::input::PutBucketRequestPaymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -19547,6 +19625,7 @@ impl PutBucketRequestPaymentInput {
 pub mod put_bucket_tagging_input {
 
     /// A builder for [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -19804,6 +19883,7 @@ impl PutBucketTaggingInput {
 pub mod put_bucket_versioning_input {
 
     /// A builder for [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -20082,6 +20162,7 @@ impl PutBucketVersioningInput {
 pub mod put_bucket_website_input {
 
     /// A builder for [`PutBucketWebsiteInput`](crate::input::PutBucketWebsiteInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -20344,6 +20425,7 @@ impl PutBucketWebsiteInput {
 pub mod put_object_input {
 
     /// A builder for [`PutObjectInput`](crate::input::PutObjectInput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
@@ -21372,6 +21454,7 @@ impl PutObjectInput {
 pub mod put_object_acl_input {
 
     /// A builder for [`PutObjectAclInput`](crate::input::PutObjectAclInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
@@ -21795,6 +21878,7 @@ impl PutObjectAclInput {
 pub mod put_object_legal_hold_input {
 
     /// A builder for [`PutObjectLegalHoldInput`](crate::input::PutObjectLegalHoldInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -22120,6 +22204,7 @@ impl PutObjectLegalHoldInput {
 pub mod put_object_lock_configuration_input {
 
     /// A builder for [`PutObjectLockConfigurationInput`](crate::input::PutObjectLockConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -22414,6 +22499,7 @@ impl PutObjectLockConfigurationInput {
 pub mod put_object_retention_input {
 
     /// A builder for [`PutObjectRetentionInput`](crate::input::PutObjectRetentionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -22751,6 +22837,7 @@ impl PutObjectRetentionInput {
 pub mod put_object_tagging_input {
 
     /// A builder for [`PutObjectTaggingInput`](crate::input::PutObjectTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -23075,6 +23162,7 @@ impl PutObjectTaggingInput {
 pub mod put_public_access_block_input {
 
     /// A builder for [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -23342,6 +23430,7 @@ impl PutPublicAccessBlockInput {
 pub mod restore_object_input {
 
     /// A builder for [`RestoreObjectInput`](crate::input::RestoreObjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -23652,6 +23741,7 @@ impl RestoreObjectInput {
 pub mod select_object_content_input {
 
     /// A builder for [`SelectObjectContentInput`](crate::input::SelectObjectContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -24075,6 +24165,7 @@ impl SelectObjectContentInput {
 pub mod upload_part_input {
 
     /// A builder for [`UploadPartInput`](crate::input::UploadPartInput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -24794,6 +24885,7 @@ impl UploadPartInput {
 pub mod upload_part_copy_input {
 
     /// A builder for [`UploadPartCopyInput`](crate::input::UploadPartCopyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -25371,6 +25463,7 @@ impl UploadPartCopyInput {
 pub mod write_get_object_response_input {
 
     /// A builder for [`WriteGetObjectResponseInput`](crate::input::WriteGetObjectResponseInput).
+    #[non_exhaustive]
     #[derive(std::default::Default)]
     pub struct Builder {
         pub(crate) request_route: std::option::Option<std::string::String>,

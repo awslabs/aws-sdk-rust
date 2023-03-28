@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_put_metrics_input {
 
     /// A builder for [`BatchPutMetricsInput`](crate::input::BatchPutMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trial_component_name: std::option::Option<std::string::String>,

@@ -18,6 +18,7 @@ impl AnswerMachineDetectionConfig {
 pub mod answer_machine_detection_config {
 
     /// A builder for [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_answer_machine_detection: std::option::Option<bool>,
@@ -124,6 +125,7 @@ impl PredictiveDialerConfig {
 pub mod predictive_dialer_config {
 
     /// A builder for [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth_allocation: std::option::Option<f64>,
@@ -172,6 +174,7 @@ impl ProgressiveDialerConfig {
 pub mod progressive_dialer_config {
 
     /// A builder for [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth_allocation: std::option::Option<f64>,
@@ -341,6 +344,7 @@ impl InstanceOnboardingJobStatus {
 pub mod instance_onboarding_job_status {
 
     /// A builder for [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
@@ -664,6 +668,7 @@ impl EncryptionConfig {
 pub mod encryption_config {
 
     /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -838,6 +843,7 @@ impl FailedRequest {
 pub mod failed_request {
 
     /// A builder for [`FailedRequest`](crate::model::FailedRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1015,6 +1021,7 @@ impl SuccessfulRequest {
 pub mod successful_request {
 
     /// A builder for [`SuccessfulRequest`](crate::model::SuccessfulRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1110,6 +1117,7 @@ impl std::fmt::Debug for DialRequest {
 pub mod dial_request {
 
     /// A builder for [`DialRequest`](crate::model::DialRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1245,6 +1253,7 @@ impl CampaignSummary {
 pub mod campaign_summary {
 
     /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1332,6 +1341,7 @@ impl CampaignFilters {
 pub mod campaign_filters {
 
     /// A builder for [`CampaignFilters`](crate::model::CampaignFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id_filter: std::option::Option<crate::model::InstanceIdFilter>,
@@ -1390,6 +1400,7 @@ impl InstanceIdFilter {
 pub mod instance_id_filter {
 
     /// A builder for [`InstanceIdFilter`](crate::model::InstanceIdFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1554,6 +1565,7 @@ impl InstanceConfig {
 pub mod instance_config {
 
     /// A builder for [`InstanceConfig`](crate::model::InstanceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
@@ -1644,6 +1656,7 @@ impl FailedCampaignStateResponse {
 pub mod failed_campaign_state_response {
 
     /// A builder for [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -1810,6 +1823,7 @@ impl SuccessfulCampaignStateResponse {
 pub mod successful_campaign_state_response {
 
     /// A builder for [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -1919,6 +1933,7 @@ impl Campaign {
 pub mod campaign {
 
     /// A builder for [`Campaign`](crate::model::Campaign).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2089,6 +2104,7 @@ impl OutboundCallConfig {
 pub mod outbound_call_config {
 
     /// A builder for [`OutboundCallConfig`](crate::model::OutboundCallConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_contact_flow_id: std::option::Option<std::string::String>,

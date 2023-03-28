@@ -7,6 +7,7 @@ pub struct UpdateWorkspaceImagePermissionOutput {}
 pub mod update_workspace_image_permission_output {
 
     /// A builder for [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateWorkspaceBundleOutput {}
 pub mod update_workspace_bundle_output {
 
     /// A builder for [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateRulesOfIpGroupOutput {}
 pub mod update_rules_of_ip_group_output {
 
     /// A builder for [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UpdateConnectionAliasPermissionOutput {}
 pub mod update_connection_alias_permission_output {
 
     /// A builder for [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct UpdateConnectClientAddInOutput {}
 pub mod update_connect_client_add_in_output {
 
     /// A builder for [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -140,6 +145,7 @@ impl TerminateWorkspacesOutput {
 pub mod terminate_workspaces_output {
 
     /// A builder for [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_requests:
@@ -204,6 +210,7 @@ impl StopWorkspacesOutput {
 pub mod stop_workspaces_output {
 
     /// A builder for [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_requests:
@@ -268,6 +275,7 @@ impl StartWorkspacesOutput {
 pub mod start_workspaces_output {
 
     /// A builder for [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_requests:
@@ -319,6 +327,7 @@ pub struct RevokeIpRulesOutput {}
 pub mod revoke_ip_rules_output {
 
     /// A builder for [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -343,6 +352,7 @@ pub struct RestoreWorkspaceOutput {}
 pub mod restore_workspace_output {
 
     /// A builder for [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -367,6 +377,7 @@ pub struct RegisterWorkspaceDirectoryOutput {}
 pub mod register_workspace_directory_output {
 
     /// A builder for [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -404,6 +415,7 @@ impl RebuildWorkspacesOutput {
 pub mod rebuild_workspaces_output {
 
     /// A builder for [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_requests:
@@ -468,6 +480,7 @@ impl RebootWorkspacesOutput {
 pub mod reboot_workspaces_output {
 
     /// A builder for [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_requests:
@@ -519,6 +532,7 @@ pub struct ModifyWorkspaceStateOutput {}
 pub mod modify_workspace_state_output {
 
     /// A builder for [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -543,6 +557,7 @@ pub struct ModifyWorkspacePropertiesOutput {}
 pub mod modify_workspace_properties_output {
 
     /// A builder for [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -567,6 +582,7 @@ pub struct ModifyWorkspaceCreationPropertiesOutput {}
 pub mod modify_workspace_creation_properties_output {
 
     /// A builder for [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -591,6 +607,7 @@ pub struct ModifyWorkspaceAccessPropertiesOutput {}
 pub mod modify_workspace_access_properties_output {
 
     /// A builder for [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -615,6 +632,7 @@ pub struct ModifySelfservicePermissionsOutput {}
 pub mod modify_selfservice_permissions_output {
 
     /// A builder for [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -639,6 +657,7 @@ pub struct ModifySamlPropertiesOutput {}
 pub mod modify_saml_properties_output {
 
     /// A builder for [`ModifySamlPropertiesOutput`](crate::output::ModifySamlPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -663,6 +682,7 @@ pub struct ModifyClientPropertiesOutput {}
 pub mod modify_client_properties_output {
 
     /// A builder for [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -687,6 +707,7 @@ pub struct ModifyCertificateBasedAuthPropertiesOutput {}
 pub mod modify_certificate_based_auth_properties_output {
 
     /// A builder for [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -711,6 +732,7 @@ pub struct ModifyAccountOutput {}
 pub mod modify_account_output {
 
     /// A builder for [`ModifyAccountOutput`](crate::output::ModifyAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -752,6 +774,7 @@ impl MigrateWorkspaceOutput {
 pub mod migrate_workspace_output {
 
     /// A builder for [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_workspace_id: std::option::Option<std::string::String>,
@@ -825,6 +848,7 @@ impl ListAvailableManagementCidrRangesOutput {
 pub mod list_available_management_cidr_ranges_output {
 
     /// A builder for [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) management_cidr_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -894,6 +918,7 @@ impl ImportWorkspaceImageOutput {
 pub mod import_workspace_image_output {
 
     /// A builder for [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -989,6 +1014,7 @@ impl ImportClientBrandingOutput {
 pub mod import_client_branding_output {
 
     /// A builder for [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type_windows:
@@ -1125,6 +1151,7 @@ pub struct DisassociateIpGroupsOutput {}
 pub mod disassociate_ip_groups_output {
 
     /// A builder for [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1149,6 +1176,7 @@ pub struct DisassociateConnectionAliasOutput {}
 pub mod disassociate_connection_alias_output {
 
     /// A builder for [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1190,6 +1218,7 @@ impl DescribeWorkspaceSnapshotsOutput {
 pub mod describe_workspace_snapshots_output {
 
     /// A builder for [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rebuild_snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -1278,6 +1307,7 @@ impl DescribeWorkspacesConnectionStatusOutput {
 pub mod describe_workspaces_connection_status_output {
 
     /// A builder for [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspaces_connection_status:
@@ -1360,6 +1390,7 @@ impl DescribeWorkspacesOutput {
 pub mod describe_workspaces_output {
 
     /// A builder for [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
@@ -1438,6 +1469,7 @@ impl DescribeWorkspaceImagesOutput {
 pub mod describe_workspace_images_output {
 
     /// A builder for [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::WorkspaceImage>>,
@@ -1521,6 +1553,7 @@ impl DescribeWorkspaceImagePermissionsOutput {
 pub mod describe_workspace_image_permissions_output {
 
     /// A builder for [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -1610,6 +1643,7 @@ impl DescribeWorkspaceDirectoriesOutput {
 pub mod describe_workspace_directories_output {
 
     /// A builder for [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directories:
@@ -1687,6 +1721,7 @@ impl DescribeWorkspaceBundlesOutput {
 pub mod describe_workspace_bundles_output {
 
     /// A builder for [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundles: std::option::Option<std::vec::Vec<crate::model::WorkspaceBundle>>,
@@ -1756,6 +1791,7 @@ impl DescribeTagsOutput {
 pub mod describe_tags_output {
 
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1820,6 +1856,7 @@ impl DescribeIpGroupsOutput {
 pub mod describe_ip_groups_output {
 
     /// A builder for [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::vec::Vec<crate::model::WorkspacesIpGroup>>,
@@ -1906,6 +1943,7 @@ impl DescribeConnectionAliasPermissionsOutput {
 pub mod describe_connection_alias_permissions_output {
 
     /// A builder for [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -1998,6 +2036,7 @@ impl DescribeConnectionAliasesOutput {
 pub mod describe_connection_aliases_output {
 
     /// A builder for [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_aliases:
@@ -2075,6 +2114,7 @@ impl DescribeConnectClientAddInsOutput {
 pub mod describe_connect_client_add_ins_output {
 
     /// A builder for [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_ins: std::option::Option<std::vec::Vec<crate::model::ConnectClientAddIn>>,
@@ -2147,6 +2187,7 @@ impl DescribeClientPropertiesOutput {
 pub mod describe_client_properties_output {
 
     /// A builder for [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_properties_list:
@@ -2255,6 +2296,7 @@ impl DescribeClientBrandingOutput {
 pub mod describe_client_branding_output {
 
     /// A builder for [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type_windows:
@@ -2411,6 +2453,7 @@ impl DescribeAccountModificationsOutput {
 pub mod describe_account_modifications_output {
 
     /// A builder for [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_modifications:
@@ -2493,6 +2536,7 @@ impl DescribeAccountOutput {
 pub mod describe_account_output {
 
     /// A builder for [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dedicated_tenancy_support:
@@ -2560,6 +2604,7 @@ pub struct DeregisterWorkspaceDirectoryOutput {}
 pub mod deregister_workspace_directory_output {
 
     /// A builder for [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2584,6 +2629,7 @@ pub struct DeleteWorkspaceImageOutput {}
 pub mod delete_workspace_image_output {
 
     /// A builder for [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2608,6 +2654,7 @@ pub struct DeleteWorkspaceBundleOutput {}
 pub mod delete_workspace_bundle_output {
 
     /// A builder for [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2632,6 +2679,7 @@ pub struct DeleteTagsOutput {}
 pub mod delete_tags_output {
 
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2656,6 +2704,7 @@ pub struct DeleteIpGroupOutput {}
 pub mod delete_ip_group_output {
 
     /// A builder for [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2680,6 +2729,7 @@ pub struct DeleteConnectionAliasOutput {}
 pub mod delete_connection_alias_output {
 
     /// A builder for [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2704,6 +2754,7 @@ pub struct DeleteConnectClientAddInOutput {}
 pub mod delete_connect_client_add_in_output {
 
     /// A builder for [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2728,6 +2779,7 @@ pub struct DeleteClientBrandingOutput {}
 pub mod delete_client_branding_output {
 
     /// A builder for [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2774,6 +2826,7 @@ impl CreateWorkspacesOutput {
 pub mod create_workspaces_output {
 
     /// A builder for [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_requests:
@@ -2909,6 +2962,7 @@ impl CreateWorkspaceImageOutput {
 pub mod create_workspace_image_output {
 
     /// A builder for [`CreateWorkspaceImageOutput`](crate::output::CreateWorkspaceImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -3060,6 +3114,7 @@ impl CreateWorkspaceBundleOutput {
 pub mod create_workspace_bundle_output {
 
     /// A builder for [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_bundle: std::option::Option<crate::model::WorkspaceBundle>,
@@ -3111,6 +3166,7 @@ impl CreateUpdatedWorkspaceImageOutput {
 pub mod create_updated_workspace_image_output {
 
     /// A builder for [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -3149,6 +3205,7 @@ pub struct CreateTagsOutput {}
 pub mod create_tags_output {
 
     /// A builder for [`CreateTagsOutput`](crate::output::CreateTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3196,6 +3253,7 @@ impl CreateStandbyWorkspacesOutput {
 pub mod create_standby_workspaces_output {
 
     /// A builder for [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_standby_requests:
@@ -3286,6 +3344,7 @@ impl CreateIpGroupOutput {
 pub mod create_ip_group_output {
 
     /// A builder for [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -3334,6 +3393,7 @@ impl CreateConnectionAliasOutput {
 pub mod create_connection_alias_output {
 
     /// A builder for [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -3382,6 +3442,7 @@ impl CreateConnectClientAddInOutput {
 pub mod create_connect_client_add_in_output {
 
     /// A builder for [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_in_id: std::option::Option<std::string::String>,
@@ -3430,6 +3491,7 @@ impl CopyWorkspaceImageOutput {
 pub mod copy_workspace_image_output {
 
     /// A builder for [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -3468,6 +3530,7 @@ pub struct AuthorizeIpRulesOutput {}
 pub mod authorize_ip_rules_output {
 
     /// A builder for [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3492,6 +3555,7 @@ pub struct AssociateIpGroupsOutput {}
 pub mod associate_ip_groups_output {
 
     /// A builder for [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3526,6 +3590,7 @@ impl AssociateConnectionAliasOutput {
 pub mod associate_connection_alias_output {
 
     /// A builder for [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_identifier: std::option::Option<std::string::String>,

@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -274,6 +275,7 @@ impl MessageReviewHandler {
 pub mod message_review_handler {
 
     /// A builder for [`MessageReviewHandler`](crate::model::MessageReviewHandler).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -584,6 +586,7 @@ impl FirehoseDestinationConfiguration {
 pub mod firehose_destination_configuration {
 
     /// A builder for [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -635,6 +638,7 @@ impl CloudWatchLogsDestinationConfiguration {
 pub mod cloud_watch_logs_destination_configuration {
 
     /// A builder for [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -686,6 +690,7 @@ impl S3DestinationConfiguration {
 pub mod s3_destination_configuration {
 
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -789,6 +794,7 @@ impl RoomSummary {
 pub mod room_summary {
 
     /// A builder for [`RoomSummary`](crate::model::RoomSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1015,6 +1021,7 @@ impl LoggingConfigurationSummary {
 pub mod logging_configuration_summary {
 
     /// A builder for [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

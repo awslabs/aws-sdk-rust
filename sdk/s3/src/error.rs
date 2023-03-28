@@ -635,6 +635,7 @@ impl std::error::Error for ObjectAlreadyInActiveTierError {}
 pub mod object_already_in_active_tier_error {
 
     /// A builder for [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1295,6 +1296,7 @@ impl std::error::Error for NoSuchKey {}
 pub mod no_such_key {
 
     /// A builder for [`NoSuchKey`](crate::error::NoSuchKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3576,6 +3578,7 @@ impl std::error::Error for NoSuchBucket {}
 pub mod no_such_bucket {
 
     /// A builder for [`NoSuchBucket`](crate::error::NoSuchBucket).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4470,6 +4473,7 @@ impl std::error::Error for NotFound {}
 pub mod not_found {
 
     /// A builder for [`NotFound`](crate::error::NotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5566,6 +5570,7 @@ impl std::error::Error for InvalidObjectState {}
 pub mod invalid_object_state {
 
     /// A builder for [`InvalidObjectState`](crate::error::InvalidObjectState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
@@ -9612,6 +9617,7 @@ impl std::error::Error for BucketAlreadyOwnedByYou {}
 pub mod bucket_already_owned_by_you {
 
     /// A builder for [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9672,6 +9678,7 @@ impl std::error::Error for BucketAlreadyExists {}
 pub mod bucket_already_exists {
 
     /// A builder for [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9840,6 +9847,7 @@ impl std::error::Error for ObjectNotInActiveTierError {}
 pub mod object_not_in_active_tier_error {
 
     /// A builder for [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -10110,6 +10118,7 @@ impl std::error::Error for NoSuchUpload {}
 pub mod no_such_upload {
 
     /// A builder for [`NoSuchUpload`](crate::error::NoSuchUpload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

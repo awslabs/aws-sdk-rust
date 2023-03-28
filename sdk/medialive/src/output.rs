@@ -18,6 +18,7 @@ impl UpdateReservationOutput {
 pub mod update_reservation_output {
 
     /// A builder for [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation: std::option::Option<crate::model::Reservation>,
@@ -69,6 +70,7 @@ impl UpdateMultiplexProgramOutput {
 pub mod update_multiplex_program_output {
 
     /// A builder for [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
@@ -120,6 +122,7 @@ impl UpdateMultiplexOutput {
 pub mod update_multiplex_output {
 
     /// A builder for [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex: std::option::Option<crate::model::Multiplex>,
@@ -171,6 +174,7 @@ impl UpdateInputSecurityGroupOutput {
 pub mod update_input_security_group_output {
 
     /// A builder for [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group: std::option::Option<crate::model::InputSecurityGroup>,
@@ -307,6 +311,7 @@ impl UpdateInputDeviceOutput {
 pub mod update_input_device_output {
 
     /// A builder for [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -515,6 +520,7 @@ impl UpdateInputOutput {
 pub mod update_input_output {
 
     /// A builder for [`UpdateInputOutput`](crate::output::UpdateInputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::Input>,
@@ -561,6 +567,7 @@ impl UpdateChannelClassOutput {
 pub mod update_channel_class_output {
 
     /// A builder for [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
@@ -609,6 +616,7 @@ impl UpdateChannelOutput {
 pub mod update_channel_output {
 
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
@@ -647,6 +655,7 @@ pub struct TransferInputDeviceOutput {}
 pub mod transfer_input_device_output {
 
     /// A builder for [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -748,6 +757,7 @@ impl StopMultiplexOutput {
 pub mod stop_multiplex_output {
 
     /// A builder for [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1071,6 +1081,7 @@ impl StopChannelOutput {
 pub mod stop_channel_output {
 
     /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1469,6 +1480,7 @@ impl StartMultiplexOutput {
 pub mod start_multiplex_output {
 
     /// A builder for [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1657,6 +1669,7 @@ pub struct StartInputDeviceMaintenanceWindowOutput {}
 pub mod start_input_device_maintenance_window_output {
 
     /// A builder for [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1816,6 +1829,7 @@ impl StartChannelOutput {
 pub mod start_channel_output {
 
     /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2137,6 +2151,7 @@ pub struct RejectInputDeviceTransferOutput {}
 pub mod reject_input_device_transfer_output {
 
     /// A builder for [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2161,6 +2176,7 @@ pub struct RebootInputDeviceOutput {}
 pub mod reboot_input_device_output {
 
     /// A builder for [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2195,6 +2211,7 @@ impl PurchaseOfferingOutput {
 pub mod purchase_offering_output {
 
     /// A builder for [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation: std::option::Option<crate::model::Reservation>,
@@ -2250,6 +2267,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -2320,6 +2338,7 @@ impl ListReservationsOutput {
 pub mod list_reservations_output {
 
     /// A builder for [`ListReservationsOutput`](crate::output::ListReservationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2396,6 +2415,7 @@ impl ListOfferingsOutput {
 pub mod list_offerings_output {
 
     /// A builder for [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2475,6 +2495,7 @@ impl ListMultiplexProgramsOutput {
 pub mod list_multiplex_programs_output {
 
     /// A builder for [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_programs:
@@ -2552,6 +2573,7 @@ impl ListMultiplexesOutput {
 pub mod list_multiplexes_output {
 
     /// A builder for [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplexes: std::option::Option<std::vec::Vec<crate::model::MultiplexSummary>>,
@@ -2630,6 +2652,7 @@ impl ListInputSecurityGroupsOutput {
 pub mod list_input_security_groups_output {
 
     /// A builder for [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_security_groups:
@@ -2707,6 +2730,7 @@ impl ListInputsOutput {
 pub mod list_inputs_output {
 
     /// A builder for [`ListInputsOutput`](crate::output::ListInputsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
@@ -2786,6 +2810,7 @@ impl ListInputDeviceTransfersOutput {
 pub mod list_input_device_transfers_output {
 
     /// A builder for [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_device_transfers:
@@ -2866,6 +2891,7 @@ impl ListInputDevicesOutput {
 pub mod list_input_devices_output {
 
     /// A builder for [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_devices:
@@ -2943,6 +2969,7 @@ impl ListChannelsOutput {
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
@@ -3019,6 +3046,7 @@ impl DescribeScheduleOutput {
 pub mod describe_schedule_output {
 
     /// A builder for [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3221,6 +3249,7 @@ impl DescribeReservationOutput {
 pub mod describe_reservation_output {
 
     /// A builder for [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3602,6 +3631,7 @@ impl DescribeOfferingOutput {
 pub mod describe_offering_output {
 
     /// A builder for [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3825,6 +3855,7 @@ impl DescribeMultiplexProgramOutput {
 pub mod describe_multiplex_program_output {
 
     /// A builder for [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -4015,6 +4046,7 @@ impl DescribeMultiplexOutput {
 pub mod describe_multiplex_output {
 
     /// A builder for [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4252,6 +4284,7 @@ impl DescribeInputSecurityGroupOutput {
 pub mod describe_input_security_group_output {
 
     /// A builder for [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4426,6 +4459,7 @@ impl DescribeInputDeviceThumbnailOutput {
 pub mod describe_input_device_thumbnail_output {
 
     /// A builder for [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -4616,6 +4650,7 @@ impl DescribeInputDeviceOutput {
 pub mod describe_input_device_output {
 
     /// A builder for [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4933,6 +4968,7 @@ impl DescribeInputOutput {
 pub mod describe_input_output {
 
     /// A builder for [`DescribeInputOutput`](crate::output::DescribeInputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5374,6 +5410,7 @@ impl DescribeChannelOutput {
 pub mod describe_channel_output {
 
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5695,6 +5732,7 @@ pub struct DeleteTagsOutput {}
 pub mod delete_tags_output {
 
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5719,6 +5757,7 @@ pub struct DeleteScheduleOutput {}
 pub mod delete_schedule_output {
 
     /// A builder for [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5885,6 +5924,7 @@ impl DeleteReservationOutput {
 pub mod delete_reservation_output {
 
     /// A builder for [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6230,6 +6270,7 @@ impl DeleteMultiplexProgramOutput {
 pub mod delete_multiplex_program_output {
 
     /// A builder for [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -6420,6 +6461,7 @@ impl DeleteMultiplexOutput {
 pub mod delete_multiplex_output {
 
     /// A builder for [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6608,6 +6650,7 @@ pub struct DeleteInputSecurityGroupOutput {}
 pub mod delete_input_security_group_output {
 
     /// A builder for [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6632,6 +6675,7 @@ pub struct DeleteInputOutput {}
 pub mod delete_input_output {
 
     /// A builder for [`DeleteInputOutput`](crate::output::DeleteInputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6791,6 +6835,7 @@ impl DeleteChannelOutput {
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7112,6 +7157,7 @@ pub struct CreateTagsOutput {}
 pub mod create_tags_output {
 
     /// A builder for [`CreateTagsOutput`](crate::output::CreateTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7146,6 +7192,7 @@ impl CreatePartnerInputOutput {
 pub mod create_partner_input_output {
 
     /// A builder for [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::Input>,
@@ -7192,6 +7239,7 @@ impl CreateMultiplexProgramOutput {
 pub mod create_multiplex_program_output {
 
     /// A builder for [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_program: std::option::Option<crate::model::MultiplexProgram>,
@@ -7243,6 +7291,7 @@ impl CreateMultiplexOutput {
 pub mod create_multiplex_output {
 
     /// A builder for [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex: std::option::Option<crate::model::Multiplex>,
@@ -7294,6 +7343,7 @@ impl CreateInputSecurityGroupOutput {
 pub mod create_input_security_group_output {
 
     /// A builder for [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group: std::option::Option<crate::model::InputSecurityGroup>,
@@ -7345,6 +7395,7 @@ impl CreateInputOutput {
 pub mod create_input_output {
 
     /// A builder for [`CreateInputOutput`](crate::output::CreateInputOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::Input>,
@@ -7391,6 +7442,7 @@ impl CreateChannelOutput {
 pub mod create_channel_output {
 
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
@@ -7429,6 +7481,7 @@ pub struct ClaimDeviceOutput {}
 pub mod claim_device_output {
 
     /// A builder for [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7453,6 +7506,7 @@ pub struct CancelInputDeviceTransferOutput {}
 pub mod cancel_input_device_transfer_output {
 
     /// A builder for [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7494,6 +7548,7 @@ impl BatchUpdateScheduleOutput {
 pub mod batch_update_schedule_output {
 
     /// A builder for [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creates: std::option::Option<crate::model::BatchScheduleActionCreateResult>,
@@ -7567,6 +7622,7 @@ impl BatchStopOutput {
 pub mod batch_stop_output {
 
     /// A builder for [`BatchStopOutput`](crate::output::BatchStopOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -7653,6 +7709,7 @@ impl BatchStartOutput {
 pub mod batch_start_output {
 
     /// A builder for [`BatchStartOutput`](crate::output::BatchStartOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -7739,6 +7796,7 @@ impl BatchDeleteOutput {
 pub mod batch_delete_output {
 
     /// A builder for [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -7808,6 +7866,7 @@ pub struct AcceptInputDeviceTransferOutput {}
 pub mod accept_input_device_transfer_output {
 
     /// A builder for [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

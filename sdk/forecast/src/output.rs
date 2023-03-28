@@ -7,6 +7,7 @@ pub struct UpdateDatasetGroupOutput {}
 pub mod update_dataset_group_output {
 
     /// A builder for [`UpdateDatasetGroupOutput`](crate::output::UpdateDatasetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct StopResourceOutput {}
 pub mod stop_resource_output {
 
     /// A builder for [`StopResourceOutput`](crate::output::StopResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct ResumeResourceOutput {}
 pub mod resume_resource_output {
 
     /// A builder for [`ResumeResourceOutput`](crate::output::ResumeResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -144,6 +149,7 @@ impl ListWhatIfForecastsOutput {
 pub mod list_what_if_forecasts_output {
 
     /// A builder for [`ListWhatIfForecastsOutput`](crate::output::ListWhatIfForecastsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecasts:
@@ -224,6 +230,7 @@ impl ListWhatIfForecastExportsOutput {
 pub mod list_what_if_forecast_exports_output {
 
     /// A builder for [`ListWhatIfForecastExportsOutput`](crate::output::ListWhatIfForecastExportsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_exports:
@@ -304,6 +311,7 @@ impl ListWhatIfAnalysesOutput {
 pub mod list_what_if_analyses_output {
 
     /// A builder for [`ListWhatIfAnalysesOutput`](crate::output::ListWhatIfAnalysesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_analyses:
@@ -374,6 +382,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -436,6 +445,7 @@ impl ListPredictorsOutput {
 pub mod list_predictors_output {
 
     /// A builder for [`ListPredictorsOutput`](crate::output::ListPredictorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictors: std::option::Option<std::vec::Vec<crate::model::PredictorSummary>>,
@@ -515,6 +525,7 @@ impl ListPredictorBacktestExportJobsOutput {
 pub mod list_predictor_backtest_export_jobs_output {
 
     /// A builder for [`ListPredictorBacktestExportJobsOutput`](crate::output::ListPredictorBacktestExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_backtest_export_jobs:
@@ -597,6 +608,7 @@ impl ListMonitorsOutput {
 pub mod list_monitors_output {
 
     /// A builder for [`ListMonitorsOutput`](crate::output::ListMonitorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitors: std::option::Option<std::vec::Vec<crate::model::MonitorSummary>>,
@@ -678,6 +690,7 @@ impl ListMonitorEvaluationsOutput {
 pub mod list_monitor_evaluations_output {
 
     /// A builder for [`ListMonitorEvaluationsOutput`](crate::output::ListMonitorEvaluationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -760,6 +773,7 @@ impl ListForecastsOutput {
 pub mod list_forecasts_output {
 
     /// A builder for [`ListForecastsOutput`](crate::output::ListForecastsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecasts: std::option::Option<std::vec::Vec<crate::model::ForecastSummary>>,
@@ -839,6 +853,7 @@ impl ListForecastExportJobsOutput {
 pub mod list_forecast_export_jobs_output {
 
     /// A builder for [`ListForecastExportJobsOutput`](crate::output::ListForecastExportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_export_jobs:
@@ -922,6 +937,7 @@ impl ListExplainabilityExportsOutput {
 pub mod list_explainability_exports_output {
 
     /// A builder for [`ListExplainabilityExportsOutput`](crate::output::ListExplainabilityExportsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainability_exports:
@@ -1002,6 +1018,7 @@ impl ListExplainabilitiesOutput {
 pub mod list_explainabilities_output {
 
     /// A builder for [`ListExplainabilitiesOutput`](crate::output::ListExplainabilitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainabilities:
@@ -1079,6 +1096,7 @@ impl ListDatasetsOutput {
 pub mod list_datasets_output {
 
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
@@ -1158,6 +1176,7 @@ impl ListDatasetImportJobsOutput {
 pub mod list_dataset_import_jobs_output {
 
     /// A builder for [`ListDatasetImportJobsOutput`](crate::output::ListDatasetImportJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_import_jobs:
@@ -1235,6 +1254,7 @@ impl ListDatasetGroupsOutput {
 pub mod list_dataset_groups_output {
 
     /// A builder for [`ListDatasetGroupsOutput`](crate::output::ListDatasetGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_groups:
@@ -1339,6 +1359,7 @@ impl GetAccuracyMetricsOutput {
 pub mod get_accuracy_metrics_output {
 
     /// A builder for [`GetAccuracyMetricsOutput`](crate::output::GetAccuracyMetricsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_evaluation_results:
@@ -1547,6 +1568,7 @@ impl DescribeWhatIfForecastExportOutput {
 pub mod describe_what_if_forecast_export_output {
 
     /// A builder for [`DescribeWhatIfForecastExportOutput`](crate::output::DescribeWhatIfForecastExportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_export_arn: std::option::Option<std::string::String>,
@@ -1872,6 +1894,7 @@ impl DescribeWhatIfForecastOutput {
 pub mod describe_what_if_forecast_output {
 
     /// A builder for [`DescribeWhatIfForecastOutput`](crate::output::DescribeWhatIfForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_name: std::option::Option<std::string::String>,
@@ -2215,6 +2238,7 @@ impl DescribeWhatIfAnalysisOutput {
 pub mod describe_what_if_analysis_output {
 
     /// A builder for [`DescribeWhatIfAnalysisOutput`](crate::output::DescribeWhatIfAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_analysis_name: std::option::Option<std::string::String>,
@@ -2501,6 +2525,7 @@ impl DescribePredictorBacktestExportJobOutput {
 pub mod describe_predictor_backtest_export_job_output {
 
     /// A builder for [`DescribePredictorBacktestExportJobOutput`](crate::output::DescribePredictorBacktestExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
@@ -2904,6 +2929,7 @@ impl DescribePredictorOutput {
 pub mod describe_predictor_output {
 
     /// A builder for [`DescribePredictorOutput`](crate::output::DescribePredictorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
@@ -3430,6 +3456,7 @@ impl DescribeMonitorOutput {
 pub mod describe_monitor_output {
 
     /// A builder for [`DescribeMonitorOutput`](crate::output::DescribeMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_name: std::option::Option<std::string::String>,
@@ -3700,6 +3727,7 @@ impl DescribeForecastExportJobOutput {
 pub mod describe_forecast_export_job_output {
 
     /// A builder for [`DescribeForecastExportJobOutput`](crate::output::DescribeForecastExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_export_job_arn: std::option::Option<std::string::String>,
@@ -3989,6 +4017,7 @@ impl DescribeForecastOutput {
 pub mod describe_forecast_output {
 
     /// A builder for [`DescribeForecastOutput`](crate::output::DescribeForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
@@ -4299,6 +4328,7 @@ impl DescribeExplainabilityExportOutput {
 pub mod describe_explainability_export_output {
 
     /// A builder for [`DescribeExplainabilityExportOutput`](crate::output::DescribeExplainabilityExportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainability_export_arn: std::option::Option<std::string::String>,
@@ -4606,6 +4636,7 @@ impl DescribeExplainabilityOutput {
 pub mod describe_explainability_output {
 
     /// A builder for [`DescribeExplainabilityOutput`](crate::output::DescribeExplainabilityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainability_arn: std::option::Option<std::string::String>,
@@ -5010,6 +5041,7 @@ impl DescribeDatasetImportJobOutput {
 pub mod describe_dataset_import_job_output {
 
     /// A builder for [`DescribeDatasetImportJobOutput`](crate::output::DescribeDatasetImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_import_job_name: std::option::Option<std::string::String>,
@@ -5380,6 +5412,7 @@ impl DescribeDatasetGroupOutput {
 pub mod describe_dataset_group_output {
 
     /// A builder for [`DescribeDatasetGroupOutput`](crate::output::DescribeDatasetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_name: std::option::Option<std::string::String>,
@@ -5622,6 +5655,7 @@ impl DescribeDatasetOutput {
 pub mod describe_dataset_output {
 
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -5971,6 +6005,7 @@ impl DescribeAutoPredictorOutput {
 pub mod describe_auto_predictor_output {
 
     /// A builder for [`DescribeAutoPredictorOutput`](crate::output::DescribeAutoPredictorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
@@ -6327,6 +6362,7 @@ pub struct DeleteWhatIfForecastExportOutput {}
 pub mod delete_what_if_forecast_export_output {
 
     /// A builder for [`DeleteWhatIfForecastExportOutput`](crate::output::DeleteWhatIfForecastExportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6351,6 +6387,7 @@ pub struct DeleteWhatIfForecastOutput {}
 pub mod delete_what_if_forecast_output {
 
     /// A builder for [`DeleteWhatIfForecastOutput`](crate::output::DeleteWhatIfForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6375,6 +6412,7 @@ pub struct DeleteWhatIfAnalysisOutput {}
 pub mod delete_what_if_analysis_output {
 
     /// A builder for [`DeleteWhatIfAnalysisOutput`](crate::output::DeleteWhatIfAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6399,6 +6437,7 @@ pub struct DeleteResourceTreeOutput {}
 pub mod delete_resource_tree_output {
 
     /// A builder for [`DeleteResourceTreeOutput`](crate::output::DeleteResourceTreeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6423,6 +6462,7 @@ pub struct DeletePredictorBacktestExportJobOutput {}
 pub mod delete_predictor_backtest_export_job_output {
 
     /// A builder for [`DeletePredictorBacktestExportJobOutput`](crate::output::DeletePredictorBacktestExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6447,6 +6487,7 @@ pub struct DeletePredictorOutput {}
 pub mod delete_predictor_output {
 
     /// A builder for [`DeletePredictorOutput`](crate::output::DeletePredictorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6471,6 +6512,7 @@ pub struct DeleteMonitorOutput {}
 pub mod delete_monitor_output {
 
     /// A builder for [`DeleteMonitorOutput`](crate::output::DeleteMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6495,6 +6537,7 @@ pub struct DeleteForecastExportJobOutput {}
 pub mod delete_forecast_export_job_output {
 
     /// A builder for [`DeleteForecastExportJobOutput`](crate::output::DeleteForecastExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6519,6 +6562,7 @@ pub struct DeleteForecastOutput {}
 pub mod delete_forecast_output {
 
     /// A builder for [`DeleteForecastOutput`](crate::output::DeleteForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6543,6 +6587,7 @@ pub struct DeleteExplainabilityExportOutput {}
 pub mod delete_explainability_export_output {
 
     /// A builder for [`DeleteExplainabilityExportOutput`](crate::output::DeleteExplainabilityExportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6567,6 +6612,7 @@ pub struct DeleteExplainabilityOutput {}
 pub mod delete_explainability_output {
 
     /// A builder for [`DeleteExplainabilityOutput`](crate::output::DeleteExplainabilityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6591,6 +6637,7 @@ pub struct DeleteDatasetImportJobOutput {}
 pub mod delete_dataset_import_job_output {
 
     /// A builder for [`DeleteDatasetImportJobOutput`](crate::output::DeleteDatasetImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6615,6 +6662,7 @@ pub struct DeleteDatasetGroupOutput {}
 pub mod delete_dataset_group_output {
 
     /// A builder for [`DeleteDatasetGroupOutput`](crate::output::DeleteDatasetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6639,6 +6687,7 @@ pub struct DeleteDatasetOutput {}
 pub mod delete_dataset_output {
 
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6673,6 +6722,7 @@ impl CreateWhatIfForecastExportOutput {
 pub mod create_what_if_forecast_export_output {
 
     /// A builder for [`CreateWhatIfForecastExportOutput`](crate::output::CreateWhatIfForecastExportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_export_arn: std::option::Option<std::string::String>,
@@ -6727,6 +6777,7 @@ impl CreateWhatIfForecastOutput {
 pub mod create_what_if_forecast_output {
 
     /// A builder for [`CreateWhatIfForecastOutput`](crate::output::CreateWhatIfForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
@@ -6778,6 +6829,7 @@ impl CreateWhatIfAnalysisOutput {
 pub mod create_what_if_analysis_output {
 
     /// A builder for [`CreateWhatIfAnalysisOutput`](crate::output::CreateWhatIfAnalysisOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_analysis_arn: std::option::Option<std::string::String>,
@@ -6829,6 +6881,7 @@ impl CreatePredictorBacktestExportJobOutput {
 pub mod create_predictor_backtest_export_job_output {
 
     /// A builder for [`CreatePredictorBacktestExportJobOutput`](crate::output::CreatePredictorBacktestExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
@@ -6883,6 +6936,7 @@ impl CreatePredictorOutput {
 pub mod create_predictor_output {
 
     /// A builder for [`CreatePredictorOutput`](crate::output::CreatePredictorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,
@@ -6934,6 +6988,7 @@ impl CreateMonitorOutput {
 pub mod create_monitor_output {
 
     /// A builder for [`CreateMonitorOutput`](crate::output::CreateMonitorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
@@ -6982,6 +7037,7 @@ impl CreateForecastExportJobOutput {
 pub mod create_forecast_export_job_output {
 
     /// A builder for [`CreateForecastExportJobOutput`](crate::output::CreateForecastExportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_export_job_arn: std::option::Option<std::string::String>,
@@ -7033,6 +7089,7 @@ impl CreateForecastOutput {
 pub mod create_forecast_output {
 
     /// A builder for [`CreateForecastOutput`](crate::output::CreateForecastOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
@@ -7081,6 +7138,7 @@ impl CreateExplainabilityExportOutput {
 pub mod create_explainability_export_output {
 
     /// A builder for [`CreateExplainabilityExportOutput`](crate::output::CreateExplainabilityExportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainability_export_arn: std::option::Option<std::string::String>,
@@ -7132,6 +7190,7 @@ impl CreateExplainabilityOutput {
 pub mod create_explainability_output {
 
     /// A builder for [`CreateExplainabilityOutput`](crate::output::CreateExplainabilityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) explainability_arn: std::option::Option<std::string::String>,
@@ -7183,6 +7242,7 @@ impl CreateDatasetImportJobOutput {
 pub mod create_dataset_import_job_output {
 
     /// A builder for [`CreateDatasetImportJobOutput`](crate::output::CreateDatasetImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
@@ -7234,6 +7294,7 @@ impl CreateDatasetGroupOutput {
 pub mod create_dataset_group_output {
 
     /// A builder for [`CreateDatasetGroupOutput`](crate::output::CreateDatasetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -7285,6 +7346,7 @@ impl CreateDatasetOutput {
 pub mod create_dataset_output {
 
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -7333,6 +7395,7 @@ impl CreateAutoPredictorOutput {
 pub mod create_auto_predictor_output {
 
     /// A builder for [`CreateAutoPredictorOutput`](crate::output::CreateAutoPredictorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictor_arn: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod close_tunnel_input {
 
     /// A builder for [`CloseTunnelInput`](crate::input::CloseTunnelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -195,6 +196,7 @@ impl CloseTunnelInput {
 pub mod describe_tunnel_input {
 
     /// A builder for [`DescribeTunnelInput`](crate::input::DescribeTunnelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -357,6 +359,7 @@ impl DescribeTunnelInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -547,6 +550,7 @@ impl ListTagsForResourceInput {
 pub mod list_tunnels_input {
 
     /// A builder for [`ListTunnelsInput`](crate::input::ListTunnelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -759,6 +763,7 @@ impl ListTunnelsInput {
 pub mod open_tunnel_input {
 
     /// A builder for [`OpenTunnelInput`](crate::input::OpenTunnelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -972,6 +977,7 @@ impl OpenTunnelInput {
 pub mod rotate_tunnel_access_token_input {
 
     /// A builder for [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -1168,6 +1174,7 @@ impl RotateTunnelAccessTokenInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1351,6 +1358,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

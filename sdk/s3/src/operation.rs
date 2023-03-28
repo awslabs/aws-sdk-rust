@@ -2717,7 +2717,7 @@ mod put_bucket_lifecycle_configuration_request_test {
         pretty_assertions::assert_eq!(http_request.uri().path(), "/");
         let expected_headers = [("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -3123,7 +3123,7 @@ mod put_object_request_test {
         pretty_assertions::assert_eq!(http_request.uri().path(), "/test-key");
         let expected_headers = [("content-type", "text/html")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
     }
@@ -3153,7 +3153,7 @@ mod put_object_request_test {
         pretty_assertions::assert_eq!(http_request.uri().path(), "/test-key");
         let expected_headers = [("content-length", "2")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
-            &http_request.headers(),
+            http_request.headers(),
             expected_headers,
         ));
     }

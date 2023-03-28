@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod clone_backend_input {
 
     /// A builder for [`CloneBackendInput`](crate::input::CloneBackendInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -236,6 +237,7 @@ impl CloneBackendInput {
 pub mod create_backend_input {
 
     /// A builder for [`CreateBackendInput`](crate::input::CreateBackendInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -450,6 +452,7 @@ impl CreateBackendInput {
 pub mod create_backend_api_input {
 
     /// A builder for [`CreateBackendApiInput`](crate::input::CreateBackendApiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -674,6 +677,7 @@ impl CreateBackendApiInput {
 pub mod create_backend_auth_input {
 
     /// A builder for [`CreateBackendAuthInput`](crate::input::CreateBackendAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -902,6 +906,7 @@ impl CreateBackendAuthInput {
 pub mod create_backend_config_input {
 
     /// A builder for [`CreateBackendConfigInput`](crate::input::CreateBackendConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1096,6 +1101,7 @@ impl CreateBackendConfigInput {
 pub mod create_backend_storage_input {
 
     /// A builder for [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1326,6 +1332,7 @@ impl CreateBackendStorageInput {
 pub mod create_token_input {
 
     /// A builder for [`CreateTokenInput`](crate::input::CreateTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1489,6 +1496,7 @@ impl CreateTokenInput {
 pub mod delete_backend_input {
 
     /// A builder for [`DeleteBackendInput`](crate::input::DeleteBackendInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1691,6 +1699,7 @@ impl DeleteBackendInput {
 pub mod delete_backend_api_input {
 
     /// A builder for [`DeleteBackendApiInput`](crate::input::DeleteBackendApiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1939,6 +1948,7 @@ impl DeleteBackendApiInput {
 pub mod delete_backend_auth_input {
 
     /// A builder for [`DeleteBackendAuthInput`](crate::input::DeleteBackendAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2172,6 +2182,7 @@ impl DeleteBackendAuthInput {
 pub mod delete_backend_storage_input {
 
     /// A builder for [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2422,6 +2433,7 @@ impl DeleteBackendStorageInput {
 pub mod delete_token_input {
 
     /// A builder for [`DeleteTokenInput`](crate::input::DeleteTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2621,6 +2633,7 @@ impl DeleteTokenInput {
 pub mod generate_backend_api_models_input {
 
     /// A builder for [`GenerateBackendApiModelsInput`](crate::input::GenerateBackendApiModelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -2856,6 +2869,7 @@ impl GenerateBackendApiModelsInput {
 pub mod get_backend_input {
 
     /// A builder for [`GetBackendInput`](crate::input::GetBackendInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3048,6 +3062,7 @@ impl GetBackendInput {
 pub mod get_backend_api_input {
 
     /// A builder for [`GetBackendApiInput`](crate::input::GetBackendApiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3294,6 +3309,7 @@ impl GetBackendApiInput {
 pub mod get_backend_api_models_input {
 
     /// A builder for [`GetBackendApiModelsInput`](crate::input::GetBackendApiModelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3529,6 +3545,7 @@ impl GetBackendApiModelsInput {
 pub mod get_backend_auth_input {
 
     /// A builder for [`GetBackendAuthInput`](crate::input::GetBackendAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3760,6 +3777,7 @@ impl GetBackendAuthInput {
 pub mod get_backend_job_input {
 
     /// A builder for [`GetBackendJobInput`](crate::input::GetBackendJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -3994,6 +4012,7 @@ impl GetBackendJobInput {
 pub mod get_backend_storage_input {
 
     /// A builder for [`GetBackendStorageInput`](crate::input::GetBackendStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4227,6 +4246,7 @@ impl GetBackendStorageInput {
 pub mod get_token_input {
 
     /// A builder for [`GetTokenInput`](crate::input::GetTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4424,6 +4444,7 @@ impl GetTokenInput {
 pub mod import_backend_auth_input {
 
     /// A builder for [`ImportBackendAuthInput`](crate::input::ImportBackendAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4699,6 +4720,7 @@ impl ImportBackendAuthInput {
 pub mod import_backend_storage_input {
 
     /// A builder for [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -4946,6 +4968,7 @@ impl ImportBackendStorageInput {
 pub mod list_backend_jobs_input {
 
     /// A builder for [`ListBackendJobsInput`](crate::input::ListBackendJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5222,6 +5245,7 @@ impl ListBackendJobsInput {
 pub mod list_s3_buckets_input {
 
     /// A builder for [`ListS3BucketsInput`](crate::input::ListS3BucketsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5379,6 +5403,7 @@ impl ListS3BucketsInput {
 pub mod remove_all_backends_input {
 
     /// A builder for [`RemoveAllBackendsInput`](crate::input::RemoveAllBackendsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5570,6 +5595,7 @@ impl RemoveAllBackendsInput {
 pub mod remove_backend_config_input {
 
     /// A builder for [`RemoveBackendConfigInput`](crate::input::RemoveBackendConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5735,6 +5761,7 @@ impl RemoveBackendConfigInput {
 pub mod update_backend_api_input {
 
     /// A builder for [`UpdateBackendApiInput`](crate::input::UpdateBackendApiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -5983,6 +6010,7 @@ impl UpdateBackendApiInput {
 pub mod update_backend_auth_input {
 
     /// A builder for [`UpdateBackendAuthInput`](crate::input::UpdateBackendAuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -6235,6 +6263,7 @@ impl UpdateBackendAuthInput {
 pub mod update_backend_config_input {
 
     /// A builder for [`UpdateBackendConfigInput`](crate::input::UpdateBackendConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -6429,6 +6458,7 @@ impl UpdateBackendConfigInput {
 pub mod update_backend_job_input {
 
     /// A builder for [`UpdateBackendJobInput`](crate::input::UpdateBackendJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -6703,6 +6733,7 @@ impl UpdateBackendJobInput {
 pub mod update_backend_storage_input {
 
     /// A builder for [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_schema_input {
 
     /// A builder for [`BatchGetSchemaInput`](crate::input::BatchGetSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -210,6 +211,7 @@ impl BatchGetSchemaInput {
 pub mod create_collaboration_input {
 
     /// A builder for [`CreateCollaborationInput`](crate::input::CreateCollaborationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::MemberSpecification>>,
@@ -476,6 +478,7 @@ impl CreateCollaborationInput {
 pub mod create_configured_table_input {
 
     /// A builder for [`CreateConfiguredTableInput`](crate::input::CreateConfiguredTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -700,6 +703,7 @@ impl CreateConfiguredTableInput {
 pub mod create_configured_table_analysis_rule_input {
 
     /// A builder for [`CreateConfiguredTableAnalysisRuleInput`](crate::input::CreateConfiguredTableAnalysisRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -927,6 +931,7 @@ impl CreateConfiguredTableAnalysisRuleInput {
 pub mod create_configured_table_association_input {
 
     /// A builder for [`CreateConfiguredTableAssociationInput`](crate::input::CreateConfiguredTableAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1167,6 +1172,7 @@ impl CreateConfiguredTableAssociationInput {
 pub mod create_membership_input {
 
     /// A builder for [`CreateMembershipInput`](crate::input::CreateMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -1344,6 +1350,7 @@ impl CreateMembershipInput {
 pub mod delete_collaboration_input {
 
     /// A builder for [`DeleteCollaborationInput`](crate::input::DeleteCollaborationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -1516,6 +1523,7 @@ impl DeleteCollaborationInput {
 pub mod delete_configured_table_input {
 
     /// A builder for [`DeleteConfiguredTableInput`](crate::input::DeleteConfiguredTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -1691,6 +1699,7 @@ impl DeleteConfiguredTableInput {
 pub mod delete_configured_table_analysis_rule_input {
 
     /// A builder for [`DeleteConfiguredTableAnalysisRuleInput`](crate::input::DeleteConfiguredTableAnalysisRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -1905,6 +1914,7 @@ impl DeleteConfiguredTableAnalysisRuleInput {
 pub mod delete_configured_table_association_input {
 
     /// A builder for [`DeleteConfiguredTableAssociationInput`](crate::input::DeleteConfiguredTableAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association_identifier:
@@ -2111,6 +2121,7 @@ impl DeleteConfiguredTableAssociationInput {
 pub mod delete_member_input {
 
     /// A builder for [`DeleteMemberInput`](crate::input::DeleteMemberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -2313,6 +2324,7 @@ impl DeleteMemberInput {
 pub mod delete_membership_input {
 
     /// A builder for [`DeleteMembershipInput`](crate::input::DeleteMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
@@ -2485,6 +2497,7 @@ impl DeleteMembershipInput {
 pub mod get_collaboration_input {
 
     /// A builder for [`GetCollaborationInput`](crate::input::GetCollaborationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -2657,6 +2670,7 @@ impl GetCollaborationInput {
 pub mod get_configured_table_input {
 
     /// A builder for [`GetConfiguredTableInput`](crate::input::GetConfiguredTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -2832,6 +2846,7 @@ impl GetConfiguredTableInput {
 pub mod get_configured_table_analysis_rule_input {
 
     /// A builder for [`GetConfiguredTableAnalysisRuleInput`](crate::input::GetConfiguredTableAnalysisRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -3046,6 +3061,7 @@ impl GetConfiguredTableAnalysisRuleInput {
 pub mod get_configured_table_association_input {
 
     /// A builder for [`GetConfiguredTableAssociationInput`](crate::input::GetConfiguredTableAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association_identifier:
@@ -3252,6 +3268,7 @@ impl GetConfiguredTableAssociationInput {
 pub mod get_membership_input {
 
     /// A builder for [`GetMembershipInput`](crate::input::GetMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
@@ -3422,6 +3439,7 @@ impl GetMembershipInput {
 pub mod get_protected_query_input {
 
     /// A builder for [`GetProtectedQueryInput`](crate::input::GetProtectedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
@@ -3623,6 +3641,7 @@ impl GetProtectedQueryInput {
 pub mod get_schema_input {
 
     /// A builder for [`GetSchemaInput`](crate::input::GetSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -3823,6 +3842,7 @@ impl GetSchemaInput {
 pub mod get_schema_analysis_rule_input {
 
     /// A builder for [`GetSchemaAnalysisRuleInput`](crate::input::GetSchemaAnalysisRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -4055,6 +4075,7 @@ impl GetSchemaAnalysisRuleInput {
 pub mod list_collaborations_input {
 
     /// A builder for [`ListCollaborationsInput`](crate::input::ListCollaborationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4256,6 +4277,7 @@ impl ListCollaborationsInput {
 pub mod list_configured_table_associations_input {
 
     /// A builder for [`ListConfiguredTableAssociationsInput`](crate::input::ListConfiguredTableAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
@@ -4473,6 +4495,7 @@ impl ListConfiguredTableAssociationsInput {
 pub mod list_configured_tables_input {
 
     /// A builder for [`ListConfiguredTablesInput`](crate::input::ListConfiguredTablesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4651,6 +4674,7 @@ impl ListConfiguredTablesInput {
 pub mod list_members_input {
 
     /// A builder for [`ListMembersInput`](crate::input::ListMembersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -4866,6 +4890,7 @@ impl ListMembersInput {
 pub mod list_memberships_input {
 
     /// A builder for [`ListMembershipsInput`](crate::input::ListMembershipsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5062,6 +5087,7 @@ impl ListMembershipsInput {
 pub mod list_protected_queries_input {
 
     /// A builder for [`ListProtectedQueriesInput`](crate::input::ListProtectedQueriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
@@ -5299,6 +5325,7 @@ impl ListProtectedQueriesInput {
 pub mod list_schemas_input {
 
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -5534,6 +5561,7 @@ impl ListSchemasInput {
 pub mod start_protected_query_input {
 
     /// A builder for [`StartProtectedQueryInput`](crate::input::StartProtectedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ProtectedQueryType>,
@@ -5779,6 +5807,7 @@ impl StartProtectedQueryInput {
 pub mod update_collaboration_input {
 
     /// A builder for [`UpdateCollaborationInput`](crate::input::UpdateCollaborationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
@@ -5989,6 +6018,7 @@ impl UpdateCollaborationInput {
 pub mod update_configured_table_input {
 
     /// A builder for [`UpdateConfiguredTableInput`](crate::input::UpdateConfiguredTableInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -6204,6 +6234,7 @@ impl UpdateConfiguredTableInput {
 pub mod update_configured_table_analysis_rule_input {
 
     /// A builder for [`UpdateConfiguredTableAnalysisRuleInput`](crate::input::UpdateConfiguredTableAnalysisRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
@@ -6451,6 +6482,7 @@ impl UpdateConfiguredTableAnalysisRuleInput {
 pub mod update_configured_table_association_input {
 
     /// A builder for [`UpdateConfiguredTableAssociationInput`](crate::input::UpdateConfiguredTableAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_association_identifier:
@@ -6695,6 +6727,7 @@ impl UpdateConfiguredTableAssociationInput {
 pub mod update_membership_input {
 
     /// A builder for [`UpdateMembershipInput`](crate::input::UpdateMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,
@@ -6896,6 +6929,7 @@ impl UpdateMembershipInput {
 pub mod update_protected_query_input {
 
     /// A builder for [`UpdateProtectedQueryInput`](crate::input::UpdateProtectedQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_identifier: std::option::Option<std::string::String>,

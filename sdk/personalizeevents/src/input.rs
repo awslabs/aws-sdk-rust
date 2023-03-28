@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod put_events_input {
 
     /// A builder for [`PutEventsInput`](crate::input::PutEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tracking_id: std::option::Option<std::string::String>,
@@ -215,6 +216,7 @@ impl PutEventsInput {
 pub mod put_items_input {
 
     /// A builder for [`PutItemsInput`](crate::input::PutItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -391,6 +393,7 @@ impl PutItemsInput {
 pub mod put_users_input {
 
     /// A builder for [`PutUsersInput`](crate::input::PutUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,

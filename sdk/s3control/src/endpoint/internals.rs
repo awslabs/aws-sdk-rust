@@ -212,7 +212,7 @@ pub(super) fn resolve_endpoint(
                 crate::endpoint_lib::arn::parse_arn(access_point_name, _diagnostic_collector)
             {
                 #[allow(unused_variables)]
-                if let Some(arn_type) = access_point_arn.resource_id().get(0).cloned() {
+                if let Some(arn_type) = access_point_arn.resource_id().first().cloned() {
                     if !((arn_type) == ("")) {
                         if (access_point_arn.service()) == ("s3-outposts") {
                             if (*use_dual_stack) == (true) {
@@ -442,7 +442,7 @@ out }));
                 crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector)
             {
                 #[allow(unused_variables)]
-                if let Some(arn_type) = bucket_arn.resource_id().get(0).cloned() {
+                if let Some(arn_type) = bucket_arn.resource_id().first().cloned() {
                     if !((arn_type) == ("")) {
                         if (bucket_arn.service()) == ("s3-outposts") {
                             if (*use_dual_stack) == (true) {

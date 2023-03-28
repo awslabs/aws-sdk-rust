@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_permission_input {
 
     /// A builder for [`AddPermissionInput`](crate::input::AddPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -218,6 +219,7 @@ impl AddPermissionInput {
 pub mod check_if_phone_number_is_opted_out_input {
 
     /// A builder for [`CheckIfPhoneNumberIsOptedOutInput`](crate::input::CheckIfPhoneNumberIsOptedOutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -377,6 +379,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
 pub mod confirm_subscription_input {
 
     /// A builder for [`ConfirmSubscriptionInput`](crate::input::ConfirmSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -566,6 +569,7 @@ impl ConfirmSubscriptionInput {
 pub mod create_platform_application_input {
 
     /// A builder for [`CreatePlatformApplicationInput`](crate::input::CreatePlatformApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -768,6 +772,7 @@ impl CreatePlatformApplicationInput {
 pub mod create_platform_endpoint_input {
 
     /// A builder for [`CreatePlatformEndpointInput`](crate::input::CreatePlatformEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -988,6 +993,7 @@ impl CreatePlatformEndpointInput {
 pub mod create_sms_sandbox_phone_number_input {
 
     /// A builder for [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -1162,6 +1168,7 @@ impl CreateSmsSandboxPhoneNumberInput {
 pub mod create_topic_input {
 
     /// A builder for [`CreateTopicInput`](crate::input::CreateTopicInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1442,6 +1449,7 @@ impl CreateTopicInput {
 pub mod delete_endpoint_input {
 
     /// A builder for [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -1599,6 +1607,7 @@ impl DeleteEndpointInput {
 pub mod delete_platform_application_input {
 
     /// A builder for [`DeletePlatformApplicationInput`](crate::input::DeletePlatformApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -1763,6 +1772,7 @@ impl DeletePlatformApplicationInput {
 pub mod delete_sms_sandbox_phone_number_input {
 
     /// A builder for [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -1922,6 +1932,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
 pub mod delete_topic_input {
 
     /// A builder for [`DeleteTopicInput`](crate::input::DeleteTopicInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -2079,6 +2090,7 @@ impl DeleteTopicInput {
 pub mod get_data_protection_policy_input {
 
     /// A builder for [`GetDataProtectionPolicyInput`](crate::input::GetDataProtectionPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2242,6 +2254,7 @@ impl GetDataProtectionPolicyInput {
 pub mod get_endpoint_attributes_input {
 
     /// A builder for [`GetEndpointAttributesInput`](crate::input::GetEndpointAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -2403,6 +2416,7 @@ impl GetEndpointAttributesInput {
 pub mod get_platform_application_attributes_input {
 
     /// A builder for [`GetPlatformApplicationAttributesInput`](crate::input::GetPlatformApplicationAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -2565,6 +2579,7 @@ impl GetPlatformApplicationAttributesInput {
 pub mod get_sms_attributes_input {
 
     /// A builder for [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2737,6 +2752,7 @@ impl GetSmsAttributesInput {
 pub mod get_sms_sandbox_account_status_input {
 
     /// A builder for [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2875,6 +2891,7 @@ impl GetSmsSandboxAccountStatusInput {
 pub mod get_subscription_attributes_input {
 
     /// A builder for [`GetSubscriptionAttributesInput`](crate::input::GetSubscriptionAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -3039,6 +3056,7 @@ impl GetSubscriptionAttributesInput {
 pub mod get_topic_attributes_input {
 
     /// A builder for [`GetTopicAttributesInput`](crate::input::GetTopicAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -3198,6 +3216,7 @@ impl GetTopicAttributesInput {
 pub mod list_endpoints_by_platform_application_input {
 
     /// A builder for [`ListEndpointsByPlatformApplicationInput`](crate::input::ListEndpointsByPlatformApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -3372,6 +3391,7 @@ impl ListEndpointsByPlatformApplicationInput {
 pub mod list_origination_numbers_input {
 
     /// A builder for [`ListOriginationNumbersInput`](crate::input::ListOriginationNumbersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3545,6 +3565,7 @@ impl ListOriginationNumbersInput {
 pub mod list_phone_numbers_opted_out_input {
 
     /// A builder for [`ListPhoneNumbersOptedOutInput`](crate::input::ListPhoneNumbersOptedOutInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3706,6 +3727,7 @@ impl ListPhoneNumbersOptedOutInput {
 pub mod list_platform_applications_input {
 
     /// A builder for [`ListPlatformApplicationsInput`](crate::input::ListPlatformApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3867,6 +3889,7 @@ impl ListPlatformApplicationsInput {
 pub mod list_sms_sandbox_phone_numbers_input {
 
     /// A builder for [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4038,6 +4061,7 @@ impl ListSmsSandboxPhoneNumbersInput {
 pub mod list_subscriptions_input {
 
     /// A builder for [`ListSubscriptionsInput`](crate::input::ListSubscriptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4197,6 +4221,7 @@ impl ListSubscriptionsInput {
 pub mod list_subscriptions_by_topic_input {
 
     /// A builder for [`ListSubscriptionsByTopicInput`](crate::input::ListSubscriptionsByTopicInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -4370,6 +4395,7 @@ impl ListSubscriptionsByTopicInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4531,6 +4557,7 @@ impl ListTagsForResourceInput {
 pub mod list_topics_input {
 
     /// A builder for [`ListTopicsInput`](crate::input::ListTopicsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4688,6 +4715,7 @@ impl ListTopicsInput {
 pub mod opt_in_phone_number_input {
 
     /// A builder for [`OptInPhoneNumberInput`](crate::input::OptInPhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -4847,6 +4875,7 @@ impl OptInPhoneNumberInput {
 pub mod publish_input {
 
     /// A builder for [`PublishInput`](crate::input::PublishInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -5183,6 +5212,7 @@ impl PublishInput {
 pub mod publish_batch_input {
 
     /// A builder for [`PublishBatchInput`](crate::input::PublishBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -5365,6 +5395,7 @@ impl PublishBatchInput {
 pub mod put_data_protection_policy_input {
 
     /// A builder for [`PutDataProtectionPolicyInput`](crate::input::PutDataProtectionPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5547,6 +5578,7 @@ impl PutDataProtectionPolicyInput {
 pub mod remove_permission_input {
 
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -5718,6 +5750,7 @@ impl RemovePermissionInput {
 pub mod set_endpoint_attributes_input {
 
     /// A builder for [`SetEndpointAttributesInput`](crate::input::SetEndpointAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -5918,6 +5951,7 @@ impl SetEndpointAttributesInput {
 pub mod set_platform_application_attributes_input {
 
     /// A builder for [`SetPlatformApplicationAttributesInput`](crate::input::SetPlatformApplicationAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_application_arn: std::option::Option<std::string::String>,
@@ -6173,6 +6207,7 @@ impl SetPlatformApplicationAttributesInput {
 pub mod set_sms_attributes_input {
 
     /// A builder for [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
@@ -6399,6 +6434,7 @@ impl SetSmsAttributesInput {
 pub mod set_subscription_attributes_input {
 
     /// A builder for [`SetSubscriptionAttributesInput`](crate::input::SetSubscriptionAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -6633,6 +6669,7 @@ impl SetSubscriptionAttributesInput {
 pub mod set_topic_attributes_input {
 
     /// A builder for [`SetTopicAttributesInput`](crate::input::SetTopicAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -6862,6 +6899,7 @@ impl SetTopicAttributesInput {
 pub mod subscribe_input {
 
     /// A builder for [`SubscribeInput`](crate::input::SubscribeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -7172,6 +7210,7 @@ impl SubscribeInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7350,6 +7389,7 @@ impl TagResourceInput {
 pub mod unsubscribe_input {
 
     /// A builder for [`UnsubscribeInput`](crate::input::UnsubscribeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
@@ -7510,6 +7550,7 @@ impl UnsubscribeInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7688,6 +7729,7 @@ impl UntagResourceInput {
 pub mod verify_sms_sandbox_phone_number_input {
 
     /// A builder for [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<std::string::String>,

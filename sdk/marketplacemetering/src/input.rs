@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_meter_usage_input {
 
     /// A builder for [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
@@ -188,6 +189,7 @@ impl BatchMeterUsageInput {
 pub mod meter_usage_input {
 
     /// A builder for [`MeterUsageInput`](crate::input::MeterUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -428,6 +430,7 @@ impl MeterUsageInput {
 pub mod register_usage_input {
 
     /// A builder for [`RegisterUsageInput`](crate::input::RegisterUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -614,6 +617,7 @@ impl RegisterUsageInput {
 pub mod resolve_customer_input {
 
     /// A builder for [`ResolveCustomerInput`](crate::input::ResolveCustomerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token: std::option::Option<std::string::String>,

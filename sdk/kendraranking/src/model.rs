@@ -20,6 +20,7 @@ impl CapacityUnitsConfiguration {
 pub mod capacity_units_configuration {
 
     /// A builder for [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescore_capacity_units: std::option::Option<i32>,
@@ -77,6 +78,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -144,6 +146,7 @@ impl RescoreResultItem {
 pub mod rescore_result_item {
 
     /// A builder for [`RescoreResultItem`](crate::model::RescoreResultItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_id: std::option::Option<std::string::String>,
@@ -246,6 +249,7 @@ impl Document {
 pub mod document {
 
     /// A builder for [`Document`](crate::model::Document).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -412,6 +416,7 @@ impl RescoreExecutionPlanSummary {
 pub mod rescore_execution_plan_summary {
 
     /// A builder for [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

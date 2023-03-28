@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod count_closed_workflow_executions_input {
 
     /// A builder for [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -283,6 +284,7 @@ impl CountClosedWorkflowExecutionsInput {
 pub mod count_open_workflow_executions_input {
 
     /// A builder for [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -519,6 +521,7 @@ impl CountOpenWorkflowExecutionsInput {
 pub mod count_pending_activity_tasks_input {
 
     /// A builder for [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -697,6 +700,7 @@ impl CountPendingActivityTasksInput {
 pub mod count_pending_decision_tasks_input {
 
     /// A builder for [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -875,6 +879,7 @@ impl CountPendingDecisionTasksInput {
 pub mod deprecate_activity_type_input {
 
     /// A builder for [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -1056,6 +1061,7 @@ impl DeprecateActivityTypeInput {
 pub mod deprecate_domain_input {
 
     /// A builder for [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1216,6 +1222,7 @@ impl DeprecateDomainInput {
 pub mod deprecate_workflow_type_input {
 
     /// A builder for [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -1397,6 +1404,7 @@ impl DeprecateWorkflowTypeInput {
 pub mod describe_activity_type_input {
 
     /// A builder for [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -1578,6 +1586,7 @@ impl DescribeActivityTypeInput {
 pub mod describe_domain_input {
 
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1738,6 +1747,7 @@ impl DescribeDomainInput {
 pub mod describe_workflow_execution_input {
 
     /// A builder for [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -1919,6 +1929,7 @@ impl DescribeWorkflowExecutionInput {
 pub mod describe_workflow_type_input {
 
     /// A builder for [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -2100,6 +2111,7 @@ impl DescribeWorkflowTypeInput {
 pub mod get_workflow_execution_history_input {
 
     /// A builder for [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -2320,6 +2332,7 @@ impl GetWorkflowExecutionHistoryInput {
 pub mod list_activity_types_input {
 
     /// A builder for [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -2552,6 +2565,7 @@ impl ListActivityTypesInput {
 pub mod list_closed_workflow_executions_input {
 
     /// A builder for [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -2871,6 +2885,7 @@ impl ListClosedWorkflowExecutionsInput {
 pub mod list_domains_input {
 
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -3077,6 +3092,7 @@ impl ListDomainsInput {
 pub mod list_open_workflow_executions_input {
 
     /// A builder for [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -3354,6 +3370,7 @@ impl ListOpenWorkflowExecutionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3520,6 +3537,7 @@ impl ListTagsForResourceInput {
 pub mod list_workflow_types_input {
 
     /// A builder for [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -3752,6 +3770,7 @@ impl ListWorkflowTypesInput {
 pub mod poll_for_activity_task_input {
 
     /// A builder for [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -3944,6 +3963,7 @@ impl PollForActivityTaskInput {
 pub mod poll_for_decision_task_input {
 
     /// A builder for [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -4183,6 +4203,7 @@ impl PollForDecisionTaskInput {
 pub mod record_activity_task_heartbeat_input {
 
     /// A builder for [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -4363,6 +4384,7 @@ impl RecordActivityTaskHeartbeatInput {
 pub mod register_activity_type_input {
 
     /// A builder for [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -4685,6 +4707,7 @@ impl RegisterActivityTypeInput {
 pub mod register_domain_input {
 
     /// A builder for [`RegisterDomainInput`](crate::input::RegisterDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4908,6 +4931,7 @@ impl RegisterDomainInput {
 pub mod register_workflow_type_input {
 
     /// A builder for [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -5238,6 +5262,7 @@ impl RegisterWorkflowTypeInput {
 pub mod request_cancel_workflow_execution_input {
 
     /// A builder for [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -5426,6 +5451,7 @@ impl RequestCancelWorkflowExecutionInput {
 pub mod respond_activity_task_canceled_input {
 
     /// A builder for [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -5606,6 +5632,7 @@ impl RespondActivityTaskCanceledInput {
 pub mod respond_activity_task_completed_input {
 
     /// A builder for [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -5786,6 +5813,7 @@ impl RespondActivityTaskCompletedInput {
 pub mod respond_activity_task_failed_input {
 
     /// A builder for [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -5980,6 +6008,7 @@ impl RespondActivityTaskFailedInput {
 pub mod respond_decision_task_completed_input {
 
     /// A builder for [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -6184,6 +6213,7 @@ impl RespondDecisionTaskCompletedInput {
 pub mod signal_workflow_execution_input {
 
     /// A builder for [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -6398,6 +6428,7 @@ impl SignalWorkflowExecutionInput {
 pub mod start_workflow_execution_input {
 
     /// A builder for [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -6756,6 +6787,7 @@ impl StartWorkflowExecutionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6941,6 +6973,7 @@ impl TagResourceInput {
 pub mod terminate_workflow_execution_input {
 
     /// A builder for [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -7186,6 +7219,7 @@ impl TerminateWorkflowExecutionInput {
 pub mod undeprecate_activity_type_input {
 
     /// A builder for [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -7367,6 +7401,7 @@ impl UndeprecateActivityTypeInput {
 pub mod undeprecate_domain_input {
 
     /// A builder for [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7529,6 +7564,7 @@ impl UndeprecateDomainInput {
 pub mod undeprecate_workflow_type_input {
 
     /// A builder for [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -7710,6 +7746,7 @@ impl UndeprecateWorkflowTypeInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

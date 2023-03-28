@@ -17,6 +17,7 @@ impl UpdateScheduleOutput {
 pub mod update_schedule_output {
 
     /// A builder for [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -63,6 +64,7 @@ impl UpdateRulesetOutput {
 pub mod update_ruleset_output {
 
     /// A builder for [`UpdateRulesetOutput`](crate::output::UpdateRulesetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -109,6 +111,7 @@ impl UpdateRecipeJobOutput {
 pub mod update_recipe_job_output {
 
     /// A builder for [`UpdateRecipeJobOutput`](crate::output::UpdateRecipeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -155,6 +158,7 @@ impl UpdateRecipeOutput {
 pub mod update_recipe_output {
 
     /// A builder for [`UpdateRecipeOutput`](crate::output::UpdateRecipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -208,6 +212,7 @@ impl UpdateProjectOutput {
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -271,6 +276,7 @@ impl UpdateProfileJobOutput {
 pub mod update_profile_job_output {
 
     /// A builder for [`UpdateProfileJobOutput`](crate::output::UpdateProfileJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -317,6 +323,7 @@ impl UpdateDatasetOutput {
 pub mod update_dataset_output {
 
     /// A builder for [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -353,6 +360,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -377,6 +385,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -411,6 +420,7 @@ impl StopJobRunOutput {
 pub mod stop_job_run_output {
 
     /// A builder for [`StopJobRunOutput`](crate::output::StopJobRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -474,6 +484,7 @@ impl std::fmt::Debug for StartProjectSessionOutput {
 pub mod start_project_session_output {
 
     /// A builder for [`StartProjectSessionOutput`](crate::output::StartProjectSessionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -545,6 +556,7 @@ impl StartJobRunOutput {
 pub mod start_job_run_output {
 
     /// A builder for [`StartJobRunOutput`](crate::output::StartJobRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -607,6 +619,7 @@ impl SendProjectSessionActionOutput {
 pub mod send_project_session_action_output {
 
     /// A builder for [`SendProjectSessionActionOutput`](crate::output::SendProjectSessionActionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -679,6 +692,7 @@ impl PublishRecipeOutput {
 pub mod publish_recipe_output {
 
     /// A builder for [`PublishRecipeOutput`](crate::output::PublishRecipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -729,6 +743,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -799,6 +814,7 @@ impl ListSchedulesOutput {
 pub mod list_schedules_output {
 
     /// A builder for [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedules: std::option::Option<std::vec::Vec<crate::model::Schedule>>,
@@ -875,6 +891,7 @@ impl ListRulesetsOutput {
 pub mod list_rulesets_output {
 
     /// A builder for [`ListRulesetsOutput`](crate::output::ListRulesetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rulesets: std::option::Option<std::vec::Vec<crate::model::RulesetItem>>,
@@ -951,6 +968,7 @@ impl ListRecipeVersionsOutput {
 pub mod list_recipe_versions_output {
 
     /// A builder for [`ListRecipeVersionsOutput`](crate::output::ListRecipeVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1027,6 +1045,7 @@ impl ListRecipesOutput {
 pub mod list_recipes_output {
 
     /// A builder for [`ListRecipesOutput`](crate::output::ListRecipesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
@@ -1103,6 +1122,7 @@ impl ListProjectsOutput {
 pub mod list_projects_output {
 
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
@@ -1179,6 +1199,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -1255,6 +1276,7 @@ impl ListJobRunsOutput {
 pub mod list_job_runs_output {
 
     /// A builder for [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
@@ -1331,6 +1353,7 @@ impl ListDatasetsOutput {
 pub mod list_datasets_output {
 
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
@@ -1460,6 +1483,7 @@ impl DescribeScheduleOutput {
 pub mod describe_schedule_output {
 
     /// A builder for [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -1709,6 +1733,7 @@ impl DescribeRulesetOutput {
 pub mod describe_ruleset_output {
 
     /// A builder for [`DescribeRulesetOutput`](crate::output::DescribeRulesetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1988,6 +2013,7 @@ impl DescribeRecipeOutput {
 pub mod describe_recipe_output {
 
     /// A builder for [`DescribeRecipeOutput`](crate::output::DescribeRecipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -2326,6 +2352,7 @@ impl DescribeProjectOutput {
 pub mod describe_project_output {
 
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2703,6 +2730,7 @@ impl DescribeJobRunOutput {
 pub mod describe_job_run_output {
 
     /// A builder for [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attempt: std::option::Option<i32>,
@@ -3219,6 +3247,7 @@ impl DescribeJobOutput {
 pub mod describe_job_output {
 
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3726,6 +3755,7 @@ impl DescribeDatasetOutput {
 pub mod describe_dataset_output {
 
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -3938,6 +3968,7 @@ impl DeleteScheduleOutput {
 pub mod delete_schedule_output {
 
     /// A builder for [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3984,6 +4015,7 @@ impl DeleteRulesetOutput {
 pub mod delete_ruleset_output {
 
     /// A builder for [`DeleteRulesetOutput`](crate::output::DeleteRulesetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4037,6 +4069,7 @@ impl DeleteRecipeVersionOutput {
 pub mod delete_recipe_version_output {
 
     /// A builder for [`DeleteRecipeVersionOutput`](crate::output::DeleteRecipeVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4100,6 +4133,7 @@ impl DeleteProjectOutput {
 pub mod delete_project_output {
 
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4146,6 +4180,7 @@ impl DeleteJobOutput {
 pub mod delete_job_output {
 
     /// A builder for [`DeleteJobOutput`](crate::output::DeleteJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4192,6 +4227,7 @@ impl DeleteDatasetOutput {
 pub mod delete_dataset_output {
 
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4238,6 +4274,7 @@ impl CreateScheduleOutput {
 pub mod create_schedule_output {
 
     /// A builder for [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4284,6 +4321,7 @@ impl CreateRulesetOutput {
 pub mod create_ruleset_output {
 
     /// A builder for [`CreateRulesetOutput`](crate::output::CreateRulesetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4330,6 +4368,7 @@ impl CreateRecipeJobOutput {
 pub mod create_recipe_job_output {
 
     /// A builder for [`CreateRecipeJobOutput`](crate::output::CreateRecipeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4376,6 +4415,7 @@ impl CreateRecipeOutput {
 pub mod create_recipe_output {
 
     /// A builder for [`CreateRecipeOutput`](crate::output::CreateRecipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4422,6 +4462,7 @@ impl CreateProjectOutput {
 pub mod create_project_output {
 
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4468,6 +4509,7 @@ impl CreateProfileJobOutput {
 pub mod create_profile_job_output {
 
     /// A builder for [`CreateProfileJobOutput`](crate::output::CreateProfileJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4514,6 +4556,7 @@ impl CreateDatasetOutput {
 pub mod create_dataset_output {
 
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4567,6 +4610,7 @@ impl BatchDeleteRecipeVersionOutput {
 pub mod batch_delete_recipe_version_output {
 
     /// A builder for [`BatchDeleteRecipeVersionOutput`](crate::output::BatchDeleteRecipeVersionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

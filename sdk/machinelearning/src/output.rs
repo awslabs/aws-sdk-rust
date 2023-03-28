@@ -19,6 +19,7 @@ impl UpdateMlModelOutput {
 pub mod update_ml_model_output {
 
     /// A builder for [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -68,6 +69,7 @@ impl UpdateEvaluationOutput {
 pub mod update_evaluation_output {
 
     /// A builder for [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -120,6 +122,7 @@ impl UpdateDataSourceOutput {
 pub mod update_data_source_output {
 
     /// A builder for [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -172,6 +175,7 @@ impl UpdateBatchPredictionOutput {
 pub mod update_batch_prediction_output {
 
     /// A builder for [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -235,6 +239,7 @@ impl PredictOutput {
 pub mod predict_output {
 
     /// A builder for [`PredictOutput`](crate::output::PredictOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prediction: std::option::Option<crate::model::Prediction>,
@@ -490,6 +495,7 @@ impl GetMlModelOutput {
 pub mod get_ml_model_output {
 
     /// A builder for [`GetMlModelOutput`](crate::output::GetMlModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1001,6 +1007,7 @@ impl GetEvaluationOutput {
 pub mod get_evaluation_output {
 
     /// A builder for [`GetEvaluationOutput`](crate::output::GetEvaluationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -1422,6 +1429,7 @@ impl GetDataSourceOutput {
 pub mod get_data_source_output {
 
     /// A builder for [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -1876,6 +1884,7 @@ impl GetBatchPredictionOutput {
 pub mod get_batch_prediction_output {
 
     /// A builder for [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -2174,6 +2183,7 @@ impl DescribeTagsOutput {
 pub mod describe_tags_output {
 
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2265,6 +2275,7 @@ impl DescribeMlModelsOutput {
 pub mod describe_ml_models_output {
 
     /// A builder for [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::MlModel>>,
@@ -2341,6 +2352,7 @@ impl DescribeEvaluationsOutput {
 pub mod describe_evaluations_output {
 
     /// A builder for [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -2417,6 +2429,7 @@ impl DescribeDataSourcesOutput {
 pub mod describe_data_sources_output {
 
     /// A builder for [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -2493,6 +2506,7 @@ impl DescribeBatchPredictionsOutput {
 pub mod describe_batch_predictions_output {
 
     /// A builder for [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
@@ -2569,6 +2583,7 @@ impl DeleteTagsOutput {
 pub mod delete_tags_output {
 
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2642,6 +2657,7 @@ impl DeleteRealtimeEndpointOutput {
 pub mod delete_realtime_endpoint_output {
 
     /// A builder for [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -2706,6 +2722,7 @@ impl DeleteMlModelOutput {
 pub mod delete_ml_model_output {
 
     /// A builder for [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -2755,6 +2772,7 @@ impl DeleteEvaluationOutput {
 pub mod delete_evaluation_output {
 
     /// A builder for [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -2806,6 +2824,7 @@ impl DeleteDataSourceOutput {
 pub mod delete_data_source_output {
 
     /// A builder for [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -2858,6 +2877,7 @@ impl DeleteBatchPredictionOutput {
 pub mod delete_batch_prediction_output {
 
     /// A builder for [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -2920,6 +2940,7 @@ impl CreateRealtimeEndpointOutput {
 pub mod create_realtime_endpoint_output {
 
     /// A builder for [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -2984,6 +3005,7 @@ impl CreateMlModelOutput {
 pub mod create_ml_model_output {
 
     /// A builder for [`CreateMlModelOutput`](crate::output::CreateMlModelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -3033,6 +3055,7 @@ impl CreateEvaluationOutput {
 pub mod create_evaluation_output {
 
     /// A builder for [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -3085,6 +3108,7 @@ impl CreateDataSourceFromS3Output {
 pub mod create_data_source_from_s3_output {
 
     /// A builder for [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -3137,6 +3161,7 @@ impl CreateDataSourceFromRedshiftOutput {
 pub mod create_data_source_from_redshift_output {
 
     /// A builder for [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -3189,6 +3214,7 @@ impl CreateDataSourceFromRdsOutput {
 pub mod create_data_source_from_rds_output {
 
     /// A builder for [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -3241,6 +3267,7 @@ impl CreateBatchPredictionOutput {
 pub mod create_batch_prediction_output {
 
     /// A builder for [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -3299,6 +3326,7 @@ impl AddTagsOutput {
 pub mod add_tags_output {
 
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@
 
 //! Protocol-agnostic types for smithy-rs.
 
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![warn(
     missing_docs,
     rustdoc::missing_crate_level_docs,

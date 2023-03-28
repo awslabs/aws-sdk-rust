@@ -130,6 +130,7 @@ impl MetricDefinitionRequest {
 pub mod metric_definition_request {
 
     /// A builder for [`MetricDefinitionRequest`](crate::model::MetricDefinitionRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -418,6 +419,7 @@ impl MetricDestinationSummary {
 pub mod metric_destination_summary {
 
     /// A builder for [`MetricDestinationSummary`](crate::model::MetricDestinationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<crate::model::MetricDestination>,
@@ -507,6 +509,7 @@ impl QueryFilter {
 pub mod query_filter {
 
     /// A builder for [`QueryFilter`](crate::model::QueryFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -585,6 +588,7 @@ impl TimeRange {
 pub mod time_range {
 
     /// A builder for [`TimeRange`](crate::model::TimeRange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) after: std::option::Option<i64>,
@@ -645,6 +649,7 @@ impl CustomEvents {
 pub mod custom_events {
 
     /// A builder for [`CustomEvents`](crate::model::CustomEvents).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::CustomEventsStatus>,
@@ -862,6 +867,7 @@ impl AppMonitorConfiguration {
 pub mod app_monitor_configuration {
 
     /// A builder for [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1202,6 +1208,7 @@ impl MetricDefinition {
 pub mod metric_definition {
 
     /// A builder for [`MetricDefinition`](crate::model::MetricDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_definition_id: std::option::Option<std::string::String>,
@@ -1349,6 +1356,7 @@ impl BatchDeleteRumMetricDefinitionsError {
 pub mod batch_delete_rum_metric_definitions_error {
 
     /// A builder for [`BatchDeleteRumMetricDefinitionsError`](crate::model::BatchDeleteRumMetricDefinitionsError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_definition_id: std::option::Option<std::string::String>,
@@ -1441,6 +1449,7 @@ impl BatchCreateRumMetricDefinitionsError {
 pub mod batch_create_rum_metric_definitions_error {
 
     /// A builder for [`BatchCreateRumMetricDefinitionsError`](crate::model::BatchCreateRumMetricDefinitionsError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_definition: std::option::Option<crate::model::MetricDefinitionRequest>,
@@ -1547,6 +1556,7 @@ impl AppMonitorSummary {
 pub mod app_monitor_summary {
 
     /// A builder for [`AppMonitorSummary`](crate::model::AppMonitorSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1812,6 +1822,7 @@ impl AppMonitor {
 pub mod app_monitor {
 
     /// A builder for [`AppMonitor`](crate::model::AppMonitor).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2003,6 +2014,7 @@ impl DataStorage {
 pub mod data_storage {
 
     /// A builder for [`DataStorage`](crate::model::DataStorage).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log: std::option::Option<crate::model::CwLog>,
@@ -2058,6 +2070,7 @@ impl CwLog {
 pub mod cw_log {
 
     /// A builder for [`CwLog`](crate::model::CwLog).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log_enabled: std::option::Option<bool>,
@@ -2146,6 +2159,7 @@ impl RumEvent {
 pub mod rum_event {
 
     /// A builder for [`RumEvent`](crate::model::RumEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2252,6 +2266,7 @@ impl UserDetails {
 pub mod user_details {
 
     /// A builder for [`UserDetails`](crate::model::UserDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -2326,6 +2341,7 @@ impl AppMonitorDetails {
 pub mod app_monitor_details {
 
     /// A builder for [`AppMonitorDetails`](crate::model::AppMonitorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

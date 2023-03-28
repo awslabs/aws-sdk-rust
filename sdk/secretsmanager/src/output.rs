@@ -24,6 +24,7 @@ impl ValidateResourcePolicyOutput {
 pub mod validate_resource_policy_output {
 
     /// A builder for [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_validation_passed: std::option::Option<bool>,
@@ -101,6 +102,7 @@ impl UpdateSecretVersionStageOutput {
 pub mod update_secret_version_stage_output {
 
     /// A builder for [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -175,6 +177,7 @@ impl UpdateSecretOutput {
 pub mod update_secret_output {
 
     /// A builder for [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -237,6 +240,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -261,6 +265,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -295,6 +300,7 @@ impl StopReplicationToReplicaOutput {
 pub mod stop_replication_to_replica_output {
 
     /// A builder for [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -355,6 +361,7 @@ impl RotateSecretOutput {
 pub mod rotate_secret_output {
 
     /// A builder for [`RotateSecretOutput`](crate::output::RotateSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -434,6 +441,7 @@ impl RestoreSecretOutput {
 pub mod restore_secret_output {
 
     /// A builder for [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -503,6 +511,7 @@ impl ReplicateSecretToRegionsOutput {
 pub mod replicate_secret_to_regions_output {
 
     /// A builder for [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -582,6 +591,7 @@ impl RemoveRegionsFromReplicationOutput {
 pub mod remove_regions_from_replication_output {
 
     /// A builder for [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -673,6 +683,7 @@ impl PutSecretValueOutput {
 pub mod put_secret_value_output {
 
     /// A builder for [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -773,6 +784,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -854,6 +866,7 @@ impl ListSecretVersionIdsOutput {
 pub mod list_secret_version_ids_output {
 
     /// A builder for [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) versions:
@@ -955,6 +968,7 @@ impl ListSecretsOutput {
 pub mod list_secrets_output {
 
     /// A builder for [`ListSecretsOutput`](crate::output::ListSecretsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
@@ -1083,6 +1097,7 @@ impl std::fmt::Debug for GetSecretValueOutput {
 pub mod get_secret_value_output {
 
     /// A builder for [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1252,6 +1267,7 @@ impl GetResourcePolicyOutput {
 pub mod get_resource_policy_output {
 
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1334,6 +1350,7 @@ impl std::fmt::Debug for GetRandomPasswordOutput {
 pub mod get_random_password_output {
 
     /// A builder for [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) random_password: std::option::Option<std::string::String>,
@@ -1547,6 +1564,7 @@ impl DescribeSecretOutput {
 pub mod describe_secret_output {
 
     /// A builder for [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1907,6 +1925,7 @@ impl DeleteSecretOutput {
 pub mod delete_secret_output {
 
     /// A builder for [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1989,6 +2008,7 @@ impl DeleteResourcePolicyOutput {
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2082,6 +2102,7 @@ impl CreateSecretOutput {
 pub mod create_secret_output {
 
     /// A builder for [`CreateSecretOutput`](crate::output::CreateSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2200,6 +2221,7 @@ impl CancelRotateSecretOutput {
 pub mod cancel_rotate_secret_output {
 
     /// A builder for [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

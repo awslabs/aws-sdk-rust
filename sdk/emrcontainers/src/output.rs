@@ -7,6 +7,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -86,6 +88,7 @@ impl StartJobRunOutput {
 pub mod start_job_run_output {
 
     /// A builder for [`StartJobRunOutput`](crate::output::StartJobRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -180,6 +183,7 @@ impl ListVirtualClustersOutput {
 pub mod list_virtual_clusters_output {
 
     /// A builder for [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_clusters:
@@ -254,6 +258,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -324,6 +329,7 @@ impl ListManagedEndpointsOutput {
 pub mod list_managed_endpoints_output {
 
     /// A builder for [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -400,6 +406,7 @@ impl ListJobTemplatesOutput {
 pub mod list_job_templates_output {
 
     /// A builder for [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
@@ -476,6 +483,7 @@ impl ListJobRunsOutput {
 pub mod list_job_runs_output {
 
     /// A builder for [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
@@ -545,6 +553,7 @@ impl DescribeVirtualClusterOutput {
 pub mod describe_virtual_cluster_output {
 
     /// A builder for [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_cluster: std::option::Option<crate::model::VirtualCluster>,
@@ -596,6 +605,7 @@ impl DescribeManagedEndpointOutput {
 pub mod describe_managed_endpoint_output {
 
     /// A builder for [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
@@ -644,6 +654,7 @@ impl DescribeJobTemplateOutput {
 pub mod describe_job_template_output {
 
     /// A builder for [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
@@ -695,6 +706,7 @@ impl DescribeJobRunOutput {
 pub mod describe_job_run_output {
 
     /// A builder for [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_run: std::option::Option<crate::model::JobRun>,
@@ -743,6 +755,7 @@ impl DeleteVirtualClusterOutput {
 pub mod delete_virtual_cluster_output {
 
     /// A builder for [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -796,6 +809,7 @@ impl DeleteManagedEndpointOutput {
 pub mod delete_managed_endpoint_output {
 
     /// A builder for [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -859,6 +873,7 @@ impl DeleteJobTemplateOutput {
 pub mod delete_job_template_output {
 
     /// A builder for [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -919,6 +934,7 @@ impl CreateVirtualClusterOutput {
 pub mod create_virtual_cluster_output {
 
     /// A builder for [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1012,6 +1028,7 @@ impl CreateManagedEndpointOutput {
 pub mod create_managed_endpoint_output {
 
     /// A builder for [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1120,6 +1137,7 @@ impl CreateJobTemplateOutput {
 pub mod create_job_template_output {
 
     /// A builder for [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1214,6 +1232,7 @@ impl CancelJobRunOutput {
 pub mod cancel_job_run_output {
 
     /// A builder for [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

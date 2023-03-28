@@ -16,7 +16,7 @@ fn test_client(update_builder: fn(Builder) -> Builder) -> (CaptureRequestReceive
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-west-4"))
-        .http_connector(conn.clone())
+        .http_connector(conn)
         .build();
     let client = Client::from_conf(update_builder(Builder::from(&sdk_config)).build());
     (captured_request, client)

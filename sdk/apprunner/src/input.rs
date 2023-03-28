@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_custom_domain_input {
 
     /// A builder for [`AssociateCustomDomainInput`](crate::input::AssociateCustomDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -197,6 +198,7 @@ impl AssociateCustomDomainInput {
 pub mod create_auto_scaling_configuration_input {
 
     /// A builder for [`CreateAutoScalingConfigurationInput`](crate::input::CreateAutoScalingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_name: std::option::Option<std::string::String>,
@@ -438,6 +440,7 @@ impl CreateAutoScalingConfigurationInput {
 pub mod create_connection_input {
 
     /// A builder for [`CreateConnectionInput`](crate::input::CreateConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_name: std::option::Option<std::string::String>,
@@ -641,6 +644,7 @@ impl CreateConnectionInput {
 pub mod create_observability_configuration_input {
 
     /// A builder for [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
@@ -853,6 +857,7 @@ impl CreateObservabilityConfigurationInput {
 pub mod create_service_input {
 
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1163,6 +1168,7 @@ impl CreateServiceInput {
 pub mod create_vpc_connector_input {
 
     /// A builder for [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector_name: std::option::Option<std::string::String>,
@@ -1397,6 +1403,7 @@ impl CreateVpcConnectorInput {
 pub mod create_vpc_ingress_connection_input {
 
     /// A builder for [`CreateVpcIngressConnectionInput`](crate::input::CreateVpcIngressConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -1619,6 +1626,7 @@ impl CreateVpcIngressConnectionInput {
 pub mod delete_auto_scaling_configuration_input {
 
     /// A builder for [`DeleteAutoScalingConfigurationInput`](crate::input::DeleteAutoScalingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
@@ -1791,6 +1799,7 @@ impl DeleteAutoScalingConfigurationInput {
 pub mod delete_connection_input {
 
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -1958,6 +1967,7 @@ impl DeleteConnectionInput {
 pub mod delete_observability_configuration_input {
 
     /// A builder for [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
@@ -2130,6 +2140,7 @@ impl DeleteObservabilityConfigurationInput {
 pub mod delete_service_input {
 
     /// A builder for [`DeleteServiceInput`](crate::input::DeleteServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -2292,6 +2303,7 @@ impl DeleteServiceInput {
 pub mod delete_vpc_connector_input {
 
     /// A builder for [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
@@ -2461,6 +2473,7 @@ impl DeleteVpcConnectorInput {
 pub mod delete_vpc_ingress_connection_input {
 
     /// A builder for [`DeleteVpcIngressConnectionInput`](crate::input::DeleteVpcIngressConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection_arn: std::option::Option<std::string::String>,
@@ -2628,6 +2641,7 @@ impl DeleteVpcIngressConnectionInput {
 pub mod describe_auto_scaling_configuration_input {
 
     /// A builder for [`DescribeAutoScalingConfigurationInput`](crate::input::DescribeAutoScalingConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
@@ -2800,6 +2814,7 @@ impl DescribeAutoScalingConfigurationInput {
 pub mod describe_custom_domains_input {
 
     /// A builder for [`DescribeCustomDomainsInput`](crate::input::DescribeCustomDomainsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -2994,6 +3009,7 @@ impl DescribeCustomDomainsInput {
 pub mod describe_observability_configuration_input {
 
     /// A builder for [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
@@ -3166,6 +3182,7 @@ impl DescribeObservabilityConfigurationInput {
 pub mod describe_service_input {
 
     /// A builder for [`DescribeServiceInput`](crate::input::DescribeServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -3328,6 +3345,7 @@ impl DescribeServiceInput {
 pub mod describe_vpc_connector_input {
 
     /// A builder for [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
@@ -3499,6 +3517,7 @@ impl DescribeVpcConnectorInput {
 pub mod describe_vpc_ingress_connection_input {
 
     /// A builder for [`DescribeVpcIngressConnectionInput`](crate::input::DescribeVpcIngressConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection_arn: std::option::Option<std::string::String>,
@@ -3666,6 +3685,7 @@ impl DescribeVpcIngressConnectionInput {
 pub mod disassociate_custom_domain_input {
 
     /// A builder for [`DisassociateCustomDomainInput`](crate::input::DisassociateCustomDomainInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -3844,6 +3864,7 @@ impl DisassociateCustomDomainInput {
 pub mod list_auto_scaling_configurations_input {
 
     /// A builder for [`ListAutoScalingConfigurationsInput`](crate::input::ListAutoScalingConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_name: std::option::Option<std::string::String>,
@@ -4058,6 +4079,7 @@ impl ListAutoScalingConfigurationsInput {
 pub mod list_connections_input {
 
     /// A builder for [`ListConnectionsInput`](crate::input::ListConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_name: std::option::Option<std::string::String>,
@@ -4251,6 +4273,7 @@ impl ListConnectionsInput {
 pub mod list_observability_configurations_input {
 
     /// A builder for [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
@@ -4465,6 +4488,7 @@ impl ListObservabilityConfigurationsInput {
 pub mod list_operations_input {
 
     /// A builder for [`ListOperationsInput`](crate::input::ListOperationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -4655,6 +4679,7 @@ impl ListOperationsInput {
 pub mod list_services_input {
 
     /// A builder for [`ListServicesInput`](crate::input::ListServicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4833,6 +4858,7 @@ impl ListServicesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5001,6 +5027,7 @@ impl ListTagsForResourceInput {
 pub mod list_vpc_connectors_input {
 
     /// A builder for [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -5181,6 +5208,7 @@ impl ListVpcConnectorsInput {
 pub mod list_vpc_ingress_connections_input {
 
     /// A builder for [`ListVpcIngressConnectionsInput`](crate::input::ListVpcIngressConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::ListVpcIngressConnectionsFilter>,
@@ -5378,6 +5406,7 @@ impl ListVpcIngressConnectionsInput {
 pub mod pause_service_input {
 
     /// A builder for [`PauseServiceInput`](crate::input::PauseServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -5540,6 +5569,7 @@ impl PauseServiceInput {
 pub mod resume_service_input {
 
     /// A builder for [`ResumeServiceInput`](crate::input::ResumeServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -5702,6 +5732,7 @@ impl ResumeServiceInput {
 pub mod start_deployment_input {
 
     /// A builder for [`StartDeploymentInput`](crate::input::StartDeploymentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -5864,6 +5895,7 @@ impl StartDeploymentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6049,6 +6081,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6234,6 +6267,7 @@ impl UntagResourceInput {
 pub mod update_service_input {
 
     /// A builder for [`UpdateServiceInput`](crate::input::UpdateServiceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -6502,6 +6536,7 @@ impl UpdateServiceInput {
 pub mod update_vpc_ingress_connection_input {
 
     /// A builder for [`UpdateVpcIngressConnectionInput`](crate::input::UpdateVpcIngressConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection_arn: std::option::Option<std::string::String>,

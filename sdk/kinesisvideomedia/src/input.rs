@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_media_input {
 
     /// A builder for [`GetMediaInput`](crate::input::GetMediaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,

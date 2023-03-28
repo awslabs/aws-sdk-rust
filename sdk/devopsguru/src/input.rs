@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_notification_channel_input {
 
     /// A builder for [`AddNotificationChannelInput`](crate::input::AddNotificationChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -169,6 +170,7 @@ impl AddNotificationChannelInput {
 pub mod delete_insight_input {
 
     /// A builder for [`DeleteInsightInput`](crate::input::DeleteInsightInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -329,6 +331,7 @@ impl DeleteInsightInput {
 pub mod describe_account_health_input {
 
     /// A builder for [`DescribeAccountHealthInput`](crate::input::DescribeAccountHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -460,6 +463,7 @@ impl DescribeAccountHealthInput {
 pub mod describe_account_overview_input {
 
     /// A builder for [`DescribeAccountOverviewInput`](crate::input::DescribeAccountOverviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -639,6 +643,7 @@ impl DescribeAccountOverviewInput {
 pub mod describe_anomaly_input {
 
     /// A builder for [`DescribeAnomalyInput`](crate::input::DescribeAnomalyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -826,6 +831,7 @@ impl DescribeAnomalyInput {
 pub mod describe_event_sources_config_input {
 
     /// A builder for [`DescribeEventSourcesConfigInput`](crate::input::DescribeEventSourcesConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -957,6 +963,7 @@ impl DescribeEventSourcesConfigInput {
 pub mod describe_feedback_input {
 
     /// A builder for [`DescribeFeedbackInput`](crate::input::DescribeFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
@@ -1116,6 +1123,7 @@ impl DescribeFeedbackInput {
 pub mod describe_insight_input {
 
     /// A builder for [`DescribeInsightInput`](crate::input::DescribeInsightInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1303,6 +1311,7 @@ impl DescribeInsightInput {
 pub mod describe_organization_health_input {
 
     /// A builder for [`DescribeOrganizationHealthInput`](crate::input::DescribeOrganizationHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1494,6 +1503,7 @@ impl DescribeOrganizationHealthInput {
 pub mod describe_organization_overview_input {
 
     /// A builder for [`DescribeOrganizationOverviewInput`](crate::input::DescribeOrganizationOverviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1713,6 +1723,7 @@ impl DescribeOrganizationOverviewInput {
 pub mod describe_organization_resource_collection_health_input {
 
     /// A builder for [`DescribeOrganizationResourceCollectionHealthInput`](crate::input::DescribeOrganizationResourceCollectionHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_resource_collection_type:
@@ -1950,6 +1961,7 @@ impl DescribeOrganizationResourceCollectionHealthInput {
 pub mod describe_resource_collection_health_input {
 
     /// A builder for [`DescribeResourceCollectionHealthInput`](crate::input::DescribeResourceCollectionHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection_type:
@@ -2151,6 +2163,7 @@ impl DescribeResourceCollectionHealthInput {
 pub mod describe_service_integration_input {
 
     /// A builder for [`DescribeServiceIntegrationInput`](crate::input::DescribeServiceIntegrationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2282,6 +2295,7 @@ impl DescribeServiceIntegrationInput {
 pub mod get_cost_estimation_input {
 
     /// A builder for [`GetCostEstimationInput`](crate::input::GetCostEstimationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2440,6 +2454,7 @@ impl GetCostEstimationInput {
 pub mod get_resource_collection_input {
 
     /// A builder for [`GetResourceCollectionInput`](crate::input::GetResourceCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection_type:
@@ -2641,6 +2656,7 @@ impl GetResourceCollectionInput {
 pub mod list_anomalies_for_insight_input {
 
     /// A builder for [`ListAnomaliesForInsightInput`](crate::input::ListAnomaliesForInsightInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
@@ -2877,6 +2893,7 @@ impl ListAnomaliesForInsightInput {
 pub mod list_anomalous_log_groups_input {
 
     /// A builder for [`ListAnomalousLogGroupsInput`](crate::input::ListAnomalousLogGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
@@ -3062,6 +3079,7 @@ impl ListAnomalousLogGroupsInput {
 pub mod list_events_input {
 
     /// A builder for [`ListEventsInput`](crate::input::ListEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ListEventsFilters>,
@@ -3258,6 +3276,7 @@ impl ListEventsInput {
 pub mod list_insights_input {
 
     /// A builder for [`ListInsightsInput`](crate::input::ListInsightsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -3442,6 +3461,7 @@ impl ListInsightsInput {
 pub mod list_monitored_resources_input {
 
     /// A builder for [`ListMonitoredResourcesInput`](crate::input::ListMonitoredResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ListMonitoredResourcesFilters>,
@@ -3630,6 +3650,7 @@ impl ListMonitoredResourcesInput {
 pub mod list_notification_channels_input {
 
     /// A builder for [`ListNotificationChannelsInput`](crate::input::ListNotificationChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3791,6 +3812,7 @@ impl ListNotificationChannelsInput {
 pub mod list_organization_insights_input {
 
     /// A builder for [`ListOrganizationInsightsInput`](crate::input::ListOrganizationInsightsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -4021,6 +4043,7 @@ impl ListOrganizationInsightsInput {
 pub mod list_recommendations_input {
 
     /// A builder for [`ListRecommendationsInput`](crate::input::ListRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
@@ -4216,6 +4239,7 @@ impl ListRecommendationsInput {
 pub mod put_feedback_input {
 
     /// A builder for [`PutFeedbackInput`](crate::input::PutFeedbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_feedback: std::option::Option<crate::model::InsightFeedback>,
@@ -4376,6 +4400,7 @@ impl PutFeedbackInput {
 pub mod remove_notification_channel_input {
 
     /// A builder for [`RemoveNotificationChannelInput`](crate::input::RemoveNotificationChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4538,6 +4563,7 @@ impl RemoveNotificationChannelInput {
 pub mod search_insights_input {
 
     /// A builder for [`SearchInsightsInput`](crate::input::SearchInsightsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time_range: std::option::Option<crate::model::StartTimeRange>,
@@ -4749,6 +4775,7 @@ impl SearchInsightsInput {
 pub mod search_organization_insights_input {
 
     /// A builder for [`SearchOrganizationInsightsInput`](crate::input::SearchOrganizationInsightsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4985,6 +5012,7 @@ impl SearchOrganizationInsightsInput {
 pub mod start_cost_estimation_input {
 
     /// A builder for [`StartCostEstimationInput`](crate::input::StartCostEstimationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection:
@@ -5166,6 +5194,7 @@ impl StartCostEstimationInput {
 pub mod update_event_sources_config_input {
 
     /// A builder for [`UpdateEventSourcesConfigInput`](crate::input::UpdateEventSourcesConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_sources: std::option::Option<crate::model::EventSourcesConfig>,
@@ -5330,6 +5359,7 @@ impl UpdateEventSourcesConfigInput {
 pub mod update_resource_collection_input {
 
     /// A builder for [`UpdateResourceCollectionInput`](crate::input::UpdateResourceCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::UpdateResourceCollectionAction>,
@@ -5513,6 +5543,7 @@ impl UpdateResourceCollectionInput {
 pub mod update_service_integration_input {
 
     /// A builder for [`UpdateServiceIntegrationInput`](crate::input::UpdateServiceIntegrationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_integration:

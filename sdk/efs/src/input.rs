@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_access_point_input {
 
     /// A builder for [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -235,6 +236,7 @@ impl CreateAccessPointInput {
 pub mod create_file_system_input {
 
     /// A builder for [`CreateFileSystemInput`](crate::input::CreateFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_token: std::option::Option<std::string::String>,
@@ -551,6 +553,7 @@ impl CreateFileSystemInput {
 pub mod create_mount_target_input {
 
     /// A builder for [`CreateMountTargetInput`](crate::input::CreateMountTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -758,6 +761,7 @@ impl CreateMountTargetInput {
 pub mod create_replication_configuration_input {
 
     /// A builder for [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_file_system_id: std::option::Option<std::string::String>,
@@ -966,6 +970,7 @@ impl CreateReplicationConfigurationInput {
 pub mod create_tags_input {
 
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -1171,6 +1176,7 @@ impl CreateTagsInput {
 pub mod delete_access_point_input {
 
     /// A builder for [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
@@ -1343,6 +1349,7 @@ impl DeleteAccessPointInput {
 pub mod delete_file_system_input {
 
     /// A builder for [`DeleteFileSystemInput`](crate::input::DeleteFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -1515,6 +1522,7 @@ impl DeleteFileSystemInput {
 pub mod delete_file_system_policy_input {
 
     /// A builder for [`DeleteFileSystemPolicyInput`](crate::input::DeleteFileSystemPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -1687,6 +1695,7 @@ impl DeleteFileSystemPolicyInput {
 pub mod delete_mount_target_input {
 
     /// A builder for [`DeleteMountTargetInput`](crate::input::DeleteMountTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mount_target_id: std::option::Option<std::string::String>,
@@ -1859,6 +1868,7 @@ impl DeleteMountTargetInput {
 pub mod delete_replication_configuration_input {
 
     /// A builder for [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_file_system_id: std::option::Option<std::string::String>,
@@ -2031,6 +2041,7 @@ impl DeleteReplicationConfigurationInput {
 pub mod delete_tags_input {
 
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -2236,6 +2247,7 @@ impl DeleteTagsInput {
 pub mod describe_access_points_input {
 
     /// A builder for [`DescribeAccessPointsInput`](crate::input::DescribeAccessPointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2460,6 +2472,7 @@ impl DescribeAccessPointsInput {
 pub mod describe_account_preferences_input {
 
     /// A builder for [`DescribeAccountPreferencesInput`](crate::input::DescribeAccountPreferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2634,6 +2647,7 @@ impl DescribeAccountPreferencesInput {
 pub mod describe_backup_policy_input {
 
     /// A builder for [`DescribeBackupPolicyInput`](crate::input::DescribeBackupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -2806,6 +2820,7 @@ impl DescribeBackupPolicyInput {
 pub mod describe_file_system_policy_input {
 
     /// A builder for [`DescribeFileSystemPolicyInput`](crate::input::DescribeFileSystemPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -2978,6 +2993,7 @@ impl DescribeFileSystemPolicyInput {
 pub mod describe_file_systems_input {
 
     /// A builder for [`DescribeFileSystemsInput`](crate::input::DescribeFileSystemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
@@ -3202,6 +3218,7 @@ impl DescribeFileSystemsInput {
 pub mod describe_lifecycle_configuration_input {
 
     /// A builder for [`DescribeLifecycleConfigurationInput`](crate::input::DescribeLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -3374,6 +3391,7 @@ impl DescribeLifecycleConfigurationInput {
 pub mod describe_mount_targets_input {
 
     /// A builder for [`DescribeMountTargetsInput`](crate::input::DescribeMountTargetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
@@ -3621,6 +3639,7 @@ impl DescribeMountTargetsInput {
 pub mod describe_mount_target_security_groups_input {
 
     /// A builder for [`DescribeMountTargetSecurityGroupsInput`](crate::input::DescribeMountTargetSecurityGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mount_target_id: std::option::Option<std::string::String>,
@@ -3793,6 +3812,7 @@ impl DescribeMountTargetSecurityGroupsInput {
 pub mod describe_replication_configurations_input {
 
     /// A builder for [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -3998,6 +4018,7 @@ impl DescribeReplicationConfigurationsInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
@@ -4213,6 +4234,7 @@ impl DescribeTagsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -4427,6 +4449,7 @@ impl ListTagsForResourceInput {
 pub mod modify_mount_target_security_groups_input {
 
     /// A builder for [`ModifyMountTargetSecurityGroupsInput`](crate::input::ModifyMountTargetSecurityGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mount_target_id: std::option::Option<std::string::String>,
@@ -4634,6 +4657,7 @@ impl ModifyMountTargetSecurityGroupsInput {
 pub mod put_account_preferences_input {
 
     /// A builder for [`PutAccountPreferencesInput`](crate::input::PutAccountPreferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id_type: std::option::Option<crate::model::ResourceIdType>,
@@ -4803,6 +4827,7 @@ impl PutAccountPreferencesInput {
 pub mod put_backup_policy_input {
 
     /// A builder for [`PutBackupPolicyInput`](crate::input::PutBackupPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -5002,6 +5027,7 @@ impl PutBackupPolicyInput {
 pub mod put_file_system_policy_input {
 
     /// A builder for [`PutFileSystemPolicyInput`](crate::input::PutFileSystemPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -5219,6 +5245,7 @@ impl PutFileSystemPolicyInput {
 pub mod put_lifecycle_configuration_input {
 
     /// A builder for [`PutLifecycleConfigurationInput`](crate::input::PutLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -5441,6 +5468,7 @@ impl PutLifecycleConfigurationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5643,6 +5671,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5849,6 +5878,7 @@ impl UntagResourceInput {
 pub mod update_file_system_input {
 
     /// A builder for [`UpdateFileSystemInput`](crate::input::UpdateFileSystemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,

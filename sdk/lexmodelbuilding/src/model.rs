@@ -25,6 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -607,6 +608,7 @@ impl SlotTypeConfiguration {
 pub mod slot_type_configuration {
 
     /// A builder for [`SlotTypeConfiguration`](crate::model::SlotTypeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_configuration:
@@ -690,6 +692,7 @@ impl SlotTypeRegexConfiguration {
 pub mod slot_type_regex_configuration {
 
     /// A builder for [`SlotTypeRegexConfiguration`](crate::model::SlotTypeRegexConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern: std::option::Option<std::string::String>,
@@ -871,6 +874,7 @@ impl EnumerationValue {
 pub mod enumeration_value {
 
     /// A builder for [`EnumerationValue`](crate::model::EnumerationValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -954,6 +958,7 @@ impl OutputContext {
 pub mod output_context {
 
     /// A builder for [`OutputContext`](crate::model::OutputContext).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1026,6 +1031,7 @@ impl InputContext {
 pub mod input_context {
 
     /// A builder for [`InputContext`](crate::model::InputContext).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1088,6 +1094,7 @@ impl KendraConfiguration {
 pub mod kendra_configuration {
 
     /// A builder for [`KendraConfiguration`](crate::model::KendraConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kendra_index: std::option::Option<std::string::String>,
@@ -1177,6 +1184,7 @@ impl FulfillmentActivity {
 pub mod fulfillment_activity {
 
     /// A builder for [`FulfillmentActivity`](crate::model::FulfillmentActivity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FulfillmentActivityType>,
@@ -1247,6 +1255,7 @@ impl CodeHook {
 pub mod code_hook {
 
     /// A builder for [`CodeHook`](crate::model::CodeHook).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -1409,6 +1418,7 @@ impl Statement {
 pub mod statement {
 
     /// A builder for [`Statement`](crate::model::Statement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1495,6 +1505,7 @@ impl Message {
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<crate::model::ContentType>,
@@ -1672,6 +1683,7 @@ impl FollowUpPrompt {
 pub mod follow_up_prompt {
 
     /// A builder for [`FollowUpPrompt`](crate::model::FollowUpPrompt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prompt: std::option::Option<crate::model::Prompt>,
@@ -1749,6 +1761,7 @@ impl Prompt {
 pub mod prompt {
 
     /// A builder for [`Prompt`](crate::model::Prompt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1905,6 +1918,7 @@ impl Slot {
 pub mod slot {
 
     /// A builder for [`Slot`](crate::model::Slot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2104,6 +2118,7 @@ impl SlotDefaultValueSpec {
 pub mod slot_default_value_spec {
 
     /// A builder for [`SlotDefaultValueSpec`](crate::model::SlotDefaultValueSpec).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value_list:
@@ -2174,6 +2189,7 @@ impl SlotDefaultValue {
 pub mod slot_default_value {
 
     /// A builder for [`SlotDefaultValue`](crate::model::SlotDefaultValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2424,6 +2440,7 @@ impl ConversationLogsResponse {
 pub mod conversation_logs_response {
 
     /// A builder for [`ConversationLogsResponse`](crate::model::ConversationLogsResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_settings:
@@ -2522,6 +2539,7 @@ impl LogSettingsResponse {
 pub mod log_settings_response {
 
     /// A builder for [`LogSettingsResponse`](crate::model::LogSettingsResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_type: std::option::Option<crate::model::LogType>,
@@ -2811,6 +2829,7 @@ impl ConversationLogsRequest {
 pub mod conversation_logs_request {
 
     /// A builder for [`ConversationLogsRequest`](crate::model::ConversationLogsRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_settings:
@@ -2902,6 +2921,7 @@ impl LogSettingsRequest {
 pub mod log_settings_request {
 
     /// A builder for [`LogSettingsRequest`](crate::model::LogSettingsRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_type: std::option::Option<crate::model::LogType>,
@@ -3107,6 +3127,7 @@ impl Intent {
 pub mod intent {
 
     /// A builder for [`Intent`](crate::model::Intent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -3267,6 +3288,7 @@ impl UtteranceList {
 pub mod utterance_list {
 
     /// A builder for [`UtteranceList`](crate::model::UtteranceList).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_version: std::option::Option<std::string::String>,
@@ -3364,6 +3386,7 @@ impl UtteranceData {
 pub mod utterance_data {
 
     /// A builder for [`UtteranceData`](crate::model::UtteranceData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utterance_string: std::option::Option<std::string::String>,
@@ -3587,6 +3610,7 @@ impl SlotTypeMetadata {
 pub mod slot_type_metadata {
 
     /// A builder for [`SlotTypeMetadata`](crate::model::SlotTypeMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3745,6 +3769,7 @@ impl MigrationSummary {
 pub mod migration_summary {
 
     /// A builder for [`MigrationSummary`](crate::model::MigrationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) migration_id: std::option::Option<std::string::String>,
@@ -4210,6 +4235,7 @@ impl MigrationAlert {
 pub mod migration_alert {
 
     /// A builder for [`MigrationAlert`](crate::model::MigrationAlert).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::MigrationAlertType>,
@@ -4443,6 +4469,7 @@ impl IntentMetadata {
 pub mod intent_metadata {
 
     /// A builder for [`IntentMetadata`](crate::model::IntentMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4737,6 +4764,7 @@ impl BuiltinSlotTypeMetadata {
 pub mod builtin_slot_type_metadata {
 
     /// A builder for [`BuiltinSlotTypeMetadata`](crate::model::BuiltinSlotTypeMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -4813,6 +4841,7 @@ impl BuiltinIntentMetadata {
 pub mod builtin_intent_metadata {
 
     /// A builder for [`BuiltinIntentMetadata`](crate::model::BuiltinIntentMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -4882,6 +4911,7 @@ impl BuiltinIntentSlot {
 pub mod builtin_intent_slot {
 
     /// A builder for [`BuiltinIntentSlot`](crate::model::BuiltinIntentSlot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4963,6 +4993,7 @@ impl BotMetadata {
 pub mod bot_metadata {
 
     /// A builder for [`BotMetadata`](crate::model::BotMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5166,6 +5197,7 @@ impl std::fmt::Debug for BotChannelAssociation {
 pub mod bot_channel_association {
 
     /// A builder for [`BotChannelAssociation`](crate::model::BotChannelAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5611,6 +5643,7 @@ impl BotAliasMetadata {
 pub mod bot_alias_metadata {
 
     /// A builder for [`BotAliasMetadata`](crate::model::BotAliasMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5759,6 +5792,7 @@ impl ResourceReference {
 pub mod resource_reference {
 
     /// A builder for [`ResourceReference`](crate::model::ResourceReference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

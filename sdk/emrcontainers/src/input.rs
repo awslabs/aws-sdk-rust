@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_job_run_input {
 
     /// A builder for [`CancelJobRunInput`](crate::input::CancelJobRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -207,6 +208,7 @@ impl CancelJobRunInput {
 pub mod create_job_template_input {
 
     /// A builder for [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -437,6 +439,7 @@ impl CreateJobTemplateInput {
 pub mod create_managed_endpoint_input {
 
     /// A builder for [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -763,6 +766,7 @@ impl CreateManagedEndpointInput {
 pub mod create_virtual_cluster_input {
 
     /// A builder for [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -983,6 +987,7 @@ impl CreateVirtualClusterInput {
 pub mod delete_job_template_input {
 
     /// A builder for [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1145,6 +1150,7 @@ impl DeleteJobTemplateInput {
 pub mod delete_managed_endpoint_input {
 
     /// A builder for [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1349,6 +1355,7 @@ impl DeleteManagedEndpointInput {
 pub mod delete_virtual_cluster_input {
 
     /// A builder for [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1512,6 +1519,7 @@ impl DeleteVirtualClusterInput {
 pub mod describe_job_run_input {
 
     /// A builder for [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1714,6 +1722,7 @@ impl DescribeJobRunInput {
 pub mod describe_job_template_input {
 
     /// A builder for [`DescribeJobTemplateInput`](crate::input::DescribeJobTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1876,6 +1885,7 @@ impl DescribeJobTemplateInput {
 pub mod describe_managed_endpoint_input {
 
     /// A builder for [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2080,6 +2090,7 @@ impl DescribeManagedEndpointInput {
 pub mod describe_virtual_cluster_input {
 
     /// A builder for [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2243,6 +2254,7 @@ impl DescribeVirtualClusterInput {
 pub mod list_job_runs_input {
 
     /// A builder for [`ListJobRunsInput`](crate::input::ListJobRunsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -2555,6 +2567,7 @@ impl ListJobRunsInput {
 pub mod list_job_templates_input {
 
     /// A builder for [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -2785,6 +2798,7 @@ impl ListJobTemplatesInput {
 pub mod list_managed_endpoints_input {
 
     /// A builder for [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
@@ -3110,6 +3124,7 @@ impl ListManagedEndpointsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3275,6 +3290,7 @@ impl ListTagsForResourceInput {
 pub mod list_virtual_clusters_input {
 
     /// A builder for [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_provider_id: std::option::Option<std::string::String>,
@@ -3583,6 +3599,7 @@ impl ListVirtualClustersInput {
 pub mod start_job_run_input {
 
     /// A builder for [`StartJobRunInput`](crate::input::StartJobRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3931,6 +3948,7 @@ impl StartJobRunInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4137,6 +4155,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

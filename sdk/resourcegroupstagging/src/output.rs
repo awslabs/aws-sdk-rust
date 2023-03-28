@@ -23,6 +23,7 @@ impl UntagResourcesOutput {
 pub mod untag_resources_output {
 
     /// A builder for [`UntagResourcesOutput`](crate::output::UntagResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_resources_map: std::option::Option<
@@ -94,6 +95,7 @@ impl TagResourcesOutput {
 pub mod tag_resources_output {
 
     /// A builder for [`TagResourcesOutput`](crate::output::TagResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_resources_map: std::option::Option<
@@ -149,6 +151,7 @@ pub struct StartReportCreationOutput {}
 pub mod start_report_creation_output {
 
     /// A builder for [`StartReportCreationOutput`](crate::output::StartReportCreationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -190,6 +193,7 @@ impl GetTagValuesOutput {
 pub mod get_tag_values_output {
 
     /// A builder for [`GetTagValuesOutput`](crate::output::GetTagValuesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -269,6 +273,7 @@ impl GetTagKeysOutput {
 pub mod get_tag_keys_output {
 
     /// A builder for [`GetTagKeysOutput`](crate::output::GetTagKeysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -351,6 +356,7 @@ impl GetResourcesOutput {
 pub mod get_resources_output {
 
     /// A builder for [`GetResourcesOutput`](crate::output::GetResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -434,6 +440,7 @@ impl GetComplianceSummaryOutput {
 pub mod get_compliance_summary_output {
 
     /// A builder for [`GetComplianceSummaryOutput`](crate::output::GetComplianceSummaryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_list: std::option::Option<std::vec::Vec<crate::model::Summary>>,
@@ -541,6 +548,7 @@ impl DescribeReportCreationOutput {
 pub mod describe_report_creation_output {
 
     /// A builder for [`DescribeReportCreationOutput`](crate::output::DescribeReportCreationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,

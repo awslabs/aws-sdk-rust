@@ -48,6 +48,7 @@ impl BillingRecord {
 pub mod billing_record {
 
     /// A builder for [`BillingRecord`](crate::model::BillingRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -356,6 +357,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -435,6 +437,7 @@ impl Nameserver {
 pub mod nameserver {
 
     /// A builder for [`Nameserver`](crate::model::Nameserver).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -515,6 +518,7 @@ impl Consent {
 pub mod consent {
 
     /// A builder for [`Consent`](crate::model::Consent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_price: std::option::Option<f64>,
@@ -700,6 +704,7 @@ impl std::fmt::Debug for ContactDetail {
 pub mod contact_detail {
 
     /// A builder for [`ContactDetail`](crate::model::ContactDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) first_name: std::option::Option<std::string::String>,
@@ -1517,6 +1522,7 @@ impl std::fmt::Debug for ExtraParam {
 pub mod extra_param {
 
     /// A builder for [`ExtraParam`](crate::model::ExtraParam).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtraParamName>,
@@ -3895,6 +3901,7 @@ impl DomainPrice {
 pub mod domain_price {
 
     /// A builder for [`DomainPrice`](crate::model::DomainPrice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4025,6 +4032,7 @@ impl PriceWithCurrency {
 pub mod price_with_currency {
 
     /// A builder for [`PriceWithCurrency`](crate::model::PriceWithCurrency).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) price: std::option::Option<f64>,
@@ -4150,6 +4158,7 @@ impl OperationSummary {
 pub mod operation_summary {
 
     /// A builder for [`OperationSummary`](crate::model::OperationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -4724,6 +4733,7 @@ impl DomainSummary {
 pub mod domain_summary {
 
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4818,6 +4828,7 @@ impl SortCondition {
 pub mod sort_condition {
 
     /// A builder for [`SortCondition`](crate::model::SortCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListDomainsAttributeName>,
@@ -5000,6 +5011,7 @@ impl FilterCondition {
 pub mod filter_condition {
 
     /// A builder for [`FilterCondition`](crate::model::FilterCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListDomainsAttributeName>,
@@ -5314,6 +5326,7 @@ impl DomainSuggestion {
 pub mod domain_suggestion {
 
     /// A builder for [`DomainSuggestion`](crate::model::DomainSuggestion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5545,6 +5558,7 @@ impl DnssecKey {
 pub mod dnssec_key {
 
     /// A builder for [`DnssecKey`](crate::model::DnssecKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<i32>,
@@ -5854,6 +5868,7 @@ impl DomainTransferability {
 pub mod domain_transferability {
 
     /// A builder for [`DomainTransferability`](crate::model::DomainTransferability).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transferable: std::option::Option<crate::model::Transferable>,
@@ -6282,6 +6297,7 @@ impl DnssecSigningAttributes {
 pub mod dnssec_signing_attributes {
 
     /// A builder for [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<i32>,

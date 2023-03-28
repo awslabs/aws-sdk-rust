@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -248,6 +249,7 @@ impl CreateGroupInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -419,6 +421,7 @@ impl DeleteGroupInput {
 pub mod get_account_settings_input {
 
     /// A builder for [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -550,6 +553,7 @@ impl GetAccountSettingsInput {
 pub mod get_group_input {
 
     /// A builder for [`GetGroupInput`](crate::input::GetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -719,6 +723,7 @@ impl GetGroupInput {
 pub mod get_group_configuration_input {
 
     /// A builder for [`GetGroupConfigurationInput`](crate::input::GetGroupConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
@@ -878,6 +883,7 @@ impl GetGroupConfigurationInput {
 pub mod get_group_query_input {
 
     /// A builder for [`GetGroupQueryInput`](crate::input::GetGroupQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -1049,6 +1055,7 @@ impl GetGroupQueryInput {
 pub mod get_tags_input {
 
     /// A builder for [`GetTagsInput`](crate::input::GetTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1208,6 +1215,7 @@ impl GetTagsInput {
 pub mod group_resources_input {
 
     /// A builder for [`GroupResourcesInput`](crate::input::GroupResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
@@ -1386,6 +1394,7 @@ impl GroupResourcesInput {
 pub mod list_group_resources_input {
 
     /// A builder for [`ListGroupResourcesInput`](crate::input::ListGroupResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -1620,6 +1629,7 @@ impl ListGroupResourcesInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::GroupFilter>>,
@@ -1847,6 +1857,7 @@ impl ListGroupsInput {
 pub mod put_group_configuration_input {
 
     /// A builder for [`PutGroupConfigurationInput`](crate::input::PutGroupConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
@@ -2036,6 +2047,7 @@ impl PutGroupConfigurationInput {
 pub mod search_resources_input {
 
     /// A builder for [`SearchResourcesInput`](crate::input::SearchResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_query: std::option::Option<crate::model::ResourceQuery>,
@@ -2220,6 +2232,7 @@ impl SearchResourcesInput {
 pub mod tag_input {
 
     /// A builder for [`TagInput`](crate::input::TagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2422,6 +2435,7 @@ impl TagInput {
 pub mod ungroup_resources_input {
 
     /// A builder for [`UngroupResourcesInput`](crate::input::UngroupResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
@@ -2602,6 +2616,7 @@ impl UngroupResourcesInput {
 pub mod untag_input {
 
     /// A builder for [`UntagInput`](crate::input::UntagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2798,6 +2813,7 @@ impl UntagInput {
 pub mod update_account_settings_input {
 
     /// A builder for [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_lifecycle_events_desired_status:
@@ -2966,6 +2982,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_group_input {
 
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -3149,6 +3166,7 @@ impl UpdateGroupInput {
 pub mod update_group_query_input {
 
     /// A builder for [`UpdateGroupQueryInput`](crate::input::UpdateGroupQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,

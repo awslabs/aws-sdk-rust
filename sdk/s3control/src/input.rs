@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_access_point_input {
 
     /// A builder for [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -291,6 +292,7 @@ impl CreateAccessPointInput {
 pub mod create_access_point_for_object_lambda_input {
 
     /// A builder for [`CreateAccessPointForObjectLambdaInput`](crate::input::CreateAccessPointForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -508,6 +510,7 @@ impl CreateAccessPointForObjectLambdaInput {
 pub mod create_bucket_input {
 
     /// A builder for [`CreateBucketInput`](crate::input::CreateBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl: std::option::Option<crate::model::BucketCannedAcl>,
@@ -723,8 +726,8 @@ impl CreateBucketInput {
             .set_use_dual_stack(_config.use_dual_stack)
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
-            .set_outpost_id(self.outpost_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_outpost_id(self.outpost_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -874,6 +877,7 @@ impl CreateBucketInput {
 pub mod create_job_input {
 
     /// A builder for [`CreateJobInput`](crate::input::CreateJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1178,6 +1182,7 @@ impl CreateJobInput {
 pub mod create_multi_region_access_point_input {
 
     /// A builder for [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1389,6 +1394,7 @@ impl CreateMultiRegionAccessPointInput {
 pub mod delete_access_point_input {
 
     /// A builder for [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1596,6 +1602,7 @@ impl DeleteAccessPointInput {
 pub mod delete_access_point_for_object_lambda_input {
 
     /// A builder for [`DeleteAccessPointForObjectLambdaInput`](crate::input::DeleteAccessPointForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1784,6 +1791,7 @@ impl DeleteAccessPointForObjectLambdaInput {
 pub mod delete_access_point_policy_input {
 
     /// A builder for [`DeleteAccessPointPolicyInput`](crate::input::DeleteAccessPointPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1992,6 +2000,7 @@ impl DeleteAccessPointPolicyInput {
 pub mod delete_access_point_policy_for_object_lambda_input {
 
     /// A builder for [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::input::DeleteAccessPointPolicyForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2181,6 +2190,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
 pub mod delete_bucket_input {
 
     /// A builder for [`DeleteBucketInput`](crate::input::DeleteBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2265,8 +2275,8 @@ impl DeleteBucketInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2386,6 +2396,7 @@ impl DeleteBucketInput {
 pub mod delete_bucket_lifecycle_configuration_input {
 
     /// A builder for [`DeleteBucketLifecycleConfigurationInput`](crate::input::DeleteBucketLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2472,8 +2483,8 @@ impl DeleteBucketLifecycleConfigurationInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2599,6 +2610,7 @@ impl DeleteBucketLifecycleConfigurationInput {
 pub mod delete_bucket_policy_input {
 
     /// A builder for [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2685,8 +2697,8 @@ impl DeleteBucketPolicyInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2806,6 +2818,7 @@ impl DeleteBucketPolicyInput {
 pub mod delete_bucket_tagging_input {
 
     /// A builder for [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2892,8 +2905,8 @@ impl DeleteBucketTaggingInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -3017,6 +3030,7 @@ impl DeleteBucketTaggingInput {
 pub mod delete_job_tagging_input {
 
     /// A builder for [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3199,6 +3213,7 @@ impl DeleteJobTaggingInput {
 pub mod delete_multi_region_access_point_input {
 
     /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3410,6 +3425,7 @@ impl DeleteMultiRegionAccessPointInput {
 pub mod delete_public_access_block_input {
 
     /// A builder for [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3562,6 +3578,7 @@ impl DeletePublicAccessBlockInput {
 pub mod delete_storage_lens_configuration_input {
 
     /// A builder for [`DeleteStorageLensConfigurationInput`](crate::input::DeleteStorageLensConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -3750,6 +3767,7 @@ impl DeleteStorageLensConfigurationInput {
 pub mod delete_storage_lens_configuration_tagging_input {
 
     /// A builder for [`DeleteStorageLensConfigurationTaggingInput`](crate::input::DeleteStorageLensConfigurationTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -3939,6 +3957,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
 pub mod describe_job_input {
 
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4119,6 +4138,7 @@ impl DescribeJobInput {
 pub mod describe_multi_region_access_point_operation_input {
 
     /// A builder for [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4325,6 +4345,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
 pub mod get_access_point_input {
 
     /// A builder for [`GetAccessPointInput`](crate::input::GetAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4530,6 +4551,7 @@ impl GetAccessPointInput {
 pub mod get_access_point_configuration_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointConfigurationForObjectLambdaInput`](crate::input::GetAccessPointConfigurationForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4719,6 +4741,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
 pub mod get_access_point_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointForObjectLambdaInput`](crate::input::GetAccessPointForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4907,6 +4930,7 @@ impl GetAccessPointForObjectLambdaInput {
 pub mod get_access_point_policy_input {
 
     /// A builder for [`GetAccessPointPolicyInput`](crate::input::GetAccessPointPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4993,8 +5017,8 @@ impl GetAccessPointPolicyInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_access_point_name(self.name.clone())
             .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5115,6 +5139,7 @@ impl GetAccessPointPolicyInput {
 pub mod get_access_point_policy_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointPolicyForObjectLambdaInput`](crate::input::GetAccessPointPolicyForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -5304,6 +5329,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
 pub mod get_access_point_policy_status_input {
 
     /// A builder for [`GetAccessPointPolicyStatusInput`](crate::input::GetAccessPointPolicyStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -5492,6 +5518,7 @@ impl GetAccessPointPolicyStatusInput {
 pub mod get_access_point_policy_status_for_object_lambda_input {
 
     /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::input::GetAccessPointPolicyStatusForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -5681,6 +5708,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
 pub mod get_bucket_input {
 
     /// A builder for [`GetBucketInput`](crate::input::GetBucketInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -5884,6 +5912,7 @@ impl GetBucketInput {
 pub mod get_bucket_lifecycle_configuration_input {
 
     /// A builder for [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6097,6 +6126,7 @@ impl GetBucketLifecycleConfigurationInput {
 pub mod get_bucket_policy_input {
 
     /// A builder for [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6302,6 +6332,7 @@ impl GetBucketPolicyInput {
 pub mod get_bucket_tagging_input {
 
     /// A builder for [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6388,8 +6419,8 @@ impl GetBucketTaggingInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6513,6 +6544,7 @@ impl GetBucketTaggingInput {
 pub mod get_bucket_versioning_input {
 
     /// A builder for [`GetBucketVersioningInput`](crate::input::GetBucketVersioningInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6697,6 +6729,7 @@ impl GetBucketVersioningInput {
 pub mod get_job_tagging_input {
 
     /// A builder for [`GetJobTaggingInput`](crate::input::GetJobTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6877,6 +6910,7 @@ impl GetJobTaggingInput {
 pub mod get_multi_region_access_point_input {
 
     /// A builder for [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7074,6 +7108,7 @@ impl GetMultiRegionAccessPointInput {
 pub mod get_multi_region_access_point_policy_input {
 
     /// A builder for [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7276,6 +7311,7 @@ impl GetMultiRegionAccessPointPolicyInput {
 pub mod get_multi_region_access_point_policy_status_input {
 
     /// A builder for [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7479,6 +7515,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
 pub mod get_multi_region_access_point_routes_input {
 
     /// A builder for [`GetMultiRegionAccessPointRoutesInput`](crate::input::GetMultiRegionAccessPointRoutesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7681,6 +7718,7 @@ impl GetMultiRegionAccessPointRoutesInput {
 pub mod get_public_access_block_input {
 
     /// A builder for [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7833,6 +7871,7 @@ impl GetPublicAccessBlockInput {
 pub mod get_storage_lens_configuration_input {
 
     /// A builder for [`GetStorageLensConfigurationInput`](crate::input::GetStorageLensConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -8020,6 +8059,7 @@ impl GetStorageLensConfigurationInput {
 pub mod get_storage_lens_configuration_tagging_input {
 
     /// A builder for [`GetStorageLensConfigurationTaggingInput`](crate::input::GetStorageLensConfigurationTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -8209,6 +8249,7 @@ impl GetStorageLensConfigurationTaggingInput {
 pub mod list_access_points_input {
 
     /// A builder for [`ListAccessPointsInput`](crate::input::ListAccessPointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -8444,6 +8485,7 @@ impl ListAccessPointsInput {
 pub mod list_access_points_for_object_lambda_input {
 
     /// A builder for [`ListAccessPointsForObjectLambdaInput`](crate::input::ListAccessPointsForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -8640,6 +8682,7 @@ impl ListAccessPointsForObjectLambdaInput {
 pub mod list_jobs_input {
 
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -8862,6 +8905,7 @@ impl ListJobsInput {
 pub mod list_multi_region_access_points_input {
 
     /// A builder for [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -9070,6 +9114,7 @@ impl ListMultiRegionAccessPointsInput {
 pub mod list_regional_buckets_input {
 
     /// A builder for [`ListRegionalBucketsInput`](crate::input::ListRegionalBucketsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -9160,8 +9205,8 @@ impl ListRegionalBucketsInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_outpost_id(self.outpost_id.clone())
             .set_account_id(self.account_id.clone())
+            .set_outpost_id(self.outpost_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9280,6 +9325,7 @@ impl ListRegionalBucketsInput {
 pub mod list_storage_lens_configurations_input {
 
     /// A builder for [`ListStorageLensConfigurationsInput`](crate::input::ListStorageLensConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -9457,6 +9503,7 @@ impl ListStorageLensConfigurationsInput {
 pub mod put_access_point_configuration_for_object_lambda_input {
 
     /// A builder for [`PutAccessPointConfigurationForObjectLambdaInput`](crate::input::PutAccessPointConfigurationForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -9675,6 +9722,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
 pub mod put_access_point_policy_input {
 
     /// A builder for [`PutAccessPointPolicyInput`](crate::input::PutAccessPointPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -9911,6 +9959,7 @@ impl PutAccessPointPolicyInput {
 pub mod put_access_point_policy_for_object_lambda_input {
 
     /// A builder for [`PutAccessPointPolicyForObjectLambdaInput`](crate::input::PutAccessPointPolicyForObjectLambdaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10126,6 +10175,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
 pub mod put_bucket_lifecycle_configuration_input {
 
     /// A builder for [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10364,6 +10414,7 @@ impl PutBucketLifecycleConfigurationInput {
 pub mod put_bucket_policy_input {
 
     /// A builder for [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10481,8 +10532,8 @@ impl PutBucketPolicyInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10630,6 +10681,7 @@ impl PutBucketPolicyInput {
 pub mod put_bucket_tagging_input {
 
     /// A builder for [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10728,8 +10780,8 @@ impl PutBucketTaggingInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10881,6 +10933,7 @@ impl PutBucketTaggingInput {
 pub mod put_bucket_versioning_input {
 
     /// A builder for [`PutBucketVersioningInput`](crate::input::PutBucketVersioningInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -11126,6 +11179,7 @@ impl PutBucketVersioningInput {
 pub mod put_job_tagging_input {
 
     /// A builder for [`PutJobTaggingInput`](crate::input::PutJobTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -11341,6 +11395,7 @@ impl PutJobTaggingInput {
 pub mod put_multi_region_access_point_policy_input {
 
     /// A builder for [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -11555,6 +11610,7 @@ impl PutMultiRegionAccessPointPolicyInput {
 pub mod put_public_access_block_input {
 
     /// A builder for [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access_block_configuration:
@@ -11742,6 +11798,7 @@ impl PutPublicAccessBlockInput {
 pub mod put_storage_lens_configuration_input {
 
     /// A builder for [`PutStorageLensConfigurationInput`](crate::input::PutStorageLensConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -11987,6 +12044,7 @@ impl PutStorageLensConfigurationInput {
 pub mod put_storage_lens_configuration_tagging_input {
 
     /// A builder for [`PutStorageLensConfigurationTaggingInput`](crate::input::PutStorageLensConfigurationTaggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -12215,6 +12273,7 @@ impl PutStorageLensConfigurationTaggingInput {
 pub mod submit_multi_region_access_point_routes_input {
 
     /// A builder for [`SubmitMultiRegionAccessPointRoutesInput`](crate::input::SubmitMultiRegionAccessPointRoutesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -12454,6 +12513,7 @@ impl SubmitMultiRegionAccessPointRoutesInput {
 pub mod update_job_priority_input {
 
     /// A builder for [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -12661,6 +12721,7 @@ impl UpdateJobPriorityInput {
 pub mod update_job_status_input {
 
     /// A builder for [`UpdateJobStatusInput`](crate::input::UpdateJobStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,

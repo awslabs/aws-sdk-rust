@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -92,6 +93,7 @@ impl ValidationExceptionErrorArgument {
 pub mod validation_exception_error_argument {
 
     /// A builder for [`ValidationExceptionErrorArgument`](crate::model::ValidationExceptionErrorArgument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -266,6 +268,7 @@ impl ConflictExceptionErrorArgument {
 pub mod conflict_exception_error_argument {
 
     /// A builder for [`ConflictExceptionErrorArgument`](crate::model::ConflictExceptionErrorArgument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -333,6 +336,7 @@ impl NodeSignal {
 pub mod node_signal {
 
     /// A builder for [`NodeSignal`](crate::model::NodeSignal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_instance_id: std::option::Option<std::string::String>,
@@ -620,6 +624,7 @@ impl NetworkPayload {
 pub mod network_payload {
 
     /// A builder for [`NetworkPayload`](crate::model::NetworkPayload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ethernet0: std::option::Option<crate::model::EthernetPayload>,
@@ -698,6 +703,7 @@ impl NtpPayload {
 pub mod ntp_payload {
 
     /// A builder for [`NtpPayload`](crate::model::NtpPayload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ntp_servers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -764,6 +770,7 @@ impl EthernetPayload {
 pub mod ethernet_payload {
 
     /// A builder for [`EthernetPayload`](crate::model::EthernetPayload).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
@@ -855,6 +862,7 @@ impl StaticIpConnectionInfo {
 pub mod static_ip_connection_info {
 
     /// A builder for [`StaticIpConnectionInfo`](crate::model::StaticIpConnectionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -1073,6 +1081,7 @@ impl PackageListItem {
 pub mod package_list_item {
 
     /// A builder for [`PackageListItem`](crate::model::PackageListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1224,6 +1233,7 @@ impl PackageImportJob {
 pub mod package_import_job {
 
     /// A builder for [`PackageImportJob`](crate::model::PackageImportJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1610,6 +1620,7 @@ impl Node {
 pub mod node {
 
     /// A builder for [`Node`](crate::model::Node).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
@@ -1928,6 +1939,7 @@ impl NodeFromTemplateJob {
 pub mod node_from_template_job {
 
     /// A builder for [`NodeFromTemplateJob`](crate::model::NodeFromTemplateJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2258,6 +2270,7 @@ impl DeviceJob {
 pub mod device_job {
 
     /// A builder for [`DeviceJob`](crate::model::DeviceJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -2537,6 +2550,7 @@ impl Device {
 pub mod device {
 
     /// A builder for [`Device`](crate::model::Device).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -2928,6 +2942,7 @@ impl LatestDeviceJob {
 pub mod latest_device_job {
 
     /// A builder for [`LatestDeviceJob`](crate::model::LatestDeviceJob).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_version: std::option::Option<std::string::String>,
@@ -3592,6 +3607,7 @@ impl ApplicationInstance {
 pub mod application_instance {
 
     /// A builder for [`ApplicationInstance`](crate::model::ApplicationInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3856,6 +3872,7 @@ impl ReportedRuntimeContextState {
 pub mod reported_runtime_context_state {
 
     /// A builder for [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) desired_state: std::option::Option<crate::model::DesiredState>,
@@ -4607,6 +4624,7 @@ impl NodeInstance {
 pub mod node_instance {
 
     /// A builder for [`NodeInstance`](crate::model::NodeInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_instance_id: std::option::Option<std::string::String>,
@@ -4855,6 +4873,7 @@ impl PackageObject {
 pub mod package_object {
 
     /// A builder for [`PackageObject`](crate::model::PackageObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5051,6 +5070,7 @@ impl JobResourceTags {
 pub mod job_resource_tags {
 
     /// A builder for [`JobResourceTags`](crate::model::JobResourceTags).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::JobResourceType>,
@@ -5237,6 +5257,7 @@ impl PackageImportJobOutput {
 pub mod package_import_job_output {
 
     /// A builder for [`PackageImportJobOutput`](crate::model::PackageImportJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -5337,6 +5358,7 @@ impl OutPutS3Location {
 pub mod out_put_s3_location {
 
     /// A builder for [`OutPutS3Location`](crate::model::OutPutS3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -5400,6 +5422,7 @@ impl PackageImportJobOutputConfig {
 pub mod package_import_job_output_config {
 
     /// A builder for [`PackageImportJobOutputConfig`](crate::model::PackageImportJobOutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_version_output_config:
@@ -5469,6 +5492,7 @@ impl PackageVersionOutputConfig {
 pub mod package_version_output_config {
 
     /// A builder for [`PackageVersionOutputConfig`](crate::model::PackageVersionOutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
@@ -5546,6 +5570,7 @@ impl PackageImportJobInputConfig {
 pub mod package_import_job_input_config {
 
     /// A builder for [`PackageImportJobInputConfig`](crate::model::PackageImportJobInputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_version_input_config:
@@ -5601,6 +5626,7 @@ impl PackageVersionInputConfig {
 pub mod package_version_input_config {
 
     /// A builder for [`PackageVersionInputConfig`](crate::model::PackageVersionInputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -5666,6 +5692,7 @@ impl S3Location {
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -5766,6 +5793,7 @@ impl StorageLocation {
 pub mod storage_location {
 
     /// A builder for [`StorageLocation`](crate::model::StorageLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -5881,6 +5909,7 @@ impl NodeInterface {
 pub mod node_interface {
 
     /// A builder for [`NodeInterface`](crate::model::NodeInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inputs: std::option::Option<std::vec::Vec<crate::model::NodeInputPort>>,
@@ -5973,6 +6002,7 @@ impl NodeOutputPort {
 pub mod node_output_port {
 
     /// A builder for [`NodeOutputPort`](crate::model::NodeOutputPort).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6178,6 +6208,7 @@ impl NodeInputPort {
 pub mod node_input_port {
 
     /// A builder for [`NodeInputPort`](crate::model::NodeInputPort).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6277,6 +6308,7 @@ impl AlternateSoftwareMetadata {
 pub mod alternate_software_metadata {
 
     /// A builder for [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -6346,6 +6378,7 @@ impl NetworkStatus {
 pub mod network_status {
 
     /// A builder for [`NetworkStatus`](crate::model::NetworkStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ethernet0_status: std::option::Option<crate::model::EthernetStatus>,
@@ -6456,6 +6489,7 @@ impl NtpStatus {
 pub mod ntp_status {
 
     /// A builder for [`NtpStatus`](crate::model::NtpStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_status: std::option::Option<crate::model::NetworkConnectionStatus>,
@@ -6645,6 +6679,7 @@ impl EthernetStatus {
 pub mod ethernet_status {
 
     /// A builder for [`EthernetStatus`](crate::model::EthernetStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -6914,6 +6949,7 @@ impl Job {
 pub mod job {
 
     /// A builder for [`Job`](crate::model::Job).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -6974,6 +7010,7 @@ impl DeviceJobConfig {
 pub mod device_job_config {
 
     /// A builder for [`DeviceJobConfig`](crate::model::DeviceJobConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ota_job_config: std::option::Option<crate::model::OtaJobConfig>,
@@ -7032,6 +7069,7 @@ impl OtaJobConfig {
 pub mod ota_job_config {
 
     /// A builder for [`OtaJobConfig`](crate::model::OtaJobConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_version: std::option::Option<std::string::String>,

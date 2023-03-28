@@ -66,6 +66,7 @@ impl std::fmt::Debug for Attendee {
 pub mod attendee {
 
     /// A builder for [`Attendee`](crate::model::Attendee).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -204,6 +205,7 @@ impl AttendeeCapabilities {
 pub mod attendee_capabilities {
 
     /// A builder for [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio: std::option::Option<crate::model::MediaCapabilities>,
@@ -394,6 +396,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -466,6 +469,7 @@ impl TranscriptionConfiguration {
 pub mod transcription_configuration {
 
     /// A builder for [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_transcribe_settings:
@@ -580,6 +584,7 @@ impl EngineTranscribeMedicalSettings {
 pub mod engine_transcribe_medical_settings {
 
     /// A builder for [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
@@ -1328,6 +1333,7 @@ impl EngineTranscribeSettings {
 pub mod engine_transcribe_settings {
 
     /// A builder for [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::TranscribeLanguageCode>,
@@ -2342,6 +2348,7 @@ impl std::fmt::Debug for Meeting {
 pub mod meeting {
 
     /// A builder for [`Meeting`](crate::model::Meeting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
@@ -2531,6 +2538,7 @@ impl MeetingFeaturesConfiguration {
 pub mod meeting_features_configuration {
 
     /// A builder for [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio: std::option::Option<crate::model::AudioFeatures>,
@@ -2580,6 +2588,7 @@ impl AudioFeatures {
 pub mod audio_features {
 
     /// A builder for [`AudioFeatures`](crate::model::AudioFeatures).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) echo_reduction: std::option::Option<crate::model::MeetingFeatureStatus>,
@@ -2772,6 +2781,7 @@ impl MediaPlacement {
 pub mod media_placement {
 
     /// A builder for [`MediaPlacement`](crate::model::MediaPlacement).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_host_url: std::option::Option<std::string::String>,
@@ -2951,6 +2961,7 @@ impl std::fmt::Debug for CreateAttendeeError {
 pub mod create_attendee_error {
 
     /// A builder for [`CreateAttendeeError`](crate::model::CreateAttendeeError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -3053,6 +3064,7 @@ impl std::fmt::Debug for CreateAttendeeRequestItem {
 pub mod create_attendee_request_item {
 
     /// A builder for [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -3150,6 +3162,7 @@ impl std::fmt::Debug for NotificationsConfiguration {
 pub mod notifications_configuration {
 
     /// A builder for [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
@@ -3240,6 +3253,7 @@ impl AttendeeIdItem {
 pub mod attendee_id_item {
 
     /// A builder for [`AttendeeIdItem`](crate::model::AttendeeIdItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee_id: std::option::Option<std::string::String>,

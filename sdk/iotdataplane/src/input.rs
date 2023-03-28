@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod delete_thing_shadow_input {
 
     /// A builder for [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -195,6 +196,7 @@ impl DeleteThingShadowInput {
 pub mod get_retained_message_input {
 
     /// A builder for [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
@@ -358,6 +360,7 @@ impl GetRetainedMessageInput {
 pub mod get_thing_shadow_input {
 
     /// A builder for [`GetThingShadowInput`](crate::input::GetThingShadowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -546,6 +549,7 @@ impl GetThingShadowInput {
 pub mod list_named_shadows_for_thing_input {
 
     /// A builder for [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -760,6 +764,7 @@ impl ListNamedShadowsForThingInput {
 pub mod list_retained_messages_input {
 
     /// A builder for [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -936,6 +941,7 @@ impl ListRetainedMessagesInput {
 pub mod publish_input {
 
     /// A builder for [`PublishInput`](crate::input::PublishInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
@@ -1290,6 +1296,7 @@ impl PublishInput {
 pub mod update_thing_shadow_input {
 
     /// A builder for [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,

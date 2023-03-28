@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_entity_to_thing_input {
 
     /// A builder for [`AssociateEntityToThingInput`](crate::input::AssociateEntityToThingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -199,6 +200,7 @@ impl AssociateEntityToThingInput {
 pub mod create_flow_template_input {
 
     /// A builder for [`CreateFlowTemplateInput`](crate::input::CreateFlowTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,
@@ -380,6 +382,7 @@ impl CreateFlowTemplateInput {
 pub mod create_system_instance_input {
 
     /// A builder for [`CreateSystemInstanceInput`](crate::input::CreateSystemInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -645,6 +648,7 @@ impl CreateSystemInstanceInput {
 pub mod create_system_template_input {
 
     /// A builder for [`CreateSystemTemplateInput`](crate::input::CreateSystemTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,
@@ -828,6 +832,7 @@ impl CreateSystemTemplateInput {
 pub mod delete_flow_template_input {
 
     /// A builder for [`DeleteFlowTemplateInput`](crate::input::DeleteFlowTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -994,6 +999,7 @@ impl DeleteFlowTemplateInput {
 pub mod delete_namespace_input {
 
     /// A builder for [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1135,6 +1141,7 @@ impl DeleteNamespaceInput {
 pub mod delete_system_instance_input {
 
     /// A builder for [`DeleteSystemInstanceInput`](crate::input::DeleteSystemInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1299,6 +1306,7 @@ impl DeleteSystemInstanceInput {
 pub mod delete_system_template_input {
 
     /// A builder for [`DeleteSystemTemplateInput`](crate::input::DeleteSystemTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1467,6 +1475,7 @@ impl DeleteSystemTemplateInput {
 pub mod deploy_system_instance_input {
 
     /// A builder for [`DeploySystemInstanceInput`](crate::input::DeploySystemInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1635,6 +1644,7 @@ impl DeploySystemInstanceInput {
 pub mod deprecate_flow_template_input {
 
     /// A builder for [`DeprecateFlowTemplateInput`](crate::input::DeprecateFlowTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1803,6 +1813,7 @@ impl DeprecateFlowTemplateInput {
 pub mod deprecate_system_template_input {
 
     /// A builder for [`DeprecateSystemTemplateInput`](crate::input::DeprecateSystemTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1971,6 +1982,7 @@ impl DeprecateSystemTemplateInput {
 pub mod describe_namespace_input {
 
     /// A builder for [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
@@ -2138,6 +2150,7 @@ impl DescribeNamespaceInput {
 pub mod dissociate_entity_from_thing_input {
 
     /// A builder for [`DissociateEntityFromThingInput`](crate::input::DissociateEntityFromThingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -2319,6 +2332,7 @@ impl DissociateEntityFromThingInput {
 pub mod get_entities_input {
 
     /// A builder for [`GetEntitiesInput`](crate::input::GetEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2506,6 +2520,7 @@ impl GetEntitiesInput {
 pub mod get_flow_template_input {
 
     /// A builder for [`GetFlowTemplateInput`](crate::input::GetFlowTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2684,6 +2699,7 @@ impl GetFlowTemplateInput {
 pub mod get_flow_template_revisions_input {
 
     /// A builder for [`GetFlowTemplateRevisionsInput`](crate::input::GetFlowTemplateRevisionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2878,6 +2894,7 @@ impl GetFlowTemplateRevisionsInput {
 pub mod get_namespace_deletion_status_input {
 
     /// A builder for [`GetNamespaceDeletionStatusInput`](crate::input::GetNamespaceDeletionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3021,6 +3038,7 @@ impl GetNamespaceDeletionStatusInput {
 pub mod get_system_instance_input {
 
     /// A builder for [`GetSystemInstanceInput`](crate::input::GetSystemInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3187,6 +3205,7 @@ impl GetSystemInstanceInput {
 pub mod get_system_template_input {
 
     /// A builder for [`GetSystemTemplateInput`](crate::input::GetSystemTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3367,6 +3386,7 @@ impl GetSystemTemplateInput {
 pub mod get_system_template_revisions_input {
 
     /// A builder for [`GetSystemTemplateRevisionsInput`](crate::input::GetSystemTemplateRevisionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3559,6 +3579,7 @@ impl GetSystemTemplateRevisionsInput {
 pub mod get_upload_status_input {
 
     /// A builder for [`GetUploadStatusInput`](crate::input::GetUploadStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -3721,6 +3742,7 @@ impl GetUploadStatusInput {
 pub mod list_flow_execution_messages_input {
 
     /// A builder for [`ListFlowExecutionMessagesInput`](crate::input::ListFlowExecutionMessagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_execution_id: std::option::Option<std::string::String>,
@@ -3914,6 +3936,7 @@ impl ListFlowExecutionMessagesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4104,6 +4127,7 @@ impl ListTagsForResourceInput {
 pub mod search_entities_input {
 
     /// A builder for [`SearchEntitiesInput`](crate::input::SearchEntitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
@@ -4334,6 +4358,7 @@ impl SearchEntitiesInput {
 pub mod search_flow_executions_input {
 
     /// A builder for [`SearchFlowExecutionsInput`](crate::input::SearchFlowExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) system_instance_id: std::option::Option<std::string::String>,
@@ -4572,6 +4597,7 @@ impl SearchFlowExecutionsInput {
 pub mod search_flow_templates_input {
 
     /// A builder for [`SearchFlowTemplatesInput`](crate::input::SearchFlowTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::FlowTemplateFilter>>,
@@ -4769,6 +4795,7 @@ impl SearchFlowTemplatesInput {
 pub mod search_system_instances_input {
 
     /// A builder for [`SearchSystemInstancesInput`](crate::input::SearchSystemInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SystemInstanceFilter>>,
@@ -4970,6 +4997,7 @@ impl SearchSystemInstancesInput {
 pub mod search_system_templates_input {
 
     /// A builder for [`SearchSystemTemplatesInput`](crate::input::SearchSystemTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SystemTemplateFilter>>,
@@ -5169,6 +5197,7 @@ impl SearchSystemTemplatesInput {
 pub mod search_things_input {
 
     /// A builder for [`SearchThingsInput`](crate::input::SearchThingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -5371,6 +5400,7 @@ impl SearchThingsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5554,6 +5584,7 @@ impl TagResourceInput {
 pub mod undeploy_system_instance_input {
 
     /// A builder for [`UndeploySystemInstanceInput`](crate::input::UndeploySystemInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5718,6 +5749,7 @@ impl UndeploySystemInstanceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5903,6 +5935,7 @@ impl UntagResourceInput {
 pub mod update_flow_template_input {
 
     /// A builder for [`UpdateFlowTemplateInput`](crate::input::UpdateFlowTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6100,6 +6133,7 @@ impl UpdateFlowTemplateInput {
 pub mod update_system_template_input {
 
     /// A builder for [`UpdateSystemTemplateInput`](crate::input::UpdateSystemTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6299,6 +6333,7 @@ impl UpdateSystemTemplateInput {
 pub mod upload_entity_definitions_input {
 
     /// A builder for [`UploadEntityDefinitionsInput`](crate::input::UploadEntityDefinitionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::DefinitionDocument>,

@@ -189,6 +189,7 @@ impl std::error::Error for CloudHsmTagException {}
 pub mod cloud_hsm_tag_exception {
 
     /// A builder for [`CloudHsmTagException`](crate::error::CloudHsmTagException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -249,6 +250,7 @@ impl std::error::Error for CloudHsmServiceException {}
 pub mod cloud_hsm_service_exception {
 
     /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -309,6 +311,7 @@ impl std::error::Error for CloudHsmResourceNotFoundException {}
 pub mod cloud_hsm_resource_not_found_exception {
 
     /// A builder for [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -369,6 +372,7 @@ impl std::error::Error for CloudHsmInvalidRequestException {}
 pub mod cloud_hsm_invalid_request_exception {
 
     /// A builder for [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -429,6 +433,7 @@ impl std::error::Error for CloudHsmInternalFailureException {}
 pub mod cloud_hsm_internal_failure_exception {
 
     /// A builder for [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -489,6 +494,7 @@ impl std::error::Error for CloudHsmAccessDeniedException {}
 pub mod cloud_hsm_access_denied_exception {
 
     /// A builder for [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

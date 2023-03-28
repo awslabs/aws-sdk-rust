@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_app_input {
 
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_application_request:
@@ -169,6 +170,7 @@ impl CreateAppInput {
 pub mod create_campaign_input {
 
     /// A builder for [`CreateCampaignInput`](crate::input::CreateCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -370,6 +372,7 @@ impl CreateCampaignInput {
 pub mod create_email_template_input {
 
     /// A builder for [`CreateEmailTemplateInput`](crate::input::CreateEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_template_request: std::option::Option<crate::model::EmailTemplateRequest>,
@@ -573,6 +576,7 @@ impl CreateEmailTemplateInput {
 pub mod create_export_job_input {
 
     /// A builder for [`CreateExportJobInput`](crate::input::CreateExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -774,6 +778,7 @@ impl CreateExportJobInput {
 pub mod create_import_job_input {
 
     /// A builder for [`CreateImportJobInput`](crate::input::CreateImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -975,6 +980,7 @@ impl CreateImportJobInput {
 pub mod create_in_app_template_input {
 
     /// A builder for [`CreateInAppTemplateInput`](crate::input::CreateInAppTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_app_template_request: std::option::Option<crate::model::InAppTemplateRequest>,
@@ -1181,6 +1187,7 @@ impl CreateInAppTemplateInput {
 pub mod create_journey_input {
 
     /// A builder for [`CreateJourneyInput`](crate::input::CreateJourneyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1382,6 +1389,7 @@ impl CreateJourneyInput {
 pub mod create_push_template_input {
 
     /// A builder for [`CreatePushTemplateInput`](crate::input::CreatePushTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) push_notification_template_request:
@@ -1589,6 +1597,7 @@ impl CreatePushTemplateInput {
 pub mod create_recommender_configuration_input {
 
     /// A builder for [`CreateRecommenderConfigurationInput`](crate::input::CreateRecommenderConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_recommender_configuration:
@@ -1757,6 +1766,7 @@ impl CreateRecommenderConfigurationInput {
 pub mod create_segment_input {
 
     /// A builder for [`CreateSegmentInput`](crate::input::CreateSegmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1958,6 +1968,7 @@ impl CreateSegmentInput {
 pub mod create_sms_template_input {
 
     /// A builder for [`CreateSmsTemplateInput`](crate::input::CreateSmsTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_template_request: std::option::Option<crate::model::SmsTemplateRequest>,
@@ -2161,6 +2172,7 @@ impl CreateSmsTemplateInput {
 pub mod create_voice_template_input {
 
     /// A builder for [`CreateVoiceTemplateInput`](crate::input::CreateVoiceTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -2364,6 +2376,7 @@ impl CreateVoiceTemplateInput {
 pub mod delete_adm_channel_input {
 
     /// A builder for [`DeleteAdmChannelInput`](crate::input::DeleteAdmChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2536,6 +2549,7 @@ impl DeleteAdmChannelInput {
 pub mod delete_apns_channel_input {
 
     /// A builder for [`DeleteApnsChannelInput`](crate::input::DeleteApnsChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2708,6 +2722,7 @@ impl DeleteApnsChannelInput {
 pub mod delete_apns_sandbox_channel_input {
 
     /// A builder for [`DeleteApnsSandboxChannelInput`](crate::input::DeleteApnsSandboxChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2880,6 +2895,7 @@ impl DeleteApnsSandboxChannelInput {
 pub mod delete_apns_voip_channel_input {
 
     /// A builder for [`DeleteApnsVoipChannelInput`](crate::input::DeleteApnsVoipChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3052,6 +3068,7 @@ impl DeleteApnsVoipChannelInput {
 pub mod delete_apns_voip_sandbox_channel_input {
 
     /// A builder for [`DeleteApnsVoipSandboxChannelInput`](crate::input::DeleteApnsVoipSandboxChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3224,6 +3241,7 @@ impl DeleteApnsVoipSandboxChannelInput {
 pub mod delete_app_input {
 
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3392,6 +3410,7 @@ impl DeleteAppInput {
 pub mod delete_baidu_channel_input {
 
     /// A builder for [`DeleteBaiduChannelInput`](crate::input::DeleteBaiduChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3564,6 +3583,7 @@ impl DeleteBaiduChannelInput {
 pub mod delete_campaign_input {
 
     /// A builder for [`DeleteCampaignInput`](crate::input::DeleteCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3766,6 +3786,7 @@ impl DeleteCampaignInput {
 pub mod delete_email_channel_input {
 
     /// A builder for [`DeleteEmailChannelInput`](crate::input::DeleteEmailChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3938,6 +3959,7 @@ impl DeleteEmailChannelInput {
 pub mod delete_email_template_input {
 
     /// A builder for [`DeleteEmailTemplateInput`](crate::input::DeleteEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -4151,6 +4173,7 @@ impl DeleteEmailTemplateInput {
 pub mod delete_endpoint_input {
 
     /// A builder for [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4353,6 +4376,7 @@ impl DeleteEndpointInput {
 pub mod delete_event_stream_input {
 
     /// A builder for [`DeleteEventStreamInput`](crate::input::DeleteEventStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4525,6 +4549,7 @@ impl DeleteEventStreamInput {
 pub mod delete_gcm_channel_input {
 
     /// A builder for [`DeleteGcmChannelInput`](crate::input::DeleteGcmChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -4697,6 +4722,7 @@ impl DeleteGcmChannelInput {
 pub mod delete_in_app_template_input {
 
     /// A builder for [`DeleteInAppTemplateInput`](crate::input::DeleteInAppTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -4910,6 +4936,7 @@ impl DeleteInAppTemplateInput {
 pub mod delete_journey_input {
 
     /// A builder for [`DeleteJourneyInput`](crate::input::DeleteJourneyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -5112,6 +5139,7 @@ impl DeleteJourneyInput {
 pub mod delete_push_template_input {
 
     /// A builder for [`DeletePushTemplateInput`](crate::input::DeletePushTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -5325,6 +5353,7 @@ impl DeletePushTemplateInput {
 pub mod delete_recommender_configuration_input {
 
     /// A builder for [`DeleteRecommenderConfigurationInput`](crate::input::DeleteRecommenderConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_id: std::option::Option<std::string::String>,
@@ -5497,6 +5526,7 @@ impl DeleteRecommenderConfigurationInput {
 pub mod delete_segment_input {
 
     /// A builder for [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -5699,6 +5729,7 @@ impl DeleteSegmentInput {
 pub mod delete_sms_channel_input {
 
     /// A builder for [`DeleteSmsChannelInput`](crate::input::DeleteSmsChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -5871,6 +5902,7 @@ impl DeleteSmsChannelInput {
 pub mod delete_sms_template_input {
 
     /// A builder for [`DeleteSmsTemplateInput`](crate::input::DeleteSmsTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -6084,6 +6116,7 @@ impl DeleteSmsTemplateInput {
 pub mod delete_user_endpoints_input {
 
     /// A builder for [`DeleteUserEndpointsInput`](crate::input::DeleteUserEndpointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -6288,6 +6321,7 @@ impl DeleteUserEndpointsInput {
 pub mod delete_voice_channel_input {
 
     /// A builder for [`DeleteVoiceChannelInput`](crate::input::DeleteVoiceChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -6460,6 +6494,7 @@ impl DeleteVoiceChannelInput {
 pub mod delete_voice_template_input {
 
     /// A builder for [`DeleteVoiceTemplateInput`](crate::input::DeleteVoiceTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -6673,6 +6708,7 @@ impl DeleteVoiceTemplateInput {
 pub mod get_adm_channel_input {
 
     /// A builder for [`GetAdmChannelInput`](crate::input::GetAdmChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -6843,6 +6879,7 @@ impl GetAdmChannelInput {
 pub mod get_apns_channel_input {
 
     /// A builder for [`GetApnsChannelInput`](crate::input::GetApnsChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -7013,6 +7050,7 @@ impl GetApnsChannelInput {
 pub mod get_apns_sandbox_channel_input {
 
     /// A builder for [`GetApnsSandboxChannelInput`](crate::input::GetApnsSandboxChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -7185,6 +7223,7 @@ impl GetApnsSandboxChannelInput {
 pub mod get_apns_voip_channel_input {
 
     /// A builder for [`GetApnsVoipChannelInput`](crate::input::GetApnsVoipChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -7357,6 +7396,7 @@ impl GetApnsVoipChannelInput {
 pub mod get_apns_voip_sandbox_channel_input {
 
     /// A builder for [`GetApnsVoipSandboxChannelInput`](crate::input::GetApnsVoipSandboxChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -7529,6 +7569,7 @@ impl GetApnsVoipSandboxChannelInput {
 pub mod get_app_input {
 
     /// A builder for [`GetAppInput`](crate::input::GetAppInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -7696,6 +7737,7 @@ impl GetAppInput {
 pub mod get_application_date_range_kpi_input {
 
     /// A builder for [`GetApplicationDateRangeKpiInput`](crate::input::GetApplicationDateRangeKpiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -7994,6 +8036,7 @@ impl GetApplicationDateRangeKpiInput {
 pub mod get_application_settings_input {
 
     /// A builder for [`GetApplicationSettingsInput`](crate::input::GetApplicationSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -8166,6 +8209,7 @@ impl GetApplicationSettingsInput {
 pub mod get_apps_input {
 
     /// A builder for [`GetAppsInput`](crate::input::GetAppsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_size: std::option::Option<std::string::String>,
@@ -8336,6 +8380,7 @@ impl GetAppsInput {
 pub mod get_baidu_channel_input {
 
     /// A builder for [`GetBaiduChannelInput`](crate::input::GetBaiduChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -8506,6 +8551,7 @@ impl GetBaiduChannelInput {
 pub mod get_campaign_input {
 
     /// A builder for [`GetCampaignInput`](crate::input::GetCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -8708,6 +8754,7 @@ impl GetCampaignInput {
 pub mod get_campaign_activities_input {
 
     /// A builder for [`GetCampaignActivitiesInput`](crate::input::GetCampaignActivitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -8954,6 +9001,7 @@ impl GetCampaignActivitiesInput {
 pub mod get_campaign_date_range_kpi_input {
 
     /// A builder for [`GetCampaignDateRangeKpiInput`](crate::input::GetCampaignDateRangeKpiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -9284,6 +9332,7 @@ impl GetCampaignDateRangeKpiInput {
 pub mod get_campaigns_input {
 
     /// A builder for [`GetCampaignsInput`](crate::input::GetCampaignsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -9496,6 +9545,7 @@ impl GetCampaignsInput {
 pub mod get_campaign_version_input {
 
     /// A builder for [`GetCampaignVersionInput`](crate::input::GetCampaignVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -9732,6 +9782,7 @@ impl GetCampaignVersionInput {
 pub mod get_campaign_versions_input {
 
     /// A builder for [`GetCampaignVersionsInput`](crate::input::GetCampaignVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -9978,6 +10029,7 @@ impl GetCampaignVersionsInput {
 pub mod get_channels_input {
 
     /// A builder for [`GetChannelsInput`](crate::input::GetChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -10148,6 +10200,7 @@ impl GetChannelsInput {
 pub mod get_email_channel_input {
 
     /// A builder for [`GetEmailChannelInput`](crate::input::GetEmailChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -10318,6 +10371,7 @@ impl GetEmailChannelInput {
 pub mod get_email_template_input {
 
     /// A builder for [`GetEmailTemplateInput`](crate::input::GetEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -10531,6 +10585,7 @@ impl GetEmailTemplateInput {
 pub mod get_endpoint_input {
 
     /// A builder for [`GetEndpointInput`](crate::input::GetEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -10733,6 +10788,7 @@ impl GetEndpointInput {
 pub mod get_event_stream_input {
 
     /// A builder for [`GetEventStreamInput`](crate::input::GetEventStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -10903,6 +10959,7 @@ impl GetEventStreamInput {
 pub mod get_export_job_input {
 
     /// A builder for [`GetExportJobInput`](crate::input::GetExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -11105,6 +11162,7 @@ impl GetExportJobInput {
 pub mod get_export_jobs_input {
 
     /// A builder for [`GetExportJobsInput`](crate::input::GetExportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -11317,6 +11375,7 @@ impl GetExportJobsInput {
 pub mod get_gcm_channel_input {
 
     /// A builder for [`GetGcmChannelInput`](crate::input::GetGcmChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -11487,6 +11546,7 @@ impl GetGcmChannelInput {
 pub mod get_import_job_input {
 
     /// A builder for [`GetImportJobInput`](crate::input::GetImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -11689,6 +11749,7 @@ impl GetImportJobInput {
 pub mod get_import_jobs_input {
 
     /// A builder for [`GetImportJobsInput`](crate::input::GetImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -11901,6 +11962,7 @@ impl GetImportJobsInput {
 pub mod get_in_app_messages_input {
 
     /// A builder for [`GetInAppMessagesInput`](crate::input::GetInAppMessagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -12105,6 +12167,7 @@ impl GetInAppMessagesInput {
 pub mod get_in_app_template_input {
 
     /// A builder for [`GetInAppTemplateInput`](crate::input::GetInAppTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -12318,6 +12381,7 @@ impl GetInAppTemplateInput {
 pub mod get_journey_input {
 
     /// A builder for [`GetJourneyInput`](crate::input::GetJourneyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -12520,6 +12584,7 @@ impl GetJourneyInput {
 pub mod get_journey_date_range_kpi_input {
 
     /// A builder for [`GetJourneyDateRangeKpiInput`](crate::input::GetJourneyDateRangeKpiInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -12853,6 +12918,7 @@ impl GetJourneyDateRangeKpiInput {
 pub mod get_journey_execution_activity_metrics_input {
 
     /// A builder for [`GetJourneyExecutionActivityMetricsInput`](crate::input::GetJourneyExecutionActivityMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -13130,6 +13196,7 @@ impl GetJourneyExecutionActivityMetricsInput {
 pub mod get_journey_execution_metrics_input {
 
     /// A builder for [`GetJourneyExecutionMetricsInput`](crate::input::GetJourneyExecutionMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -13379,6 +13446,7 @@ impl GetJourneyExecutionMetricsInput {
 pub mod get_push_template_input {
 
     /// A builder for [`GetPushTemplateInput`](crate::input::GetPushTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -13590,6 +13658,7 @@ impl GetPushTemplateInput {
 pub mod get_recommender_configuration_input {
 
     /// A builder for [`GetRecommenderConfigurationInput`](crate::input::GetRecommenderConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_id: std::option::Option<std::string::String>,
@@ -13762,6 +13831,7 @@ impl GetRecommenderConfigurationInput {
 pub mod get_recommender_configurations_input {
 
     /// A builder for [`GetRecommenderConfigurationsInput`](crate::input::GetRecommenderConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_size: std::option::Option<std::string::String>,
@@ -13937,6 +14007,7 @@ impl GetRecommenderConfigurationsInput {
 pub mod get_segment_input {
 
     /// A builder for [`GetSegmentInput`](crate::input::GetSegmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -14139,6 +14210,7 @@ impl GetSegmentInput {
 pub mod get_segment_export_jobs_input {
 
     /// A builder for [`GetSegmentExportJobsInput`](crate::input::GetSegmentExportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -14385,6 +14457,7 @@ impl GetSegmentExportJobsInput {
 pub mod get_segment_import_jobs_input {
 
     /// A builder for [`GetSegmentImportJobsInput`](crate::input::GetSegmentImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -14631,6 +14704,7 @@ impl GetSegmentImportJobsInput {
 pub mod get_segments_input {
 
     /// A builder for [`GetSegmentsInput`](crate::input::GetSegmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -14843,6 +14917,7 @@ impl GetSegmentsInput {
 pub mod get_segment_version_input {
 
     /// A builder for [`GetSegmentVersionInput`](crate::input::GetSegmentVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -15079,6 +15154,7 @@ impl GetSegmentVersionInput {
 pub mod get_segment_versions_input {
 
     /// A builder for [`GetSegmentVersionsInput`](crate::input::GetSegmentVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -15325,6 +15401,7 @@ impl GetSegmentVersionsInput {
 pub mod get_sms_channel_input {
 
     /// A builder for [`GetSmsChannelInput`](crate::input::GetSmsChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -15495,6 +15572,7 @@ impl GetSmsChannelInput {
 pub mod get_sms_template_input {
 
     /// A builder for [`GetSmsTemplateInput`](crate::input::GetSmsTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -15706,6 +15784,7 @@ impl GetSmsTemplateInput {
 pub mod get_user_endpoints_input {
 
     /// A builder for [`GetUserEndpointsInput`](crate::input::GetUserEndpointsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -15910,6 +15989,7 @@ impl GetUserEndpointsInput {
 pub mod get_voice_channel_input {
 
     /// A builder for [`GetVoiceChannelInput`](crate::input::GetVoiceChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -16080,6 +16160,7 @@ impl GetVoiceChannelInput {
 pub mod get_voice_template_input {
 
     /// A builder for [`GetVoiceTemplateInput`](crate::input::GetVoiceTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -16293,6 +16374,7 @@ impl GetVoiceTemplateInput {
 pub mod list_journeys_input {
 
     /// A builder for [`ListJourneysInput`](crate::input::ListJourneysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -16505,6 +16587,7 @@ impl ListJourneysInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -16670,6 +16753,7 @@ impl ListTagsForResourceInput {
 pub mod list_templates_input {
 
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -16886,6 +16970,7 @@ impl ListTemplatesInput {
 pub mod list_template_versions_input {
 
     /// A builder for [`ListTemplateVersionsInput`](crate::input::ListTemplateVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -17138,6 +17223,7 @@ impl ListTemplateVersionsInput {
 pub mod phone_number_validate_input {
 
     /// A builder for [`PhoneNumberValidateInput`](crate::input::PhoneNumberValidateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_validate_request:
@@ -17306,6 +17392,7 @@ impl PhoneNumberValidateInput {
 pub mod put_events_input {
 
     /// A builder for [`PutEventsInput`](crate::input::PutEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -17503,6 +17590,7 @@ impl PutEventsInput {
 pub mod put_event_stream_input {
 
     /// A builder for [`PutEventStreamInput`](crate::input::PutEventStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -17704,6 +17792,7 @@ impl PutEventStreamInput {
 pub mod remove_attributes_input {
 
     /// A builder for [`RemoveAttributesInput`](crate::input::RemoveAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -17956,6 +18045,7 @@ impl RemoveAttributesInput {
 pub mod send_messages_input {
 
     /// A builder for [`SendMessagesInput`](crate::input::SendMessagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -18155,6 +18245,7 @@ impl SendMessagesInput {
 pub mod send_otp_message_input {
 
     /// A builder for [`SendOtpMessageInput`](crate::input::SendOtpMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -18360,6 +18451,7 @@ impl SendOtpMessageInput {
 pub mod send_users_messages_input {
 
     /// A builder for [`SendUsersMessagesInput`](crate::input::SendUsersMessagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -18567,6 +18659,7 @@ impl SendUsersMessagesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -18759,6 +18852,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -18961,6 +19055,7 @@ impl UntagResourceInput {
 pub mod update_adm_channel_input {
 
     /// A builder for [`UpdateAdmChannelInput`](crate::input::UpdateAdmChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_request: std::option::Option<crate::model::AdmChannelRequest>,
@@ -19164,6 +19259,7 @@ impl UpdateAdmChannelInput {
 pub mod update_apns_channel_input {
 
     /// A builder for [`UpdateApnsChannelInput`](crate::input::UpdateApnsChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_request: std::option::Option<crate::model::ApnsChannelRequest>,
@@ -19367,6 +19463,7 @@ impl UpdateApnsChannelInput {
 pub mod update_apns_sandbox_channel_input {
 
     /// A builder for [`UpdateApnsSandboxChannelInput`](crate::input::UpdateApnsSandboxChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_request:
@@ -19574,6 +19671,7 @@ impl UpdateApnsSandboxChannelInput {
 pub mod update_apns_voip_channel_input {
 
     /// A builder for [`UpdateApnsVoipChannelInput`](crate::input::UpdateApnsVoipChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_request:
@@ -19781,6 +19879,7 @@ impl UpdateApnsVoipChannelInput {
 pub mod update_apns_voip_sandbox_channel_input {
 
     /// A builder for [`UpdateApnsVoipSandboxChannelInput`](crate::input::UpdateApnsVoipSandboxChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_request:
@@ -19988,6 +20087,7 @@ impl UpdateApnsVoipSandboxChannelInput {
 pub mod update_application_settings_input {
 
     /// A builder for [`UpdateApplicationSettingsInput`](crate::input::UpdateApplicationSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -20195,6 +20295,7 @@ impl UpdateApplicationSettingsInput {
 pub mod update_baidu_channel_input {
 
     /// A builder for [`UpdateBaiduChannelInput`](crate::input::UpdateBaiduChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -20398,6 +20499,7 @@ impl UpdateBaiduChannelInput {
 pub mod update_campaign_input {
 
     /// A builder for [`UpdateCampaignInput`](crate::input::UpdateCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -20631,6 +20733,7 @@ impl UpdateCampaignInput {
 pub mod update_email_channel_input {
 
     /// A builder for [`UpdateEmailChannelInput`](crate::input::UpdateEmailChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -20834,6 +20937,7 @@ impl UpdateEmailChannelInput {
 pub mod update_email_template_input {
 
     /// A builder for [`UpdateEmailTemplateInput`](crate::input::UpdateEmailTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_new_version: std::option::Option<bool>,
@@ -21099,6 +21203,7 @@ impl UpdateEmailTemplateInput {
 pub mod update_endpoint_input {
 
     /// A builder for [`UpdateEndpointInput`](crate::input::UpdateEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -21330,6 +21435,7 @@ impl UpdateEndpointInput {
 pub mod update_endpoints_batch_input {
 
     /// A builder for [`UpdateEndpointsBatchInput`](crate::input::UpdateEndpointsBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -21533,6 +21639,7 @@ impl UpdateEndpointsBatchInput {
 pub mod update_gcm_channel_input {
 
     /// A builder for [`UpdateGcmChannelInput`](crate::input::UpdateGcmChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -21736,6 +21843,7 @@ impl UpdateGcmChannelInput {
 pub mod update_in_app_template_input {
 
     /// A builder for [`UpdateInAppTemplateInput`](crate::input::UpdateInAppTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_new_version: std::option::Option<bool>,
@@ -22004,6 +22112,7 @@ impl UpdateInAppTemplateInput {
 pub mod update_journey_input {
 
     /// A builder for [`UpdateJourneyInput`](crate::input::UpdateJourneyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -22237,6 +22346,7 @@ impl UpdateJourneyInput {
 pub mod update_journey_state_input {
 
     /// A builder for [`UpdateJourneyStateInput`](crate::input::UpdateJourneyStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -22472,6 +22582,7 @@ impl UpdateJourneyStateInput {
 pub mod update_push_template_input {
 
     /// A builder for [`UpdatePushTemplateInput`](crate::input::UpdatePushTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_new_version: std::option::Option<bool>,
@@ -22741,6 +22852,7 @@ impl UpdatePushTemplateInput {
 pub mod update_recommender_configuration_input {
 
     /// A builder for [`UpdateRecommenderConfigurationInput`](crate::input::UpdateRecommenderConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_id: std::option::Option<std::string::String>,
@@ -22948,6 +23060,7 @@ impl UpdateRecommenderConfigurationInput {
 pub mod update_segment_input {
 
     /// A builder for [`UpdateSegmentInput`](crate::input::UpdateSegmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -23181,6 +23294,7 @@ impl UpdateSegmentInput {
 pub mod update_sms_channel_input {
 
     /// A builder for [`UpdateSmsChannelInput`](crate::input::UpdateSmsChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -23384,6 +23498,7 @@ impl UpdateSmsChannelInput {
 pub mod update_sms_template_input {
 
     /// A builder for [`UpdateSmsTemplateInput`](crate::input::UpdateSmsTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_new_version: std::option::Option<bool>,
@@ -23649,6 +23764,7 @@ impl UpdateSmsTemplateInput {
 pub mod update_template_active_version_input {
 
     /// A builder for [`UpdateTemplateActiveVersionInput`](crate::input::UpdateTemplateActiveVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_active_version_request:
@@ -23891,6 +24007,7 @@ impl UpdateTemplateActiveVersionInput {
 pub mod update_voice_channel_input {
 
     /// A builder for [`UpdateVoiceChannelInput`](crate::input::UpdateVoiceChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -24094,6 +24211,7 @@ impl UpdateVoiceChannelInput {
 pub mod update_voice_template_input {
 
     /// A builder for [`UpdateVoiceTemplateInput`](crate::input::UpdateVoiceTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_new_version: std::option::Option<bool>,
@@ -24359,6 +24477,7 @@ impl UpdateVoiceTemplateInput {
 pub mod verify_otp_message_input {
 
     /// A builder for [`VerifyOtpMessageInput`](crate::input::VerifyOtpMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,

@@ -25,6 +25,7 @@ impl ListAnalyzersOutput {
 pub mod list_analyzers_output {
 
     /// A builder for [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzers: std::option::Option<std::vec::Vec<crate::model::AnalyzerSummary>>,
@@ -94,6 +95,7 @@ impl CreateAnalyzerOutput {
 pub mod create_analyzer_output {
 
     /// A builder for [`CreateAnalyzerOutput`](crate::output::CreateAnalyzerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -130,6 +132,7 @@ pub struct DeleteAnalyzerOutput {}
 pub mod delete_analyzer_output {
 
     /// A builder for [`DeleteAnalyzerOutput`](crate::output::DeleteAnalyzerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -164,6 +167,7 @@ impl GetAnalyzerOutput {
 pub mod get_analyzer_output {
 
     /// A builder for [`GetAnalyzerOutput`](crate::output::GetAnalyzerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer: std::option::Option<crate::model::AnalyzerSummary>,
@@ -222,6 +226,7 @@ impl ListArchiveRulesOutput {
 pub mod list_archive_rules_output {
 
     /// A builder for [`ListArchiveRulesOutput`](crate::output::ListArchiveRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_rules:
@@ -282,6 +287,7 @@ pub struct CreateArchiveRuleOutput {}
 pub mod create_archive_rule_output {
 
     /// A builder for [`CreateArchiveRuleOutput`](crate::output::CreateArchiveRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -306,6 +312,7 @@ pub struct DeleteArchiveRuleOutput {}
 pub mod delete_archive_rule_output {
 
     /// A builder for [`DeleteArchiveRuleOutput`](crate::output::DeleteArchiveRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -330,6 +337,7 @@ pub struct UpdateArchiveRuleOutput {}
 pub mod update_archive_rule_output {
 
     /// A builder for [`UpdateArchiveRuleOutput`](crate::output::UpdateArchiveRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -364,6 +372,7 @@ impl GetArchiveRuleOutput {
 pub mod get_archive_rule_output {
 
     /// A builder for [`GetArchiveRuleOutput`](crate::output::GetArchiveRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_rule: std::option::Option<crate::model::ArchiveRuleSummary>,
@@ -422,6 +431,7 @@ impl ValidatePolicyOutput {
 pub mod validate_policy_output {
 
     /// A builder for [`ValidatePolicyOutput`](crate::output::ValidatePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) findings:
@@ -482,6 +492,7 @@ pub struct UpdateFindingsOutput {}
 pub mod update_findings_output {
 
     /// A builder for [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -506,6 +517,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -530,6 +542,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -554,6 +567,7 @@ pub struct StartResourceScanOutput {}
 pub mod start_resource_scan_output {
 
     /// A builder for [`StartResourceScanOutput`](crate::output::StartResourceScanOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -588,6 +602,7 @@ impl StartPolicyGenerationOutput {
 pub mod start_policy_generation_output {
 
     /// A builder for [`StartPolicyGenerationOutput`](crate::output::StartPolicyGenerationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -640,6 +655,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -710,6 +726,7 @@ impl ListPolicyGenerationsOutput {
 pub mod list_policy_generations_output {
 
     /// A builder for [`ListPolicyGenerationsOutput`](crate::output::ListPolicyGenerationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_generations:
@@ -787,6 +804,7 @@ impl ListFindingsOutput {
 pub mod list_findings_output {
 
     /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
@@ -866,6 +884,7 @@ impl ListAnalyzedResourcesOutput {
 pub mod list_analyzed_resources_output {
 
     /// A builder for [`ListAnalyzedResourcesOutput`](crate::output::ListAnalyzedResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzed_resources:
@@ -943,6 +962,7 @@ impl ListAccessPreviewsOutput {
 pub mod list_access_previews_output {
 
     /// A builder for [`ListAccessPreviewsOutput`](crate::output::ListAccessPreviewsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_previews:
@@ -1020,6 +1040,7 @@ impl ListAccessPreviewFindingsOutput {
 pub mod list_access_preview_findings_output {
 
     /// A builder for [`ListAccessPreviewFindingsOutput`](crate::output::ListAccessPreviewFindingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::AccessPreviewFinding>>,
@@ -1098,6 +1119,7 @@ impl GetGeneratedPolicyOutput {
 pub mod get_generated_policy_output {
 
     /// A builder for [`GetGeneratedPolicyOutput`](crate::output::GetGeneratedPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
@@ -1168,6 +1190,7 @@ impl GetFindingOutput {
 pub mod get_finding_output {
 
     /// A builder for [`GetFindingOutput`](crate::output::GetFindingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding: std::option::Option<crate::model::Finding>,
@@ -1216,6 +1239,7 @@ impl GetAnalyzedResourceOutput {
 pub mod get_analyzed_resource_output {
 
     /// A builder for [`GetAnalyzedResourceOutput`](crate::output::GetAnalyzedResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<crate::model::AnalyzedResource>,
@@ -1267,6 +1291,7 @@ impl GetAccessPreviewOutput {
 pub mod get_access_preview_output {
 
     /// A builder for [`GetAccessPreviewOutput`](crate::output::GetAccessPreviewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_preview: std::option::Option<crate::model::AccessPreview>,
@@ -1318,6 +1343,7 @@ impl CreateAccessPreviewOutput {
 pub mod create_access_preview_output {
 
     /// A builder for [`CreateAccessPreviewOutput`](crate::output::CreateAccessPreviewOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1354,6 +1380,7 @@ pub struct CancelPolicyGenerationOutput {}
 pub mod cancel_policy_generation_output {
 
     /// A builder for [`CancelPolicyGenerationOutput`](crate::output::CancelPolicyGenerationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1378,6 +1405,7 @@ pub struct ApplyArchiveRuleOutput {}
 pub mod apply_archive_rule_output {
 
     /// A builder for [`ApplyArchiveRuleOutput`](crate::output::ApplyArchiveRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

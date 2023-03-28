@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_resource_input {
 
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
@@ -231,6 +232,7 @@ impl AddTagsToResourceInput {
 pub mod associate_ops_item_related_item_input {
 
     /// A builder for [`AssociateOpsItemRelatedItemInput`](crate::input::AssociateOpsItemRelatedItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
@@ -441,6 +443,7 @@ impl AssociateOpsItemRelatedItemInput {
 pub mod cancel_command_input {
 
     /// A builder for [`CancelCommandInput`](crate::input::CancelCommandInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command_id: std::option::Option<std::string::String>,
@@ -624,6 +627,7 @@ impl CancelCommandInput {
 pub mod cancel_maintenance_window_execution_input {
 
     /// A builder for [`CancelMaintenanceWindowExecutionInput`](crate::input::CancelMaintenanceWindowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -791,6 +795,7 @@ impl CancelMaintenanceWindowExecutionInput {
 pub mod create_activation_input {
 
     /// A builder for [`CreateActivationInput`](crate::input::CreateActivationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1081,6 +1086,7 @@ impl CreateActivationInput {
 pub mod create_association_input {
 
     /// A builder for [`CreateAssociationInput`](crate::input::CreateAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1655,6 +1661,7 @@ impl CreateAssociationInput {
 pub mod create_association_batch_input {
 
     /// A builder for [`CreateAssociationBatchInput`](crate::input::CreateAssociationBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries:
@@ -1833,6 +1840,7 @@ impl CreateAssociationBatchInput {
 pub mod create_document_input {
 
     /// A builder for [`CreateDocumentInput`](crate::input::CreateDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -2178,6 +2186,7 @@ impl CreateDocumentInput {
 pub mod create_maintenance_window_input {
 
     /// A builder for [`CreateMaintenanceWindowInput`](crate::input::CreateMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2534,6 +2543,7 @@ impl CreateMaintenanceWindowInput {
 pub mod create_ops_item_input {
 
     /// A builder for [`CreateOpsItemInput`](crate::input::CreateOpsItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2967,6 +2977,7 @@ impl CreateOpsItemInput {
 pub mod create_ops_metadata_input {
 
     /// A builder for [`CreateOpsMetadataInput`](crate::input::CreateOpsMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -3189,6 +3200,7 @@ impl CreateOpsMetadataInput {
 pub mod create_patch_baseline_input {
 
     /// A builder for [`CreatePatchBaselineInput`](crate::input::CreatePatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
@@ -3582,6 +3594,7 @@ impl CreatePatchBaselineInput {
 pub mod create_resource_data_sync_input {
 
     /// A builder for [`CreateResourceDataSyncInput`](crate::input::CreateResourceDataSyncInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_name: std::option::Option<std::string::String>,
@@ -3793,6 +3806,7 @@ impl CreateResourceDataSyncInput {
 pub mod delete_activation_input {
 
     /// A builder for [`DeleteActivationInput`](crate::input::DeleteActivationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_id: std::option::Option<std::string::String>,
@@ -3960,6 +3974,7 @@ impl DeleteActivationInput {
 pub mod delete_association_input {
 
     /// A builder for [`DeleteAssociationInput`](crate::input::DeleteAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4155,6 +4170,7 @@ impl DeleteAssociationInput {
 pub mod delete_document_input {
 
     /// A builder for [`DeleteDocumentInput`](crate::input::DeleteDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4356,6 +4372,7 @@ impl DeleteDocumentInput {
 pub mod delete_inventory_input {
 
     /// A builder for [`DeleteInventoryInput`](crate::input::DeleteInventoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -4568,6 +4585,7 @@ impl DeleteInventoryInput {
 pub mod delete_maintenance_window_input {
 
     /// A builder for [`DeleteMaintenanceWindowInput`](crate::input::DeleteMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -4734,6 +4752,7 @@ impl DeleteMaintenanceWindowInput {
 pub mod delete_ops_metadata_input {
 
     /// A builder for [`DeleteOpsMetadataInput`](crate::input::DeleteOpsMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_metadata_arn: std::option::Option<std::string::String>,
@@ -4901,6 +4920,7 @@ impl DeleteOpsMetadataInput {
 pub mod delete_parameter_input {
 
     /// A builder for [`DeleteParameterInput`](crate::input::DeleteParameterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5061,6 +5081,7 @@ impl DeleteParameterInput {
 pub mod delete_parameters_input {
 
     /// A builder for [`DeleteParametersInput`](crate::input::DeleteParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5232,6 +5253,7 @@ impl DeleteParametersInput {
 pub mod delete_patch_baseline_input {
 
     /// A builder for [`DeletePatchBaselineInput`](crate::input::DeletePatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -5396,6 +5418,7 @@ impl DeletePatchBaselineInput {
 pub mod delete_resource_data_sync_input {
 
     /// A builder for [`DeleteResourceDataSyncInput`](crate::input::DeleteResourceDataSyncInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_name: std::option::Option<std::string::String>,
@@ -5574,6 +5597,7 @@ impl DeleteResourceDataSyncInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5764,6 +5788,7 @@ impl DeleteResourcePolicyInput {
 pub mod deregister_managed_instance_input {
 
     /// A builder for [`DeregisterManagedInstanceInput`](crate::input::DeregisterManagedInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -5930,6 +5955,7 @@ impl DeregisterManagedInstanceInput {
 pub mod deregister_patch_baseline_for_patch_group_input {
 
     /// A builder for [`DeregisterPatchBaselineForPatchGroupInput`](crate::input::DeregisterPatchBaselineForPatchGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -6106,6 +6132,7 @@ impl DeregisterPatchBaselineForPatchGroupInput {
 pub mod deregister_target_from_maintenance_window_input {
 
     /// A builder for [`DeregisterTargetFromMaintenanceWindowInput`](crate::input::DeregisterTargetFromMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -6297,6 +6324,7 @@ impl DeregisterTargetFromMaintenanceWindowInput {
 pub mod deregister_task_from_maintenance_window_input {
 
     /// A builder for [`DeregisterTaskFromMaintenanceWindowInput`](crate::input::DeregisterTaskFromMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -6476,6 +6504,7 @@ impl DeregisterTaskFromMaintenanceWindowInput {
 pub mod describe_activations_input {
 
     /// A builder for [`DescribeActivationsInput`](crate::input::DescribeActivationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -6674,6 +6703,7 @@ impl DescribeActivationsInput {
 pub mod describe_association_input {
 
     /// A builder for [`DescribeAssociationInput`](crate::input::DescribeAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6880,6 +6910,7 @@ impl DescribeAssociationInput {
 pub mod describe_association_executions_input {
 
     /// A builder for [`DescribeAssociationExecutionsInput`](crate::input::DescribeAssociationExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -7099,6 +7130,7 @@ impl DescribeAssociationExecutionsInput {
 pub mod describe_association_execution_targets_input {
 
     /// A builder for [`DescribeAssociationExecutionTargetsInput`](crate::input::DescribeAssociationExecutionTargetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -7332,6 +7364,7 @@ impl DescribeAssociationExecutionTargetsInput {
 pub mod describe_automation_executions_input {
 
     /// A builder for [`DescribeAutomationExecutionsInput`](crate::input::DescribeAutomationExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -7530,6 +7563,7 @@ impl DescribeAutomationExecutionsInput {
 pub mod describe_automation_step_executions_input {
 
     /// A builder for [`DescribeAutomationStepExecutionsInput`](crate::input::DescribeAutomationStepExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
@@ -7754,6 +7788,7 @@ impl DescribeAutomationStepExecutionsInput {
 pub mod describe_available_patches_input {
 
     /// A builder for [`DescribeAvailablePatchesInput`](crate::input::DescribeAvailablePatchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -8014,6 +8049,7 @@ impl DescribeAvailablePatchesInput {
 pub mod describe_document_input {
 
     /// A builder for [`DescribeDocumentInput`](crate::input::DescribeDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8205,6 +8241,7 @@ impl DescribeDocumentInput {
 pub mod describe_document_permission_input {
 
     /// A builder for [`DescribeDocumentPermissionInput`](crate::input::DescribeDocumentPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8410,6 +8447,7 @@ impl DescribeDocumentPermissionInput {
 pub mod describe_effective_instance_associations_input {
 
     /// A builder for [`DescribeEffectiveInstanceAssociationsInput`](crate::input::DescribeEffectiveInstanceAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8598,6 +8636,7 @@ impl DescribeEffectiveInstanceAssociationsInput {
 pub mod describe_effective_patches_for_patch_baseline_input {
 
     /// A builder for [`DescribeEffectivePatchesForPatchBaselineInput`](crate::input::DescribeEffectivePatchesForPatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -8788,6 +8827,7 @@ impl DescribeEffectivePatchesForPatchBaselineInput {
 pub mod describe_instance_associations_status_input {
 
     /// A builder for [`DescribeInstanceAssociationsStatusInput`](crate::input::DescribeInstanceAssociationsStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8976,6 +9016,7 @@ impl DescribeInstanceAssociationsStatusInput {
 pub mod describe_instance_information_input {
 
     /// A builder for [`DescribeInstanceInformationInput`](crate::input::DescribeInstanceInformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_information_filter_list:
@@ -9205,6 +9246,7 @@ impl DescribeInstanceInformationInput {
 pub mod describe_instance_patches_input {
 
     /// A builder for [`DescribeInstancePatchesInput`](crate::input::DescribeInstancePatchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9431,6 +9473,7 @@ impl DescribeInstancePatchesInput {
 pub mod describe_instance_patch_states_input {
 
     /// A builder for [`DescribeInstancePatchStatesInput`](crate::input::DescribeInstancePatchStatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9628,6 +9671,7 @@ impl DescribeInstancePatchStatesInput {
 pub mod describe_instance_patch_states_for_patch_group_input {
 
     /// A builder for [`DescribeInstancePatchStatesForPatchGroupInput`](crate::input::DescribeInstancePatchStatesForPatchGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patch_group: std::option::Option<std::string::String>,
@@ -9851,6 +9895,7 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
 pub mod describe_inventory_deletions_input {
 
     /// A builder for [`DescribeInventoryDeletionsInput`](crate::input::DescribeInventoryDeletionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deletion_id: std::option::Option<std::string::String>,
@@ -10041,6 +10086,7 @@ impl DescribeInventoryDeletionsInput {
 pub mod describe_maintenance_window_executions_input {
 
     /// A builder for [`DescribeMaintenanceWindowExecutionsInput`](crate::input::DescribeMaintenanceWindowExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -10259,6 +10305,7 @@ impl DescribeMaintenanceWindowExecutionsInput {
 pub mod describe_maintenance_window_execution_task_invocations_input {
 
     /// A builder for [`DescribeMaintenanceWindowExecutionTaskInvocationsInput`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -10488,6 +10535,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
 pub mod describe_maintenance_window_execution_tasks_input {
 
     /// A builder for [`DescribeMaintenanceWindowExecutionTasksInput`](crate::input::DescribeMaintenanceWindowExecutionTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -10701,6 +10749,7 @@ impl DescribeMaintenanceWindowExecutionTasksInput {
 pub mod describe_maintenance_windows_input {
 
     /// A builder for [`DescribeMaintenanceWindowsInput`](crate::input::DescribeMaintenanceWindowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -10901,6 +10950,7 @@ impl DescribeMaintenanceWindowsInput {
 pub mod describe_maintenance_window_schedule_input {
 
     /// A builder for [`DescribeMaintenanceWindowScheduleInput`](crate::input::DescribeMaintenanceWindowScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -11147,6 +11197,7 @@ impl DescribeMaintenanceWindowScheduleInput {
 pub mod describe_maintenance_windows_for_target_input {
 
     /// A builder for [`DescribeMaintenanceWindowsForTargetInput`](crate::input::DescribeMaintenanceWindowsForTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -11359,6 +11410,7 @@ impl DescribeMaintenanceWindowsForTargetInput {
 pub mod describe_maintenance_window_targets_input {
 
     /// A builder for [`DescribeMaintenanceWindowTargetsInput`](crate::input::DescribeMaintenanceWindowTargetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -11569,6 +11621,7 @@ impl DescribeMaintenanceWindowTargetsInput {
 pub mod describe_maintenance_window_tasks_input {
 
     /// A builder for [`DescribeMaintenanceWindowTasksInput`](crate::input::DescribeMaintenanceWindowTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -11779,6 +11832,7 @@ impl DescribeMaintenanceWindowTasksInput {
 pub mod describe_ops_items_input {
 
     /// A builder for [`DescribeOpsItemsInput`](crate::input::DescribeOpsItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_filters:
@@ -12011,6 +12065,7 @@ impl DescribeOpsItemsInput {
 pub mod describe_parameters_input {
 
     /// A builder for [`DescribeParametersInput`](crate::input::DescribeParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ParametersFilter>>,
@@ -12230,6 +12285,7 @@ impl DescribeParametersInput {
 pub mod describe_patch_baselines_input {
 
     /// A builder for [`DescribePatchBaselinesInput`](crate::input::DescribePatchBaselinesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -12442,6 +12498,7 @@ impl DescribePatchBaselinesInput {
 pub mod describe_patch_groups_input {
 
     /// A builder for [`DescribePatchGroupsInput`](crate::input::DescribePatchGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -12650,6 +12707,7 @@ impl DescribePatchGroupsInput {
 pub mod describe_patch_group_state_input {
 
     /// A builder for [`DescribePatchGroupStateInput`](crate::input::DescribePatchGroupStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patch_group: std::option::Option<std::string::String>,
@@ -12816,6 +12874,7 @@ impl DescribePatchGroupStateInput {
 pub mod describe_patch_properties_input {
 
     /// A builder for [`DescribePatchPropertiesInput`](crate::input::DescribePatchPropertiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
@@ -13036,6 +13095,7 @@ impl DescribePatchPropertiesInput {
 pub mod describe_sessions_input {
 
     /// A builder for [`DescribeSessionsInput`](crate::input::DescribeSessionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::SessionState>,
@@ -13245,6 +13305,7 @@ impl DescribeSessionsInput {
 pub mod disassociate_ops_item_related_item_input {
 
     /// A builder for [`DisassociateOpsItemRelatedItemInput`](crate::input::DisassociateOpsItemRelatedItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
@@ -13424,6 +13485,7 @@ impl DisassociateOpsItemRelatedItemInput {
 pub mod get_automation_execution_input {
 
     /// A builder for [`GetAutomationExecutionInput`](crate::input::GetAutomationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
@@ -13593,6 +13655,7 @@ impl GetAutomationExecutionInput {
 pub mod get_calendar_state_input {
 
     /// A builder for [`GetCalendarStateInput`](crate::input::GetCalendarStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13778,6 +13841,7 @@ impl GetCalendarStateInput {
 pub mod get_command_invocation_input {
 
     /// A builder for [`GetCommandInvocationInput`](crate::input::GetCommandInvocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command_id: std::option::Option<std::string::String>,
@@ -13970,6 +14034,7 @@ impl GetCommandInvocationInput {
 pub mod get_connection_status_input {
 
     /// A builder for [`GetConnectionStatusInput`](crate::input::GetConnectionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
@@ -14134,6 +14199,7 @@ impl GetConnectionStatusInput {
 pub mod get_default_patch_baseline_input {
 
     /// A builder for [`GetDefaultPatchBaselineInput`](crate::input::GetDefaultPatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operating_system: std::option::Option<crate::model::OperatingSystem>,
@@ -14303,6 +14369,7 @@ impl GetDefaultPatchBaselineInput {
 pub mod get_deployable_patch_snapshot_for_instance_input {
 
     /// A builder for [`GetDeployablePatchSnapshotForInstanceInput`](crate::input::GetDeployablePatchSnapshotForInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -14494,6 +14561,7 @@ impl GetDeployablePatchSnapshotForInstanceInput {
 pub mod get_document_input {
 
     /// A builder for [`GetDocumentInput`](crate::input::GetDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -14698,6 +14766,7 @@ impl GetDocumentInput {
 pub mod get_inventory_input {
 
     /// A builder for [`GetInventoryInput`](crate::input::GetInventoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
@@ -14937,6 +15006,7 @@ impl GetInventoryInput {
 pub mod get_inventory_schema_input {
 
     /// A builder for [`GetInventorySchemaInput`](crate::input::GetInventorySchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -15149,6 +15219,7 @@ impl GetInventorySchemaInput {
 pub mod get_maintenance_window_input {
 
     /// A builder for [`GetMaintenanceWindowInput`](crate::input::GetMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -15315,6 +15386,7 @@ impl GetMaintenanceWindowInput {
 pub mod get_maintenance_window_execution_input {
 
     /// A builder for [`GetMaintenanceWindowExecutionInput`](crate::input::GetMaintenanceWindowExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -15482,6 +15554,7 @@ impl GetMaintenanceWindowExecutionInput {
 pub mod get_maintenance_window_execution_task_input {
 
     /// A builder for [`GetMaintenanceWindowExecutionTaskInput`](crate::input::GetMaintenanceWindowExecutionTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -15661,6 +15734,7 @@ impl GetMaintenanceWindowExecutionTaskInput {
 pub mod get_maintenance_window_execution_task_invocation_input {
 
     /// A builder for [`GetMaintenanceWindowExecutionTaskInvocationInput`](crate::input::GetMaintenanceWindowExecutionTaskInvocationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_execution_id: std::option::Option<std::string::String>,
@@ -15858,6 +15932,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInput {
 pub mod get_maintenance_window_task_input {
 
     /// A builder for [`GetMaintenanceWindowTaskInput`](crate::input::GetMaintenanceWindowTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -16039,6 +16114,7 @@ impl GetMaintenanceWindowTaskInput {
 pub mod get_ops_item_input {
 
     /// A builder for [`GetOpsItemInput`](crate::input::GetOpsItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
@@ -16213,6 +16289,7 @@ impl GetOpsItemInput {
 pub mod get_ops_metadata_input {
 
     /// A builder for [`GetOpsMetadataInput`](crate::input::GetOpsMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_metadata_arn: std::option::Option<std::string::String>,
@@ -16402,6 +16479,7 @@ impl GetOpsMetadataInput {
 pub mod get_ops_summary_input {
 
     /// A builder for [`GetOpsSummaryInput`](crate::input::GetOpsSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_name: std::option::Option<std::string::String>,
@@ -16652,6 +16730,7 @@ impl GetOpsSummaryInput {
 pub mod get_parameter_input {
 
     /// A builder for [`GetParameterInput`](crate::input::GetParameterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16828,6 +16907,7 @@ impl GetParameterInput {
 pub mod get_parameter_history_input {
 
     /// A builder for [`GetParameterHistoryInput`](crate::input::GetParameterHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -17028,6 +17108,7 @@ impl GetParameterHistoryInput {
 pub mod get_parameters_input {
 
     /// A builder for [`GetParametersInput`](crate::input::GetParametersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17213,6 +17294,7 @@ impl GetParametersInput {
 pub mod get_parameters_by_path_input {
 
     /// A builder for [`GetParametersByPathInput`](crate::input::GetParametersByPathInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -17459,6 +17541,7 @@ impl GetParametersByPathInput {
 pub mod get_patch_baseline_input {
 
     /// A builder for [`GetPatchBaselineInput`](crate::input::GetPatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -17627,6 +17710,7 @@ impl GetPatchBaselineInput {
 pub mod get_patch_baseline_for_patch_group_input {
 
     /// A builder for [`GetPatchBaselineForPatchGroupInput`](crate::input::GetPatchBaselineForPatchGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patch_group: std::option::Option<std::string::String>,
@@ -17806,6 +17890,7 @@ impl GetPatchBaselineForPatchGroupInput {
 pub mod get_resource_policies_input {
 
     /// A builder for [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -17994,6 +18079,7 @@ impl GetResourcePoliciesInput {
 pub mod get_service_setting_input {
 
     /// A builder for [`GetServiceSettingInput`](crate::input::GetServiceSettingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) setting_id: std::option::Option<std::string::String>,
@@ -18176,6 +18262,7 @@ impl GetServiceSettingInput {
 pub mod label_parameter_version_input {
 
     /// A builder for [`LabelParameterVersionInput`](crate::input::LabelParameterVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -18375,6 +18462,7 @@ impl LabelParameterVersionInput {
 pub mod list_associations_input {
 
     /// A builder for [`ListAssociationsInput`](crate::input::ListAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_filter_list:
@@ -18577,6 +18665,7 @@ impl ListAssociationsInput {
 pub mod list_association_versions_input {
 
     /// A builder for [`ListAssociationVersionsInput`](crate::input::ListAssociationVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -18770,6 +18859,7 @@ impl ListAssociationVersionsInput {
 pub mod list_command_invocations_input {
 
     /// A builder for [`ListCommandInvocationsInput`](crate::input::ListCommandInvocationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command_id: std::option::Option<std::string::String>,
@@ -19005,6 +19095,7 @@ impl ListCommandInvocationsInput {
 pub mod list_commands_input {
 
     /// A builder for [`ListCommandsInput`](crate::input::ListCommandsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command_id: std::option::Option<std::string::String>,
@@ -19228,6 +19319,7 @@ impl ListCommandsInput {
 pub mod list_compliance_items_input {
 
     /// A builder for [`ListComplianceItemsInput`](crate::input::ListComplianceItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -19468,6 +19560,7 @@ impl ListComplianceItemsInput {
 pub mod list_compliance_summaries_input {
 
     /// A builder for [`ListComplianceSummariesInput`](crate::input::ListComplianceSummariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -19668,6 +19761,7 @@ impl ListComplianceSummariesInput {
 pub mod list_document_metadata_history_input {
 
     /// A builder for [`ListDocumentMetadataHistoryInput`](crate::input::ListDocumentMetadataHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -19886,6 +19980,7 @@ impl ListDocumentMetadataHistoryInput {
 pub mod list_documents_input {
 
     /// A builder for [`ListDocumentsInput`](crate::input::ListDocumentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_filter_list:
@@ -20108,6 +20203,7 @@ impl ListDocumentsInput {
 pub mod list_document_versions_input {
 
     /// A builder for [`ListDocumentVersionsInput`](crate::input::ListDocumentVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -20298,6 +20394,7 @@ impl ListDocumentVersionsInput {
 pub mod list_inventory_entries_input {
 
     /// A builder for [`ListInventoryEntriesInput`](crate::input::ListInventoryEntriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -20521,6 +20618,7 @@ impl ListInventoryEntriesInput {
 pub mod list_ops_item_events_input {
 
     /// A builder for [`ListOpsItemEventsInput`](crate::input::ListOpsItemEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::OpsItemEventFilter>>,
@@ -20718,6 +20816,7 @@ impl ListOpsItemEventsInput {
 pub mod list_ops_item_related_items_input {
 
     /// A builder for [`ListOpsItemRelatedItemsInput`](crate::input::ListOpsItemRelatedItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_item_id: std::option::Option<std::string::String>,
@@ -20930,6 +21029,7 @@ impl ListOpsItemRelatedItemsInput {
 pub mod list_ops_metadata_input {
 
     /// A builder for [`ListOpsMetadataInput`](crate::input::ListOpsMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::OpsMetadataFilter>>,
@@ -21125,6 +21225,7 @@ impl ListOpsMetadataInput {
 pub mod list_resource_compliance_summaries_input {
 
     /// A builder for [`ListResourceComplianceSummariesInput`](crate::input::ListResourceComplianceSummariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -21323,6 +21424,7 @@ impl ListResourceComplianceSummariesInput {
 pub mod list_resource_data_sync_input {
 
     /// A builder for [`ListResourceDataSyncInput`](crate::input::ListResourceDataSyncInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_type: std::option::Option<std::string::String>,
@@ -21513,6 +21615,7 @@ impl ListResourceDataSyncInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
@@ -21694,6 +21797,7 @@ impl ListTagsForResourceInput {
 pub mod modify_document_permission_input {
 
     /// A builder for [`ModifyDocumentPermissionInput`](crate::input::ModifyDocumentPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -21932,6 +22036,7 @@ impl ModifyDocumentPermissionInput {
 pub mod put_compliance_items_input {
 
     /// A builder for [`PutComplianceItemsInput`](crate::input::PutComplianceItemsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -22201,6 +22306,7 @@ impl PutComplianceItemsInput {
 pub mod put_inventory_input {
 
     /// A builder for [`PutInventoryInput`](crate::input::PutInventoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -22384,6 +22490,7 @@ impl PutInventoryInput {
 pub mod put_parameter_input {
 
     /// A builder for [`PutParameterInput`](crate::input::PutParameterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -22819,6 +22926,7 @@ impl PutParameterInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -23019,6 +23127,7 @@ impl PutResourcePolicyInput {
 pub mod register_default_patch_baseline_input {
 
     /// A builder for [`RegisterDefaultPatchBaselineInput`](crate::input::RegisterDefaultPatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -23183,6 +23292,7 @@ impl RegisterDefaultPatchBaselineInput {
 pub mod register_patch_baseline_for_patch_group_input {
 
     /// A builder for [`RegisterPatchBaselineForPatchGroupInput`](crate::input::RegisterPatchBaselineForPatchGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -23359,6 +23469,7 @@ impl RegisterPatchBaselineForPatchGroupInput {
 pub mod register_target_with_maintenance_window_input {
 
     /// A builder for [`RegisterTargetWithMaintenanceWindowInput`](crate::input::RegisterTargetWithMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -23706,6 +23817,7 @@ impl RegisterTargetWithMaintenanceWindowInput {
 pub mod register_task_with_maintenance_window_input {
 
     /// A builder for [`RegisterTaskWithMaintenanceWindowInput`](crate::input::RegisterTaskWithMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -24213,6 +24325,7 @@ impl RegisterTaskWithMaintenanceWindowInput {
 pub mod remove_tags_from_resource_input {
 
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
@@ -24435,6 +24548,7 @@ impl RemoveTagsFromResourceInput {
 pub mod reset_service_setting_input {
 
     /// A builder for [`ResetServiceSettingInput`](crate::input::ResetServiceSettingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) setting_id: std::option::Option<std::string::String>,
@@ -24617,6 +24731,7 @@ impl ResetServiceSettingInput {
 pub mod resume_session_input {
 
     /// A builder for [`ResumeSessionInput`](crate::input::ResumeSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -24779,6 +24894,7 @@ impl ResumeSessionInput {
 pub mod send_automation_signal_input {
 
     /// A builder for [`SendAutomationSignalInput`](crate::input::SendAutomationSignalInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
@@ -25004,6 +25120,7 @@ impl SendAutomationSignalInput {
 pub mod send_command_input {
 
     /// A builder for [`SendCommandInput`](crate::input::SendCommandInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25497,6 +25614,7 @@ impl SendCommandInput {
 pub mod start_associations_once_input {
 
     /// A builder for [`StartAssociationsOnceInput`](crate::input::StartAssociationsOnceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25672,6 +25790,7 @@ impl StartAssociationsOnceInput {
 pub mod start_automation_execution_input {
 
     /// A builder for [`StartAutomationExecutionInput`](crate::input::StartAutomationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_name: std::option::Option<std::string::String>,
@@ -26082,6 +26201,7 @@ impl StartAutomationExecutionInput {
 pub mod start_change_request_execution_input {
 
     /// A builder for [`StartChangeRequestExecutionInput`](crate::input::StartChangeRequestExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -26441,6 +26561,7 @@ impl StartChangeRequestExecutionInput {
 pub mod start_session_input {
 
     /// A builder for [`StartSessionInput`](crate::input::StartSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
@@ -26659,6 +26780,7 @@ impl StartSessionInput {
 pub mod stop_automation_execution_input {
 
     /// A builder for [`StopAutomationExecutionInput`](crate::input::StopAutomationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automation_execution_id: std::option::Option<std::string::String>,
@@ -26840,6 +26962,7 @@ impl StopAutomationExecutionInput {
 pub mod terminate_session_input {
 
     /// A builder for [`TerminateSessionInput`](crate::input::TerminateSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -27004,6 +27127,7 @@ impl TerminateSessionInput {
 pub mod unlabel_parameter_version_input {
 
     /// A builder for [`UnlabelParameterVersionInput`](crate::input::UnlabelParameterVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -27203,6 +27327,7 @@ impl UnlabelParameterVersionInput {
 pub mod update_association_input {
 
     /// A builder for [`UpdateAssociationInput`](crate::input::UpdateAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -27774,6 +27899,7 @@ impl UpdateAssociationInput {
 pub mod update_association_status_input {
 
     /// A builder for [`UpdateAssociationStatusInput`](crate::input::UpdateAssociationStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -27967,6 +28093,7 @@ impl UpdateAssociationStatusInput {
 pub mod update_document_input {
 
     /// A builder for [`UpdateDocumentInput`](crate::input::UpdateDocumentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -28232,6 +28359,7 @@ impl UpdateDocumentInput {
 pub mod update_document_default_version_input {
 
     /// A builder for [`UpdateDocumentDefaultVersionInput`](crate::input::UpdateDocumentDefaultVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -28411,6 +28539,7 @@ impl UpdateDocumentDefaultVersionInput {
 pub mod update_document_metadata_input {
 
     /// A builder for [`UpdateDocumentMetadataInput`](crate::input::UpdateDocumentMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -28607,6 +28736,7 @@ impl UpdateDocumentMetadataInput {
 pub mod update_maintenance_window_input {
 
     /// A builder for [`UpdateMaintenanceWindowInput`](crate::input::UpdateMaintenanceWindowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -28948,6 +29078,7 @@ impl UpdateMaintenanceWindowInput {
 pub mod update_maintenance_window_target_input {
 
     /// A builder for [`UpdateMaintenanceWindowTargetInput`](crate::input::UpdateMaintenanceWindowTargetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -29212,6 +29343,7 @@ impl UpdateMaintenanceWindowTargetInput {
 pub mod update_maintenance_window_task_input {
 
     /// A builder for [`UpdateMaintenanceWindowTaskInput`](crate::input::UpdateMaintenanceWindowTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) window_id: std::option::Option<std::string::String>,
@@ -29702,6 +29834,7 @@ impl UpdateMaintenanceWindowTaskInput {
 pub mod update_managed_instance_role_input {
 
     /// A builder for [`UpdateManagedInstanceRoleInput`](crate::input::UpdateManagedInstanceRoleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -29884,6 +30017,7 @@ impl UpdateManagedInstanceRoleInput {
 pub mod update_ops_item_input {
 
     /// A builder for [`UpdateOpsItemInput`](crate::input::UpdateOpsItemInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -30298,6 +30432,7 @@ impl UpdateOpsItemInput {
 pub mod update_ops_metadata_input {
 
     /// A builder for [`UpdateOpsMetadataInput`](crate::input::UpdateOpsMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_metadata_arn: std::option::Option<std::string::String>,
@@ -30515,6 +30650,7 @@ impl UpdateOpsMetadataInput {
 pub mod update_patch_baseline_input {
 
     /// A builder for [`UpdatePatchBaselineInput`](crate::input::UpdatePatchBaselineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baseline_id: std::option::Option<std::string::String>,
@@ -30869,6 +31005,7 @@ impl UpdatePatchBaselineInput {
 pub mod update_resource_data_sync_input {
 
     /// A builder for [`UpdateResourceDataSyncInput`](crate::input::UpdateResourceDataSyncInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sync_name: std::option::Option<std::string::String>,
@@ -31062,6 +31199,7 @@ impl UpdateResourceDataSyncInput {
 pub mod update_service_setting_input {
 
     /// A builder for [`UpdateServiceSettingInput`](crate::input::UpdateServiceSettingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) setting_id: std::option::Option<std::string::String>,

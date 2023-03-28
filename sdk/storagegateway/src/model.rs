@@ -29,6 +29,7 @@ impl StorageGatewayError {
 pub mod storage_gateway_error {
 
     /// A builder for [`StorageGatewayError`](crate::model::StorageGatewayError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -569,6 +570,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -728,6 +730,7 @@ impl SmbLocalGroups {
 pub mod smb_local_groups {
 
     /// A builder for [`SmbLocalGroups`](crate::model::SmbLocalGroups).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_admins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -789,6 +792,7 @@ impl CacheAttributes {
 pub mod cache_attributes {
 
     /// A builder for [`CacheAttributes`](crate::model::CacheAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_stale_timeout_in_seconds: std::option::Option<i32>,
@@ -1078,6 +1082,7 @@ impl NfsFileShareDefaults {
 pub mod nfs_file_share_defaults {
 
     /// A builder for [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_mode: std::option::Option<std::string::String>,
@@ -1306,6 +1311,7 @@ impl BandwidthRateLimitInterval {
 pub mod bandwidth_rate_limit_interval {
 
     /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_hour_of_day: std::option::Option<i32>,
@@ -1476,6 +1482,7 @@ impl AutomaticTapeCreationRule {
 pub mod automatic_tape_creation_rule {
 
     /// A builder for [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_barcode_prefix: std::option::Option<std::string::String>,
@@ -1631,6 +1638,7 @@ impl VolumeInfo {
 pub mod volume_info {
 
     /// A builder for [`VolumeInfo`](crate::model::VolumeInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -1789,6 +1797,7 @@ impl VolumeRecoveryPointInfo {
 pub mod volume_recovery_point_info {
 
     /// A builder for [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -1929,6 +1938,7 @@ impl TapeInfo {
 pub mod tape_info {
 
     /// A builder for [`TapeInfo`](crate::model::TapeInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -2102,6 +2112,7 @@ impl PoolInfo {
 pub mod pool_info {
 
     /// A builder for [`PoolInfo`](crate::model::PoolInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
@@ -2547,6 +2558,7 @@ impl Disk {
 pub mod disk {
 
     /// A builder for [`Disk`](crate::model::Disk).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_id: std::option::Option<std::string::String>,
@@ -2754,6 +2766,7 @@ impl GatewayInfo {
 pub mod gateway_info {
 
     /// A builder for [`GatewayInfo`](crate::model::GatewayInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -3046,6 +3059,7 @@ impl FileSystemAssociationSummary {
 pub mod file_system_association_summary {
 
     /// A builder for [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_id: std::option::Option<std::string::String>,
@@ -3175,6 +3189,7 @@ impl FileShareInfo {
 pub mod file_share_info {
 
     /// A builder for [`FileShareInfo`](crate::model::FileShareInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_type: std::option::Option<crate::model::FileShareType>,
@@ -3385,6 +3400,7 @@ impl AutomaticTapeCreationPolicyInfo {
 pub mod automatic_tape_creation_policy_info {
 
     /// A builder for [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_tape_creation_rules:
@@ -3613,6 +3629,7 @@ impl VtlDevice {
 pub mod vtl_device {
 
     /// A builder for [`VtlDevice`](crate::model::VtlDevice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vtl_device_arn: std::option::Option<std::string::String>,
@@ -3752,6 +3769,7 @@ impl DeviceiScsiAttributes {
 pub mod devicei_scsi_attributes {
 
     /// A builder for [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -3929,6 +3947,7 @@ impl Tape {
 pub mod tape {
 
     /// A builder for [`Tape`](crate::model::Tape).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -4159,6 +4178,7 @@ impl TapeRecoveryPointInfo {
 pub mod tape_recovery_point_info {
 
     /// A builder for [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -4342,6 +4362,7 @@ impl TapeArchive {
 pub mod tape_archive {
 
     /// A builder for [`TapeArchive`](crate::model::TapeArchive).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -4664,6 +4685,7 @@ impl StorediScsiVolume {
 pub mod storedi_scsi_volume {
 
     /// A builder for [`StorediScsiVolume`](crate::model::StorediScsiVolume).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -4938,6 +4960,7 @@ impl VolumeiScsiAttributes {
 pub mod volumei_scsi_attributes {
 
     /// A builder for [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -5301,6 +5324,7 @@ impl SmbFileShareInfo {
 pub mod smb_file_share_info {
 
     /// A builder for [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -6059,6 +6083,7 @@ impl NfsFileShareInfo {
 pub mod nfs_file_share_info {
 
     /// A builder for [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
@@ -6526,6 +6551,7 @@ impl NetworkInterface {
 pub mod network_interface {
 
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_address: std::option::Option<std::string::String>,
@@ -6668,6 +6694,7 @@ impl FileSystemAssociationInfo {
 pub mod file_system_association_info {
 
     /// A builder for [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
@@ -6867,6 +6894,7 @@ impl FileSystemAssociationStatusDetail {
 pub mod file_system_association_status_detail {
 
     /// A builder for [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -6919,6 +6947,7 @@ impl EndpointNetworkConfiguration {
 pub mod endpoint_network_configuration {
 
     /// A builder for [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7019,6 +7048,7 @@ impl std::fmt::Debug for ChapInfo {
 pub mod chap_info {
 
     /// A builder for [`ChapInfo`](crate::model::ChapInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -7230,6 +7260,7 @@ impl CachediScsiVolume {
 pub mod cachedi_scsi_volume {
 
     /// A builder for [`CachediScsiVolume`](crate::model::CachediScsiVolume).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,

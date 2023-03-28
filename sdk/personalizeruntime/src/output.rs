@@ -24,6 +24,7 @@ impl GetRecommendationsOutput {
 pub mod get_recommendations_output {
 
     /// A builder for [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_list: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
@@ -103,6 +104,7 @@ impl GetPersonalizedRankingOutput {
 pub mod get_personalized_ranking_output {
 
     /// A builder for [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) personalized_ranking:

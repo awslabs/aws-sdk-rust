@@ -29,6 +29,7 @@ impl RawMessageContent {
 pub mod raw_message_content {
 
     /// A builder for [`RawMessageContent`](crate::model::RawMessageContent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_reference: std::option::Option<crate::model::S3Reference>,
@@ -96,6 +97,7 @@ impl S3Reference {
 pub mod s3_reference {
 
     /// A builder for [`S3Reference`](crate::model::S3Reference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,

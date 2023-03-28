@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod acknowledge_job_input {
 
     /// A builder for [`AcknowledgeJobInput`](crate::input::AcknowledgeJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -179,6 +180,7 @@ impl AcknowledgeJobInput {
 pub mod acknowledge_third_party_job_input {
 
     /// A builder for [`AcknowledgeThirdPartyJobInput`](crate::input::AcknowledgeThirdPartyJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -369,6 +371,7 @@ impl AcknowledgeThirdPartyJobInput {
 pub mod create_custom_action_type_input {
 
     /// A builder for [`CreateCustomActionTypeInput`](crate::input::CreateCustomActionTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::ActionCategory>,
@@ -657,6 +660,7 @@ impl CreateCustomActionTypeInput {
 pub mod create_pipeline_input {
 
     /// A builder for [`CreatePipelineInput`](crate::input::CreatePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::PipelineDeclaration>,
@@ -843,6 +847,7 @@ impl CreatePipelineInput {
 pub mod delete_custom_action_type_input {
 
     /// A builder for [`DeleteCustomActionTypeInput`](crate::input::DeleteCustomActionTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::ActionCategory>,
@@ -1036,6 +1041,7 @@ impl DeleteCustomActionTypeInput {
 pub mod delete_pipeline_input {
 
     /// A builder for [`DeletePipelineInput`](crate::input::DeletePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1196,6 +1202,7 @@ impl DeletePipelineInput {
 pub mod delete_webhook_input {
 
     /// A builder for [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1356,6 +1363,7 @@ impl DeleteWebhookInput {
 pub mod deregister_webhook_with_third_party_input {
 
     /// A builder for [`DeregisterWebhookWithThirdPartyInput`](crate::input::DeregisterWebhookWithThirdPartyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook_name: std::option::Option<std::string::String>,
@@ -1520,6 +1528,7 @@ impl DeregisterWebhookWithThirdPartyInput {
 pub mod disable_stage_transition_input {
 
     /// A builder for [`DisableStageTransitionInput`](crate::input::DisableStageTransitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -1728,6 +1737,7 @@ impl DisableStageTransitionInput {
 pub mod enable_stage_transition_input {
 
     /// A builder for [`EnableStageTransitionInput`](crate::input::EnableStageTransitionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -1924,6 +1934,7 @@ impl EnableStageTransitionInput {
 pub mod get_action_type_input {
 
     /// A builder for [`GetActionTypeInput`](crate::input::GetActionTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::ActionCategory>,
@@ -2141,6 +2152,7 @@ impl GetActionTypeInput {
 pub mod get_job_details_input {
 
     /// A builder for [`GetJobDetailsInput`](crate::input::GetJobDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2303,6 +2315,7 @@ impl GetJobDetailsInput {
 pub mod get_pipeline_input {
 
     /// A builder for [`GetPipelineInput`](crate::input::GetPipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2477,6 +2490,7 @@ impl GetPipelineInput {
 pub mod get_pipeline_execution_input {
 
     /// A builder for [`GetPipelineExecutionInput`](crate::input::GetPipelineExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -2661,6 +2675,7 @@ impl GetPipelineExecutionInput {
 pub mod get_pipeline_state_input {
 
     /// A builder for [`GetPipelineStateInput`](crate::input::GetPipelineStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2823,6 +2838,7 @@ impl GetPipelineStateInput {
 pub mod get_third_party_job_details_input {
 
     /// A builder for [`GetThirdPartyJobDetailsInput`](crate::input::GetThirdPartyJobDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3001,6 +3017,7 @@ impl GetThirdPartyJobDetailsInput {
 pub mod list_action_executions_input {
 
     /// A builder for [`ListActionExecutionsInput`](crate::input::ListActionExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -3213,6 +3230,7 @@ impl ListActionExecutionsInput {
 pub mod list_action_types_input {
 
     /// A builder for [`ListActionTypesInput`](crate::input::ListActionTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_owner_filter: std::option::Option<crate::model::ActionOwner>,
@@ -3405,6 +3423,7 @@ impl ListActionTypesInput {
 pub mod list_pipeline_executions_input {
 
     /// A builder for [`ListPipelineExecutionsInput`](crate::input::ListPipelineExecutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -3598,6 +3617,7 @@ impl ListPipelineExecutionsInput {
 pub mod list_pipelines_input {
 
     /// A builder for [`ListPipelinesInput`](crate::input::ListPipelinesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3772,6 +3792,7 @@ impl ListPipelinesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3962,6 +3983,7 @@ impl ListTagsForResourceInput {
 pub mod list_webhooks_input {
 
     /// A builder for [`ListWebhooksInput`](crate::input::ListWebhooksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4136,6 +4158,7 @@ impl ListWebhooksInput {
 pub mod poll_for_jobs_input {
 
     /// A builder for [`PollForJobsInput`](crate::input::PollForJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type_id: std::option::Option<crate::model::ActionTypeId>,
@@ -4342,6 +4365,7 @@ impl PollForJobsInput {
 pub mod poll_for_third_party_jobs_input {
 
     /// A builder for [`PollForThirdPartyJobsInput`](crate::input::PollForThirdPartyJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type_id: std::option::Option<crate::model::ActionTypeId>,
@@ -4523,6 +4547,7 @@ impl PollForThirdPartyJobsInput {
 pub mod put_action_revision_input {
 
     /// A builder for [`PutActionRevisionInput`](crate::input::PutActionRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -4729,6 +4754,7 @@ impl PutActionRevisionInput {
 pub mod put_approval_result_input {
 
     /// A builder for [`PutApprovalResultInput`](crate::input::PutApprovalResultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -4947,6 +4973,7 @@ impl PutApprovalResultInput {
 pub mod put_job_failure_result_input {
 
     /// A builder for [`PutJobFailureResultInput`](crate::input::PutJobFailureResultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -5128,6 +5155,7 @@ impl PutJobFailureResultInput {
 pub mod put_job_success_result_input {
 
     /// A builder for [`PutJobSuccessResultInput`](crate::input::PutJobSuccessResultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -5368,6 +5396,7 @@ impl PutJobSuccessResultInput {
 pub mod put_third_party_job_failure_result_input {
 
     /// A builder for [`PutThirdPartyJobFailureResultInput`](crate::input::PutThirdPartyJobFailureResultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -5559,6 +5588,7 @@ impl PutThirdPartyJobFailureResultInput {
 pub mod put_third_party_job_success_result_input {
 
     /// A builder for [`PutThirdPartyJobSuccessResultInput`](crate::input::PutThirdPartyJobSuccessResultInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -5780,6 +5810,7 @@ impl PutThirdPartyJobSuccessResultInput {
 pub mod put_webhook_input {
 
     /// A builder for [`PutWebhookInput`](crate::input::PutWebhookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::WebhookDefinition>,
@@ -5966,6 +5997,7 @@ impl PutWebhookInput {
 pub mod register_webhook_with_third_party_input {
 
     /// A builder for [`RegisterWebhookWithThirdPartyInput`](crate::input::RegisterWebhookWithThirdPartyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook_name: std::option::Option<std::string::String>,
@@ -6130,6 +6162,7 @@ impl RegisterWebhookWithThirdPartyInput {
 pub mod retry_stage_execution_input {
 
     /// A builder for [`RetryStageExecutionInput`](crate::input::RetryStageExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -6339,6 +6372,7 @@ impl RetryStageExecutionInput {
 pub mod start_pipeline_execution_input {
 
     /// A builder for [`StartPipelineExecutionInput`](crate::input::StartPipelineExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6523,6 +6557,7 @@ impl StartPipelineExecutionInput {
 pub mod stop_pipeline_execution_input {
 
     /// A builder for [`StopPipelineExecutionInput`](crate::input::StopPipelineExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
@@ -6735,6 +6770,7 @@ impl StopPipelineExecutionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6918,6 +6954,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7101,6 +7138,7 @@ impl UntagResourceInput {
 pub mod update_action_type_input {
 
     /// A builder for [`UpdateActionTypeInput`](crate::input::UpdateActionTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
@@ -7268,6 +7306,7 @@ impl UpdateActionTypeInput {
 pub mod update_pipeline_input {
 
     /// A builder for [`UpdatePipelineInput`](crate::input::UpdatePipelineInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::PipelineDeclaration>,

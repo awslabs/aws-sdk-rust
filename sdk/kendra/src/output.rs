@@ -7,6 +7,7 @@ pub struct UpdateThesaurusOutput {}
 pub mod update_thesaurus_output {
 
     /// A builder for [`UpdateThesaurusOutput`](crate::output::UpdateThesaurusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateQuerySuggestionsConfigOutput {}
 pub mod update_query_suggestions_config_output {
 
     /// A builder for [`UpdateQuerySuggestionsConfigOutput`](crate::output::UpdateQuerySuggestionsConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateQuerySuggestionsBlockListOutput {}
 pub mod update_query_suggestions_block_list_output {
 
     /// A builder for [`UpdateQuerySuggestionsBlockListOutput`](crate::output::UpdateQuerySuggestionsBlockListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UpdateIndexOutput {}
 pub mod update_index_output {
 
     /// A builder for [`UpdateIndexOutput`](crate::output::UpdateIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct UpdateExperienceOutput {}
 pub mod update_experience_output {
 
     /// A builder for [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -127,6 +132,7 @@ pub struct UpdateDataSourceOutput {}
 pub mod update_data_source_output {
 
     /// A builder for [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -151,6 +157,7 @@ pub struct UpdateAccessControlConfigurationOutput {}
 pub mod update_access_control_configuration_output {
 
     /// A builder for [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -175,6 +182,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -199,6 +207,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -223,6 +232,7 @@ pub struct SubmitFeedbackOutput {}
 pub mod submit_feedback_output {
 
     /// A builder for [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -247,6 +257,7 @@ pub struct StopDataSourceSyncJobOutput {}
 pub mod stop_data_source_sync_job_output {
 
     /// A builder for [`StopDataSourceSyncJobOutput`](crate::output::StopDataSourceSyncJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -281,6 +292,7 @@ impl StartDataSourceSyncJobOutput {
 pub mod start_data_source_sync_job_output {
 
     /// A builder for [`StartDataSourceSyncJobOutput`](crate::output::StartDataSourceSyncJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_id: std::option::Option<std::string::String>,
@@ -369,6 +381,7 @@ impl QueryOutput {
 pub mod query_output {
 
     /// A builder for [`QueryOutput`](crate::output::QueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -506,6 +519,7 @@ pub struct PutPrincipalMappingOutput {}
 pub mod put_principal_mapping_output {
 
     /// A builder for [`PutPrincipalMappingOutput`](crate::output::PutPrincipalMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -549,6 +563,7 @@ impl ListThesauriOutput {
 pub mod list_thesauri_output {
 
     /// A builder for [`ListThesauriOutput`](crate::output::ListThesauriOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -619,6 +634,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -688,6 +704,7 @@ impl ListQuerySuggestionsBlockListsOutput {
 pub mod list_query_suggestions_block_lists_output {
 
     /// A builder for [`ListQuerySuggestionsBlockListsOutput`](crate::output::ListQuerySuggestionsBlockListsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_list_summary_items:
@@ -777,6 +794,7 @@ impl ListIndicesOutput {
 pub mod list_indices_output {
 
     /// A builder for [`ListIndicesOutput`](crate::output::ListIndicesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_configuration_summary_items:
@@ -857,6 +875,7 @@ impl ListGroupsOlderThanOrderingIdOutput {
 pub mod list_groups_older_than_ordering_id_output {
 
     /// A builder for [`ListGroupsOlderThanOrderingIdOutput`](crate::output::ListGroupsOlderThanOrderingIdOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups_summaries: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
@@ -933,6 +952,7 @@ impl ListFaqsOutput {
 pub mod list_faqs_output {
 
     /// A builder for [`ListFaqsOutput`](crate::output::ListFaqsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1009,6 +1029,7 @@ impl ListExperiencesOutput {
 pub mod list_experiences_output {
 
     /// A builder for [`ListExperiencesOutput`](crate::output::ListExperiencesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_items:
@@ -1086,6 +1107,7 @@ impl ListExperienceEntitiesOutput {
 pub mod list_experience_entities_output {
 
     /// A builder for [`ListExperienceEntitiesOutput`](crate::output::ListExperienceEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_items:
@@ -1163,6 +1185,7 @@ impl ListEntityPersonasOutput {
 pub mod list_entity_personas_output {
 
     /// A builder for [`ListEntityPersonasOutput`](crate::output::ListEntityPersonasOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_items: std::option::Option<std::vec::Vec<crate::model::PersonasSummary>>,
@@ -1239,6 +1262,7 @@ impl ListDataSourceSyncJobsOutput {
 pub mod list_data_source_sync_jobs_output {
 
     /// A builder for [`ListDataSourceSyncJobsOutput`](crate::output::ListDataSourceSyncJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) history: std::option::Option<std::vec::Vec<crate::model::DataSourceSyncJob>>,
@@ -1315,6 +1339,7 @@ impl ListDataSourcesOutput {
 pub mod list_data_sources_output {
 
     /// A builder for [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_items:
@@ -1395,6 +1420,7 @@ impl ListAccessControlConfigurationsOutput {
 pub mod list_access_control_configurations_output {
 
     /// A builder for [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1491,6 +1517,7 @@ impl GetSnapshotsOutput {
 pub mod get_snapshots_output {
 
     /// A builder for [`GetSnapshotsOutput`](crate::output::GetSnapshotsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snap_shot_time_filter: std::option::Option<crate::model::TimeRange>,
@@ -1604,6 +1631,7 @@ impl GetQuerySuggestionsOutput {
 pub mod get_query_suggestions_output {
 
     /// A builder for [`GetQuerySuggestionsOutput`](crate::output::GetQuerySuggestionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_suggestions_id: std::option::Option<std::string::String>,
@@ -1676,6 +1704,7 @@ impl DisassociatePersonasFromEntitiesOutput {
 pub mod disassociate_personas_from_entities_output {
 
     /// A builder for [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entity_list:
@@ -1734,6 +1763,7 @@ impl DisassociateEntitiesFromExperienceOutput {
 pub mod disassociate_entities_from_experience_output {
 
     /// A builder for [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entity_list:
@@ -1878,6 +1908,7 @@ impl DescribeThesaurusOutput {
 pub mod describe_thesaurus_output {
 
     /// A builder for [`DescribeThesaurusOutput`](crate::output::DescribeThesaurusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2151,6 +2182,7 @@ impl DescribeQuerySuggestionsConfigOutput {
 pub mod describe_query_suggestions_config_output {
 
     /// A builder for [`DescribeQuerySuggestionsConfigOutput`](crate::output::DescribeQuerySuggestionsConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::Mode>,
@@ -2405,6 +2437,7 @@ impl DescribeQuerySuggestionsBlockListOutput {
 pub mod describe_query_suggestions_block_list_output {
 
     /// A builder for [`DescribeQuerySuggestionsBlockListOutput`](crate::output::DescribeQuerySuggestionsBlockListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -2644,6 +2677,7 @@ impl DescribePrincipalMappingOutput {
 pub mod describe_principal_mapping_output {
 
     /// A builder for [`DescribePrincipalMappingOutput`](crate::output::DescribePrincipalMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_id: std::option::Option<std::string::String>,
@@ -2875,6 +2909,7 @@ impl DescribeIndexOutput {
 pub mod describe_index_output {
 
     /// A builder for [`DescribeIndexOutput`](crate::output::DescribeIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3241,6 +3276,7 @@ impl DescribeFaqOutput {
 pub mod describe_faq_output {
 
     /// A builder for [`DescribeFaqOutput`](crate::output::DescribeFaqOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3506,6 +3542,7 @@ impl DescribeExperienceOutput {
 pub mod describe_experience_output {
 
     /// A builder for [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3803,6 +3840,7 @@ impl DescribeDataSourceOutput {
 pub mod describe_data_source_output {
 
     /// A builder for [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4087,6 +4125,7 @@ impl DescribeAccessControlConfigurationOutput {
 pub mod describe_access_control_configuration_output {
 
     /// A builder for [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4198,6 +4237,7 @@ pub struct DeleteThesaurusOutput {}
 pub mod delete_thesaurus_output {
 
     /// A builder for [`DeleteThesaurusOutput`](crate::output::DeleteThesaurusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4222,6 +4262,7 @@ pub struct DeleteQuerySuggestionsBlockListOutput {}
 pub mod delete_query_suggestions_block_list_output {
 
     /// A builder for [`DeleteQuerySuggestionsBlockListOutput`](crate::output::DeleteQuerySuggestionsBlockListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4246,6 +4287,7 @@ pub struct DeletePrincipalMappingOutput {}
 pub mod delete_principal_mapping_output {
 
     /// A builder for [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4270,6 +4312,7 @@ pub struct DeleteIndexOutput {}
 pub mod delete_index_output {
 
     /// A builder for [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4294,6 +4337,7 @@ pub struct DeleteFaqOutput {}
 pub mod delete_faq_output {
 
     /// A builder for [`DeleteFaqOutput`](crate::output::DeleteFaqOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4318,6 +4362,7 @@ pub struct DeleteExperienceOutput {}
 pub mod delete_experience_output {
 
     /// A builder for [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4342,6 +4387,7 @@ pub struct DeleteDataSourceOutput {}
 pub mod delete_data_source_output {
 
     /// A builder for [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4366,6 +4412,7 @@ pub struct DeleteAccessControlConfigurationOutput {}
 pub mod delete_access_control_configuration_output {
 
     /// A builder for [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4400,6 +4447,7 @@ impl CreateThesaurusOutput {
 pub mod create_thesaurus_output {
 
     /// A builder for [`CreateThesaurusOutput`](crate::output::CreateThesaurusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4446,6 +4494,7 @@ impl CreateQuerySuggestionsBlockListOutput {
 pub mod create_query_suggestions_block_list_output {
 
     /// A builder for [`CreateQuerySuggestionsBlockListOutput`](crate::output::CreateQuerySuggestionsBlockListOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4492,6 +4541,7 @@ impl CreateIndexOutput {
 pub mod create_index_output {
 
     /// A builder for [`CreateIndexOutput`](crate::output::CreateIndexOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4538,6 +4588,7 @@ impl CreateFaqOutput {
 pub mod create_faq_output {
 
     /// A builder for [`CreateFaqOutput`](crate::output::CreateFaqOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4584,6 +4635,7 @@ impl CreateExperienceOutput {
 pub mod create_experience_output {
 
     /// A builder for [`CreateExperienceOutput`](crate::output::CreateExperienceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4630,6 +4682,7 @@ impl CreateDataSourceOutput {
 pub mod create_data_source_output {
 
     /// A builder for [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4676,6 +4729,7 @@ impl CreateAccessControlConfigurationOutput {
 pub mod create_access_control_configuration_output {
 
     /// A builder for [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4712,6 +4766,7 @@ pub struct ClearQuerySuggestionsOutput {}
 pub mod clear_query_suggestions_output {
 
     /// A builder for [`ClearQuerySuggestionsOutput`](crate::output::ClearQuerySuggestionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4751,6 +4806,7 @@ impl BatchPutDocumentOutput {
 pub mod batch_put_document_output {
 
     /// A builder for [`BatchPutDocumentOutput`](crate::output::BatchPutDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_documents: std::option::Option<
@@ -4827,6 +4883,7 @@ impl BatchGetDocumentStatusOutput {
 pub mod batch_get_document_status_output {
 
     /// A builder for [`BatchGetDocumentStatusOutput`](crate::output::BatchGetDocumentStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
@@ -4911,6 +4968,7 @@ impl BatchDeleteDocumentOutput {
 pub mod batch_delete_document_output {
 
     /// A builder for [`BatchDeleteDocumentOutput`](crate::output::BatchDeleteDocumentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_documents: std::option::Option<
@@ -4975,6 +5033,7 @@ impl AssociatePersonasToEntitiesOutput {
 pub mod associate_personas_to_entities_output {
 
     /// A builder for [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entity_list:
@@ -5033,6 +5092,7 @@ impl AssociateEntitiesToExperienceOutput {
 pub mod associate_entities_to_experience_output {
 
     /// A builder for [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_entity_list:

@@ -115,6 +115,7 @@ impl ResolverRule {
 pub mod resolver_rule {
 
     /// A builder for [`ResolverRule`](crate::model::ResolverRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -460,6 +461,7 @@ impl TargetAddress {
 pub mod target_address {
 
     /// A builder for [`TargetAddress`](crate::model::TargetAddress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
@@ -731,6 +733,7 @@ impl ResolverRuleConfig {
 pub mod resolver_rule_config {
 
     /// A builder for [`ResolverRuleConfig`](crate::model::ResolverRuleConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -924,6 +927,7 @@ impl ResolverEndpoint {
 pub mod resolver_endpoint {
 
     /// A builder for [`ResolverEndpoint`](crate::model::ResolverEndpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1409,6 +1413,7 @@ impl ResolverDnssecConfig {
 pub mod resolver_dnssec_config {
 
     /// A builder for [`ResolverDnssecConfig`](crate::model::ResolverDnssecConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1741,6 +1746,7 @@ impl ResolverConfig {
 pub mod resolver_config {
 
     /// A builder for [`ResolverConfig`](crate::model::ResolverConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2126,6 +2132,7 @@ impl FirewallRuleGroupAssociation {
 pub mod firewall_rule_group_association {
 
     /// A builder for [`FirewallRuleGroupAssociation`](crate::model::FirewallRuleGroupAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2633,6 +2640,7 @@ impl FirewallRule {
 pub mod firewall_rule {
 
     /// A builder for [`FirewallRule`](crate::model::FirewallRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_id: std::option::Option<std::string::String>,
@@ -3378,6 +3386,7 @@ impl FirewallConfig {
 pub mod firewall_config {
 
     /// A builder for [`FirewallConfig`](crate::model::FirewallConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3574,6 +3583,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3770,6 +3780,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4002,6 +4013,7 @@ impl ResolverRuleAssociation {
 pub mod resolver_rule_association {
 
     /// A builder for [`ResolverRuleAssociation`](crate::model::ResolverRuleAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4309,6 +4321,7 @@ impl ResolverQueryLogConfig {
 pub mod resolver_query_log_config {
 
     /// A builder for [`ResolverQueryLogConfig`](crate::model::ResolverQueryLogConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4760,6 +4773,7 @@ impl ResolverQueryLogConfigAssociation {
 pub mod resolver_query_log_config_association {
 
     /// A builder for [`ResolverQueryLogConfigAssociation`](crate::model::ResolverQueryLogConfigAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5187,6 +5201,7 @@ impl IpAddressResponse {
 pub mod ip_address_response {
 
     /// A builder for [`IpAddressResponse`](crate::model::IpAddressResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_id: std::option::Option<std::string::String>,
@@ -5496,6 +5511,7 @@ impl FirewallRuleGroupMetadata {
 pub mod firewall_rule_group_metadata {
 
     /// A builder for [`FirewallRuleGroupMetadata`](crate::model::FirewallRuleGroupMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5639,6 +5655,7 @@ impl FirewallDomainListMetadata {
 pub mod firewall_domain_list_metadata {
 
     /// A builder for [`FirewallDomainListMetadata`](crate::model::FirewallDomainListMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5898,6 +5915,7 @@ impl FirewallRuleGroup {
 pub mod firewall_rule_group {
 
     /// A builder for [`FirewallRuleGroup`](crate::model::FirewallRuleGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6245,6 +6263,7 @@ impl FirewallDomainList {
 pub mod firewall_domain_list {
 
     /// A builder for [`FirewallDomainList`](crate::model::FirewallDomainList).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6433,6 +6452,7 @@ impl IpAddressUpdate {
 pub mod ip_address_update {
 
     /// A builder for [`IpAddressUpdate`](crate::model::IpAddressUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_id: std::option::Option<std::string::String>,
@@ -6512,6 +6532,7 @@ impl IpAddressRequest {
 pub mod ip_address_request {
 
     /// A builder for [`IpAddressRequest`](crate::model::IpAddressRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,

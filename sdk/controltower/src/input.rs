@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod disable_control_input {
 
     /// A builder for [`DisableControlInput`](crate::input::DisableControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_identifier: std::option::Option<std::string::String>,
@@ -180,6 +181,7 @@ impl DisableControlInput {
 pub mod enable_control_input {
 
     /// A builder for [`EnableControlInput`](crate::input::EnableControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_identifier: std::option::Option<std::string::String>,
@@ -355,6 +357,7 @@ impl EnableControlInput {
 pub mod get_control_operation_input {
 
     /// A builder for [`GetControlOperationInput`](crate::input::GetControlOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_identifier: std::option::Option<std::string::String>,
@@ -517,6 +520,7 @@ impl GetControlOperationInput {
 pub mod list_enabled_controls_input {
 
     /// A builder for [`ListEnabledControlsInput`](crate::input::ListEnabledControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_identifier: std::option::Option<std::string::String>,

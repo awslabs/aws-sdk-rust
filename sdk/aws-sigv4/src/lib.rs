@@ -6,6 +6,7 @@
 //! Provides functions for calculating Sigv4 signing keys, signatures, and
 //! optional utilities for signing HTTP requests and Event Stream messages.
 
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![warn(
     missing_docs,
     rustdoc::missing_crate_level_docs,

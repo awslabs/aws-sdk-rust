@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_permission_input {
 
     /// A builder for [`AddPermissionInput`](crate::input::AddPermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -222,6 +223,7 @@ impl AddPermissionInput {
 pub mod change_message_visibility_input {
 
     /// A builder for [`ChangeMessageVisibilityInput`](crate::input::ChangeMessageVisibilityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -412,6 +414,7 @@ impl ChangeMessageVisibilityInput {
 pub mod change_message_visibility_batch_input {
 
     /// A builder for [`ChangeMessageVisibilityBatchInput`](crate::input::ChangeMessageVisibilityBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -601,6 +604,7 @@ impl ChangeMessageVisibilityBatchInput {
 pub mod create_queue_input {
 
     /// A builder for [`CreateQueueInput`](crate::input::CreateQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_name: std::option::Option<std::string::String>,
@@ -950,6 +954,7 @@ impl CreateQueueInput {
 pub mod delete_message_input {
 
     /// A builder for [`DeleteMessageInput`](crate::input::DeleteMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -1124,6 +1129,7 @@ impl DeleteMessageInput {
 pub mod delete_message_batch_input {
 
     /// A builder for [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -1307,6 +1313,7 @@ impl DeleteMessageBatchInput {
 pub mod delete_queue_input {
 
     /// A builder for [`DeleteQueueInput`](crate::input::DeleteQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -1466,6 +1473,7 @@ impl DeleteQueueInput {
 pub mod get_queue_attributes_input {
 
     /// A builder for [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -1751,6 +1759,7 @@ impl GetQueueAttributesInput {
 pub mod get_queue_url_input {
 
     /// A builder for [`GetQueueUrlInput`](crate::input::GetQueueUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_name: std::option::Option<std::string::String>,
@@ -1925,6 +1934,7 @@ impl GetQueueUrlInput {
 pub mod list_dead_letter_source_queues_input {
 
     /// A builder for [`ListDeadLetterSourceQueuesInput`](crate::input::ListDeadLetterSourceQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -2110,6 +2120,7 @@ impl ListDeadLetterSourceQueuesInput {
 pub mod list_queues_input {
 
     /// A builder for [`ListQueuesInput`](crate::input::ListQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_name_prefix: std::option::Option<std::string::String>,
@@ -2296,6 +2307,7 @@ impl ListQueuesInput {
 pub mod list_queue_tags_input {
 
     /// A builder for [`ListQueueTagsInput`](crate::input::ListQueueTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -2453,6 +2465,7 @@ impl ListQueueTagsInput {
 pub mod purge_queue_input {
 
     /// A builder for [`PurgeQueueInput`](crate::input::PurgeQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -2612,6 +2625,7 @@ impl PurgeQueueInput {
 pub mod receive_message_input {
 
     /// A builder for [`ReceiveMessageInput`](crate::input::ReceiveMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -2947,6 +2961,7 @@ impl ReceiveMessageInput {
 pub mod remove_permission_input {
 
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -3120,6 +3135,7 @@ impl RemovePermissionInput {
 pub mod send_message_input {
 
     /// A builder for [`SendMessageInput`](crate::input::SendMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -3473,6 +3489,7 @@ impl SendMessageInput {
 pub mod send_message_batch_input {
 
     /// A builder for [`SendMessageBatchInput`](crate::input::SendMessageBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -3656,6 +3673,7 @@ impl SendMessageBatchInput {
 pub mod set_queue_attributes_input {
 
     /// A builder for [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -3944,6 +3962,7 @@ impl SetQueueAttributesInput {
 pub mod tag_queue_input {
 
     /// A builder for [`TagQueueInput`](crate::input::TagQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,
@@ -4125,6 +4144,7 @@ impl TagQueueInput {
 pub mod untag_queue_input {
 
     /// A builder for [`UntagQueueInput`](crate::input::UntagQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_url: std::option::Option<std::string::String>,

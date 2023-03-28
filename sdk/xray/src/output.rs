@@ -17,6 +17,7 @@ impl UpdateSamplingRuleOutput {
 pub mod update_sampling_rule_output {
 
     /// A builder for [`UpdateSamplingRuleOutput`](crate::output::UpdateSamplingRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
@@ -68,6 +69,7 @@ impl UpdateGroupOutput {
 pub mod update_group_output {
 
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
@@ -104,6 +106,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -128,6 +131,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -165,6 +169,7 @@ impl PutTraceSegmentsOutput {
 pub mod put_trace_segments_output {
 
     /// A builder for [`PutTraceSegmentsOutput`](crate::output::PutTraceSegmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unprocessed_trace_segments:
@@ -216,6 +221,7 @@ pub struct PutTelemetryRecordsOutput {}
 pub mod put_telemetry_records_output {
 
     /// A builder for [`PutTelemetryRecordsOutput`](crate::output::PutTelemetryRecordsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -250,6 +256,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
@@ -301,6 +308,7 @@ impl PutEncryptionConfigOutput {
 pub mod put_encryption_config_output {
 
     /// A builder for [`PutEncryptionConfigOutput`](crate::output::PutEncryptionConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_config: std::option::Option<crate::model::EncryptionConfig>,
@@ -359,6 +367,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -435,6 +444,7 @@ impl ListResourcePoliciesOutput {
 pub mod list_resource_policies_output {
 
     /// A builder for [`ListResourcePoliciesOutput`](crate::output::ListResourcePoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policies:
@@ -526,6 +536,7 @@ impl GetTraceSummariesOutput {
 pub mod get_trace_summaries_output {
 
     /// A builder for [`GetTraceSummariesOutput`](crate::output::GetTraceSummariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trace_summaries: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
@@ -629,6 +640,7 @@ impl GetTraceGraphOutput {
 pub mod get_trace_graph_output {
 
     /// A builder for [`GetTraceGraphOutput`](crate::output::GetTraceGraphOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
@@ -715,6 +727,7 @@ impl GetTimeSeriesServiceStatisticsOutput {
 pub mod get_time_series_service_statistics_output {
 
     /// A builder for [`GetTimeSeriesServiceStatisticsOutput`](crate::output::GetTimeSeriesServiceStatisticsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_series_service_statistics:
@@ -828,6 +841,7 @@ impl GetServiceGraphOutput {
 pub mod get_service_graph_output {
 
     /// A builder for [`GetServiceGraphOutput`](crate::output::GetServiceGraphOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -959,6 +973,7 @@ impl GetSamplingTargetsOutput {
 pub mod get_sampling_targets_output {
 
     /// A builder for [`GetSamplingTargetsOutput`](crate::output::GetSamplingTargetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_target_documents:
@@ -1070,6 +1085,7 @@ impl GetSamplingStatisticSummariesOutput {
 pub mod get_sampling_statistic_summaries_output {
 
     /// A builder for [`GetSamplingStatisticSummariesOutput`](crate::output::GetSamplingStatisticSummariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_statistic_summaries:
@@ -1152,6 +1168,7 @@ impl GetSamplingRulesOutput {
 pub mod get_sampling_rules_output {
 
     /// A builder for [`GetSamplingRulesOutput`](crate::output::GetSamplingRulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_rule_records:
@@ -1229,6 +1246,7 @@ impl GetInsightSummariesOutput {
 pub mod get_insight_summaries_output {
 
     /// A builder for [`GetInsightSummariesOutput`](crate::output::GetInsightSummariesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_summaries:
@@ -1341,6 +1359,7 @@ impl GetInsightImpactGraphOutput {
 pub mod get_insight_impact_graph_output {
 
     /// A builder for [`GetInsightImpactGraphOutput`](crate::output::GetInsightImpactGraphOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
@@ -1490,6 +1509,7 @@ impl GetInsightEventsOutput {
 pub mod get_insight_events_output {
 
     /// A builder for [`GetInsightEventsOutput`](crate::output::GetInsightEventsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_events: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>,
@@ -1559,6 +1579,7 @@ impl GetInsightOutput {
 pub mod get_insight_output {
 
     /// A builder for [`GetInsightOutput`](crate::output::GetInsightOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight: std::option::Option<crate::model::Insight>,
@@ -1614,6 +1635,7 @@ impl GetGroupsOutput {
 pub mod get_groups_output {
 
     /// A builder for [`GetGroupsOutput`](crate::output::GetGroupsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
@@ -1683,6 +1705,7 @@ impl GetGroupOutput {
 pub mod get_group_output {
 
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
@@ -1729,6 +1752,7 @@ impl GetEncryptionConfigOutput {
 pub mod get_encryption_config_output {
 
     /// A builder for [`GetEncryptionConfigOutput`](crate::output::GetEncryptionConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_config: std::option::Option<crate::model::EncryptionConfig>,
@@ -1780,6 +1804,7 @@ impl DeleteSamplingRuleOutput {
 pub mod delete_sampling_rule_output {
 
     /// A builder for [`DeleteSamplingRuleOutput`](crate::output::DeleteSamplingRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
@@ -1821,6 +1846,7 @@ pub struct DeleteResourcePolicyOutput {}
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1845,6 +1871,7 @@ pub struct DeleteGroupOutput {}
 pub mod delete_group_output {
 
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1879,6 +1906,7 @@ impl CreateSamplingRuleOutput {
 pub mod create_sampling_rule_output {
 
     /// A builder for [`CreateSamplingRuleOutput`](crate::output::CreateSamplingRuleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sampling_rule_record: std::option::Option<crate::model::SamplingRuleRecord>,
@@ -1930,6 +1958,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
 
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
@@ -1990,6 +2019,7 @@ impl BatchGetTracesOutput {
 pub mod batch_get_traces_output {
 
     /// A builder for [`BatchGetTracesOutput`](crate::output::BatchGetTracesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traces: std::option::Option<std::vec::Vec<crate::model::Trace>>,

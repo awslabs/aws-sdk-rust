@@ -32,6 +32,7 @@ impl TableMember {
 pub mod table_member {
 
     /// A builder for [`TableMember`](crate::model::TableMember).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -167,6 +168,7 @@ impl StatementData {
 pub mod statement_data {
 
     /// A builder for [`StatementData`](crate::model::StatementData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -360,6 +362,7 @@ impl SqlParameter {
 pub mod sql_parameter {
 
     /// A builder for [`SqlParameter`](crate::model::SqlParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -627,6 +630,7 @@ impl ColumnMetadata {
 pub mod column_metadata {
 
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_case_sensitive: std::option::Option<bool>,
@@ -1003,6 +1007,7 @@ impl SubStatementData {
 pub mod sub_statement_data {
 
     /// A builder for [`SubStatementData`](crate::model::SubStatementData).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,

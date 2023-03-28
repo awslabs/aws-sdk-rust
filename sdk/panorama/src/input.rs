@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_application_instance_input {
 
     /// A builder for [`CreateApplicationInstanceInput`](crate::input::CreateApplicationInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -292,6 +293,7 @@ impl CreateApplicationInstanceInput {
 pub mod create_job_for_devices_input {
 
     /// A builder for [`CreateJobForDevicesInput`](crate::input::CreateJobForDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -489,6 +491,7 @@ impl CreateJobForDevicesInput {
 pub mod create_node_from_template_job_input {
 
     /// A builder for [`CreateNodeFromTemplateJobInput`](crate::input::CreateNodeFromTemplateJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_type: std::option::Option<crate::model::TemplateType>,
@@ -758,6 +761,7 @@ impl CreateNodeFromTemplateJobInput {
 pub mod create_package_input {
 
     /// A builder for [`CreatePackageInput`](crate::input::CreatePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
@@ -944,6 +948,7 @@ impl CreatePackageInput {
 pub mod create_package_import_job_input {
 
     /// A builder for [`CreatePackageImportJobInput`](crate::input::CreatePackageImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_type: std::option::Option<crate::model::PackageImportJobType>,
@@ -1171,6 +1176,7 @@ impl CreatePackageImportJobInput {
 pub mod delete_device_input {
 
     /// A builder for [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -1334,6 +1340,7 @@ impl DeleteDeviceInput {
 pub mod delete_package_input {
 
     /// A builder for [`DeletePackageInput`](crate::input::DeletePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1523,6 +1530,7 @@ impl DeletePackageInput {
 pub mod deregister_package_version_input {
 
     /// A builder for [`DeregisterPackageVersionInput`](crate::input::DeregisterPackageVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -1819,6 +1827,7 @@ impl DeregisterPackageVersionInput {
 pub mod describe_application_instance_input {
 
     /// A builder for [`DescribeApplicationInstanceInput`](crate::input::DescribeApplicationInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -1991,6 +2000,7 @@ impl DescribeApplicationInstanceInput {
 pub mod describe_application_instance_details_input {
 
     /// A builder for [`DescribeApplicationInstanceDetailsInput`](crate::input::DescribeApplicationInstanceDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -2163,6 +2173,7 @@ impl DescribeApplicationInstanceDetailsInput {
 pub mod describe_device_input {
 
     /// A builder for [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -2326,6 +2337,7 @@ impl DescribeDeviceInput {
 pub mod describe_device_job_input {
 
     /// A builder for [`DescribeDeviceJobInput`](crate::input::DescribeDeviceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2490,6 +2502,7 @@ impl DescribeDeviceJobInput {
 pub mod describe_node_input {
 
     /// A builder for [`DescribeNodeInput`](crate::input::DescribeNodeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
@@ -2684,6 +2697,7 @@ impl DescribeNodeInput {
 pub mod describe_node_from_template_job_input {
 
     /// A builder for [`DescribeNodeFromTemplateJobInput`](crate::input::DescribeNodeFromTemplateJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2849,6 +2863,7 @@ impl DescribeNodeFromTemplateJobInput {
 pub mod describe_package_input {
 
     /// A builder for [`DescribePackageInput`](crate::input::DescribePackageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -3016,6 +3031,7 @@ impl DescribePackageInput {
 pub mod describe_package_import_job_input {
 
     /// A builder for [`DescribePackageImportJobInput`](crate::input::DescribePackageImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3181,6 +3197,7 @@ impl DescribePackageImportJobInput {
 pub mod describe_package_version_input {
 
     /// A builder for [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -3439,6 +3456,7 @@ impl DescribePackageVersionInput {
 pub mod list_application_instance_dependencies_input {
 
     /// A builder for [`ListApplicationInstanceDependenciesInput`](crate::input::ListApplicationInstanceDependenciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -3654,6 +3672,7 @@ impl ListApplicationInstanceDependenciesInput {
 pub mod list_application_instance_node_instances_input {
 
     /// A builder for [`ListApplicationInstanceNodeInstancesInput`](crate::input::ListApplicationInstanceNodeInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -3869,6 +3888,7 @@ impl ListApplicationInstanceNodeInstancesInput {
 pub mod list_application_instances_input {
 
     /// A builder for [`ListApplicationInstancesInput`](crate::input::ListApplicationInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -4085,6 +4105,7 @@ impl ListApplicationInstancesInput {
 pub mod list_devices_input {
 
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4343,6 +4364,7 @@ impl ListDevicesInput {
 pub mod list_devices_jobs_input {
 
     /// A builder for [`ListDevicesJobsInput`](crate::input::ListDevicesJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -4534,6 +4556,7 @@ impl ListDevicesJobsInput {
 pub mod list_node_from_template_jobs_input {
 
     /// A builder for [`ListNodeFromTemplateJobsInput`](crate::input::ListNodeFromTemplateJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4710,6 +4733,7 @@ impl ListNodeFromTemplateJobsInput {
 pub mod list_nodes_input {
 
     /// A builder for [`ListNodesInput`](crate::input::ListNodesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::NodeCategory>,
@@ -4991,6 +5015,7 @@ impl ListNodesInput {
 pub mod list_package_import_jobs_input {
 
     /// A builder for [`ListPackageImportJobsInput`](crate::input::ListPackageImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5167,6 +5192,7 @@ impl ListPackageImportJobsInput {
 pub mod list_packages_input {
 
     /// A builder for [`ListPackagesInput`](crate::input::ListPackagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -5341,6 +5367,7 @@ impl ListPackagesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5506,6 +5533,7 @@ impl ListTagsForResourceInput {
 pub mod provision_device_input {
 
     /// A builder for [`ProvisionDeviceInput`](crate::input::ProvisionDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5719,6 +5747,7 @@ impl ProvisionDeviceInput {
 pub mod register_package_version_input {
 
     /// A builder for [`RegisterPackageVersionInput`](crate::input::RegisterPackageVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -6001,6 +6030,7 @@ impl RegisterPackageVersionInput {
 pub mod remove_application_instance_input {
 
     /// A builder for [`RemoveApplicationInstanceInput`](crate::input::RemoveApplicationInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -6173,6 +6203,7 @@ impl RemoveApplicationInstanceInput {
 pub mod signal_application_instance_node_instances_input {
 
     /// A builder for [`SignalApplicationInstanceNodeInstancesInput`](crate::input::SignalApplicationInstanceNodeInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_instance_id: std::option::Option<std::string::String>,
@@ -6380,6 +6411,7 @@ impl SignalApplicationInstanceNodeInstancesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6586,6 +6618,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6788,6 +6821,7 @@ impl UntagResourceInput {
 pub mod update_device_metadata_input {
 
     /// A builder for [`UpdateDeviceMetadataInput`](crate::input::UpdateDeviceMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,

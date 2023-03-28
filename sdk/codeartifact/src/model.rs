@@ -294,6 +294,7 @@ impl RepositoryDescription {
 pub mod repository_description {
 
     /// A builder for [`RepositoryDescription`](crate::model::RepositoryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -480,6 +481,7 @@ impl RepositoryExternalConnectionInfo {
 pub mod repository_external_connection_info {
 
     /// A builder for [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_connection_name: std::option::Option<std::string::String>,
@@ -760,6 +762,7 @@ impl UpstreamRepositoryInfo {
 pub mod upstream_repository_info {
 
     /// A builder for [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -811,6 +814,7 @@ impl UpstreamRepository {
 pub mod upstream_repository {
 
     /// A builder for [`UpstreamRepository`](crate::model::UpstreamRepository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -885,6 +889,7 @@ impl PackageVersionError {
 pub mod package_version_error {
 
     /// A builder for [`PackageVersionError`](crate::model::PackageVersionError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::PackageVersionErrorCode>,
@@ -1093,6 +1098,7 @@ impl SuccessfulPackageVersionInfo {
 pub mod successful_package_version_info {
 
     /// A builder for [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision: std::option::Option<std::string::String>,
@@ -1282,6 +1288,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1356,6 +1363,7 @@ impl ResourcePolicy {
 pub mod resource_policy {
 
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1428,6 +1436,7 @@ impl PackageOriginConfiguration {
 pub mod package_origin_configuration {
 
     /// A builder for [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
@@ -1486,6 +1495,7 @@ impl PackageOriginRestrictions {
 pub mod package_origin_restrictions {
 
     /// A builder for [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publish: std::option::Option<crate::model::AllowPublish>,
@@ -1767,6 +1777,7 @@ impl RepositorySummary {
 pub mod repository_summary {
 
     /// A builder for [`RepositorySummary`](crate::model::RepositorySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1899,6 +1910,7 @@ impl PackageVersionSummary {
 pub mod package_version_summary {
 
     /// A builder for [`PackageVersionSummary`](crate::model::PackageVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1996,6 +2008,7 @@ impl PackageVersionOrigin {
 pub mod package_version_origin {
 
     /// A builder for [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_entry_point: std::option::Option<crate::model::DomainEntryPoint>,
@@ -2166,6 +2179,7 @@ impl DomainEntryPoint {
 pub mod domain_entry_point {
 
     /// A builder for [`DomainEntryPoint`](crate::model::DomainEntryPoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2368,6 +2382,7 @@ impl PackageDependency {
 pub mod package_dependency {
 
     /// A builder for [`PackageDependency`](crate::model::PackageDependency).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -2506,6 +2521,7 @@ impl AssetSummary {
 pub mod asset_summary {
 
     /// A builder for [`AssetSummary`](crate::model::AssetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2728,6 +2744,7 @@ impl PackageSummary {
 pub mod package_summary {
 
     /// A builder for [`PackageSummary`](crate::model::PackageSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
@@ -2867,6 +2884,7 @@ impl DomainSummary {
 pub mod domain_summary {
 
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3168,6 +3186,7 @@ impl PackageVersionDescription {
 pub mod package_version_description {
 
     /// A builder for [`PackageVersionDescription`](crate::model::PackageVersionDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
@@ -3401,6 +3420,7 @@ impl LicenseInfo {
 pub mod license_info {
 
     /// A builder for [`LicenseInfo`](crate::model::LicenseInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3494,6 +3514,7 @@ impl PackageDescription {
 pub mod package_description {
 
     /// A builder for [`PackageDescription`](crate::model::PackageDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
@@ -3654,6 +3675,7 @@ impl DomainDescription {
 pub mod domain_description {
 
     /// A builder for [`DomainDescription`](crate::model::DomainDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

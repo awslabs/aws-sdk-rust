@@ -43,6 +43,7 @@ impl TaskSummary {
 pub mod task_summary {
 
     /// A builder for [`TaskSummary`](crate::model::TaskSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -280,6 +281,7 @@ pub struct Reboot {}
 pub mod reboot {
 
     /// A builder for [`Reboot`](crate::model::Reboot).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -304,6 +306,7 @@ pub struct Unlock {}
 pub mod unlock {
 
     /// A builder for [`Unlock`](crate::model::Unlock).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -359,6 +362,7 @@ impl ExecutionSummary {
 pub mod execution_summary {
 
     /// A builder for [`ExecutionSummary`](crate::model::ExecutionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -586,6 +590,7 @@ impl ResourceSummary {
 pub mod resource_summary {
 
     /// A builder for [`ResourceSummary`](crate::model::ResourceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -668,6 +673,7 @@ impl InstanceSummary {
 pub mod instance_summary {
 
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance: std::option::Option<crate::model::Instance>,
@@ -818,6 +824,7 @@ impl Instance {
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -1064,6 +1071,7 @@ impl CpuOptions {
 pub mod cpu_options {
 
     /// A builder for [`CpuOptions`](crate::model::CpuOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_count: std::option::Option<i32>,
@@ -1131,6 +1139,7 @@ impl SecurityGroupIdentifier {
 pub mod security_group_identifier {
 
     /// A builder for [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -1198,6 +1207,7 @@ impl InstanceBlockDeviceMapping {
 pub mod instance_block_device_mapping {
 
     /// A builder for [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -1282,6 +1292,7 @@ impl EbsInstanceBlockDevice {
 pub mod ebs_instance_block_device {
 
     /// A builder for [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attach_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1503,6 +1514,7 @@ impl InstanceState {
 pub mod instance_state {
 
     /// A builder for [`InstanceState`](crate::model::InstanceState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<i32>,
@@ -1734,6 +1746,7 @@ impl DeviceSummary {
 pub mod device_summary {
 
     /// A builder for [`DeviceSummary`](crate::model::DeviceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
@@ -1858,6 +1871,7 @@ impl SoftwareInformation {
 pub mod software_information {
 
     /// A builder for [`SoftwareInformation`](crate::model::SoftwareInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) installed_version: std::option::Option<std::string::String>,
@@ -1967,6 +1981,7 @@ impl Capacity {
 pub mod capacity {
 
     /// A builder for [`Capacity`](crate::model::Capacity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2107,6 +2122,7 @@ impl PhysicalNetworkInterface {
 pub mod physical_network_interface {
 
     /// A builder for [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) physical_network_interface_id: std::option::Option<std::string::String>,

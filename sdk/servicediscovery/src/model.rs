@@ -32,6 +32,7 @@ impl ServiceChange {
 pub mod service_change {
 
     /// A builder for [`ServiceChange`](crate::model::ServiceChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -194,6 +195,7 @@ impl HealthCheckConfig {
 pub mod health_check_config {
 
     /// A builder for [`HealthCheckConfig`](crate::model::HealthCheckConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::HealthCheckType>,
@@ -391,6 +393,7 @@ impl DnsConfigChange {
 pub mod dns_config_change {
 
     /// A builder for [`DnsConfigChange`](crate::model::DnsConfigChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -575,6 +578,7 @@ impl DnsRecord {
 pub mod dns_record {
 
     /// A builder for [`DnsRecord`](crate::model::DnsRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RecordType>,
@@ -864,6 +868,7 @@ impl PublicDnsNamespaceChange {
 pub mod public_dns_namespace_change {
 
     /// A builder for [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -933,6 +938,7 @@ impl PublicDnsNamespacePropertiesChange {
 pub mod public_dns_namespace_properties_change {
 
     /// A builder for [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties:
@@ -988,6 +994,7 @@ impl PublicDnsPropertiesMutableChange {
 pub mod public_dns_properties_mutable_change {
 
     /// A builder for [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::SoaChange>,
@@ -1034,6 +1041,7 @@ impl SoaChange {
 pub mod soa_change {
 
     /// A builder for [`SoaChange`](crate::model::SoaChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ttl: std::option::Option<i64>,
@@ -1089,6 +1097,7 @@ impl PrivateDnsNamespaceChange {
 pub mod private_dns_namespace_change {
 
     /// A builder for [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1158,6 +1167,7 @@ impl PrivateDnsNamespacePropertiesChange {
 pub mod private_dns_namespace_properties_change {
 
     /// A builder for [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties:
@@ -1213,6 +1223,7 @@ impl PrivateDnsPropertiesMutableChange {
 pub mod private_dns_properties_mutable_change {
 
     /// A builder for [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::SoaChange>,
@@ -1351,6 +1362,7 @@ impl HttpNamespaceChange {
 pub mod http_namespace_change {
 
     /// A builder for [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1406,6 +1418,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1583,6 +1596,7 @@ impl ServiceSummary {
 pub mod service_summary {
 
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1840,6 +1854,7 @@ impl HealthCheckCustomConfig {
 pub mod health_check_custom_config {
 
     /// A builder for [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_threshold: std::option::Option<i32>,
@@ -1968,6 +1983,7 @@ impl DnsConfig {
 pub mod dns_config {
 
     /// A builder for [`DnsConfig`](crate::model::DnsConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_id: std::option::Option<std::string::String>,
@@ -2311,6 +2327,7 @@ impl ServiceFilter {
 pub mod service_filter {
 
     /// A builder for [`ServiceFilter`](crate::model::ServiceFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ServiceFilterName>,
@@ -2610,6 +2627,7 @@ impl OperationSummary {
 pub mod operation_summary {
 
     /// A builder for [`OperationSummary`](crate::model::OperationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2837,6 +2855,7 @@ impl OperationFilter {
 pub mod operation_filter {
 
     /// A builder for [`OperationFilter`](crate::model::OperationFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::OperationFilterName>,
@@ -3124,6 +3143,7 @@ impl NamespaceSummary {
 pub mod namespace_summary {
 
     /// A builder for [`NamespaceSummary`](crate::model::NamespaceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3269,6 +3289,7 @@ impl NamespaceProperties {
 pub mod namespace_properties {
 
     /// A builder for [`NamespaceProperties`](crate::model::NamespaceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties: std::option::Option<crate::model::DnsProperties>,
@@ -3335,6 +3356,7 @@ impl HttpProperties {
 pub mod http_properties {
 
     /// A builder for [`HttpProperties`](crate::model::HttpProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_name: std::option::Option<std::string::String>,
@@ -3390,6 +3412,7 @@ impl DnsProperties {
 pub mod dns_properties {
 
     /// A builder for [`DnsProperties`](crate::model::DnsProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
@@ -3453,6 +3476,7 @@ impl Soa {
 pub mod soa {
 
     /// A builder for [`Soa`](crate::model::Soa).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ttl: std::option::Option<i64>,
@@ -3636,6 +3660,7 @@ impl NamespaceFilter {
 pub mod namespace_filter {
 
     /// A builder for [`NamespaceFilter`](crate::model::NamespaceFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::NamespaceFilterName>,
@@ -3957,6 +3982,7 @@ impl InstanceSummary {
 pub mod instance_summary {
 
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4261,6 +4287,7 @@ impl Service {
 pub mod service {
 
     /// A builder for [`Service`](crate::model::Service).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4675,6 +4702,7 @@ impl Operation {
 pub mod operation {
 
     /// A builder for [`Operation`](crate::model::Operation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5256,6 +5284,7 @@ impl Namespace {
 pub mod namespace {
 
     /// A builder for [`Namespace`](crate::model::Namespace).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5706,6 +5735,7 @@ impl Instance {
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5976,6 +6006,7 @@ impl HttpInstanceSummary {
 pub mod http_instance_summary {
 
     /// A builder for [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -6286,6 +6317,7 @@ impl PublicDnsNamespaceProperties {
 pub mod public_dns_namespace_properties {
 
     /// A builder for [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties: std::option::Option<crate::model::PublicDnsPropertiesMutable>,
@@ -6337,6 +6369,7 @@ impl PublicDnsPropertiesMutable {
 pub mod public_dns_properties_mutable {
 
     /// A builder for [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::Soa>,
@@ -6385,6 +6418,7 @@ impl PrivateDnsNamespaceProperties {
 pub mod private_dns_namespace_properties {
 
     /// A builder for [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties: std::option::Option<crate::model::PrivateDnsPropertiesMutable>,
@@ -6436,6 +6470,7 @@ impl PrivateDnsPropertiesMutable {
 pub mod private_dns_properties_mutable {
 
     /// A builder for [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::Soa>,

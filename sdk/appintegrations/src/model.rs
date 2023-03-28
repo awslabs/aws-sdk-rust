@@ -57,6 +57,7 @@ impl EventIntegration {
 pub mod event_integration {
 
     /// A builder for [`EventIntegration`](crate::model::EventIntegration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
@@ -191,6 +192,7 @@ impl EventFilter {
 pub mod event_filter {
 
     /// A builder for [`EventFilter`](crate::model::EventFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -278,6 +280,7 @@ impl EventIntegrationAssociation {
 pub mod event_integration_association {
 
     /// A builder for [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_association_arn: std::option::Option<std::string::String>,
@@ -435,6 +438,7 @@ impl DataIntegrationSummary {
 pub mod data_integration_summary {
 
     /// A builder for [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -521,6 +525,7 @@ impl DataIntegrationAssociationSummary {
 pub mod data_integration_association_summary {
 
     /// A builder for [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_association_arn: std::option::Option<std::string::String>,
@@ -616,6 +621,7 @@ impl ScheduleConfiguration {
 pub mod schedule_configuration {
 
     /// A builder for [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_execution_from: std::option::Option<std::string::String>,

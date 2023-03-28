@@ -24,6 +24,7 @@ impl UpdateResourceShareOutput {
 pub mod update_resource_share_output {
 
     /// A builder for [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share: std::option::Option<crate::model::ResourceShare>,
@@ -77,6 +78,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -101,6 +103,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -144,6 +147,7 @@ impl RejectResourceShareInvitationOutput {
 pub mod reject_resource_share_invitation_output {
 
     /// A builder for [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation:
@@ -211,6 +215,7 @@ impl PromoteResourceShareCreatedFromPolicyOutput {
 pub mod promote_resource_share_created_from_policy_output {
 
     /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -269,6 +274,7 @@ impl ListResourceTypesOutput {
 pub mod list_resource_types_output {
 
     /// A builder for [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_types:
@@ -349,6 +355,7 @@ impl ListResourceSharePermissionsOutput {
 pub mod list_resource_share_permissions_output {
 
     /// A builder for [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions:
@@ -426,6 +433,7 @@ impl ListResourcesOutput {
 pub mod list_resources_output {
 
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -502,6 +510,7 @@ impl ListPrincipalsOutput {
 pub mod list_principals_output {
 
     /// A builder for [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -581,6 +590,7 @@ impl ListPermissionVersionsOutput {
 pub mod list_permission_versions_output {
 
     /// A builder for [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions:
@@ -661,6 +671,7 @@ impl ListPermissionsOutput {
 pub mod list_permissions_output {
 
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions:
@@ -738,6 +749,7 @@ impl ListPendingInvitationResourcesOutput {
 pub mod list_pending_invitation_resources_output {
 
     /// A builder for [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -814,6 +826,7 @@ impl GetResourceSharesOutput {
 pub mod get_resource_shares_output {
 
     /// A builder for [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_shares: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
@@ -893,6 +906,7 @@ impl GetResourceShareInvitationsOutput {
 pub mod get_resource_share_invitations_output {
 
     /// A builder for [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitations:
@@ -976,6 +990,7 @@ impl GetResourceShareAssociationsOutput {
 pub mod get_resource_share_associations_output {
 
     /// A builder for [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_associations:
@@ -1056,6 +1071,7 @@ impl GetResourcePoliciesOutput {
 pub mod get_resource_policies_output {
 
     /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1125,6 +1141,7 @@ impl GetPermissionOutput {
 pub mod get_permission_output {
 
     /// A builder for [`GetPermissionOutput`](crate::output::GetPermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
@@ -1176,6 +1193,7 @@ impl EnableSharingWithAwsOrganizationOutput {
 pub mod enable_sharing_with_aws_organization_output {
 
     /// A builder for [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1231,6 +1249,7 @@ impl DisassociateResourceSharePermissionOutput {
 pub mod disassociate_resource_share_permission_output {
 
     /// A builder for [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1301,6 +1320,7 @@ impl DisassociateResourceShareOutput {
 pub mod disassociate_resource_share_output {
 
     /// A builder for [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_associations:
@@ -1381,6 +1401,7 @@ impl DeleteResourceShareOutput {
 pub mod delete_resource_share_output {
 
     /// A builder for [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1448,6 +1469,7 @@ impl CreateResourceShareOutput {
 pub mod create_resource_share_output {
 
     /// A builder for [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share: std::option::Option<crate::model::ResourceShare>,
@@ -1518,6 +1540,7 @@ impl AssociateResourceSharePermissionOutput {
 pub mod associate_resource_share_permission_output {
 
     /// A builder for [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1588,6 +1611,7 @@ impl AssociateResourceShareOutput {
 pub mod associate_resource_share_output {
 
     /// A builder for [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_associations:
@@ -1670,6 +1694,7 @@ impl AcceptResourceShareInvitationOutput {
 pub mod accept_resource_share_invitation_output {
 
     /// A builder for [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation:

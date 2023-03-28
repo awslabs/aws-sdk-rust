@@ -17,6 +17,7 @@ impl UpdateUserSettingsOutput {
 pub mod update_user_settings_output {
 
     /// A builder for [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings: std::option::Option<crate::model::UserSettings>,
@@ -70,6 +71,7 @@ impl UpdateUserAccessLoggingSettingsOutput {
 pub mod update_user_access_logging_settings_output {
 
     /// A builder for [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_access_logging_settings:
@@ -125,6 +127,7 @@ impl UpdateTrustStoreOutput {
 pub mod update_trust_store_output {
 
     /// A builder for [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
@@ -176,6 +179,7 @@ impl UpdatePortalOutput {
 pub mod update_portal_output {
 
     /// A builder for [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal: std::option::Option<crate::model::Portal>,
@@ -224,6 +228,7 @@ impl UpdateNetworkSettingsOutput {
 pub mod update_network_settings_output {
 
     /// A builder for [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings: std::option::Option<crate::model::NetworkSettings>,
@@ -275,6 +280,7 @@ impl UpdateIdentityProviderOutput {
 pub mod update_identity_provider_output {
 
     /// A builder for [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
@@ -326,6 +332,7 @@ impl UpdateBrowserSettingsOutput {
 pub mod update_browser_settings_output {
 
     /// A builder for [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings: std::option::Option<crate::model::BrowserSettings>,
@@ -367,6 +374,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -391,6 +399,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -432,6 +441,7 @@ impl ListUserSettingsOutput {
 pub mod list_user_settings_output {
 
     /// A builder for [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings:
@@ -512,6 +522,7 @@ impl ListUserAccessLoggingSettingsOutput {
 pub mod list_user_access_logging_settings_output {
 
     /// A builder for [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_access_logging_settings:
@@ -594,6 +605,7 @@ impl ListTrustStoresOutput {
 pub mod list_trust_stores_output {
 
     /// A builder for [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_stores:
@@ -678,6 +690,7 @@ impl ListTrustStoreCertificatesOutput {
 pub mod list_trust_store_certificates_output {
 
     /// A builder for [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_list:
@@ -763,6 +776,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -825,6 +839,7 @@ impl ListPortalsOutput {
 pub mod list_portals_output {
 
     /// A builder for [`ListPortalsOutput`](crate::output::ListPortalsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portals: std::option::Option<std::vec::Vec<crate::model::PortalSummary>>,
@@ -901,6 +916,7 @@ impl ListNetworkSettingsOutput {
 pub mod list_network_settings_output {
 
     /// A builder for [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings:
@@ -981,6 +997,7 @@ impl ListIdentityProvidersOutput {
 pub mod list_identity_providers_output {
 
     /// A builder for [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1058,6 +1075,7 @@ impl ListBrowserSettingsOutput {
 pub mod list_browser_settings_output {
 
     /// A builder for [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings:
@@ -1128,6 +1146,7 @@ impl GetUserSettingsOutput {
 pub mod get_user_settings_output {
 
     /// A builder for [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings: std::option::Option<crate::model::UserSettings>,
@@ -1181,6 +1200,7 @@ impl GetUserAccessLoggingSettingsOutput {
 pub mod get_user_access_logging_settings_output {
 
     /// A builder for [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_access_logging_settings:
@@ -1243,6 +1263,7 @@ impl GetTrustStoreCertificateOutput {
 pub mod get_trust_store_certificate_output {
 
     /// A builder for [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
@@ -1309,6 +1330,7 @@ impl GetTrustStoreOutput {
 pub mod get_trust_store_output {
 
     /// A builder for [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store: std::option::Option<crate::model::TrustStore>,
@@ -1367,6 +1389,7 @@ impl GetPortalServiceProviderMetadataOutput {
 pub mod get_portal_service_provider_metadata_output {
 
     /// A builder for [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
@@ -1433,6 +1456,7 @@ impl GetPortalOutput {
 pub mod get_portal_output {
 
     /// A builder for [`GetPortalOutput`](crate::output::GetPortalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal: std::option::Option<crate::model::Portal>,
@@ -1481,6 +1505,7 @@ impl GetNetworkSettingsOutput {
 pub mod get_network_settings_output {
 
     /// A builder for [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings: std::option::Option<crate::model::NetworkSettings>,
@@ -1532,6 +1557,7 @@ impl GetIdentityProviderOutput {
 pub mod get_identity_provider_output {
 
     /// A builder for [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider: std::option::Option<crate::model::IdentityProvider>,
@@ -1583,6 +1609,7 @@ impl GetBrowserSettingsOutput {
 pub mod get_browser_settings_output {
 
     /// A builder for [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings: std::option::Option<crate::model::BrowserSettings>,
@@ -1624,6 +1651,7 @@ pub struct DisassociateUserSettingsOutput {}
 pub mod disassociate_user_settings_output {
 
     /// A builder for [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1648,6 +1676,7 @@ pub struct DisassociateUserAccessLoggingSettingsOutput {}
 pub mod disassociate_user_access_logging_settings_output {
 
     /// A builder for [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1672,6 +1701,7 @@ pub struct DisassociateTrustStoreOutput {}
 pub mod disassociate_trust_store_output {
 
     /// A builder for [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1696,6 +1726,7 @@ pub struct DisassociateNetworkSettingsOutput {}
 pub mod disassociate_network_settings_output {
 
     /// A builder for [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1720,6 +1751,7 @@ pub struct DisassociateBrowserSettingsOutput {}
 pub mod disassociate_browser_settings_output {
 
     /// A builder for [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1744,6 +1776,7 @@ pub struct DeleteUserSettingsOutput {}
 pub mod delete_user_settings_output {
 
     /// A builder for [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1768,6 +1801,7 @@ pub struct DeleteUserAccessLoggingSettingsOutput {}
 pub mod delete_user_access_logging_settings_output {
 
     /// A builder for [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1792,6 +1826,7 @@ pub struct DeleteTrustStoreOutput {}
 pub mod delete_trust_store_output {
 
     /// A builder for [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1816,6 +1851,7 @@ pub struct DeletePortalOutput {}
 pub mod delete_portal_output {
 
     /// A builder for [`DeletePortalOutput`](crate::output::DeletePortalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1840,6 +1876,7 @@ pub struct DeleteNetworkSettingsOutput {}
 pub mod delete_network_settings_output {
 
     /// A builder for [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1864,6 +1901,7 @@ pub struct DeleteIdentityProviderOutput {}
 pub mod delete_identity_provider_output {
 
     /// A builder for [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1888,6 +1926,7 @@ pub struct DeleteBrowserSettingsOutput {}
 pub mod delete_browser_settings_output {
 
     /// A builder for [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1922,6 +1961,7 @@ impl CreateUserSettingsOutput {
 pub mod create_user_settings_output {
 
     /// A builder for [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
@@ -1973,6 +2013,7 @@ impl CreateUserAccessLoggingSettingsOutput {
 pub mod create_user_access_logging_settings_output {
 
     /// A builder for [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_access_logging_settings_arn: std::option::Option<std::string::String>,
@@ -2027,6 +2068,7 @@ impl CreateTrustStoreOutput {
 pub mod create_trust_store_output {
 
     /// A builder for [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
@@ -2085,6 +2127,7 @@ impl CreatePortalOutput {
 pub mod create_portal_output {
 
     /// A builder for [`CreatePortalOutput`](crate::output::CreatePortalOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
@@ -2148,6 +2191,7 @@ impl CreateNetworkSettingsOutput {
 pub mod create_network_settings_output {
 
     /// A builder for [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
@@ -2199,6 +2243,7 @@ impl CreateIdentityProviderOutput {
 pub mod create_identity_provider_output {
 
     /// A builder for [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
@@ -2250,6 +2295,7 @@ impl CreateBrowserSettingsOutput {
 pub mod create_browser_settings_output {
 
     /// A builder for [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
@@ -2308,6 +2354,7 @@ impl AssociateUserSettingsOutput {
 pub mod associate_user_settings_output {
 
     /// A builder for [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
@@ -2378,6 +2425,7 @@ impl AssociateUserAccessLoggingSettingsOutput {
 pub mod associate_user_access_logging_settings_output {
 
     /// A builder for [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
@@ -2451,6 +2499,7 @@ impl AssociateTrustStoreOutput {
 pub mod associate_trust_store_output {
 
     /// A builder for [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
@@ -2521,6 +2570,7 @@ impl AssociateNetworkSettingsOutput {
 pub mod associate_network_settings_output {
 
     /// A builder for [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
@@ -2591,6 +2641,7 @@ impl AssociateBrowserSettingsOutput {
 pub mod associate_browser_settings_output {
 
     /// A builder for [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,

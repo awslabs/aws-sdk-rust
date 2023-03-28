@@ -25,6 +25,7 @@ impl ValidationWarning {
 pub mod validation_warning {
 
     /// A builder for [`ValidationWarning`](crate::model::ValidationWarning).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -101,6 +102,7 @@ impl ValidationError {
 pub mod validation_error {
 
     /// A builder for [`ValidationError`](crate::model::ValidationError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -177,6 +179,7 @@ impl ParameterValue {
 pub mod parameter_value {
 
     /// A builder for [`ParameterValue`](crate::model::ParameterValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -244,6 +247,7 @@ impl ParameterObject {
 pub mod parameter_object {
 
     /// A builder for [`ParameterObject`](crate::model::ParameterObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -320,6 +324,7 @@ impl ParameterAttribute {
 pub mod parameter_attribute {
 
     /// A builder for [`ParameterAttribute`](crate::model::ParameterAttribute).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -394,6 +399,7 @@ impl PipelineObject {
 pub mod pipeline_object {
 
     /// A builder for [`PipelineObject`](crate::model::PipelineObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -489,6 +495,7 @@ impl Field {
 pub mod field {
 
     /// A builder for [`Field`](crate::model::Field).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -656,6 +663,7 @@ impl Query {
 pub mod query {
 
     /// A builder for [`Query`](crate::model::Query).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selectors: std::option::Option<std::vec::Vec<crate::model::Selector>>,
@@ -720,6 +728,7 @@ impl Selector {
 pub mod selector {
 
     /// A builder for [`Selector`](crate::model::Selector).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_name: std::option::Option<std::string::String>,
@@ -829,6 +838,7 @@ impl Operator {
 pub mod operator {
 
     /// A builder for [`Operator`](crate::model::Operator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OperatorType>,
@@ -1072,6 +1082,7 @@ impl TaskObject {
 pub mod task_object {
 
     /// A builder for [`TaskObject`](crate::model::TaskObject).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -1182,6 +1193,7 @@ impl InstanceIdentity {
 pub mod instance_identity {
 
     /// A builder for [`InstanceIdentity`](crate::model::InstanceIdentity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<std::string::String>,
@@ -1249,6 +1261,7 @@ impl PipelineIdName {
 pub mod pipeline_id_name {
 
     /// A builder for [`PipelineIdName`](crate::model::PipelineIdName).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1337,6 +1350,7 @@ impl PipelineDescription {
 pub mod pipeline_description {
 
     /// A builder for [`PipelineDescription`](crate::model::PipelineDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
@@ -1458,6 +1472,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_aggregate_resource_config_input {
 
     /// A builder for [`BatchGetAggregateResourceConfigInput`](crate::input::BatchGetAggregateResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -200,6 +201,7 @@ impl BatchGetAggregateResourceConfigInput {
 pub mod batch_get_resource_config_input {
 
     /// A builder for [`BatchGetResourceConfigInput`](crate::input::BatchGetResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
@@ -375,6 +377,7 @@ impl BatchGetResourceConfigInput {
 pub mod delete_aggregation_authorization_input {
 
     /// A builder for [`DeleteAggregationAuthorizationInput`](crate::input::DeleteAggregationAuthorizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorized_account_id: std::option::Option<std::string::String>,
@@ -557,6 +560,7 @@ impl DeleteAggregationAuthorizationInput {
 pub mod delete_config_rule_input {
 
     /// A builder for [`DeleteConfigRuleInput`](crate::input::DeleteConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -724,6 +728,7 @@ impl DeleteConfigRuleInput {
 pub mod delete_configuration_aggregator_input {
 
     /// A builder for [`DeleteConfigurationAggregatorInput`](crate::input::DeleteConfigurationAggregatorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -894,6 +899,7 @@ impl DeleteConfigurationAggregatorInput {
 pub mod delete_configuration_recorder_input {
 
     /// A builder for [`DeleteConfigurationRecorderInput`](crate::input::DeleteConfigurationRecorderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
@@ -1064,6 +1070,7 @@ impl DeleteConfigurationRecorderInput {
 pub mod delete_conformance_pack_input {
 
     /// A builder for [`DeleteConformancePackInput`](crate::input::DeleteConformancePackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
@@ -1233,6 +1240,7 @@ impl DeleteConformancePackInput {
 pub mod delete_delivery_channel_input {
 
     /// A builder for [`DeleteDeliveryChannelInput`](crate::input::DeleteDeliveryChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_channel_name: std::option::Option<std::string::String>,
@@ -1402,6 +1410,7 @@ impl DeleteDeliveryChannelInput {
 pub mod delete_evaluation_results_input {
 
     /// A builder for [`DeleteEvaluationResultsInput`](crate::input::DeleteEvaluationResultsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -1571,6 +1580,7 @@ impl DeleteEvaluationResultsInput {
 pub mod delete_organization_config_rule_input {
 
     /// A builder for [`DeleteOrganizationConfigRuleInput`](crate::input::DeleteOrganizationConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
@@ -1741,6 +1751,7 @@ impl DeleteOrganizationConfigRuleInput {
 pub mod delete_organization_conformance_pack_input {
 
     /// A builder for [`DeleteOrganizationConformancePackInput`](crate::input::DeleteOrganizationConformancePackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_name: std::option::Option<std::string::String>,
@@ -1911,6 +1922,7 @@ impl DeleteOrganizationConformancePackInput {
 pub mod delete_pending_aggregation_request_input {
 
     /// A builder for [`DeletePendingAggregationRequestInput`](crate::input::DeletePendingAggregationRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) requester_account_id: std::option::Option<std::string::String>,
@@ -2093,6 +2105,7 @@ impl DeletePendingAggregationRequestInput {
 pub mod delete_remediation_configuration_input {
 
     /// A builder for [`DeleteRemediationConfigurationInput`](crate::input::DeleteRemediationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -2275,6 +2288,7 @@ impl DeleteRemediationConfigurationInput {
 pub mod delete_remediation_exceptions_input {
 
     /// A builder for [`DeleteRemediationExceptionsInput`](crate::input::DeleteRemediationExceptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -2469,6 +2483,7 @@ impl DeleteRemediationExceptionsInput {
 pub mod delete_resource_config_input {
 
     /// A builder for [`DeleteResourceConfigInput`](crate::input::DeleteResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -2650,6 +2665,7 @@ impl DeleteResourceConfigInput {
 pub mod delete_retention_configuration_input {
 
     /// A builder for [`DeleteRetentionConfigurationInput`](crate::input::DeleteRetentionConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_configuration_name: std::option::Option<std::string::String>,
@@ -2820,6 +2836,7 @@ impl DeleteRetentionConfigurationInput {
 pub mod delete_stored_query_input {
 
     /// A builder for [`DeleteStoredQueryInput`](crate::input::DeleteStoredQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_name: std::option::Option<std::string::String>,
@@ -2984,6 +3001,7 @@ impl DeleteStoredQueryInput {
 pub mod deliver_config_snapshot_input {
 
     /// A builder for [`DeliverConfigSnapshotInput`](crate::input::DeliverConfigSnapshotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_channel_name: std::option::Option<std::string::String>,
@@ -3153,6 +3171,7 @@ impl DeliverConfigSnapshotInput {
 pub mod describe_aggregate_compliance_by_config_rules_input {
 
     /// A builder for [`DescribeAggregateComplianceByConfigRulesInput`](crate::input::DescribeAggregateComplianceByConfigRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -3364,6 +3383,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
 pub mod describe_aggregate_compliance_by_conformance_packs_input {
 
     /// A builder for [`DescribeAggregateComplianceByConformancePacksInput`](crate::input::DescribeAggregateComplianceByConformancePacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -3580,6 +3600,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
 pub mod describe_aggregation_authorizations_input {
 
     /// A builder for [`DescribeAggregationAuthorizationsInput`](crate::input::DescribeAggregationAuthorizationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -3756,6 +3777,7 @@ impl DescribeAggregationAuthorizationsInput {
 pub mod describe_compliance_by_config_rule_input {
 
     /// A builder for [`DescribeComplianceByConfigRuleInput`](crate::input::DescribeComplianceByConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3965,6 +3987,7 @@ impl DescribeComplianceByConfigRuleInput {
 pub mod describe_compliance_by_resource_input {
 
     /// A builder for [`DescribeComplianceByResourceInput`](crate::input::DescribeComplianceByResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -4192,6 +4215,7 @@ impl DescribeComplianceByResourceInput {
 pub mod describe_config_rule_evaluation_status_input {
 
     /// A builder for [`DescribeConfigRuleEvaluationStatusInput`](crate::input::DescribeConfigRuleEvaluationStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4393,6 +4417,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
 pub mod describe_config_rules_input {
 
     /// A builder for [`DescribeConfigRulesInput`](crate::input::DescribeConfigRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4593,6 +4618,7 @@ impl DescribeConfigRulesInput {
 pub mod describe_configuration_aggregators_input {
 
     /// A builder for [`DescribeConfigurationAggregatorsInput`](crate::input::DescribeConfigurationAggregatorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_names:
@@ -4794,6 +4820,7 @@ impl DescribeConfigurationAggregatorsInput {
 pub mod describe_configuration_aggregator_sources_status_input {
 
     /// A builder for [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::input::DescribeConfigurationAggregatorSourcesStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -5023,6 +5050,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
 pub mod describe_configuration_recorders_input {
 
     /// A builder for [`DescribeConfigurationRecordersInput`](crate::input::DescribeConfigurationRecordersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_recorder_names:
@@ -5200,6 +5228,7 @@ impl DescribeConfigurationRecordersInput {
 pub mod describe_configuration_recorder_status_input {
 
     /// A builder for [`DescribeConfigurationRecorderStatusInput`](crate::input::DescribeConfigurationRecorderStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_recorder_names:
@@ -5377,6 +5406,7 @@ impl DescribeConfigurationRecorderStatusInput {
 pub mod describe_conformance_pack_compliance_input {
 
     /// A builder for [`DescribeConformancePackComplianceInput`](crate::input::DescribeConformancePackComplianceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
@@ -5583,6 +5613,7 @@ impl DescribeConformancePackComplianceInput {
 pub mod describe_conformance_packs_input {
 
     /// A builder for [`DescribeConformancePacksInput`](crate::input::DescribeConformancePacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5782,6 +5813,7 @@ impl DescribeConformancePacksInput {
 pub mod describe_conformance_pack_status_input {
 
     /// A builder for [`DescribeConformancePackStatusInput`](crate::input::DescribeConformancePackStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5979,6 +6011,7 @@ impl DescribeConformancePackStatusInput {
 pub mod describe_delivery_channels_input {
 
     /// A builder for [`DescribeDeliveryChannelsInput`](crate::input::DescribeDeliveryChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6154,6 +6187,7 @@ impl DescribeDeliveryChannelsInput {
 pub mod describe_delivery_channel_status_input {
 
     /// A builder for [`DescribeDeliveryChannelStatusInput`](crate::input::DescribeDeliveryChannelStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6327,6 +6361,7 @@ impl DescribeDeliveryChannelStatusInput {
 pub mod describe_organization_config_rules_input {
 
     /// A builder for [`DescribeOrganizationConfigRulesInput`](crate::input::DescribeOrganizationConfigRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_names:
@@ -6528,6 +6563,7 @@ impl DescribeOrganizationConfigRulesInput {
 pub mod describe_organization_config_rule_statuses_input {
 
     /// A builder for [`DescribeOrganizationConfigRuleStatusesInput`](crate::input::DescribeOrganizationConfigRuleStatusesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_names:
@@ -6729,6 +6765,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
 pub mod describe_organization_conformance_packs_input {
 
     /// A builder for [`DescribeOrganizationConformancePacksInput`](crate::input::DescribeOrganizationConformancePacksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_names:
@@ -6930,6 +6967,7 @@ impl DescribeOrganizationConformancePacksInput {
 pub mod describe_organization_conformance_pack_statuses_input {
 
     /// A builder for [`DescribeOrganizationConformancePackStatusesInput`](crate::input::DescribeOrganizationConformancePackStatusesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_names:
@@ -7134,6 +7172,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
 pub mod describe_pending_aggregation_requests_input {
 
     /// A builder for [`DescribePendingAggregationRequestsInput`](crate::input::DescribePendingAggregationRequestsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -7310,6 +7349,7 @@ impl DescribePendingAggregationRequestsInput {
 pub mod describe_remediation_configurations_input {
 
     /// A builder for [`DescribeRemediationConfigurationsInput`](crate::input::DescribeRemediationConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7483,6 +7523,7 @@ impl DescribeRemediationConfigurationsInput {
 pub mod describe_remediation_exceptions_input {
 
     /// A builder for [`DescribeRemediationExceptionsInput`](crate::input::DescribeRemediationExceptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -7701,6 +7742,7 @@ impl DescribeRemediationExceptionsInput {
 pub mod describe_remediation_execution_status_input {
 
     /// A builder for [`DescribeRemediationExecutionStatusInput`](crate::input::DescribeRemediationExecutionStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -7913,6 +7955,7 @@ impl DescribeRemediationExecutionStatusInput {
 pub mod describe_retention_configurations_input {
 
     /// A builder for [`DescribeRetentionConfigurationsInput`](crate::input::DescribeRetentionConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_configuration_names:
@@ -8106,6 +8149,7 @@ impl DescribeRetentionConfigurationsInput {
 pub mod get_aggregate_compliance_details_by_config_rule_input {
 
     /// A builder for [`GetAggregateComplianceDetailsByConfigRuleInput`](crate::input::GetAggregateComplianceDetailsByConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -8361,6 +8405,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
 pub mod get_aggregate_config_rule_compliance_summary_input {
 
     /// A builder for [`GetAggregateConfigRuleComplianceSummaryInput`](crate::input::GetAggregateConfigRuleComplianceSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -8589,6 +8634,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
 pub mod get_aggregate_conformance_pack_compliance_summary_input {
 
     /// A builder for [`GetAggregateConformancePackComplianceSummaryInput`](crate::input::GetAggregateConformancePackComplianceSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -8828,6 +8874,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
 pub mod get_aggregate_discovered_resource_counts_input {
 
     /// A builder for [`GetAggregateDiscoveredResourceCountsInput`](crate::input::GetAggregateDiscoveredResourceCountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -9052,6 +9099,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
 pub mod get_aggregate_resource_config_input {
 
     /// A builder for [`GetAggregateResourceConfigInput`](crate::input::GetAggregateResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -9241,6 +9289,7 @@ impl GetAggregateResourceConfigInput {
 pub mod get_compliance_details_by_config_rule_input {
 
     /// A builder for [`GetComplianceDetailsByConfigRuleInput`](crate::input::GetComplianceDetailsByConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -9456,6 +9505,7 @@ impl GetComplianceDetailsByConfigRuleInput {
 pub mod get_compliance_details_by_resource_input {
 
     /// A builder for [`GetComplianceDetailsByResourceInput`](crate::input::GetComplianceDetailsByResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -9690,6 +9740,7 @@ impl GetComplianceDetailsByResourceInput {
 pub mod get_compliance_summary_by_config_rule_input {
 
     /// A builder for [`GetComplianceSummaryByConfigRuleInput`](crate::input::GetComplianceSummaryByConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -9833,6 +9884,7 @@ impl GetComplianceSummaryByConfigRuleInput {
 pub mod get_compliance_summary_by_resource_type_input {
 
     /// A builder for [`GetComplianceSummaryByResourceTypeInput`](crate::input::GetComplianceSummaryByResourceTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10008,6 +10060,7 @@ impl GetComplianceSummaryByResourceTypeInput {
 pub mod get_conformance_pack_compliance_details_input {
 
     /// A builder for [`GetConformancePackComplianceDetailsInput`](crate::input::GetConformancePackComplianceDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
@@ -10214,6 +10267,7 @@ impl GetConformancePackComplianceDetailsInput {
 pub mod get_conformance_pack_compliance_summary_input {
 
     /// A builder for [`GetConformancePackComplianceSummaryInput`](crate::input::GetConformancePackComplianceSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10411,6 +10465,7 @@ impl GetConformancePackComplianceSummaryInput {
 pub mod get_custom_rule_policy_input {
 
     /// A builder for [`GetCustomRulePolicyInput`](crate::input::GetCustomRulePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -10580,6 +10635,7 @@ impl GetCustomRulePolicyInput {
 pub mod get_discovered_resource_counts_input {
 
     /// A builder for [`GetDiscoveredResourceCountsInput`](crate::input::GetDiscoveredResourceCountsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10783,6 +10839,7 @@ impl GetDiscoveredResourceCountsInput {
 pub mod get_organization_config_rule_detailed_status_input {
 
     /// A builder for [`GetOrganizationConfigRuleDetailedStatusInput`](crate::input::GetOrganizationConfigRuleDetailedStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
@@ -10992,6 +11049,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
 pub mod get_organization_conformance_pack_detailed_status_input {
 
     /// A builder for [`GetOrganizationConformancePackDetailedStatusInput`](crate::input::GetOrganizationConformancePackDetailedStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_name: std::option::Option<std::string::String>,
@@ -11208,6 +11266,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
 pub mod get_organization_custom_rule_policy_input {
 
     /// A builder for [`GetOrganizationCustomRulePolicyInput`](crate::input::GetOrganizationCustomRulePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
@@ -11378,6 +11437,7 @@ impl GetOrganizationCustomRulePolicyInput {
 pub mod get_resource_config_history_input {
 
     /// A builder for [`GetResourceConfigHistoryInput`](crate::input::GetResourceConfigHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -11628,6 +11688,7 @@ impl GetResourceConfigHistoryInput {
 pub mod get_resource_evaluation_summary_input {
 
     /// A builder for [`GetResourceEvaluationSummaryInput`](crate::input::GetResourceEvaluationSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_evaluation_id: std::option::Option<std::string::String>,
@@ -11795,6 +11856,7 @@ impl GetResourceEvaluationSummaryInput {
 pub mod get_stored_query_input {
 
     /// A builder for [`GetStoredQueryInput`](crate::input::GetStoredQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_name: std::option::Option<std::string::String>,
@@ -11957,6 +12019,7 @@ impl GetStoredQueryInput {
 pub mod list_aggregate_discovered_resources_input {
 
     /// A builder for [`ListAggregateDiscoveredResourcesInput`](crate::input::ListAggregateDiscoveredResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -12181,6 +12244,7 @@ impl ListAggregateDiscoveredResourcesInput {
 pub mod list_conformance_pack_compliance_scores_input {
 
     /// A builder for [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
@@ -12409,6 +12473,7 @@ impl ListConformancePackComplianceScoresInput {
 pub mod list_discovered_resources_input {
 
     /// A builder for [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -12650,6 +12715,7 @@ impl ListDiscoveredResourcesInput {
 pub mod list_resource_evaluations_input {
 
     /// A builder for [`ListResourceEvaluationsInput`](crate::input::ListResourceEvaluationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::ResourceEvaluationFilters>,
@@ -12843,6 +12909,7 @@ impl ListResourceEvaluationsInput {
 pub mod list_stored_queries_input {
 
     /// A builder for [`ListStoredQueriesInput`](crate::input::ListStoredQueriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -13019,6 +13086,7 @@ impl ListStoredQueriesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -13209,6 +13277,7 @@ impl ListTagsForResourceInput {
 pub mod put_aggregation_authorization_input {
 
     /// A builder for [`PutAggregationAuthorizationInput`](crate::input::PutAggregationAuthorizationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorized_account_id: std::option::Option<std::string::String>,
@@ -13412,6 +13481,7 @@ impl PutAggregationAuthorizationInput {
 pub mod put_config_rule_input {
 
     /// A builder for [`PutConfigRuleInput`](crate::input::PutConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule: std::option::Option<crate::model::ConfigRule>,
@@ -13598,6 +13668,7 @@ impl PutConfigRuleInput {
 pub mod put_configuration_aggregator_input {
 
     /// A builder for [`PutConfigurationAggregatorInput`](crate::input::PutConfigurationAggregatorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -13835,6 +13906,7 @@ impl PutConfigurationAggregatorInput {
 pub mod put_configuration_recorder_input {
 
     /// A builder for [`PutConfigurationRecorderInput`](crate::input::PutConfigurationRecorderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
@@ -14007,6 +14079,7 @@ impl PutConfigurationRecorderInput {
 pub mod put_conformance_pack_input {
 
     /// A builder for [`PutConformancePackInput`](crate::input::PutConformancePackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
@@ -14294,6 +14367,7 @@ impl PutConformancePackInput {
 pub mod put_delivery_channel_input {
 
     /// A builder for [`PutDeliveryChannelInput`](crate::input::PutDeliveryChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
@@ -14461,6 +14535,7 @@ impl PutDeliveryChannelInput {
 pub mod put_evaluations_input {
 
     /// A builder for [`PutEvaluationsInput`](crate::input::PutEvaluationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -14660,6 +14735,7 @@ impl PutEvaluationsInput {
 pub mod put_external_evaluation_input {
 
     /// A builder for [`PutExternalEvaluationInput`](crate::input::PutExternalEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -14844,6 +14920,7 @@ impl PutExternalEvaluationInput {
 pub mod put_organization_config_rule_input {
 
     /// A builder for [`PutOrganizationConfigRuleInput`](crate::input::PutOrganizationConfigRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
@@ -15095,6 +15172,7 @@ impl PutOrganizationConfigRuleInput {
 pub mod put_organization_conformance_pack_input {
 
     /// A builder for [`PutOrganizationConformancePackInput`](crate::input::PutOrganizationConformancePackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_name: std::option::Option<std::string::String>,
@@ -15383,6 +15461,7 @@ impl PutOrganizationConformancePackInput {
 pub mod put_remediation_configurations_input {
 
     /// A builder for [`PutRemediationConfigurationsInput`](crate::input::PutRemediationConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_configurations:
@@ -15560,6 +15639,7 @@ impl PutRemediationConfigurationsInput {
 pub mod put_remediation_exceptions_input {
 
     /// A builder for [`PutRemediationExceptionsInput`](crate::input::PutRemediationExceptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -15783,6 +15863,7 @@ impl PutRemediationExceptionsInput {
 pub mod put_resource_config_input {
 
     /// A builder for [`PutResourceConfigInput`](crate::input::PutResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -16048,6 +16129,7 @@ impl PutResourceConfigInput {
 pub mod put_retention_configuration_input {
 
     /// A builder for [`PutRetentionConfigurationInput`](crate::input::PutRetentionConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_period_in_days: std::option::Option<i32>,
@@ -16218,6 +16300,7 @@ impl PutRetentionConfigurationInput {
 pub mod put_stored_query_input {
 
     /// A builder for [`PutStoredQueryInput`](crate::input::PutStoredQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stored_query: std::option::Option<crate::model::StoredQuery>,
@@ -16408,6 +16491,7 @@ impl PutStoredQueryInput {
 pub mod select_aggregate_resource_config_input {
 
     /// A builder for [`SelectAggregateResourceConfigInput`](crate::input::SelectAggregateResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -16626,6 +16710,7 @@ impl SelectAggregateResourceConfigInput {
 pub mod select_resource_config_input {
 
     /// A builder for [`SelectResourceConfigInput`](crate::input::SelectResourceConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -16816,6 +16901,7 @@ impl SelectResourceConfigInput {
 pub mod start_config_rules_evaluation_input {
 
     /// A builder for [`StartConfigRulesEvaluationInput`](crate::input::StartConfigRulesEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16989,6 +17075,7 @@ impl StartConfigRulesEvaluationInput {
 pub mod start_configuration_recorder_input {
 
     /// A builder for [`StartConfigurationRecorderInput`](crate::input::StartConfigurationRecorderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
@@ -17161,6 +17248,7 @@ impl StartConfigurationRecorderInput {
 pub mod start_remediation_execution_input {
 
     /// A builder for [`StartRemediationExecutionInput`](crate::input::StartRemediationExecutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -17351,6 +17439,7 @@ impl StartRemediationExecutionInput {
 pub mod start_resource_evaluation_input {
 
     /// A builder for [`StartResourceEvaluationInput`](crate::input::StartResourceEvaluationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_details: std::option::Option<crate::model::ResourceDetails>,
@@ -17578,6 +17667,7 @@ impl StartResourceEvaluationInput {
 pub mod stop_configuration_recorder_input {
 
     /// A builder for [`StopConfigurationRecorderInput`](crate::input::StopConfigurationRecorderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
@@ -17750,6 +17840,7 @@ impl StopConfigurationRecorderInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -17933,6 +18024,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

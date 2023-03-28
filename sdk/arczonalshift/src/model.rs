@@ -403,6 +403,7 @@ impl ZonalShiftSummary {
 pub mod zonal_shift_summary {
 
     /// A builder for [`ZonalShiftSummary`](crate::model::ZonalShiftSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zonal_shift_id: std::option::Option<std::string::String>,
@@ -571,6 +572,7 @@ impl ManagedResourceSummary {
 pub mod managed_resource_summary {
 
     /// A builder for [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -698,6 +700,7 @@ impl ZonalShiftInResource {
 pub mod zonal_shift_in_resource {
 
     /// A builder for [`ZonalShiftInResource`](crate::model::ZonalShiftInResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applied_status: std::option::Option<crate::model::AppliedStatus>,

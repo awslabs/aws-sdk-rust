@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -382,6 +383,7 @@ impl SubscriberResource {
 pub mod subscriber_resource {
 
     /// A builder for [`SubscriberResource`](crate::model::SubscriberResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_id: std::option::Option<std::string::String>,
@@ -1251,6 +1253,7 @@ impl LakeConfigurationRequest {
 pub mod lake_configuration_request {
 
     /// A builder for [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
@@ -1522,6 +1525,7 @@ impl RetentionSetting {
 pub mod retention_setting {
 
     /// A builder for [`RetentionSetting`](crate::model::RetentionSetting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
@@ -1810,6 +1814,7 @@ impl FailuresResponse {
 pub mod failures_response {
 
     /// A builder for [`FailuresResponse`](crate::model::FailuresResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -1893,6 +1898,7 @@ impl Failures {
 pub mod failures {
 
     /// A builder for [`Failures`](crate::model::Failures).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exception_message: std::option::Option<std::string::String>,
@@ -1992,6 +1998,7 @@ impl AccountSources {
 pub mod account_sources {
 
     /// A builder for [`AccountSources`](crate::model::AccountSources).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
@@ -2374,6 +2381,7 @@ impl LogsStatus {
 pub mod logs_status {
 
     /// A builder for [`LogsStatus`](crate::model::LogsStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_to_logs: std::option::Option<std::string::String>,
@@ -2539,6 +2547,7 @@ impl ProtocolAndNotificationEndpoint {
 pub mod protocol_and_notification_endpoint {
 
     /// A builder for [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<std::string::String>,
@@ -2606,6 +2615,7 @@ impl AutoEnableNewRegionConfiguration {
 pub mod auto_enable_new_region_configuration {
 
     /// A builder for [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<crate::model::Region>,
@@ -2723,6 +2733,7 @@ impl LakeConfigurationResponse {
 pub mod lake_configuration_response {
 
     /// A builder for [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_key: std::option::Option<std::string::String>,

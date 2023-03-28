@@ -28,6 +28,7 @@ impl OutputConfig {
 pub mod output_config {
 
     /// A builder for [`OutputConfig`](crate::model::OutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -95,6 +96,7 @@ impl NotificationChannel {
 pub mod notification_channel {
 
     /// A builder for [`NotificationChannel`](crate::model::NotificationChannel).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -159,6 +161,7 @@ impl DocumentLocation {
 pub mod document_location {
 
     /// A builder for [`DocumentLocation`](crate::model::DocumentLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
@@ -223,6 +226,7 @@ impl S3Object {
 pub mod s3_object {
 
     /// A builder for [`S3Object`](crate::model::S3Object).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -295,6 +299,7 @@ impl QueriesConfig {
 pub mod queries_config {
 
     /// A builder for [`QueriesConfig`](crate::model::QueriesConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
@@ -380,6 +385,7 @@ impl Query {
 pub mod query {
 
     /// A builder for [`Query`](crate::model::Query).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -582,6 +588,7 @@ impl Warning {
 pub mod warning {
 
     /// A builder for [`Warning`](crate::model::Warning).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -655,6 +662,7 @@ impl LendingSummary {
 pub mod lending_summary {
 
     /// A builder for [`LendingSummary`](crate::model::LendingSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_groups: std::option::Option<std::vec::Vec<crate::model::DocumentGroup>>,
@@ -758,6 +766,7 @@ impl DocumentGroup {
 pub mod document_group {
 
     /// A builder for [`DocumentGroup`](crate::model::DocumentGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -871,6 +880,7 @@ impl UndetectedSignature {
 pub mod undetected_signature {
 
     /// A builder for [`UndetectedSignature`](crate::model::UndetectedSignature).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page: std::option::Option<i32>,
@@ -917,6 +927,7 @@ impl DetectedSignature {
 pub mod detected_signature {
 
     /// A builder for [`DetectedSignature`](crate::model::DetectedSignature).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page: std::option::Option<i32>,
@@ -970,6 +981,7 @@ impl SplitDocument {
 pub mod split_document {
 
     /// A builder for [`SplitDocument`](crate::model::SplitDocument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -1136,6 +1148,7 @@ impl DocumentMetadata {
 pub mod document_metadata {
 
     /// A builder for [`DocumentMetadata`](crate::model::DocumentMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pages: std::option::Option<i32>,
@@ -1196,6 +1209,7 @@ impl LendingResult {
 pub mod lending_result {
 
     /// A builder for [`LendingResult`](crate::model::LendingResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page: std::option::Option<i32>,
@@ -1294,6 +1308,7 @@ impl Extraction {
 pub mod extraction {
 
     /// A builder for [`Extraction`](crate::model::Extraction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lending_document: std::option::Option<crate::model::LendingDocument>,
@@ -1392,6 +1407,7 @@ impl IdentityDocument {
 pub mod identity_document {
 
     /// A builder for [`IdentityDocument`](crate::model::IdentityDocument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_index: std::option::Option<i32>,
@@ -1640,6 +1656,7 @@ impl Block {
 pub mod block {
 
     /// A builder for [`Block`](crate::model::Block).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_type: std::option::Option<crate::model::BlockType>,
@@ -2127,6 +2144,7 @@ impl Relationship {
 pub mod relationship {
 
     /// A builder for [`Relationship`](crate::model::Relationship).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RelationshipType>,
@@ -2323,6 +2341,7 @@ impl Geometry {
 pub mod geometry {
 
     /// A builder for [`Geometry`](crate::model::Geometry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
@@ -2403,6 +2422,7 @@ impl Point {
 pub mod point {
 
     /// A builder for [`Point`](crate::model::Point).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) x: std::option::Option<f32>,
@@ -2486,6 +2506,7 @@ impl BoundingBox {
 pub mod bounding_box {
 
     /// A builder for [`BoundingBox`](crate::model::BoundingBox).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) width: std::option::Option<f32>,
@@ -2820,6 +2841,7 @@ impl IdentityDocumentField {
 pub mod identity_document_field {
 
     /// A builder for [`IdentityDocumentField`](crate::model::IdentityDocumentField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AnalyzeIdDetections>,
@@ -2900,6 +2922,7 @@ impl AnalyzeIdDetections {
 pub mod analyze_id_detections {
 
     /// A builder for [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -2982,6 +3005,7 @@ impl NormalizedValue {
 pub mod normalized_value {
 
     /// A builder for [`NormalizedValue`](crate::model::NormalizedValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3151,6 +3175,7 @@ impl ExpenseDocument {
 pub mod expense_document {
 
     /// A builder for [`ExpenseDocument`](crate::model::ExpenseDocument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expense_index: std::option::Option<i32>,
@@ -3270,6 +3295,7 @@ impl LineItemGroup {
 pub mod line_item_group {
 
     /// A builder for [`LineItemGroup`](crate::model::LineItemGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_item_group_index: std::option::Option<i32>,
@@ -3339,6 +3365,7 @@ impl LineItemFields {
 pub mod line_item_fields {
 
     /// A builder for [`LineItemFields`](crate::model::LineItemFields).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_item_expense_fields:
@@ -3432,6 +3459,7 @@ impl ExpenseField {
 pub mod expense_field {
 
     /// A builder for [`ExpenseField`](crate::model::ExpenseField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ExpenseType>,
@@ -3566,6 +3594,7 @@ impl ExpenseGroupProperty {
 pub mod expense_group_property {
 
     /// A builder for [`ExpenseGroupProperty`](crate::model::ExpenseGroupProperty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3670,6 +3699,7 @@ impl ExpenseCurrency {
 pub mod expense_currency {
 
     /// A builder for [`ExpenseCurrency`](crate::model::ExpenseCurrency).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -3772,6 +3802,7 @@ impl ExpenseDetection {
 pub mod expense_detection {
 
     /// A builder for [`ExpenseDetection`](crate::model::ExpenseDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3851,6 +3882,7 @@ impl ExpenseType {
 pub mod expense_type {
 
     /// A builder for [`ExpenseType`](crate::model::ExpenseType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3918,6 +3950,7 @@ impl LendingDocument {
 pub mod lending_document {
 
     /// A builder for [`LendingDocument`](crate::model::LendingDocument).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lending_fields: std::option::Option<std::vec::Vec<crate::model::LendingField>>,
@@ -4004,6 +4037,7 @@ impl SignatureDetection {
 pub mod signature_detection {
 
     /// A builder for [`SignatureDetection`](crate::model::SignatureDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) confidence: std::option::Option<f32>,
@@ -4078,6 +4112,7 @@ impl LendingField {
 pub mod lending_field {
 
     /// A builder for [`LendingField`](crate::model::LendingField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -4184,6 +4219,7 @@ impl LendingDetection {
 pub mod lending_detection {
 
     /// A builder for [`LendingDetection`](crate::model::LendingDetection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -4278,6 +4314,7 @@ impl PageClassification {
 pub mod page_classification {
 
     /// A builder for [`PageClassification`](crate::model::PageClassification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_type: std::option::Option<std::vec::Vec<crate::model::Prediction>>,
@@ -4363,6 +4400,7 @@ impl Prediction {
 pub mod prediction {
 
     /// A builder for [`Prediction`](crate::model::Prediction).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4437,6 +4475,7 @@ impl Document {
 pub mod document {
 
     /// A builder for [`Document`](crate::model::Document).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
@@ -4515,6 +4554,7 @@ impl HumanLoopActivationOutput {
 pub mod human_loop_activation_output {
 
     /// A builder for [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
@@ -4625,6 +4665,7 @@ impl HumanLoopConfig {
 pub mod human_loop_config {
 
     /// A builder for [`HumanLoopConfig`](crate::model::HumanLoopConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -4706,6 +4747,7 @@ impl HumanLoopDataAttributes {
 pub mod human_loop_data_attributes {
 
     /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_classifiers:

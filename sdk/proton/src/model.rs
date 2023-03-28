@@ -53,6 +53,7 @@ impl TemplateSyncConfig {
 pub mod template_sync_config {
 
     /// A builder for [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -439,6 +440,7 @@ impl std::fmt::Debug for ServiceTemplateVersionSummary {
 pub mod service_template_version_summary {
 
     /// A builder for [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -860,6 +862,7 @@ impl std::fmt::Debug for ServiceTemplateVersion {
 pub mod service_template_version {
 
     /// A builder for [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1226,6 +1229,7 @@ impl CompatibleEnvironmentTemplate {
 pub mod compatible_environment_template {
 
     /// A builder for [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1299,6 +1303,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1366,6 +1371,7 @@ impl CompatibleEnvironmentTemplateInput {
 pub mod compatible_environment_template_input {
 
     /// A builder for [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -1476,6 +1482,7 @@ impl S3ObjectSource {
 pub mod s3_object_source {
 
     /// A builder for [`S3ObjectSource`](crate::model::S3ObjectSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1599,6 +1606,7 @@ impl std::fmt::Debug for ServiceTemplateSummary {
 pub mod service_template_summary {
 
     /// A builder for [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1913,6 +1921,7 @@ impl std::fmt::Debug for ServiceTemplate {
 pub mod service_template {
 
     /// A builder for [`ServiceTemplate`](crate::model::ServiceTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2150,6 +2159,7 @@ impl std::fmt::Debug for ServiceSummary {
 pub mod service_summary {
 
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2579,6 +2589,7 @@ impl std::fmt::Debug for Service {
 pub mod service {
 
     /// A builder for [`Service`](crate::model::Service).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2902,6 +2913,7 @@ impl std::fmt::Debug for ServicePipeline {
 pub mod service_pipeline {
 
     /// A builder for [`ServicePipeline`](crate::model::ServicePipeline).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3356,6 +3368,7 @@ impl ProvisionedResource {
 pub mod provisioned_resource {
 
     /// A builder for [`ProvisionedResource`](crate::model::ProvisionedResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3544,6 +3557,7 @@ impl std::fmt::Debug for Output {
 pub mod output {
 
     /// A builder for [`Output`](crate::model::Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3716,6 +3730,7 @@ impl std::fmt::Debug for ServiceInstanceSummary {
 pub mod service_instance_summary {
 
     /// A builder for [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4174,6 +4189,7 @@ impl ListServiceInstancesFilter {
 pub mod list_service_instances_filter {
 
     /// A builder for [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::ListServiceInstancesFilterBy>,
@@ -4506,6 +4522,7 @@ impl std::fmt::Debug for ServiceInstance {
 pub mod service_instance {
 
     /// A builder for [`ServiceInstance`](crate::model::ServiceInstance).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4767,6 +4784,7 @@ impl RepositorySummary {
 pub mod repository_summary {
 
     /// A builder for [`RepositorySummary`](crate::model::RepositorySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4870,6 +4888,7 @@ impl Repository {
 pub mod repository {
 
     /// A builder for [`Repository`](crate::model::Repository).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5054,6 +5073,7 @@ impl std::fmt::Debug for EnvironmentTemplateVersionSummary {
 pub mod environment_template_version_summary {
 
     /// A builder for [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -5337,6 +5357,7 @@ impl std::fmt::Debug for EnvironmentTemplateVersion {
 pub mod environment_template_version {
 
     /// A builder for [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -5609,6 +5630,7 @@ impl std::fmt::Debug for EnvironmentTemplateSummary {
 pub mod environment_template_summary {
 
     /// A builder for [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5838,6 +5860,7 @@ impl std::fmt::Debug for EnvironmentTemplate {
 pub mod environment_template {
 
     /// A builder for [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6155,6 +6178,7 @@ impl std::fmt::Debug for EnvironmentSummary {
 pub mod environment_summary {
 
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6470,6 +6494,7 @@ impl EnvironmentTemplateFilter {
 pub mod environment_template_filter {
 
     /// A builder for [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
@@ -6703,6 +6728,7 @@ impl std::fmt::Debug for Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7077,6 +7103,7 @@ impl RepositoryBranch {
 pub mod repository_branch {
 
     /// A builder for [`RepositoryBranch`](crate::model::RepositoryBranch).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7178,6 +7205,7 @@ impl RepositoryBranchInput {
 pub mod repository_branch_input {
 
     /// A builder for [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider: std::option::Option<crate::model::RepositoryProvider>,
@@ -7327,6 +7355,7 @@ impl EnvironmentAccountConnection {
 pub mod environment_account_connection {
 
     /// A builder for [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7687,6 +7716,7 @@ impl EnvironmentAccountConnectionSummary {
 pub mod environment_account_connection_summary {
 
     /// A builder for [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8065,6 +8095,7 @@ impl std::fmt::Debug for ComponentSummary {
 pub mod component_summary {
 
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8396,6 +8427,7 @@ impl std::fmt::Debug for Component {
 pub mod component {
 
     /// A builder for [`Component`](crate::model::Component).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8748,6 +8780,7 @@ impl AccountSettings {
 pub mod account_settings {
 
     /// A builder for [`AccountSettings`](crate::model::AccountSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_service_role_arn: std::option::Option<std::string::String>,
@@ -8954,6 +8987,7 @@ impl RepositorySyncDefinition {
 pub mod repository_sync_definition {
 
     /// A builder for [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
@@ -9151,6 +9185,7 @@ impl Revision {
 pub mod revision {
 
     /// A builder for [`Revision`](crate::model::Revision).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -9288,6 +9323,7 @@ impl ResourceSyncAttempt {
 pub mod resource_sync_attempt {
 
     /// A builder for [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_revision: std::option::Option<crate::model::Revision>,
@@ -9438,6 +9474,7 @@ impl ResourceSyncEvent {
 pub mod resource_sync_event {
 
     /// A builder for [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -9642,6 +9679,7 @@ impl RepositorySyncAttempt {
 pub mod repository_sync_attempt {
 
     /// A builder for [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -9750,6 +9788,7 @@ impl RepositorySyncEvent {
 pub mod repository_sync_event {
 
     /// A builder for [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,

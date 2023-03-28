@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![allow(clippy::derive_partial_eq_without_eq)]
+
 //! Checksum calculation and verification callbacks.
 
 use crate::error::UnknownChecksumAlgorithmError;
@@ -379,8 +381,7 @@ mod tests {
     fn test_checksum_algorithm_returns_error_for_unknown() {
         let error = "some invalid checksum algorithm"
             .parse::<ChecksumAlgorithm>()
-            .err()
-            .expect("it should error");
+            .expect_err("it should error");
         assert_eq!(
             "some invalid checksum algorithm",
             error.checksum_algorithm()

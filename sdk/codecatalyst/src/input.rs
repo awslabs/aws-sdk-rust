@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_access_token_input {
 
     /// A builder for [`CreateAccessTokenInput`](crate::input::CreateAccessTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -166,6 +167,7 @@ impl CreateAccessTokenInput {
 pub mod create_dev_environment_input {
 
     /// A builder for [`CreateDevEnvironmentInput`](crate::input::CreateDevEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -490,6 +492,7 @@ impl CreateDevEnvironmentInput {
 pub mod create_project_input {
 
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -682,6 +685,7 @@ impl CreateProjectInput {
 pub mod create_source_repository_branch_input {
 
     /// A builder for [`CreateSourceRepositoryBranchInput`](crate::input::CreateSourceRepositoryBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -958,6 +962,7 @@ impl CreateSourceRepositoryBranchInput {
 pub mod delete_access_token_input {
 
     /// A builder for [`DeleteAccessTokenInput`](crate::input::DeleteAccessTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1108,6 +1113,7 @@ impl DeleteAccessTokenInput {
 pub mod delete_dev_environment_input {
 
     /// A builder for [`DeleteDevEnvironmentInput`](crate::input::DeleteDevEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1328,6 +1334,7 @@ impl DeleteDevEnvironmentInput {
 pub mod get_dev_environment_input {
 
     /// A builder for [`GetDevEnvironmentInput`](crate::input::GetDevEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1548,6 +1555,7 @@ impl GetDevEnvironmentInput {
 pub mod get_project_input {
 
     /// A builder for [`GetProjectInput`](crate::input::GetProjectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1734,6 +1742,7 @@ impl GetProjectInput {
 pub mod get_source_repository_clone_urls_input {
 
     /// A builder for [`GetSourceRepositoryCloneUrlsInput`](crate::input::GetSourceRepositoryCloneUrlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -1950,6 +1959,7 @@ impl GetSourceRepositoryCloneUrlsInput {
 pub mod get_space_input {
 
     /// A builder for [`GetSpaceInput`](crate::input::GetSpaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2096,6 +2106,7 @@ impl GetSpaceInput {
 pub mod get_subscription_input {
 
     /// A builder for [`GetSubscriptionInput`](crate::input::GetSubscriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -2250,6 +2261,7 @@ impl GetSubscriptionInput {
 pub mod get_user_details_input {
 
     /// A builder for [`GetUserDetailsInput`](crate::input::GetUserDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2410,6 +2422,7 @@ impl GetUserDetailsInput {
 pub mod list_access_tokens_input {
 
     /// A builder for [`ListAccessTokensInput`](crate::input::ListAccessTokensInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -2568,6 +2581,7 @@ impl ListAccessTokensInput {
 pub mod list_dev_environments_input {
 
     /// A builder for [`ListDevEnvironmentsInput`](crate::input::ListDevEnvironmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -2815,6 +2829,7 @@ impl ListDevEnvironmentsInput {
 pub mod list_event_logs_input {
 
     /// A builder for [`ListEventLogsInput`](crate::input::ListEventLogsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -3049,6 +3064,7 @@ impl ListEventLogsInput {
 pub mod list_projects_input {
 
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -3262,6 +3278,7 @@ impl ListProjectsInput {
 pub mod list_source_repositories_input {
 
     /// A builder for [`ListSourceRepositoriesInput`](crate::input::ListSourceRepositoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -3490,6 +3507,7 @@ impl ListSourceRepositoriesInput {
 pub mod list_source_repository_branches_input {
 
     /// A builder for [`ListSourceRepositoryBranchesInput`](crate::input::ListSourceRepositoryBranchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -3744,6 +3762,7 @@ impl ListSourceRepositoryBranchesInput {
 pub mod list_spaces_input {
 
     /// A builder for [`ListSpacesInput`](crate::input::ListSpacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3888,6 +3907,7 @@ impl ListSpacesInput {
 pub mod start_dev_environment_input {
 
     /// A builder for [`StartDevEnvironmentInput`](crate::input::StartDevEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -4170,6 +4190,7 @@ impl StartDevEnvironmentInput {
 pub mod start_dev_environment_session_input {
 
     /// A builder for [`StartDevEnvironmentSessionInput`](crate::input::StartDevEnvironmentSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -4423,6 +4444,7 @@ impl StartDevEnvironmentSessionInput {
 pub mod stop_dev_environment_input {
 
     /// A builder for [`StopDevEnvironmentInput`](crate::input::StopDevEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -4643,6 +4665,7 @@ impl StopDevEnvironmentInput {
 pub mod update_dev_environment_input {
 
     /// A builder for [`UpdateDevEnvironmentInput`](crate::input::UpdateDevEnvironmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) space_name: std::option::Option<std::string::String>,
@@ -4959,6 +4982,7 @@ impl UpdateDevEnvironmentInput {
 pub mod verify_session_input {
 
     /// A builder for [`VerifySessionInput`](crate::input::VerifySessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

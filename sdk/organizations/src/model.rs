@@ -591,6 +591,7 @@ impl Policy {
 pub mod policy {
 
     /// A builder for [`Policy`](crate::model::Policy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_summary: std::option::Option<crate::model::PolicySummary>,
@@ -695,6 +696,7 @@ impl PolicySummary {
 pub mod policy_summary {
 
     /// A builder for [`PolicySummary`](crate::model::PolicySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -934,6 +936,7 @@ impl OrganizationalUnit {
 pub mod organizational_unit {
 
     /// A builder for [`OrganizationalUnit`](crate::model::OrganizationalUnit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1026,6 +1029,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1095,6 +1099,7 @@ impl ResourcePolicy {
 pub mod resource_policy {
 
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy_summary:
@@ -1169,6 +1174,7 @@ impl ResourcePolicySummary {
 pub mod resource_policy_summary {
 
     /// A builder for [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1266,6 +1272,7 @@ impl PolicyTargetSummary {
 pub mod policy_target_summary {
 
     /// A builder for [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_id: std::option::Option<std::string::String>,
@@ -1492,6 +1499,7 @@ impl Root {
 pub mod root {
 
     /// A builder for [`Root`](crate::model::Root).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1603,6 +1611,7 @@ impl PolicyTypeSummary {
 pub mod policy_type_summary {
 
     /// A builder for [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::PolicyType>,
@@ -1778,6 +1787,7 @@ impl Parent {
 pub mod parent {
 
     /// A builder for [`Parent`](crate::model::Parent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2018,6 +2028,7 @@ impl Handshake {
 pub mod handshake {
 
     /// A builder for [`Handshake`](crate::model::Handshake).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2246,6 +2257,7 @@ impl std::fmt::Debug for HandshakeResource {
 pub mod handshake_resource {
 
     /// A builder for [`HandshakeResource`](crate::model::HandshakeResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2729,6 +2741,7 @@ impl std::fmt::Debug for HandshakeParty {
 pub mod handshake_party {
 
     /// A builder for [`HandshakeParty`](crate::model::HandshakeParty).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2912,6 +2925,7 @@ impl HandshakeFilter {
 pub mod handshake_filter {
 
     /// A builder for [`HandshakeFilter`](crate::model::HandshakeFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type: std::option::Option<crate::model::ActionType>,
@@ -2991,6 +3005,7 @@ impl DelegatedService {
 pub mod delegated_service {
 
     /// A builder for [`DelegatedService`](crate::model::DelegatedService).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_principal: std::option::Option<std::string::String>,
@@ -3120,6 +3135,7 @@ impl std::fmt::Debug for DelegatedAdministrator {
 pub mod delegated_administrator {
 
     /// A builder for [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3564,6 +3580,7 @@ impl std::fmt::Debug for CreateAccountStatus {
 pub mod create_account_status {
 
     /// A builder for [`CreateAccountStatus`](crate::model::CreateAccountStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4064,6 +4081,7 @@ impl Child {
 pub mod child {
 
     /// A builder for [`Child`](crate::model::Child).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4231,6 +4249,7 @@ impl EnabledServicePrincipal {
 pub mod enabled_service_principal {
 
     /// A builder for [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_principal: std::option::Option<std::string::String>,
@@ -4360,6 +4379,7 @@ impl std::fmt::Debug for Account {
 pub mod account {
 
     /// A builder for [`Account`](crate::model::Account).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4722,6 +4742,7 @@ impl std::fmt::Debug for Organization {
 pub mod organization {
 
     /// A builder for [`Organization`](crate::model::Organization).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5004,6 +5025,7 @@ impl EffectivePolicy {
 pub mod effective_policy {
 
     /// A builder for [`EffectivePolicy`](crate::model::EffectivePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_content: std::option::Option<std::string::String>,

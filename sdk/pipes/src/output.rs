@@ -52,6 +52,7 @@ impl StopPipeOutput {
 pub mod stop_pipe_output {
 
     /// A builder for [`StopPipeOutput`](crate::output::StopPipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -207,6 +208,7 @@ impl StartPipeOutput {
 pub mod start_pipe_output {
 
     /// A builder for [`StartPipeOutput`](crate::output::StartPipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -342,6 +344,7 @@ impl std::fmt::Debug for ListPipesOutput {
 pub mod list_pipes_output {
 
     /// A builder for [`ListPipesOutput`](crate::output::ListPipesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) pipes: std::option::Option<std::vec::Vec<crate::model::Pipe>>,
@@ -454,6 +457,7 @@ impl CreatePipeOutput {
 pub mod create_pipe_output {
 
     /// A builder for [`CreatePipeOutput`](crate::output::CreatePipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -611,6 +615,7 @@ impl DeletePipeOutput {
 pub mod delete_pipe_output {
 
     /// A builder for [`DeletePipeOutput`](crate::output::DeletePipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -770,6 +775,7 @@ impl UpdatePipeOutput {
 pub mod update_pipe_output {
 
     /// A builder for [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1025,6 +1031,7 @@ impl std::fmt::Debug for DescribePipeOutput {
 pub mod describe_pipe_output {
 
     /// A builder for [`DescribePipeOutput`](crate::output::DescribePipeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1311,6 +1318,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1335,6 +1343,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1373,6 +1382,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<

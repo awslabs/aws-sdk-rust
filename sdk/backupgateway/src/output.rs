@@ -24,6 +24,7 @@ impl ListVirtualMachinesOutput {
 pub mod list_virtual_machines_output {
 
     /// A builder for [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_machines:
@@ -94,6 +95,7 @@ impl GetVirtualMachineOutput {
 pub mod get_virtual_machine_output {
 
     /// A builder for [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_machine: std::option::Option<crate::model::VirtualMachineDetails>,
@@ -145,6 +147,7 @@ impl StartVirtualMachinesMetadataSyncOutput {
 pub mod start_virtual_machines_metadata_sync_output {
 
     /// A builder for [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -203,6 +206,7 @@ impl ListHypervisorsOutput {
 pub mod list_hypervisors_output {
 
     /// A builder for [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisors: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
@@ -272,6 +276,7 @@ impl ImportHypervisorConfigurationOutput {
 pub mod import_hypervisor_configuration_output {
 
     /// A builder for [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -323,6 +328,7 @@ impl DeleteHypervisorOutput {
 pub mod delete_hypervisor_output {
 
     /// A builder for [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -374,6 +380,7 @@ impl UpdateHypervisorOutput {
 pub mod update_hypervisor_output {
 
     /// A builder for [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -425,6 +432,7 @@ impl GetHypervisorOutput {
 pub mod get_hypervisor_output {
 
     /// A builder for [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor: std::option::Option<crate::model::HypervisorDetails>,
@@ -476,6 +484,7 @@ impl PutHypervisorPropertyMappingsOutput {
 pub mod put_hypervisor_property_mappings_output {
 
     /// A builder for [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -544,6 +553,7 @@ impl GetHypervisorPropertyMappingsOutput {
 pub mod get_hypervisor_property_mappings_output {
 
     /// A builder for [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -632,6 +642,7 @@ impl UpdateGatewaySoftwareNowOutput {
 pub mod update_gateway_software_now_output {
 
     /// A builder for [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -670,6 +681,7 @@ pub struct TestHypervisorConfigurationOutput {}
 pub mod test_hypervisor_configuration_output {
 
     /// A builder for [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -704,6 +716,7 @@ impl PutMaintenanceStartTimeOutput {
 pub mod put_maintenance_start_time_output {
 
     /// A builder for [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -752,6 +765,7 @@ impl DisassociateGatewayFromServerOutput {
 pub mod disassociate_gateway_from_server_output {
 
     /// A builder for [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -800,6 +814,7 @@ impl AssociateGatewayToServerOutput {
 pub mod associate_gateway_to_server_output {
 
     /// A builder for [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -855,6 +870,7 @@ impl ListGatewaysOutput {
 pub mod list_gateways_output {
 
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateways: std::option::Option<std::vec::Vec<crate::model::Gateway>>,
@@ -924,6 +940,7 @@ impl CreateGatewayOutput {
 pub mod create_gateway_output {
 
     /// A builder for [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -972,6 +989,7 @@ impl DeleteGatewayOutput {
 pub mod delete_gateway_output {
 
     /// A builder for [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1020,6 +1038,7 @@ impl UpdateGatewayInformationOutput {
 pub mod update_gateway_information_output {
 
     /// A builder for [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1068,6 +1087,7 @@ impl GetGatewayOutput {
 pub mod get_gateway_output {
 
     /// A builder for [`GetGatewayOutput`](crate::output::GetGatewayOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway: std::option::Option<crate::model::GatewayDetails>,
@@ -1119,6 +1139,7 @@ impl PutBandwidthRateLimitScheduleOutput {
 pub mod put_bandwidth_rate_limit_schedule_output {
 
     /// A builder for [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1177,6 +1198,7 @@ impl GetBandwidthRateLimitScheduleOutput {
 pub mod get_bandwidth_rate_limit_schedule_output {
 
     /// A builder for [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -1250,6 +1272,7 @@ impl UntagResourceOutput {
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1298,6 +1321,7 @@ impl TagResourceOutput {
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1353,6 +1377,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

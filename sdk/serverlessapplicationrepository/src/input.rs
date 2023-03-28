@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) author: std::option::Option<std::string::String>,
@@ -397,6 +398,7 @@ impl CreateApplicationInput {
 pub mod create_application_version_input {
 
     /// A builder for [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -679,6 +681,7 @@ impl CreateApplicationVersionInput {
 pub mod create_cloud_formation_change_set_input {
 
     /// A builder for [`CreateCloudFormationChangeSetInput`](crate::input::CreateCloudFormationChangeSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1081,6 +1084,7 @@ impl CreateCloudFormationChangeSetInput {
 pub mod create_cloud_formation_template_input {
 
     /// A builder for [`CreateCloudFormationTemplateInput`](crate::input::CreateCloudFormationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1284,6 +1288,7 @@ impl CreateCloudFormationTemplateInput {
 pub mod delete_application_input {
 
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1456,6 +1461,7 @@ impl DeleteApplicationInput {
 pub mod get_application_input {
 
     /// A builder for [`GetApplicationInput`](crate::input::GetApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1657,6 +1663,7 @@ impl GetApplicationInput {
 pub mod get_application_policy_input {
 
     /// A builder for [`GetApplicationPolicyInput`](crate::input::GetApplicationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1829,6 +1836,7 @@ impl GetApplicationPolicyInput {
 pub mod get_cloud_formation_template_input {
 
     /// A builder for [`GetCloudFormationTemplateInput`](crate::input::GetCloudFormationTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2035,6 +2043,7 @@ impl GetCloudFormationTemplateInput {
 pub mod list_application_dependencies_input {
 
     /// A builder for [`ListApplicationDependenciesInput`](crate::input::ListApplicationDependenciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2273,6 +2282,7 @@ impl ListApplicationDependenciesInput {
 pub mod list_applications_input {
 
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_items: std::option::Option<i32>,
@@ -2449,6 +2459,7 @@ impl ListApplicationsInput {
 pub mod list_application_versions_input {
 
     /// A builder for [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2664,6 +2675,7 @@ impl ListApplicationVersionsInput {
 pub mod put_application_policy_input {
 
     /// A builder for [`PutApplicationPolicyInput`](crate::input::PutApplicationPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2874,6 +2886,7 @@ impl PutApplicationPolicyInput {
 pub mod unshare_application_input {
 
     /// A builder for [`UnshareApplicationInput`](crate::input::UnshareApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -3075,6 +3088,7 @@ impl UnshareApplicationInput {
 pub mod update_application_input {
 
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,

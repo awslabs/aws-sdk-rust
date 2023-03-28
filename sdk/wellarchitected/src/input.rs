@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_lenses_input {
 
     /// A builder for [`AssociateLensesInput`](crate::input::AssociateLensesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -209,6 +210,7 @@ impl AssociateLensesInput {
 pub mod create_lens_share_input {
 
     /// A builder for [`CreateLensShareInput`](crate::input::CreateLensShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -428,6 +430,7 @@ impl CreateLensShareInput {
 pub mod create_lens_version_input {
 
     /// A builder for [`CreateLensVersionInput`](crate::input::CreateLensVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -665,6 +668,7 @@ impl CreateLensVersionInput {
 pub mod create_milestone_input {
 
     /// A builder for [`CreateMilestoneInput`](crate::input::CreateMilestoneInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -887,6 +891,7 @@ impl CreateMilestoneInput {
 pub mod create_workload_input {
 
     /// A builder for [`CreateWorkloadInput`](crate::input::CreateWorkloadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_name: std::option::Option<std::string::String>,
@@ -1396,6 +1401,7 @@ impl CreateWorkloadInput {
 pub mod create_workload_share_input {
 
     /// A builder for [`CreateWorkloadShareInput`](crate::input::CreateWorkloadShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -1630,6 +1636,7 @@ impl CreateWorkloadShareInput {
 pub mod delete_lens_input {
 
     /// A builder for [`DeleteLensInput`](crate::input::DeleteLensInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -1873,6 +1880,7 @@ impl DeleteLensInput {
 pub mod delete_lens_share_input {
 
     /// A builder for [`DeleteLensShareInput`](crate::input::DeleteLensShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -2129,6 +2137,7 @@ impl DeleteLensShareInput {
 pub mod delete_workload_input {
 
     /// A builder for [`DeleteWorkloadInput`](crate::input::DeleteWorkloadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -2343,6 +2352,7 @@ impl DeleteWorkloadInput {
 pub mod delete_workload_share_input {
 
     /// A builder for [`DeleteWorkloadShareInput`](crate::input::DeleteWorkloadShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -2595,6 +2605,7 @@ impl DeleteWorkloadShareInput {
 pub mod disassociate_lenses_input {
 
     /// A builder for [`DisassociateLensesInput`](crate::input::DisassociateLensesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -2801,6 +2812,7 @@ impl DisassociateLensesInput {
 pub mod export_lens_input {
 
     /// A builder for [`ExportLensInput`](crate::input::ExportLensInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -2998,6 +3010,7 @@ impl ExportLensInput {
 pub mod get_answer_input {
 
     /// A builder for [`GetAnswerInput`](crate::input::GetAnswerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -3262,6 +3275,7 @@ impl GetAnswerInput {
 pub mod get_lens_input {
 
     /// A builder for [`GetLensInput`](crate::input::GetLensInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -3457,6 +3471,7 @@ impl GetLensInput {
 pub mod get_lens_review_input {
 
     /// A builder for [`GetLensReviewInput`](crate::input::GetLensReviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -3691,6 +3706,7 @@ impl GetLensReviewInput {
 pub mod get_lens_review_report_input {
 
     /// A builder for [`GetLensReviewReportInput`](crate::input::GetLensReviewReportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -3927,6 +3943,7 @@ impl GetLensReviewReportInput {
 pub mod get_lens_version_difference_input {
 
     /// A builder for [`GetLensVersionDifferenceInput`](crate::input::GetLensVersionDifferenceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -4156,6 +4173,7 @@ impl GetLensVersionDifferenceInput {
 pub mod get_milestone_input {
 
     /// A builder for [`GetMilestoneInput`](crate::input::GetMilestoneInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -4350,6 +4368,7 @@ impl GetMilestoneInput {
 pub mod get_workload_input {
 
     /// A builder for [`GetWorkloadInput`](crate::input::GetWorkloadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -4513,6 +4532,7 @@ impl GetWorkloadInput {
 pub mod import_lens_input {
 
     /// A builder for [`ImportLensInput`](crate::input::ImportLensInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -4741,6 +4761,7 @@ impl ImportLensInput {
 pub mod list_answers_input {
 
     /// A builder for [`ListAnswersInput`](crate::input::ListAnswersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -5029,6 +5050,7 @@ impl ListAnswersInput {
 pub mod list_check_details_input {
 
     /// A builder for [`ListCheckDetailsInput`](crate::input::ListCheckDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -5286,6 +5308,7 @@ impl ListCheckDetailsInput {
 pub mod list_check_summaries_input {
 
     /// A builder for [`ListCheckSummariesInput`](crate::input::ListCheckSummariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -5543,6 +5566,7 @@ impl ListCheckSummariesInput {
 pub mod list_lenses_input {
 
     /// A builder for [`ListLensesInput`](crate::input::ListLensesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5771,6 +5795,7 @@ impl ListLensesInput {
 pub mod list_lens_review_improvements_input {
 
     /// A builder for [`ListLensReviewImprovementsInput`](crate::input::ListLensReviewImprovementsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -6061,6 +6086,7 @@ impl ListLensReviewImprovementsInput {
 pub mod list_lens_reviews_input {
 
     /// A builder for [`ListLensReviewsInput`](crate::input::ListLensReviewsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -6292,6 +6318,7 @@ impl ListLensReviewsInput {
 pub mod list_lens_shares_input {
 
     /// A builder for [`ListLensSharesInput`](crate::input::ListLensSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -6544,6 +6571,7 @@ impl ListLensSharesInput {
 pub mod list_milestones_input {
 
     /// A builder for [`ListMilestonesInput`](crate::input::ListMilestonesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -6749,6 +6777,7 @@ impl ListMilestonesInput {
 pub mod list_notifications_input {
 
     /// A builder for [`ListNotificationsInput`](crate::input::ListNotificationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -6932,6 +6961,7 @@ impl ListNotificationsInput {
 pub mod list_share_invitations_input {
 
     /// A builder for [`ListShareInvitationsInput`](crate::input::ListShareInvitationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_name_prefix: std::option::Option<std::string::String>,
@@ -7177,6 +7207,7 @@ impl ListShareInvitationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_arn: std::option::Option<std::string::String>,
@@ -7342,6 +7373,7 @@ impl ListTagsForResourceInput {
 pub mod list_workloads_input {
 
     /// A builder for [`ListWorkloadsInput`](crate::input::ListWorkloadsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_name_prefix: std::option::Option<std::string::String>,
@@ -7526,6 +7558,7 @@ impl ListWorkloadsInput {
 pub mod list_workload_shares_input {
 
     /// A builder for [`ListWorkloadSharesInput`](crate::input::ListWorkloadSharesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -7778,6 +7811,7 @@ impl ListWorkloadSharesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_arn: std::option::Option<std::string::String>,
@@ -7984,6 +8018,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_arn: std::option::Option<std::string::String>,
@@ -8186,6 +8221,7 @@ impl UntagResourceInput {
 pub mod update_answer_input {
 
     /// A builder for [`UpdateAnswerInput`](crate::input::UpdateAnswerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -8528,6 +8564,7 @@ impl UpdateAnswerInput {
 pub mod update_global_settings_input {
 
     /// A builder for [`UpdateGlobalSettingsInput`](crate::input::UpdateGlobalSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_sharing_status:
@@ -8696,6 +8733,7 @@ impl UpdateGlobalSettingsInput {
 pub mod update_lens_review_input {
 
     /// A builder for [`UpdateLensReviewInput`](crate::input::UpdateLensReviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -8958,6 +8996,7 @@ impl UpdateLensReviewInput {
 pub mod update_share_invitation_input {
 
     /// A builder for [`UpdateShareInvitationInput`](crate::input::UpdateShareInvitationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
@@ -9165,6 +9204,7 @@ impl UpdateShareInvitationInput {
 pub mod update_workload_input {
 
     /// A builder for [`UpdateWorkloadInput`](crate::input::UpdateWorkloadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -9669,6 +9709,7 @@ impl UpdateWorkloadInput {
 pub mod update_workload_share_input {
 
     /// A builder for [`UpdateWorkloadShareInput`](crate::input::UpdateWorkloadShareInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -9899,6 +9940,7 @@ impl UpdateWorkloadShareInput {
 pub mod upgrade_lens_review_input {
 
     /// A builder for [`UpgradeLensReviewInput`](crate::input::UpgradeLensReviewInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,

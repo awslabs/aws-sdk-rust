@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod get_latest_configuration_input {
 
     /// A builder for [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_token: std::option::Option<std::string::String>,
@@ -180,6 +181,7 @@ impl GetLatestConfigurationInput {
 pub mod start_configuration_session_input {
 
     /// A builder for [`StartConfigurationSessionInput`](crate::input::StartConfigurationSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_identifier: std::option::Option<std::string::String>,

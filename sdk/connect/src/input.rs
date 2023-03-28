@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_approved_origin_input {
 
     /// A builder for [`AssociateApprovedOriginInput`](crate::input::AssociateApprovedOriginInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -202,6 +203,7 @@ impl AssociateApprovedOriginInput {
 pub mod associate_bot_input {
 
     /// A builder for [`AssociateBotInput`](crate::input::AssociateBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -410,6 +412,7 @@ impl AssociateBotInput {
 pub mod associate_default_vocabulary_input {
 
     /// A builder for [`AssociateDefaultVocabularyInput`](crate::input::AssociateDefaultVocabularyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -645,6 +648,7 @@ impl AssociateDefaultVocabularyInput {
 pub mod associate_instance_storage_config_input {
 
     /// A builder for [`AssociateInstanceStorageConfigInput`](crate::input::AssociateInstanceStorageConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -858,6 +862,7 @@ impl AssociateInstanceStorageConfigInput {
 pub mod associate_lambda_function_input {
 
     /// A builder for [`AssociateLambdaFunctionInput`](crate::input::AssociateLambdaFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -1055,6 +1060,7 @@ impl AssociateLambdaFunctionInput {
 pub mod associate_lex_bot_input {
 
     /// A builder for [`AssociateLexBotInput`](crate::input::AssociateLexBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -1248,6 +1254,7 @@ impl AssociateLexBotInput {
 pub mod associate_phone_number_contact_flow_input {
 
     /// A builder for [`AssociatePhoneNumberContactFlowInput`](crate::input::AssociatePhoneNumberContactFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -1461,6 +1468,7 @@ impl AssociatePhoneNumberContactFlowInput {
 pub mod associate_queue_quick_connects_input {
 
     /// A builder for [`AssociateQueueQuickConnectsInput`](crate::input::AssociateQueueQuickConnectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -1697,6 +1705,7 @@ impl AssociateQueueQuickConnectsInput {
 pub mod associate_routing_profile_queues_input {
 
     /// A builder for [`AssociateRoutingProfileQueuesInput`](crate::input::AssociateRoutingProfileQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -1937,6 +1946,7 @@ impl AssociateRoutingProfileQueuesInput {
 pub mod associate_security_key_input {
 
     /// A builder for [`AssociateSecurityKeyInput`](crate::input::AssociateSecurityKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -2134,6 +2144,7 @@ impl AssociateSecurityKeyInput {
 pub mod claim_phone_number_input {
 
     /// A builder for [`ClaimPhoneNumberInput`](crate::input::ClaimPhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -2366,6 +2377,7 @@ impl ClaimPhoneNumberInput {
 pub mod create_agent_status_input {
 
     /// A builder for [`CreateAgentStatusInput`](crate::input::CreateAgentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -2629,6 +2641,7 @@ impl CreateAgentStatusInput {
 pub mod create_contact_flow_input {
 
     /// A builder for [`CreateContactFlowInput`](crate::input::CreateContactFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -2892,6 +2905,7 @@ impl CreateContactFlowInput {
 pub mod create_contact_flow_module_input {
 
     /// A builder for [`CreateContactFlowModuleInput`](crate::input::CreateContactFlowModuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -3157,6 +3171,7 @@ impl CreateContactFlowModuleInput {
 pub mod create_hours_of_operation_input {
 
     /// A builder for [`CreateHoursOfOperationInput`](crate::input::CreateHoursOfOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -3428,6 +3443,7 @@ impl CreateHoursOfOperationInput {
 pub mod create_instance_input {
 
     /// A builder for [`CreateInstanceInput`](crate::input::CreateInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3663,6 +3679,7 @@ impl CreateInstanceInput {
 pub mod create_integration_association_input {
 
     /// A builder for [`CreateIntegrationAssociationInput`](crate::input::CreateIntegrationAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -3954,6 +3971,7 @@ impl CreateIntegrationAssociationInput {
 pub mod create_queue_input {
 
     /// A builder for [`CreateQueueInput`](crate::input::CreateQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -4247,6 +4265,7 @@ impl CreateQueueInput {
 pub mod create_quick_connect_input {
 
     /// A builder for [`CreateQuickConnectInput`](crate::input::CreateQuickConnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -4498,6 +4517,7 @@ impl CreateQuickConnectInput {
 pub mod create_routing_profile_input {
 
     /// A builder for [`CreateRoutingProfileInput`](crate::input::CreateRoutingProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -4795,6 +4815,7 @@ impl CreateRoutingProfileInput {
 pub mod create_rule_input {
 
     /// A builder for [`CreateRuleInput`](crate::input::CreateRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -5062,6 +5083,7 @@ impl CreateRuleInput {
 pub mod create_security_profile_input {
 
     /// A builder for [`CreateSecurityProfileInput`](crate::input::CreateSecurityProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_profile_name: std::option::Option<std::string::String>,
@@ -5375,6 +5397,7 @@ impl CreateSecurityProfileInput {
 pub mod create_task_template_input {
 
     /// A builder for [`CreateTaskTemplateInput`](crate::input::CreateTaskTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -5678,6 +5701,7 @@ impl CreateTaskTemplateInput {
 pub mod create_traffic_distribution_group_input {
 
     /// A builder for [`CreateTrafficDistributionGroupInput`](crate::input::CreateTrafficDistributionGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5905,6 +5929,7 @@ impl CreateTrafficDistributionGroupInput {
 pub mod create_use_case_input {
 
     /// A builder for [`CreateUseCaseInput`](crate::input::CreateUseCaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -6159,6 +6184,7 @@ impl CreateUseCaseInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -6487,6 +6513,7 @@ impl CreateUserInput {
 pub mod create_user_hierarchy_group_input {
 
     /// A builder for [`CreateUserHierarchyGroupInput`](crate::input::CreateUserHierarchyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6728,6 +6755,7 @@ impl CreateUserHierarchyGroupInput {
 pub mod create_vocabulary_input {
 
     /// A builder for [`CreateVocabularyInput`](crate::input::CreateVocabularyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -6993,6 +7021,7 @@ impl CreateVocabularyInput {
 pub mod delete_contact_flow_input {
 
     /// A builder for [`DeleteContactFlowInput`](crate::input::DeleteContactFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7197,6 +7226,7 @@ impl DeleteContactFlowInput {
 pub mod delete_contact_flow_module_input {
 
     /// A builder for [`DeleteContactFlowModuleInput`](crate::input::DeleteContactFlowModuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7401,6 +7431,7 @@ impl DeleteContactFlowModuleInput {
 pub mod delete_hours_of_operation_input {
 
     /// A builder for [`DeleteHoursOfOperationInput`](crate::input::DeleteHoursOfOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7605,6 +7636,7 @@ impl DeleteHoursOfOperationInput {
 pub mod delete_instance_input {
 
     /// A builder for [`DeleteInstanceInput`](crate::input::DeleteInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7768,6 +7800,7 @@ impl DeleteInstanceInput {
 pub mod delete_integration_association_input {
 
     /// A builder for [`DeleteIntegrationAssociationInput`](crate::input::DeleteIntegrationAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -7972,6 +8005,7 @@ impl DeleteIntegrationAssociationInput {
 pub mod delete_quick_connect_input {
 
     /// A builder for [`DeleteQuickConnectInput`](crate::input::DeleteQuickConnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8176,6 +8210,7 @@ impl DeleteQuickConnectInput {
 pub mod delete_rule_input {
 
     /// A builder for [`DeleteRuleInput`](crate::input::DeleteRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8375,6 +8410,7 @@ impl DeleteRuleInput {
 pub mod delete_security_profile_input {
 
     /// A builder for [`DeleteSecurityProfileInput`](crate::input::DeleteSecurityProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8579,6 +8615,7 @@ impl DeleteSecurityProfileInput {
 pub mod delete_task_template_input {
 
     /// A builder for [`DeleteTaskTemplateInput`](crate::input::DeleteTaskTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8783,6 +8820,7 @@ impl DeleteTaskTemplateInput {
 pub mod delete_traffic_distribution_group_input {
 
     /// A builder for [`DeleteTrafficDistributionGroupInput`](crate::input::DeleteTrafficDistributionGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_distribution_group_id: std::option::Option<std::string::String>,
@@ -8958,6 +8996,7 @@ impl DeleteTrafficDistributionGroupInput {
 pub mod delete_use_case_input {
 
     /// A builder for [`DeleteUseCaseInput`](crate::input::DeleteUseCaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9185,6 +9224,7 @@ impl DeleteUseCaseInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9384,6 +9424,7 @@ impl DeleteUserInput {
 pub mod delete_user_hierarchy_group_input {
 
     /// A builder for [`DeleteUserHierarchyGroupInput`](crate::input::DeleteUserHierarchyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_group_id: std::option::Option<std::string::String>,
@@ -9588,6 +9629,7 @@ impl DeleteUserHierarchyGroupInput {
 pub mod delete_vocabulary_input {
 
     /// A builder for [`DeleteVocabularyInput`](crate::input::DeleteVocabularyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9792,6 +9834,7 @@ impl DeleteVocabularyInput {
 pub mod describe_agent_status_input {
 
     /// A builder for [`DescribeAgentStatusInput`](crate::input::DescribeAgentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -9996,6 +10039,7 @@ impl DescribeAgentStatusInput {
 pub mod describe_contact_input {
 
     /// A builder for [`DescribeContactInput`](crate::input::DescribeContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -10195,6 +10239,7 @@ impl DescribeContactInput {
 pub mod describe_contact_flow_input {
 
     /// A builder for [`DescribeContactFlowInput`](crate::input::DescribeContactFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -10399,6 +10444,7 @@ impl DescribeContactFlowInput {
 pub mod describe_contact_flow_module_input {
 
     /// A builder for [`DescribeContactFlowModuleInput`](crate::input::DescribeContactFlowModuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -10603,6 +10649,7 @@ impl DescribeContactFlowModuleInput {
 pub mod describe_hours_of_operation_input {
 
     /// A builder for [`DescribeHoursOfOperationInput`](crate::input::DescribeHoursOfOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -10807,6 +10854,7 @@ impl DescribeHoursOfOperationInput {
 pub mod describe_instance_input {
 
     /// A builder for [`DescribeInstanceInput`](crate::input::DescribeInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -10972,6 +11020,7 @@ impl DescribeInstanceInput {
 pub mod describe_instance_attribute_input {
 
     /// A builder for [`DescribeInstanceAttributeInput`](crate::input::DescribeInstanceAttributeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -11176,6 +11225,7 @@ impl DescribeInstanceAttributeInput {
 pub mod describe_instance_storage_config_input {
 
     /// A builder for [`DescribeInstanceStorageConfigInput`](crate::input::DescribeInstanceStorageConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -11414,6 +11464,7 @@ impl DescribeInstanceStorageConfigInput {
 pub mod describe_phone_number_input {
 
     /// A builder for [`DescribePhoneNumberInput`](crate::input::DescribePhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -11586,6 +11637,7 @@ impl DescribePhoneNumberInput {
 pub mod describe_queue_input {
 
     /// A builder for [`DescribeQueueInput`](crate::input::DescribeQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -11785,6 +11837,7 @@ impl DescribeQueueInput {
 pub mod describe_quick_connect_input {
 
     /// A builder for [`DescribeQuickConnectInput`](crate::input::DescribeQuickConnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -11989,6 +12042,7 @@ impl DescribeQuickConnectInput {
 pub mod describe_routing_profile_input {
 
     /// A builder for [`DescribeRoutingProfileInput`](crate::input::DescribeRoutingProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -12193,6 +12247,7 @@ impl DescribeRoutingProfileInput {
 pub mod describe_rule_input {
 
     /// A builder for [`DescribeRuleInput`](crate::input::DescribeRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -12392,6 +12447,7 @@ impl DescribeRuleInput {
 pub mod describe_security_profile_input {
 
     /// A builder for [`DescribeSecurityProfileInput`](crate::input::DescribeSecurityProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_profile_id: std::option::Option<std::string::String>,
@@ -12596,6 +12652,7 @@ impl DescribeSecurityProfileInput {
 pub mod describe_traffic_distribution_group_input {
 
     /// A builder for [`DescribeTrafficDistributionGroupInput`](crate::input::DescribeTrafficDistributionGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_distribution_group_id: std::option::Option<std::string::String>,
@@ -12771,6 +12828,7 @@ impl DescribeTrafficDistributionGroupInput {
 pub mod describe_user_input {
 
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -12970,6 +13028,7 @@ impl DescribeUserInput {
 pub mod describe_user_hierarchy_group_input {
 
     /// A builder for [`DescribeUserHierarchyGroupInput`](crate::input::DescribeUserHierarchyGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_group_id: std::option::Option<std::string::String>,
@@ -13174,6 +13233,7 @@ impl DescribeUserHierarchyGroupInput {
 pub mod describe_user_hierarchy_structure_input {
 
     /// A builder for [`DescribeUserHierarchyStructureInput`](crate::input::DescribeUserHierarchyStructureInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -13343,6 +13403,7 @@ impl DescribeUserHierarchyStructureInput {
 pub mod describe_vocabulary_input {
 
     /// A builder for [`DescribeVocabularyInput`](crate::input::DescribeVocabularyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -13547,6 +13608,7 @@ impl DescribeVocabularyInput {
 pub mod disassociate_approved_origin_input {
 
     /// A builder for [`DisassociateApprovedOriginInput`](crate::input::DisassociateApprovedOriginInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -13752,6 +13814,7 @@ impl DisassociateApprovedOriginInput {
 pub mod disassociate_bot_input {
 
     /// A builder for [`DisassociateBotInput`](crate::input::DisassociateBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -13960,6 +14023,7 @@ impl DisassociateBotInput {
 pub mod disassociate_instance_storage_config_input {
 
     /// A builder for [`DisassociateInstanceStorageConfigInput`](crate::input::DisassociateInstanceStorageConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -14198,6 +14262,7 @@ impl DisassociateInstanceStorageConfigInput {
 pub mod disassociate_lambda_function_input {
 
     /// A builder for [`DisassociateLambdaFunctionInput`](crate::input::DisassociateLambdaFunctionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -14406,6 +14471,7 @@ impl DisassociateLambdaFunctionInput {
 pub mod disassociate_lex_bot_input {
 
     /// A builder for [`DisassociateLexBotInput`](crate::input::DisassociateLexBotInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -14639,6 +14705,7 @@ impl DisassociateLexBotInput {
 pub mod disassociate_phone_number_contact_flow_input {
 
     /// A builder for [`DisassociatePhoneNumberContactFlowInput`](crate::input::DisassociatePhoneNumberContactFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -14850,6 +14917,7 @@ impl DisassociatePhoneNumberContactFlowInput {
 pub mod disassociate_queue_quick_connects_input {
 
     /// A builder for [`DisassociateQueueQuickConnectsInput`](crate::input::DisassociateQueueQuickConnectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -15086,6 +15154,7 @@ impl DisassociateQueueQuickConnectsInput {
 pub mod disassociate_routing_profile_queues_input {
 
     /// A builder for [`DisassociateRoutingProfileQueuesInput`](crate::input::DisassociateRoutingProfileQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -15329,6 +15398,7 @@ impl DisassociateRoutingProfileQueuesInput {
 pub mod disassociate_security_key_input {
 
     /// A builder for [`DisassociateSecurityKeyInput`](crate::input::DisassociateSecurityKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -15533,6 +15603,7 @@ impl DisassociateSecurityKeyInput {
 pub mod dismiss_user_contact_input {
 
     /// A builder for [`DismissUserContactInput`](crate::input::DismissUserContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -15760,6 +15831,7 @@ impl DismissUserContactInput {
 pub mod get_contact_attributes_input {
 
     /// A builder for [`GetContactAttributesInput`](crate::input::GetContactAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -15964,6 +16036,7 @@ impl GetContactAttributesInput {
 pub mod get_current_metric_data_input {
 
     /// A builder for [`GetCurrentMetricDataInput`](crate::input::GetCurrentMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -16477,6 +16550,7 @@ impl GetCurrentMetricDataInput {
 pub mod get_current_user_data_input {
 
     /// A builder for [`GetCurrentUserDataInput`](crate::input::GetCurrentUserDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -16717,6 +16791,7 @@ impl GetCurrentUserDataInput {
 pub mod get_federation_token_input {
 
     /// A builder for [`GetFederationTokenInput`](crate::input::GetFederationTokenInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -16886,6 +16961,7 @@ impl GetFederationTokenInput {
 pub mod get_metric_data_input {
 
     /// A builder for [`GetMetricDataInput`](crate::input::GetMetricDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -17548,6 +17624,7 @@ impl GetMetricDataInput {
 pub mod get_task_template_input {
 
     /// A builder for [`GetTaskTemplateInput`](crate::input::GetTaskTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -17781,6 +17858,7 @@ impl GetTaskTemplateInput {
 pub mod get_traffic_distribution_input {
 
     /// A builder for [`GetTrafficDistributionInput`](crate::input::GetTrafficDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -17944,6 +18022,7 @@ impl GetTrafficDistributionInput {
 pub mod list_agent_statuses_input {
 
     /// A builder for [`ListAgentStatusesInput`](crate::input::ListAgentStatusesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -18190,6 +18269,7 @@ impl ListAgentStatusesInput {
 pub mod list_approved_origins_input {
 
     /// A builder for [`ListApprovedOriginsInput`](crate::input::ListApprovedOriginsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -18404,6 +18484,7 @@ impl ListApprovedOriginsInput {
 pub mod list_bots_input {
 
     /// A builder for [`ListBotsInput`](crate::input::ListBotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -18639,6 +18720,7 @@ impl ListBotsInput {
 pub mod list_contact_flow_modules_input {
 
     /// A builder for [`ListContactFlowModulesInput`](crate::input::ListContactFlowModulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -18877,6 +18959,7 @@ impl ListContactFlowModulesInput {
 pub mod list_contact_flows_input {
 
     /// A builder for [`ListContactFlowsInput`](crate::input::ListContactFlowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -19121,6 +19204,7 @@ impl ListContactFlowsInput {
 pub mod list_contact_references_input {
 
     /// A builder for [`ListContactReferencesInput`](crate::input::ListContactReferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -19385,6 +19469,7 @@ impl ListContactReferencesInput {
 pub mod list_default_vocabularies_input {
 
     /// A builder for [`ListDefaultVocabulariesInput`](crate::input::ListDefaultVocabulariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -19609,6 +19694,7 @@ impl ListDefaultVocabulariesInput {
 pub mod list_hours_of_operations_input {
 
     /// A builder for [`ListHoursOfOperationsInput`](crate::input::ListHoursOfOperationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -19821,6 +19907,7 @@ impl ListHoursOfOperationsInput {
 pub mod list_instance_attributes_input {
 
     /// A builder for [`ListInstanceAttributesInput`](crate::input::ListInstanceAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -20035,6 +20122,7 @@ impl ListInstanceAttributesInput {
 pub mod list_instances_input {
 
     /// A builder for [`ListInstancesInput`](crate::input::ListInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -20211,6 +20299,7 @@ impl ListInstancesInput {
 pub mod list_instance_storage_configs_input {
 
     /// A builder for [`ListInstanceStorageConfigsInput`](crate::input::ListInstanceStorageConfigsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -20451,6 +20540,7 @@ impl ListInstanceStorageConfigsInput {
 pub mod list_integration_associations_input {
 
     /// A builder for [`ListIntegrationAssociationsInput`](crate::input::ListIntegrationAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -20688,6 +20778,7 @@ impl ListIntegrationAssociationsInput {
 pub mod list_lambda_functions_input {
 
     /// A builder for [`ListLambdaFunctionsInput`](crate::input::ListLambdaFunctionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -20902,6 +20993,7 @@ impl ListLambdaFunctionsInput {
 pub mod list_lex_bots_input {
 
     /// A builder for [`ListLexBotsInput`](crate::input::ListLexBotsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -21114,6 +21206,7 @@ impl ListLexBotsInput {
 pub mod list_phone_numbers_input {
 
     /// A builder for [`ListPhoneNumbersInput`](crate::input::ListPhoneNumbersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -21393,6 +21486,7 @@ impl ListPhoneNumbersInput {
 pub mod list_phone_numbers_v2_input {
 
     /// A builder for [`ListPhoneNumbersV2Input`](crate::input::ListPhoneNumbersV2Input).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -21638,6 +21732,7 @@ impl ListPhoneNumbersV2Input {
 pub mod list_prompts_input {
 
     /// A builder for [`ListPromptsInput`](crate::input::ListPromptsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -21850,6 +21945,7 @@ impl ListPromptsInput {
 pub mod list_queue_quick_connects_input {
 
     /// A builder for [`ListQueueQuickConnectsInput`](crate::input::ListQueueQuickConnectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -22096,6 +22192,7 @@ impl ListQueueQuickConnectsInput {
 pub mod list_queues_input {
 
     /// A builder for [`ListQueuesInput`](crate::input::ListQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -22337,6 +22434,7 @@ impl ListQueuesInput {
 pub mod list_quick_connects_input {
 
     /// A builder for [`ListQuickConnectsInput`](crate::input::ListQuickConnectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -22583,6 +22681,7 @@ impl ListQuickConnectsInput {
 pub mod list_routing_profile_queues_input {
 
     /// A builder for [`ListRoutingProfileQueuesInput`](crate::input::ListRoutingProfileQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -22832,6 +22931,7 @@ impl ListRoutingProfileQueuesInput {
 pub mod list_routing_profiles_input {
 
     /// A builder for [`ListRoutingProfilesInput`](crate::input::ListRoutingProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -23046,6 +23146,7 @@ impl ListRoutingProfilesInput {
 pub mod list_rules_input {
 
     /// A builder for [`ListRulesInput`](crate::input::ListRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -23298,6 +23399,7 @@ impl ListRulesInput {
 pub mod list_security_keys_input {
 
     /// A builder for [`ListSecurityKeysInput`](crate::input::ListSecurityKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -23512,6 +23614,7 @@ impl ListSecurityKeysInput {
 pub mod list_security_profile_permissions_input {
 
     /// A builder for [`ListSecurityProfilePermissionsInput`](crate::input::ListSecurityProfilePermissionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_profile_id: std::option::Option<std::string::String>,
@@ -23761,6 +23864,7 @@ impl ListSecurityProfilePermissionsInput {
 pub mod list_security_profiles_input {
 
     /// A builder for [`ListSecurityProfilesInput`](crate::input::ListSecurityProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -23975,6 +24079,7 @@ impl ListSecurityProfilesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -24140,6 +24245,7 @@ impl ListTagsForResourceInput {
 pub mod list_task_templates_input {
 
     /// A builder for [`ListTaskTemplatesInput`](crate::input::ListTaskTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -24399,6 +24505,7 @@ impl ListTaskTemplatesInput {
 pub mod list_traffic_distribution_groups_input {
 
     /// A builder for [`ListTrafficDistributionGroupsInput`](crate::input::ListTrafficDistributionGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -24595,6 +24702,7 @@ impl ListTrafficDistributionGroupsInput {
 pub mod list_use_cases_input {
 
     /// A builder for [`ListUseCasesInput`](crate::input::ListUseCasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -24836,6 +24944,7 @@ impl ListUseCasesInput {
 pub mod list_user_hierarchy_groups_input {
 
     /// A builder for [`ListUserHierarchyGroupsInput`](crate::input::ListUserHierarchyGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -25050,6 +25159,7 @@ impl ListUserHierarchyGroupsInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -25260,6 +25370,7 @@ impl ListUsersInput {
 pub mod monitor_contact_input {
 
     /// A builder for [`MonitorContactInput`](crate::input::MonitorContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -25481,6 +25592,7 @@ impl MonitorContactInput {
 pub mod put_user_status_input {
 
     /// A builder for [`PutUserStatusInput`](crate::input::PutUserStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -25709,6 +25821,7 @@ impl PutUserStatusInput {
 pub mod release_phone_number_input {
 
     /// A builder for [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -25912,6 +26025,7 @@ impl ReleasePhoneNumberInput {
 pub mod replicate_instance_input {
 
     /// A builder for [`ReplicateInstanceInput`](crate::input::ReplicateInstanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -26150,6 +26264,7 @@ impl ReplicateInstanceInput {
 pub mod resume_contact_recording_input {
 
     /// A builder for [`ResumeContactRecordingInput`](crate::input::ResumeContactRecordingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -26338,6 +26453,7 @@ impl ResumeContactRecordingInput {
 pub mod search_available_phone_numbers_input {
 
     /// A builder for [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -26571,6 +26687,7 @@ impl SearchAvailablePhoneNumbersInput {
 pub mod search_queues_input {
 
     /// A builder for [`SearchQueuesInput`](crate::input::SearchQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -26786,6 +26903,7 @@ impl SearchQueuesInput {
 pub mod search_routing_profiles_input {
 
     /// A builder for [`SearchRoutingProfilesInput`](crate::input::SearchRoutingProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -27008,6 +27126,7 @@ impl SearchRoutingProfilesInput {
 pub mod search_security_profiles_input {
 
     /// A builder for [`SearchSecurityProfilesInput`](crate::input::SearchSecurityProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -27235,6 +27354,7 @@ impl SearchSecurityProfilesInput {
 pub mod search_users_input {
 
     /// A builder for [`SearchUsersInput`](crate::input::SearchUsersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -27450,6 +27570,7 @@ impl SearchUsersInput {
 pub mod search_vocabularies_input {
 
     /// A builder for [`SearchVocabulariesInput`](crate::input::SearchVocabulariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -27702,6 +27823,7 @@ impl SearchVocabulariesInput {
 pub mod start_chat_contact_input {
 
     /// A builder for [`StartChatContactInput`](crate::input::StartChatContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -28006,6 +28128,7 @@ impl StartChatContactInput {
 pub mod start_contact_recording_input {
 
     /// A builder for [`StartContactRecordingInput`](crate::input::StartContactRecordingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -28213,6 +28336,7 @@ impl StartContactRecordingInput {
 pub mod start_contact_streaming_input {
 
     /// A builder for [`StartContactStreamingInput`](crate::input::StartContactStreamingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -28420,6 +28544,7 @@ impl StartContactStreamingInput {
 pub mod start_outbound_voice_contact_input {
 
     /// A builder for [`StartOutboundVoiceContactInput`](crate::input::StartOutboundVoiceContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_phone_number: std::option::Option<std::string::String>,
@@ -28732,6 +28857,7 @@ impl StartOutboundVoiceContactInput {
 pub mod start_task_contact_input {
 
     /// A builder for [`StartTaskContactInput`](crate::input::StartTaskContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -29067,6 +29193,7 @@ impl StartTaskContactInput {
 pub mod stop_contact_input {
 
     /// A builder for [`StopContactInput`](crate::input::StopContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
@@ -29236,6 +29363,7 @@ impl StopContactInput {
 pub mod stop_contact_recording_input {
 
     /// A builder for [`StopContactRecordingInput`](crate::input::StopContactRecordingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -29424,6 +29552,7 @@ impl StopContactRecordingInput {
 pub mod stop_contact_streaming_input {
 
     /// A builder for [`StopContactStreamingInput`](crate::input::StopContactStreamingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -29609,6 +29738,7 @@ impl StopContactStreamingInput {
 pub mod suspend_contact_recording_input {
 
     /// A builder for [`SuspendContactRecordingInput`](crate::input::SuspendContactRecordingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -29797,6 +29927,7 @@ impl SuspendContactRecordingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -30003,6 +30134,7 @@ impl TagResourceInput {
 pub mod transfer_contact_input {
 
     /// A builder for [`TransferContactInput`](crate::input::TransferContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -30226,6 +30358,7 @@ impl TransferContactInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -30428,6 +30561,7 @@ impl UntagResourceInput {
 pub mod update_agent_status_input {
 
     /// A builder for [`UpdateAgentStatusInput`](crate::input::UpdateAgentStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -30709,6 +30843,7 @@ impl UpdateAgentStatusInput {
 pub mod update_contact_input {
 
     /// A builder for [`UpdateContactInput`](crate::input::UpdateContactInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -30975,6 +31110,7 @@ impl UpdateContactInput {
 pub mod update_contact_attributes_input {
 
     /// A builder for [`UpdateContactAttributesInput`](crate::input::UpdateContactAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_contact_id: std::option::Option<std::string::String>,
@@ -31182,6 +31318,7 @@ impl UpdateContactAttributesInput {
 pub mod update_contact_flow_content_input {
 
     /// A builder for [`UpdateContactFlowContentInput`](crate::input::UpdateContactFlowContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -31414,6 +31551,7 @@ impl UpdateContactFlowContentInput {
 pub mod update_contact_flow_metadata_input {
 
     /// A builder for [`UpdateContactFlowMetadataInput`](crate::input::UpdateContactFlowMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -31673,6 +31811,7 @@ impl UpdateContactFlowMetadataInput {
 pub mod update_contact_flow_module_content_input {
 
     /// A builder for [`UpdateContactFlowModuleContentInput`](crate::input::UpdateContactFlowModuleContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -31903,6 +32042,7 @@ impl UpdateContactFlowModuleContentInput {
 pub mod update_contact_flow_module_metadata_input {
 
     /// A builder for [`UpdateContactFlowModuleMetadataInput`](crate::input::UpdateContactFlowModuleMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -32160,6 +32300,7 @@ impl UpdateContactFlowModuleMetadataInput {
 pub mod update_contact_flow_name_input {
 
     /// A builder for [`UpdateContactFlowNameInput`](crate::input::UpdateContactFlowNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -32404,6 +32545,7 @@ impl UpdateContactFlowNameInput {
 pub mod update_contact_schedule_input {
 
     /// A builder for [`UpdateContactScheduleInput`](crate::input::UpdateContactScheduleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -32592,6 +32734,7 @@ impl UpdateContactScheduleInput {
 pub mod update_hours_of_operation_input {
 
     /// A builder for [`UpdateHoursOfOperationInput`](crate::input::UpdateHoursOfOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -32869,6 +33012,7 @@ impl UpdateHoursOfOperationInput {
 pub mod update_instance_attribute_input {
 
     /// A builder for [`UpdateInstanceAttributeInput`](crate::input::UpdateInstanceAttributeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -33105,6 +33249,7 @@ impl UpdateInstanceAttributeInput {
 pub mod update_instance_storage_config_input {
 
     /// A builder for [`UpdateInstanceStorageConfigInput`](crate::input::UpdateInstanceStorageConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -33372,6 +33517,7 @@ impl UpdateInstanceStorageConfigInput {
 pub mod update_participant_role_config_input {
 
     /// A builder for [`UpdateParticipantRoleConfigInput`](crate::input::UpdateParticipantRoleConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -33606,6 +33752,7 @@ impl UpdateParticipantRoleConfigInput {
 pub mod update_phone_number_input {
 
     /// A builder for [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
@@ -33819,6 +33966,7 @@ impl UpdatePhoneNumberInput {
 pub mod update_queue_hours_of_operation_input {
 
     /// A builder for [`UpdateQueueHoursOfOperationInput`](crate::input::UpdateQueueHoursOfOperationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -34049,6 +34197,7 @@ impl UpdateQueueHoursOfOperationInput {
 pub mod update_queue_max_contacts_input {
 
     /// A builder for [`UpdateQueueMaxContactsInput`](crate::input::UpdateQueueMaxContactsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -34278,6 +34427,7 @@ impl UpdateQueueMaxContactsInput {
 pub mod update_queue_name_input {
 
     /// A builder for [`UpdateQueueNameInput`](crate::input::UpdateQueueNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -34515,6 +34665,7 @@ impl UpdateQueueNameInput {
 pub mod update_queue_outbound_caller_config_input {
 
     /// A builder for [`UpdateQueueOutboundCallerConfigInput`](crate::input::UpdateQueueOutboundCallerConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -34745,6 +34896,7 @@ impl UpdateQueueOutboundCallerConfigInput {
 pub mod update_queue_status_input {
 
     /// A builder for [`UpdateQueueStatusInput`](crate::input::UpdateQueueStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -34972,6 +35124,7 @@ impl UpdateQueueStatusInput {
 pub mod update_quick_connect_config_input {
 
     /// A builder for [`UpdateQuickConnectConfigInput`](crate::input::UpdateQuickConnectConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -35207,6 +35360,7 @@ impl UpdateQuickConnectConfigInput {
 pub mod update_quick_connect_name_input {
 
     /// A builder for [`UpdateQuickConnectNameInput`](crate::input::UpdateQuickConnectNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -35451,6 +35605,7 @@ impl UpdateQuickConnectNameInput {
 pub mod update_routing_profile_concurrency_input {
 
     /// A builder for [`UpdateRoutingProfileConcurrencyInput`](crate::input::UpdateRoutingProfileConcurrencyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -35691,6 +35846,7 @@ impl UpdateRoutingProfileConcurrencyInput {
 pub mod update_routing_profile_default_outbound_queue_input {
 
     /// A builder for [`UpdateRoutingProfileDefaultOutboundQueueInput`](crate::input::UpdateRoutingProfileDefaultOutboundQueueInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -35926,6 +36082,7 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
 pub mod update_routing_profile_name_input {
 
     /// A builder for [`UpdateRoutingProfileNameInput`](crate::input::UpdateRoutingProfileNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -36170,6 +36327,7 @@ impl UpdateRoutingProfileNameInput {
 pub mod update_routing_profile_queues_input {
 
     /// A builder for [`UpdateRoutingProfileQueuesInput`](crate::input::UpdateRoutingProfileQueuesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -36410,6 +36568,7 @@ impl UpdateRoutingProfileQueuesInput {
 pub mod update_rule_input {
 
     /// A builder for [`UpdateRuleInput`](crate::input::UpdateRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
@@ -36683,6 +36842,7 @@ impl UpdateRuleInput {
 pub mod update_security_profile_input {
 
     /// A builder for [`UpdateSecurityProfileInput`](crate::input::UpdateSecurityProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -36987,6 +37147,7 @@ impl UpdateSecurityProfileInput {
 pub mod update_task_template_input {
 
     /// A builder for [`UpdateTaskTemplateInput`](crate::input::UpdateTaskTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_template_id: std::option::Option<std::string::String>,
@@ -37310,6 +37471,7 @@ impl UpdateTaskTemplateInput {
 pub mod update_traffic_distribution_input {
 
     /// A builder for [`UpdateTrafficDistributionInput`](crate::input::UpdateTrafficDistributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -37506,6 +37668,7 @@ impl UpdateTrafficDistributionInput {
 pub mod update_user_hierarchy_input {
 
     /// A builder for [`UpdateUserHierarchyInput`](crate::input::UpdateUserHierarchyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_group_id: std::option::Option<std::string::String>,
@@ -37736,6 +37899,7 @@ impl UpdateUserHierarchyInput {
 pub mod update_user_hierarchy_group_name_input {
 
     /// A builder for [`UpdateUserHierarchyGroupNameInput`](crate::input::UpdateUserHierarchyGroupNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -37966,6 +38130,7 @@ impl UpdateUserHierarchyGroupNameInput {
 pub mod update_user_hierarchy_structure_input {
 
     /// A builder for [`UpdateUserHierarchyStructureInput`](crate::input::UpdateUserHierarchyStructureInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hierarchy_structure: std::option::Option<crate::model::HierarchyStructureUpdate>,
@@ -38167,6 +38332,7 @@ impl UpdateUserHierarchyStructureInput {
 pub mod update_user_identity_info_input {
 
     /// A builder for [`UpdateUserIdentityInfoInput`](crate::input::UpdateUserIdentityInfoInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_info: std::option::Option<crate::model::UserIdentityInfo>,
@@ -38399,6 +38565,7 @@ impl UpdateUserIdentityInfoInput {
 pub mod update_user_phone_config_input {
 
     /// A builder for [`UpdateUserPhoneConfigInput`](crate::input::UpdateUserPhoneConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_config: std::option::Option<crate::model::UserPhoneConfig>,
@@ -38631,6 +38798,7 @@ impl UpdateUserPhoneConfigInput {
 pub mod update_user_routing_profile_input {
 
     /// A builder for [`UpdateUserRoutingProfileInput`](crate::input::UpdateUserRoutingProfileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_profile_id: std::option::Option<std::string::String>,
@@ -38863,6 +39031,7 @@ impl UpdateUserRoutingProfileInput {
 pub mod update_user_security_profiles_input {
 
     /// A builder for [`UpdateUserSecurityProfilesInput`](crate::input::UpdateUserSecurityProfilesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,

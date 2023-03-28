@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -549,6 +550,7 @@ impl std::fmt::Debug for ProtectedQuery {
 pub mod protected_query {
 
     /// A builder for [`ProtectedQuery`](crate::model::ProtectedQuery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -759,6 +761,7 @@ impl ProtectedQueryError {
 pub mod protected_query_error {
 
     /// A builder for [`ProtectedQueryError`](crate::model::ProtectedQueryError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -819,6 +822,7 @@ impl ProtectedQueryResult {
 pub mod protected_query_result {
 
     /// A builder for [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output: std::option::Option<crate::model::ProtectedQueryOutput>,
@@ -907,6 +911,7 @@ impl ProtectedQueryS3Output {
 pub mod protected_query_s3_output {
 
     /// A builder for [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -955,6 +960,7 @@ impl ProtectedQueryStatistics {
 pub mod protected_query_statistics {
 
     /// A builder for [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_duration_in_millis: std::option::Option<i64>,
@@ -1005,6 +1011,7 @@ impl ProtectedQueryResultConfiguration {
 pub mod protected_query_result_configuration {
 
     /// A builder for [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_configuration:
@@ -1113,6 +1120,7 @@ impl ProtectedQueryS3OutputConfiguration {
 pub mod protected_query_s3_output_configuration {
 
     /// A builder for [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_format: std::option::Option<crate::model::ResultFormat>,
@@ -1410,6 +1418,7 @@ impl std::fmt::Debug for ProtectedQuerySqlParameters {
 pub mod protected_query_sql_parameters {
 
     /// A builder for [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -1667,6 +1676,7 @@ impl ProtectedQuerySummary {
 pub mod protected_query_summary {
 
     /// A builder for [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1845,6 +1855,7 @@ impl MembershipSummary {
 pub mod membership_summary {
 
     /// A builder for [`MembershipSummary`](crate::model::MembershipSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2315,6 +2326,7 @@ impl Membership {
 pub mod membership {
 
     /// A builder for [`Membership`](crate::model::Membership).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2665,6 +2677,7 @@ impl ConfiguredTableAnalysisRule {
 pub mod configured_table_analysis_rule {
 
     /// A builder for [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_id: std::option::Option<std::string::String>,
@@ -3012,6 +3025,7 @@ impl AnalysisRuleAggregation {
 pub mod analysis_rule_aggregation {
 
     /// A builder for [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregate_columns:
@@ -3185,6 +3199,7 @@ impl AggregationConstraint {
 pub mod aggregation_constraint {
 
     /// A builder for [`AggregationConstraint`](crate::model::AggregationConstraint).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
@@ -3587,6 +3602,7 @@ impl AggregateColumn {
 pub mod aggregate_column {
 
     /// A builder for [`AggregateColumn`](crate::model::AggregateColumn).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3773,6 +3789,7 @@ impl AnalysisRuleList {
 pub mod analysis_rule_list {
 
     /// A builder for [`AnalysisRuleList`](crate::model::AnalysisRuleList).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) join_columns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3896,6 +3913,7 @@ impl ConfiguredTableSummary {
 pub mod configured_table_summary {
 
     /// A builder for [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4191,6 +4209,7 @@ impl ConfiguredTable {
 pub mod configured_table {
 
     /// A builder for [`ConfiguredTable`](crate::model::ConfiguredTable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4427,6 +4446,7 @@ impl GlueTableReference {
 pub mod glue_table_reference {
 
     /// A builder for [`GlueTableReference`](crate::model::GlueTableReference).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -4539,6 +4559,7 @@ impl ConfiguredTableAssociationSummary {
 pub mod configured_table_association_summary {
 
     /// A builder for [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_table_id: std::option::Option<std::string::String>,
@@ -4756,6 +4777,7 @@ impl ConfiguredTableAssociation {
 pub mod configured_table_association {
 
     /// A builder for [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4998,6 +5020,7 @@ impl SchemaSummary {
 pub mod schema_summary {
 
     /// A builder for [`SchemaSummary`](crate::model::SchemaSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5394,6 +5417,7 @@ impl MemberSummary {
 pub mod member_summary {
 
     /// A builder for [`MemberSummary`](crate::model::MemberSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -5685,6 +5709,7 @@ impl AnalysisRule {
 pub mod analysis_rule {
 
     /// A builder for [`AnalysisRule`](crate::model::AnalysisRule).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collaboration_id: std::option::Option<std::string::String>,
@@ -5975,6 +6000,7 @@ impl Schema {
 pub mod schema {
 
     /// A builder for [`Schema`](crate::model::Schema).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -6208,6 +6234,7 @@ impl Column {
 pub mod column {
 
     /// A builder for [`Column`](crate::model::Column).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6282,6 +6309,7 @@ impl BatchGetSchemaError {
 pub mod batch_get_schema_error {
 
     /// A builder for [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6417,6 +6445,7 @@ impl CollaborationSummary {
 pub mod collaboration_summary {
 
     /// A builder for [`CollaborationSummary`](crate::model::CollaborationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -6774,6 +6803,7 @@ impl Collaboration {
 pub mod collaboration {
 
     /// A builder for [`Collaboration`](crate::model::Collaboration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -7113,6 +7143,7 @@ impl DataEncryptionMetadata {
 pub mod data_encryption_metadata {
 
     /// A builder for [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_cleartext: std::option::Option<bool>,
@@ -7215,6 +7246,7 @@ impl MemberSpecification {
 pub mod member_specification {
 
     /// A builder for [`MemberSpecification`](crate::model::MemberSpecification).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,

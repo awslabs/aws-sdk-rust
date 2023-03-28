@@ -172,6 +172,7 @@ impl std::error::Error for VolumeNotFound {}
 pub mod volume_not_found {
 
     /// A builder for [`VolumeNotFound`](crate::error::VolumeNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -232,6 +233,7 @@ impl std::error::Error for MissingVolumeConfiguration {}
 pub mod missing_volume_configuration {
 
     /// A builder for [`MissingVolumeConfiguration`](crate::error::MissingVolumeConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -292,6 +294,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -361,6 +364,7 @@ impl std::error::Error for IncompatibleParameterError {}
 pub mod incompatible_parameter_error {
 
     /// A builder for [`IncompatibleParameterError`](crate::error::IncompatibleParameterError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter: std::option::Option<std::string::String>,
@@ -433,6 +437,7 @@ impl std::error::Error for BadRequest {}
 pub mod bad_request {
 
     /// A builder for [`BadRequest`](crate::error::BadRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -659,6 +664,7 @@ impl std::error::Error for UnsupportedOperation {}
 pub mod unsupported_operation {
 
     /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -719,6 +725,7 @@ impl std::error::Error for StorageVirtualMachineNotFound {}
 pub mod storage_virtual_machine_not_found {
 
     /// A builder for [`StorageVirtualMachineNotFound`](crate::error::StorageVirtualMachineNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -900,6 +907,7 @@ impl std::error::Error for SnapshotNotFound {}
 pub mod snapshot_not_found {
 
     /// A builder for [`SnapshotNotFound`](crate::error::SnapshotNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1148,6 +1156,7 @@ impl std::error::Error for ServiceLimitExceeded {}
 pub mod service_limit_exceeded {
 
     /// A builder for [`ServiceLimitExceeded`](crate::error::ServiceLimitExceeded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<crate::model::ServiceLimit>,
@@ -1220,6 +1229,7 @@ impl std::error::Error for MissingFileSystemConfiguration {}
 pub mod missing_file_system_configuration {
 
     /// A builder for [`MissingFileSystemConfiguration`](crate::error::MissingFileSystemConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1303,6 +1313,7 @@ impl std::error::Error for InvalidNetworkSettings {}
 pub mod invalid_network_settings {
 
     /// A builder for [`InvalidNetworkSettings`](crate::error::InvalidNetworkSettings).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1408,6 +1419,7 @@ impl std::error::Error for FileSystemNotFound {}
 pub mod file_system_not_found {
 
     /// A builder for [`FileSystemNotFound`](crate::error::FileSystemNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1633,6 +1645,7 @@ impl std::error::Error for MissingFileCacheConfiguration {}
 pub mod missing_file_cache_configuration {
 
     /// A builder for [`MissingFileCacheConfiguration`](crate::error::MissingFileCacheConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1693,6 +1706,7 @@ impl std::error::Error for FileCacheNotFound {}
 pub mod file_cache_not_found {
 
     /// A builder for [`FileCacheNotFound`](crate::error::FileCacheNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1922,6 +1936,7 @@ impl std::error::Error for DataRepositoryAssociationNotFound {}
 pub mod data_repository_association_not_found {
 
     /// A builder for [`DataRepositoryAssociationNotFound`](crate::error::DataRepositoryAssociationNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2134,6 +2149,7 @@ impl std::error::Error for ResourceNotFound {}
 pub mod resource_not_found {
 
     /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2215,6 +2231,7 @@ impl std::error::Error for ResourceDoesNotSupportTagging {}
 pub mod resource_does_not_support_tagging {
 
     /// A builder for [`ResourceDoesNotSupportTagging`](crate::error::ResourceDoesNotSupportTagging).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2296,6 +2313,7 @@ impl std::error::Error for NotServiceResourceError {}
 pub mod not_service_resource_error {
 
     /// A builder for [`NotServiceResourceError`](crate::error::NotServiceResourceError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4023,6 +4041,7 @@ impl std::error::Error for DataRepositoryTaskNotFound {}
 pub mod data_repository_task_not_found {
 
     /// A builder for [`DataRepositoryTaskNotFound`](crate::error::DataRepositoryTaskNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4258,6 +4277,7 @@ impl std::error::Error for InvalidDataRepositoryType {}
 pub mod invalid_data_repository_type {
 
     /// A builder for [`InvalidDataRepositoryType`](crate::error::InvalidDataRepositoryType).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4455,6 +4475,7 @@ impl std::error::Error for BackupNotFound {}
 pub mod backup_not_found {
 
     /// A builder for [`BackupNotFound`](crate::error::BackupNotFound).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5546,6 +5567,7 @@ impl std::error::Error for BackupRestoring {}
 pub mod backup_restoring {
 
     /// A builder for [`BackupRestoring`](crate::error::BackupRestoring).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5621,6 +5643,7 @@ impl std::error::Error for BackupInProgress {}
 pub mod backup_in_progress {
 
     /// A builder for [`BackupInProgress`](crate::error::BackupInProgress).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5690,6 +5713,7 @@ impl std::error::Error for BackupBeingCopied {}
 pub mod backup_being_copied {
 
     /// A builder for [`BackupBeingCopied`](crate::error::BackupBeingCopied).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6318,6 +6342,7 @@ impl std::error::Error for ActiveDirectoryError {}
 pub mod active_directory_error {
 
     /// A builder for [`ActiveDirectoryError`](crate::error::ActiveDirectoryError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_id: std::option::Option<std::string::String>,
@@ -6749,6 +6774,7 @@ impl std::error::Error for InvalidPerUnitStorageThroughput {}
 pub mod invalid_per_unit_storage_throughput {
 
     /// A builder for [`InvalidPerUnitStorageThroughput`](crate::error::InvalidPerUnitStorageThroughput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7007,6 +7033,7 @@ impl std::error::Error for InvalidImportPath {}
 pub mod invalid_import_path {
 
     /// A builder for [`InvalidImportPath`](crate::error::InvalidImportPath).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7067,6 +7094,7 @@ impl std::error::Error for InvalidExportPath {}
 pub mod invalid_export_path {
 
     /// A builder for [`InvalidExportPath`](crate::error::InvalidExportPath).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7472,6 +7500,7 @@ impl std::error::Error for DataRepositoryTaskExecuting {}
 pub mod data_repository_task_executing {
 
     /// A builder for [`DataRepositoryTaskExecuting`](crate::error::DataRepositoryTaskExecuting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8072,6 +8101,7 @@ impl std::error::Error for SourceBackupUnavailable {}
 pub mod source_backup_unavailable {
 
     /// A builder for [`SourceBackupUnavailable`](crate::error::SourceBackupUnavailable).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8144,6 +8174,7 @@ impl std::error::Error for InvalidSourceKmsKey {}
 pub mod invalid_source_kms_key {
 
     /// A builder for [`InvalidSourceKmsKey`](crate::error::InvalidSourceKmsKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8204,6 +8235,7 @@ impl std::error::Error for InvalidRegion {}
 pub mod invalid_region {
 
     /// A builder for [`InvalidRegion`](crate::error::InvalidRegion).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8264,6 +8296,7 @@ impl std::error::Error for InvalidDestinationKmsKey {}
 pub mod invalid_destination_kms_key {
 
     /// A builder for [`InvalidDestinationKmsKey`](crate::error::InvalidDestinationKmsKey).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8327,6 +8360,7 @@ impl std::error::Error for IncompatibleRegionForMultiAz {}
 pub mod incompatible_region_for_multi_az {
 
     /// A builder for [`IncompatibleRegionForMultiAz`](crate::error::IncompatibleRegionForMultiAz).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8542,6 +8576,7 @@ impl std::error::Error for DataRepositoryTaskEnded {}
 pub mod data_repository_task_ended {
 
     /// A builder for [`DataRepositoryTaskEnded`](crate::error::DataRepositoryTaskEnded).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

@@ -17,6 +17,7 @@ impl RemoveTagsFromResourceOutput {
 pub mod remove_tags_from_resource_output {
 
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -65,6 +66,7 @@ impl ModifyLunaClientOutput {
 pub mod modify_luna_client_output {
 
     /// A builder for [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -113,6 +115,7 @@ impl ModifyHsmOutput {
 pub mod modify_hsm_output {
 
     /// A builder for [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -161,6 +164,7 @@ impl ModifyHapgOutput {
 pub mod modify_hapg_output {
 
     /// A builder for [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -209,6 +213,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -273,6 +278,7 @@ impl ListLunaClientsOutput {
 pub mod list_luna_clients_output {
 
     /// A builder for [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -349,6 +355,7 @@ impl ListHsmsOutput {
 pub mod list_hsms_output {
 
     /// A builder for [`ListHsmsOutput`](crate::output::ListHsmsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -425,6 +432,7 @@ impl ListHapgsOutput {
 pub mod list_hapgs_output {
 
     /// A builder for [`ListHapgsOutput`](crate::output::ListHapgsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -494,6 +502,7 @@ impl ListAvailableZonesOutput {
 pub mod list_available_zones_output {
 
     /// A builder for [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) az_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -565,6 +574,7 @@ impl GetConfigOutput {
 pub mod get_config_output {
 
     /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_type: std::option::Option<std::string::String>,
@@ -665,6 +675,7 @@ impl DescribeLunaClientOutput {
 pub mod describe_luna_client_output {
 
     /// A builder for [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -915,6 +926,7 @@ impl DescribeHsmOutput {
 pub mod describe_hsm_output {
 
     /// A builder for [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -1309,6 +1321,7 @@ impl DescribeHapgOutput {
 pub mod describe_hapg_output {
 
     /// A builder for [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -1496,6 +1509,7 @@ impl DeleteLunaClientOutput {
 pub mod delete_luna_client_output {
 
     /// A builder for [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1544,6 +1558,7 @@ impl DeleteHsmOutput {
 pub mod delete_hsm_output {
 
     /// A builder for [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1592,6 +1607,7 @@ impl DeleteHapgOutput {
 pub mod delete_hapg_output {
 
     /// A builder for [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1640,6 +1656,7 @@ impl CreateLunaClientOutput {
 pub mod create_luna_client_output {
 
     /// A builder for [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -1688,6 +1705,7 @@ impl CreateHsmOutput {
 pub mod create_hsm_output {
 
     /// A builder for [`CreateHsmOutput`](crate::output::CreateHsmOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -1736,6 +1754,7 @@ impl CreateHapgOutput {
 pub mod create_hapg_output {
 
     /// A builder for [`CreateHapgOutput`](crate::output::CreateHapgOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -1784,6 +1803,7 @@ impl AddTagsToResourceOutput {
 pub mod add_tags_to_resource_output {
 
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,

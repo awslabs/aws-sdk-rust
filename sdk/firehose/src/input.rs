@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_delivery_stream_input {
 
     /// A builder for [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -421,6 +422,7 @@ impl CreateDeliveryStreamInput {
 pub mod delete_delivery_stream_input {
 
     /// A builder for [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -604,6 +606,7 @@ impl DeleteDeliveryStreamInput {
 pub mod describe_delivery_stream_input {
 
     /// A builder for [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -803,6 +806,7 @@ impl DescribeDeliveryStreamInput {
 pub mod list_delivery_streams_input {
 
     /// A builder for [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
@@ -1010,6 +1014,7 @@ impl ListDeliveryStreamsInput {
 pub mod list_tags_for_delivery_stream_input {
 
     /// A builder for [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -1204,6 +1209,7 @@ impl ListTagsForDeliveryStreamInput {
 pub mod put_record_input {
 
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -1379,6 +1385,7 @@ impl PutRecordInput {
 pub mod put_record_batch_input {
 
     /// A builder for [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -1565,6 +1572,7 @@ impl PutRecordBatchInput {
 pub mod start_delivery_stream_encryption_input {
 
     /// A builder for [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -1752,6 +1760,7 @@ impl StartDeliveryStreamEncryptionInput {
 pub mod stop_delivery_stream_encryption_input {
 
     /// A builder for [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -1919,6 +1928,7 @@ impl StopDeliveryStreamEncryptionInput {
 pub mod tag_delivery_stream_input {
 
     /// A builder for [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -2107,6 +2117,7 @@ impl TagDeliveryStreamInput {
 pub mod untag_delivery_stream_input {
 
     /// A builder for [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
@@ -2295,6 +2306,7 @@ impl UntagDeliveryStreamInput {
 pub mod update_destination_input {
 
     /// A builder for [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,

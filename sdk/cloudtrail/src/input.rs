@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_input {
 
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -188,6 +189,7 @@ impl AddTagsInput {
 pub mod cancel_query_input {
 
     /// A builder for [`CancelQueryInput`](crate::input::CancelQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -367,6 +369,7 @@ impl CancelQueryInput {
 pub mod create_event_data_store_input {
 
     /// A builder for [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -662,6 +665,7 @@ impl CreateEventDataStoreInput {
 pub mod create_trail_input {
 
     /// A builder for [`CreateTrailInput`](crate::input::CreateTrailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1020,6 +1024,7 @@ impl CreateTrailInput {
 pub mod delete_event_data_store_input {
 
     /// A builder for [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -1189,6 +1194,7 @@ impl DeleteEventDataStoreInput {
 pub mod delete_trail_input {
 
     /// A builder for [`DeleteTrailInput`](crate::input::DeleteTrailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1349,6 +1355,7 @@ impl DeleteTrailInput {
 pub mod deregister_organization_delegated_admin_input {
 
     /// A builder for [`DeregisterOrganizationDelegatedAdminInput`](crate::input::DeregisterOrganizationDelegatedAdminInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin_account_id: std::option::Option<std::string::String>,
@@ -1516,6 +1523,7 @@ impl DeregisterOrganizationDelegatedAdminInput {
 pub mod describe_query_input {
 
     /// A builder for [`DescribeQueryInput`](crate::input::DescribeQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -1695,6 +1703,7 @@ impl DescribeQueryInput {
 pub mod describe_trails_input {
 
     /// A builder for [`DescribeTrailsInput`](crate::input::DescribeTrailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1894,6 +1903,7 @@ impl DescribeTrailsInput {
 pub mod get_channel_input {
 
     /// A builder for [`GetChannelInput`](crate::input::GetChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<std::string::String>,
@@ -2056,6 +2066,7 @@ impl GetChannelInput {
 pub mod get_event_data_store_input {
 
     /// A builder for [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -2223,6 +2234,7 @@ impl GetEventDataStoreInput {
 pub mod get_event_selectors_input {
 
     /// A builder for [`GetEventSelectorsInput`](crate::input::GetEventSelectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_name: std::option::Option<std::string::String>,
@@ -2405,6 +2417,7 @@ impl GetEventSelectorsInput {
 pub mod get_import_input {
 
     /// A builder for [`GetImportInput`](crate::input::GetImportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
@@ -2565,6 +2578,7 @@ impl GetImportInput {
 pub mod get_insight_selectors_input {
 
     /// A builder for [`GetInsightSelectorsInput`](crate::input::GetInsightSelectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_name: std::option::Option<std::string::String>,
@@ -2747,6 +2761,7 @@ impl GetInsightSelectorsInput {
 pub mod get_query_results_input {
 
     /// A builder for [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -2950,6 +2965,7 @@ impl GetQueryResultsInput {
 pub mod get_trail_input {
 
     /// A builder for [`GetTrailInput`](crate::input::GetTrailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3108,6 +3124,7 @@ impl GetTrailInput {
 pub mod get_trail_status_input {
 
     /// A builder for [`GetTrailStatusInput`](crate::input::GetTrailStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3270,6 +3287,7 @@ impl GetTrailStatusInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3444,6 +3462,7 @@ impl ListChannelsInput {
 pub mod list_event_data_stores_input {
 
     /// A builder for [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3622,6 +3641,7 @@ impl ListEventDataStoresInput {
 pub mod list_import_failures_input {
 
     /// A builder for [`ListImportFailuresInput`](crate::input::ListImportFailuresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
@@ -3810,6 +3830,7 @@ impl ListImportFailuresInput {
 pub mod list_imports_input {
 
     /// A builder for [`ListImportsInput`](crate::input::ListImportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -4011,6 +4032,7 @@ impl ListImportsInput {
 pub mod list_public_keys_input {
 
     /// A builder for [`ListPublicKeysInput`](crate::input::ListPublicKeysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4203,6 +4225,7 @@ impl ListPublicKeysInput {
 pub mod list_queries_input {
 
     /// A builder for [`ListQueriesInput`](crate::input::ListQueriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -4437,6 +4460,7 @@ impl ListQueriesInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4618,6 +4642,7 @@ impl ListTagsInput {
 pub mod list_trails_input {
 
     /// A builder for [`ListTrailsInput`](crate::input::ListTrailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4780,6 +4805,7 @@ impl ListTrailsInput {
 pub mod lookup_events_input {
 
     /// A builder for [`LookupEventsInput`](crate::input::LookupEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lookup_attributes:
@@ -5021,6 +5047,7 @@ impl LookupEventsInput {
 pub mod put_event_selectors_input {
 
     /// A builder for [`PutEventSelectorsInput`](crate::input::PutEventSelectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_name: std::option::Option<std::string::String>,
@@ -5249,6 +5276,7 @@ impl PutEventSelectorsInput {
 pub mod put_insight_selectors_input {
 
     /// A builder for [`PutInsightSelectorsInput`](crate::input::PutInsightSelectorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_name: std::option::Option<std::string::String>,
@@ -5435,6 +5463,7 @@ impl PutInsightSelectorsInput {
 pub mod register_organization_delegated_admin_input {
 
     /// A builder for [`RegisterOrganizationDelegatedAdminInput`](crate::input::RegisterOrganizationDelegatedAdminInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -5602,6 +5631,7 @@ impl RegisterOrganizationDelegatedAdminInput {
 pub mod remove_tags_input {
 
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5789,6 +5819,7 @@ impl RemoveTagsInput {
 pub mod restore_event_data_store_input {
 
     /// A builder for [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -5958,6 +5989,7 @@ impl RestoreEventDataStoreInput {
 pub mod start_import_input {
 
     /// A builder for [`StartImportInput`](crate::input::StartImportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6186,6 +6218,7 @@ impl StartImportInput {
 pub mod start_logging_input {
 
     /// A builder for [`StartLoggingInput`](crate::input::StartLoggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6348,6 +6381,7 @@ impl StartLoggingInput {
 pub mod start_query_input {
 
     /// A builder for [`StartQueryInput`](crate::input::StartQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_statement: std::option::Option<std::string::String>,
@@ -6528,6 +6562,7 @@ impl StartQueryInput {
 pub mod stop_import_input {
 
     /// A builder for [`StopImportInput`](crate::input::StopImportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
@@ -6690,6 +6725,7 @@ impl StopImportInput {
 pub mod stop_logging_input {
 
     /// A builder for [`StopLoggingInput`](crate::input::StopLoggingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6852,6 +6888,7 @@ impl StopLoggingInput {
 pub mod update_event_data_store_input {
 
     /// A builder for [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store: std::option::Option<std::string::String>,
@@ -7141,6 +7178,7 @@ impl UpdateEventDataStoreInput {
 pub mod update_trail_input {
 
     /// A builder for [`UpdateTrailInput`](crate::input::UpdateTrailInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_direct_connect_gateway_association_proposal_input {
 
     /// A builder for [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -235,6 +236,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
 pub mod allocate_connection_on_interconnect_input {
 
     /// A builder for [`AllocateConnectionOnInterconnectInput`](crate::input::AllocateConnectionOnInterconnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
@@ -456,6 +458,7 @@ impl AllocateConnectionOnInterconnectInput {
 pub mod allocate_hosted_connection_input {
 
     /// A builder for [`AllocateHostedConnectionInput`](crate::input::AllocateHostedConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -700,6 +703,7 @@ impl AllocateHostedConnectionInput {
 pub mod allocate_private_virtual_interface_input {
 
     /// A builder for [`AllocatePrivateVirtualInterfaceInput`](crate::input::AllocatePrivateVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -902,6 +906,7 @@ impl AllocatePrivateVirtualInterfaceInput {
 pub mod allocate_public_virtual_interface_input {
 
     /// A builder for [`AllocatePublicVirtualInterfaceInput`](crate::input::AllocatePublicVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1104,6 +1109,7 @@ impl AllocatePublicVirtualInterfaceInput {
 pub mod allocate_transit_virtual_interface_input {
 
     /// A builder for [`AllocateTransitVirtualInterfaceInput`](crate::input::AllocateTransitVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1306,6 +1312,7 @@ impl AllocateTransitVirtualInterfaceInput {
 pub mod associate_connection_with_lag_input {
 
     /// A builder for [`AssociateConnectionWithLagInput`](crate::input::AssociateConnectionWithLagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1485,6 +1492,7 @@ impl AssociateConnectionWithLagInput {
 pub mod associate_hosted_connection_input {
 
     /// A builder for [`AssociateHostedConnectionInput`](crate::input::AssociateHostedConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1669,6 +1677,7 @@ impl AssociateHostedConnectionInput {
 pub mod associate_mac_sec_key_input {
 
     /// A builder for [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1890,6 +1899,7 @@ impl AssociateMacSecKeyInput {
 pub mod associate_virtual_interface_input {
 
     /// A builder for [`AssociateVirtualInterfaceInput`](crate::input::AssociateVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -2074,6 +2084,7 @@ impl AssociateVirtualInterfaceInput {
 pub mod confirm_connection_input {
 
     /// A builder for [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -2241,6 +2252,7 @@ impl ConfirmConnectionInput {
 pub mod confirm_customer_agreement_input {
 
     /// A builder for [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement_name: std::option::Option<std::string::String>,
@@ -2410,6 +2422,7 @@ impl ConfirmCustomerAgreementInput {
 pub mod confirm_private_virtual_interface_input {
 
     /// A builder for [`ConfirmPrivateVirtualInterfaceInput`](crate::input::ConfirmPrivateVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -2607,6 +2620,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
 pub mod confirm_public_virtual_interface_input {
 
     /// A builder for [`ConfirmPublicVirtualInterfaceInput`](crate::input::ConfirmPublicVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -2774,6 +2788,7 @@ impl ConfirmPublicVirtualInterfaceInput {
 pub mod confirm_transit_virtual_interface_input {
 
     /// A builder for [`ConfirmTransitVirtualInterfaceInput`](crate::input::ConfirmTransitVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -2956,6 +2971,7 @@ impl ConfirmTransitVirtualInterfaceInput {
 pub mod create_bgp_peer_input {
 
     /// A builder for [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -3136,6 +3152,7 @@ impl CreateBgpPeerInput {
 pub mod create_connection_input {
 
     /// A builder for [`CreateConnectionInput`](crate::input::CreateConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -3389,6 +3406,7 @@ impl CreateConnectionInput {
 pub mod create_direct_connect_gateway_input {
 
     /// A builder for [`CreateDirectConnectGatewayInput`](crate::input::CreateDirectConnectGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_name: std::option::Option<std::string::String>,
@@ -3571,6 +3589,7 @@ impl CreateDirectConnectGatewayInput {
 pub mod create_direct_connect_gateway_association_input {
 
     /// A builder for [`CreateDirectConnectGatewayAssociationInput`](crate::input::CreateDirectConnectGatewayAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -3797,6 +3816,7 @@ impl CreateDirectConnectGatewayAssociationInput {
 pub mod create_direct_connect_gateway_association_proposal_input {
 
     /// A builder for [`CreateDirectConnectGatewayAssociationProposalInput`](crate::input::CreateDirectConnectGatewayAssociationProposalInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -4053,6 +4073,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
 pub mod create_interconnect_input {
 
     /// A builder for [`CreateInterconnectInput`](crate::input::CreateInterconnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_name: std::option::Option<std::string::String>,
@@ -4292,6 +4313,7 @@ impl CreateInterconnectInput {
 pub mod create_lag_input {
 
     /// A builder for [`CreateLagInput`](crate::input::CreateLagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_connections: std::option::Option<i32>,
@@ -4579,6 +4601,7 @@ impl CreateLagInput {
 pub mod create_private_virtual_interface_input {
 
     /// A builder for [`CreatePrivateVirtualInterfaceInput`](crate::input::CreatePrivateVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -4765,6 +4788,7 @@ impl CreatePrivateVirtualInterfaceInput {
 pub mod create_public_virtual_interface_input {
 
     /// A builder for [`CreatePublicVirtualInterfaceInput`](crate::input::CreatePublicVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -4951,6 +4975,7 @@ impl CreatePublicVirtualInterfaceInput {
 pub mod create_transit_virtual_interface_input {
 
     /// A builder for [`CreateTransitVirtualInterfaceInput`](crate::input::CreateTransitVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -5137,6 +5162,7 @@ impl CreateTransitVirtualInterfaceInput {
 pub mod delete_bgp_peer_input {
 
     /// A builder for [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -5341,6 +5367,7 @@ impl DeleteBgpPeerInput {
 pub mod delete_connection_input {
 
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -5508,6 +5535,7 @@ impl DeleteConnectionInput {
 pub mod delete_direct_connect_gateway_input {
 
     /// A builder for [`DeleteDirectConnectGatewayInput`](crate::input::DeleteDirectConnectGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -5675,6 +5703,7 @@ impl DeleteDirectConnectGatewayInput {
 pub mod delete_direct_connect_gateway_association_input {
 
     /// A builder for [`DeleteDirectConnectGatewayAssociationInput`](crate::input::DeleteDirectConnectGatewayAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -5872,6 +5901,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
 pub mod delete_direct_connect_gateway_association_proposal_input {
 
     /// A builder for [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -6039,6 +6069,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
 pub mod delete_interconnect_input {
 
     /// A builder for [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -6206,6 +6237,7 @@ impl DeleteInterconnectInput {
 pub mod delete_lag_input {
 
     /// A builder for [`DeleteLagInput`](crate::input::DeleteLagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_id: std::option::Option<std::string::String>,
@@ -6366,6 +6398,7 @@ impl DeleteLagInput {
 pub mod delete_virtual_interface_input {
 
     /// A builder for [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -6535,6 +6568,7 @@ impl DeleteVirtualInterfaceInput {
 pub mod describe_connection_loa_input {
 
     /// A builder for [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -6734,6 +6768,7 @@ impl DescribeConnectionLoaInput {
 pub mod describe_connections_input {
 
     /// A builder for [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -6901,6 +6936,7 @@ impl DescribeConnectionsInput {
 pub mod describe_connections_on_interconnect_input {
 
     /// A builder for [`DescribeConnectionsOnInterconnectInput`](crate::input::DescribeConnectionsOnInterconnectInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -7068,6 +7104,7 @@ impl DescribeConnectionsOnInterconnectInput {
 pub mod describe_customer_metadata_input {
 
     /// A builder for [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7213,6 +7250,7 @@ impl DescribeCustomerMetadataInput {
 pub mod describe_direct_connect_gateway_association_proposals_input {
 
     /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -7437,6 +7475,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
 pub mod describe_direct_connect_gateway_associations_input {
 
     /// A builder for [`DescribeDirectConnectGatewayAssociationsInput`](crate::input::DescribeDirectConnectGatewayAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -7677,6 +7716,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
 pub mod describe_direct_connect_gateway_attachments_input {
 
     /// A builder for [`DescribeDirectConnectGatewayAttachmentsInput`](crate::input::DescribeDirectConnectGatewayAttachmentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -7885,6 +7925,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
 pub mod describe_direct_connect_gateways_input {
 
     /// A builder for [`DescribeDirectConnectGatewaysInput`](crate::input::DescribeDirectConnectGatewaysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -8078,6 +8119,7 @@ impl DescribeDirectConnectGatewaysInput {
 pub mod describe_hosted_connections_input {
 
     /// A builder for [`DescribeHostedConnectionsInput`](crate::input::DescribeHostedConnectionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -8247,6 +8289,7 @@ impl DescribeHostedConnectionsInput {
 pub mod describe_interconnect_loa_input {
 
     /// A builder for [`DescribeInterconnectLoaInput`](crate::input::DescribeInterconnectLoaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -8446,6 +8489,7 @@ impl DescribeInterconnectLoaInput {
 pub mod describe_interconnects_input {
 
     /// A builder for [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -8615,6 +8659,7 @@ impl DescribeInterconnectsInput {
 pub mod describe_lags_input {
 
     /// A builder for [`DescribeLagsInput`](crate::input::DescribeLagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_id: std::option::Option<std::string::String>,
@@ -8777,6 +8822,7 @@ impl DescribeLagsInput {
 pub mod describe_loa_input {
 
     /// A builder for [`DescribeLoaInput`](crate::input::DescribeLoaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -8972,6 +9018,7 @@ impl DescribeLoaInput {
 pub mod describe_locations_input {
 
     /// A builder for [`DescribeLocationsInput`](crate::input::DescribeLocationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -9115,6 +9162,7 @@ impl DescribeLocationsInput {
 pub mod describe_router_configuration_input {
 
     /// A builder for [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -9297,6 +9345,7 @@ impl DescribeRouterConfigurationInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9468,6 +9517,7 @@ impl DescribeTagsInput {
 pub mod describe_virtual_gateways_input {
 
     /// A builder for [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -9613,6 +9663,7 @@ impl DescribeVirtualGatewaysInput {
 pub mod describe_virtual_interfaces_input {
 
     /// A builder for [`DescribeVirtualInterfacesInput`](crate::input::DescribeVirtualInterfacesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -9797,6 +9848,7 @@ impl DescribeVirtualInterfacesInput {
 pub mod disassociate_connection_from_lag_input {
 
     /// A builder for [`DisassociateConnectionFromLagInput`](crate::input::DisassociateConnectionFromLagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -9976,6 +10028,7 @@ impl DisassociateConnectionFromLagInput {
 pub mod disassociate_mac_sec_key_input {
 
     /// A builder for [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -10161,6 +10214,7 @@ impl DisassociateMacSecKeyInput {
 pub mod list_virtual_interface_test_history_input {
 
     /// A builder for [`ListVirtualInterfaceTestHistoryInput`](crate::input::ListVirtualInterfaceTestHistoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_id: std::option::Option<std::string::String>,
@@ -10399,6 +10453,7 @@ impl ListVirtualInterfaceTestHistoryInput {
 pub mod start_bgp_failover_test_input {
 
     /// A builder for [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -10605,6 +10660,7 @@ impl StartBgpFailoverTestInput {
 pub mod stop_bgp_failover_test_input {
 
     /// A builder for [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -10774,6 +10830,7 @@ impl StopBgpFailoverTestInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10957,6 +11014,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -11140,6 +11198,7 @@ impl UntagResourceInput {
 pub mod update_connection_input {
 
     /// A builder for [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -11341,6 +11400,7 @@ impl UpdateConnectionInput {
 pub mod update_direct_connect_gateway_input {
 
     /// A builder for [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -11526,6 +11586,7 @@ impl UpdateDirectConnectGatewayInput {
 pub mod update_direct_connect_gateway_association_input {
 
     /// A builder for [`UpdateDirectConnectGatewayAssociationInput`](crate::input::UpdateDirectConnectGatewayAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -11749,6 +11810,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
 pub mod update_lag_input {
 
     /// A builder for [`UpdateLagInput`](crate::input::UpdateLagInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_id: std::option::Option<std::string::String>,
@@ -11950,6 +12012,7 @@ impl UpdateLagInput {
 pub mod update_virtual_interface_attributes_input {
 
     /// A builder for [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,

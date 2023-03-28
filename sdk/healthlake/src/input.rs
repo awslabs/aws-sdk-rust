@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_fhir_datastore_input {
 
     /// A builder for [`CreateFhirDatastoreInput`](crate::input::CreateFhirDatastoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
@@ -253,6 +254,7 @@ impl CreateFhirDatastoreInput {
 pub mod delete_fhir_datastore_input {
 
     /// A builder for [`DeleteFhirDatastoreInput`](crate::input::DeleteFhirDatastoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -417,6 +419,7 @@ impl DeleteFhirDatastoreInput {
 pub mod describe_fhir_datastore_input {
 
     /// A builder for [`DescribeFhirDatastoreInput`](crate::input::DescribeFhirDatastoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -583,6 +586,7 @@ impl DescribeFhirDatastoreInput {
 pub mod describe_fhir_export_job_input {
 
     /// A builder for [`DescribeFhirExportJobInput`](crate::input::DescribeFhirExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -761,6 +765,7 @@ impl DescribeFhirExportJobInput {
 pub mod describe_fhir_import_job_input {
 
     /// A builder for [`DescribeFhirImportJobInput`](crate::input::DescribeFhirImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -939,6 +944,7 @@ impl DescribeFhirImportJobInput {
 pub mod list_fhir_datastores_input {
 
     /// A builder for [`ListFhirDatastoresInput`](crate::input::ListFhirDatastoresInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::DatastoreFilter>,
@@ -1130,6 +1136,7 @@ impl ListFhirDatastoresInput {
 pub mod list_fhir_export_jobs_input {
 
     /// A builder for [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -1375,6 +1382,7 @@ impl ListFhirExportJobsInput {
 pub mod list_fhir_import_jobs_input {
 
     /// A builder for [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -1620,6 +1628,7 @@ impl ListFhirImportJobsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1786,6 +1795,7 @@ impl ListTagsForResourceInput {
 pub mod start_fhir_export_job_input {
 
     /// A builder for [`StartFhirExportJobInput`](crate::input::StartFhirExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2007,6 +2017,7 @@ impl StartFhirExportJobInput {
 pub mod start_fhir_import_job_input {
 
     /// A builder for [`StartFhirImportJobInput`](crate::input::StartFhirImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2243,6 +2254,7 @@ impl StartFhirImportJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2426,6 +2438,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,

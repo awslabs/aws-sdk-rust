@@ -132,6 +132,7 @@ impl CapacityUpdate {
 pub mod capacity_update {
 
     /// A builder for [`CapacityUpdate`](crate::model::CapacityUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling: std::option::Option<crate::model::AutoScalingUpdate>,
@@ -209,6 +210,7 @@ impl ProvisionedCapacityUpdate {
 pub mod provisioned_capacity_update {
 
     /// A builder for [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mcu_count: std::option::Option<i32>,
@@ -297,6 +299,7 @@ impl AutoScalingUpdate {
 pub mod auto_scaling_update {
 
     /// A builder for [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_worker_count: std::option::Option<i32>,
@@ -399,6 +402,7 @@ impl ScaleOutPolicyUpdate {
 pub mod scale_out_policy_update {
 
     /// A builder for [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_utilization_percentage: std::option::Option<i32>,
@@ -447,6 +451,7 @@ impl ScaleInPolicyUpdate {
 pub mod scale_in_policy_update {
 
     /// A builder for [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_utilization_percentage: std::option::Option<i32>,
@@ -525,6 +530,7 @@ impl WorkerConfigurationSummary {
 pub mod worker_configuration_summary {
 
     /// A builder for [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -648,6 +654,7 @@ impl WorkerConfigurationRevisionSummary {
 pub mod worker_configuration_revision_summary {
 
     /// A builder for [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -760,6 +767,7 @@ impl CustomPluginSummary {
 pub mod custom_plugin_summary {
 
     /// A builder for [`CustomPluginSummary`](crate::model::CustomPluginSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -917,6 +925,7 @@ impl CustomPluginRevisionSummary {
 pub mod custom_plugin_revision_summary {
 
     /// A builder for [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<crate::model::CustomPluginContentType>,
@@ -1040,6 +1049,7 @@ impl CustomPluginLocationDescription {
 pub mod custom_plugin_location_description {
 
     /// A builder for [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3LocationDescription>,
@@ -1105,6 +1115,7 @@ impl S3LocationDescription {
 pub mod s3_location_description {
 
     /// A builder for [`S3LocationDescription`](crate::model::S3LocationDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -1187,6 +1198,7 @@ impl CustomPluginFileDescription {
 pub mod custom_plugin_file_description {
 
     /// A builder for [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_md5: std::option::Option<std::string::String>,
@@ -1564,6 +1576,7 @@ impl ConnectorSummary {
 pub mod connector_summary {
 
     /// A builder for [`ConnectorSummary`](crate::model::ConnectorSummary).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<crate::model::CapacityDescription>,
@@ -1850,6 +1863,7 @@ impl WorkerConfigurationDescription {
 pub mod worker_configuration_description {
 
     /// A builder for [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision: std::option::Option<i64>,
@@ -1913,6 +1927,7 @@ impl PluginDescription {
 pub mod plugin_description {
 
     /// A builder for [`PluginDescription`](crate::model::PluginDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin: std::option::Option<crate::model::CustomPluginDescription>,
@@ -1971,6 +1986,7 @@ impl CustomPluginDescription {
 pub mod custom_plugin_description {
 
     /// A builder for [`CustomPluginDescription`](crate::model::CustomPluginDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
@@ -2036,6 +2052,7 @@ impl LogDeliveryDescription {
 pub mod log_delivery_description {
 
     /// A builder for [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_log_delivery:
@@ -2107,6 +2124,7 @@ impl WorkerLogDeliveryDescription {
 pub mod worker_log_delivery_description {
 
     /// A builder for [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs:
@@ -2206,6 +2224,7 @@ impl S3LogDeliveryDescription {
 pub mod s3_log_delivery_description {
 
     /// A builder for [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2285,6 +2304,7 @@ impl FirehoseLogDeliveryDescription {
 pub mod firehose_log_delivery_description {
 
     /// A builder for [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream: std::option::Option<std::string::String>,
@@ -2355,6 +2375,7 @@ impl CloudWatchLogsLogDeliveryDescription {
 pub mod cloud_watch_logs_log_delivery_description {
 
     /// A builder for [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -2417,6 +2438,7 @@ impl KafkaClusterEncryptionInTransitDescription {
 pub mod kafka_cluster_encryption_in_transit_description {
 
     /// A builder for [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type:
@@ -2567,6 +2589,7 @@ impl KafkaClusterClientAuthenticationDescription {
 pub mod kafka_cluster_client_authentication_description {
 
     /// A builder for [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_type:
@@ -2716,6 +2739,7 @@ impl KafkaClusterDescription {
 pub mod kafka_cluster_description {
 
     /// A builder for [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apache_kafka_cluster:
@@ -2778,6 +2802,7 @@ impl ApacheKafkaClusterDescription {
 pub mod apache_kafka_cluster_description {
 
     /// A builder for [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bootstrap_servers: std::option::Option<std::string::String>,
@@ -2848,6 +2873,7 @@ impl VpcDescription {
 pub mod vpc_description {
 
     /// A builder for [`VpcDescription`](crate::model::VpcDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2935,6 +2961,7 @@ impl CapacityDescription {
 pub mod capacity_description {
 
     /// A builder for [`CapacityDescription`](crate::model::CapacityDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling: std::option::Option<crate::model::AutoScalingDescription>,
@@ -3012,6 +3039,7 @@ impl ProvisionedCapacityDescription {
 pub mod provisioned_capacity_description {
 
     /// A builder for [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mcu_count: std::option::Option<i32>,
@@ -3102,6 +3130,7 @@ impl AutoScalingDescription {
 pub mod auto_scaling_description {
 
     /// A builder for [`AutoScalingDescription`](crate::model::AutoScalingDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_worker_count: std::option::Option<i32>,
@@ -3204,6 +3233,7 @@ impl ScaleOutPolicyDescription {
 pub mod scale_out_policy_description {
 
     /// A builder for [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_utilization_percentage: std::option::Option<i32>,
@@ -3252,6 +3282,7 @@ impl ScaleInPolicyDescription {
 pub mod scale_in_policy_description {
 
     /// A builder for [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_utilization_percentage: std::option::Option<i32>,
@@ -3334,6 +3365,7 @@ impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
 pub mod worker_configuration_revision_description {
 
     /// A builder for [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3444,6 +3476,7 @@ impl StateDescription {
 pub mod state_description {
 
     /// A builder for [`StateDescription`](crate::model::StateDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -3504,6 +3537,7 @@ impl CustomPluginLocation {
 pub mod custom_plugin_location {
 
     /// A builder for [`CustomPluginLocation`](crate::model::CustomPluginLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -3569,6 +3603,7 @@ impl S3Location {
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -3651,6 +3686,7 @@ impl WorkerConfiguration {
 pub mod worker_configuration {
 
     /// A builder for [`WorkerConfiguration`](crate::model::WorkerConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision: std::option::Option<i64>,
@@ -3714,6 +3750,7 @@ impl Plugin {
 pub mod plugin {
 
     /// A builder for [`Plugin`](crate::model::Plugin).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin: std::option::Option<crate::model::CustomPlugin>,
@@ -3772,6 +3809,7 @@ impl CustomPlugin {
 pub mod custom_plugin {
 
     /// A builder for [`CustomPlugin`](crate::model::CustomPlugin).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
@@ -3835,6 +3873,7 @@ impl LogDelivery {
 pub mod log_delivery {
 
     /// A builder for [`LogDelivery`](crate::model::LogDelivery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_log_delivery: std::option::Option<crate::model::WorkerLogDelivery>,
@@ -3902,6 +3941,7 @@ impl WorkerLogDelivery {
 pub mod worker_log_delivery {
 
     /// A builder for [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsLogDelivery>,
@@ -3994,6 +4034,7 @@ impl S3LogDelivery {
 pub mod s3_log_delivery {
 
     /// A builder for [`S3LogDelivery`](crate::model::S3LogDelivery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -4073,6 +4114,7 @@ impl FirehoseLogDelivery {
 pub mod firehose_log_delivery {
 
     /// A builder for [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream: std::option::Option<std::string::String>,
@@ -4143,6 +4185,7 @@ impl CloudWatchLogsLogDelivery {
 pub mod cloud_watch_logs_log_delivery {
 
     /// A builder for [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -4205,6 +4248,7 @@ impl KafkaClusterEncryptionInTransit {
 pub mod kafka_cluster_encryption_in_transit {
 
     /// A builder for [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type:
@@ -4263,6 +4307,7 @@ impl KafkaClusterClientAuthentication {
 pub mod kafka_cluster_client_authentication {
 
     /// A builder for [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_type:
@@ -4318,6 +4363,7 @@ impl KafkaCluster {
 pub mod kafka_cluster {
 
     /// A builder for [`KafkaCluster`](crate::model::KafkaCluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apache_kafka_cluster: std::option::Option<crate::model::ApacheKafkaCluster>,
@@ -4376,6 +4422,7 @@ impl ApacheKafkaCluster {
 pub mod apache_kafka_cluster {
 
     /// A builder for [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bootstrap_servers: std::option::Option<std::string::String>,
@@ -4446,6 +4493,7 @@ impl Vpc {
 pub mod vpc {
 
     /// A builder for [`Vpc`](crate::model::Vpc).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4531,6 +4579,7 @@ impl Capacity {
 pub mod capacity {
 
     /// A builder for [`Capacity`](crate::model::Capacity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling: std::option::Option<crate::model::AutoScaling>,
@@ -4604,6 +4653,7 @@ impl ProvisionedCapacity {
 pub mod provisioned_capacity {
 
     /// A builder for [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mcu_count: std::option::Option<i32>,
@@ -4692,6 +4742,7 @@ impl AutoScaling {
 pub mod auto_scaling {
 
     /// A builder for [`AutoScaling`](crate::model::AutoScaling).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_worker_count: std::option::Option<i32>,
@@ -4794,6 +4845,7 @@ impl ScaleOutPolicy {
 pub mod scale_out_policy {
 
     /// A builder for [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_utilization_percentage: std::option::Option<i32>,
@@ -4842,6 +4894,7 @@ impl ScaleInPolicy {
 pub mod scale_in_policy {
 
     /// A builder for [`ScaleInPolicy`](crate::model::ScaleInPolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cpu_utilization_percentage: std::option::Option<i32>,

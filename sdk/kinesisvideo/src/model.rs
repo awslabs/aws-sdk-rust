@@ -18,6 +18,7 @@ impl SingleMasterConfiguration {
 pub mod single_master_configuration {
 
     /// A builder for [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_ttl_seconds: std::option::Option<i32>,
@@ -75,6 +76,7 @@ impl NotificationConfiguration {
 pub mod notification_configuration {
 
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
@@ -145,6 +147,7 @@ impl NotificationDestinationConfig {
 pub mod notification_destination_config {
 
     /// A builder for [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -290,6 +293,7 @@ impl MediaStorageConfiguration {
 pub mod media_storage_configuration {
 
     /// A builder for [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -502,6 +506,7 @@ impl ImageGenerationConfiguration {
 pub mod image_generation_configuration {
 
     /// A builder for [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
@@ -846,6 +851,7 @@ impl ImageGenerationDestinationConfig {
 pub mod image_generation_destination_config {
 
     /// A builder for [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -1100,6 +1106,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1181,6 +1188,7 @@ impl EdgeConfig {
 pub mod edge_config {
 
     /// A builder for [`EdgeConfig`](crate::model::EdgeConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hub_device_arn: std::option::Option<std::string::String>,
@@ -1293,6 +1301,7 @@ impl DeletionConfig {
 pub mod deletion_config {
 
     /// A builder for [`DeletionConfig`](crate::model::DeletionConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edge_retention_in_hours: std::option::Option<i32>,
@@ -1377,6 +1386,7 @@ impl LocalSizeConfig {
 pub mod local_size_config {
 
     /// A builder for [`LocalSizeConfig`](crate::model::LocalSizeConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_local_media_size_in_mb: std::option::Option<i32>,
@@ -1532,6 +1542,7 @@ impl UploaderConfig {
 pub mod uploader_config {
 
     /// A builder for [`UploaderConfig`](crate::model::UploaderConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_config: std::option::Option<crate::model::ScheduleConfig>,
@@ -1593,6 +1604,7 @@ impl ScheduleConfig {
 pub mod schedule_config {
 
     /// A builder for [`ScheduleConfig`](crate::model::ScheduleConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
@@ -1665,6 +1677,7 @@ impl RecorderConfig {
 pub mod recorder_config {
 
     /// A builder for [`RecorderConfig`](crate::model::RecorderConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_source_config: std::option::Option<crate::model::MediaSourceConfig>,
@@ -1750,6 +1763,7 @@ impl std::fmt::Debug for MediaSourceConfig {
 pub mod media_source_config {
 
     /// A builder for [`MediaSourceConfig`](crate::model::MediaSourceConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) media_uri_secret_arn: std::option::Option<std::string::String>,
@@ -2091,6 +2105,7 @@ impl StreamInfo {
 pub mod stream_info {
 
     /// A builder for [`StreamInfo`](crate::model::StreamInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -2345,6 +2360,7 @@ impl StreamNameCondition {
 pub mod stream_name_condition {
 
     /// A builder for [`StreamNameCondition`](crate::model::StreamNameCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -2542,6 +2558,7 @@ impl ChannelInfo {
 pub mod channel_info {
 
     /// A builder for [`ChannelInfo`](crate::model::ChannelInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -2775,6 +2792,7 @@ impl ChannelNameCondition {
 pub mod channel_name_condition {
 
     /// A builder for [`ChannelNameCondition`](crate::model::ChannelNameCondition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -2848,6 +2866,7 @@ impl ResourceEndpointListItem {
 pub mod resource_endpoint_list_item {
 
     /// A builder for [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::ChannelProtocol>,
@@ -3016,6 +3035,7 @@ impl SingleMasterChannelEndpointConfiguration {
 pub mod single_master_channel_endpoint_configuration {
 
     /// A builder for [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>,
@@ -3311,6 +3331,7 @@ impl MappedResourceConfigurationListItem {
 pub mod mapped_resource_configuration_list_item {
 
     /// A builder for [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,

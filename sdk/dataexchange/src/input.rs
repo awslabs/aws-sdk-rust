@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod cancel_job_input {
 
     /// A builder for [`CancelJobInput`](crate::input::CancelJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -166,6 +167,7 @@ impl CancelJobInput {
 pub mod create_data_set_input {
 
     /// A builder for [`CreateDataSetInput`](crate::input::CreateDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
@@ -379,6 +381,7 @@ impl CreateDataSetInput {
 pub mod create_event_action_input {
 
     /// A builder for [`CreateEventActionInput`](crate::input::CreateEventActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -550,6 +553,7 @@ impl CreateEventActionInput {
 pub mod create_job_input {
 
     /// A builder for [`CreateJobInput`](crate::input::CreateJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::RequestDetails>,
@@ -720,6 +724,7 @@ impl CreateJobInput {
 pub mod create_revision_input {
 
     /// A builder for [`CreateRevisionInput`](crate::input::CreateRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,
@@ -942,6 +947,7 @@ impl CreateRevisionInput {
 pub mod delete_asset_input {
 
     /// A builder for [`DeleteAssetInput`](crate::input::DeleteAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -1173,6 +1179,7 @@ impl DeleteAssetInput {
 pub mod delete_data_set_input {
 
     /// A builder for [`DeleteDataSetInput`](crate::input::DeleteDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -1336,6 +1343,7 @@ impl DeleteDataSetInput {
 pub mod delete_event_action_input {
 
     /// A builder for [`DeleteEventActionInput`](crate::input::DeleteEventActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_action_id: std::option::Option<std::string::String>,
@@ -1508,6 +1516,7 @@ impl DeleteEventActionInput {
 pub mod delete_revision_input {
 
     /// A builder for [`DeleteRevisionInput`](crate::input::DeleteRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -1707,6 +1716,7 @@ impl DeleteRevisionInput {
 pub mod get_asset_input {
 
     /// A builder for [`GetAssetInput`](crate::input::GetAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -1936,6 +1946,7 @@ impl GetAssetInput {
 pub mod get_data_set_input {
 
     /// A builder for [`GetDataSetInput`](crate::input::GetDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -2099,6 +2110,7 @@ impl GetDataSetInput {
 pub mod get_event_action_input {
 
     /// A builder for [`GetEventActionInput`](crate::input::GetEventActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_action_id: std::option::Option<std::string::String>,
@@ -2269,6 +2281,7 @@ impl GetEventActionInput {
 pub mod get_job_input {
 
     /// A builder for [`GetJobInput`](crate::input::GetJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2430,6 +2443,7 @@ impl GetJobInput {
 pub mod get_revision_input {
 
     /// A builder for [`GetRevisionInput`](crate::input::GetRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -2629,6 +2643,7 @@ impl GetRevisionInput {
 pub mod list_data_set_revisions_input {
 
     /// A builder for [`ListDataSetRevisionsInput`](crate::input::ListDataSetRevisionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -2841,6 +2856,7 @@ impl ListDataSetRevisionsInput {
 pub mod list_data_sets_input {
 
     /// A builder for [`ListDataSetsInput`](crate::input::ListDataSetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
@@ -3032,6 +3048,7 @@ impl ListDataSetsInput {
 pub mod list_event_actions_input {
 
     /// A builder for [`ListEventActionsInput`](crate::input::ListEventActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source_id: std::option::Option<std::string::String>,
@@ -3231,6 +3248,7 @@ impl ListEventActionsInput {
 pub mod list_jobs_input {
 
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -3437,6 +3455,7 @@ impl ListJobsInput {
 pub mod list_revision_assets_input {
 
     /// A builder for [`ListRevisionAssetsInput`](crate::input::ListRevisionAssetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -3681,6 +3700,7 @@ impl ListRevisionAssetsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3846,6 +3866,7 @@ impl ListTagsForResourceInput {
 pub mod revoke_revision_input {
 
     /// A builder for [`RevokeRevisionInput`](crate::input::RevokeRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -4074,6 +4095,7 @@ impl RevokeRevisionInput {
 pub mod send_api_asset_input {
 
     /// A builder for [`SendApiAssetInput`](crate::input::SendApiAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
@@ -4352,6 +4374,7 @@ impl SendApiAssetInput {
 pub mod start_job_input {
 
     /// A builder for [`StartJobInput`](crate::input::StartJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4513,6 +4536,7 @@ impl StartJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4719,6 +4743,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4921,6 +4946,7 @@ impl UntagResourceInput {
 pub mod update_asset_input {
 
     /// A builder for [`UpdateAssetInput`](crate::input::UpdateAssetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -5178,6 +5204,7 @@ impl UpdateAssetInput {
 pub mod update_data_set_input {
 
     /// A builder for [`UpdateDataSetInput`](crate::input::UpdateDataSetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -5379,6 +5406,7 @@ impl UpdateDataSetInput {
 pub mod update_event_action_input {
 
     /// A builder for [`UpdateEventActionInput`](crate::input::UpdateEventActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -5577,6 +5605,7 @@ impl UpdateEventActionInput {
 pub mod update_revision_input {
 
     /// A builder for [`UpdateRevisionInput`](crate::input::UpdateRevisionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<std::string::String>,

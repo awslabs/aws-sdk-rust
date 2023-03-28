@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod attach_instances_input {
 
     /// A builder for [`AttachInstancesInput`](crate::input::AttachInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -186,6 +187,7 @@ impl AttachInstancesInput {
 pub mod attach_load_balancers_input {
 
     /// A builder for [`AttachLoadBalancersInput`](crate::input::AttachLoadBalancersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -369,6 +371,7 @@ impl AttachLoadBalancersInput {
 pub mod attach_load_balancer_target_groups_input {
 
     /// A builder for [`AttachLoadBalancerTargetGroupsInput`](crate::input::AttachLoadBalancerTargetGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -552,6 +555,7 @@ impl AttachLoadBalancerTargetGroupsInput {
 pub mod attach_traffic_sources_input {
 
     /// A builder for [`AttachTrafficSourcesInput`](crate::input::AttachTrafficSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -740,6 +744,7 @@ impl AttachTrafficSourcesInput {
 pub mod batch_delete_scheduled_action_input {
 
     /// A builder for [`BatchDeleteScheduledActionInput`](crate::input::BatchDeleteScheduledActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -923,6 +928,7 @@ impl BatchDeleteScheduledActionInput {
 pub mod batch_put_scheduled_update_group_action_input {
 
     /// A builder for [`BatchPutScheduledUpdateGroupActionInput`](crate::input::BatchPutScheduledUpdateGroupActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -1112,6 +1118,7 @@ impl BatchPutScheduledUpdateGroupActionInput {
 pub mod cancel_instance_refresh_input {
 
     /// A builder for [`CancelInstanceRefreshInput`](crate::input::CancelInstanceRefreshInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -1276,6 +1283,7 @@ impl CancelInstanceRefreshInput {
 pub mod complete_lifecycle_action_input {
 
     /// A builder for [`CompleteLifecycleActionInput`](crate::input::CompleteLifecycleActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
@@ -1497,6 +1505,7 @@ impl CompleteLifecycleActionInput {
 pub mod create_auto_scaling_group_input {
 
     /// A builder for [`CreateAutoScalingGroupInput`](crate::input::CreateAutoScalingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -2116,6 +2125,7 @@ impl CreateAutoScalingGroupInput {
 pub mod create_launch_configuration_input {
 
     /// A builder for [`CreateLaunchConfigurationInput`](crate::input::CreateLaunchConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
@@ -2584,6 +2594,7 @@ impl CreateLaunchConfigurationInput {
 pub mod create_or_update_tags_input {
 
     /// A builder for [`CreateOrUpdateTagsInput`](crate::input::CreateOrUpdateTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2750,6 +2761,7 @@ impl CreateOrUpdateTagsInput {
 pub mod delete_auto_scaling_group_input {
 
     /// A builder for [`DeleteAutoScalingGroupInput`](crate::input::DeleteAutoScalingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -2926,6 +2938,7 @@ impl DeleteAutoScalingGroupInput {
 pub mod delete_launch_configuration_input {
 
     /// A builder for [`DeleteLaunchConfigurationInput`](crate::input::DeleteLaunchConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
@@ -3090,6 +3103,7 @@ impl DeleteLaunchConfigurationInput {
 pub mod delete_lifecycle_hook_input {
 
     /// A builder for [`DeleteLifecycleHookInput`](crate::input::DeleteLifecycleHookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
@@ -3267,6 +3281,7 @@ impl DeleteLifecycleHookInput {
 pub mod delete_notification_configuration_input {
 
     /// A builder for [`DeleteNotificationConfigurationInput`](crate::input::DeleteNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -3441,6 +3456,7 @@ impl DeleteNotificationConfigurationInput {
 pub mod delete_policy_input {
 
     /// A builder for [`DeletePolicyInput`](crate::input::DeletePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -3613,6 +3629,7 @@ impl DeletePolicyInput {
 pub mod delete_scheduled_action_input {
 
     /// A builder for [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -3792,6 +3809,7 @@ impl DeleteScheduledActionInput {
 pub mod delete_tags_input {
 
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3956,6 +3974,7 @@ impl DeleteTagsInput {
 pub mod delete_warm_pool_input {
 
     /// A builder for [`DeleteWarmPoolInput`](crate::input::DeleteWarmPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -4128,6 +4147,7 @@ impl DeleteWarmPoolInput {
 pub mod describe_account_limits_input {
 
     /// A builder for [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4268,6 +4288,7 @@ impl DescribeAccountLimitsInput {
 pub mod describe_adjustment_types_input {
 
     /// A builder for [`DescribeAdjustmentTypesInput`](crate::input::DescribeAdjustmentTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4408,6 +4429,7 @@ impl DescribeAdjustmentTypesInput {
 pub mod describe_auto_scaling_groups_input {
 
     /// A builder for [`DescribeAutoScalingGroupsInput`](crate::input::DescribeAutoScalingGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_names:
@@ -4626,6 +4648,7 @@ impl DescribeAutoScalingGroupsInput {
 pub mod describe_auto_scaling_instances_input {
 
     /// A builder for [`DescribeAutoScalingInstancesInput`](crate::input::DescribeAutoScalingInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4820,6 +4843,7 @@ impl DescribeAutoScalingInstancesInput {
 pub mod describe_auto_scaling_notification_types_input {
 
     /// A builder for [`DescribeAutoScalingNotificationTypesInput`](crate::input::DescribeAutoScalingNotificationTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4958,6 +4982,7 @@ impl DescribeAutoScalingNotificationTypesInput {
 pub mod describe_instance_refreshes_input {
 
     /// A builder for [`DescribeInstanceRefreshesInput`](crate::input::DescribeInstanceRefreshesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -5167,6 +5192,7 @@ impl DescribeInstanceRefreshesInput {
 pub mod describe_launch_configurations_input {
 
     /// A builder for [`DescribeLaunchConfigurationsInput`](crate::input::DescribeLaunchConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_names:
@@ -5362,6 +5388,7 @@ impl DescribeLaunchConfigurationsInput {
 pub mod describe_lifecycle_hooks_input {
 
     /// A builder for [`DescribeLifecycleHooksInput`](crate::input::DescribeLifecycleHooksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -5547,6 +5574,7 @@ impl DescribeLifecycleHooksInput {
 pub mod describe_lifecycle_hook_types_input {
 
     /// A builder for [`DescribeLifecycleHookTypesInput`](crate::input::DescribeLifecycleHookTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5685,6 +5713,7 @@ impl DescribeLifecycleHookTypesInput {
 pub mod describe_load_balancers_input {
 
     /// A builder for [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -5873,6 +5902,7 @@ impl DescribeLoadBalancersInput {
 pub mod describe_load_balancer_target_groups_input {
 
     /// A builder for [`DescribeLoadBalancerTargetGroupsInput`](crate::input::DescribeLoadBalancerTargetGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -6059,6 +6089,7 @@ impl DescribeLoadBalancerTargetGroupsInput {
 pub mod describe_metric_collection_types_input {
 
     /// A builder for [`DescribeMetricCollectionTypesInput`](crate::input::DescribeMetricCollectionTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6197,6 +6228,7 @@ impl DescribeMetricCollectionTypesInput {
 pub mod describe_notification_configurations_input {
 
     /// A builder for [`DescribeNotificationConfigurationsInput`](crate::input::DescribeNotificationConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_names:
@@ -6390,6 +6422,7 @@ impl DescribeNotificationConfigurationsInput {
 pub mod describe_policies_input {
 
     /// A builder for [`DescribePoliciesInput`](crate::input::DescribePoliciesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -6620,6 +6653,7 @@ impl DescribePoliciesInput {
 pub mod describe_scaling_activities_input {
 
     /// A builder for [`DescribeScalingActivitiesInput`](crate::input::DescribeScalingActivitiesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6843,6 +6877,7 @@ impl DescribeScalingActivitiesInput {
 pub mod describe_scaling_process_types_input {
 
     /// A builder for [`DescribeScalingProcessTypesInput`](crate::input::DescribeScalingProcessTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6981,6 +7016,7 @@ impl DescribeScalingProcessTypesInput {
 pub mod describe_scheduled_actions_input {
 
     /// A builder for [`DescribeScheduledActionsInput`](crate::input::DescribeScheduledActionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -7222,6 +7258,7 @@ impl DescribeScheduledActionsInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7412,6 +7449,7 @@ impl DescribeTagsInput {
 pub mod describe_termination_policy_types_input {
 
     /// A builder for [`DescribeTerminationPolicyTypesInput`](crate::input::DescribeTerminationPolicyTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -7550,6 +7588,7 @@ impl DescribeTerminationPolicyTypesInput {
 pub mod describe_traffic_sources_input {
 
     /// A builder for [`DescribeTrafficSourcesInput`](crate::input::DescribeTrafficSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -7753,6 +7792,7 @@ impl DescribeTrafficSourcesInput {
 pub mod describe_warm_pool_input {
 
     /// A builder for [`DescribeWarmPoolInput`](crate::input::DescribeWarmPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -7939,6 +7979,7 @@ impl DescribeWarmPoolInput {
 pub mod detach_instances_input {
 
     /// A builder for [`DetachInstancesInput`](crate::input::DetachInstancesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8135,6 +8176,7 @@ impl DetachInstancesInput {
 pub mod detach_load_balancers_input {
 
     /// A builder for [`DetachLoadBalancersInput`](crate::input::DetachLoadBalancersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8318,6 +8360,7 @@ impl DetachLoadBalancersInput {
 pub mod detach_load_balancer_target_groups_input {
 
     /// A builder for [`DetachLoadBalancerTargetGroupsInput`](crate::input::DetachLoadBalancerTargetGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8501,6 +8544,7 @@ impl DetachLoadBalancerTargetGroupsInput {
 pub mod detach_traffic_sources_input {
 
     /// A builder for [`DetachTrafficSourcesInput`](crate::input::DetachTrafficSourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8689,6 +8733,7 @@ impl DetachTrafficSourcesInput {
 pub mod disable_metrics_collection_input {
 
     /// A builder for [`DisableMetricsCollectionInput`](crate::input::DisableMetricsCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -8924,6 +8969,7 @@ impl DisableMetricsCollectionInput {
 pub mod enable_metrics_collection_input {
 
     /// A builder for [`EnableMetricsCollectionInput`](crate::input::EnableMetricsCollectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -9171,6 +9217,7 @@ impl EnableMetricsCollectionInput {
 pub mod enter_standby_input {
 
     /// A builder for [`EnterStandbyInput`](crate::input::EnterStandbyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9367,6 +9414,7 @@ impl EnterStandbyInput {
 pub mod execute_policy_input {
 
     /// A builder for [`ExecutePolicyInput`](crate::input::ExecutePolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -9583,6 +9631,7 @@ impl ExecutePolicyInput {
 pub mod exit_standby_input {
 
     /// A builder for [`ExitStandbyInput`](crate::input::ExitStandbyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9764,6 +9813,7 @@ impl ExitStandbyInput {
 pub mod get_predictive_scaling_forecast_input {
 
     /// A builder for [`GetPredictiveScalingForecastInput`](crate::input::GetPredictiveScalingForecastInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -9970,6 +10020,7 @@ impl GetPredictiveScalingForecastInput {
 pub mod put_lifecycle_hook_input {
 
     /// A builder for [`PutLifecycleHookInput`](crate::input::PutLifecycleHookInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
@@ -10251,6 +10302,7 @@ impl PutLifecycleHookInput {
 pub mod put_notification_configuration_input {
 
     /// A builder for [`PutNotificationConfigurationInput`](crate::input::PutNotificationConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -10446,6 +10498,7 @@ impl PutNotificationConfigurationInput {
 pub mod put_scaling_policy_input {
 
     /// A builder for [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -10858,6 +10911,7 @@ impl PutScalingPolicyInput {
 pub mod put_scheduled_update_group_action_input {
 
     /// A builder for [`PutScheduledUpdateGroupActionInput`](crate::input::PutScheduledUpdateGroupActionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -11149,6 +11203,7 @@ impl PutScheduledUpdateGroupActionInput {
 pub mod put_warm_pool_input {
 
     /// A builder for [`PutWarmPoolInput`](crate::input::PutWarmPoolInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -11371,6 +11426,7 @@ impl PutWarmPoolInput {
 pub mod record_lifecycle_action_heartbeat_input {
 
     /// A builder for [`RecordLifecycleActionHeartbeatInput`](crate::input::RecordLifecycleActionHeartbeatInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_hook_name: std::option::Option<std::string::String>,
@@ -11575,6 +11631,7 @@ impl RecordLifecycleActionHeartbeatInput {
 pub mod resume_processes_input {
 
     /// A builder for [`ResumeProcessesInput`](crate::input::ResumeProcessesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -11780,6 +11837,7 @@ impl ResumeProcessesInput {
 pub mod set_desired_capacity_input {
 
     /// A builder for [`SetDesiredCapacityInput`](crate::input::SetDesiredCapacityInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -11966,6 +12024,7 @@ impl SetDesiredCapacityInput {
 pub mod set_instance_health_input {
 
     /// A builder for [`SetInstanceHealthInput`](crate::input::SetInstanceHealthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -12154,6 +12213,7 @@ impl SetInstanceHealthInput {
 pub mod set_instance_protection_input {
 
     /// A builder for [`SetInstanceProtectionInput`](crate::input::SetInstanceProtectionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12351,6 +12411,7 @@ impl SetInstanceProtectionInput {
 pub mod start_instance_refresh_input {
 
     /// A builder for [`StartInstanceRefreshInput`](crate::input::StartInstanceRefreshInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12568,6 +12629,7 @@ impl StartInstanceRefreshInput {
 pub mod suspend_processes_input {
 
     /// A builder for [`SuspendProcessesInput`](crate::input::SuspendProcessesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12775,6 +12837,7 @@ impl SuspendProcessesInput {
 pub mod terminate_instance_in_auto_scaling_group_input {
 
     /// A builder for [`TerminateInstanceInAutoScalingGroupInput`](crate::input::TerminateInstanceInAutoScalingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -12949,6 +13012,7 @@ impl TerminateInstanceInAutoScalingGroupInput {
 pub mod update_auto_scaling_group_input {
 
     /// A builder for [`UpdateAutoScalingGroupInput`](crate::input::UpdateAutoScalingGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,

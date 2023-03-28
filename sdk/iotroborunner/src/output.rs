@@ -7,6 +7,7 @@ pub struct DeleteSiteOutput {}
 pub mod delete_site_output {
 
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -48,6 +49,7 @@ impl ListSitesOutput {
 pub mod list_sites_output {
 
     /// A builder for [`ListSitesOutput`](crate::output::ListSitesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -138,6 +140,7 @@ impl CreateSiteOutput {
 pub mod create_site_output {
 
     /// A builder for [`CreateSiteOutput`](crate::output::CreateSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -263,6 +266,7 @@ impl UpdateSiteOutput {
 pub mod update_site_output {
 
     /// A builder for [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -416,6 +420,7 @@ impl GetSiteOutput {
 pub mod get_site_output {
 
     /// A builder for [`GetSiteOutput`](crate::output::GetSiteOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -549,6 +554,7 @@ impl ListWorkerFleetsOutput {
 pub mod list_worker_fleets_output {
 
     /// A builder for [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -639,6 +645,7 @@ impl CreateWorkerFleetOutput {
 pub mod create_worker_fleet_output {
 
     /// A builder for [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -719,6 +726,7 @@ pub struct DeleteDestinationOutput {}
 pub mod delete_destination_output {
 
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -760,6 +768,7 @@ impl ListDestinationsOutput {
 pub mod list_destinations_output {
 
     /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -857,6 +866,7 @@ impl CreateDestinationOutput {
 pub mod create_destination_output {
 
     /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -997,6 +1007,7 @@ impl UpdateDestinationOutput {
 pub mod update_destination_output {
 
     /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1166,6 +1177,7 @@ impl GetDestinationOutput {
 pub mod get_destination_output {
 
     /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1341,6 +1353,7 @@ impl UpdateWorkerFleetOutput {
 pub mod update_worker_fleet_output {
 
     /// A builder for [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1509,6 +1522,7 @@ impl UpdateWorkerOutput {
 pub mod update_worker_output {
 
     /// A builder for [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1696,6 +1710,7 @@ impl ListWorkersOutput {
 pub mod list_workers_output {
 
     /// A builder for [`ListWorkersOutput`](crate::output::ListWorkersOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1807,6 +1822,7 @@ impl GetWorkerFleetOutput {
 pub mod get_worker_fleet_output {
 
     /// A builder for [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2016,6 +2032,7 @@ impl GetWorkerOutput {
 pub mod get_worker_output {
 
     /// A builder for [`GetWorkerOutput`](crate::output::GetWorkerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2213,6 +2230,7 @@ pub struct DeleteWorkerFleetOutput {}
 pub mod delete_worker_fleet_output {
 
     /// A builder for [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2237,6 +2255,7 @@ pub struct DeleteWorkerOutput {}
 pub mod delete_worker_output {
 
     /// A builder for [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2299,6 +2318,7 @@ impl CreateWorkerOutput {
 pub mod create_worker_output {
 
     /// A builder for [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,

@@ -7,6 +7,7 @@ pub struct UpdateTaskExecutionOutput {}
 pub mod update_task_execution_output {
 
     /// A builder for [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -31,6 +32,7 @@ pub struct UpdateTaskOutput {}
 pub mod update_task_output {
 
     /// A builder for [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -55,6 +57,7 @@ pub struct UpdateLocationSmbOutput {}
 pub mod update_location_smb_output {
 
     /// A builder for [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -79,6 +82,7 @@ pub struct UpdateLocationObjectStorageOutput {}
 pub mod update_location_object_storage_output {
 
     /// A builder for [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -103,6 +107,7 @@ pub struct UpdateLocationNfsOutput {}
 pub mod update_location_nfs_output {
 
     /// A builder for [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -127,6 +132,7 @@ pub struct UpdateLocationHdfsOutput {}
 pub mod update_location_hdfs_output {
 
     /// A builder for [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -151,6 +157,7 @@ pub struct UpdateAgentOutput {}
 pub mod update_agent_output {
 
     /// A builder for [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -175,6 +182,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -199,6 +207,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -233,6 +242,7 @@ impl StartTaskExecutionOutput {
 pub mod start_task_execution_output {
 
     /// A builder for [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
@@ -291,6 +301,7 @@ impl ListTasksOutput {
 pub mod list_tasks_output {
 
     /// A builder for [`ListTasksOutput`](crate::output::ListTasksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::TaskListEntry>>,
@@ -367,6 +378,7 @@ impl ListTaskExecutionsOutput {
 pub mod list_task_executions_output {
 
     /// A builder for [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_executions:
@@ -444,6 +456,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -520,6 +533,7 @@ impl ListLocationsOutput {
 pub mod list_locations_output {
 
     /// A builder for [`ListLocationsOutput`](crate::output::ListLocationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::LocationListEntry>>,
@@ -596,6 +610,7 @@ impl ListAgentsOutput {
 pub mod list_agents_output {
 
     /// A builder for [`ListAgentsOutput`](crate::output::ListAgentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agents: std::option::Option<std::vec::Vec<crate::model::AgentListEntry>>,
@@ -757,6 +772,7 @@ impl DescribeTaskExecutionOutput {
 pub mod describe_task_execution_output {
 
     /// A builder for [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
@@ -1100,6 +1116,7 @@ impl DescribeTaskOutput {
 pub mod describe_task_output {
 
     /// A builder for [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -1438,6 +1455,7 @@ impl DescribeLocationSmbOutput {
 pub mod describe_location_smb_output {
 
     /// A builder for [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -1610,6 +1628,7 @@ impl DescribeLocationS3Output {
 pub mod describe_location_s3_output {
 
     /// A builder for [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -1786,6 +1805,7 @@ impl DescribeLocationObjectStorageOutput {
 pub mod describe_location_object_storage_output {
 
     /// A builder for [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -1964,6 +1984,7 @@ impl DescribeLocationNfsOutput {
 pub mod describe_location_nfs_output {
 
     /// A builder for [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -2148,6 +2169,7 @@ impl DescribeLocationHdfsOutput {
 pub mod describe_location_hdfs_output {
 
     /// A builder for [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -2396,6 +2418,7 @@ impl DescribeLocationFsxWindowsOutput {
 pub mod describe_location_fsx_windows_output {
 
     /// A builder for [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -2546,6 +2569,7 @@ impl DescribeLocationFsxOpenZfsOutput {
 pub mod describe_location_fsx_open_zfs_output {
 
     /// A builder for [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -2701,6 +2725,7 @@ impl DescribeLocationFsxOntapOutput {
 pub mod describe_location_fsx_ontap_output {
 
     /// A builder for [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2866,6 +2891,7 @@ impl DescribeLocationFsxLustreOutput {
 pub mod describe_location_fsx_lustre_output {
 
     /// A builder for [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3006,6 +3032,7 @@ impl DescribeLocationEfsOutput {
 pub mod describe_location_efs_output {
 
     /// A builder for [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3189,6 +3216,7 @@ impl DescribeAgentOutput {
 pub mod describe_agent_output {
 
     /// A builder for [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
@@ -3311,6 +3339,7 @@ pub struct DeleteTaskOutput {}
 pub mod delete_task_output {
 
     /// A builder for [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3335,6 +3364,7 @@ pub struct DeleteLocationOutput {}
 pub mod delete_location_output {
 
     /// A builder for [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3359,6 +3389,7 @@ pub struct DeleteAgentOutput {}
 pub mod delete_agent_output {
 
     /// A builder for [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3393,6 +3424,7 @@ impl CreateTaskOutput {
 pub mod create_task_output {
 
     /// A builder for [`CreateTaskOutput`](crate::output::CreateTaskOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -3441,6 +3473,7 @@ impl CreateLocationSmbOutput {
 pub mod create_location_smb_output {
 
     /// A builder for [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3489,6 +3522,7 @@ impl CreateLocationS3Output {
 pub mod create_location_s3_output {
 
     /// A builder for [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3537,6 +3571,7 @@ impl CreateLocationObjectStorageOutput {
 pub mod create_location_object_storage_output {
 
     /// A builder for [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3585,6 +3620,7 @@ impl CreateLocationNfsOutput {
 pub mod create_location_nfs_output {
 
     /// A builder for [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3633,6 +3669,7 @@ impl CreateLocationHdfsOutput {
 pub mod create_location_hdfs_output {
 
     /// A builder for [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3681,6 +3718,7 @@ impl CreateLocationFsxWindowsOutput {
 pub mod create_location_fsx_windows_output {
 
     /// A builder for [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3729,6 +3767,7 @@ impl CreateLocationFsxOpenZfsOutput {
 pub mod create_location_fsx_open_zfs_output {
 
     /// A builder for [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3777,6 +3816,7 @@ impl CreateLocationFsxOntapOutput {
 pub mod create_location_fsx_ontap_output {
 
     /// A builder for [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3825,6 +3865,7 @@ impl CreateLocationFsxLustreOutput {
 pub mod create_location_fsx_lustre_output {
 
     /// A builder for [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3873,6 +3914,7 @@ impl CreateLocationEfsOutput {
 pub mod create_location_efs_output {
 
     /// A builder for [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
@@ -3921,6 +3963,7 @@ impl CreateAgentOutput {
 pub mod create_agent_output {
 
     /// A builder for [`CreateAgentOutput`](crate::output::CreateAgentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
@@ -3959,6 +4002,7 @@ pub struct CancelTaskExecutionOutput {}
 pub mod cancel_task_execution_output {
 
     /// A builder for [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

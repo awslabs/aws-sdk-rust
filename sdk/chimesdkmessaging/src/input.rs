@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_channel_flow_input {
 
     /// A builder for [`AssociateChannelFlowInput`](crate::input::AssociateChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -219,6 +220,7 @@ impl AssociateChannelFlowInput {
 pub mod batch_create_channel_membership_input {
 
     /// A builder for [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -480,6 +482,7 @@ impl BatchCreateChannelMembershipInput {
 pub mod channel_flow_callback_input {
 
     /// A builder for [`ChannelFlowCallbackInput`](crate::input::ChannelFlowCallbackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) callback_id: std::option::Option<std::string::String>,
@@ -710,6 +713,7 @@ impl ChannelFlowCallbackInput {
 pub mod create_channel_input {
 
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -1067,6 +1071,7 @@ impl CreateChannelInput {
 pub mod create_channel_ban_input {
 
     /// A builder for [`CreateChannelBanInput`](crate::input::CreateChannelBanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1275,6 +1280,7 @@ impl CreateChannelBanInput {
 pub mod create_channel_flow_input {
 
     /// A builder for [`CreateChannelFlowInput`](crate::input::CreateChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -1517,6 +1523,7 @@ impl CreateChannelFlowInput {
 pub mod create_channel_membership_input {
 
     /// A builder for [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1762,6 +1769,7 @@ impl CreateChannelMembershipInput {
 pub mod create_channel_moderator_input {
 
     /// A builder for [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1976,6 +1984,7 @@ impl CreateChannelModeratorInput {
 pub mod delete_channel_input {
 
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2183,6 +2192,7 @@ impl DeleteChannelInput {
 pub mod delete_channel_ban_input {
 
     /// A builder for [`DeleteChannelBanInput`](crate::input::DeleteChannelBanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2397,6 +2407,7 @@ impl DeleteChannelBanInput {
 pub mod delete_channel_flow_input {
 
     /// A builder for [`DeleteChannelFlowInput`](crate::input::DeleteChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
@@ -2569,6 +2580,7 @@ impl DeleteChannelFlowInput {
 pub mod delete_channel_membership_input {
 
     /// A builder for [`DeleteChannelMembershipInput`](crate::input::DeleteChannelMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -2819,6 +2831,7 @@ impl DeleteChannelMembershipInput {
 pub mod delete_channel_message_input {
 
     /// A builder for [`DeleteChannelMessageInput`](crate::input::DeleteChannelMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -3069,6 +3082,7 @@ impl DeleteChannelMessageInput {
 pub mod delete_channel_moderator_input {
 
     /// A builder for [`DeleteChannelModeratorInput`](crate::input::DeleteChannelModeratorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -3287,6 +3301,7 @@ impl DeleteChannelModeratorInput {
 pub mod describe_channel_input {
 
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -3463,6 +3478,7 @@ impl DescribeChannelInput {
 pub mod describe_channel_ban_input {
 
     /// A builder for [`DescribeChannelBanInput`](crate::input::DescribeChannelBanInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -3677,6 +3693,7 @@ impl DescribeChannelBanInput {
 pub mod describe_channel_flow_input {
 
     /// A builder for [`DescribeChannelFlowInput`](crate::input::DescribeChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
@@ -3849,6 +3866,7 @@ impl DescribeChannelFlowInput {
 pub mod describe_channel_membership_input {
 
     /// A builder for [`DescribeChannelMembershipInput`](crate::input::DescribeChannelMembershipInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -4099,6 +4117,7 @@ impl DescribeChannelMembershipInput {
 pub mod describe_channel_membership_for_app_instance_user_input {
 
     /// A builder for [`DescribeChannelMembershipForAppInstanceUserInput`](crate::input::DescribeChannelMembershipForAppInstanceUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -4323,6 +4342,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
 pub mod describe_channel_moderated_by_app_instance_user_input {
 
     /// A builder for [`DescribeChannelModeratedByAppInstanceUserInput`](crate::input::DescribeChannelModeratedByAppInstanceUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -4550,6 +4570,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
 pub mod describe_channel_moderator_input {
 
     /// A builder for [`DescribeChannelModeratorInput`](crate::input::DescribeChannelModeratorInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -4768,6 +4789,7 @@ impl DescribeChannelModeratorInput {
 pub mod disassociate_channel_flow_input {
 
     /// A builder for [`DisassociateChannelFlowInput`](crate::input::DisassociateChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -4986,6 +5008,7 @@ impl DisassociateChannelFlowInput {
 pub mod get_channel_membership_preferences_input {
 
     /// A builder for [`GetChannelMembershipPreferencesInput`](crate::input::GetChannelMembershipPreferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -5202,6 +5225,7 @@ impl GetChannelMembershipPreferencesInput {
 pub mod get_channel_message_input {
 
     /// A builder for [`GetChannelMessageInput`](crate::input::GetChannelMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -5451,6 +5475,7 @@ impl GetChannelMessageInput {
 pub mod get_channel_message_status_input {
 
     /// A builder for [`GetChannelMessageStatusInput`](crate::input::GetChannelMessageStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -5702,6 +5727,7 @@ impl GetChannelMessageStatusInput {
 pub mod get_messaging_session_endpoint_input {
 
     /// A builder for [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5833,6 +5859,7 @@ impl GetMessagingSessionEndpointInput {
 pub mod list_channel_bans_input {
 
     /// A builder for [`ListChannelBansInput`](crate::input::ListChannelBansInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -6068,6 +6095,7 @@ impl ListChannelBansInput {
 pub mod list_channel_flows_input {
 
     /// A builder for [`ListChannelFlowsInput`](crate::input::ListChannelFlowsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -6289,6 +6317,7 @@ impl ListChannelFlowsInput {
 pub mod list_channel_memberships_input {
 
     /// A builder for [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -6576,6 +6605,7 @@ impl ListChannelMembershipsInput {
 pub mod list_channel_memberships_for_app_instance_user_input {
 
     /// A builder for [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
@@ -6807,6 +6837,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
 pub mod list_channel_messages_input {
 
     /// A builder for [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -7147,6 +7178,7 @@ impl ListChannelMessagesInput {
 pub mod list_channel_moderators_input {
 
     /// A builder for [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -7385,6 +7417,7 @@ impl ListChannelModeratorsInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -7639,6 +7672,7 @@ impl ListChannelsInput {
 pub mod list_channels_associated_with_channel_flow_input {
 
     /// A builder for [`ListChannelsAssociatedWithChannelFlowInput`](crate::input::ListChannelsAssociatedWithChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
@@ -7861,6 +7895,7 @@ impl ListChannelsAssociatedWithChannelFlowInput {
 pub mod list_channels_moderated_by_app_instance_user_input {
 
     /// A builder for [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
@@ -8089,6 +8124,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
 pub mod list_sub_channels_input {
 
     /// A builder for [`ListSubChannelsInput`](crate::input::ListSubChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -8324,6 +8360,7 @@ impl ListSubChannelsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -8493,6 +8530,7 @@ impl ListTagsForResourceInput {
 pub mod put_channel_membership_preferences_input {
 
     /// A builder for [`PutChannelMembershipPreferencesInput`](crate::input::PutChannelMembershipPreferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -8738,6 +8776,7 @@ impl PutChannelMembershipPreferencesInput {
 pub mod redact_channel_message_input {
 
     /// A builder for [`RedactChannelMessageInput`](crate::input::RedactChannelMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -8993,6 +9032,7 @@ impl RedactChannelMessageInput {
 pub mod search_channels_input {
 
     /// A builder for [`SearchChannelsInput`](crate::input::SearchChannelsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) chime_bearer: std::option::Option<std::string::String>,
@@ -9228,6 +9268,7 @@ impl SearchChannelsInput {
 pub mod send_channel_message_input {
 
     /// A builder for [`SendChannelMessageInput`](crate::input::SendChannelMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -9575,6 +9616,7 @@ impl SendChannelMessageInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9762,6 +9804,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -9949,6 +9992,7 @@ impl UntagResourceInput {
 pub mod update_channel_input {
 
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -10186,6 +10230,7 @@ impl UpdateChannelInput {
 pub mod update_channel_flow_input {
 
     /// A builder for [`UpdateChannelFlowInput`](crate::input::UpdateChannelFlowInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
@@ -10414,6 +10459,7 @@ impl UpdateChannelFlowInput {
 pub mod update_channel_message_input {
 
     /// A builder for [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -10700,6 +10746,7 @@ impl UpdateChannelMessageInput {
 pub mod update_channel_read_marker_input {
 
     /// A builder for [`UpdateChannelReadMarkerInput`](crate::input::UpdateChannelReadMarkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,

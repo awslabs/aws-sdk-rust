@@ -67,6 +67,7 @@ impl DeviceDescription {
 pub mod device_description {
 
     /// A builder for [`DeviceDescription`](crate::model::DeviceDescription).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -228,6 +229,7 @@ impl DeviceEvent {
 pub mod device_event {
 
     /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -302,6 +304,7 @@ impl Device {
 pub mod device {
 
     /// A builder for [`Device`](crate::model::Device).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::Attributes>,
@@ -367,6 +370,7 @@ pub struct Attributes {}
 pub mod attributes {
 
     /// A builder for [`Attributes`](crate::model::Attributes).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -408,6 +412,7 @@ impl DeviceMethod {
 pub mod device_method {
 
     /// A builder for [`DeviceMethod`](crate::model::DeviceMethod).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,

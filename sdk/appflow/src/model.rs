@@ -135,6 +135,7 @@ impl MetadataCatalogConfig {
 pub mod metadata_catalog_config {
 
     /// A builder for [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) glue_data_catalog: std::option::Option<crate::model::GlueDataCatalogConfig>,
@@ -208,6 +209,7 @@ impl GlueDataCatalogConfig {
 pub mod glue_data_catalog_config {
 
     /// A builder for [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -323,6 +325,7 @@ impl Task {
 pub mod task {
 
     /// A builder for [`Task`](crate::model::Task).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_fields: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -894,6 +897,7 @@ impl ConnectorOperator {
 pub mod connector_operator {
 
     /// A builder for [`ConnectorOperator`](crate::model::ConnectorOperator).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amplitude: std::option::Option<crate::model::AmplitudeConnectorOperator>,
@@ -4201,6 +4205,7 @@ impl DestinationFlowConfig {
 pub mod destination_flow_config {
 
     /// A builder for [`DestinationFlowConfig`](crate::model::DestinationFlowConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -4392,6 +4397,7 @@ impl DestinationConnectorProperties {
 pub mod destination_connector_properties {
 
     /// A builder for [`DestinationConnectorProperties`](crate::model::DestinationConnectorProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) redshift: std::option::Option<crate::model::RedshiftDestinationProperties>,
@@ -4672,6 +4678,7 @@ impl SapoDataDestinationProperties {
 pub mod sapo_data_destination_properties {
 
     /// A builder for [`SapoDataDestinationProperties`](crate::model::SapoDataDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_path: std::option::Option<std::string::String>,
@@ -4909,6 +4916,7 @@ impl ErrorHandlingConfig {
 pub mod error_handling_config {
 
     /// A builder for [`ErrorHandlingConfig`](crate::model::ErrorHandlingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fail_on_first_destination_error: std::option::Option<bool>,
@@ -4997,6 +5005,7 @@ impl SuccessResponseHandlingConfig {
 pub mod success_response_handling_config {
 
     /// A builder for [`SuccessResponseHandlingConfig`](crate::model::SuccessResponseHandlingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_prefix: std::option::Option<std::string::String>,
@@ -5092,6 +5101,7 @@ impl CustomConnectorDestinationProperties {
 pub mod custom_connector_destination_properties {
 
     /// A builder for [`CustomConnectorDestinationProperties`](crate::model::CustomConnectorDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_name: std::option::Option<std::string::String>,
@@ -5227,6 +5237,7 @@ impl MarketoDestinationProperties {
 pub mod marketo_destination_properties {
 
     /// A builder for [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -5311,6 +5322,7 @@ impl ZendeskDestinationProperties {
 pub mod zendesk_destination_properties {
 
     /// A builder for [`ZendeskDestinationProperties`](crate::model::ZendeskDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -5417,6 +5429,7 @@ impl CustomerProfilesDestinationProperties {
 pub mod customer_profiles_destination_properties {
 
     /// A builder for [`CustomerProfilesDestinationProperties`](crate::model::CustomerProfilesDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5487,6 +5500,7 @@ impl HoneycodeDestinationProperties {
 pub mod honeycode_destination_properties {
 
     /// A builder for [`HoneycodeDestinationProperties`](crate::model::HoneycodeDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -5566,6 +5580,7 @@ impl UpsolverDestinationProperties {
 pub mod upsolver_destination_properties {
 
     /// A builder for [`UpsolverDestinationProperties`](crate::model::UpsolverDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -5662,6 +5677,7 @@ impl UpsolverS3OutputFormatConfig {
 pub mod upsolver_s3_output_format_config {
 
     /// A builder for [`UpsolverS3OutputFormatConfig`](crate::model::UpsolverS3OutputFormatConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_type: std::option::Option<crate::model::FileType>,
@@ -5747,6 +5763,7 @@ impl AggregationConfig {
 pub mod aggregation_config {
 
     /// A builder for [`AggregationConfig`](crate::model::AggregationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
@@ -5952,6 +5969,7 @@ impl PrefixConfig {
 pub mod prefix_config {
 
     /// A builder for [`PrefixConfig`](crate::model::PrefixConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix_type: std::option::Option<crate::model::PrefixType>,
@@ -6453,6 +6471,7 @@ pub struct LookoutMetricsDestinationProperties {}
 pub mod lookout_metrics_destination_properties {
 
     /// A builder for [`LookoutMetricsDestinationProperties`](crate::model::LookoutMetricsDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -6494,6 +6513,7 @@ impl EventBridgeDestinationProperties {
 pub mod event_bridge_destination_properties {
 
     /// A builder for [`EventBridgeDestinationProperties`](crate::model::EventBridgeDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -6578,6 +6598,7 @@ impl SnowflakeDestinationProperties {
 pub mod snowflake_destination_properties {
 
     /// A builder for [`SnowflakeDestinationProperties`](crate::model::SnowflakeDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -6747,6 +6768,7 @@ impl SalesforceDestinationProperties {
 pub mod salesforce_destination_properties {
 
     /// A builder for [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -7020,6 +7042,7 @@ impl S3DestinationProperties {
 pub mod s3_destination_properties {
 
     /// A builder for [`S3DestinationProperties`](crate::model::S3DestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -7130,6 +7153,7 @@ impl S3OutputFormatConfig {
 pub mod s3_output_format_config {
 
     /// A builder for [`S3OutputFormatConfig`](crate::model::S3OutputFormatConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_type: std::option::Option<crate::model::FileType>,
@@ -7249,6 +7273,7 @@ impl RedshiftDestinationProperties {
 pub mod redshift_destination_properties {
 
     /// A builder for [`RedshiftDestinationProperties`](crate::model::RedshiftDestinationProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -7599,6 +7624,7 @@ impl SourceFlowConfig {
 pub mod source_flow_config {
 
     /// A builder for [`SourceFlowConfig`](crate::model::SourceFlowConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -7715,6 +7741,7 @@ impl IncrementalPullConfig {
 pub mod incremental_pull_config {
 
     /// A builder for [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datetime_type_field_name: std::option::Option<std::string::String>,
@@ -7882,6 +7909,7 @@ impl SourceConnectorProperties {
 pub mod source_connector_properties {
 
     /// A builder for [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amplitude: std::option::Option<crate::model::AmplitudeSourceProperties>,
@@ -8181,6 +8209,7 @@ impl PardotSourceProperties {
 pub mod pardot_source_properties {
 
     /// A builder for [`PardotSourceProperties`](crate::model::PardotSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8240,6 +8269,7 @@ impl CustomConnectorSourceProperties {
 pub mod custom_connector_source_properties {
 
     /// A builder for [`CustomConnectorSourceProperties`](crate::model::CustomConnectorSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_name: std::option::Option<std::string::String>,
@@ -8317,6 +8347,7 @@ impl SapoDataSourceProperties {
 pub mod sapo_data_source_properties {
 
     /// A builder for [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_path: std::option::Option<std::string::String>,
@@ -8365,6 +8396,7 @@ impl ZendeskSourceProperties {
 pub mod zendesk_source_properties {
 
     /// A builder for [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8441,6 +8473,7 @@ impl VeevaSourceProperties {
 pub mod veeva_source_properties {
 
     /// A builder for [`VeevaSourceProperties`](crate::model::VeevaSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8540,6 +8573,7 @@ impl TrendmicroSourceProperties {
 pub mod trendmicro_source_properties {
 
     /// A builder for [`TrendmicroSourceProperties`](crate::model::TrendmicroSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8588,6 +8622,7 @@ impl SlackSourceProperties {
 pub mod slack_source_properties {
 
     /// A builder for [`SlackSourceProperties`](crate::model::SlackSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8636,6 +8671,7 @@ impl SingularSourceProperties {
 pub mod singular_source_properties {
 
     /// A builder for [`SingularSourceProperties`](crate::model::SingularSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8684,6 +8720,7 @@ impl ServiceNowSourceProperties {
 pub mod service_now_source_properties {
 
     /// A builder for [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8801,6 +8838,7 @@ impl SalesforceSourceProperties {
 pub mod salesforce_source_properties {
 
     /// A builder for [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -8950,6 +8988,7 @@ impl S3SourceProperties {
 pub mod s3_source_properties {
 
     /// A builder for [`S3SourceProperties`](crate::model::S3SourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -9028,6 +9067,7 @@ impl S3InputFormatConfig {
 pub mod s3_input_format_config {
 
     /// A builder for [`S3InputFormatConfig`](crate::model::S3InputFormatConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_input_file_type: std::option::Option<crate::model::S3InputFileType>,
@@ -9169,6 +9209,7 @@ impl MarketoSourceProperties {
 pub mod marketo_source_properties {
 
     /// A builder for [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -9217,6 +9258,7 @@ impl InforNexusSourceProperties {
 pub mod infor_nexus_source_properties {
 
     /// A builder for [`InforNexusSourceProperties`](crate::model::InforNexusSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -9265,6 +9307,7 @@ impl GoogleAnalyticsSourceProperties {
 pub mod google_analytics_source_properties {
 
     /// A builder for [`GoogleAnalyticsSourceProperties`](crate::model::GoogleAnalyticsSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -9313,6 +9356,7 @@ impl DynatraceSourceProperties {
 pub mod dynatrace_source_properties {
 
     /// A builder for [`DynatraceSourceProperties`](crate::model::DynatraceSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -9361,6 +9405,7 @@ impl DatadogSourceProperties {
 pub mod datadog_source_properties {
 
     /// A builder for [`DatadogSourceProperties`](crate::model::DatadogSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -9409,6 +9454,7 @@ impl AmplitudeSourceProperties {
 pub mod amplitude_source_properties {
 
     /// A builder for [`AmplitudeSourceProperties`](crate::model::AmplitudeSourceProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object: std::option::Option<std::string::String>,
@@ -9464,6 +9510,7 @@ impl TriggerConfig {
 pub mod trigger_config {
 
     /// A builder for [`TriggerConfig`](crate::model::TriggerConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trigger_type: std::option::Option<crate::model::TriggerType>,
@@ -9530,6 +9577,7 @@ impl TriggerProperties {
 pub mod trigger_properties {
 
     /// A builder for [`TriggerProperties`](crate::model::TriggerProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
@@ -9632,6 +9680,7 @@ impl ScheduledTriggerProperties {
 pub mod scheduled_trigger_properties {
 
     /// A builder for [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
@@ -9969,6 +10018,7 @@ impl ConnectorProvisioningConfig {
 pub mod connector_provisioning_config {
 
     /// A builder for [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda: std::option::Option<crate::model::LambdaConnectorProvisioningConfig>,
@@ -10020,6 +10070,7 @@ impl LambdaConnectorProvisioningConfig {
 pub mod lambda_connector_provisioning_config {
 
     /// A builder for [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_arn: std::option::Option<std::string::String>,
@@ -10080,6 +10131,7 @@ impl ConnectorProfileConfig {
 pub mod connector_profile_config {
 
     /// A builder for [`ConnectorProfileConfig`](crate::model::ConnectorProfileConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_properties:
@@ -10313,6 +10365,7 @@ impl ConnectorProfileCredentials {
 pub mod connector_profile_credentials {
 
     /// A builder for [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amplitude:
@@ -10715,6 +10768,7 @@ impl std::fmt::Debug for PardotConnectorProfileCredentials {
 pub mod pardot_connector_profile_credentials {
 
     /// A builder for [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -10825,6 +10879,7 @@ impl ConnectorOAuthRequest {
 pub mod connector_o_auth_request {
 
     /// A builder for [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_code: std::option::Option<std::string::String>,
@@ -10913,6 +10968,7 @@ impl CustomConnectorProfileCredentials {
 pub mod custom_connector_profile_credentials {
 
     /// A builder for [`CustomConnectorProfileCredentials`](crate::model::CustomConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -11035,6 +11091,7 @@ impl CustomAuthCredentials {
 pub mod custom_auth_credentials {
 
     /// A builder for [`CustomAuthCredentials`](crate::model::CustomAuthCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_authentication_type: std::option::Option<std::string::String>,
@@ -11130,6 +11187,7 @@ impl std::fmt::Debug for ApiKeyCredentials {
 pub mod api_key_credentials {
 
     /// A builder for [`ApiKeyCredentials`](crate::model::ApiKeyCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
@@ -11240,6 +11298,7 @@ impl std::fmt::Debug for OAuth2Credentials {
 pub mod o_auth2_credentials {
 
     /// A builder for [`OAuth2Credentials`](crate::model::OAuth2Credentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -11371,6 +11430,7 @@ impl std::fmt::Debug for BasicAuthCredentials {
 pub mod basic_auth_credentials {
 
     /// A builder for [`BasicAuthCredentials`](crate::model::BasicAuthCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -11550,6 +11610,7 @@ impl SapoDataConnectorProfileCredentials {
 pub mod sapo_data_connector_profile_credentials {
 
     /// A builder for [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) basic_auth_credentials: std::option::Option<crate::model::BasicAuthCredentials>,
@@ -11655,6 +11716,7 @@ impl std::fmt::Debug for OAuthCredentials {
 pub mod o_auth_credentials {
 
     /// A builder for [`OAuthCredentials`](crate::model::OAuthCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -11802,6 +11864,7 @@ impl std::fmt::Debug for ZendeskConnectorProfileCredentials {
 pub mod zendesk_connector_profile_credentials {
 
     /// A builder for [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -11917,6 +11980,7 @@ impl std::fmt::Debug for VeevaConnectorProfileCredentials {
 pub mod veeva_connector_profile_credentials {
 
     /// A builder for [`VeevaConnectorProfileCredentials`](crate::model::VeevaConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -11992,6 +12056,7 @@ impl std::fmt::Debug for TrendmicroConnectorProfileCredentials {
 pub mod trendmicro_connector_profile_credentials {
 
     /// A builder for [`TrendmicroConnectorProfileCredentials`](crate::model::TrendmicroConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) api_secret_key: std::option::Option<std::string::String>,
@@ -12065,6 +12130,7 @@ impl std::fmt::Debug for SnowflakeConnectorProfileCredentials {
 pub mod snowflake_connector_profile_credentials {
 
     /// A builder for [`SnowflakeConnectorProfileCredentials`](crate::model::SnowflakeConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -12164,6 +12230,7 @@ impl std::fmt::Debug for SlackConnectorProfileCredentials {
 pub mod slack_connector_profile_credentials {
 
     /// A builder for [`SlackConnectorProfileCredentials`](crate::model::SlackConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -12271,6 +12338,7 @@ impl std::fmt::Debug for SingularConnectorProfileCredentials {
 pub mod singular_connector_profile_credentials {
 
     /// A builder for [`SingularConnectorProfileCredentials`](crate::model::SingularConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
@@ -12341,6 +12409,7 @@ impl std::fmt::Debug for ServiceNowConnectorProfileCredentials {
 pub mod service_now_connector_profile_credentials {
 
     /// A builder for [`ServiceNowConnectorProfileCredentials`](crate::model::ServiceNowConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -12440,6 +12509,7 @@ impl std::fmt::Debug for SalesforceConnectorProfileCredentials {
 pub mod salesforce_connector_profile_credentials {
 
     /// A builder for [`SalesforceConnectorProfileCredentials`](crate::model::SalesforceConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -12558,6 +12628,7 @@ impl std::fmt::Debug for RedshiftConnectorProfileCredentials {
 pub mod redshift_connector_profile_credentials {
 
     /// A builder for [`RedshiftConnectorProfileCredentials`](crate::model::RedshiftConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -12657,6 +12728,7 @@ impl std::fmt::Debug for MarketoConnectorProfileCredentials {
 pub mod marketo_connector_profile_credentials {
 
     /// A builder for [`MarketoConnectorProfileCredentials`](crate::model::MarketoConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -12788,6 +12860,7 @@ impl std::fmt::Debug for InforNexusConnectorProfileCredentials {
 pub mod infor_nexus_connector_profile_credentials {
 
     /// A builder for [`InforNexusConnectorProfileCredentials`](crate::model::InforNexusConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -12911,6 +12984,7 @@ impl std::fmt::Debug for HoneycodeConnectorProfileCredentials {
 pub mod honeycode_connector_profile_credentials {
 
     /// A builder for [`HoneycodeConnectorProfileCredentials`](crate::model::HoneycodeConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -13037,6 +13111,7 @@ impl std::fmt::Debug for GoogleAnalyticsConnectorProfileCredentials {
 pub mod google_analytics_connector_profile_credentials {
 
     /// A builder for [`GoogleAnalyticsConnectorProfileCredentials`](crate::model::GoogleAnalyticsConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -13153,6 +13228,7 @@ impl DynatraceConnectorProfileCredentials {
 pub mod dynatrace_connector_profile_credentials {
 
     /// A builder for [`DynatraceConnectorProfileCredentials`](crate::model::DynatraceConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_token: std::option::Option<std::string::String>,
@@ -13216,6 +13292,7 @@ impl std::fmt::Debug for DatadogConnectorProfileCredentials {
 pub mod datadog_connector_profile_credentials {
 
     /// A builder for [`DatadogConnectorProfileCredentials`](crate::model::DatadogConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
@@ -13302,6 +13379,7 @@ impl std::fmt::Debug for AmplitudeConnectorProfileCredentials {
 pub mod amplitude_connector_profile_credentials {
 
     /// A builder for [`AmplitudeConnectorProfileCredentials`](crate::model::AmplitudeConnectorProfileCredentials).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) api_key: std::option::Option<std::string::String>,
@@ -13523,6 +13601,7 @@ impl ConnectorProfileProperties {
 pub mod connector_profile_properties {
 
     /// A builder for [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amplitude:
@@ -13901,6 +13980,7 @@ impl PardotConnectorProfileProperties {
 pub mod pardot_connector_profile_properties {
 
     /// A builder for [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -13987,6 +14067,7 @@ impl CustomConnectorProfileProperties {
 pub mod custom_connector_profile_properties {
 
     /// A builder for [`CustomConnectorProfileProperties`](crate::model::CustomConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_properties: std::option::Option<
@@ -14085,6 +14166,7 @@ impl OAuth2Properties {
 pub mod o_auth2_properties {
 
     /// A builder for [`OAuth2Properties`](crate::model::OAuth2Properties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_url: std::option::Option<std::string::String>,
@@ -14309,6 +14391,7 @@ impl SapoDataConnectorProfileProperties {
 pub mod sapo_data_connector_profile_properties {
 
     /// A builder for [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_host_url: std::option::Option<std::string::String>,
@@ -14461,6 +14544,7 @@ impl OAuthProperties {
 pub mod o_auth_properties {
 
     /// A builder for [`OAuthProperties`](crate::model::OAuthProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_url: std::option::Option<std::string::String>,
@@ -14545,6 +14629,7 @@ impl ZendeskConnectorProfileProperties {
 pub mod zendesk_connector_profile_properties {
 
     /// A builder for [`ZendeskConnectorProfileProperties`](crate::model::ZendeskConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -14593,6 +14678,7 @@ impl VeevaConnectorProfileProperties {
 pub mod veeva_connector_profile_properties {
 
     /// A builder for [`VeevaConnectorProfileProperties`](crate::model::VeevaConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -14631,6 +14717,7 @@ pub struct TrendmicroConnectorProfileProperties {}
 pub mod trendmicro_connector_profile_properties {
 
     /// A builder for [`TrendmicroConnectorProfileProperties`](crate::model::TrendmicroConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -14711,6 +14798,7 @@ impl SnowflakeConnectorProfileProperties {
 pub mod snowflake_connector_profile_properties {
 
     /// A builder for [`SnowflakeConnectorProfileProperties`](crate::model::SnowflakeConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) warehouse: std::option::Option<std::string::String>,
@@ -14841,6 +14929,7 @@ impl SlackConnectorProfileProperties {
 pub mod slack_connector_profile_properties {
 
     /// A builder for [`SlackConnectorProfileProperties`](crate::model::SlackConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -14879,6 +14968,7 @@ pub struct SingularConnectorProfileProperties {}
 pub mod singular_connector_profile_properties {
 
     /// A builder for [`SingularConnectorProfileProperties`](crate::model::SingularConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -14913,6 +15003,7 @@ impl ServiceNowConnectorProfileProperties {
 pub mod service_now_connector_profile_properties {
 
     /// A builder for [`ServiceNowConnectorProfileProperties`](crate::model::ServiceNowConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -14968,6 +15059,7 @@ impl SalesforceConnectorProfileProperties {
 pub mod salesforce_connector_profile_properties {
 
     /// A builder for [`SalesforceConnectorProfileProperties`](crate::model::SalesforceConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -15084,6 +15176,7 @@ impl RedshiftConnectorProfileProperties {
 pub mod redshift_connector_profile_properties {
 
     /// A builder for [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_url: std::option::Option<std::string::String>,
@@ -15243,6 +15336,7 @@ impl MarketoConnectorProfileProperties {
 pub mod marketo_connector_profile_properties {
 
     /// A builder for [`MarketoConnectorProfileProperties`](crate::model::MarketoConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -15291,6 +15385,7 @@ impl InforNexusConnectorProfileProperties {
 pub mod infor_nexus_connector_profile_properties {
 
     /// A builder for [`InforNexusConnectorProfileProperties`](crate::model::InforNexusConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -15329,6 +15424,7 @@ pub struct HoneycodeConnectorProfileProperties {}
 pub mod honeycode_connector_profile_properties {
 
     /// A builder for [`HoneycodeConnectorProfileProperties`](crate::model::HoneycodeConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -15353,6 +15449,7 @@ pub struct GoogleAnalyticsConnectorProfileProperties {}
 pub mod google_analytics_connector_profile_properties {
 
     /// A builder for [`GoogleAnalyticsConnectorProfileProperties`](crate::model::GoogleAnalyticsConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -15387,6 +15484,7 @@ impl DynatraceConnectorProfileProperties {
 pub mod dynatrace_connector_profile_properties {
 
     /// A builder for [`DynatraceConnectorProfileProperties`](crate::model::DynatraceConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -15435,6 +15533,7 @@ impl DatadogConnectorProfileProperties {
 pub mod datadog_connector_profile_properties {
 
     /// A builder for [`DatadogConnectorProfileProperties`](crate::model::DatadogConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_url: std::option::Option<std::string::String>,
@@ -15473,6 +15572,7 @@ pub struct AmplitudeConnectorProfileProperties {}
 pub mod amplitude_connector_profile_properties {
 
     /// A builder for [`AmplitudeConnectorProfileProperties`](crate::model::AmplitudeConnectorProfileProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -15788,6 +15888,7 @@ impl FlowDefinition {
 pub mod flow_definition {
 
     /// A builder for [`FlowDefinition`](crate::model::FlowDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -16070,6 +16171,7 @@ impl ExecutionDetails {
 pub mod execution_details {
 
     /// A builder for [`ExecutionDetails`](crate::model::ExecutionDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) most_recent_execution_message: std::option::Option<std::string::String>,
@@ -16324,6 +16426,7 @@ impl ConnectorDetail {
 pub mod connector_detail {
 
     /// A builder for [`ConnectorDetail`](crate::model::ConnectorDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_description: std::option::Option<std::string::String>,
@@ -16549,6 +16652,7 @@ impl ConnectorEntity {
 pub mod connector_entity {
 
     /// A builder for [`ConnectorEntity`](crate::model::ConnectorEntity).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16673,6 +16777,7 @@ impl ExecutionRecord {
 pub mod execution_record {
 
     /// A builder for [`ExecutionRecord`](crate::model::ExecutionRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_id: std::option::Option<std::string::String>,
@@ -16877,6 +16982,7 @@ impl MetadataCatalogDetail {
 pub mod metadata_catalog_detail {
 
     /// A builder for [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_type: std::option::Option<crate::model::CatalogType>,
@@ -17008,6 +17114,7 @@ impl RegistrationOutput {
 pub mod registration_output {
 
     /// A builder for [`RegistrationOutput`](crate::model::RegistrationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17189,6 +17296,7 @@ impl ExecutionResult {
 pub mod execution_result {
 
     /// A builder for [`ExecutionResult`](crate::model::ExecutionResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_info: std::option::Option<crate::model::ErrorInfo>,
@@ -17283,6 +17391,7 @@ impl ErrorInfo {
 pub mod error_info {
 
     /// A builder for [`ErrorInfo`](crate::model::ErrorInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) put_failures_count: std::option::Option<i64>,
@@ -17540,6 +17649,7 @@ impl ConnectorConfiguration {
 pub mod connector_configuration {
 
     /// A builder for [`ConnectorConfiguration`](crate::model::ConnectorConfiguration).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) can_use_as_source: std::option::Option<bool>,
@@ -18278,6 +18388,7 @@ impl ConnectorRuntimeSetting {
 pub mod connector_runtime_setting {
 
     /// A builder for [`ConnectorRuntimeSetting`](crate::model::ConnectorRuntimeSetting).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -18446,6 +18557,7 @@ impl AuthenticationConfig {
 pub mod authentication_config {
 
     /// A builder for [`AuthenticationConfig`](crate::model::AuthenticationConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_basic_auth_supported: std::option::Option<bool>,
@@ -18574,6 +18686,7 @@ impl CustomAuthConfig {
 pub mod custom_auth_config {
 
     /// A builder for [`CustomAuthConfig`](crate::model::CustomAuthConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_authentication_type: std::option::Option<std::string::String>,
@@ -18681,6 +18794,7 @@ impl AuthParameter {
 pub mod auth_parameter {
 
     /// A builder for [`AuthParameter`](crate::model::AuthParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -18833,6 +18947,7 @@ impl OAuth2Defaults {
 pub mod o_auth2_defaults {
 
     /// A builder for [`OAuth2Defaults`](crate::model::OAuth2Defaults).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) oauth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19024,6 +19139,7 @@ impl OAuth2CustomParameter {
 pub mod o_auth2_custom_parameter {
 
     /// A builder for [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -19398,6 +19514,7 @@ impl ConnectorMetadata {
 pub mod connector_metadata {
 
     /// A builder for [`ConnectorMetadata`](crate::model::ConnectorMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amplitude: std::option::Option<crate::model::AmplitudeMetadata>,
@@ -19751,6 +19868,7 @@ pub struct PardotMetadata {}
 pub mod pardot_metadata {
 
     /// A builder for [`PardotMetadata`](crate::model::PardotMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -19775,6 +19893,7 @@ pub struct SapoDataMetadata {}
 pub mod sapo_data_metadata {
 
     /// A builder for [`SapoDataMetadata`](crate::model::SapoDataMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -19809,6 +19928,7 @@ impl HoneycodeMetadata {
 pub mod honeycode_metadata {
 
     /// A builder for [`HoneycodeMetadata`](crate::model::HoneycodeMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19856,6 +19976,7 @@ pub struct CustomerProfilesMetadata {}
 pub mod customer_profiles_metadata {
 
     /// A builder for [`CustomerProfilesMetadata`](crate::model::CustomerProfilesMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -19880,6 +20001,7 @@ pub struct UpsolverMetadata {}
 pub mod upsolver_metadata {
 
     /// A builder for [`UpsolverMetadata`](crate::model::UpsolverMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -19904,6 +20026,7 @@ pub struct EventBridgeMetadata {}
 pub mod event_bridge_metadata {
 
     /// A builder for [`EventBridgeMetadata`](crate::model::EventBridgeMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -19938,6 +20061,7 @@ impl ZendeskMetadata {
 pub mod zendesk_metadata {
 
     /// A builder for [`ZendeskMetadata`](crate::model::ZendeskMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19985,6 +20109,7 @@ pub struct VeevaMetadata {}
 pub mod veeva_metadata {
 
     /// A builder for [`VeevaMetadata`](crate::model::VeevaMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20009,6 +20134,7 @@ pub struct TrendmicroMetadata {}
 pub mod trendmicro_metadata {
 
     /// A builder for [`TrendmicroMetadata`](crate::model::TrendmicroMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20043,6 +20169,7 @@ impl SnowflakeMetadata {
 pub mod snowflake_metadata {
 
     /// A builder for [`SnowflakeMetadata`](crate::model::SnowflakeMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) supported_regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20100,6 +20227,7 @@ impl SlackMetadata {
 pub mod slack_metadata {
 
     /// A builder for [`SlackMetadata`](crate::model::SlackMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20147,6 +20275,7 @@ pub struct SingularMetadata {}
 pub mod singular_metadata {
 
     /// A builder for [`SingularMetadata`](crate::model::SingularMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20171,6 +20300,7 @@ pub struct ServiceNowMetadata {}
 pub mod service_now_metadata {
 
     /// A builder for [`ServiceNowMetadata`](crate::model::ServiceNowMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20215,6 +20345,7 @@ impl SalesforceMetadata {
 pub mod salesforce_metadata {
 
     /// A builder for [`SalesforceMetadata`](crate::model::SalesforceMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20287,6 +20418,7 @@ pub struct S3Metadata {}
 pub mod s3_metadata {
 
     /// A builder for [`S3Metadata`](crate::model::S3Metadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20311,6 +20443,7 @@ pub struct RedshiftMetadata {}
 pub mod redshift_metadata {
 
     /// A builder for [`RedshiftMetadata`](crate::model::RedshiftMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20335,6 +20468,7 @@ pub struct MarketoMetadata {}
 pub mod marketo_metadata {
 
     /// A builder for [`MarketoMetadata`](crate::model::MarketoMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20359,6 +20493,7 @@ pub struct InforNexusMetadata {}
 pub mod infor_nexus_metadata {
 
     /// A builder for [`InforNexusMetadata`](crate::model::InforNexusMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20393,6 +20528,7 @@ impl GoogleAnalyticsMetadata {
 pub mod google_analytics_metadata {
 
     /// A builder for [`GoogleAnalyticsMetadata`](crate::model::GoogleAnalyticsMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20440,6 +20576,7 @@ pub struct DynatraceMetadata {}
 pub mod dynatrace_metadata {
 
     /// A builder for [`DynatraceMetadata`](crate::model::DynatraceMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20464,6 +20601,7 @@ pub struct DatadogMetadata {}
 pub mod datadog_metadata {
 
     /// A builder for [`DatadogMetadata`](crate::model::DatadogMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20488,6 +20626,7 @@ pub struct AmplitudeMetadata {}
 pub mod amplitude_metadata {
 
     /// A builder for [`AmplitudeMetadata`](crate::model::AmplitudeMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -20702,6 +20841,7 @@ impl ConnectorProfile {
 pub mod connector_profile {
 
     /// A builder for [`ConnectorProfile`](crate::model::ConnectorProfile).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_arn: std::option::Option<std::string::String>,
@@ -20914,6 +21054,7 @@ impl PrivateConnectionProvisioningState {
 pub mod private_connection_provisioning_state {
 
     /// A builder for [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PrivateConnectionProvisioningStatus>,
@@ -21291,6 +21432,7 @@ impl ConnectorEntityField {
 pub mod connector_entity_field {
 
     /// A builder for [`ConnectorEntityField`](crate::model::ConnectorEntityField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -21537,6 +21679,7 @@ impl DestinationFieldProperties {
 pub mod destination_field_properties {
 
     /// A builder for [`DestinationFieldProperties`](crate::model::DestinationFieldProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_creatable: std::option::Option<bool>,
@@ -21672,6 +21815,7 @@ impl SourceFieldProperties {
 pub mod source_field_properties {
 
     /// A builder for [`SourceFieldProperties`](crate::model::SourceFieldProperties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_retrievable: std::option::Option<bool>,
@@ -21749,6 +21893,7 @@ impl SupportedFieldTypeDetails {
 pub mod supported_field_type_details {
 
     /// A builder for [`SupportedFieldTypeDetails`](crate::model::SupportedFieldTypeDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) v1: std::option::Option<crate::model::FieldTypeDetails>,
@@ -21840,6 +21985,7 @@ impl FieldTypeDetails {
 pub mod field_type_details {
 
     /// A builder for [`FieldTypeDetails`](crate::model::FieldTypeDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_type: std::option::Option<std::string::String>,
@@ -21997,6 +22143,7 @@ impl Range {
 pub mod range {
 
     /// A builder for [`Range`](crate::model::Range).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum: std::option::Option<f64>,

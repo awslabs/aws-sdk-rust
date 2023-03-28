@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod bulk_publish_input {
 
     /// A builder for [`BulkPublishInput`](crate::input::BulkPublishInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -175,6 +176,7 @@ impl BulkPublishInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -402,6 +404,7 @@ impl DeleteDatasetInput {
 pub mod describe_dataset_input {
 
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -629,6 +632,7 @@ impl DescribeDatasetInput {
 pub mod describe_identity_pool_usage_input {
 
     /// A builder for [`DescribeIdentityPoolUsageInput`](crate::input::DescribeIdentityPoolUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -801,6 +805,7 @@ impl DescribeIdentityPoolUsageInput {
 pub mod describe_identity_usage_input {
 
     /// A builder for [`DescribeIdentityUsageInput`](crate::input::DescribeIdentityUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1005,6 +1010,7 @@ impl DescribeIdentityUsageInput {
 pub mod get_bulk_publish_details_input {
 
     /// A builder for [`GetBulkPublishDetailsInput`](crate::input::GetBulkPublishDetailsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1177,6 +1183,7 @@ impl GetBulkPublishDetailsInput {
 pub mod get_cognito_events_input {
 
     /// A builder for [`GetCognitoEventsInput`](crate::input::GetCognitoEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1349,6 +1356,7 @@ impl GetCognitoEventsInput {
 pub mod get_identity_pool_configuration_input {
 
     /// A builder for [`GetIdentityPoolConfigurationInput`](crate::input::GetIdentityPoolConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1521,6 +1529,7 @@ impl GetIdentityPoolConfigurationInput {
 pub mod list_datasets_input {
 
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -1766,6 +1775,7 @@ impl ListDatasetsInput {
 pub mod list_identity_pool_usage_input {
 
     /// A builder for [`ListIdentityPoolUsageInput`](crate::input::ListIdentityPoolUsageInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1942,6 +1952,7 @@ impl ListIdentityPoolUsageInput {
 pub mod list_records_input {
 
     /// A builder for [`ListRecordsInput`](crate::input::ListRecordsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2255,6 +2266,7 @@ impl ListRecordsInput {
 pub mod register_device_input {
 
     /// A builder for [`RegisterDeviceInput`](crate::input::RegisterDeviceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2495,6 +2507,7 @@ impl RegisterDeviceInput {
 pub mod set_cognito_events_input {
 
     /// A builder for [`SetCognitoEventsInput`](crate::input::SetCognitoEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2710,6 +2723,7 @@ impl SetCognitoEventsInput {
 pub mod set_identity_pool_configuration_input {
 
     /// A builder for [`SetIdentityPoolConfigurationInput`](crate::input::SetIdentityPoolConfigurationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -2923,6 +2937,7 @@ impl SetIdentityPoolConfigurationInput {
 pub mod subscribe_to_dataset_input {
 
     /// A builder for [`SubscribeToDatasetInput`](crate::input::SubscribeToDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -3183,6 +3198,7 @@ impl SubscribeToDatasetInput {
 pub mod unsubscribe_from_dataset_input {
 
     /// A builder for [`UnsubscribeFromDatasetInput`](crate::input::UnsubscribeFromDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -3443,6 +3459,7 @@ impl UnsubscribeFromDatasetInput {
 pub mod update_records_input {
 
     /// A builder for [`UpdateRecordsInput`](crate::input::UpdateRecordsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,

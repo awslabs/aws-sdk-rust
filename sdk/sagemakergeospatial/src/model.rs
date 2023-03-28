@@ -18,6 +18,7 @@ impl ExportVectorEnrichmentJobOutputConfig {
 pub mod export_vector_enrichment_job_output_config {
 
     /// A builder for [`ExportVectorEnrichmentJobOutputConfig`](crate::model::ExportVectorEnrichmentJobOutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data: std::option::Option<crate::model::VectorEnrichmentJobS3Data>,
@@ -76,6 +77,7 @@ impl VectorEnrichmentJobS3Data {
 pub mod vector_enrichment_job_s3_data {
 
     /// A builder for [`VectorEnrichmentJobS3Data`](crate::model::VectorEnrichmentJobS3Data).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -279,6 +281,7 @@ impl ListVectorEnrichmentJobOutputConfig {
 pub mod list_vector_enrichment_job_output_config {
 
     /// A builder for [`ListVectorEnrichmentJobOutputConfig`](crate::model::ListVectorEnrichmentJobOutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -814,6 +817,7 @@ impl MapMatchingConfig {
 pub mod map_matching_config {
 
     /// A builder for [`MapMatchingConfig`](crate::model::MapMatchingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id_attribute_name: std::option::Option<std::string::String>,
@@ -917,6 +921,7 @@ impl ReverseGeocodingConfig {
 pub mod reverse_geocoding_config {
 
     /// A builder for [`ReverseGeocodingConfig`](crate::model::ReverseGeocodingConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) y_attribute_name: std::option::Option<std::string::String>,
@@ -995,6 +1000,7 @@ impl VectorEnrichmentJobInputConfig {
 pub mod vector_enrichment_job_input_config {
 
     /// A builder for [`VectorEnrichmentJobInputConfig`](crate::model::VectorEnrichmentJobInputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_type:
@@ -1202,6 +1208,7 @@ impl VectorEnrichmentJobExportErrorDetails {
 pub mod vector_enrichment_job_export_error_details {
 
     /// A builder for [`VectorEnrichmentJobExportErrorDetails`](crate::model::VectorEnrichmentJobExportErrorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::VectorEnrichmentJobExportErrorType>,
@@ -1364,6 +1371,7 @@ impl VectorEnrichmentJobErrorDetails {
 pub mod vector_enrichment_job_error_details {
 
     /// A builder for [`VectorEnrichmentJobErrorDetails`](crate::model::VectorEnrichmentJobErrorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_type: std::option::Option<crate::model::VectorEnrichmentJobErrorType>,
@@ -1556,6 +1564,7 @@ impl ItemSource {
 pub mod item_source {
 
     /// A builder for [`ItemSource`](crate::model::ItemSource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1710,6 +1719,7 @@ impl Properties {
 pub mod properties {
 
     /// A builder for [`Properties`](crate::model::Properties).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) eo_cloud_cover: std::option::Option<f32>,
@@ -1818,6 +1828,7 @@ impl AssetValue {
 pub mod asset_value {
 
     /// A builder for [`AssetValue`](crate::model::AssetValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) href: std::option::Option<std::string::String>,
@@ -1871,6 +1882,7 @@ impl Geometry {
 pub mod geometry {
 
     /// A builder for [`Geometry`](crate::model::Geometry).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1972,6 +1984,7 @@ impl std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInput {
 pub mod raster_data_collection_query_with_band_filter_input {
 
     /// A builder for [`RasterDataCollectionQueryWithBandFilterInput`](crate::model::RasterDataCollectionQueryWithBandFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) time_range_filter: std::option::Option<crate::model::TimeRangeFilterInput>,
@@ -2091,6 +2104,7 @@ impl PropertyFilters {
 pub mod property_filters {
 
     /// A builder for [`PropertyFilters`](crate::model::PropertyFilters).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::PropertyFilter>>,
@@ -2248,6 +2262,7 @@ impl PropertyFilter {
 pub mod property_filter {
 
     /// A builder for [`PropertyFilter`](crate::model::PropertyFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property: std::option::Option<crate::model::Property>,
@@ -2424,6 +2439,7 @@ impl LandsatCloudCoverLandInput {
 pub mod landsat_cloud_cover_land_input {
 
     /// A builder for [`LandsatCloudCoverLandInput`](crate::model::LandsatCloudCoverLandInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lower_bound: std::option::Option<f32>,
@@ -2491,6 +2507,7 @@ impl PlatformInput {
 pub mod platform_input {
 
     /// A builder for [`PlatformInput`](crate::model::PlatformInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2658,6 +2675,7 @@ impl ViewSunElevationInput {
 pub mod view_sun_elevation_input {
 
     /// A builder for [`ViewSunElevationInput`](crate::model::ViewSunElevationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lower_bound: std::option::Option<f32>,
@@ -2725,6 +2743,7 @@ impl ViewSunAzimuthInput {
 pub mod view_sun_azimuth_input {
 
     /// A builder for [`ViewSunAzimuthInput`](crate::model::ViewSunAzimuthInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lower_bound: std::option::Option<f32>,
@@ -2792,6 +2811,7 @@ impl ViewOffNadirInput {
 pub mod view_off_nadir_input {
 
     /// A builder for [`ViewOffNadirInput`](crate::model::ViewOffNadirInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lower_bound: std::option::Option<f32>,
@@ -2859,6 +2879,7 @@ impl EoCloudCoverInput {
 pub mod eo_cloud_cover_input {
 
     /// A builder for [`EoCloudCoverInput`](crate::model::EoCloudCoverInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lower_bound: std::option::Option<f32>,
@@ -3016,6 +3037,7 @@ impl MultiPolygonGeometryInput {
 pub mod multi_polygon_geometry_input {
 
     /// A builder for [`MultiPolygonGeometryInput`](crate::model::MultiPolygonGeometryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) coordinates:
@@ -3079,6 +3101,7 @@ impl PolygonGeometryInput {
 pub mod polygon_geometry_input {
 
     /// A builder for [`PolygonGeometryInput`](crate::model::PolygonGeometryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) coordinates:
@@ -3152,6 +3175,7 @@ impl std::fmt::Debug for TimeRangeFilterInput {
 pub mod time_range_filter_input {
 
     /// A builder for [`TimeRangeFilterInput`](crate::model::TimeRangeFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3272,6 +3296,7 @@ impl RasterDataCollectionMetadata {
 pub mod raster_data_collection_metadata {
 
     /// A builder for [`RasterDataCollectionMetadata`](crate::model::RasterDataCollectionMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3445,6 +3470,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3821,6 +3847,7 @@ impl OutputConfigInput {
 pub mod output_config_input {
 
     /// A builder for [`OutputConfigInput`](crate::model::OutputConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_data: std::option::Option<crate::model::ExportS3DataInput>,
@@ -3879,6 +3906,7 @@ impl ExportS3DataInput {
 pub mod export_s3_data_input {
 
     /// A builder for [`ExportS3DataInput`](crate::model::ExportS3DataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -4082,6 +4110,7 @@ impl ListEarthObservationJobOutputConfig {
 pub mod list_earth_observation_job_output_config {
 
     /// A builder for [`ListEarthObservationJobOutputConfig`](crate::model::ListEarthObservationJobOutputConfig).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4521,6 +4550,7 @@ pub struct LandCoverSegmentationConfigInput {}
 pub mod land_cover_segmentation_config_input {
 
     /// A builder for [`LandCoverSegmentationConfigInput`](crate::model::LandCoverSegmentationConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4545,6 +4575,7 @@ pub struct CloudMaskingConfigInput {}
 pub mod cloud_masking_config_input {
 
     /// A builder for [`CloudMaskingConfigInput`](crate::model::CloudMaskingConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4588,6 +4619,7 @@ impl StackConfigInput {
 pub mod stack_config_input {
 
     /// A builder for [`StackConfigInput`](crate::model::StackConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_resolution: std::option::Option<crate::model::OutputResolutionStackInput>,
@@ -4670,6 +4702,7 @@ impl OutputResolutionStackInput {
 pub mod output_resolution_stack_input {
 
     /// A builder for [`OutputResolutionStackInput`](crate::model::OutputResolutionStackInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined: std::option::Option<crate::model::PredefinedResolution>,
@@ -4743,6 +4776,7 @@ impl UserDefined {
 pub mod user_defined {
 
     /// A builder for [`UserDefined`](crate::model::UserDefined).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f32>,
@@ -4992,6 +5026,7 @@ impl GeoMosaicConfigInput {
 pub mod geo_mosaic_config_input {
 
     /// A builder for [`GeoMosaicConfigInput`](crate::model::GeoMosaicConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm_name: std::option::Option<crate::model::AlgorithmNameGeoMosaic>,
@@ -5245,6 +5280,7 @@ impl ZonalStatisticsConfigInput {
 pub mod zonal_statistics_config_input {
 
     /// A builder for [`ZonalStatisticsConfigInput`](crate::model::ZonalStatisticsConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zone_s3_path: std::option::Option<std::string::String>,
@@ -5459,6 +5495,7 @@ impl CloudRemovalConfigInput {
 pub mod cloud_removal_config_input {
 
     /// A builder for [`CloudRemovalConfigInput`](crate::model::CloudRemovalConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm_name: std::option::Option<crate::model::AlgorithmNameCloudRemoval>,
@@ -5647,6 +5684,7 @@ impl TemporalStatisticsConfigInput {
 pub mod temporal_statistics_config_input {
 
     /// A builder for [`TemporalStatisticsConfigInput`](crate::model::TemporalStatisticsConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_by: std::option::Option<crate::model::GroupBy>,
@@ -5940,6 +5978,7 @@ impl ResamplingConfigInput {
 pub mod resampling_config_input {
 
     /// A builder for [`ResamplingConfigInput`](crate::model::ResamplingConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_resolution:
@@ -6198,6 +6237,7 @@ impl OutputResolutionResamplingInput {
 pub mod output_resolution_resampling_input {
 
     /// A builder for [`OutputResolutionResamplingInput`](crate::model::OutputResolutionResamplingInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_defined: std::option::Option<crate::model::UserDefined>,
@@ -6256,6 +6296,7 @@ impl BandMathConfigInput {
 pub mod band_math_config_input {
 
     /// A builder for [`BandMathConfigInput`](crate::model::BandMathConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_indices: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6328,6 +6369,7 @@ impl CustomIndicesInput {
 pub mod custom_indices_input {
 
     /// A builder for [`CustomIndicesInput`](crate::model::CustomIndicesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -6399,6 +6441,7 @@ impl Operation {
 pub mod operation {
 
     /// A builder for [`Operation`](crate::model::Operation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6493,6 +6536,7 @@ impl InputConfigOutput {
 pub mod input_config_output {
 
     /// A builder for [`InputConfigOutput`](crate::model::InputConfigOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) previous_earth_observation_job_arn: std::option::Option<std::string::String>,
@@ -6626,6 +6670,7 @@ impl std::fmt::Debug for RasterDataCollectionQueryOutput {
 pub mod raster_data_collection_query_output {
 
     /// A builder for [`RasterDataCollectionQueryOutput`](crate::model::RasterDataCollectionQueryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) raster_data_collection_arn: std::option::Option<std::string::String>,
@@ -6808,6 +6853,7 @@ impl S3DataInput {
 pub mod s3_data_input {
 
     /// A builder for [`S3DataInput`](crate::model::S3DataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -6987,6 +7033,7 @@ impl InputConfigInput {
 pub mod input_config_input {
 
     /// A builder for [`InputConfigInput`](crate::model::InputConfigInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) previous_earth_observation_job_arn: std::option::Option<std::string::String>,
@@ -7109,6 +7156,7 @@ impl std::fmt::Debug for RasterDataCollectionQueryInput {
 pub mod raster_data_collection_query_input {
 
     /// A builder for [`RasterDataCollectionQueryInput`](crate::model::RasterDataCollectionQueryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) raster_data_collection_arn: std::option::Option<std::string::String>,
@@ -7227,6 +7275,7 @@ impl ExportErrorDetails {
 pub mod export_error_details {
 
     /// A builder for [`ExportErrorDetails`](crate::model::ExportErrorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_results: std::option::Option<crate::model::ExportErrorDetailsOutput>,
@@ -7304,6 +7353,7 @@ impl ExportErrorDetailsOutput {
 pub mod export_error_details_output {
 
     /// A builder for [`ExportErrorDetailsOutput`](crate::model::ExportErrorDetailsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ExportErrorType>,
@@ -7464,6 +7514,7 @@ impl EarthObservationJobErrorDetails {
 pub mod earth_observation_job_error_details {
 
     /// A builder for [`EarthObservationJobErrorDetails`](crate::model::EarthObservationJobErrorDetails).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EarthObservationJobErrorType>,
@@ -7626,6 +7677,7 @@ impl OutputBand {
 pub mod output_band {
 
     /// A builder for [`OutputBand`](crate::model::OutputBand).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) band_name: std::option::Option<std::string::String>,

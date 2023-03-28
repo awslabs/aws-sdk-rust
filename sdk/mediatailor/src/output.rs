@@ -24,6 +24,7 @@ impl ListVodSourcesOutput {
 pub mod list_vod_sources_output {
 
     /// A builder for [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
@@ -142,6 +143,7 @@ impl CreateVodSourceOutput {
 pub mod create_vod_source_output {
 
     /// A builder for [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -294,6 +296,7 @@ pub struct DeleteVodSourceOutput {}
 pub mod delete_vod_source_output {
 
     /// A builder for [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -377,6 +380,7 @@ impl UpdateVodSourceOutput {
 pub mod update_vod_source_output {
 
     /// A builder for [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -588,6 +592,7 @@ impl DescribeVodSourceOutput {
 pub mod describe_vod_source_output {
 
     /// A builder for [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -757,6 +762,7 @@ impl ListSourceLocationsOutput {
 pub mod list_source_locations_output {
 
     /// A builder for [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
@@ -892,6 +898,7 @@ impl CreateSourceLocationOutput {
 pub mod create_source_location_output {
 
     /// A builder for [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -1078,6 +1085,7 @@ pub struct DeleteSourceLocationOutput {}
 pub mod delete_source_location_output {
 
     /// A builder for [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1178,6 +1186,7 @@ impl UpdateSourceLocationOutput {
 pub mod update_source_location_output {
 
     /// A builder for [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -1440,6 +1449,7 @@ impl DescribeSourceLocationOutput {
 pub mod describe_source_location_output {
 
     /// A builder for [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
@@ -1643,6 +1653,7 @@ impl ListPrefetchSchedulesOutput {
 pub mod list_prefetch_schedules_output {
 
     /// A builder for [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
@@ -1747,6 +1758,7 @@ impl CreatePrefetchScheduleOutput {
 pub mod create_prefetch_schedule_output {
 
     /// A builder for [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1857,6 +1869,7 @@ pub struct DeletePrefetchScheduleOutput {}
 pub mod delete_prefetch_schedule_output {
 
     /// A builder for [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1926,6 +1939,7 @@ impl GetPrefetchScheduleOutput {
 pub mod get_prefetch_schedule_output {
 
     /// A builder for [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2053,6 +2067,7 @@ impl ListPlaybackConfigurationsOutput {
 pub mod list_playback_configurations_output {
 
     /// A builder for [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
@@ -2268,6 +2283,7 @@ impl PutPlaybackConfigurationOutput {
 pub mod put_playback_configuration_output {
 
     /// A builder for [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_decision_server_url: std::option::Option<std::string::String>,
@@ -2617,6 +2633,7 @@ pub struct DeletePlaybackConfigurationOutput {}
 pub mod delete_playback_configuration_output {
 
     /// A builder for [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2797,6 +2814,7 @@ impl GetPlaybackConfigurationOutput {
 pub mod get_playback_configuration_output {
 
     /// A builder for [`GetPlaybackConfigurationOutput`](crate::output::GetPlaybackConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_decision_server_url: std::option::Option<std::string::String>,
@@ -3163,6 +3181,7 @@ impl ListLiveSourcesOutput {
 pub mod list_live_sources_output {
 
     /// A builder for [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
@@ -3281,6 +3300,7 @@ impl CreateLiveSourceOutput {
 pub mod create_live_source_output {
 
     /// A builder for [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3433,6 +3453,7 @@ pub struct DeleteLiveSourceOutput {}
 pub mod delete_live_source_output {
 
     /// A builder for [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3516,6 +3537,7 @@ impl UpdateLiveSourceOutput {
 pub mod update_live_source_output {
 
     /// A builder for [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3727,6 +3749,7 @@ impl DescribeLiveSourceOutput {
 pub mod describe_live_source_output {
 
     /// A builder for [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3879,6 +3902,7 @@ pub struct StopChannelOutput {}
 pub mod stop_channel_output {
 
     /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3903,6 +3927,7 @@ pub struct StartChannelOutput {}
 pub mod start_channel_output {
 
     /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3944,6 +3969,7 @@ impl GetChannelScheduleOutput {
 pub mod get_channel_schedule_output {
 
     /// A builder for [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ScheduleEntry>>,
@@ -4080,6 +4106,7 @@ impl CreateChannelOutput {
 pub mod create_channel_output {
 
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4284,6 +4311,7 @@ impl ListChannelsOutput {
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -4343,6 +4371,7 @@ pub struct DeleteChannelOutput {}
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -4448,6 +4477,7 @@ impl UpdateChannelOutput {
 pub mod update_channel_output {
 
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4716,6 +4746,7 @@ impl DescribeChannelOutput {
 pub mod describe_channel_output {
 
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4969,6 +5000,7 @@ impl CreateProgramOutput {
 pub mod create_program_output {
 
     /// A builder for [`CreateProgramOutput`](crate::output::CreateProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
@@ -5127,6 +5159,7 @@ pub struct DeleteProgramOutput {}
 pub mod delete_program_output {
 
     /// A builder for [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5217,6 +5250,7 @@ impl DescribeProgramOutput {
 pub mod describe_program_output {
 
     /// A builder for [`DescribeProgramOutput`](crate::output::DescribeProgramOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::model::AdBreak>>,
@@ -5375,6 +5409,7 @@ pub struct PutChannelPolicyOutput {}
 pub mod put_channel_policy_output {
 
     /// A builder for [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5399,6 +5434,7 @@ pub struct DeleteChannelPolicyOutput {}
 pub mod delete_channel_policy_output {
 
     /// A builder for [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5433,6 +5469,7 @@ impl GetChannelPolicyOutput {
 pub mod get_channel_policy_output {
 
     /// A builder for [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -5471,6 +5508,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5495,6 +5533,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -5533,6 +5572,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -5603,6 +5643,7 @@ impl ListAlertsOutput {
 pub mod list_alerts_output {
 
     /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
@@ -5679,6 +5720,7 @@ impl ConfigureLogsForPlaybackConfigurationOutput {
 pub mod configure_logs_for_playback_configuration_output {
 
     /// A builder for [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_enabled: std::option::Option<i32>,

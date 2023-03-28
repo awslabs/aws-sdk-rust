@@ -177,6 +177,7 @@ impl std::error::Error for RateExceededException {}
 pub mod rate_exceeded_exception {
 
     /// A builder for [`RateExceededException`](crate::error::RateExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -237,6 +238,7 @@ impl std::error::Error for OccConflictException {}
 pub mod occ_conflict_exception {
 
     /// A builder for [`OccConflictException`](crate::error::OccConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -297,6 +299,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -366,6 +369,7 @@ impl std::error::Error for InvalidSessionException {}
 pub mod invalid_session_exception {
 
     /// A builder for [`InvalidSessionException`](crate::error::InvalidSessionException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -438,6 +442,7 @@ impl std::error::Error for CapacityExceededException {}
 pub mod capacity_exceeded_exception {
 
     /// A builder for [`CapacityExceededException`](crate::error::CapacityExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -507,6 +512,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
 
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

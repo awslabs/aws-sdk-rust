@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_configuration_items_to_application_input {
 
     /// A builder for [`AssociateConfigurationItemsToApplicationInput`](crate::input::AssociateConfigurationItemsToApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_configuration_id: std::option::Option<std::string::String>,
@@ -198,6 +199,7 @@ impl AssociateConfigurationItemsToApplicationInput {
 pub mod batch_delete_import_data_input {
 
     /// A builder for [`BatchDeleteImportDataInput`](crate::input::BatchDeleteImportDataInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_task_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -373,6 +375,7 @@ impl BatchDeleteImportDataInput {
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -549,6 +552,7 @@ impl CreateApplicationInput {
 pub mod create_tags_input {
 
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -743,6 +747,7 @@ impl CreateTagsInput {
 pub mod delete_applications_input {
 
     /// A builder for [`DeleteApplicationsInput`](crate::input::DeleteApplicationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -916,6 +921,7 @@ impl DeleteApplicationsInput {
 pub mod delete_tags_input {
 
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1110,6 +1116,7 @@ impl DeleteTagsInput {
 pub mod describe_agents_input {
 
     /// A builder for [`DescribeAgentsInput`](crate::input::DescribeAgentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1328,6 +1335,7 @@ impl DescribeAgentsInput {
 pub mod describe_configurations_input {
 
     /// A builder for [`DescribeConfigurationsInput`](crate::input::DescribeConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1503,6 +1511,7 @@ impl DescribeConfigurationsInput {
 pub mod describe_continuous_exports_input {
 
     /// A builder for [`DescribeContinuousExportsInput`](crate::input::DescribeContinuousExportsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1702,6 +1711,7 @@ impl DescribeContinuousExportsInput {
 pub mod describe_export_configurations_input {
 
     /// A builder for [`DescribeExportConfigurationsInput`](crate::input::DescribeExportConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1899,6 +1909,7 @@ impl DescribeExportConfigurationsInput {
 pub mod describe_export_tasks_input {
 
     /// A builder for [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2123,6 +2134,7 @@ impl DescribeExportTasksInput {
 pub mod describe_import_tasks_input {
 
     /// A builder for [`DescribeImportTasksInput`](crate::input::DescribeImportTasksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ImportTaskFilter>>,
@@ -2320,6 +2332,7 @@ impl DescribeImportTasksInput {
 pub mod describe_tags_input {
 
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -2515,6 +2528,7 @@ impl DescribeTagsInput {
 pub mod disassociate_configuration_items_from_application_input {
 
     /// A builder for [`DisassociateConfigurationItemsFromApplicationInput`](crate::input::DisassociateConfigurationItemsFromApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_configuration_id: std::option::Option<std::string::String>,
@@ -2709,6 +2723,7 @@ impl DisassociateConfigurationItemsFromApplicationInput {
 pub mod export_configurations_input {
 
     /// A builder for [`ExportConfigurationsInput`](crate::input::ExportConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2852,6 +2867,7 @@ impl ExportConfigurationsInput {
 pub mod get_discovery_summary_input {
 
     /// A builder for [`GetDiscoverySummaryInput`](crate::input::GetDiscoverySummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2995,6 +3011,7 @@ impl GetDiscoverySummaryInput {
 pub mod list_configurations_input {
 
     /// A builder for [`ListConfigurationsInput`](crate::input::ListConfigurationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
@@ -3232,6 +3249,7 @@ impl ListConfigurationsInput {
 pub mod list_server_neighbors_input {
 
     /// A builder for [`ListServerNeighborsInput`](crate::input::ListServerNeighborsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
@@ -3457,6 +3475,7 @@ impl ListServerNeighborsInput {
 pub mod start_continuous_export_input {
 
     /// A builder for [`StartContinuousExportInput`](crate::input::StartContinuousExportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3602,6 +3621,7 @@ impl StartContinuousExportInput {
 pub mod start_data_collection_by_agent_ids_input {
 
     /// A builder for [`StartDataCollectionByAgentIdsInput`](crate::input::StartDataCollectionByAgentIdsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3775,6 +3795,7 @@ impl StartDataCollectionByAgentIdsInput {
 pub mod start_export_task_input {
 
     /// A builder for [`StartExportTaskInput`](crate::input::StartExportTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_data_format:
@@ -3998,6 +4019,7 @@ impl StartExportTaskInput {
 pub mod start_import_task_input {
 
     /// A builder for [`StartImportTaskInput`](crate::input::StartImportTaskInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -4196,6 +4218,7 @@ impl StartImportTaskInput {
 pub mod stop_continuous_export_input {
 
     /// A builder for [`StopContinuousExportInput`](crate::input::StopContinuousExportInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -4362,6 +4385,7 @@ impl StopContinuousExportInput {
 pub mod stop_data_collection_by_agent_ids_input {
 
     /// A builder for [`StopDataCollectionByAgentIdsInput`](crate::input::StopDataCollectionByAgentIdsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4535,6 +4559,7 @@ impl StopDataCollectionByAgentIdsInput {
 pub mod update_application_input {
 
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,

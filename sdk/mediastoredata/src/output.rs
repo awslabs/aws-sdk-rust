@@ -31,6 +31,7 @@ impl PutObjectOutput {
 pub mod put_object_output {
 
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_sha256: std::option::Option<std::string::String>,
@@ -116,6 +117,7 @@ impl ListItemsOutput {
 pub mod list_items_output {
 
     /// A builder for [`ListItemsOutput`](crate::output::ListItemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
@@ -235,6 +237,7 @@ impl GetObjectOutput {
 pub mod get_object_output {
 
     /// A builder for [`GetObjectOutput`](crate::output::GetObjectOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -411,6 +414,7 @@ impl DescribeObjectOutput {
 pub mod describe_object_output {
 
     /// A builder for [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
@@ -505,6 +509,7 @@ pub struct DeleteObjectOutput {}
 pub mod delete_object_output {
 
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

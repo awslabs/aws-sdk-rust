@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_approval_rule_template_with_repository_input {
 
     /// A builder for [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -193,6 +194,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
 pub mod batch_associate_approval_rule_template_with_repositories_input {
 
     /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -391,6 +393,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
 pub mod batch_describe_merge_conflicts_input {
 
     /// A builder for [`BatchDescribeMergeConflictsInput`](crate::input::BatchDescribeMergeConflictsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -701,6 +704,7 @@ impl BatchDescribeMergeConflictsInput {
 pub mod batch_disassociate_approval_rule_template_from_repositories_input {
 
     /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -900,6 +904,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
 pub mod batch_get_commits_input {
 
     /// A builder for [`BatchGetCommitsInput`](crate::input::BatchGetCommitsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1090,6 +1095,7 @@ impl BatchGetCommitsInput {
 pub mod batch_get_repositories_input {
 
     /// A builder for [`BatchGetRepositoriesInput`](crate::input::BatchGetRepositoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1269,6 +1275,7 @@ impl BatchGetRepositoriesInput {
 pub mod create_approval_rule_template_input {
 
     /// A builder for [`CreateApprovalRuleTemplateInput`](crate::input::CreateApprovalRuleTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -1497,6 +1504,7 @@ impl CreateApprovalRuleTemplateInput {
 pub mod create_branch_input {
 
     /// A builder for [`CreateBranchInput`](crate::input::CreateBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1686,6 +1694,7 @@ impl CreateBranchInput {
 pub mod create_commit_input {
 
     /// A builder for [`CreateCommitInput`](crate::input::CreateCommitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1993,6 +2002,7 @@ impl CreateCommitInput {
 pub mod create_pull_request_input {
 
     /// A builder for [`CreatePullRequestInput`](crate::input::CreatePullRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -2212,6 +2222,7 @@ impl CreatePullRequestInput {
 pub mod create_pull_request_approval_rule_input {
 
     /// A builder for [`CreatePullRequestApprovalRuleInput`](crate::input::CreatePullRequestApprovalRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -2431,6 +2442,7 @@ impl CreatePullRequestApprovalRuleInput {
 pub mod create_repository_input {
 
     /// A builder for [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2650,6 +2662,7 @@ impl CreateRepositoryInput {
 pub mod create_unreferenced_merge_commit_input {
 
     /// A builder for [`CreateUnreferencedMergeCommitInput`](crate::input::CreateUnreferencedMergeCommitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2969,6 +2982,7 @@ impl CreateUnreferencedMergeCommitInput {
 pub mod delete_approval_rule_template_input {
 
     /// A builder for [`DeleteApprovalRuleTemplateInput`](crate::input::DeleteApprovalRuleTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -3139,6 +3153,7 @@ impl DeleteApprovalRuleTemplateInput {
 pub mod delete_branch_input {
 
     /// A builder for [`DeleteBranchInput`](crate::input::DeleteBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -3316,6 +3331,7 @@ impl DeleteBranchInput {
 pub mod delete_comment_content_input {
 
     /// A builder for [`DeleteCommentContentInput`](crate::input::DeleteCommentContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -3482,6 +3498,7 @@ impl DeleteCommentContentInput {
 pub mod delete_file_input {
 
     /// A builder for [`DeleteFileInput`](crate::input::DeleteFileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -3737,6 +3754,7 @@ impl DeleteFileInput {
 pub mod delete_pull_request_approval_rule_input {
 
     /// A builder for [`DeletePullRequestApprovalRuleInput`](crate::input::DeletePullRequestApprovalRuleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -3919,6 +3937,7 @@ impl DeletePullRequestApprovalRuleInput {
 pub mod delete_repository_input {
 
     /// A builder for [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -4086,6 +4105,7 @@ impl DeleteRepositoryInput {
 pub mod describe_merge_conflicts_input {
 
     /// A builder for [`DescribeMergeConflictsInput`](crate::input::DescribeMergeConflictsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -4377,6 +4397,7 @@ impl DescribeMergeConflictsInput {
 pub mod describe_pull_request_events_input {
 
     /// A builder for [`DescribePullRequestEventsInput`](crate::input::DescribePullRequestEventsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -4600,6 +4621,7 @@ impl DescribePullRequestEventsInput {
 pub mod disassociate_approval_rule_template_from_repository_input {
 
     /// A builder for [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -4788,6 +4810,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
 pub mod evaluate_pull_request_approval_rules_input {
 
     /// A builder for [`EvaluatePullRequestApprovalRulesInput`](crate::input::EvaluatePullRequestApprovalRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -4967,6 +4990,7 @@ impl EvaluatePullRequestApprovalRulesInput {
 pub mod get_approval_rule_template_input {
 
     /// A builder for [`GetApprovalRuleTemplateInput`](crate::input::GetApprovalRuleTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -5139,6 +5163,7 @@ impl GetApprovalRuleTemplateInput {
 pub mod get_blob_input {
 
     /// A builder for [`GetBlobInput`](crate::input::GetBlobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5314,6 +5339,7 @@ impl GetBlobInput {
 pub mod get_branch_input {
 
     /// A builder for [`GetBranchInput`](crate::input::GetBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5489,6 +5515,7 @@ impl GetBranchInput {
 pub mod get_comment_input {
 
     /// A builder for [`GetCommentInput`](crate::input::GetCommentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -5651,6 +5678,7 @@ impl GetCommentInput {
 pub mod get_comment_reactions_input {
 
     /// A builder for [`GetCommentReactionsInput`](crate::input::GetCommentReactionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -5854,6 +5882,7 @@ impl GetCommentReactionsInput {
 pub mod get_comments_for_compared_commit_input {
 
     /// A builder for [`GetCommentsForComparedCommitInput`](crate::input::GetCommentsForComparedCommitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6075,6 +6104,7 @@ impl GetCommentsForComparedCommitInput {
 pub mod get_comments_for_pull_request_input {
 
     /// A builder for [`GetCommentsForPullRequestInput`](crate::input::GetCommentsForPullRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -6311,6 +6341,7 @@ impl GetCommentsForPullRequestInput {
 pub mod get_commit_input {
 
     /// A builder for [`GetCommitInput`](crate::input::GetCommitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6486,6 +6517,7 @@ impl GetCommitInput {
 pub mod get_differences_input {
 
     /// A builder for [`GetDifferencesInput`](crate::input::GetDifferencesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6729,6 +6761,7 @@ impl GetDifferencesInput {
 pub mod get_file_input {
 
     /// A builder for [`GetFileInput`](crate::input::GetFileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6919,6 +6952,7 @@ impl GetFileInput {
 pub mod get_folder_input {
 
     /// A builder for [`GetFolderInput`](crate::input::GetFolderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -7109,6 +7143,7 @@ impl GetFolderInput {
 pub mod get_merge_commit_input {
 
     /// A builder for [`GetMergeCommitInput`](crate::input::GetMergeCommitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -7345,6 +7380,7 @@ impl GetMergeCommitInput {
 pub mod get_merge_conflicts_input {
 
     /// A builder for [`GetMergeConflictsInput`](crate::input::GetMergeConflictsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -7622,6 +7658,7 @@ impl GetMergeConflictsInput {
 pub mod get_merge_options_input {
 
     /// A builder for [`GetMergeOptionsInput`](crate::input::GetMergeOptionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -7858,6 +7895,7 @@ impl GetMergeOptionsInput {
 pub mod get_pull_request_input {
 
     /// A builder for [`GetPullRequestInput`](crate::input::GetPullRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -8023,6 +8061,7 @@ impl GetPullRequestInput {
 pub mod get_pull_request_approval_states_input {
 
     /// A builder for [`GetPullRequestApprovalStatesInput`](crate::input::GetPullRequestApprovalStatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -8202,6 +8241,7 @@ impl GetPullRequestApprovalStatesInput {
 pub mod get_pull_request_override_state_input {
 
     /// A builder for [`GetPullRequestOverrideStateInput`](crate::input::GetPullRequestOverrideStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -8381,6 +8421,7 @@ impl GetPullRequestOverrideStateInput {
 pub mod get_repository_input {
 
     /// A builder for [`GetRepositoryInput`](crate::input::GetRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -8546,6 +8587,7 @@ impl GetRepositoryInput {
 pub mod get_repository_triggers_input {
 
     /// A builder for [`GetRepositoryTriggersInput`](crate::input::GetRepositoryTriggersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -8715,6 +8757,7 @@ impl GetRepositoryTriggersInput {
 pub mod list_approval_rule_templates_input {
 
     /// A builder for [`ListApprovalRuleTemplatesInput`](crate::input::ListApprovalRuleTemplatesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8893,6 +8936,7 @@ impl ListApprovalRuleTemplatesInput {
 pub mod list_associated_approval_rule_templates_for_repository_input {
 
     /// A builder for [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -9088,6 +9132,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
 pub mod list_branches_input {
 
     /// A builder for [`ListBranchesInput`](crate::input::ListBranchesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -9265,6 +9310,7 @@ impl ListBranchesInput {
 pub mod list_pull_requests_input {
 
     /// A builder for [`ListPullRequestsInput`](crate::input::ListPullRequestsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -9483,6 +9529,7 @@ impl ListPullRequestsInput {
 pub mod list_repositories_input {
 
     /// A builder for [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9671,6 +9718,7 @@ impl ListRepositoriesInput {
 pub mod list_repositories_for_approval_rule_template_input {
 
     /// A builder for [`ListRepositoriesForApprovalRuleTemplateInput`](crate::input::ListRepositoriesForApprovalRuleTemplateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -9865,6 +9913,7 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10043,6 +10092,7 @@ impl ListTagsForResourceInput {
 pub mod merge_branches_by_fast_forward_input {
 
     /// A builder for [`MergeBranchesByFastForwardInput`](crate::input::MergeBranchesByFastForwardInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -10258,6 +10308,7 @@ impl MergeBranchesByFastForwardInput {
 pub mod merge_branches_by_squash_input {
 
     /// A builder for [`MergeBranchesBySquashInput`](crate::input::MergeBranchesBySquashInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -10579,6 +10630,7 @@ impl MergeBranchesBySquashInput {
 pub mod merge_branches_by_three_way_input {
 
     /// A builder for [`MergeBranchesByThreeWayInput`](crate::input::MergeBranchesByThreeWayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -10900,6 +10952,7 @@ impl MergeBranchesByThreeWayInput {
 pub mod merge_pull_request_by_fast_forward_input {
 
     /// A builder for [`MergePullRequestByFastForwardInput`](crate::input::MergePullRequestByFastForwardInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -11097,6 +11150,7 @@ impl MergePullRequestByFastForwardInput {
 pub mod merge_pull_request_by_squash_input {
 
     /// A builder for [`MergePullRequestBySquashInput`](crate::input::MergePullRequestBySquashInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -11400,6 +11454,7 @@ impl MergePullRequestBySquashInput {
 pub mod merge_pull_request_by_three_way_input {
 
     /// A builder for [`MergePullRequestByThreeWayInput`](crate::input::MergePullRequestByThreeWayInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -11701,6 +11756,7 @@ impl MergePullRequestByThreeWayInput {
 pub mod override_pull_request_approval_rules_input {
 
     /// A builder for [`OverridePullRequestApprovalRulesInput`](crate::input::OverridePullRequestApprovalRulesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -11895,6 +11951,7 @@ impl OverridePullRequestApprovalRulesInput {
 pub mod post_comment_for_compared_commit_input {
 
     /// A builder for [`PostCommentForComparedCommitInput`](crate::input::PostCommentForComparedCommitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -12134,6 +12191,7 @@ impl PostCommentForComparedCommitInput {
 pub mod post_comment_for_pull_request_input {
 
     /// A builder for [`PostCommentForPullRequestInput`](crate::input::PostCommentForPullRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -12388,6 +12446,7 @@ impl PostCommentForPullRequestInput {
 pub mod post_comment_reply_input {
 
     /// A builder for [`PostCommentReplyInput`](crate::input::PostCommentReplyInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_reply_to: std::option::Option<std::string::String>,
@@ -12582,6 +12641,7 @@ impl PostCommentReplyInput {
 pub mod put_comment_reaction_input {
 
     /// A builder for [`PutCommentReactionInput`](crate::input::PutCommentReactionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -12761,6 +12821,7 @@ impl PutCommentReactionInput {
 pub mod put_file_input {
 
     /// A builder for [`PutFileInput`](crate::input::PutFileInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -13038,6 +13099,7 @@ impl PutFileInput {
 pub mod put_repository_triggers_input {
 
     /// A builder for [`PutRepositoryTriggersInput`](crate::input::PutRepositoryTriggersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -13228,6 +13290,7 @@ impl PutRepositoryTriggersInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -13419,6 +13482,7 @@ impl TagResourceInput {
 pub mod test_repository_triggers_input {
 
     /// A builder for [`TestRepositoryTriggersInput`](crate::input::TestRepositoryTriggersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -13609,6 +13673,7 @@ impl TestRepositoryTriggersInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -13792,6 +13857,7 @@ impl UntagResourceInput {
 pub mod update_approval_rule_template_content_input {
 
     /// A builder for [`UpdateApprovalRuleTemplateContentInput`](crate::input::UpdateApprovalRuleTemplateContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -13995,6 +14061,7 @@ impl UpdateApprovalRuleTemplateContentInput {
 pub mod update_approval_rule_template_description_input {
 
     /// A builder for [`UpdateApprovalRuleTemplateDescriptionInput`](crate::input::UpdateApprovalRuleTemplateDescriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -14183,6 +14250,7 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
 pub mod update_approval_rule_template_name_input {
 
     /// A builder for [`UpdateApprovalRuleTemplateNameInput`](crate::input::UpdateApprovalRuleTemplateNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) old_approval_rule_template_name: std::option::Option<std::string::String>,
@@ -14371,6 +14439,7 @@ impl UpdateApprovalRuleTemplateNameInput {
 pub mod update_comment_input {
 
     /// A builder for [`UpdateCommentInput`](crate::input::UpdateCommentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -14545,6 +14614,7 @@ impl UpdateCommentInput {
 pub mod update_default_branch_input {
 
     /// A builder for [`UpdateDefaultBranchInput`](crate::input::UpdateDefaultBranchInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -14727,6 +14797,7 @@ impl UpdateDefaultBranchInput {
 pub mod update_pull_request_approval_rule_content_input {
 
     /// A builder for [`UpdatePullRequestApprovalRuleContentInput`](crate::input::UpdatePullRequestApprovalRuleContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -14964,6 +15035,7 @@ impl UpdatePullRequestApprovalRuleContentInput {
 pub mod update_pull_request_approval_state_input {
 
     /// A builder for [`UpdatePullRequestApprovalStateInput`](crate::input::UpdatePullRequestApprovalStateInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -15158,6 +15230,7 @@ impl UpdatePullRequestApprovalStateInput {
 pub mod update_pull_request_description_input {
 
     /// A builder for [`UpdatePullRequestDescriptionInput`](crate::input::UpdatePullRequestDescriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -15337,6 +15410,7 @@ impl UpdatePullRequestDescriptionInput {
 pub mod update_pull_request_status_input {
 
     /// A builder for [`UpdatePullRequestStatusInput`](crate::input::UpdatePullRequestStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -15521,6 +15595,7 @@ impl UpdatePullRequestStatusInput {
 pub mod update_pull_request_title_input {
 
     /// A builder for [`UpdatePullRequestTitleInput`](crate::input::UpdatePullRequestTitleInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -15702,6 +15777,7 @@ impl UpdatePullRequestTitleInput {
 pub mod update_repository_description_input {
 
     /// A builder for [`UpdateRepositoryDescriptionInput`](crate::input::UpdateRepositoryDescriptionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -15884,6 +15960,7 @@ impl UpdateRepositoryDescriptionInput {
 pub mod update_repository_name_input {
 
     /// A builder for [`UpdateRepositoryNameInput`](crate::input::UpdateRepositoryNameInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) old_name: std::option::Option<std::string::String>,

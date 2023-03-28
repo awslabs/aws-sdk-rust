@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_home_region_control_input {
 
     /// A builder for [`CreateHomeRegionControlInput`](crate::input::CreateHomeRegionControlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region: std::option::Option<std::string::String>,
@@ -195,6 +196,7 @@ impl CreateHomeRegionControlInput {
 pub mod describe_home_region_controls_input {
 
     /// A builder for [`DescribeHomeRegionControlsInput`](crate::input::DescribeHomeRegionControlsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
@@ -407,6 +409,7 @@ impl DescribeHomeRegionControlsInput {
 pub mod get_home_region_input {
 
     /// A builder for [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

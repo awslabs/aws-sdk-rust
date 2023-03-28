@@ -335,6 +335,7 @@ impl ColumnMetadata {
 pub mod column_metadata {
 
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -642,6 +643,7 @@ impl ResultSetOptions {
 pub mod result_set_options {
 
     /// A builder for [`ResultSetOptions`](crate::model::ResultSetOptions).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
@@ -924,6 +926,7 @@ impl SqlParameter {
 pub mod sql_parameter {
 
     /// A builder for [`SqlParameter`](crate::model::SqlParameter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1131,6 +1134,7 @@ impl SqlStatementResult {
 pub mod sql_statement_result {
 
     /// A builder for [`SqlStatementResult`](crate::model::SqlStatementResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_frame: std::option::Option<crate::model::ResultFrame>,
@@ -1203,6 +1207,7 @@ impl ResultFrame {
 pub mod result_frame {
 
     /// A builder for [`ResultFrame`](crate::model::ResultFrame).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
@@ -1277,6 +1282,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::Value>>,
@@ -1511,6 +1517,7 @@ impl StructValue {
 pub mod struct_value {
 
     /// A builder for [`StructValue`](crate::model::StructValue).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Value>>,
@@ -1575,6 +1582,7 @@ impl ResultSetMetadata {
 pub mod result_set_metadata {
 
     /// A builder for [`ResultSetMetadata`](crate::model::ResultSetMetadata).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_count: std::option::Option<i64>,
@@ -1645,6 +1653,7 @@ impl UpdateResult {
 pub mod update_result {
 
     /// A builder for [`UpdateResult`](crate::model::UpdateResult).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,

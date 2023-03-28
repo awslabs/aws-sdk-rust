@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod associate_resource_input {
 
     /// A builder for [`AssociateResourceInput`](crate::input::AssociateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_identifier: std::option::Option<std::string::String>,
@@ -203,6 +204,7 @@ impl AssociateResourceInput {
 pub mod create_canary_input {
 
     /// A builder for [`CreateCanaryInput`](crate::input::CreateCanaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -565,6 +567,7 @@ impl CreateCanaryInput {
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -755,6 +758,7 @@ impl CreateGroupInput {
 pub mod delete_canary_input {
 
     /// A builder for [`DeleteCanaryInput`](crate::input::DeleteCanaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -945,6 +949,7 @@ impl DeleteCanaryInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_identifier: std::option::Option<std::string::String>,
@@ -1115,6 +1120,7 @@ impl DeleteGroupInput {
 pub mod describe_canaries_input {
 
     /// A builder for [`DescribeCanariesInput`](crate::input::DescribeCanariesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1311,6 +1317,7 @@ impl DescribeCanariesInput {
 pub mod describe_canaries_last_run_input {
 
     /// A builder for [`DescribeCanariesLastRunInput`](crate::input::DescribeCanariesLastRunInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1509,6 +1516,7 @@ impl DescribeCanariesLastRunInput {
 pub mod describe_runtime_versions_input {
 
     /// A builder for [`DescribeRuntimeVersionsInput`](crate::input::DescribeRuntimeVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1682,6 +1690,7 @@ impl DescribeRuntimeVersionsInput {
 pub mod disassociate_resource_input {
 
     /// A builder for [`DisassociateResourceInput`](crate::input::DisassociateResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_identifier: std::option::Option<std::string::String>,
@@ -1880,6 +1889,7 @@ impl DisassociateResourceInput {
 pub mod get_canary_input {
 
     /// A builder for [`GetCanaryInput`](crate::input::GetCanaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2038,6 +2048,7 @@ impl GetCanaryInput {
 pub mod get_canary_runs_input {
 
     /// A builder for [`GetCanaryRunsInput`](crate::input::GetCanaryRunsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2239,6 +2250,7 @@ impl GetCanaryRunsInput {
 pub mod get_group_input {
 
     /// A builder for [`GetGroupInput`](crate::input::GetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_identifier: std::option::Option<std::string::String>,
@@ -2407,6 +2419,7 @@ impl GetGroupInput {
 pub mod list_associated_groups_input {
 
     /// A builder for [`ListAssociatedGroupsInput`](crate::input::ListAssociatedGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2616,6 +2629,7 @@ impl ListAssociatedGroupsInput {
 pub mod list_group_resources_input {
 
     /// A builder for [`ListGroupResourcesInput`](crate::input::ListGroupResourcesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2826,6 +2840,7 @@ impl ListGroupResourcesInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2995,6 +3010,7 @@ impl ListGroupsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3164,6 +3180,7 @@ impl ListTagsForResourceInput {
 pub mod start_canary_input {
 
     /// A builder for [`StartCanaryInput`](crate::input::StartCanaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3325,6 +3342,7 @@ impl StartCanaryInput {
 pub mod stop_canary_input {
 
     /// A builder for [`StopCanaryInput`](crate::input::StopCanaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3486,6 +3504,7 @@ impl StopCanaryInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3696,6 +3715,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3902,6 +3922,7 @@ impl UntagResourceInput {
 pub mod update_canary_input {
 
     /// A builder for [`UpdateCanaryInput`](crate::input::UpdateCanaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,

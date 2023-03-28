@@ -7,6 +7,7 @@ pub struct PutRawMessageContentOutput {}
 pub mod put_raw_message_content_output {
 
     /// A builder for [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -40,6 +41,7 @@ impl GetRawMessageContentOutput {
 pub mod get_raw_message_content_output {
 
     /// A builder for [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
+    #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_content: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,

@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod accept_qualification_request_input {
 
     /// A builder for [`AcceptQualificationRequestInput`](crate::input::AcceptQualificationRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_request_id: std::option::Option<std::string::String>,
@@ -186,6 +187,7 @@ impl AcceptQualificationRequestInput {
 pub mod approve_assignment_input {
 
     /// A builder for [`ApproveAssignmentInput`](crate::input::ApproveAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_id: std::option::Option<std::string::String>,
@@ -380,6 +382,7 @@ impl ApproveAssignmentInput {
 pub mod associate_qualification_with_worker_input {
 
     /// A builder for [`AssociateQualificationWithWorkerInput`](crate::input::AssociateQualificationWithWorkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -583,6 +586,7 @@ impl AssociateQualificationWithWorkerInput {
 pub mod create_additional_assignments_for_hit_input {
 
     /// A builder for [`CreateAdditionalAssignmentsForHitInput`](crate::input::CreateAdditionalAssignmentsForHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -777,6 +781,7 @@ impl CreateAdditionalAssignmentsForHitInput {
 pub mod create_hit_input {
 
     /// A builder for [`CreateHitInput`](crate::input::CreateHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_assignments: std::option::Option<i32>,
@@ -1175,6 +1180,7 @@ impl CreateHitInput {
 pub mod create_hit_type_input {
 
     /// A builder for [`CreateHitTypeInput`](crate::input::CreateHitTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_approval_delay_in_seconds: std::option::Option<i64>,
@@ -1428,6 +1434,7 @@ impl CreateHitTypeInput {
 pub mod create_hit_with_hit_type_input {
 
     /// A builder for [`CreateHitWithHitTypeInput`](crate::input::CreateHitWithHitTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
@@ -1741,6 +1748,7 @@ impl CreateHitWithHitTypeInput {
 pub mod create_qualification_type_input {
 
     /// A builder for [`CreateQualificationTypeInput`](crate::input::CreateQualificationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2036,6 +2044,7 @@ impl CreateQualificationTypeInput {
 pub mod create_worker_block_input {
 
     /// A builder for [`CreateWorkerBlockInput`](crate::input::CreateWorkerBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_id: std::option::Option<std::string::String>,
@@ -2212,6 +2221,7 @@ impl CreateWorkerBlockInput {
 pub mod delete_hit_input {
 
     /// A builder for [`DeleteHitInput`](crate::input::DeleteHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -2372,6 +2382,7 @@ impl DeleteHitInput {
 pub mod delete_qualification_type_input {
 
     /// A builder for [`DeleteQualificationTypeInput`](crate::input::DeleteQualificationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -2541,6 +2552,7 @@ impl DeleteQualificationTypeInput {
 pub mod delete_worker_block_input {
 
     /// A builder for [`DeleteWorkerBlockInput`](crate::input::DeleteWorkerBlockInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_id: std::option::Option<std::string::String>,
@@ -2717,6 +2729,7 @@ impl DeleteWorkerBlockInput {
 pub mod disassociate_qualification_from_worker_input {
 
     /// A builder for [`DisassociateQualificationFromWorkerInput`](crate::input::DisassociateQualificationFromWorkerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_id: std::option::Option<std::string::String>,
@@ -2908,6 +2921,7 @@ impl DisassociateQualificationFromWorkerInput {
 pub mod get_account_balance_input {
 
     /// A builder for [`GetAccountBalanceInput`](crate::input::GetAccountBalanceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3051,6 +3065,7 @@ impl GetAccountBalanceInput {
 pub mod get_assignment_input {
 
     /// A builder for [`GetAssignmentInput`](crate::input::GetAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_id: std::option::Option<std::string::String>,
@@ -3216,6 +3231,7 @@ impl GetAssignmentInput {
 pub mod get_file_upload_url_input {
 
     /// A builder for [`GetFileUploadUrlInput`](crate::input::GetFileUploadUrlInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_id: std::option::Option<std::string::String>,
@@ -3398,6 +3414,7 @@ impl GetFileUploadUrlInput {
 pub mod get_hit_input {
 
     /// A builder for [`GetHitInput`](crate::input::GetHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -3555,6 +3572,7 @@ impl GetHitInput {
 pub mod get_qualification_score_input {
 
     /// A builder for [`GetQualificationScoreInput`](crate::input::GetQualificationScoreInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -3736,6 +3754,7 @@ impl GetQualificationScoreInput {
 pub mod get_qualification_type_input {
 
     /// A builder for [`GetQualificationTypeInput`](crate::input::GetQualificationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -3905,6 +3924,7 @@ impl GetQualificationTypeInput {
 pub mod list_assignments_for_hit_input {
 
     /// A builder for [`ListAssignmentsForHitInput`](crate::input::ListAssignmentsForHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -4117,6 +4137,7 @@ impl ListAssignmentsForHitInput {
 pub mod list_bonus_payments_input {
 
     /// A builder for [`ListBonusPaymentsInput`](crate::input::ListBonusPaymentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -4320,6 +4341,7 @@ impl ListBonusPaymentsInput {
 pub mod list_hi_ts_input {
 
     /// A builder for [`ListHiTsInput`](crate::input::ListHiTsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4491,6 +4513,7 @@ impl ListHiTsInput {
 pub mod list_hi_ts_for_qualification_type_input {
 
     /// A builder for [`ListHiTsForQualificationTypeInput`](crate::input::ListHiTsForQualificationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -4682,6 +4705,7 @@ impl ListHiTsForQualificationTypeInput {
 pub mod list_qualification_requests_input {
 
     /// A builder for [`ListQualificationRequestsInput`](crate::input::ListQualificationRequestsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -4875,6 +4899,7 @@ impl ListQualificationRequestsInput {
 pub mod list_qualification_types_input {
 
     /// A builder for [`ListQualificationTypesInput`](crate::input::ListQualificationTypesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
@@ -5089,6 +5114,7 @@ impl ListQualificationTypesInput {
 pub mod list_reviewable_hi_ts_input {
 
     /// A builder for [`ListReviewableHiTsInput`](crate::input::ListReviewableHiTsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
@@ -5292,6 +5318,7 @@ impl ListReviewableHiTsInput {
 pub mod list_review_policy_results_for_hit_input {
 
     /// A builder for [`ListReviewPolicyResultsForHitInput`](crate::input::ListReviewPolicyResultsForHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -5526,6 +5553,7 @@ impl ListReviewPolicyResultsForHitInput {
 pub mod list_worker_blocks_input {
 
     /// A builder for [`ListWorkerBlocksInput`](crate::input::ListWorkerBlocksInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5702,6 +5730,7 @@ impl ListWorkerBlocksInput {
 pub mod list_workers_with_qualification_type_input {
 
     /// A builder for [`ListWorkersWithQualificationTypeInput`](crate::input::ListWorkersWithQualificationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
@@ -5908,6 +5937,7 @@ impl ListWorkersWithQualificationTypeInput {
 pub mod notify_workers_input {
 
     /// A builder for [`NotifyWorkersInput`](crate::input::NotifyWorkersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -6103,6 +6133,7 @@ impl NotifyWorkersInput {
 pub mod reject_assignment_input {
 
     /// A builder for [`RejectAssignmentInput`](crate::input::RejectAssignmentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment_id: std::option::Option<std::string::String>,
@@ -6285,6 +6316,7 @@ impl RejectAssignmentInput {
 pub mod reject_qualification_request_input {
 
     /// A builder for [`RejectQualificationRequestInput`](crate::input::RejectQualificationRequestInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_request_id: std::option::Option<std::string::String>,
@@ -6466,6 +6498,7 @@ impl RejectQualificationRequestInput {
 pub mod send_bonus_input {
 
     /// A builder for [`SendBonusInput`](crate::input::SendBonusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_id: std::option::Option<std::string::String>,
@@ -6680,6 +6713,7 @@ impl SendBonusInput {
 pub mod send_test_event_notification_input {
 
     /// A builder for [`SendTestEventNotificationInput`](crate::input::SendTestEventNotificationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification: std::option::Option<crate::model::NotificationSpecification>,
@@ -6864,6 +6898,7 @@ impl SendTestEventNotificationInput {
 pub mod update_expiration_for_hit_input {
 
     /// A builder for [`UpdateExpirationForHitInput`](crate::input::UpdateExpirationForHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -7045,6 +7080,7 @@ impl UpdateExpirationForHitInput {
 pub mod update_hit_review_status_input {
 
     /// A builder for [`UpdateHitReviewStatusInput`](crate::input::UpdateHitReviewStatusInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -7231,6 +7267,7 @@ impl UpdateHitReviewStatusInput {
 pub mod update_hit_type_of_hit_input {
 
     /// A builder for [`UpdateHitTypeOfHitInput`](crate::input::UpdateHitTypeOfHitInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
@@ -7409,6 +7446,7 @@ impl UpdateHitTypeOfHitInput {
 pub mod update_notification_settings_input {
 
     /// A builder for [`UpdateNotificationSettingsInput`](crate::input::UpdateNotificationSettingsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
@@ -7602,6 +7640,7 @@ impl UpdateNotificationSettingsInput {
 pub mod update_qualification_type_input {
 
     /// A builder for [`UpdateQualificationTypeInput`](crate::input::UpdateQualificationTypeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,

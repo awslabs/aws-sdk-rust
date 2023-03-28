@@ -45,6 +45,7 @@ impl ValidateAssessmentReportIntegrityOutput {
 pub mod validate_assessment_report_integrity_output {
 
     /// A builder for [`ValidateAssessmentReportIntegrityOutput`](crate::output::ValidateAssessmentReportIntegrityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signature_valid: std::option::Option<bool>,
@@ -159,6 +160,7 @@ impl UpdateSettingsOutput {
 pub mod update_settings_output {
 
     /// A builder for [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) settings: std::option::Option<crate::model::Settings>,
@@ -207,6 +209,7 @@ impl UpdateControlOutput {
 pub mod update_control_output {
 
     /// A builder for [`UpdateControlOutput`](crate::output::UpdateControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control: std::option::Option<crate::model::Control>,
@@ -255,6 +258,7 @@ impl UpdateAssessmentStatusOutput {
 pub mod update_assessment_status_output {
 
     /// A builder for [`UpdateAssessmentStatusOutput`](crate::output::UpdateAssessmentStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
@@ -309,6 +313,7 @@ impl UpdateAssessmentFrameworkShareOutput {
 pub mod update_assessment_framework_share_output {
 
     /// A builder for [`UpdateAssessmentFrameworkShareOutput`](crate::output::UpdateAssessmentFrameworkShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_framework_share_request:
@@ -364,6 +369,7 @@ impl UpdateAssessmentFrameworkOutput {
 pub mod update_assessment_framework_output {
 
     /// A builder for [`UpdateAssessmentFrameworkOutput`](crate::output::UpdateAssessmentFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework: std::option::Option<crate::model::Framework>,
@@ -415,6 +421,7 @@ impl UpdateAssessmentControlSetStatusOutput {
 pub mod update_assessment_control_set_status_output {
 
     /// A builder for [`UpdateAssessmentControlSetStatusOutput`](crate::output::UpdateAssessmentControlSetStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_set: std::option::Option<crate::model::AssessmentControlSet>,
@@ -466,6 +473,7 @@ impl UpdateAssessmentControlOutput {
 pub mod update_assessment_control_output {
 
     /// A builder for [`UpdateAssessmentControlOutput`](crate::output::UpdateAssessmentControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control: std::option::Option<crate::model::AssessmentControl>,
@@ -517,6 +525,7 @@ impl UpdateAssessmentOutput {
 pub mod update_assessment_output {
 
     /// A builder for [`UpdateAssessmentOutput`](crate::output::UpdateAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
@@ -558,6 +567,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -582,6 +592,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -619,6 +630,7 @@ impl StartAssessmentFrameworkShareOutput {
 pub mod start_assessment_framework_share_output {
 
     /// A builder for [`StartAssessmentFrameworkShareOutput`](crate::output::StartAssessmentFrameworkShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_framework_share_request:
@@ -681,6 +693,7 @@ impl RegisterOrganizationAdminAccountOutput {
 pub mod register_organization_admin_account_output {
 
     /// A builder for [`RegisterOrganizationAdminAccountOutput`](crate::output::RegisterOrganizationAdminAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
@@ -747,6 +760,7 @@ impl RegisterAccountOutput {
 pub mod register_account_output {
 
     /// A builder for [`RegisterAccountOutput`](crate::output::RegisterAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AccountStatus>,
@@ -802,6 +816,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -872,6 +887,7 @@ impl ListNotificationsOutput {
 pub mod list_notifications_output {
 
     /// A builder for [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
@@ -948,6 +964,7 @@ impl ListKeywordsForDataSourceOutput {
 pub mod list_keywords_for_data_source_output {
 
     /// A builder for [`ListKeywordsForDataSourceOutput`](crate::output::ListKeywordsForDataSourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keywords: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1024,6 +1041,7 @@ impl ListControlsOutput {
 pub mod list_controls_output {
 
     /// A builder for [`ListControlsOutput`](crate::output::ListControlsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_metadata_list:
@@ -1104,6 +1122,7 @@ impl ListControlInsightsByControlDomainOutput {
 pub mod list_control_insights_by_control_domain_output {
 
     /// A builder for [`ListControlInsightsByControlDomainOutput`](crate::output::ListControlInsightsByControlDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_insights_metadata:
@@ -1187,6 +1206,7 @@ impl ListControlDomainInsightsByAssessmentOutput {
 pub mod list_control_domain_insights_by_assessment_output {
 
     /// A builder for [`ListControlDomainInsightsByAssessmentOutput`](crate::output::ListControlDomainInsightsByAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_domain_insights:
@@ -1270,6 +1290,7 @@ impl ListControlDomainInsightsOutput {
 pub mod list_control_domain_insights_output {
 
     /// A builder for [`ListControlDomainInsightsOutput`](crate::output::ListControlDomainInsightsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_domain_insights:
@@ -1353,6 +1374,7 @@ impl ListAssessmentsOutput {
 pub mod list_assessments_output {
 
     /// A builder for [`ListAssessmentsOutput`](crate::output::ListAssessmentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_metadata:
@@ -1433,6 +1455,7 @@ impl ListAssessmentReportsOutput {
 pub mod list_assessment_reports_output {
 
     /// A builder for [`ListAssessmentReportsOutput`](crate::output::ListAssessmentReportsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_reports:
@@ -1513,6 +1536,7 @@ impl ListAssessmentFrameworkShareRequestsOutput {
 pub mod list_assessment_framework_share_requests_output {
 
     /// A builder for [`ListAssessmentFrameworkShareRequestsOutput`](crate::output::ListAssessmentFrameworkShareRequestsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_framework_share_requests:
@@ -1598,6 +1622,7 @@ impl ListAssessmentFrameworksOutput {
 pub mod list_assessment_frameworks_output {
 
     /// A builder for [`ListAssessmentFrameworksOutput`](crate::output::ListAssessmentFrameworksOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework_metadata_list:
@@ -1681,6 +1706,7 @@ impl ListAssessmentControlInsightsByControlDomainOutput {
 pub mod list_assessment_control_insights_by_control_domain_output {
 
     /// A builder for [`ListAssessmentControlInsightsByControlDomainOutput`](crate::output::ListAssessmentControlInsightsByControlDomainOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_insights_by_assessment: std::option::Option<
@@ -1758,6 +1784,7 @@ impl GetSettingsOutput {
 pub mod get_settings_output {
 
     /// A builder for [`GetSettingsOutput`](crate::output::GetSettingsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) settings: std::option::Option<crate::model::Settings>,
@@ -1806,6 +1833,7 @@ impl GetServicesInScopeOutput {
 pub mod get_services_in_scope_output {
 
     /// A builder for [`GetServicesInScopeOutput`](crate::output::GetServicesInScopeOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_metadata:
@@ -1871,6 +1899,7 @@ impl GetOrganizationAdminAccountOutput {
 pub mod get_organization_admin_account_output {
 
     /// A builder for [`GetOrganizationAdminAccountOutput`](crate::output::GetOrganizationAdminAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
@@ -1937,6 +1966,7 @@ impl GetInsightsByAssessmentOutput {
 pub mod get_insights_by_assessment_output {
 
     /// A builder for [`GetInsightsByAssessmentOutput`](crate::output::GetInsightsByAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insights: std::option::Option<crate::model::InsightsByAssessment>,
@@ -1988,6 +2018,7 @@ impl GetInsightsOutput {
 pub mod get_insights_output {
 
     /// A builder for [`GetInsightsOutput`](crate::output::GetInsightsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insights: std::option::Option<crate::model::Insights>,
@@ -2046,6 +2077,7 @@ impl GetEvidenceFoldersByAssessmentControlOutput {
 pub mod get_evidence_folders_by_assessment_control_output {
 
     /// A builder for [`GetEvidenceFoldersByAssessmentControlOutput`](crate::output::GetEvidenceFoldersByAssessmentControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence_folders:
@@ -2126,6 +2158,7 @@ impl GetEvidenceFoldersByAssessmentOutput {
 pub mod get_evidence_folders_by_assessment_output {
 
     /// A builder for [`GetEvidenceFoldersByAssessmentOutput`](crate::output::GetEvidenceFoldersByAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence_folders:
@@ -2196,6 +2229,7 @@ impl GetEvidenceFolderOutput {
 pub mod get_evidence_folder_output {
 
     /// A builder for [`GetEvidenceFolderOutput`](crate::output::GetEvidenceFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence_folder: std::option::Option<crate::model::AssessmentEvidenceFolder>,
@@ -2254,6 +2288,7 @@ impl GetEvidenceByEvidenceFolderOutput {
 pub mod get_evidence_by_evidence_folder_output {
 
     /// A builder for [`GetEvidenceByEvidenceFolderOutput`](crate::output::GetEvidenceByEvidenceFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence: std::option::Option<std::vec::Vec<crate::model::Evidence>>,
@@ -2323,6 +2358,7 @@ impl GetEvidenceOutput {
 pub mod get_evidence_output {
 
     /// A builder for [`GetEvidenceOutput`](crate::output::GetEvidenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence: std::option::Option<crate::model::Evidence>,
@@ -2378,6 +2414,7 @@ impl GetDelegationsOutput {
 pub mod get_delegations_output {
 
     /// A builder for [`GetDelegationsOutput`](crate::output::GetDelegationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegations:
@@ -2448,6 +2485,7 @@ impl GetControlOutput {
 pub mod get_control_output {
 
     /// A builder for [`GetControlOutput`](crate::output::GetControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control: std::option::Option<crate::model::Control>,
@@ -2503,6 +2541,7 @@ impl GetChangeLogsOutput {
 pub mod get_change_logs_output {
 
     /// A builder for [`GetChangeLogsOutput`](crate::output::GetChangeLogsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_logs: std::option::Option<std::vec::Vec<crate::model::ChangeLog>>,
@@ -2572,6 +2611,7 @@ impl GetAssessmentReportUrlOutput {
 pub mod get_assessment_report_url_output {
 
     /// A builder for [`GetAssessmentReportUrlOutput`](crate::output::GetAssessmentReportUrlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pre_signed_url: std::option::Option<crate::model::Url>,
@@ -2620,6 +2660,7 @@ impl GetAssessmentFrameworkOutput {
 pub mod get_assessment_framework_output {
 
     /// A builder for [`GetAssessmentFrameworkOutput`](crate::output::GetAssessmentFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework: std::option::Option<crate::model::Framework>,
@@ -2678,6 +2719,7 @@ impl GetAssessmentOutput {
 pub mod get_assessment_output {
 
     /// A builder for [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
@@ -2741,6 +2783,7 @@ impl GetAccountStatusOutput {
 pub mod get_account_status_output {
 
     /// A builder for [`GetAccountStatusOutput`](crate::output::GetAccountStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AccountStatus>,
@@ -2782,6 +2825,7 @@ pub struct DisassociateAssessmentReportEvidenceFolderOutput {}
 pub mod disassociate_assessment_report_evidence_folder_output {
 
     /// A builder for [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::output::DisassociateAssessmentReportEvidenceFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2807,6 +2851,7 @@ pub struct DeregisterOrganizationAdminAccountOutput {}
 pub mod deregister_organization_admin_account_output {
 
     /// A builder for [`DeregisterOrganizationAdminAccountOutput`](crate::output::DeregisterOrganizationAdminAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2841,6 +2886,7 @@ impl DeregisterAccountOutput {
 pub mod deregister_account_output {
 
     /// A builder for [`DeregisterAccountOutput`](crate::output::DeregisterAccountOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AccountStatus>,
@@ -2882,6 +2928,7 @@ pub struct DeleteControlOutput {}
 pub mod delete_control_output {
 
     /// A builder for [`DeleteControlOutput`](crate::output::DeleteControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2906,6 +2953,7 @@ pub struct DeleteAssessmentReportOutput {}
 pub mod delete_assessment_report_output {
 
     /// A builder for [`DeleteAssessmentReportOutput`](crate::output::DeleteAssessmentReportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2930,6 +2978,7 @@ pub struct DeleteAssessmentFrameworkShareOutput {}
 pub mod delete_assessment_framework_share_output {
 
     /// A builder for [`DeleteAssessmentFrameworkShareOutput`](crate::output::DeleteAssessmentFrameworkShareOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2954,6 +3003,7 @@ pub struct DeleteAssessmentFrameworkOutput {}
 pub mod delete_assessment_framework_output {
 
     /// A builder for [`DeleteAssessmentFrameworkOutput`](crate::output::DeleteAssessmentFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2978,6 +3028,7 @@ pub struct DeleteAssessmentOutput {}
 pub mod delete_assessment_output {
 
     /// A builder for [`DeleteAssessmentOutput`](crate::output::DeleteAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -3012,6 +3063,7 @@ impl CreateControlOutput {
 pub mod create_control_output {
 
     /// A builder for [`CreateControlOutput`](crate::output::CreateControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control: std::option::Option<crate::model::Control>,
@@ -3060,6 +3112,7 @@ impl CreateAssessmentReportOutput {
 pub mod create_assessment_report_output {
 
     /// A builder for [`CreateAssessmentReportOutput`](crate::output::CreateAssessmentReportOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_report: std::option::Option<crate::model::AssessmentReport>,
@@ -3111,6 +3164,7 @@ impl CreateAssessmentFrameworkOutput {
 pub mod create_assessment_framework_output {
 
     /// A builder for [`CreateAssessmentFrameworkOutput`](crate::output::CreateAssessmentFrameworkOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framework: std::option::Option<crate::model::Framework>,
@@ -3162,6 +3216,7 @@ impl CreateAssessmentOutput {
 pub mod create_assessment_output {
 
     /// A builder for [`CreateAssessmentOutput`](crate::output::CreateAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
@@ -3217,6 +3272,7 @@ impl BatchImportEvidenceToAssessmentControlOutput {
 pub mod batch_import_evidence_to_assessment_control_output {
 
     /// A builder for [`BatchImportEvidenceToAssessmentControlOutput`](crate::output::BatchImportEvidenceToAssessmentControlOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<
@@ -3288,6 +3344,7 @@ impl BatchDisassociateAssessmentReportEvidenceOutput {
 pub mod batch_disassociate_assessment_report_evidence_output {
 
     /// A builder for [`BatchDisassociateAssessmentReportEvidenceOutput`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3371,6 +3428,7 @@ impl BatchDeleteDelegationByAssessmentOutput {
 pub mod batch_delete_delegation_by_assessment_output {
 
     /// A builder for [`BatchDeleteDelegationByAssessmentOutput`](crate::output::BatchDeleteDelegationByAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<
@@ -3445,6 +3503,7 @@ impl BatchCreateDelegationByAssessmentOutput {
 pub mod batch_create_delegation_by_assessment_output {
 
     /// A builder for [`BatchCreateDelegationByAssessmentOutput`](crate::output::BatchCreateDelegationByAssessmentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
@@ -3537,6 +3596,7 @@ impl BatchAssociateAssessmentReportEvidenceOutput {
 pub mod batch_associate_assessment_report_evidence_output {
 
     /// A builder for [`BatchAssociateAssessmentReportEvidenceOutput`](crate::output::BatchAssociateAssessmentReportEvidenceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3606,6 +3666,7 @@ pub struct AssociateAssessmentReportEvidenceFolderOutput {}
 pub mod associate_assessment_report_evidence_folder_output {
 
     /// A builder for [`AssociateAssessmentReportEvidenceFolderOutput`](crate::output::AssociateAssessmentReportEvidenceFolderOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {

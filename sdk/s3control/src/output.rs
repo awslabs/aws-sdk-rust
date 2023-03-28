@@ -31,6 +31,7 @@ impl UpdateJobStatusOutput {
 pub mod update_job_status_output {
 
     /// A builder for [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -113,6 +114,7 @@ impl UpdateJobPriorityOutput {
 pub mod update_job_priority_output {
 
     /// A builder for [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -163,6 +165,7 @@ pub struct SubmitMultiRegionAccessPointRoutesOutput {}
 pub mod submit_multi_region_access_point_routes_output {
 
     /// A builder for [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -187,6 +190,7 @@ pub struct PutStorageLensConfigurationTaggingOutput {}
 pub mod put_storage_lens_configuration_tagging_output {
 
     /// A builder for [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -211,6 +215,7 @@ pub struct PutStorageLensConfigurationOutput {}
 pub mod put_storage_lens_configuration_output {
 
     /// A builder for [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -235,6 +240,7 @@ pub struct PutPublicAccessBlockOutput {}
 pub mod put_public_access_block_output {
 
     /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -269,6 +275,7 @@ impl PutMultiRegionAccessPointPolicyOutput {
 pub mod put_multi_region_access_point_policy_output {
 
     /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -310,6 +317,7 @@ pub struct PutJobTaggingOutput {}
 pub mod put_job_tagging_output {
 
     /// A builder for [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -334,6 +342,7 @@ pub struct PutBucketVersioningOutput {}
 pub mod put_bucket_versioning_output {
 
     /// A builder for [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -358,6 +367,7 @@ pub struct PutBucketTaggingOutput {}
 pub mod put_bucket_tagging_output {
 
     /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -382,6 +392,7 @@ pub struct PutBucketPolicyOutput {}
 pub mod put_bucket_policy_output {
 
     /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -406,6 +417,7 @@ pub struct PutBucketLifecycleConfigurationOutput {}
 pub mod put_bucket_lifecycle_configuration_output {
 
     /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -430,6 +442,7 @@ pub struct PutAccessPointPolicyForObjectLambdaOutput {}
 pub mod put_access_point_policy_for_object_lambda_output {
 
     /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -454,6 +467,7 @@ pub struct PutAccessPointPolicyOutput {}
 pub mod put_access_point_policy_output {
 
     /// A builder for [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -478,6 +492,7 @@ pub struct PutAccessPointConfigurationForObjectLambdaOutput {}
 pub mod put_access_point_configuration_for_object_lambda_output {
 
     /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -523,6 +538,7 @@ impl ListStorageLensConfigurationsOutput {
 pub mod list_storage_lens_configurations_output {
 
     /// A builder for [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -605,6 +621,7 @@ impl ListRegionalBucketsOutput {
 pub mod list_regional_buckets_output {
 
     /// A builder for [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regional_bucket_list:
@@ -685,6 +702,7 @@ impl ListMultiRegionAccessPointsOutput {
 pub mod list_multi_region_access_points_output {
 
     /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_points:
@@ -762,6 +780,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -841,6 +860,7 @@ impl ListAccessPointsForObjectLambdaOutput {
 pub mod list_access_points_for_object_lambda_output {
 
     /// A builder for [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_lambda_access_point_list:
@@ -921,6 +941,7 @@ impl ListAccessPointsOutput {
 pub mod list_access_points_output {
 
     /// A builder for [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_list: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
@@ -990,6 +1011,7 @@ impl GetStorageLensConfigurationTaggingOutput {
 pub mod get_storage_lens_configuration_tagging_output {
 
     /// A builder for [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
@@ -1047,6 +1069,7 @@ impl GetStorageLensConfigurationOutput {
 pub mod get_storage_lens_configuration_output {
 
     /// A builder for [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_lens_configuration:
@@ -1105,6 +1128,7 @@ impl GetPublicAccessBlockOutput {
 pub mod get_public_access_block_output {
 
     /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access_block_configuration:
@@ -1167,6 +1191,7 @@ impl GetMultiRegionAccessPointRoutesOutput {
 pub mod get_multi_region_access_point_routes_output {
 
     /// A builder for [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mrap: std::option::Option<std::string::String>,
@@ -1237,6 +1262,7 @@ impl GetMultiRegionAccessPointPolicyStatusOutput {
 pub mod get_multi_region_access_point_policy_status_output {
 
     /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) established: std::option::Option<crate::model::PolicyStatus>,
@@ -1290,6 +1316,7 @@ impl GetMultiRegionAccessPointPolicyOutput {
 pub mod get_multi_region_access_point_policy_output {
 
     /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
@@ -1341,6 +1368,7 @@ impl GetMultiRegionAccessPointOutput {
 pub mod get_multi_region_access_point_output {
 
     /// A builder for [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
@@ -1392,6 +1420,7 @@ impl GetJobTaggingOutput {
 pub mod get_job_tagging_output {
 
     /// A builder for [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -1454,6 +1483,7 @@ impl GetBucketVersioningOutput {
 pub mod get_bucket_versioning_output {
 
     /// A builder for [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
@@ -1520,6 +1550,7 @@ impl GetBucketTaggingOutput {
 pub mod get_bucket_tagging_output {
 
     /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -1577,6 +1608,7 @@ impl GetBucketPolicyOutput {
 pub mod get_bucket_policy_output {
 
     /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1625,6 +1657,7 @@ impl GetBucketLifecycleConfigurationOutput {
 pub mod get_bucket_lifecycle_configuration_output {
 
     /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
@@ -1694,6 +1727,7 @@ impl GetBucketOutput {
 pub mod get_bucket_output {
 
     /// A builder for [`GetBucketOutput`](crate::output::GetBucketOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1769,6 +1803,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaOutput {
 pub mod get_access_point_policy_status_for_object_lambda_output {
 
     /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
@@ -1821,6 +1856,7 @@ impl GetAccessPointPolicyStatusOutput {
 pub mod get_access_point_policy_status_output {
 
     /// A builder for [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
@@ -1872,6 +1908,7 @@ impl GetAccessPointPolicyForObjectLambdaOutput {
 pub mod get_access_point_policy_for_object_lambda_output {
 
     /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1920,6 +1957,7 @@ impl GetAccessPointPolicyOutput {
 pub mod get_access_point_policy_output {
 
     /// A builder for [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1985,6 +2023,7 @@ impl GetAccessPointForObjectLambdaOutput {
 pub mod get_access_point_for_object_lambda_output {
 
     /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2067,6 +2106,7 @@ impl GetAccessPointConfigurationForObjectLambdaOutput {
 pub mod get_access_point_configuration_for_object_lambda_output {
 
     /// A builder for [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
@@ -2197,6 +2237,7 @@ impl GetAccessPointOutput {
 pub mod get_access_point_output {
 
     /// A builder for [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2400,6 +2441,7 @@ impl DescribeMultiRegionAccessPointOperationOutput {
 pub mod describe_multi_region_access_point_operation_output {
 
     /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) async_operation: std::option::Option<crate::model::AsyncOperation>,
@@ -2452,6 +2494,7 @@ impl DescribeJobOutput {
 pub mod describe_job_output {
 
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::JobDescriptor>,
@@ -2488,6 +2531,7 @@ pub struct DeleteStorageLensConfigurationTaggingOutput {}
 pub mod delete_storage_lens_configuration_tagging_output {
 
     /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2512,6 +2556,7 @@ pub struct DeleteStorageLensConfigurationOutput {}
 pub mod delete_storage_lens_configuration_output {
 
     /// A builder for [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2536,6 +2581,7 @@ pub struct DeletePublicAccessBlockOutput {}
 pub mod delete_public_access_block_output {
 
     /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2570,6 +2616,7 @@ impl DeleteMultiRegionAccessPointOutput {
 pub mod delete_multi_region_access_point_output {
 
     /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -2611,6 +2658,7 @@ pub struct DeleteJobTaggingOutput {}
 pub mod delete_job_tagging_output {
 
     /// A builder for [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2635,6 +2683,7 @@ pub struct DeleteBucketTaggingOutput {}
 pub mod delete_bucket_tagging_output {
 
     /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2659,6 +2708,7 @@ pub struct DeleteBucketPolicyOutput {}
 pub mod delete_bucket_policy_output {
 
     /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2683,6 +2733,7 @@ pub struct DeleteBucketLifecycleConfigurationOutput {}
 pub mod delete_bucket_lifecycle_configuration_output {
 
     /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2707,6 +2758,7 @@ pub struct DeleteBucketOutput {}
 pub mod delete_bucket_output {
 
     /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2731,6 +2783,7 @@ pub struct DeleteAccessPointPolicyForObjectLambdaOutput {}
 pub mod delete_access_point_policy_for_object_lambda_output {
 
     /// A builder for [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2756,6 +2809,7 @@ pub struct DeleteAccessPointPolicyOutput {}
 pub mod delete_access_point_policy_output {
 
     /// A builder for [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2780,6 +2834,7 @@ pub struct DeleteAccessPointForObjectLambdaOutput {}
 pub mod delete_access_point_for_object_lambda_output {
 
     /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2804,6 +2859,7 @@ pub struct DeleteAccessPointOutput {}
 pub mod delete_access_point_output {
 
     /// A builder for [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -2838,6 +2894,7 @@ impl CreateMultiRegionAccessPointOutput {
 pub mod create_multi_region_access_point_output {
 
     /// A builder for [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -2889,6 +2946,7 @@ impl CreateJobOutput {
 pub mod create_job_output {
 
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2968,6 +3026,7 @@ impl CreateBucketOutput {
 pub mod create_bucket_output {
 
     /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -3052,6 +3111,7 @@ impl CreateAccessPointForObjectLambdaOutput {
 pub mod create_access_point_for_object_lambda_output {
 
     /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_lambda_access_point_arn: std::option::Option<std::string::String>,
@@ -3117,6 +3177,7 @@ impl CreateAccessPointOutput {
 pub mod create_access_point_output {
 
     /// A builder for [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,

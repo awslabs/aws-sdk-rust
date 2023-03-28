@@ -25,6 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -268,6 +269,7 @@ impl NetworkSite {
 pub mod network_site {
 
     /// A builder for [`NetworkSite`](crate::model::NetworkSite).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
@@ -473,6 +475,7 @@ impl SitePlan {
 pub mod site_plan {
 
     /// A builder for [`SitePlan`](crate::model::SitePlan).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_definitions:
@@ -562,6 +565,7 @@ impl NameValuePair {
 pub mod name_value_pair {
 
     /// A builder for [`NameValuePair`](crate::model::NameValuePair).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -636,6 +640,7 @@ impl NetworkResourceDefinition {
 pub mod network_resource_definition {
 
     /// A builder for [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::NetworkResourceDefinitionType>,
@@ -971,6 +976,7 @@ impl Order {
 pub mod order {
 
     /// A builder for [`Order`](crate::model::Order).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order_arn: std::option::Option<std::string::String>,
@@ -1210,6 +1216,7 @@ impl TrackingInformation {
 pub mod tracking_information {
 
     /// A builder for [`TrackingInformation`](crate::model::TrackingInformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracking_number: std::option::Option<std::string::String>,
@@ -1340,6 +1347,7 @@ impl std::fmt::Debug for Address {
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) city: std::option::Option<std::string::String>,
@@ -1727,6 +1735,7 @@ impl Network {
 pub mod network {
 
     /// A builder for [`Network`](crate::model::Network).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_arn: std::option::Option<std::string::String>,
@@ -2140,6 +2149,7 @@ impl NetworkResource {
 pub mod network_resource {
 
     /// A builder for [`NetworkResource`](crate::model::NetworkResource).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_resource_arn: std::option::Option<std::string::String>,
@@ -2417,6 +2427,7 @@ impl Position {
 pub mod position {
 
     /// A builder for [`Position`](crate::model::Position).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latitude: std::option::Option<f64>,
@@ -3172,6 +3183,7 @@ impl std::fmt::Debug for DeviceIdentifier {
 pub mod device_identifier {
 
     /// A builder for [`DeviceIdentifier`](crate::model::DeviceIdentifier).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier_arn: std::option::Option<std::string::String>,

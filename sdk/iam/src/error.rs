@@ -185,6 +185,7 @@ impl std::error::Error for UnrecognizedPublicKeyEncodingException {}
 pub mod unrecognized_public_key_encoding_exception {
 
     /// A builder for [`UnrecognizedPublicKeyEncodingException`](crate::error::UnrecognizedPublicKeyEncodingException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -245,6 +246,7 @@ impl std::error::Error for NoSuchEntityException {}
 pub mod no_such_entity_exception {
 
     /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -305,6 +307,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -365,6 +368,7 @@ impl std::error::Error for InvalidPublicKeyException {}
 pub mod invalid_public_key_exception {
 
     /// A builder for [`InvalidPublicKeyException`](crate::error::InvalidPublicKeyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -428,6 +432,7 @@ impl std::error::Error for DuplicateSshPublicKeyException {}
 pub mod duplicate_ssh_public_key_exception {
 
     /// A builder for [`DuplicateSshPublicKeyException`](crate::error::DuplicateSshPublicKeyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -678,6 +683,7 @@ impl std::error::Error for ServiceFailureException {}
 pub mod service_failure_exception {
 
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -738,6 +744,7 @@ impl std::error::Error for MalformedCertificateException {}
 pub mod malformed_certificate_exception {
 
     /// A builder for [`MalformedCertificateException`](crate::error::MalformedCertificateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -798,6 +805,7 @@ impl std::error::Error for InvalidCertificateException {}
 pub mod invalid_certificate_exception {
 
     /// A builder for [`InvalidCertificateException`](crate::error::InvalidCertificateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -858,6 +866,7 @@ impl std::error::Error for EntityAlreadyExistsException {}
 pub mod entity_already_exists_exception {
 
     /// A builder for [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -918,6 +927,7 @@ impl std::error::Error for DuplicateCertificateException {}
 pub mod duplicate_certificate_exception {
 
     /// A builder for [`DuplicateCertificateException`](crate::error::DuplicateCertificateException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1162,6 +1172,7 @@ impl std::error::Error for KeyPairMismatchException {}
 pub mod key_pair_mismatch_exception {
 
     /// A builder for [`KeyPairMismatchException`](crate::error::KeyPairMismatchException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1222,6 +1233,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
 
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1282,6 +1294,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1496,6 +1509,7 @@ impl std::error::Error for EntityTemporarilyUnmodifiableException {}
 pub mod entity_temporarily_unmodifiable_exception {
 
     /// A builder for [`EntityTemporarilyUnmodifiableException`](crate::error::EntityTemporarilyUnmodifiableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2339,6 +2353,7 @@ impl std::error::Error for UnmodifiableEntityException {}
 pub mod unmodifiable_entity_exception {
 
     /// A builder for [`UnmodifiableEntityException`](crate::error::UnmodifiableEntityException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2830,6 +2845,7 @@ impl std::error::Error for PasswordPolicyViolationException {}
 pub mod password_policy_violation_exception {
 
     /// A builder for [`PasswordPolicyViolationException`](crate::error::PasswordPolicyViolationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3182,6 +3198,7 @@ impl std::error::Error for MalformedPolicyDocumentException {}
 pub mod malformed_policy_document_exception {
 
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5949,6 +5966,7 @@ impl std::error::Error for PolicyEvaluationException {}
 pub mod policy_evaluation_exception {
 
     /// A builder for [`PolicyEvaluationException`](crate::error::PolicyEvaluationException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6539,6 +6557,7 @@ impl std::error::Error for InvalidAuthenticationCodeException {}
 pub mod invalid_authentication_code_exception {
 
     /// A builder for [`InvalidAuthenticationCodeException`](crate::error::InvalidAuthenticationCodeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7444,6 +7463,7 @@ impl std::error::Error for PolicyNotAttachableException {}
 pub mod policy_not_attachable_exception {
 
     /// A builder for [`PolicyNotAttachableException`](crate::error::PolicyNotAttachableException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8764,6 +8784,7 @@ impl std::error::Error for ServiceNotSupportedException {}
 pub mod service_not_supported_exception {
 
     /// A builder for [`ServiceNotSupportedException`](crate::error::ServiceNotSupportedException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14492,6 +14513,7 @@ impl std::error::Error for CredentialReportNotReadyException {}
 pub mod credential_report_not_ready_exception {
 
     /// A builder for [`CredentialReportNotReadyException`](crate::error::CredentialReportNotReadyException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14552,6 +14574,7 @@ impl std::error::Error for CredentialReportNotPresentException {}
 pub mod credential_report_not_present_exception {
 
     /// A builder for [`CredentialReportNotPresentException`](crate::error::CredentialReportNotPresentException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14612,6 +14635,7 @@ impl std::error::Error for CredentialReportExpiredException {}
 pub mod credential_report_expired_exception {
 
     /// A builder for [`CredentialReportExpiredException`](crate::error::CredentialReportExpiredException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15648,6 +15672,7 @@ impl std::error::Error for ReportGenerationLimitExceededException {}
 pub mod report_generation_limit_exceeded_exception {
 
     /// A builder for [`ReportGenerationLimitExceededException`](crate::error::ReportGenerationLimitExceededException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16579,6 +16604,7 @@ impl std::error::Error for DeleteConflictException {}
 pub mod delete_conflict_exception {
 
     /// A builder for [`DeleteConflictException`](crate::error::DeleteConflictException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22033,6 +22059,7 @@ impl std::error::Error for InvalidUserTypeException {}
 pub mod invalid_user_type_exception {
 
     /// A builder for [`InvalidUserTypeException`](crate::error::InvalidUserTypeException).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,

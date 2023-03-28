@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_batch_inference_job_input {
 
     /// A builder for [`CreateBatchInferenceJobInput`](crate::input::CreateBatchInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -292,6 +293,7 @@ impl CreateBatchInferenceJobInput {
 pub mod create_batch_segment_job_input {
 
     /// A builder for [`CreateBatchSegmentJobInput`](crate::input::CreateBatchSegmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -560,6 +562,7 @@ impl CreateBatchSegmentJobInput {
 pub mod create_campaign_input {
 
     /// A builder for [`CreateCampaignInput`](crate::input::CreateCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -785,6 +788,7 @@ impl CreateCampaignInput {
 pub mod create_dataset_input {
 
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1019,6 +1023,7 @@ impl CreateDatasetInput {
 pub mod create_dataset_export_job_input {
 
     /// A builder for [`CreateDatasetExportJobInput`](crate::input::CreateDatasetExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -1260,6 +1265,7 @@ impl CreateDatasetExportJobInput {
 pub mod create_dataset_group_input {
 
     /// A builder for [`CreateDatasetGroupInput`](crate::input::CreateDatasetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1481,6 +1487,7 @@ impl CreateDatasetGroupInput {
 pub mod create_dataset_import_job_input {
 
     /// A builder for [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -1745,6 +1752,7 @@ impl CreateDatasetImportJobInput {
 pub mod create_event_tracker_input {
 
     /// A builder for [`CreateEventTrackerInput`](crate::input::CreateEventTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1945,6 +1953,7 @@ impl CreateEventTrackerInput {
 pub mod create_filter_input {
 
     /// A builder for [`CreateFilterInput`](crate::input::CreateFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2168,6 +2177,7 @@ impl CreateFilterInput {
 pub mod create_metric_attribution_input {
 
     /// A builder for [`CreateMetricAttributionInput`](crate::input::CreateMetricAttributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2389,6 +2399,7 @@ impl CreateMetricAttributionInput {
 pub mod create_recommender_input {
 
     /// A builder for [`CreateRecommenderInput`](crate::input::CreateRecommenderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2616,6 +2627,7 @@ impl CreateRecommenderInput {
 pub mod create_schema_input {
 
     /// A builder for [`CreateSchemaInput`](crate::input::CreateSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2802,6 +2814,7 @@ impl CreateSchemaInput {
 pub mod create_solution_input {
 
     /// A builder for [`CreateSolutionInput`](crate::input::CreateSolutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3073,6 +3086,7 @@ impl CreateSolutionInput {
 pub mod create_solution_version_input {
 
     /// A builder for [`CreateSolutionVersionInput`](crate::input::CreateSolutionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3291,6 +3305,7 @@ impl CreateSolutionVersionInput {
 pub mod delete_campaign_input {
 
     /// A builder for [`DeleteCampaignInput`](crate::input::DeleteCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
@@ -3453,6 +3468,7 @@ impl DeleteCampaignInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -3615,6 +3631,7 @@ impl DeleteDatasetInput {
 pub mod delete_dataset_group_input {
 
     /// A builder for [`DeleteDatasetGroupInput`](crate::input::DeleteDatasetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -3782,6 +3799,7 @@ impl DeleteDatasetGroupInput {
 pub mod delete_event_tracker_input {
 
     /// A builder for [`DeleteEventTrackerInput`](crate::input::DeleteEventTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_tracker_arn: std::option::Option<std::string::String>,
@@ -3949,6 +3967,7 @@ impl DeleteEventTrackerInput {
 pub mod delete_filter_input {
 
     /// A builder for [`DeleteFilterInput`](crate::input::DeleteFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_arn: std::option::Option<std::string::String>,
@@ -4111,6 +4130,7 @@ impl DeleteFilterInput {
 pub mod delete_metric_attribution_input {
 
     /// A builder for [`DeleteMetricAttributionInput`](crate::input::DeleteMetricAttributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
@@ -4280,6 +4300,7 @@ impl DeleteMetricAttributionInput {
 pub mod delete_recommender_input {
 
     /// A builder for [`DeleteRecommenderInput`](crate::input::DeleteRecommenderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_arn: std::option::Option<std::string::String>,
@@ -4447,6 +4468,7 @@ impl DeleteRecommenderInput {
 pub mod delete_schema_input {
 
     /// A builder for [`DeleteSchemaInput`](crate::input::DeleteSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -4609,6 +4631,7 @@ impl DeleteSchemaInput {
 pub mod delete_solution_input {
 
     /// A builder for [`DeleteSolutionInput`](crate::input::DeleteSolutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -4771,6 +4794,7 @@ impl DeleteSolutionInput {
 pub mod describe_algorithm_input {
 
     /// A builder for [`DescribeAlgorithmInput`](crate::input::DescribeAlgorithmInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm_arn: std::option::Option<std::string::String>,
@@ -4938,6 +4962,7 @@ impl DescribeAlgorithmInput {
 pub mod describe_batch_inference_job_input {
 
     /// A builder for [`DescribeBatchInferenceJobInput`](crate::input::DescribeBatchInferenceJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_inference_job_arn: std::option::Option<std::string::String>,
@@ -5107,6 +5132,7 @@ impl DescribeBatchInferenceJobInput {
 pub mod describe_batch_segment_job_input {
 
     /// A builder for [`DescribeBatchSegmentJobInput`](crate::input::DescribeBatchSegmentJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_segment_job_arn: std::option::Option<std::string::String>,
@@ -5276,6 +5302,7 @@ impl DescribeBatchSegmentJobInput {
 pub mod describe_campaign_input {
 
     /// A builder for [`DescribeCampaignInput`](crate::input::DescribeCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
@@ -5440,6 +5467,7 @@ impl DescribeCampaignInput {
 pub mod describe_dataset_input {
 
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -5602,6 +5630,7 @@ impl DescribeDatasetInput {
 pub mod describe_dataset_export_job_input {
 
     /// A builder for [`DescribeDatasetExportJobInput`](crate::input::DescribeDatasetExportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_export_job_arn: std::option::Option<std::string::String>,
@@ -5771,6 +5800,7 @@ impl DescribeDatasetExportJobInput {
 pub mod describe_dataset_group_input {
 
     /// A builder for [`DescribeDatasetGroupInput`](crate::input::DescribeDatasetGroupInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -5940,6 +5970,7 @@ impl DescribeDatasetGroupInput {
 pub mod describe_dataset_import_job_input {
 
     /// A builder for [`DescribeDatasetImportJobInput`](crate::input::DescribeDatasetImportJobInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
@@ -6109,6 +6140,7 @@ impl DescribeDatasetImportJobInput {
 pub mod describe_event_tracker_input {
 
     /// A builder for [`DescribeEventTrackerInput`](crate::input::DescribeEventTrackerInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_tracker_arn: std::option::Option<std::string::String>,
@@ -6278,6 +6310,7 @@ impl DescribeEventTrackerInput {
 pub mod describe_feature_transformation_input {
 
     /// A builder for [`DescribeFeatureTransformationInput`](crate::input::DescribeFeatureTransformationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_transformation_arn: std::option::Option<std::string::String>,
@@ -6445,6 +6478,7 @@ impl DescribeFeatureTransformationInput {
 pub mod describe_filter_input {
 
     /// A builder for [`DescribeFilterInput`](crate::input::DescribeFilterInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_arn: std::option::Option<std::string::String>,
@@ -6607,6 +6641,7 @@ impl DescribeFilterInput {
 pub mod describe_metric_attribution_input {
 
     /// A builder for [`DescribeMetricAttributionInput`](crate::input::DescribeMetricAttributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
@@ -6776,6 +6811,7 @@ impl DescribeMetricAttributionInput {
 pub mod describe_recipe_input {
 
     /// A builder for [`DescribeRecipeInput`](crate::input::DescribeRecipeInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recipe_arn: std::option::Option<std::string::String>,
@@ -6938,6 +6974,7 @@ impl DescribeRecipeInput {
 pub mod describe_recommender_input {
 
     /// A builder for [`DescribeRecommenderInput`](crate::input::DescribeRecommenderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_arn: std::option::Option<std::string::String>,
@@ -7105,6 +7142,7 @@ impl DescribeRecommenderInput {
 pub mod describe_schema_input {
 
     /// A builder for [`DescribeSchemaInput`](crate::input::DescribeSchemaInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -7267,6 +7305,7 @@ impl DescribeSchemaInput {
 pub mod describe_solution_input {
 
     /// A builder for [`DescribeSolutionInput`](crate::input::DescribeSolutionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -7431,6 +7470,7 @@ impl DescribeSolutionInput {
 pub mod describe_solution_version_input {
 
     /// A builder for [`DescribeSolutionVersionInput`](crate::input::DescribeSolutionVersionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
@@ -7600,6 +7640,7 @@ impl DescribeSolutionVersionInput {
 pub mod get_solution_metrics_input {
 
     /// A builder for [`GetSolutionMetricsInput`](crate::input::GetSolutionMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
@@ -7767,6 +7808,7 @@ impl GetSolutionMetricsInput {
 pub mod list_batch_inference_jobs_input {
 
     /// A builder for [`ListBatchInferenceJobsInput`](crate::input::ListBatchInferenceJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
@@ -7960,6 +8002,7 @@ impl ListBatchInferenceJobsInput {
 pub mod list_batch_segment_jobs_input {
 
     /// A builder for [`ListBatchSegmentJobsInput`](crate::input::ListBatchSegmentJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
@@ -8153,6 +8196,7 @@ impl ListBatchSegmentJobsInput {
 pub mod list_campaigns_input {
 
     /// A builder for [`ListCampaignsInput`](crate::input::ListCampaignsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -8339,6 +8383,7 @@ impl ListCampaignsInput {
 pub mod list_dataset_export_jobs_input {
 
     /// A builder for [`ListDatasetExportJobsInput`](crate::input::ListDatasetExportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -8529,6 +8574,7 @@ impl ListDatasetExportJobsInput {
 pub mod list_dataset_groups_input {
 
     /// A builder for [`ListDatasetGroupsInput`](crate::input::ListDatasetGroupsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8705,6 +8751,7 @@ impl ListDatasetGroupsInput {
 pub mod list_dataset_import_jobs_input {
 
     /// A builder for [`ListDatasetImportJobsInput`](crate::input::ListDatasetImportJobsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -8895,6 +8942,7 @@ impl ListDatasetImportJobsInput {
 pub mod list_datasets_input {
 
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -9084,6 +9132,7 @@ impl ListDatasetsInput {
 pub mod list_event_trackers_input {
 
     /// A builder for [`ListEventTrackersInput`](crate::input::ListEventTrackersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -9275,6 +9324,7 @@ impl ListEventTrackersInput {
 pub mod list_filters_input {
 
     /// A builder for [`ListFiltersInput`](crate::input::ListFiltersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -9464,6 +9514,7 @@ impl ListFiltersInput {
 pub mod list_metric_attribution_metrics_input {
 
     /// A builder for [`ListMetricAttributionMetricsInput`](crate::input::ListMetricAttributionMetricsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_attribution_arn: std::option::Option<std::string::String>,
@@ -9655,6 +9706,7 @@ impl ListMetricAttributionMetricsInput {
 pub mod list_metric_attributions_input {
 
     /// A builder for [`ListMetricAttributionsInput`](crate::input::ListMetricAttributionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -9848,6 +9900,7 @@ impl ListMetricAttributionsInput {
 pub mod list_recipes_input {
 
     /// A builder for [`ListRecipesInput`](crate::input::ListRecipesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recipe_provider: std::option::Option<crate::model::RecipeProvider>,
@@ -10049,6 +10102,7 @@ impl ListRecipesInput {
 pub mod list_recommenders_input {
 
     /// A builder for [`ListRecommendersInput`](crate::input::ListRecommendersInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -10240,6 +10294,7 @@ impl ListRecommendersInput {
 pub mod list_schemas_input {
 
     /// A builder for [`ListSchemasInput`](crate::input::ListSchemasInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10414,6 +10469,7 @@ impl ListSchemasInput {
 pub mod list_solutions_input {
 
     /// A builder for [`ListSolutionsInput`](crate::input::ListSolutionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
@@ -10603,6 +10659,7 @@ impl ListSolutionsInput {
 pub mod list_solution_versions_input {
 
     /// A builder for [`ListSolutionVersionsInput`](crate::input::ListSolutionVersionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_arn: std::option::Option<std::string::String>,
@@ -10793,6 +10850,7 @@ impl ListSolutionVersionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -10959,6 +11017,7 @@ impl ListTagsForResourceInput {
 pub mod start_recommender_input {
 
     /// A builder for [`StartRecommenderInput`](crate::input::StartRecommenderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_arn: std::option::Option<std::string::String>,
@@ -11126,6 +11185,7 @@ impl StartRecommenderInput {
 pub mod stop_recommender_input {
 
     /// A builder for [`StopRecommenderInput`](crate::input::StopRecommenderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_arn: std::option::Option<std::string::String>,
@@ -11291,6 +11351,7 @@ impl StopRecommenderInput {
 pub mod stop_solution_version_creation_input {
 
     /// A builder for [`StopSolutionVersionCreationInput`](crate::input::StopSolutionVersionCreationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) solution_version_arn: std::option::Option<std::string::String>,
@@ -11458,6 +11519,7 @@ impl StopSolutionVersionCreationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -11641,6 +11703,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -11824,6 +11887,7 @@ impl UntagResourceInput {
 pub mod update_campaign_input {
 
     /// A builder for [`UpdateCampaignInput`](crate::input::UpdateCampaignInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_arn: std::option::Option<std::string::String>,
@@ -12028,6 +12092,7 @@ impl UpdateCampaignInput {
 pub mod update_metric_attribution_input {
 
     /// A builder for [`UpdateMetricAttributionInput`](crate::input::UpdateMetricAttributionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_metrics: std::option::Option<std::vec::Vec<crate::model::MetricAttribute>>,
@@ -12258,6 +12323,7 @@ impl UpdateMetricAttributionInput {
 pub mod update_recommender_input {
 
     /// A builder for [`UpdateRecommenderInput`](crate::input::UpdateRecommenderInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_arn: std::option::Option<std::string::String>,

@@ -24,6 +24,7 @@ impl UpdateLogPatternOutput {
 pub mod update_log_pattern_output {
 
     /// A builder for [`UpdateLogPatternOutput`](crate::output::UpdateLogPatternOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -80,6 +81,7 @@ pub struct UpdateComponentConfigurationOutput {}
 pub mod update_component_configuration_output {
 
     /// A builder for [`UpdateComponentConfigurationOutput`](crate::output::UpdateComponentConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -104,6 +106,7 @@ pub struct UpdateComponentOutput {}
 pub mod update_component_output {
 
     /// A builder for [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -138,6 +141,7 @@ impl UpdateApplicationOutput {
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_info: std::option::Option<crate::model::ApplicationInfo>,
@@ -179,6 +183,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -203,6 +208,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -237,6 +243,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -306,6 +313,7 @@ impl ListProblemsOutput {
 pub mod list_problems_output {
 
     /// A builder for [`ListProblemsOutput`](crate::output::ListProblemsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) problem_list: std::option::Option<std::vec::Vec<crate::model::Problem>>,
@@ -404,6 +412,7 @@ impl ListLogPatternSetsOutput {
 pub mod list_log_pattern_sets_output {
 
     /// A builder for [`ListLogPatternSetsOutput`](crate::output::ListLogPatternSetsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -502,6 +511,7 @@ impl ListLogPatternsOutput {
 pub mod list_log_patterns_output {
 
     /// A builder for [`ListLogPatternsOutput`](crate::output::ListLogPatternsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -593,6 +603,7 @@ impl ListConfigurationHistoryOutput {
 pub mod list_configuration_history_output {
 
     /// A builder for [`ListConfigurationHistoryOutput`](crate::output::ListConfigurationHistoryOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_list: std::option::Option<std::vec::Vec<crate::model::ConfigurationEvent>>,
@@ -672,6 +683,7 @@ impl ListComponentsOutput {
 pub mod list_components_output {
 
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_list:
@@ -752,6 +764,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_info_list:
@@ -822,6 +835,7 @@ impl DescribeProblemObservationsOutput {
 pub mod describe_problem_observations_output {
 
     /// A builder for [`DescribeProblemObservationsOutput`](crate::output::DescribeProblemObservationsOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) related_observations: std::option::Option<crate::model::RelatedObservations>,
@@ -873,6 +887,7 @@ impl DescribeProblemOutput {
 pub mod describe_problem_output {
 
     /// A builder for [`DescribeProblemOutput`](crate::output::DescribeProblemOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) problem: std::option::Option<crate::model::Problem>,
@@ -921,6 +936,7 @@ impl DescribeObservationOutput {
 pub mod describe_observation_output {
 
     /// A builder for [`DescribeObservationOutput`](crate::output::DescribeObservationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observation: std::option::Option<crate::model::Observation>,
@@ -979,6 +995,7 @@ impl DescribeLogPatternOutput {
 pub mod describe_log_pattern_output {
 
     /// A builder for [`DescribeLogPatternOutput`](crate::output::DescribeLogPatternOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -1045,6 +1062,7 @@ impl DescribeComponentConfigurationRecommendationOutput {
 pub mod describe_component_configuration_recommendation_output {
 
     /// A builder for [`DescribeComponentConfigurationRecommendationOutput`](crate::output::DescribeComponentConfigurationRecommendationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_configuration: std::option::Option<std::string::String>,
@@ -1111,6 +1129,7 @@ impl DescribeComponentConfigurationOutput {
 pub mod describe_component_configuration_output {
 
     /// A builder for [`DescribeComponentConfigurationOutput`](crate::output::DescribeComponentConfigurationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor: std::option::Option<bool>,
@@ -1195,6 +1214,7 @@ impl DescribeComponentOutput {
 pub mod describe_component_output {
 
     /// A builder for [`DescribeComponentOutput`](crate::output::DescribeComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component: std::option::Option<crate::model::ApplicationComponent>,
@@ -1267,6 +1287,7 @@ impl DescribeApplicationOutput {
 pub mod describe_application_output {
 
     /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_info: std::option::Option<crate::model::ApplicationInfo>,
@@ -1308,6 +1329,7 @@ pub struct DeleteLogPatternOutput {}
 pub mod delete_log_pattern_output {
 
     /// A builder for [`DeleteLogPatternOutput`](crate::output::DeleteLogPatternOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1332,6 +1354,7 @@ pub struct DeleteComponentOutput {}
 pub mod delete_component_output {
 
     /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1356,6 +1379,7 @@ pub struct DeleteApplicationOutput {}
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1397,6 +1421,7 @@ impl CreateLogPatternOutput {
 pub mod create_log_pattern_output {
 
     /// A builder for [`CreateLogPatternOutput`](crate::output::CreateLogPatternOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_pattern: std::option::Option<crate::model::LogPattern>,
@@ -1453,6 +1478,7 @@ pub struct CreateComponentOutput {}
 pub mod create_component_output {
 
     /// A builder for [`CreateComponentOutput`](crate::output::CreateComponentOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
@@ -1487,6 +1513,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_info: std::option::Option<crate::model::ApplicationInfo>,

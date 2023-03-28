@@ -36,6 +36,7 @@ impl MetricFilterMatchRecord {
 pub mod metric_filter_match_record {
 
     /// A builder for [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_number: std::option::Option<i64>,
@@ -135,6 +136,7 @@ impl QueryCompileError {
 pub mod query_compile_error {
 
     /// A builder for [`QueryCompileError`](crate::model::QueryCompileError).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<crate::model::QueryCompileErrorLocation>,
@@ -205,6 +207,7 @@ impl QueryCompileErrorLocation {
 pub mod query_compile_error_location {
 
     /// A builder for [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_char_offset: std::option::Option<i32>,
@@ -370,6 +373,7 @@ impl ResourcePolicy {
 pub mod resource_policy {
 
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -492,6 +496,7 @@ impl MetricTransformation {
 pub mod metric_transformation {
 
     /// A builder for [`MetricTransformation`](crate::model::MetricTransformation).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -885,6 +890,7 @@ impl RejectedLogEventsInfo {
 pub mod rejected_log_events_info {
 
     /// A builder for [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) too_new_log_event_start_index: std::option::Option<i32>,
@@ -967,6 +973,7 @@ impl InputLogEvent {
 pub mod input_log_event {
 
     /// A builder for [`InputLogEvent`](crate::model::InputLogEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -1062,6 +1069,7 @@ impl Destination {
 pub mod destination {
 
     /// A builder for [`Destination`](crate::model::Destination).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_name: std::option::Option<std::string::String>,
@@ -1313,6 +1321,7 @@ impl QueryStatistics {
 pub mod query_statistics {
 
     /// A builder for [`QueryStatistics`](crate::model::QueryStatistics).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records_matched: std::option::Option<f64>,
@@ -1393,6 +1402,7 @@ impl ResultField {
 pub mod result_field {
 
     /// A builder for [`ResultField`](crate::model::ResultField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -1460,6 +1470,7 @@ impl LogGroupField {
 pub mod log_group_field {
 
     /// A builder for [`LogGroupField`](crate::model::LogGroupField).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1534,6 +1545,7 @@ impl OutputLogEvent {
 pub mod output_log_event {
 
     /// A builder for [`OutputLogEvent`](crate::model::OutputLogEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<i64>,
@@ -1613,6 +1625,7 @@ impl SearchedLogStream {
 pub mod searched_log_stream {
 
     /// A builder for [`SearchedLogStream`](crate::model::SearchedLogStream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -1704,6 +1717,7 @@ impl FilteredLogEvent {
 pub mod filtered_log_event {
 
     /// A builder for [`FilteredLogEvent`](crate::model::FilteredLogEvent).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -1845,6 +1859,7 @@ impl SubscriptionFilter {
 pub mod subscription_filter {
 
     /// A builder for [`SubscriptionFilter`](crate::model::SubscriptionFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -2005,6 +2020,7 @@ impl QueryDefinition {
 pub mod query_definition {
 
     /// A builder for [`QueryDefinition`](crate::model::QueryDefinition).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_definition_id: std::option::Option<std::string::String>,
@@ -2141,6 +2157,7 @@ impl QueryInfo {
 pub mod query_info {
 
     /// A builder for [`QueryInfo`](crate::model::QueryInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -2271,6 +2288,7 @@ impl MetricFilter {
 pub mod metric_filter {
 
     /// A builder for [`MetricFilter`](crate::model::MetricFilter).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
@@ -2444,6 +2462,7 @@ impl LogStream {
 pub mod log_stream {
 
     /// A builder for [`LogStream`](crate::model::LogStream).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
@@ -2737,6 +2756,7 @@ impl LogGroup {
 pub mod log_group {
 
     /// A builder for [`LogGroup`](crate::model::LogGroup).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -3035,6 +3055,7 @@ impl ExportTask {
 pub mod export_task {
 
     /// A builder for [`ExportTask`](crate::model::ExportTask).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -3198,6 +3219,7 @@ impl ExportTaskExecutionInfo {
 pub mod export_task_execution_info {
 
     /// A builder for [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<i64>,
@@ -3265,6 +3287,7 @@ impl ExportTaskStatus {
 pub mod export_task_status {
 
     /// A builder for [`ExportTaskStatus`](crate::model::ExportTaskStatus).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ExportTaskStatusCode>,

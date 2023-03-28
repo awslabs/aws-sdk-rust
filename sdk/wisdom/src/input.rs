@@ -5,6 +5,7 @@ use std::fmt::Write;
 pub mod create_assistant_input {
 
     /// A builder for [`CreateAssistantInput`](crate::input::CreateAssistantInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -249,6 +250,7 @@ impl CreateAssistantInput {
 pub mod create_assistant_association_input {
 
     /// A builder for [`CreateAssistantAssociationInput`](crate::input::CreateAssistantAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -508,6 +510,7 @@ impl CreateAssistantAssociationInput {
 pub mod create_content_input {
 
     /// A builder for [`CreateContentInput`](crate::input::CreateContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -816,6 +819,7 @@ impl CreateContentInput {
 pub mod create_knowledge_base_input {
 
     /// A builder for [`CreateKnowledgeBaseInput`](crate::input::CreateKnowledgeBaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1099,6 +1103,7 @@ impl CreateKnowledgeBaseInput {
 pub mod create_session_input {
 
     /// A builder for [`CreateSessionInput`](crate::input::CreateSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1348,6 +1353,7 @@ impl CreateSessionInput {
 pub mod delete_assistant_input {
 
     /// A builder for [`DeleteAssistantInput`](crate::input::DeleteAssistantInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -1515,6 +1521,7 @@ impl DeleteAssistantInput {
 pub mod delete_assistant_association_input {
 
     /// A builder for [`DeleteAssistantAssociationInput`](crate::input::DeleteAssistantAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association_id: std::option::Option<std::string::String>,
@@ -1719,6 +1726,7 @@ impl DeleteAssistantAssociationInput {
 pub mod delete_content_input {
 
     /// A builder for [`DeleteContentInput`](crate::input::DeleteContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -1921,6 +1929,7 @@ impl DeleteContentInput {
 pub mod delete_knowledge_base_input {
 
     /// A builder for [`DeleteKnowledgeBaseInput`](crate::input::DeleteKnowledgeBaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -2093,6 +2102,7 @@ impl DeleteKnowledgeBaseInput {
 pub mod get_assistant_input {
 
     /// A builder for [`GetAssistantInput`](crate::input::GetAssistantInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -2260,6 +2270,7 @@ impl GetAssistantInput {
 pub mod get_assistant_association_input {
 
     /// A builder for [`GetAssistantAssociationInput`](crate::input::GetAssistantAssociationInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_association_id: std::option::Option<std::string::String>,
@@ -2464,6 +2475,7 @@ impl GetAssistantAssociationInput {
 pub mod get_content_input {
 
     /// A builder for [`GetContentInput`](crate::input::GetContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_id: std::option::Option<std::string::String>,
@@ -2666,6 +2678,7 @@ impl GetContentInput {
 pub mod get_content_summary_input {
 
     /// A builder for [`GetContentSummaryInput`](crate::input::GetContentSummaryInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_id: std::option::Option<std::string::String>,
@@ -2870,6 +2883,7 @@ impl GetContentSummaryInput {
 pub mod get_knowledge_base_input {
 
     /// A builder for [`GetKnowledgeBaseInput`](crate::input::GetKnowledgeBaseInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -3042,6 +3056,7 @@ impl GetKnowledgeBaseInput {
 pub mod get_recommendations_input {
 
     /// A builder for [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -3290,6 +3305,7 @@ impl GetRecommendationsInput {
 pub mod get_session_input {
 
     /// A builder for [`GetSessionInput`](crate::input::GetSessionInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -3489,6 +3505,7 @@ impl GetSessionInput {
 pub mod list_assistant_associations_input {
 
     /// A builder for [`ListAssistantAssociationsInput`](crate::input::ListAssistantAssociationsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3703,6 +3720,7 @@ impl ListAssistantAssociationsInput {
 pub mod list_assistants_input {
 
     /// A builder for [`ListAssistantsInput`](crate::input::ListAssistantsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3879,6 +3897,7 @@ impl ListAssistantsInput {
 pub mod list_contents_input {
 
     /// A builder for [`ListContentsInput`](crate::input::ListContentsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4094,6 +4113,7 @@ impl ListContentsInput {
 pub mod list_knowledge_bases_input {
 
     /// A builder for [`ListKnowledgeBasesInput`](crate::input::ListKnowledgeBasesInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4272,6 +4292,7 @@ impl ListKnowledgeBasesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4437,6 +4458,7 @@ impl ListTagsForResourceInput {
 pub mod notify_recommendations_received_input {
 
     /// A builder for [`NotifyRecommendationsReceivedInput`](crate::input::NotifyRecommendationsReceivedInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -4673,6 +4695,7 @@ impl NotifyRecommendationsReceivedInput {
 pub mod query_assistant_input {
 
     /// A builder for [`QueryAssistantInput`](crate::input::QueryAssistantInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
@@ -4900,6 +4923,7 @@ impl QueryAssistantInput {
 pub mod remove_knowledge_base_template_uri_input {
 
     /// A builder for [`RemoveKnowledgeBaseTemplateUriInput`](crate::input::RemoveKnowledgeBaseTemplateUriInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -5072,6 +5096,7 @@ impl RemoveKnowledgeBaseTemplateUriInput {
 pub mod search_content_input {
 
     /// A builder for [`SearchContentInput`](crate::input::SearchContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5316,6 +5341,7 @@ impl SearchContentInput {
 pub mod search_sessions_input {
 
     /// A builder for [`SearchSessionsInput`](crate::input::SearchSessionsInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5557,6 +5583,7 @@ impl SearchSessionsInput {
 pub mod start_content_upload_input {
 
     /// A builder for [`StartContentUploadInput`](crate::input::StartContentUploadInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -5755,6 +5782,7 @@ impl StartContentUploadInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -5961,6 +5989,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -6163,6 +6192,7 @@ impl UntagResourceInput {
 pub mod update_content_input {
 
     /// A builder for [`UpdateContentInput`](crate::input::UpdateContentInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
@@ -6474,6 +6504,7 @@ impl UpdateContentInput {
 pub mod update_knowledge_base_template_uri_input {
 
     /// A builder for [`UpdateKnowledgeBaseTemplateUriInput`](crate::input::UpdateKnowledgeBaseTemplateUriInput).
+    #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
