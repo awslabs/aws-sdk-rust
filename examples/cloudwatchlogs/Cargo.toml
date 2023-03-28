@@ -10,7 +10,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-cloudwatchlogs]
 path = "../../sdk/cloudwatchlogs"
-version = "0.44.0"
+version = "0.45.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
