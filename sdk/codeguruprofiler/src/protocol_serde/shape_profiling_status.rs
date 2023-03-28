@@ -27,7 +27,7 @@ where
                                 builder = builder.set_latest_agent_profile_reported_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }
@@ -40,7 +40,7 @@ where
                                 builder = builder.set_latest_agent_orchestrated_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }

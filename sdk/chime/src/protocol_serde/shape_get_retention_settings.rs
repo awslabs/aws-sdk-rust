@@ -191,7 +191,7 @@ pub(crate) fn de_get_retention_settings(
                         builder = builder.set_initiate_deletion_timestamp(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }

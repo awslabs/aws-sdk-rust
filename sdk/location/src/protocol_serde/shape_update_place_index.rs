@@ -194,7 +194,7 @@ pub(crate) fn de_update_place_index(
                         builder = builder.set_update_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }

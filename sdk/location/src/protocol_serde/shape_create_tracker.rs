@@ -172,7 +172,7 @@ pub(crate) fn de_create_tracker(
                         builder = builder.set_create_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }

@@ -156,7 +156,7 @@ pub(crate) fn de_create_chat_token(
                         builder = builder.set_session_expiration_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }
@@ -173,7 +173,7 @@ pub(crate) fn de_create_chat_token(
                         builder = builder.set_token_expiration_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }

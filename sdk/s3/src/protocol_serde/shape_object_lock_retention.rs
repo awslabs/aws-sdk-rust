@@ -13,7 +13,7 @@ pub fn ser_object_lock_retention(
         let mut inner_writer = scope.start_el("RetainUntilDate").finish();
         inner_writer.data(
             var_2
-                .fmt(aws_smithy_types::date_time::Format::DateTime)?
+                .fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                 .as_ref(),
         );
     }
@@ -47,7 +47,7 @@ pub fn de_object_lock_retention(
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3#Date`)"))
                         ?

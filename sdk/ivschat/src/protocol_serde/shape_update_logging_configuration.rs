@@ -144,7 +144,7 @@ pub(crate) fn de_update_logging_configuration(value: &[u8], mut builder: crate::
                         builder = builder.set_create_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }
@@ -192,7 +192,7 @@ pub(crate) fn de_update_logging_configuration(value: &[u8], mut builder: crate::
                         builder = builder.set_update_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }

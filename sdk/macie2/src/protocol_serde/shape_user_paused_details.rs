@@ -27,7 +27,7 @@ where
                                 builder = builder.set_job_expires_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }
@@ -44,7 +44,7 @@ where
                                 builder = builder.set_job_paused_at(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }

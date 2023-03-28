@@ -94,7 +94,7 @@ where
                                 builder = builder.set_invited_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }
@@ -102,7 +102,7 @@ where
                                 builder = builder.set_updated_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }
@@ -119,7 +119,7 @@ where
                                 builder = builder.set_volume_usage_updated_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }
@@ -135,7 +135,7 @@ where
                                 builder = builder.set_percent_of_graph_utilization_updated_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }

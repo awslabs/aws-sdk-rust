@@ -297,7 +297,7 @@ pub(crate) fn de_object_lock_retain_until_date_header(
         .iter();
     let var_7: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(
         headers,
-        aws_smithy_types::date_time::Format::DateTime,
+        aws_smithy_types::date_time::Format::DateTimeWithOffset,
     )?;
     if var_7.len() > 1 {
         Err(aws_smithy_http::header::ParseError::new(format!(

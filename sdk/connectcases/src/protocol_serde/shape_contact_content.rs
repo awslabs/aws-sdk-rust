@@ -45,7 +45,7 @@ where
                                 builder = builder.set_connected_to_system_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }

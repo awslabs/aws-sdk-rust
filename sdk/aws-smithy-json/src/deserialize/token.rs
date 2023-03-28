@@ -216,10 +216,12 @@ pub fn expect_timestamp_or_null(
                 }
             })
             .transpose()?,
-        Format::DateTime | Format::HttpDate => expect_string_or_null(token)?
-            .map(|v| DateTime::from_str(v.as_escaped_str(), timestamp_format))
-            .transpose()
-            .map_err(|err| Error::custom_source("failed to parse timestamp", err))?,
+        Format::DateTime | Format::HttpDate | Format::DateTimeWithOffset => {
+            expect_string_or_null(token)?
+                .map(|v| DateTime::from_str(v.as_escaped_str(), timestamp_format))
+                .transpose()
+                .map_err(|err| Error::custom_source("failed to parse timestamp", err))?
+        }
     })
 }
 

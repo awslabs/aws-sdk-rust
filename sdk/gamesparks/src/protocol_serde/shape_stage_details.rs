@@ -69,7 +69,7 @@ where
                                 builder = builder.set_created(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }
@@ -77,7 +77,7 @@ where
                                 builder = builder.set_last_updated(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                         tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTime,
+                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
                                     )?,
                                 );
                             }

@@ -186,7 +186,7 @@ pub(crate) fn de_get_phone_number_settings(
                         builder = builder.set_calling_name_updated_timestamp(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTime,
+                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }
