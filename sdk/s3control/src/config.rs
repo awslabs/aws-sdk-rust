@@ -661,26 +661,18 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder.set_credentials_cache(input.credentials_cache().cloned());
-
         builder.set_credentials_provider(input.credentials_provider().cloned());
-
         builder = builder.region(input.region().cloned());
-
         builder.set_use_fips(input.use_fips());
-
         builder.set_use_dual_stack(input.use_dual_stack());
-
         builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
-
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
         builder.set_sleep_impl(input.sleep_impl());
 
         builder.set_http_connector(input.http_connector().cloned());
-
         builder.set_app_name(input.app_name().cloned());
-
         builder.set_aws_endpoint_resolver(input.endpoint_resolver().clone());
 
         builder
