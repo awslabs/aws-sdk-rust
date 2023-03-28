@@ -11,55 +11,63 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <fullname>Health</fullname>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! <p>The Health API provides programmatic access to the Health information that
-//! appears in the <a href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You
-//! can use the API operations to get information about events that might affect your Amazon Web Services services and resources.</p>
-//! <note>
-//! <ul>
-//! <li>
-//! <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health
-//! API. If you call the Health API from an Amazon Web Services account that
-//! doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a
-//! <code>SubscriptionRequiredException</code> error.</p>
-//! </li>
-//! <li>
-//! <p>You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS) to
-//! call the Health API operations. Health supports a multi-Region
-//! application architecture and has two regional endpoints in an active-passive
-//! configuration. You can use the high availability endpoint example to determine
-//! which Amazon Web Services Region is active, so that you can get the latest information from the
-//! API. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/health-api.html">Accessing the Health API</a> in the
-//! <i>Health User Guide</i>.</p>
-//! </li>
-//! </ul>
-//! </note>
-//! <p>For authentication of requests, Health uses the <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
-//! Process</a>.</p>
-//! <p>If your Amazon Web Services account is part of Organizations, you can use the Health organizational
-//! view feature. This feature provides a centralized view of Health events across all
-//! accounts in your organization. You can aggregate Health events in real time to
-//! identify accounts in your organization that are affected by an operational event or get
-//! notified of security vulnerabilities. Use the organizational view API operations to enable
-//! this feature and return event information. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
-//! Health events</a> in the <i>Health User Guide</i>.</p>
-//! <note>
-//! <p>When you use the Health API operations to return Health events, see the
-//! following recommendations:</p>
-//! <ul>
-//! <li>
-//! <p>Use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a> parameter to specify whether to return Health
-//! events that are public or account-specific.</p>
-//! </li>
-//! <li>
-//! <p>Use pagination to view all events from the response. For example, if you call
-//! the <code>DescribeEventsForOrganization</code> operation to get all events in your
-//! organization, you might receive several page results. Specify the
-//! <code>nextToken</code> in the next request to return more results.</p>
-//! </li>
-//! </ul>
-//! </note>
+//! The Health API provides programmatic access to the Health information that appears in the [Personal Health Dashboard](https://phd.aws.amazon.com/phd/home#/). You can use the API operations to get information about events that might affect your Amazon Web Services services and resources.
+//!
+//! For authentication of requests, Health uses the [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
+//!
+//! If your Amazon Web Services account is part of Organizations, you can use the Health organizational view feature. This feature provides a centralized view of Health events across all accounts in your organization. You can aggregate Health events in real time to identify accounts in your organization that are affected by an operational event or get notified of security vulnerabilities. Use the organizational view API operations to enable this feature and return event information. For more information, see [Aggregating Health events](https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html) in the _Health User Guide_.
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-health` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-health = "0.58.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_health as health;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), health::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = health::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-health/latest/aws_sdk_health/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!

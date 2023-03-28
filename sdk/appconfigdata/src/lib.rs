@@ -11,51 +11,74 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>AppConfig Data provides the data plane APIs your application uses to retrieve configuration data.
-//! Here's how it works:</p>
-//! <p>Your application retrieves configuration data by first establishing a configuration
-//! session using the AppConfig Data <a>StartConfigurationSession</a> API action. Your session's
-//! client then makes periodic calls to <a>GetLatestConfiguration</a> to check for
-//! and retrieve the latest data available.</p>
-//! <p>When calling <code>StartConfigurationSession</code>, your code sends the following
-//! information:</p>
-//! <ul>
-//! <li>
-//! <p>Identifiers (ID or name) of an AppConfig application, environment, and
-//! configuration profile that the session tracks.</p>
-//! </li>
-//! <li>
-//! <p>(Optional) The minimum amount of time the session's client must wait between calls
-//! to <code>GetLatestConfiguration</code>.</p>
-//! </li>
-//! </ul>
-//! <p>In response, AppConfig provides an <code>InitialConfigurationToken</code> to be given to
-//! the session's client and used the first time it calls <code>GetLatestConfiguration</code>
-//! for that session.</p>
-//! <p>When calling <code>GetLatestConfiguration</code>, your client code sends the most recent
-//! <code>ConfigurationToken</code> value it has and receives in response:</p>
-//! <ul>
-//! <li>
-//! <p>
-//! <code>NextPollConfigurationToken</code>: the <code>ConfigurationToken</code> value
-//! to use on the next call to <code>GetLatestConfiguration</code>.</p>
-//! </li>
-//! <li>
-//! <p>
-//! <code>NextPollIntervalInSeconds</code>: the duration the client should wait before
-//! making its next call to <code>GetLatestConfiguration</code>. This duration may vary
-//! over the course of the session, so it should be used instead of the value sent on the
-//! <code>StartConfigurationSession</code> call.</p>
-//! </li>
-//! <li>
-//! <p>The configuration: the latest data intended for the session. This may be empty if
-//! the client already has the latest version of the configuration.</p>
-//! </li>
-//! </ul>
-//! <p>For more information and to view example CLI commands that show how to retrieve a
-//! configuration using the AppConfig Data <code>StartConfigurationSession</code> and
-//! <code>GetLatestConfiguration</code> API actions, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
-//! configuration</a> in the <i>AppConfig User Guide</i>.</p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//!
+//! AppConfig Data provides the data plane APIs your application uses to retrieve configuration data. Here's how it works:
+//!
+//! Your application retrieves configuration data by first establishing a configuration session using the AppConfig Data StartConfigurationSession API action. Your session's client then makes periodic calls to GetLatestConfiguration to check for and retrieve the latest data available.
+//!
+//! When calling StartConfigurationSession, your code sends the following information:
+//!   - Identifiers (ID or name) of an AppConfig application, environment, and configuration profile that the session tracks.
+//!   - (Optional) The minimum amount of time the session's client must wait between calls to GetLatestConfiguration.
+//!
+//! In response, AppConfig provides an InitialConfigurationToken to be given to the session's client and used the first time it calls GetLatestConfiguration for that session.
+//!
+//! When calling GetLatestConfiguration, your client code sends the most recent ConfigurationToken value it has and receives in response:
+//!   - NextPollConfigurationToken: the ConfigurationToken value to use on the next call to GetLatestConfiguration.
+//!   - NextPollIntervalInSeconds: the duration the client should wait before making its next call to GetLatestConfiguration. This duration may vary over the course of the session, so it should be used instead of the value sent on the StartConfigurationSession call.
+//!   - The configuration: the latest data intended for the session. This may be empty if the client already has the latest version of the configuration.
+//!
+//! For more information and to view example CLI commands that show how to retrieve a configuration using the AppConfig Data StartConfigurationSession and GetLatestConfiguration API actions, see [Receiving the configuration](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration) in the _AppConfig User Guide_.
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-appconfigdata` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-appconfigdata = "0.58.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_appconfigdata as appconfigdata;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), appconfigdata::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = appconfigdata::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-appconfigdata/latest/aws_sdk_appconfigdata/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!

@@ -11,23 +11,67 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>AWS Signer is a fully managed code signing service to help you ensure the trust and
-//! integrity of your code. </p>
-//! <p>AWS Signer supports the following applications:</p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! <p>With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda
-//! deployment packages. Integrated support is provided for Amazon S3, Amazon CloudWatch,
-//! and AWS CloudTrail. In order to sign code, you create a signing profile and then use
-//! Signer to sign Lambda zip files in S3. </p>
+//! AWS Signer is a fully managed code signing service to help you ensure the trust and integrity of your code.
 //!
-//! <p>With <i>code signing for IoT</i>, you can sign code for any IoT device that is
-//! supported by AWS. IoT code signing is available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and is
-//! integrated with <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign
-//! code, you import a third-party code signing certificate using ACM, and use that to
-//! sign updates in Amazon FreeRTOS and AWS IoT Device Management. </p>
-//! <p>For more information about AWS Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.</p>
+//! AWS Signer supports the following applications:
 //!
-//! <p></p>
+//! With _code signing for AWS Lambda_, you can sign AWS Lambda deployment packages. Integrated support is provided for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then use Signer to sign Lambda zip files in S3.
+//!
+//! With _code signing for IoT_, you can sign code for any IoT device that is supported by AWS. IoT code signing is available for [Amazon FreeRTOS](http://docs.aws.amazon.com/freertos/latest/userguide/) and [AWS IoT Device Management](http://docs.aws.amazon.com/iot/latest/developerguide/), and is integrated with [AWS Certificate Manager (ACM)](http://docs.aws.amazon.com/acm/latest/userguide/). In order to sign code, you import a third-party code signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT Device Management.
+//!
+//! For more information about AWS Signer, see the [AWS Signer Developer Guide](http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html).
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-signer` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-signer = "0.58.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_signer as signer;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), signer::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = signer::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-signer/latest/aws_sdk_signer/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!

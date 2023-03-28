@@ -3,8 +3,6 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-
-
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -23,7 +21,7 @@ tokio = { version = "1", features = ["full"] }
 
 Then in code, a client can be created with the following:
 
-```rust
+```rust,no_run
 use aws_sdk_lexruntimev2 as lexruntimev2;
 
 #[tokio::main]
@@ -49,7 +47,7 @@ additional sections for the guide by opening an issue and describing what you ar
 ## Getting Help
 
 * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
-* [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) – For bug reports & feature requests
+* [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
 * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
 * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
 

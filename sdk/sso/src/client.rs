@@ -14,6 +14,24 @@ pub(crate) struct Handle {
 ///
 /// Client for invoking operations on AWS Single Sign-On. Each operation on AWS Single Sign-On is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`GetRoleCredentials`](crate::operation) operation has
+/// a [`Client::get_role_credentials`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.get_role_credentials()
+///     .role_name("example")
+///     .call()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(std::fmt::Debug)]
 pub struct Client {
     handle: std::sync::Arc<Handle>,

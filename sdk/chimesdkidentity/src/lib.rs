@@ -11,10 +11,59 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! <p>The Amazon Chime SDK Identity APIs in this section allow software developers to create
-//! and manage unique instances of their messaging applications. These APIs provide the
-//! overarching framework for creating and sending messages. For more information about the
-//! identity APIs, refer to <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Identity.html">Amazon Chime SDK identity</a>.</p>
+//! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
+//! feedback purposes only. Do not use this SDK for production workloads.**
+//!
+//! The Amazon Chime SDK Identity APIs in this section allow software developers to create and manage unique instances of their messaging applications. These APIs provide the overarching framework for creating and sending messages. For more information about the identity APIs, refer to [Amazon Chime SDK identity](https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Identity.html).
+//!
+//! ## Getting Started
+//!
+//! > Examples are available for many services and operations, check out the
+//! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
+//!
+//! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
+//! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-chimesdkidentity` to
+//! your project, add the following to your **Cargo.toml** file:
+//!
+//! ```toml
+//! [dependencies]
+//! aws-config = "0.0.0-smithy-rs-head"
+//! aws-sdk-chimesdkidentity = "0.58.0"
+//! tokio = { version = "1", features = ["full"] }
+//! ```
+//!
+//! Then in code, a client can be created with the following:
+//!
+//! ```rust,no_run
+//! use aws_sdk_chimesdkidentity as chimesdkidentity;
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), chimesdkidentity::Error> {
+//!     let config = aws_config::load_from_env().await;
+//!     let client = chimesdkidentity::Client::new(&config);
+//!
+//!     // ... make some calls with the client
+//!
+//!     Ok(())
+//! }
+//! ```
+//!
+//! See the [client documentation](https://docs.rs/aws-sdk-chimesdkidentity/latest/aws_sdk_chimesdkidentity/client/struct.Client.html)
+//! for information on what calls can be made, and the inputs and outputs for each of those calls.
+//!
+//! ## Using the SDK
+//!
+//! Until the SDK is released, we will be adding information about using the SDK to the
+//! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
+//! additional sections for the guide by opening an issue and describing what you are trying to do.
+//!
+//! ## Getting Help
+//!
+//! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
+//! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
+//! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
+//! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
+//!
 //!
 //! # Crate Organization
 //!

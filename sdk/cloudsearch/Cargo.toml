@@ -89,6 +89,10 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
+[dev-dependencies.tokio]
+version = "1.8.4"
+features = ["macros", "test-util", "rt-multi-thread"]
+
 [features]
 rustls = ["aws-smithy-client/rustls"]
 native-tls = ["aws-smithy-client/native-tls"]
