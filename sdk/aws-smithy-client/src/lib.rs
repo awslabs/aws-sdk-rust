@@ -24,7 +24,10 @@
 
 pub mod bounds;
 pub mod erase;
+pub mod http_connector;
+pub mod never;
 pub mod retry;
+pub mod timeout;
 
 // https://github.com/rust-lang/rust/issues/72081
 #[allow(rustdoc::private_doc_tests)]
@@ -36,8 +39,8 @@ pub mod dvr;
 #[cfg(feature = "test-util")]
 pub mod test_connection;
 
-pub mod http_connector;
-
+#[cfg(feature = "client-hyper")]
+pub mod conns;
 #[cfg(feature = "client-hyper")]
 pub mod hyper_ext;
 
@@ -47,78 +50,19 @@ pub mod hyper_ext;
 #[doc(hidden)]
 pub mod static_tests;
 
-pub mod never;
-pub mod timeout;
-pub use timeout::TimeoutLayer;
-
-/// Type aliases for standard connection types.
-#[cfg(feature = "client-hyper")]
-#[allow(missing_docs)]
-pub mod conns {
-    #[cfg(feature = "rustls")]
-    pub type Https = hyper_rustls::HttpsConnector<hyper::client::HttpConnector>;
-
-    // Creating a `with_native_roots` HTTP client takes 300ms on OS X. Cache this so that we
-    // don't need to repeatedly incur that cost.
-    #[cfg(feature = "rustls")]
-    lazy_static::lazy_static! {
-        static ref HTTPS_NATIVE_ROOTS: Https = {
-            hyper_rustls::HttpsConnectorBuilder::new()
-                .with_native_roots()
-                .https_or_http()
-                .enable_http1()
-                .enable_http2()
-                .build()
-        };
-    }
-
-    #[cfg(feature = "rustls")]
-    /// Return a default HTTPS connector backed by the `rustls` crate.
-    ///
-    /// It requires a minimum TLS version of 1.2.
-    /// It allows you to connect to both `http` and `https` URLs.
-    pub fn https() -> Https {
-        HTTPS_NATIVE_ROOTS.clone()
-    }
-
-    #[cfg(feature = "native-tls")]
-    /// Return a default HTTPS connector backed by the `hyper_tls` crate.
-    ///
-    /// It requires a minimum TLS version of 1.2.
-    /// It allows you to connect to both `http` and `https` URLs.
-    pub fn native_tls() -> NativeTls {
-        let mut tls = hyper_tls::native_tls::TlsConnector::builder();
-        let tls = tls
-            .min_protocol_version(Some(hyper_tls::native_tls::Protocol::Tlsv12))
-            .build()
-            .unwrap_or_else(|e| panic!("Error while creating TLS connector: {}", e));
-        let http = hyper::client::HttpConnector::new();
-        hyper_tls::HttpsConnector::from((http, tls.into()))
-    }
-
-    #[cfg(feature = "native-tls")]
-    pub type NativeTls = hyper_tls::HttpsConnector<hyper::client::HttpConnector>;
-
-    #[cfg(feature = "rustls")]
-    pub type Rustls =
-        crate::hyper_ext::Adapter<hyper_rustls::HttpsConnector<hyper::client::HttpConnector>>;
-}
-
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::response::ParseHttpResponse;
 pub use aws_smithy_http::result::{SdkError, SdkSuccess};
-use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::dispatch::DispatchLayer;
 use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ProvideErrorKind;
 use aws_smithy_types::timeout::OperationTimeoutConfig;
-use std::error::Error;
 use std::sync::Arc;
 use timeout::ClientTimeoutParams;
-use tower::{Layer, Service, ServiceBuilder, ServiceExt};
+pub use timeout::TimeoutLayer;
+use tower::{Service, ServiceBuilder, ServiceExt};
 use tracing::{debug_span, field, field::display, Instrument};
 
 /// Smithy service client.
@@ -131,7 +75,7 @@ use tracing::{debug_span, field, field::display, Instrument};
 /// such as those used for routing (like the URL), authentication, and authorization.
 ///
 /// The middleware takes the form of a [`tower::Layer`] that wraps the actual connection for each
-/// request. The [`tower::Service`] that the middleware produces must accept requests of the type
+/// request. The [`tower::Service`](Service) that the middleware produces must accept requests of the type
 /// [`aws_smithy_http::operation::Request`] and return responses of the type
 /// [`http::Response<SdkBody>`], most likely by modifying the provided request in place, passing it
 /// to the inner service, and then ultimately returning the inner service's response.
@@ -165,9 +109,9 @@ impl<C, M> Client<C, M>
 where
     M: Default,
 {
-    /// Create a Smithy client from the given `connector`, a middleware default, the [standard
-    /// retry policy](crate::retry::Standard), and the [`default_async_sleep`](aws_smithy_async::rt::sleep::default_async_sleep)
-    /// sleep implementation.
+    /// Create a Smithy client from the given `connector`, a middleware default, the
+    /// [standard retry policy](retry::Standard), and the
+    /// [`default_async_sleep`](aws_smithy_async::rt::sleep::default_async_sleep) sleep implementation.
     pub fn new(connector: C) -> Self {
         Builder::new()
             .connector(connector)

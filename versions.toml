@@ -1,4 +1,4 @@
-smithy_rs_revision = 'f7c550ee47ef669a58bad4b09ccd26e3163255a9'
+smithy_rs_revision = '10520d7fd7bdaff447482f28fba0b50acd7183c9'
 aws_doc_sdk_examples_revision = '97a177aab8c3d2fef97416cb66e4b4d0da840138'
 
 [manual_interventions]
@@ -1669,7 +1669,7 @@ model_hash = 'fb47cfd49cf2d9250063914599f703ed365b51be373988dc3f2cd64321c9583b'
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
 version = '0.44.0'
-source_hash = '2191934851873d50e86cea894f81318502796c5bc9b3134fb1b7ff28cdfbade6'
+source_hash = '5a789ad6291d3784b835d69b0d9822962eec02cdb7c30dab321bbd517ade3a24'
 model_hash = '930bd33c05c393293591ae01cbdb6637fb5062ed3a3ad5e2dadddd8108cc8478'
 
 [crates.aws-sdk-s3outposts]
@@ -2061,7 +2061,7 @@ source_hash = '71ffafa6154a175e96ebc715a6322fb88a1937baf4fdcc392ca89442edc07fd7'
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = 'bd9d443bd5dcbe7e7d35f6e501f1f08bf9e57efb5482bd8f01c8cb53b36ea4e0'
+source_hash = '65bbe28d25cdcff76f37925601f720eb2ea2d12fac18ebe24d1c4f88b8480fbc'
 
 [crates.aws-smithy-eventstream]
 category = 'SmithyRuntime'
