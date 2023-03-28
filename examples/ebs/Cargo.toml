@@ -15,11 +15,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-ebs]
 path = "../../sdk/ebs"
-version = "0.54.0"
+version = "0.55.0"
 
 [dependencies.aws-sdk-ec2]
 path = "../../sdk/ec2"
-version = "0.54.0"
+version = "0.55.0"
 
 [dependencies.tokio]
 version = "1.20.1"

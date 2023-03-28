@@ -21,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.0.0-smithy-rs-head"
-aws-sdk-cloudsearchdomain = "0.54.0"
+aws-sdk-cloudsearchdomain = "0.55.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
