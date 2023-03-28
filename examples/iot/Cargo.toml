@@ -10,7 +10,7 @@ version = "0.54.1"
 
 [dependencies.aws-sdk-iot]
 path = "../../sdk/iot"
-version = "0.24.0"
+version = "0.25.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
