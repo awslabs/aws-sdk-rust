@@ -156,8 +156,8 @@ impl CreateAccessPointInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -1870,8 +1870,8 @@ impl DeleteAccessPointPolicyInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_access_point_name(self.name.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2265,8 +2265,8 @@ impl DeleteBucketInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -2892,8 +2892,8 @@ impl DeleteBucketTaggingInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -4409,8 +4409,8 @@ impl GetAccessPointInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_access_point_name(self.name.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5366,8 +5366,8 @@ impl GetAccessPointPolicyStatusInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_access_point_name(self.name.clone())
             .set_account_id(self.account_id.clone())
+            .set_access_point_name(self.name.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -5970,8 +5970,8 @@ impl GetBucketLifecycleConfigurationInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -6181,8 +6181,8 @@ impl GetBucketPolicyInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -9160,8 +9160,8 @@ impl ListRegionalBucketsInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_outpost_id(self.outpost_id.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10207,8 +10207,8 @@ impl PutBucketLifecycleConfigurationInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10481,8 +10481,8 @@ impl PutBucketPolicyInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_account_id(self.account_id.clone())
             .set_bucket(self.bucket.clone())
+            .set_account_id(self.account_id.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(
@@ -10728,8 +10728,8 @@ impl PutBucketTaggingInput {
             .set_endpoint(_config.endpoint_url.clone())
             .set_use_arn_region(_config.use_arn_region)
             .set_requires_account_id(Some(true))
-            .set_bucket(self.bucket.clone())
             .set_account_id(self.account_id.clone())
+            .set_bucket(self.bucket.clone())
             .build()
             .map_err(|err| {
                 aws_smithy_http::endpoint::ResolveEndpointError::from_source(

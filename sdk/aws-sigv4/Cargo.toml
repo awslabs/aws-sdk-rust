@@ -61,7 +61,7 @@ optional = true
 criterion = "0.4"
 bytes = "1"
 httparse = "1.5"
-pretty_assertions = "1.0"
+pretty_assertions = "1.3"
 proptest = "1"
 
 [dev-dependencies.time]
