@@ -1234,7 +1234,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListEarthObservationJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEarthObservationJobsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListEarthObservationJobsPaginator {
             crate::paginator::ListEarthObservationJobsPaginator::new(self.handle, self.inner)
         }
@@ -1359,7 +1359,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRasterDataCollectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRasterDataCollectionsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListRasterDataCollectionsPaginator {
             crate::paginator::ListRasterDataCollectionsPaginator::new(self.handle, self.inner)
         }
@@ -1521,7 +1521,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListVectorEnrichmentJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVectorEnrichmentJobsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListVectorEnrichmentJobsPaginator {
             crate::paginator::ListVectorEnrichmentJobsPaginator::new(self.handle, self.inner)
         }
@@ -1646,7 +1646,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::SearchRasterDataCollectionPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchRasterDataCollectionPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::SearchRasterDataCollectionPaginator {
             crate::paginator::SearchRasterDataCollectionPaginator::new(self.handle, self.inner)
         }

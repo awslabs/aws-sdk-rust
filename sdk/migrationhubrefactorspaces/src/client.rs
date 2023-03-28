@@ -2146,7 +2146,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator {
             crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
         }
@@ -2248,7 +2248,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListEnvironmentsPaginator {
             crate::paginator::ListEnvironmentsPaginator::new(self.handle, self.inner)
         }
@@ -2337,7 +2337,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentVpcsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentVpcsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListEnvironmentVpcsPaginator {
             crate::paginator::ListEnvironmentVpcsPaginator::new(self.handle, self.inner)
         }
@@ -2439,7 +2439,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutesPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListRoutesPaginator {
             crate::paginator::ListRoutesPaginator::new(self.handle, self.inner)
         }
@@ -2554,7 +2554,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator {
             crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
         }

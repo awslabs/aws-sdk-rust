@@ -273,7 +273,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDimensionKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDimensionKeysPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::DescribeDimensionKeysPaginator {
             crate::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
         }
@@ -785,7 +785,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceMetricsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::GetResourceMetricsPaginator {
             crate::paginator::GetResourceMetricsPaginator::new(self.handle, self.inner)
         }
@@ -980,7 +980,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailableResourceDimensionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailableResourceDimensionsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListAvailableResourceDimensionsPaginator {
             crate::paginator::ListAvailableResourceDimensionsPaginator::new(self.handle, self.inner)
         }
@@ -1109,7 +1109,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailableResourceMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAvailableResourceMetricsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListAvailableResourceMetricsPaginator {
             crate::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
         }

@@ -337,7 +337,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetComplianceSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetComplianceSummaryPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::GetComplianceSummaryPaginator {
             crate::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
         }
@@ -534,7 +534,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourcesPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::GetResourcesPaginator {
             crate::paginator::GetResourcesPaginator::new(self.handle, self.inner)
         }
@@ -752,7 +752,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetTagKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTagKeysPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::GetTagKeysPaginator {
             crate::paginator::GetTagKeysPaginator::new(self.handle, self.inner)
         }
@@ -835,7 +835,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::GetTagValuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTagValuesPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::GetTagValuesPaginator {
             crate::paginator::GetTagValuesPaginator::new(self.handle, self.inner)
         }

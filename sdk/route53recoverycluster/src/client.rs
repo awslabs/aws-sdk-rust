@@ -304,7 +304,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingControlsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListRoutingControlsPaginator {
             crate::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
         }

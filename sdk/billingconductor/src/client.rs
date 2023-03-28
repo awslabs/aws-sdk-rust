@@ -2174,7 +2174,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountAssociationsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListAccountAssociationsPaginator {
             crate::paginator::ListAccountAssociationsPaginator::new(self.handle, self.inner)
         }
@@ -2285,7 +2285,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListBillingGroupCostReportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBillingGroupCostReportsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListBillingGroupCostReportsPaginator {
             crate::paginator::ListBillingGroupCostReportsPaginator::new(self.handle, self.inner)
         }
@@ -2400,7 +2400,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListBillingGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBillingGroupsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListBillingGroupsPaginator {
             crate::paginator::ListBillingGroupsPaginator::new(self.handle, self.inner)
         }
@@ -2515,7 +2515,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomLineItemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomLineItemsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListCustomLineItemsPaginator {
             crate::paginator::ListCustomLineItemsPaginator::new(self.handle, self.inner)
         }
@@ -2630,7 +2630,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomLineItemVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomLineItemVersionsPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListCustomLineItemVersionsPaginator {
             crate::paginator::ListCustomLineItemVersionsPaginator::new(self.handle, self.inner)
         }
@@ -2742,7 +2742,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingPlansPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingPlansPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListPricingPlansPaginator {
             crate::paginator::ListPricingPlansPaginator::new(self.handle, self.inner)
         }
@@ -2861,7 +2861,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingPlansAssociatedWithPricingRulePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingPlansAssociatedWithPricingRulePaginator::send) which returns a `Stream`.
         pub fn into_paginator(
             self,
         ) -> crate::paginator::ListPricingPlansAssociatedWithPricingRulePaginator {
@@ -2981,7 +2981,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingRulesPaginator::send) which returns a `Stream`.
         pub fn into_paginator(self) -> crate::paginator::ListPricingRulesPaginator {
             crate::paginator::ListPricingRulesPaginator::new(self.handle, self.inner)
         }
@@ -3100,7 +3100,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::send) which returns a `Stream`.
         pub fn into_paginator(
             self,
         ) -> crate::paginator::ListPricingRulesAssociatedToPricingPlanPaginator {
@@ -3224,7 +3224,7 @@ pub mod fluent_builders {
         }
         /// Create a paginator for this request
         ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcesAssociatedToCustomLineItemPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcesAssociatedToCustomLineItemPaginator::send) which returns a `Stream`.
         pub fn into_paginator(
             self,
         ) -> crate::paginator::ListResourcesAssociatedToCustomLineItemPaginator {
