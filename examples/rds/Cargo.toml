@@ -10,7 +10,7 @@ version = "0.54.1"
 
 [dependencies.aws-sdk-rds]
 path = "../../sdk/rds"
-version = "0.26.0"
+version = "0.27.0"
 
 [dependencies.tokio]
 version = "1.20.1"
