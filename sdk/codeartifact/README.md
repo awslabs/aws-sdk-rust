@@ -72,7 +72,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.54.1"
-aws-sdk-codeartifact = "0.25.0"
+aws-sdk-codeartifact = "0.26.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
