@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.0.0-smithy-rs-head"
-aws-sdk-apigatewayv2 = "0.46.0"
+aws-sdk-apigatewayv2 = "0.47.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

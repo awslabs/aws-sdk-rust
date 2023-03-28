@@ -10,7 +10,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-sesv2]
 path = "../../sdk/sesv2"
-version = "0.46.0"
+version = "0.47.0"
 
 [dependencies.tokio]
 version = "1.20.1"
