@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.0.0-smithy-rs-head"
-aws-sdk-docdbelastic = "0.16.0"
+aws-sdk-docdbelastic = "0.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
