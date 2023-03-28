@@ -45,13 +45,13 @@ pub use aws_smithy_http::endpoint::Endpoint;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
-/// Client and fluent builders for calling the service.
+/// Client and fluent builders for calling Amazon SageMaker Runtime.
 pub mod client;
 
-/// Configuration for the service.
+/// Configuration for Amazon SageMaker Runtime.
 pub mod config;
 
-/// Endpoint resolution functionality
+/// Endpoint resolution functionality.
 pub mod endpoint;
 
 /// All error types that operations can return. Documentation on these types is copied from the model.
@@ -71,13 +71,14 @@ pub mod output;
 /// Data primitives referenced by other data types.
 pub mod types;
 
+///
 pub mod middleware;
 
+///
 mod no_credentials;
 
 pub(crate) mod protocol_serde;
 
-/// Endpoints standard library functions
 mod endpoint_lib;
 
 mod json_errors;

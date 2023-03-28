@@ -48,13 +48,13 @@ pub use aws_smithy_http::endpoint::Endpoint;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
-/// Client and fluent builders for calling the service.
+/// Client and fluent builders for calling Amazon Simple Storage Service.
 pub mod client;
 
-/// Configuration for the service.
+/// Configuration for Amazon Simple Storage Service.
 pub mod config;
 
-/// Endpoint resolution functionality
+/// Endpoint resolution functionality.
 pub mod endpoint;
 
 /// All error types that operations can return. Documentation on these types is copied from the model.
@@ -65,7 +65,7 @@ mod error_meta;
 /// Input structures for operations. Documentation on these types is copied from the model.
 pub mod input;
 
-/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 
 /// All operations that this crate can perform.
@@ -77,25 +77,28 @@ pub mod output;
 /// Data primitives referenced by other data types.
 pub mod types;
 
+///
 pub(crate) mod http_body_checksum;
 
+///
 pub mod middleware;
 
+///
 mod no_credentials;
 
 /// Paginators for the service
 pub mod paginator;
 
+///
 pub mod presigning;
 
+///
 mod s3_request_id;
 
-/// Generated accessors for nested fields
 mod lens;
 
 pub(crate) mod protocol_serde;
 
-/// Endpoints standard library functions
 mod endpoint_lib;
 
 mod event_stream_serde;

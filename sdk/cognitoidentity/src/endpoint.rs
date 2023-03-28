@@ -14,7 +14,7 @@ impl From<crate::endpoint::Params> for aws_endpoint::Params {
     }
 }
 
-/// Generated endpoint tests
+///
 #[cfg(test)]
 mod test {
 
@@ -1066,5 +1066,4 @@ impl std::fmt::Display for InvalidParams {
 
 impl std::error::Error for InvalidParams {}
 
-/// Endpoints internals
 mod internals;
